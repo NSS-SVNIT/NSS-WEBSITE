@@ -33,7 +33,7 @@ function Copyright(props) {
         href="mailto://barikpragnesh@gmail.com"
         target="blank"
       >
-        Pragnesh
+        NSS SVNIT
       </Link>
       {" for help."}
     </Typography>
@@ -76,7 +76,7 @@ export default function SignIn(props) {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Apply for NSS Executive
+           SIGN IN
           </Typography>
           <Box
             component="form"
@@ -112,7 +112,7 @@ export default function SignIn(props) {
               label="Post"
             />
 
-            <Button
+            {/* <Button
               type="submit"
               onSubmit={handleSubmit}
               fullWidth
@@ -120,12 +120,11 @@ export default function SignIn(props) {
               sx={{ mt: 3, mb: 2 }}
             >
               Apply
-            </Button>
+            </Button> */}
             <Button
-              //   type="submit"
               fullWidth
               onClick={props.handleSignIn}
-              sx={{ boxShadow: 1, color: "gray" }}
+              sx={{ boxShadow: 1, color: "blue" }}
             >
               <Google sx={{ mr: "8px" }} />
               Sign In

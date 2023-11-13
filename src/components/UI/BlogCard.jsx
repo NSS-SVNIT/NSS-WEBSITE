@@ -36,15 +36,15 @@ export default function BlogCard(props) {
                 >
                   {props.title}
                 </Typography>
-                <Avatar>P</Avatar>
+                {/* <Avatar>P</Avatar> */}
               </Stack>
-              <Rating
+              {/* <Rating
                 value={4.5}
                 precision={0.5}
                 readOnly
                 sx={{ pb: 2 }}
-              ></Rating>
-              <Typography
+              ></Rating> */}
+              {/* <Typography
                 variant="body"
                 sx={{ fontFamily: "Poppins", fontSize: "1.1rem" }}
                 color="text.secondary"
@@ -55,7 +55,7 @@ export default function BlogCard(props) {
                 atmosphere. Our Winter Camp offers an unforgettable experience
                 filled with exciting activities, heartwarming moments, and
                 opportunities for personal growth.
-              </Typography>
+              </Typography> */}
               <Link to={props.to}>
                 <Button
                   color="primary"

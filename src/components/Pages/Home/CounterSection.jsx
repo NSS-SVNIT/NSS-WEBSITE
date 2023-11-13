@@ -20,13 +20,13 @@ export default function CounterSection() {
       }}
       alignItems={"center"}
     >
-      <Counter start={0} end={200} duration={2} title="Members" />
+      <Counter start={0} end={250} duration={2} title="Volunteers" />
       <Divider orientation="vertical" variant="middle" flexItem />
 
-      <Counter start={0} end={7} duration={2} title="Trips" />
+      <Counter start={0} end={3} duration={2} title="Camps" />
       <Divider orientation="vertical" variant="middle" flexItem />
 
-      <Counter start={0} end={10} duration={2} title="Activities" />
+      <Counter start={0} end={15} duration={2} title="Activities" />
     </Stack>
   );
 }
