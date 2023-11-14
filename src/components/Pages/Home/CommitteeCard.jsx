@@ -78,7 +78,7 @@ export default function ComitteeCard(props) {
           >
             {props.title} Committee
           </Typography>
-          <Typography>{props.about}</Typography>
+          <Typography textAlign="justify">{props.about}</Typography>
           {/* <br /> */}
           <Button
             onClick={handleCloseModal}
