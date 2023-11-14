@@ -16,14 +16,16 @@ import {
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import NavDialog from "./NavDialog";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import NavButton from "../UI/NavButton";
 
 export default function NavBar() {
   const theme = useTheme();
   const isPhone = useMediaQuery(theme.breakpoints.down("sm"));
+  const location = useLocation();
 
   const [openDialog, setOpenDialog] = React.useState(false);
+  const [scrolling, setScrolling] = React.useState(false);
 
   const handleMenuClick = () => {
     setOpenDialog(true);
@@ -33,17 +35,60 @@ export default function NavBar() {
     setOpenDialog(false);
   };
 
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const scrollThreshold = getScrollThreshold(location.pathname);
+      console.log(window.scrollY);
+      setScrolling(window.scrollY > scrollThreshold);
+    };
+
+    const getScrollThreshold = (pathname) => {
+      switch (pathname) {
+        case "/":
+          return 900; // Adjust the threshold for the Home page
+        case "/about":
+          return 1980; // Adjust the threshold for the About page
+        case "/gallery":
+          return 300; // Adjust the threshold for the About page
+        default:
+          return 50000; // Default threshold for other pages
+      }
+    };
+
+    // Attach the scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Detach the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [location.pathname]); // Re-run the effect when the pathname changes
+
+  const navButtonStyle = {
+    textDecoration: "none",
+    color: scrolling ? "white" : "black",
+  };
+
   return (
     <>
       <AppBar
         position="sticky"
-        sx={{ backdropFilter: "blur(10px)", px: 8 }}
-        color="transparent"
+        sx={{
+          backdropFilter: "blur(10px)",
+          px: 8,
+          backgroundColor: scrolling ? "black" : "transparent",
+        }}
         elevation={5}
       >
         <Toolbar>
           <Stack component="div" sx={{ flexGrow: 1 }}>
-            <NavLink to="/" style={{ textDecoration: "none", color: "black" }}>
+            <NavLink
+              to="/"
+              style={{
+                textDecoration: "none",
+                color: scrolling ? "white" : "black",
+              }}
+            >
               <div
                 style={{
                   fontFamily: "DM Sans",
@@ -75,13 +120,27 @@ export default function NavBar() {
             </IconButton>
           ) : (
             <Box>
-              <NavButton to="/">Home</NavButton>
-              <NavButton to="/about">About</NavButton>
-              <NavButton to="/events">Events</NavButton>
-              <NavButton to="/gallery">Gallery</NavButton>
-              <NavButton to="/team">Team</NavButton>
-              <NavButton to="/contact">Contact</NavButton>
-              <NavButton to="/admin">Admin</NavButton>
+              <NavButton to="/" scrolling={scrolling}>
+                Home
+              </NavButton>
+              <NavButton to="/about" scrolling={scrolling}>
+                About
+              </NavButton>
+              <NavButton to="/events" scrolling={scrolling}>
+                Events
+              </NavButton>
+              <NavButton to="/gallery" scrolling={scrolling}>
+                Gallery
+              </NavButton>
+              <NavButton to="/team" scrolling={scrolling}>
+                Team
+              </NavButton>
+              <NavButton to="/contact" scrolling={scrolling}>
+                Contact
+              </NavButton>
+              <NavButton to="/admin" scrolling={scrolling}>
+                Admin
+              </NavButton>
             </Box>
           )}
         </Toolbar>
