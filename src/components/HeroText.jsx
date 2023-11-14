@@ -7,8 +7,8 @@ export default function HeroText() {
       <h1
         style={{ fontSize: "6rem", fontFamily: "Poppins", fontWeight: "100" }}
       >
-        Celebrating 1 Year of{" "}
-        <span style={{ fontWeight: "400" }}>NSS SVNIT...</span>
+        {" "}
+        <span style={{ fontWeight: "400" }}>NSS SVNIT</span>
       </h1>
       <p
         style={{ fontFamily: "DM Sans", fontSize: "1.5rem", fontWeight: "400" }}
@@ -34,7 +34,7 @@ export default function HeroText() {
         >
           KNOW MORE
         </Button>
-        <Button
+        {/* <Button
           variant="outlined"
           style={{
             borderRadius: 0,
@@ -49,7 +49,7 @@ export default function HeroText() {
           disableElevation
         >
           JOIN
-        </Button>
+        </Button> */}
       </Stack>
     </Box>
   );

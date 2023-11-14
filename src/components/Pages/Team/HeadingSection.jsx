@@ -29,7 +29,7 @@ export default function HeadingSection() {
       </Grid>
       <Grid item xs={6} sm={6} md={6}>
         <Slide direction="left" in={true} timeout={1200} mountOnEnter>
-          <img src="src/assets/bg.jpg" alt="Right Content" height="500px" />
+          <img src="src/components/Pages/Home/photos/team.jpg" alt="Right Content" height="500px" />
         </Slide>
       </Grid>
     </Grid>

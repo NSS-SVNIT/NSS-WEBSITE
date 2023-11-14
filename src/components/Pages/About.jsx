@@ -68,7 +68,7 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 1 }}
             >
-              <Typography variant="subtitle2" gutterBottom sx={{ fontSize: { xs: "10px", sm: "12px", md: "14px", lg: "16px" } }}>
+              <Typography variant="subtitle2" gutterBottom sx={{ fontSize: { xs: "16px", sm: "18px", md: "20px", lg: "22px" } }}>
               The history of the National Service Scheme (NSS) unit at the Sardar Vallabhbhai National Institute of Technology (SVNIT) is a testament to the spirit of volunteerism and social responsibility among the students. The NSS unit at SVNIT was established in 2018, with the aim of fostering social welfare and community development through various initiatives. Over the years, the unit has played a vital role in organizing numerous activities and campaigns that have made a positive impact on the lives of people in and around the campus. From conducting blood donation drives, health camps, and awareness programs to promoting cleanliness, environmental conservation, and education, the NSS unit has actively engaged students in serving society and creating a better world. With a rich history of service and a strong commitment to social change, the NSS SVNIT unit continues to inspire and empower students to contribute to the betterment of society.
               </Typography>
             {/* </Slide> */}
@@ -84,7 +84,7 @@ const About = () => {
             transition={{ duration: 2 }}>
 
                 {/* <Slide direction="left" in={true} timeout={2000} mountOnEnter> */}
-                  <img src="src/assets/nss_logo.png" alt="Right Content" height="100%" style={{ position: 'absolute', top: 0, left: 0, width: '100%', objectFit: 'cover', borderRadius: '50%'} } 
+                  <img src="src/assets/nss_logo.png" alt="Right Content" height="80%" style={{ position: 'absolute', top: 90 , left: 90,  right: 90,  bottom: 90, width: '80%', objectFit: 'cover', borderRadius: '50%'} } 
                   
                   alignItems="center" justifyContent="center" />
                 {/* </Slide> */}
