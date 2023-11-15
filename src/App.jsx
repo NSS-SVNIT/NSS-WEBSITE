@@ -11,6 +11,7 @@ import Team from "./components/Pages/Team/Team";
 import TeamBatchPage from "./components/Pages/Team/TeamBatchPage";
 import Contact from './components/Pages/Contact';
 import About from "./components/Pages/About";
+import LabTabs from "./components/Pages/Articles/Articles";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path='/contact' element={<Contact/>}/>
         <Route path="/events/:id" element={<Post />} />
         <Route path="/" element={<Home />} />
+        <Route path="/articles" element={<LabTabs  />} />
       </Routes>
     </Router>
   );
