@@ -132,6 +132,9 @@ export default function NavBar() {
               <NavButton to="/gallery" scrolling={scrolling}>
                 Gallery
               </NavButton>
+              <NavButton to="/Articles" scrolling={scrolling}>
+                Articles
+              </NavButton>
               <NavButton to="/team" scrolling={scrolling}>
                 Team
               </NavButton>
