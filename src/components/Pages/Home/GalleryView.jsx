@@ -3,15 +3,31 @@ import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
+import Home_1 from "../../../assets/Home_1.jpg";
+import Home_2 from "../../../assets/Home_2.jpg";
+import Home_3 from "../../../assets/Home_3.jpg";
+import Home_4 from "../../../assets/Home_4.jpg";
+import Home_5 from "../../../assets/Home_5.jpg";
+import Home_6 from "../../../assets/Home_6.jpg";
+import Home_7 from "../../../assets/Home_7.jpg";
+import Home_8 from "../../../assets/Home_8.jpg";
+import Home_9 from "../../../assets/Home_9.jpg";
+import Home_10 from "../../../assets/Home_10.jpg";
+import Home_11 from "../../../assets/Home_11.jpg";
+import Home_12 from "../../../assets/Home_12.jpg";
+import Home_13 from "../../../assets/Home_13.jpg";
 
 function srcset(image, size, rows = 1, cols = 1) {
   return {
-    src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
-    srcSet: `${image}?w=${size * cols}&h=${
-      size * rows
-    }&fit=crop&auto=format&dpr=2 2x`,
+    style: {
+      width: `${size * cols}px`,
+      height: `${size * rows}px`,
+      objectFit: 'cover', // You can adjust this property based on your requirements
+    },
+    src: image,
   };
 }
+
 
 export default function GalleryView() {
   const controls = useAnimation();
@@ -59,9 +75,10 @@ export default function GalleryView() {
               transition={{ duration: 2, type: "spring" }}
             >
               <img
-                {...srcset(item.img, 121, item.rows, item.cols)}
-                alt={item.title}
-                loading="lazy"
+              src={item.img}
+              alt={item.title}
+              loading="lazy"
+              style={srcset(item.img, 121, item.rows, item.cols).style}
               />
             </motion.div>
           </ImageListItem>
@@ -73,61 +90,83 @@ export default function GalleryView() {
 
 const itemData = [
   {
-    img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
-    title: "Breakfast",
+    img: Home_1,
+    title: "Group Photo",
+    rows: 1,
+    cols: 2,
+  },
+  {
+    img: Home_3,
+    title: "DSP",
     rows: 2,
-    cols: 2,
+    cols: 1,
   },
   {
-    img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
-    title: "Burger",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
-    title: "Camera",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c",
-    title: "Coffee",
-    cols: 2,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1533827432537-70133748f5c8",
-    title: "Hats",
-    cols: 2,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62",
-    title: "Honey",
-    author: "@arwinneil",
+    img: Home_4,
+    title: "Flag",
     rows: 2,
+    cols: 1,
+  },
+  
+  
+  {
+    img: Home_5,
+    title: "Lucky",
+    rows: 2,
+    cols: 1,
+  },
+  {
+    img: Home_13,
+    title: "Group Flag",
+    rows: 2,
+    cols: 1,
+  },
+  {
+    img: Home_2,
+    title: "Aditi & Anjali",
+    rows: 1,
     cols: 2,
   },
   {
-    img: "https://images.unsplash.com/photo-1516802273409-68526ee1bdd6",
-    title: "Basketball",
+    img: Home_6,
+    title: "Kalash Yatra",
+    rows: 1,
+    cols: 2,
   },
   {
-    img: "https://images.unsplash.com/photo-1518756131217-31eb79b20e8f",
+    img: Home_7,
+    title: "BMS",
+    rows: 3,
+    cols: 2,
+  },
+  {
+    img: Home_8,
     title: "Fern",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1597645587822-e99fa5d45d25",
-    title: "Mushrooms",
     rows: 2,
     cols: 2,
   },
   {
-    img: "https://images.unsplash.com/photo-1567306301408-9b74779a11af",
-    title: "Tomato basil",
+    img: Home_9,
+    title: "Tree Planting",
+    rows: 2,
+    cols: 1,
   },
   {
-    img: "https://images.unsplash.com/photo-1471357674240-e1a485acb3e1",
-    title: "Sea star",
+    img: Home_10,
+    title: "Orphanage",
+    rows: 1,
+    cols: 1,
   },
   {
-    img: "https://images.unsplash.com/photo-1589118949245-7d38baf380d6",
-    title: "Bike",
+    img: Home_11,
+    title: "Blind Fold",
+    rows: 1,
     cols: 2,
+  },
+  {
+    img: Home_12,
+    title: "Camp Sitting",
+    rows: 1,
+    cols: 3,
   },
 ];
