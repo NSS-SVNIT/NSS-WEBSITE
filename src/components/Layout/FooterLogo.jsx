@@ -3,7 +3,12 @@ import { Stack, Divider } from "@mui/material";
 
 export default function FooterLogo() {
   return (
-    <Stack direction="column" justifyContent={"center"} alignItems="center">
+    <Stack
+      direction="column"
+      justifyContent={"center"}
+      alignItems="center"
+      marginRight="175px"
+    >
       <Stack direction="row" gap={2} height={75}>
         <img
           style={{ height: "75px" }}
@@ -20,8 +25,9 @@ export default function FooterLogo() {
         <div
           style={{
             fontFamily: "DM Sans",
-            fontSize: "3rem",
+            fontSize: "2rem",
             fontWeight: "100",
+            color: "white",
           }}
         >
           NSS SVNIT
@@ -29,8 +35,9 @@ export default function FooterLogo() {
         <div
           style={{
             fontFamily: "DM Sans",
-            fontSize: "1.2rem",
+            fontSize: "1rem",
             fontWeight: "400",
+            color: "white",
           }}
         >
           National Service Scheme
