@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Layout from "../Layout/Layout";
 import BlogCard from "../UI/BlogCard";
 import PageHeader from "../UI/PageHeader";
 import firebase from "firebase/compat/app";
 import { getDocs, collection } from "@firebase/firestore";
 import { firestore } from "../../firebase";
-import { Grid } from "@mui/material";
+import { Grid, Button } from "@mui/material";
+
 export default function Events() {
   const [posts, setPosts] = useState([]);
+  const [showAll, setShowAll] = useState(false);
 
   const fetchPosts = async () => {
     await getDocs(collection(firestore, "posts")).then((querySnapshot) => {
@@ -16,14 +19,15 @@ export default function Events() {
         id: doc.id,
       }));
       setPosts(newData);
-      console.log(posts, newData);
     });
   };
+
   useEffect(() => {
     fetchPosts();
   }, []);
-  console.log();
-  // const posts = ["1", "2", "3"];
+
+  const displayedPosts = showAll ? posts : posts.slice(0, 8);
+
   return (
     <Layout>
       <PageHeader title="Events">
@@ -34,16 +38,32 @@ export default function Events() {
         have NSS units.
       </PageHeader>
       <Grid container spacing={3} lg={12} sx={{ px: 10, py: 4 }}>
-        {posts.map((post, index) => (
+        {displayedPosts.map((post, index) => (
           <Grid item key={index} lg={3} md={6}>
-            <BlogCard
-              key={index}
-              title={post.title}
-              to={`/events/${post.id}`}
-            />
+            <BlogCard key={index} title={post.title} to={`/events/${post.id}`} />
           </Grid>
         ))}
       </Grid>
+      {!showAll && posts.length > 8 && (
+        <Button
+        onClick={() => setShowAll(true)}
+        sx={{
+          mt: 1,
+          marginLeft: 84,
+          marginBottom: 3,
+          fontSize: 20,
+          border: "2px black solid",
+          color: 'black',
+          borderColor: 'black',
+          '&:hover': {
+            backgroundColor: 'black',
+            color: 'white',
+          },
+        }}
+      >
+        Explore More
+      </Button>
+      )}
     </Layout>
   );
 }
