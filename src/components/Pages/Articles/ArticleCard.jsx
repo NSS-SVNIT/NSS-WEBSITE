@@ -11,15 +11,15 @@ const url = 'https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o
 export default function ArticleCard(props) {
   const theme = useTheme();
   
-const download =(url)=>{
-  const filename = "file"
-  const aTag = document.createElement('a')
-  aTag.href = url
-  aTag.setAttribute("download", filename)
-  document.body.appendChild(aTag)
-  aTag.click()
-  aTag.remove()
-}
+  const download = (url) => {
+    const newTab = window.open(url, '_blank');
+    if (newTab) {
+      newTab.focus();
+    } else {
+      alert('Please allow popups for this website');
+    }
+  };
+  
 
   return (
     <Card sx={{ display: 'flex' }} style={{height:'30vh', margin:'20px', width:'30vw'}}>
@@ -31,7 +31,7 @@ const download =(url)=>{
           <Typography variant="subtitle1" color="text.secondary" component="div">
             {props.description}
           </Typography>
-          <Button onClick={()=>{download(url)}} >Download</Button>
+          <Button onClick={()=>{download(props.download)}} >Download</Button>
         </CardContent>
         
         <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
