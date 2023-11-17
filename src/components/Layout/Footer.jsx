@@ -11,6 +11,7 @@ import React from "react";
 import { MapContainer, TileLayer, useMap, Popup, Marker } from "react-leaflet";
 import FooterLogo from "./FooterLogo";
 import { FaInstagram, FaFacebook, FaTwitter, FaEnvelope } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   // const position = [21.1702, 72.8311]; // Coordinates for SVnit location
@@ -67,8 +68,13 @@ const Footer = () => {
               // marginLeft: "30px",
             }}
           >
-            <a style={linkStyle}>First Link</a>
-            <a style={linkStyle}>Second Link</a>
+            <Link to="/admin" style={linkStyle}>
+              Admin
+            </Link>
+            {/* Use Link component for routing */}
+            <Link to="/developers" style={linkStyle}>
+              Developers
+            </Link>
             <a style={linkStyle}>Third Link</a>
             <a style={linkStyle}>Fourth Link</a>
           </div>

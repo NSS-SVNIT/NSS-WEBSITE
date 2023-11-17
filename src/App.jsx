@@ -9,25 +9,25 @@ import NewPost from "./components/Pages/NewPost";
 import Admin from "./components/Pages/Admin/Admin";
 import Team from "./components/Pages/Team/Team";
 import TeamBatchPage from "./components/Pages/Team/TeamBatchPage";
-import Contact from './components/Pages/Contact';
+import Contact from "./components/Pages/Contact";
 import About from "./components/Pages/About";
+import Developers from "./components/Pages/Developers";
 import Article from "./components/Pages/Articles/Articles";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/about" element={<About/>}/>
+        <Route path="/about" element={<About />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/newpost" element={<NewPost />} />
         <Route path="/events" element={<Events />} />
         <Route exact path="/team" element={<Team />} />
         <Route path="/team/:year" element={<TeamBatchPage />} />
-        <Route path='/contact' element={<Contact/>}/>
+        <Route path="/contact" element={<Contact />} />
         <Route path="/events/:id" element={<Post />} />
         <Route path="/" element={<Home />} />
-        <Route path="/articles" element={<Article  />} />
       </Routes>
     </Router>
   );
