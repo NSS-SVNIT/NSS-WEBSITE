@@ -8,15 +8,18 @@ import Layout from "../../Layout/Layout";
 import LatestEdition from './LatestEditionMagazine';
 import OtherMagazines from './OtherMagazines';
 import PageHeader from '../../UI/PageHeader';
-import { Card } from '@mui/material';
 
 export default function Articles() {
-
   const [value, setValue] = React.useState('1');
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  React.useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Layout>

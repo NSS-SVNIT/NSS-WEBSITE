@@ -1,22 +1,29 @@
-import { Card, CardContent, Typography, Box, Grid, Slide, Button } from '@mui/material'
-import { makeStyles } from '@material-ui/core/styles';
-
-import React from 'react'
-import Layout from '../Layout/Layout'
-import ComitteeSection from './Home/ComitteeSection'
-import DutySection from './Home/DutySection'
+import React, { useEffect } from 'react';
+import Layout from '../Layout/Layout';
+import ComitteeSection from './Home/ComitteeSection';
+import DutySection from './Home/DutySection';
 import { motion } from "framer-motion";
+import { Typography, Box, Grid } from '@mui/material';
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
   gradientBackground: {
     background: 'linear-gradient(to bottom, #ffebff, #FFE6FF)',
-
-    // Adjust the color values and direction as per your requirement
   },
 });
-const About = () => {
 
+const About = () => {
   const classes = useStyles();
+
+  useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo(0, 0);
+
+    // Cleanup function to scroll to the top when the component unmounts
+    return () => {
+      window.scrollTo(0, 0);
+    };
+  }, []); // The empty dependency array ensures this effect runs only once when the component mounts
 
   return (
     <Layout>

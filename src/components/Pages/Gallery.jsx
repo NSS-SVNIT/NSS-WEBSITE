@@ -58,6 +58,16 @@ export default function Gallery() {
   const [foldersList, setFoldersList] = useState([]);
 
   useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo(0, 0);
+
+    // Cleanup function to scroll to the top when the component unmounts
+    return () => {
+      window.scrollTo(0, 0);
+    };
+  }, []);
+
+  useEffect(() => {
     fetchFolders();
   }, []);
 
@@ -125,31 +135,6 @@ export default function Gallery() {
             </TabPanel>
           );
         })}
-
-        {/* <TabPanel value={value} index={0}>
-          <Stack direction={"row"}>
-            <GalleryView />
-            <GalleryView />
-          </Stack>
-        </TabPanel>
-        <TabPanel value={value} index={1}>
-          <LightGalleryView />
-        </TabPanel>
-        <TabPanel value={value} index={2}>
-          Item Three
-        </TabPanel>
-        <TabPanel value={value} index={3}>
-          Item Four
-        </TabPanel>
-        <TabPanel value={value} index={4}>
-          Item Five
-        </TabPanel>
-        <TabPanel value={value} index={5}>
-          Item Six
-        </TabPanel>
-        <TabPanel value={value} index={6}>
-          Item Seven
-        </TabPanel> */}
       </Stack>
     </Layout>
   );

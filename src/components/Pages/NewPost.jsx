@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Layout from "../Layout/Layout";
 import { Box, Button, Grid, Stack, TextField } from "@mui/material";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
@@ -25,14 +25,12 @@ export default function NewPost() {
 
   const handleSubmit = async () => {
     const uuid = uuidv4();
-    // console.log(uuid);
     postData["timestamp"] = today.getTime();
     await setDoc(doc(firestore, "posts", uuid), postData);
   };
   const [postData, setPostData] = useState(initPostData);
 
   function handleChange(field) {
-    // console.log(postData);
     return (event) => {
       setPostData((prev) => ({
         ...prev,
@@ -50,6 +48,11 @@ export default function NewPost() {
   }
 
   const [text, setText] = useState(``);
+
+  useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Layout>

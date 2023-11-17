@@ -23,12 +23,22 @@ export default function Events() {
   };
 
   useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo(0, 0);
+
+    // Cleanup function to scroll to the top when the component unmounts
+    return () => {
+      window.scrollTo(0, 0);
+    };
+  }, []);
+
+  useEffect(() => {
     fetchPosts();
   }, []);
 
   const displayedPosts = showAll ? posts : posts.slice(0, 8);
 
-  return (
+  return(
     <Layout>
       <PageHeader title="Events">
         The National Service Scheme (NSS) is a youth-focused voluntary

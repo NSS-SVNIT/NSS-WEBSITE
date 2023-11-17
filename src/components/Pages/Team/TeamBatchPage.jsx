@@ -30,15 +30,6 @@ const TeamList = React.useMemo(() => {
 
   return (
     <Layout>
-      <Button
-        component={Link}
-        to="/team"
-        color="inherit"
-        size="large"
-        style={{ position: "fixed", top: "100px", left: "20px", zIndex: 1000 }}
-      >
-        Back to Team
-      </Button>
       <div style={{ overflowX: 'hidden' }}>
         <Grid container justifyContent="center" alignItems="center">
           <Box
