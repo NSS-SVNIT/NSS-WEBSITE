@@ -1,7 +1,14 @@
 import React from "react";
-import { Typography, Grid, Box, Button, Grow, useScrollTrigger } from "@mui/material";
+import {
+  Typography,
+  Grid,
+  Box,
+  Button,
+  Grow,
+  useScrollTrigger,
+} from "@mui/material";
 import TeamCard from "./TeamCard";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 // Component for displaying a batch of Team
 const TeamBatch = ({ year, TeamList }) => {
@@ -23,14 +30,13 @@ const TeamBatch = ({ year, TeamList }) => {
   if (year === 2000) {
     headingText = "Faculty";
     headingColor = "grey";
-  } else if(year === 2001){
+  } else if (year === 2001) {
     headingText = "Our";
     headingColor = "grey";
-  } else if(year === 2002){
+  } else if (year === 2002) {
     headingText = "Co -";
     headingColor = "grey";
-  }
-  else {
+  } else {
     headingText = `Team of`;
     headingColor = "grey";
   }
@@ -40,14 +46,13 @@ const TeamBatch = ({ year, TeamList }) => {
   if (year === 2000) {
     coordinatorText = "Advisor";
     coordinatorColor = "white";
-  } else if(year === 2001){
+  } else if (year === 2001) {
     coordinatorText = "Founder";
     coordinatorColor = "white";
-  } else if(year === 2002){
+  } else if (year === 2002) {
     coordinatorText = "Founders";
     coordinatorColor = "white";
-  }
-  else {
+  } else {
     coordinatorText = year;
     coordinatorColor = "white";
   }
@@ -57,6 +62,7 @@ const TeamBatch = ({ year, TeamList }) => {
       <div style={{ fontFamily: "DM Sans", overflowX: "hidden" }}>
         <Box
           sx={{
+            mx: 65,
             my: 2,
             px: 8,
             py: 4,
@@ -72,7 +78,12 @@ const TeamBatch = ({ year, TeamList }) => {
             {coordinatorText}
           </span>
         </Box>
-        <Grid container spacing={0.5} rowSpacing={0.25} sx={{ marginTop: "20px", marginLeft: "30px", marginBottom: "60px" }}>
+        <Grid
+          container
+          spacing={0.5}
+          rowSpacing={0.25}
+          sx={{ marginTop: "20px", marginLeft: "30px", marginBottom: "60px" }}
+        >
           {displayedTeam.map((Team, index) => (
             <Grow
               key={Team.name}
@@ -96,7 +107,13 @@ const TeamBatch = ({ year, TeamList }) => {
             to={`/team/${year}`}
             variant="outlined"
             color="inherit"
-            sx={{ bottom: '20px', left: '1397px', borderRadius: 0, fontFamily: "DM Sans", }}>
+            sx={{
+              bottom: "20px",
+              left: "1397px",
+              borderRadius: 0,
+              fontFamily: "DM Sans",
+            }}
+          >
             See More
           </Button>
         </Grow>

@@ -69,6 +69,8 @@ export default function NavBar() {
     color: scrolling ? "white" : "black",
   };
 
+  const isDevelopersPage = location.pathname === "/developers";
+
   return (
     <>
       <AppBar
@@ -138,9 +140,12 @@ export default function NavBar() {
               <NavButton to="/contact" scrolling={scrolling}>
                 Contact
               </NavButton>
-              <NavButton to="/admin" scrolling={scrolling}>
+              {/* <NavButton to="/admin" scrolling={scrolling}>
                 Admin
               </NavButton>
+              <NavButton to="/developers" scrolling={scrolling}>
+                Developers
+              </NavButton> */}
             </Box>
           )}
         </Toolbar>

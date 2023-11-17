@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Stack } from "@mui/material";
 import HeroText from "../../HeroText";
-import bg from "../../../assets/bg.jpg";
+import bg from "../../../assets/bg1.png";
 
 import UpdateCard from "../../UpdateCard";
 
@@ -13,6 +13,9 @@ export default function HeroSection() {
         marginTop: "-64px",
         backgroundImage: `url(${bg})`,
         height: "100vh",
+        backgroundSize: "cover", // Adjust the background size property
+        backgroundPosition: "center", // Center the background image
+
         // maxWidth: "100vw",
         // overflow: "hidden",
         // marginTop: isPhone ? -56 : -64,
