@@ -12,7 +12,7 @@ import TeamBatchPage from "./components/Pages/Team/TeamBatchPage";
 import Contact from "./components/Pages/Contact";
 import About from "./components/Pages/About";
 import Developers from "./components/Pages/Developers";
-import Article from "./components/Pages/Articles/Articles";
+import Articles from "./components/Pages/Articles/Articles";
 
 function App() {
   return (
@@ -21,6 +21,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/Developers" element={<Developers />} />
+        <Route path="/articles" element={<Articles />} />
         <Route path="/newpost" element={<NewPost />} />
         <Route path="/events" element={<Events />} />
         <Route exact path="/team" element={<Team />} />
