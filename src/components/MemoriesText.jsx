@@ -31,7 +31,6 @@ export default function Memories() {
         the integration of the community and generating widespread awareness
         about prevailing social issues. We live by our motto
         <b> ‘Not Me But You.’ </b>
-        Our volunteers regulary visit nearby villages to educate people
       </p>
       <Stack direction="row" gap={1} sx={{ pt: 5 }}>
         <Link to="/gallery">

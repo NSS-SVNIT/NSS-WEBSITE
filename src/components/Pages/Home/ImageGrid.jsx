@@ -58,8 +58,8 @@ const ImageIconButton = styled(ButtonBase)(({ theme }) => ({
 
 const images = [
   {
-    url: "src/components/Pages/Home/photos/Orphanage.jpg",
-    title: "Old Age Home and Orphanage Visits",
+    url: "src/components/Pages/Home/photos/Cultural.jpg",
+    title: "Cultural Activities",
     width: "40%",
   },
   {

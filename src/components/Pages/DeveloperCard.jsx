@@ -10,7 +10,7 @@ function DeveloperCard(props) {
           <img src={p1Image} alt="Avatar" className="avatar-image" />
         </div>
         <div class="card-title">{props.name}</div>
-        <div class="card-subtitle">CEO &amp; Co-Founder</div>
+        {/* <div class="card-subtitle">CEO &amp; Co-Founder</div> */}
       </div>
       <ul class="card-social">
         <li class="card-social__item">

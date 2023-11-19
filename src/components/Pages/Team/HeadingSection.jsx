@@ -22,8 +22,8 @@ export default function HeadingSection() {
           </Typography>
         </Slide>
         <Slide direction="right" in={true} timeout={1500} mountOnEnter>
-          <Typography variant="subtitle2" gutterBottom>
-          Unleash the power of change with NSS SVNIT's extraordinary team. Dedicated to making a delta change every day, we combine passion, expertise, and unwavering commitment. Join us on our journey to create a better tomorrow, one impactful step at a time. Together, let's make a lasting difference and inspire a wave of positive transformation.
+          <Typography variant="subtitle2" gutterBottom style={{ textAlign: "justify" }} >
+          Embark on a transformative journey with the extraordinary team at NSS SVNIT. Dedicated to making a delta change every day, we combine passion, expertise, and unwavering commitment. Let's create a better tomorrow by taking one impactful step at a time. Together, let's make a lasting difference and inspire a wave of positive transformation.
           </Typography>
         </Slide>
       </Grid>

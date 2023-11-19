@@ -27,8 +27,8 @@ export default function HeroText() {
             // color: "white",
           }}
         >
-          Celebrating 1 Year of{" "}
-          <span style={{ fontWeight: "400" }}>NSS SVNIT...</span>
+          {/* Celebrating 1 Year of{" "} */}
+          <span style={{ fontWeight: "400" }}>NSS SVNIT</span>
         </h3>
 
         <p
@@ -40,7 +40,7 @@ export default function HeroText() {
         >
           Serving our community for a year and counting signifies the commitment
           and dedication of the National Service Scheme (NSS) towards making a
-          positive impact on the community
+          positive impact on the community.
         </p>
         <Stack
           direction="row"
