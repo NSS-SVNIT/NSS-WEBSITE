@@ -87,18 +87,18 @@ const Footer = () => {
               justifyContent: "flex-end",
             }}
           >
-            <a href="#" style={linkStyleIcon}>
+            <a href="https://www.instagram.com/nss_svnit" style={linkStyleIcon}>
               <FaInstagram size={30} />
             </a>
-            <a href="#" style={linkStyleIcon}>
+            <a href="https://www.facebook.com/p/NSS-SVNIT-100064799047910/" style={linkStyleIcon}>
               <FaFacebook size={30} />
             </a>
-            <a href="#" style={linkStyleIcon}>
+            <a href="https://twitter.com/nss_svnit" style={linkStyleIcon}>
               <FaTwitter size={30} />
             </a>
-            <a href="#" style={linkStyleIcon}>
+            <Link to="/contact" style={linkStyle}>
               <FaEnvelope size={30} />
-            </a>
+            </Link>
           </div>
         </Grid>
       </Grid>
