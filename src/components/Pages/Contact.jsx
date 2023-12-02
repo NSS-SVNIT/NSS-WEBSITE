@@ -5,6 +5,7 @@ import MailIcon from "@mui/icons-material/Mail";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 import { MapContainer, TileLayer, useMap, Popup, Marker } from "react-leaflet";
+
 import {
   Box,
   Divider,
@@ -26,13 +27,13 @@ const Contact = () => {
     e.preventDefault();
 
     // Get your EmailJS service details from the EmailJS dashboard
-    const serviceID = "service_w96ro1o";
-    const templateID = "template_axmbqrp";
-    const userID = "hWmGbvS-_WHVr5Yun"; // User ID can be found in the EmailJS dashboard
+    // const serviceID = "service_w96ro1o";
+    // const templateID = "template_axmbqrp";
+    // const userID = "hWmGbvS-_WHVr5Yun"; // User ID can be found in the EmailJS dashboard
 
     // Send the email using EmailJS
     emailjs
-      .sendForm(serviceID, templateID, e.target, userID)
+      .sendForm(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, e.target, import.meta.env.VITE_EMAILJS_USER_ID)
       .then((result) => {
         console.log("Email sent successfully:", result.text);
         Swal.fire({
