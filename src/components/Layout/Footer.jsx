@@ -75,8 +75,12 @@ const Footer = () => {
             <Link to="/developers" style={linkStyle}>
               Developers
             </Link>
-            <a style={linkStyle}>Third Link</a>
-            <a style={linkStyle}>Fourth Link</a>
+            <Link to="/" style={linkStyle}>
+              Home
+            </Link>
+            <Link to="/about" style={linkStyle}>
+              About
+            </Link>
           </div>
           <hr style={hrStyle} />
           <div
@@ -90,7 +94,10 @@ const Footer = () => {
             <a href="https://www.instagram.com/nss_svnit" style={linkStyleIcon}>
               <FaInstagram size={30} />
             </a>
-            <a href="https://www.facebook.com/p/NSS-SVNIT-100064799047910/" style={linkStyleIcon}>
+            <a
+              href="https://www.facebook.com/p/NSS-SVNIT-100064799047910/"
+              style={linkStyleIcon}
+            >
               <FaFacebook size={30} />
             </a>
             <a href="https://twitter.com/nss_svnit" style={linkStyleIcon}>

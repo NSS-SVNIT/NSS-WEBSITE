@@ -1,0 +1,17 @@
+/* YourComponent.css */
+.heading {
+  position: relative;
+  display: block;
+  text-align: center; /* Center the text */
+}
+
+.heading::after {
+  content: "";
+  position: absolute;
+  width: 20%;
+  height: 4px;
+  background-color: black;
+  bottom: 0;
+  left: 44%; /* Center the starting position of the underline */
+  transition: width 0.3s ease;
+}
