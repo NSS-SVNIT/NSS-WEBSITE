@@ -82,7 +82,12 @@ const TeamBatch = ({ year, TeamList }) => {
           container
           spacing={0.5}
           rowSpacing={0.25}
-          sx={{ marginTop: "20px", marginLeft: "30px", marginBottom: "60px" }}
+          sx={{
+            marginTop: "20px",
+            marginLeft: year === 2000 || year === 2001 ? "auto" : "30px", // Center align if year is 2000 or 2001
+            marginBottom: "60px",
+            justifyContent: "center",
+          }}
         >
           {displayedTeam.map((Team, index) => (
             <Grow
