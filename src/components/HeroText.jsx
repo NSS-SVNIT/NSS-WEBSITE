@@ -47,7 +47,7 @@ export default function HeroText() {
           gap={4}
           sx={{ pt: 2, alignItems: "center", justifyContent: "center" }}
         >
-          <Button
+          {/* <Button
             variant="contained"
             style={{
               // borderRadius: 0,
@@ -81,7 +81,7 @@ export default function HeroText() {
             disableElevation
           >
             JOIN
-          </Button>
+          </Button> */}
         </Stack>
       </div>
     </Box>

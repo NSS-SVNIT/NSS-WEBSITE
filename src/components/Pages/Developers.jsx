@@ -17,7 +17,7 @@ function Developers() {
       id: 1,
       name: "Aditi Tapariya",
       github: "https://github.com/adititapariya",
-      mail: "tapariyaaditi23@gmail.com",
+      mail: "mailto:tapariyaaditi23@gmail.com",
       linkedin: "https://www.linkedin.com/in/aditi-tapariya/",
       imageLink:
         "https://drive.google.com/uc?id=1vhZEqCdA2wfaX5i3gyXsA_acal_gyygh&export=download",
@@ -26,7 +26,7 @@ function Developers() {
       id: 2,
       name: "Harshit Pathak",
       github: "https://github.com/Story27",
-      mail: "Pathakharshit281@gmail.com",
+      mail: "mailto:pathakharshit281@gmail.com",
       linkedin: "https://www.linkedin.com/in/harshit-pathak-4ba6aa22a/",
       imageLink:
         "https://drive.google.com/uc?id=1vhZEqCdA2wfaX5i3gyXsA_acal_gyygh&export=download",
@@ -35,7 +35,7 @@ function Developers() {
       id: 3,
       name: "Jinhal Maheshwari",
       github: "https://github.com/Jinhal01",
-      mail: "jinhalmaheshwari1256@gmail.com",
+      mail: "mailto:jinhalmaheshwari1256@gmail.com",
       linkedin: "linkedin.com/in/jinhal-maheshwari-71a217212/",
       imageLink:
         "https://drive.google.com/uc?id=1vxZ22s3sxcEEA10i7JbTOvj7FoONuy4T&export=download",
@@ -44,7 +44,7 @@ function Developers() {
       id: 4,
       name: "Param Shah",
       github: "https://github.com/paramshah1903",
-      mail: "shahparam1903@gmail.com",
+      mail: "mailto:shahparam1903@gmail.com",
       linkedin: "https://www.linkedin.com/in/param-shah-716322227/",
       imageLink:
         "https://drive.google.com/uc?id=1wKDtiasOBSOdFZLGE7hGmqtHpFM7gvlC&export=download",
@@ -53,7 +53,7 @@ function Developers() {
       id: 5,
       name: "Pragnesh Barik",
       github: "https://github.com/pragneshbarik",
-      mail: "barikpragnesh@gmail.com",
+      mail: "mailto:barikpragnesh@gmail.com",
       linkedin: "https://www.linkedin.com/in/pragnesh-barik",
       imageLink:
         "https://drive.google.com/uc?id=1wNOKNO2AfRA9RcIR-HHUc5MLXfc92NbN&export=download",
@@ -62,7 +62,7 @@ function Developers() {
       id: 6,
       name: "Shreeya Dave",
       github: "https://github.com/shreeyadave",
-      mail: "shreeyadave776@gmail.com",
+      mail: "mailto:shreeyadave776@gmail.com",
       linkedin: "https://www.linkedin.com/in/shreeya-dave-444166232/",
       imageLink:
         "https://drive.google.com/uc?id=1vWa6nLxSAzsuW-J_KjlJ8e24UZXRDnAy&export=download",
@@ -74,7 +74,7 @@ function Developers() {
       id: 1,
       name: "Keval Kanpariya",
       github: "https://github.com/keval-kanp-1011",
-      mail: "kevalkanpariya5051@gmail.com",
+      mail: "mailto:kevalkanpariya5051@gmail.com",
       linkedin: "http://linkedin.com/in/kevalkanpariya",
       imageLink:
         "https://drive.google.com/uc?id=1vsDgSNwydos4hWLN3JFhD_K0F4GvWdPX&export=download",
@@ -83,7 +83,7 @@ function Developers() {
       id: 2,
       name: "Namrata Rathod",
       github: "https://github.com/Namarata28",
-      mail: "namrata.rathod028@gmail.com",
+      mail: "mailto:namrata.rathod028@gmail.com",
       linkedin: "www.linkedin.com/in/nr28",
       imageLink:
         "https://drive.google.com/uc?id=1wD9UFDsY73yXhf81NhmLj4TON9EmUsUu&export=download",
