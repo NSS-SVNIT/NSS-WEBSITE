@@ -49,10 +49,10 @@ export default function LatestEdition(props) {
 
           fontFamily: "DM Sans",
           color: "grey",
-          width: "30%",
+          width: "35%",
         }}
       >
-        Latest <span style={{ fontWeight: 400, color: "white" }}>edition</span>
+        LATEST <span style={{ fontWeight: 400, color: "white" }}>EDITION</span>
       </Box>
 
       <br />

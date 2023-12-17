@@ -50,6 +50,14 @@ export default function NavBar() {
           return 1980; // Adjust the threshold for the About page
         case "/gallery":
           return 300; // Adjust the threshold for the About page
+        case "/contact":
+          return 700; // Adjust the threshold for the About page
+        case "/team":
+          return 100; // Adjust the threshold for the About page
+        case "/events":
+          return 100; // Adjust the threshold for the About page
+        case "/Articles":
+          return 200; // Adjust the threshold for the About page
         default:
           return 50000; // Default threshold for other pages
       }
