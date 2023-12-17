@@ -10,7 +10,13 @@ import {
 import React from "react";
 import { MapContainer, TileLayer, useMap, Popup, Marker } from "react-leaflet";
 import FooterLogo from "./FooterLogo";
-import { FaInstagram, FaFacebook, FaTwitter, FaEnvelope } from "react-icons/fa";
+import {
+  FaInstagram,
+  FaFacebook,
+  FaTwitter,
+  FaEnvelope,
+  FaYoutube,
+} from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -102,6 +108,12 @@ const Footer = () => {
             </a>
             <a href="https://twitter.com/nss_svnit" style={linkStyleIcon}>
               <FaTwitter size={30} />
+            </a>
+            <a
+              href="https://www.youtube.com/@nsssvnit6353"
+              style={linkStyleIcon}
+            >
+              <FaYoutube size={30} />
             </a>
             <Link to="/contact" style={linkStyle}>
               <FaEnvelope size={30} />

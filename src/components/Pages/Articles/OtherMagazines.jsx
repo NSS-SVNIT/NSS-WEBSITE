@@ -46,11 +46,17 @@ export default function OtherMagazines(props) {
 
           fontFamily: "DM Sans",
           color: "grey",
-          width: "38%",
+          width: "41%",
         }}
       >
         {props.nameGrey}
-        <span style={{ fontWeight: 400, color: "white" }}>
+        <span
+          style={{
+            fontWeight: 400,
+            color: "white",
+            // textTransform: "capitalize",
+          }}
+        >
           {props.nameWhite}
         </span>
       </Box>

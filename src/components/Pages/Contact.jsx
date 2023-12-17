@@ -21,7 +21,7 @@ import {
   ListItemText,
   ListItemIcon,
 } from "@mui/material";
-import { Facebook, Instagram, Twitter } from "@mui/icons-material";
+import { Facebook, Instagram, Twitter, YouTube } from "@mui/icons-material";
 const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -52,6 +52,10 @@ const Contact = () => {
   };
 
   const position = [21.164583, 72.785239]; // Coordinates for SVnit location
+  const linkStyle = {
+    color: "inherit", // Inherit color from parent, which should be the default text color
+    textDecoration: "none", // Remove underline
+  };
   return (
     <Layout>
       <Typography
@@ -215,37 +219,65 @@ const Contact = () => {
             DETAILS
           </div>
           <List>
-            <ListItem>
-              {/* <ListItemButton> */}
+            <ListItem
+              component="a"
+              href="mailto:nss_svnit@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={linkStyle}
+            >
               <ListItemIcon>
                 <MailIcon />
               </ListItemIcon>
               <ListItemText primary="nss_svnit@gmail.com" />
-              {/* </ListItemButton> */}
             </ListItem>
-            <ListItem>
-              {/* <ListItemButton> */}
+            <ListItem
+              component="a"
+              href="https://www.instagram.com/nss_svnit"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={linkStyle}
+            >
               <ListItemIcon>
                 <Instagram />
               </ListItemIcon>
               <ListItemText primary="@nss_svnit" />
-              {/* </ListItemButton> */}
             </ListItem>
-            <ListItem>
-              {/* <ListItemButton> */}
+            <ListItem
+              component="a"
+              href="https://www.facebook.com/p/NSS-SVNIT-100064799047910/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={linkStyle}
+            >
               <ListItemIcon>
                 <Facebook />
               </ListItemIcon>
               <ListItemText primary="nss_svnit" />
-              {/* </ListItemButton> */}
             </ListItem>
-            <ListItem>
-              {/* <ListItemButton> */}
+            <ListItem
+              component="a"
+              href="https://twitter.com/nss_svnit"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={linkStyle}
+            >
               <ListItemIcon>
                 <Twitter />
               </ListItemIcon>
               <ListItemText primary="nss_svnit" />
-              {/* </ListItemButton> */}
+            </ListItem>
+            <ListItem
+              component="a"
+              href="https://www.youtube.com/@nsssvnit6353"
+              target="_blank"
+              style={linkStyle}
+              rel="noopener noreferrer"
+            >
+              <ListItemIcon>
+                <YouTube />
+              </ListItemIcon>
+              <ListItemText primary="NSS SVNIT" />
             </ListItem>
           </List>
         </Grid>
