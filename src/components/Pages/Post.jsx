@@ -6,9 +6,8 @@ import { useParams } from "react-router-dom";
 import { collection, query, where, getDoc, doc } from "@firebase/firestore";
 import { firestore } from "../../firebase";
 import remarkGfm from "remark-gfm";
-// import rehypeRaw from "rehype-raw";
 
-import { Box, Grid, Rating, Stack } from "@mui/material";
+import { Grid } from "@mui/material";
 import BlogPost from "./Post/BlogPost";
 
 const md = `
@@ -179,6 +178,7 @@ As my incredible journey comes to an end, I reflect on the unforgettable memorie
 Bon voyage!
 
 `;
+
 
 export default function Post() {
   const { id } = useParams();

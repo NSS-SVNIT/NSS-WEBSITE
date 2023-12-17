@@ -10,12 +10,33 @@ import {
 import React from "react";
 import { MapContainer, TileLayer, useMap, Popup, Marker } from "react-leaflet";
 import FooterLogo from "./FooterLogo";
+import { FaInstagram, FaFacebook, FaTwitter, FaEnvelope } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
-  const position = [21.1702, 72.8311]; // Coordinates for SVnit location
+  // const position = [21.1702, 72.8311]; // Coordinates for SVnit location
 
   const isPhone = false;
+  const linkStyle = {
+    color: "white",
+    fontWeight: "semi-bold", // You can adjust the font weight as needed
+    textDecoration: "none", // Optional: Remove underline style
+  };
 
+  const hrStyle = {
+    height: "2px",
+    width: "100%",
+    backgroundColor: "white",
+    border: "none",
+    margin: "20px 0", // Adjust the margin as needed
+  };
+
+  const linkStyleIcon = {
+    color: "white",
+    fontWeight: "bold",
+    textDecoration: "none",
+    marginRight: "20px", // Adjust the margin as needed
+  };
   return (
     <footer
       style={{
@@ -23,42 +44,72 @@ const Footer = () => {
         color: "gray",
         fontSize: "1.2rem",
         paddingTop: 30,
+        paddingBottom: 30,
+        paddingLeft: 0,
         fontFamily: "DM Sans",
       }}
     >
-      <Grid container direction={"row"} justifyContent={"space-around"}>
+      <Grid
+        container
+        direction="row"
+        justifyContent="space-around"
+        alignItems="center"
+      >
         <Grid item lg={3} xs={12}>
           <FooterLogo />
         </Grid>
-        <Grid item lg={1} xs={12} justifySelf={"center"}>
-          <ListItem
-            sx={{ fontSize: "1.6rem", fontWeight: "bold", color: "white" }}
+        <Grid item lg={6} xs={8} justifyContent="center">
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              marginRight: "0px",
+              // marginLeft: "30px",
+            }}
           >
-            SOCIALS
-          </ListItem>
-          <ListItem>Discord</ListItem>
-          <ListItem>Twitter</ListItem>
-          <ListItem>Github</ListItem>
-          <ListItem>Email</ListItem>
-          <ListItem
-            sx={{ fontSize: "1.6rem", fontWeight: "bold", color: "white" }}
-          ></ListItem>
-        </Grid>
-
-        <Grid item lg={1} xs={12}>
-          <ListItem
-            sx={{ fontSize: "1.6rem", fontWeight: "bold", color: "white" }}
+            <Link to="/admin" style={linkStyle}>
+              Admin
+            </Link>
+            {/* Use Link component for routing */}
+            <Link to="/developers" style={linkStyle}>
+              Developers
+            </Link>
+            <Link to="/" style={linkStyle}>
+              Home
+            </Link>
+            <Link to="/about" style={linkStyle}>
+              About
+            </Link>
+          </div>
+          <hr style={hrStyle} />
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              // justifyContent: "space-between",
+              justifyContent: "flex-end",
+            }}
           >
-            LINKS
-          </ListItem>
-          <ListItem>About</ListItem>
-          <ListItem>Events</ListItem>
-          <ListItem>Gallery</ListItem>
-          <ListItem>Contact</ListItem>
-          <ListItem>Team</ListItem>
-          <ListItem>Articles</ListItem>
+            <a href="https://www.instagram.com/nss_svnit" style={linkStyleIcon}>
+              <FaInstagram size={30} />
+            </a>
+            <a
+              href="https://www.facebook.com/p/NSS-SVNIT-100064799047910/"
+              style={linkStyleIcon}
+            >
+              <FaFacebook size={30} />
+            </a>
+            <a href="https://twitter.com/nss_svnit" style={linkStyleIcon}>
+              <FaTwitter size={30} />
+            </a>
+            <Link to="/contact" style={linkStyle}>
+              <FaEnvelope size={30} />
+            </Link>
+          </div>
         </Grid>
-        <Grid item lg={2} xs={12}>
+      </Grid>
+      {/* <Grid item lg={2} xs={12}>
           <ListItem
             sx={{ fontSize: "1.6rem", fontWeight: "bold", color: "white" }}
           >
@@ -75,9 +126,9 @@ const Footer = () => {
           <ListItem>
             Ichchhanath Surat- Dumas, Road, Keval Chowk, Surat, Gujarat 395007
           </ListItem>
-        </Grid>
+        </Grid> */}
 
-        <Grid item lg={3} xs={12}>
+      {/* <Grid item lg={3} xs={12}>
           <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -89,8 +140,8 @@ const Footer = () => {
               </Popup>
             </Marker>
           </MapContainer>
-        </Grid>
-        {/* <Grid item>
+        </Grid> */}
+      {/* <Grid item>
             <Box>
               <List>
                 NSS Svnit Surat
@@ -132,7 +183,7 @@ const Footer = () => {
               </Marker>
             </MapContainer>
           </div> */}
-      </Grid>
+      {/* </Grid> */}
     </footer>
   );
 };

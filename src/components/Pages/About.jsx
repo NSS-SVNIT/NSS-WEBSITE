@@ -1,4 +1,9 @@
-import { Card, CardContent, Typography, Box, Grid, Slide, Button } from '@mui/material'
+import React, { useEffect } from 'react';
+import Layout from '../Layout/Layout';
+import ComitteeSection from './Home/ComitteeSection';
+import DutySection from './Home/DutySection';
+import { motion } from "framer-motion";
+import { Typography, Box, Grid } from '@mui/material';
 import { makeStyles } from '@material-ui/core/styles';
 
 import React from 'react'
@@ -13,13 +18,21 @@ import { motion } from "framer-motion";
 const useStyles = makeStyles({
   gradientBackground: {
     background: 'linear-gradient(to bottom, #ffebff, #FFE6FF)',
-
-    // Adjust the color values and direction as per your requirement
   },
 });
-const About = () => {
 
+const About = () => {
   const classes = useStyles();
+
+  useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo(0, 0);
+
+    // Cleanup function to scroll to the top when the component unmounts
+    return () => {
+      window.scrollTo(0, 0);
+    };
+  }, []); // The empty dependency array ensures this effect runs only once when the component mounts
   const [url, setUrl] = useState('aaaa');
   const func = async() => {
     const storage = getStorage();
@@ -40,8 +53,8 @@ const About = () => {
       <Typography variant='h1' sx={{ px:10,pt:5 ,fontWeight:400 }}>ABOUT NSS</Typography>
       <br/>
       <Box>
-      <motion.div whileHover={{scale:0.9,color:"#4c2111"}} >
-      <Typography variant='h6' sx={{m:"23px",p:"25px" ,textAlign:"center", bgcolor:"#ffebff" , borderRadius:"25px",
+      <motion.div >
+      <Typography variant='h6' sx={{m:"23px",p:"25px" ,textAlign:"justify", bgcolor:"#ffebff" , borderRadius:"25px",
       display:"flex",
       justifyContent:"center",
       alignItems:"center",
@@ -85,7 +98,7 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 1 }}
             >
-              <Typography variant="subtitle2" gutterBottom sx={{ fontSize: { xs: "16px", sm: "18px", md: "20px", lg: "22px" } }}>
+              <Typography variant="subtitle2" gutterBottom sx={{ fontSize: { xs: "16px", sm: "14px", md: "20px", lg: "20px" } }}>
               The history of the National Service Scheme (NSS) unit at the Sardar Vallabhbhai National Institute of Technology (SVNIT) is a testament to the spirit of volunteerism and social responsibility among the students. The NSS unit at SVNIT was established in 2018, with the aim of fostering social welfare and community development through various initiatives. Over the years, the unit has played a vital role in organizing numerous activities and campaigns that have made a positive impact on the lives of people in and around the campus. From conducting blood donation drives, health camps, and awareness programs to promoting cleanliness, environmental conservation, and education, the NSS unit has actively engaged students in serving society and creating a better world. With a rich history of service and a strong commitment to social change, the NSS SVNIT unit continues to inspire and empower students to contribute to the betterment of society.
               </Typography>
             {/* </Slide> */}
@@ -129,7 +142,7 @@ const About = () => {
               justifyContent: "center",
             }} variant='outlined' className={classes.gradientBackground}>
               <Typography variant='h4' sx={{ m: { xs: 2, sm: 3, md: 4, lg: 5 } }}>OUR MISSION</Typography>
-              <Typography sx={{ fontSize: { xs: "10px", sm: "12px", md: "14px", lg: "14px" } }}>Our mission is to transform volunteers into dedicated social servants, embodying the ethos of "not me but you." We prioritize their overall development while instilling a strong sense of social responsibility. Through diverse initiatives, we aim to raise awareness, address societal challenges, and empower marginalized communities. Together, we strive to create a network of changemakers committed to creating a better future.</Typography>
+              <Typography sx={{ fontSize: { xs: "10px", sm: "12px", md: "14px", lg: "15px" } }}>Our mission is to transform volunteers into dedicated social servants, embodying the ethos of "not me but you." We prioritize their overall development while instilling a strong sense of social responsibility. Through diverse initiatives, we aim to raise awareness, address societal challenges, and empower marginalized communities. Together, we strive to create a network of changemakers committed to creating a better future.</Typography>
             </Box>
           </motion.div>
         </Grid>
@@ -152,7 +165,7 @@ const About = () => {
               justifyContent: "center",
             }} variant='outlined' className={classes.gradientBackground}>
               <Typography variant='h4' sx={{ m: { xs: 2, sm: 3, md: 4, lg: 5 } }}>OUR VISION</Typography>
-              <Typography sx={{ fontSize: { xs: "10px", sm: "12px", md: "14px", lg: "14px" } }}>Our vision is a society where individuals embrace empathy and actively contribute to positive change. We strive to foster inclusivity and empower volunteers to make a meaningful impact in their communities. By promoting social awareness, we aim to create a more compassionate and equitable world for all.</Typography>
+              <Typography sx={{ fontSize: { xs: "10px", sm: "12px", md: "14px", lg: "15px" } }}>Our vision is a society where individuals embrace empathy and actively contribute to positive change. We strive to foster inclusivity and empower volunteers to make a meaningful impact in their communities. By promoting social awareness, we aim to create a more compassionate and equitable world for all.</Typography>
             </Box>
           </motion.div>
         </Grid>

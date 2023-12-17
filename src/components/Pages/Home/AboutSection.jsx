@@ -41,11 +41,11 @@ export default function AboutSection() {
                 fontSize: "3rem",
               }}
             >
-              Celebrating our motto...
+              Celebrating our Motto...
               <Box
                 sx={{ fontFamily: "Nothing You Could Do", fontSize: "4rem" }}
               >
-                Not me, but you !
+                Not Me, But You !
               </Box>
             </Box>
             <Divider
@@ -53,7 +53,7 @@ export default function AboutSection() {
               sx={{ bgcolor: "rgba(255,255,255,0.3)", width: "65%" }}
             />
 
-            <Box sx={{ fontFamily: "DM Sans", fontSize: "1.5rem" }}>
+            <Box sx={{ fontFamily: "DM Sans", fontSize: "1.5rem" , textAlign: "justify" }}>
               The Motto of NSS <b>"Not Me But You"</b>, reflects the essence of
               democratic living and upholds the need for self-less service. NSS
               helps the students development & appreciation to other person's

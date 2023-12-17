@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Layout from '../../Layout/Layout';
 import TeamBatch from './TeamBatch';
 import * as Data from './TeamData';
@@ -9,6 +9,16 @@ const Team = () => {
     .filter(key => key.startsWith('Team'))
     .map(year => parseInt(year.replace('Team', '')))
     .sort((a, b) => b - a); // Sort the years in descending order
+
+  useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo(0, 0);
+
+    // Cleanup function to scroll to the top when the component unmounts
+    return () => {
+      window.scrollTo(0, 0);
+    };
+  }, []); // The empty dependency array ensures this effect runs only once when the component mounts
 
   return (
     <Layout>

@@ -60,12 +60,12 @@ const ImageIconButton = styled(ButtonBase)(({ theme }) => ({
 
 const images = [
   {
-    url: "https://wallpapers.com/images/featured/wl9pg3zeygysq0ps.jpg",
-    title: "Old Age Home and Orphanage Visits",
+    url: "src/components/Pages/Home/photos/Cultural.jpg",
+    title: "Cultural Activities",
     width: "40%",
   },
   {
-    url: "src/components/Pages/Home/photos/Parade.jpeg",
+    url: "src/components/Pages/Home/photos/Parade.jpg",
     title: "Parade",
     width: "20%",
   },
@@ -115,8 +115,8 @@ const images = [
     width: "40%",
   },
   {
-    url: "https://images.unsplash.com/photo-1518136247453-74e7b5265980?auto=format&fit=crop&w=400",
-    title: "Collection Drives",
+    url: "src/components/Pages/Home/photos/Plantation.jpg",
+    title: "Plantation Drives",
     width: "20%",
   },
   // {
