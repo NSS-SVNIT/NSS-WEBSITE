@@ -2,6 +2,9 @@ import { Card, CardContent, Typography, Box, Grid, Slide, Button } from '@mui/ma
 import { makeStyles } from '@material-ui/core/styles';
 
 import React from 'react'
+import { useState, useEffect } from 'react';
+
+import { getStorage, ref, getDownloadURL } from '@firebase/storage';
 import Layout from '../Layout/Layout'
 import ComitteeSection from './Home/ComitteeSection'
 import DutySection from './Home/DutySection'
@@ -17,6 +20,20 @@ const useStyles = makeStyles({
 const About = () => {
 
   const classes = useStyles();
+  const [url, setUrl] = useState('aaaa');
+  const func = async() => {
+    const storage = getStorage();
+    const reference = ref(storage, 'aboutImages/nss_logo.png');
+    return await getDownloadURL(reference).then((x)=> {
+      setUrl(x);
+    })
+  }
+  useEffect(()=>{
+    func()
+  }, []);
+
+  console.log(url)
+  
 
   return (
     <Layout>
@@ -84,8 +101,7 @@ const About = () => {
             transition={{ duration: 2 }}>
 
                 {/* <Slide direction="left" in={true} timeout={2000} mountOnEnter> */}
-                  <img src="src/assets/nss_logo.png" alt="Right Content" height="80%" style={{ position: 'absolute', top: 90 , left: 90,  right: 90,  bottom: 90, width: '80%', objectFit: 'cover', borderRadius: '50%'} } 
-                  
+                  <img src= {url} alt="Right Content" height="80%" style={{ position: 'absolute', top: 90 , left: 90,  right: 90,  bottom: 90, width: '80%', objectFit: 'cover', borderRadius: '50%'} } 
                   alignItems="center" justifyContent="center" />
                 {/* </Slide> */}
               </motion.div>

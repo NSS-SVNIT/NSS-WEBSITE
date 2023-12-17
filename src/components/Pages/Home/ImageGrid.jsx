@@ -3,6 +3,8 @@ import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import ButtonBase from "@mui/material/ButtonBase";
 import Container from "@mui/material/Container";
+import { useState, useEffect } from 'react';
+import { getStorage, ref, getDownloadURL } from '@firebase/storage';
 import { Typography } from "@mui/material";
 import { motion } from "framer-motion";
 
