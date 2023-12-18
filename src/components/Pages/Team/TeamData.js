@@ -1,13 +1,1178 @@
-const Sir = [{"image": "https://drive.google.com/uc?id=1ImyuZ01Z-LkVHy4qI3A0EyRNMo4lWoPd&export=download", "name": "Dr. Bade Mukund", "position": "Faculty Advisor", "linkedin": "https://www.linkedin.com/in/dr-bade-mukund-h-svnit-6b90ab261/", "gmail": "bmh@med.svnit.ac.in"}];
+const Sir = [
+  {
+    image:
+      "https://drive.google.com/uc?id=1ImyuZ01Z-LkVHy4qI3A0EyRNMo4lWoPd&export=download",
+    name: "Dr. Bade Mukund",
+    position: "Faculty Advisor",
+    linkedin: "https://www.linkedin.com/in/dr-bade-mukund-h-svnit-6b90ab261/",
+    gmail: "bmh@med.svnit.ac.in",
+  },
+];
 
-const Founder = [{"image": "https://drive.google.com/uc?id=1zaMZ8mbZQmD_Vvw89EOSMvIG5trGVUqK&export=download", "name": "Gulshan Rana", "position": "Founder", "linkedin": "www.linkedin.com/in/gulshan- r-39361ba8", "gmail": "ranagulshan10@gmail.com"}];
+const Founder = [
+  {
+    image:
+      "https://drive.google.com/uc?id=1zaMZ8mbZQmD_Vvw89EOSMvIG5trGVUqK&export=download",
+    name: "Gulshan Rana",
+    position: "Founder",
+    linkedin: "www.linkedin.com/in/gulshan- r-39361ba8",
+    gmail: "ranagulshan10@gmail.com",
+  },
+];
 
-const CoFounder = [{"image": "https://drive.google.com/uc?id=1GTEG7pRUOKy3TasOIcG4OW1yClSQHhN_&export=download", "name": "Himanshi Agarwal", "position": "Co-Founder", "linkedin": "https://www.linkedin.com/in/himanshi-agrawal-337286177", "gmail": "himanshiagrawal26@gmail.com"}, {"image": "https://drive.google.com/uc?id=1Vt7Tr1zhV9QnE2072r7p1OU1AbtfSmoR&export=download", "name": "Nikhil Pandey", "position": "Co-Founder", "linkedin": "https://www.linkedin.com/in/nikhilpandey75532", "gmail": "nskp18073@gmail.com"}, {"image": "https://drive.google.com/uc?id=1hg1BdSvDJvwzVwP4BAGK2tLFSjGTAQUu&export=download", "name": "Pulkit Agarwal", "position": "Co-Founder", "linkedin": "https://www.linkedin.com/in/pulkit-agrawal-953687176", "gmail": "pulkitagrawal452@gmail.com"}, {"image": "https://drive.google.com/uc?id=1NLjUo3jIb3soyYYN61JcZkk1IT0QDd4V&export=download", "name": "Sudhanshu Mall", "position": "Co-Founder", "linkedin": "https://www.linkedin.com/in/sudhanshu-mall-b175b2195?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", "gmail": "sushilm1272@gmail.com"}, {"image": "https://drive.google.com/uc?id=1gPfgswNGvc7MaC8XnhzUAapPKS6Kal2z&export=download", "name": "Tushar Sanwarey", "position": "Co-Founder", "linkedin": "https://www.linkedin.com/in/tushar-sanwarey-%F0%9F%87%AE%F0%9F%87%B3-32a598195", "gmail": "tusharsvnit@gmail.com"}];
+const CoFounder = [
+  {
+    image:
+      "https://drive.google.com/uc?id=1GTEG7pRUOKy3TasOIcG4OW1yClSQHhN_&export=download",
+    name: "Himanshi Agarwal",
+    position: "Co-Founder",
+    linkedin: "https://www.linkedin.com/in/himanshi-agrawal-337286177",
+    gmail: "himanshiagrawal26@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1Vt7Tr1zhV9QnE2072r7p1OU1AbtfSmoR&export=download",
+    name: "Nikhil Pandey",
+    position: "Co-Founder",
+    linkedin: "https://www.linkedin.com/in/nikhilpandey75532",
+    gmail: "nskp18073@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1hg1BdSvDJvwzVwP4BAGK2tLFSjGTAQUu&export=download",
+    name: "Pulkit Agarwal",
+    position: "Co-Founder",
+    linkedin: "https://www.linkedin.com/in/pulkit-agrawal-953687176",
+    gmail: "pulkitagrawal452@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1NLjUo3jIb3soyYYN61JcZkk1IT0QDd4V&export=download",
+    name: "Sudhanshu Mall",
+    position: "Co-Founder",
+    linkedin:
+      "https://www.linkedin.com/in/sudhanshu-mall-b175b2195?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    gmail: "sushilm1272@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1gPfgswNGvc7MaC8XnhzUAapPKS6Kal2z&export=download",
+    name: "Tushar Sanwarey",
+    position: "Co-Founder",
+    linkedin:
+      "https://www.linkedin.com/in/tushar-sanwarey-%F0%9F%87%AE%F0%9F%87%B3-32a598195",
+    gmail: "tusharsvnit@gmail.com",
+  },
+];
 
-const Team2019 = [{"image": "https://drive.google.com/uc?id=1kbjfyLQWplXMDoyzhX1ZSGs1OJKS_Led&export=download", "name": "Bukya Arun Kumar", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/bukya-arun-kumar-63716824a", "gmail": "arunbukya12@gmail.com"}, {"image": "https://drive.google.com/uc?id=1MGI4x-YLj-fz7U2NeBZoZDdmiV6TMWC4&export=download", "name": "Chinnababu Vanipenta", "position": "Volunteer", "linkedin": NaN, "gmail": "vchinnababu1323@gmail.com"}, {"image": "https://drive.google.com/uc?id=1-srp_5GmkTNU7SphWpwXyFWz1ydKy-Da&export=download", "name": "Disha Parmar", "position": "Volunteer", "linkedin": "http://www.linkedin.com/in/disha-parmar-18a87a193", "gmail": "parmardisha434@gmail.com"}, {"image": "https://drive.google.com/uc?id=1atYcBTMdpHcG61eCa1zUdPglaroA0yH-&export=download", "name": "Hiren Vaghela", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/hirenvaghela", "gmail": "Hvaghela98@gmail.com"}, {"image": "https://drive.google.com/uc?id=1DaDcCk8zz2BnWLzcbAuiKg6pkGZN-Dgz&export=download", "name": "Kunal Mahajan", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/kunal-mahajan-891760191", "gmail": "mahajankunal143km@gmail.com"}, {"image": "https://drive.google.com/uc?id=1OjeOn0-tURjqEDNZM3iXTXmOkzApJ6P7&export=download", "name": "Nikhil Pandey", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/nikhilpandey75532", "gmail": "nskp18073@gmail.com"}, {"image": "https://drive.google.com/uc?id=1iQLwA7MOYfNVgfuR-MxcUDTCo_tb5DBi&export=download", "name": "Nisarg Shah", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/nisarg-shah2001", "gmail": "Nisargsh2001@gmail.com"}, {"image": "https://drive.google.com/uc?id=1jjgv1qs0Uw9mbIzx4LUySFE_-O4MZUg9&export=download", "name": "Nishika Ratnam", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/nishika-ratnam-03325a1a6", "gmail": "nishikaratnam00@gmail.com"}, {"image": "https://drive.google.com/uc?id=1aZFf0eFMY2n7JnYdsNg9jC-hYYoXP5BY&export=download", "name": "Prashant Bariya", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/prashant-bariya", "gmail": "prashantbariya208@gmail.com"}, {"image": "https://drive.google.com/uc?id=1TH_NthWOBZ_R-SQ0abTm_hTQOPu35X-W&export=download", "name": "Ravi Khagad", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/ravi-khagad-397a9918b", "gmail": "ravikhagad2002@gmail.com"}, {"image": "https://drive.google.com/uc?id=1tv_QCX3oeA6tzm4N2V3wDV4bQnmIVtxt&export=download", "name": "Vaishnavi Bajpai", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/vaishnavi-bajpai-36b2791a7", "gmail": "vaishnavibajpai2000@gmail.com"}];
+const Team2019 = [
+  {
+    image:
+      "https://drive.google.com/uc?id=1kbjfyLQWplXMDoyzhX1ZSGs1OJKS_Led&export=download",
+    name: "Bukya Arun Kumar",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/bukya-arun-kumar-63716824a",
+    gmail: "arunbukya12@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1MGI4x-YLj-fz7U2NeBZoZDdmiV6TMWC4&export=download",
+    name: "Chinnababu Vanipenta",
+    position: "Volunteer",
+    linkedin: NaN,
+    gmail: "vchinnababu1323@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1-srp_5GmkTNU7SphWpwXyFWz1ydKy-Da&export=download",
+    name: "Disha Parmar",
+    position: "Volunteer",
+    linkedin: "http://www.linkedin.com/in/disha-parmar-18a87a193",
+    gmail: "parmardisha434@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1atYcBTMdpHcG61eCa1zUdPglaroA0yH-&export=download",
+    name: "Hiren Vaghela",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/hirenvaghela",
+    gmail: "Hvaghela98@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1DaDcCk8zz2BnWLzcbAuiKg6pkGZN-Dgz&export=download",
+    name: "Kunal Mahajan",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/kunal-mahajan-891760191",
+    gmail: "mahajankunal143km@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1OjeOn0-tURjqEDNZM3iXTXmOkzApJ6P7&export=download",
+    name: "Nikhil Pandey",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/nikhilpandey75532",
+    gmail: "nskp18073@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1iQLwA7MOYfNVgfuR-MxcUDTCo_tb5DBi&export=download",
+    name: "Nisarg Shah",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/nisarg-shah2001",
+    gmail: "Nisargsh2001@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1jjgv1qs0Uw9mbIzx4LUySFE_-O4MZUg9&export=download",
+    name: "Nishika Ratnam",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/nishika-ratnam-03325a1a6",
+    gmail: "nishikaratnam00@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1aZFf0eFMY2n7JnYdsNg9jC-hYYoXP5BY&export=download",
+    name: "Prashant Bariya",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/prashant-bariya",
+    gmail: "prashantbariya208@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1TH_NthWOBZ_R-SQ0abTm_hTQOPu35X-W&export=download",
+    name: "Ravi Khagad",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/ravi-khagad-397a9918b",
+    gmail: "ravikhagad2002@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1tv_QCX3oeA6tzm4N2V3wDV4bQnmIVtxt&export=download",
+    name: "Vaishnavi Bajpai",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/vaishnavi-bajpai-36b2791a7",
+    gmail: "vaishnavibajpai2000@gmail.com",
+  },
+];
 
-const Team2020 = [{"image": "https://drive.google.com/uc?id=1GMYe1acuv_poSEKTym8Oq5M9-u9SgwEB&export=download", "name": "Abhijeet Kumar", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/abhijeetmis", "gmail": "abhijeetmis15@gmail.com"}, {"image": "https://drive.google.com/uc?id=17DQu-BICk5fa-h24UWYqVhCPPa5akKOm&export=download", "name": "Akansh Raghuvanshi", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/akansh-singh-raghuvanshi-245924213", "gmail": "raghuvanshiakansh20@gmail.com"}, {"image": "https://drive.google.com/uc?id=1ALqT9g0kdCdG5eROwkbdiO50gR18e59x&export=download", "name": "Anuj Mishra", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/anuj-mishra-b88718212", "gmail": "anujmishra85378@gmail.com"}, {"image": "https://drive.google.com/uc?id=1MZxBGZhhrnnJcBLFGAX8QZ1Wq4XidAV9&export=download", "name": "Anupam Kumar", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/anupam-kumar-a6594a214", "gmail": "k.anupam5041@gmail.com"}, {"image": "https://drive.google.com/uc?id=1EU5KiorEmrtYM5IXZQGWhuiRLSE6T3F-&export=download", "name": "Avidi Hemanth Kumar", "position": "Volunteer", "linkedin": "www.linkedin.com/in/hemanth-kumar-avidi-814b93226", "gmail": "avidihemanthkumar3263@gmail.com"}, {"image": "https://drive.google.com/uc?id=1TPOomqWMNu7fIPdR8qDLaaRF2NKyLV4o&export=download", "name": "Chanchal Kumar Jaiswal", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/chanchal-kumar-jaiswal-4963981bb", "gmail": "ck18091997@gmail.com"}, {"image": "https://drive.google.com/uc?id=1ein81hIw34-sxXJl92B1EpLPeooOp2PU&export=download", "name": "Darshit Desai", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/darshitdesai09", "gmail": "darshitd090502@gmail.com"}, {"image": "https://drive.google.com/uc?id=1WWDC4h6tvGqjf-UIfpUY9O0QHPm85QPo&export=download", "name": "Deepanshu Chachan", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/aspirate", "gmail": "deepanshudcchachan@gmail.com"}, {"image": "https://drive.google.com/uc?id=1nPQCVg9t57N2kHtDkqFDo0YSsJi9GoZB&export=download", "name": "Detroja Vivek Shaileshbhai", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/vivek-detroja-561b52218/", "gmail": "detrojaviveks@gmial.com"}, {"image": "https://drive.google.com/uc?id=1qoCHz6UQBZZnDIl_v3x0lSGcfpEchjkJ&export=download", "name": "Dev Visavadia", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/dev-visavadia", "gmail": "arvinddev82@gmail.com"}, {"image": "https://drive.google.com/uc?id=1Q043yIgmwLQwApCvZ_oHeUU7FaeIs_KJ&export=download", "name": "Dhanani Jatin", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/jatin-dhanani-573a92206", "gmail": "jatindhanani32@gmail.com"}, {"image": "https://drive.google.com/uc?id=1X21-9gZQW6BZ3qJryrA6Q8y4yccixTwW&export=download", "name": "Dhiraj Gohil", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/dhiraj-gohil-aa1420247", "gmail": "dhirajgohil0612@gmail.com"}, {"image": "https://drive.google.com/uc?id=1x-gBlgskBk7bn_tcf6ucf7FZBNivDPAY&export=download", "name": "Dhruva Wankhade", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/dhruva-wankhade-a3b65921a/", "gmail": "dhruva0803@gmail.com"}, {"image": "https://drive.google.com/uc?id=1fGO_30fN200udhEytT134CnnxbBl_mXt&export=download", "name": "Dhyey Bhagat", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/dhyey-bhagat-a36599215", "gmail": "dhyeyrbhqgat@gmail.com"}, {"image": "https://drive.google.com/uc?id=1M4rWzlfT35KfC1FNDof1skA9mVxXM81S&export=download", "name": "Ghanistha Singhal", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/ghanistha-singhal-718349201?trk=contact-info", "gmail": "ghanishtsinghal@gmail.com"}, {"image": "https://drive.google.com/uc?id=1UUtIgycVJ7mUGC01Fsg86e24BEXYqORd&export=download", "name": "Jaimin D. Prajapati", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/jaimin-prajapati-24046721a", "gmail": "jaiminprajapati150@gmail.com"}, {"image": "https://drive.google.com/uc?id=1GUYQEz3rquhWm8KB_AjgUF_sBv5b0EYe&export=download", "name": "Kaleshwar Dhar Dubey", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/kaleshwar", "gmail": "kaleshwardd2002@gmail.com"}, {"image": "https://drive.google.com/uc?id=1J9PAn2bfRPSqCtNn8sS52tZbFYdXEllz&export=download", "name": "Kenny Arvindbhai Kachhadiya", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/kenny-kachhadiya-7a047021a", "gmail": "kennykachhadia@gmail.com"}, {"image": "https://drive.google.com/uc?id=1IMNDxQk1YJq5-6NuIJktRiE_LwJqlF3H&export=download", "name": "Komati Reddy Ganesh Reddy", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/ganesh-reddy-komati-reddy-714206225", "gmail": "kganeshreddy2002@gmail.com"}, {"image": "https://drive.google.com/uc?id=1fWEjdblfT6TI_uoWke0l1FaVespF0NhZ&export=download", "name": "Krupa Vaghamshi", "position": "Volunteer", "linkedin": "www.linkedin.com/in/krupa-vaghamshi", "gmail": "krupanahirgpsagb@gmail.com"}, {"image": "https://drive.google.com/uc?id=16x-OBmQGMbxRB79oN_C5hXfoAurIxVtu&export=download", "name": "Lisa Chaudhari", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/lisa-chaudhari-svnit-767729218", "gmail": "chaudharilisa18@gmail.com"}, {"image": "https://drive.google.com/uc?id=1tlp1awyrG7MOS21jv0Q7OCROEEOu_1j_&export=download", "name": "Medisetty Avinash", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/avinash-medisetty-a23a11249", "gmail": "avinashmedisetty@gmail.com"}, {"image": "https://drive.google.com/uc?id=1AErgGX1Bp3iEMiQdEYkHCnsSsSY113p8&export=download", "name": "Nimit shah", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/nimit-shah-9886b0198", "gmail": "panmnimitshah@gmail.com"}, {"image": "https://drive.google.com/uc?id=1DinBvCfoAYPVaTpV1TLJ8-y93w3h-Uem&export=download", "name": "Noopur Modi", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/noopur-modi-99a500202", "gmail": "noopa0305@gmail.com"}, {"image": "https://drive.google.com/uc?id=19RqtGesHfWQv0ijvogUm_gmnyjimV5kA&export=download", "name": "Pansuriya Tarang Bharatbhai", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/tarang-pansuriya-454850206", "gmail": "tarangpansuriya1583@gmail.com"}, {"image": "https://drive.google.com/uc?id=1j1OFzKIe9fhJVMvyFvJ1B4hX133dY9F2&export=download", "name": "Parag Kulshrestha", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/parag-kulshrestha-9018821b8", "gmail": "paragkul03@gmail.com"}, {"image": "https://drive.google.com/uc?id=1CxlCMHSdvrcE9ieQhH7KpZ6v8jIco2lv&export=download", "name": "Parmar Kashyap Kishorbhai", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/kashyap-parmar-23844524a", "gmail": "Kashyapparmar1920@gmail.com"}, {"image": "https://drive.google.com/uc?id=1uP57YcsqrobPON8-Q7ldqWhZeyI37-k1&export=download", "name": "Pasupuleti Vaishnavi", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/pasupuleti-vaishnavi-28566b213?trk=contact-info", "gmail": "pasupuletivaishnavi99@gmail.com"}, {"image": "https://drive.google.com/uc?id=1CE2r1PSxAL2SErM-ZsZti__rFcFlWsp9&export=download", "name": "Patel Hanni Bipinbhai", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/hanni-patel-84a64021a", "gmail": "hannipatel16@gmail.com"}, {"image": "https://drive.google.com/uc?id=1qnM7vcraGlws6OxAxYc-UtogUwAnk1l-&export=download", "name": "Satya Prakash Singh", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/satya-prakash-singh-52b6151ba", "gmail": "satyassm11@gmail.com"}, {"image": "https://drive.google.com/uc?id=1uH7hZ4-48Gd8YLVvUKjycKqhpMFA-mZ_&export=download", "name": "Saurav Singh", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/saurav045", "gmail": "sauravsinghrajput045@gmail.com"}, {"image": "https://drive.google.com/uc?id=1r_n4V2ia_kW8j7aKr1NhYE5zpF6GEi-O&export=download", "name": "Shashwat Gupta", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/shashwat-gupta-45574221a", "gmail": "shashwatutube3672@gmail.com"}, {"image": "https://drive.google.com/uc?id=1BO_nihzL0w4ZvaIkd_noF0xRoKhPWJi1&export=download", "name": "Srushti Modh", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/srushti-modh-11b642202", "gmail": "srishhh540@gmail.com"}, {"image": "https://drive.google.com/uc?id=1UYxMT4kNA4N6p2DHRsiCbjyPFilTh3mT&export=download", "name": "Sushma Muppaneni", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/sushma-muppaneni-783348201", "gmail": "sushmacmuppaneni46@gmail.com"}, {"image": "https://drive.google.com/uc?id=1lA0W_2E5gj3PO-CQO4Of_rCELdQpoyEu&export=download", "name": "Teena Dhoke", "position": "Volunteer", "linkedin": "www.linkedin.com/in/teena413", "gmail": "teenabest123@gmail.com"}, {"image": "https://drive.google.com/uc?id=1xEDm5CBQq1Vo_GKnfGBpTXBjnylkILgI&export=download", "name": "Vaidehi Khatri", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/vaidehi-khatri-3520921b2", "gmail": "vaidehikhatri123@gmail.com"}, {"image": "https://drive.google.com/uc?id=1O1DkeiRsL_OZQ97GoaZEjNdQVeafVOlx&export=download", "name": "Yash shah", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/yash-shah-b561b3240", "gmail": "shahyash1102@gmail.com"}];
+const Team2020 = [
+  {
+    image:
+      "https://drive.google.com/uc?id=1GMYe1acuv_poSEKTym8Oq5M9-u9SgwEB&export=download",
+    name: "Abhijeet Kumar",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/abhijeetmis",
+    gmail: "abhijeetmis15@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=17DQu-BICk5fa-h24UWYqVhCPPa5akKOm&export=download",
+    name: "Akansh Raghuvanshi",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/akansh-singh-raghuvanshi-245924213",
+    gmail: "raghuvanshiakansh20@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1ALqT9g0kdCdG5eROwkbdiO50gR18e59x&export=download",
+    name: "Anuj Mishra",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/anuj-mishra-b88718212",
+    gmail: "anujmishra85378@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1MZxBGZhhrnnJcBLFGAX8QZ1Wq4XidAV9&export=download",
+    name: "Anupam Kumar",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/anupam-kumar-a6594a214",
+    gmail: "k.anupam5041@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1EU5KiorEmrtYM5IXZQGWhuiRLSE6T3F-&export=download",
+    name: "Avidi Hemanth Kumar",
+    position: "Volunteer",
+    linkedin: "www.linkedin.com/in/hemanth-kumar-avidi-814b93226",
+    gmail: "avidihemanthkumar3263@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1TPOomqWMNu7fIPdR8qDLaaRF2NKyLV4o&export=download",
+    name: "Chanchal Kumar Jaiswal",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/chanchal-kumar-jaiswal-4963981bb",
+    gmail: "ck18091997@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1ein81hIw34-sxXJl92B1EpLPeooOp2PU&export=download",
+    name: "Darshit Desai",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/darshitdesai09",
+    gmail: "darshitd090502@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1WWDC4h6tvGqjf-UIfpUY9O0QHPm85QPo&export=download",
+    name: "Deepanshu Chachan",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/aspirate",
+    gmail: "deepanshudcchachan@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1nPQCVg9t57N2kHtDkqFDo0YSsJi9GoZB&export=download",
+    name: "Detroja Vivek Shaileshbhai",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/vivek-detroja-561b52218/",
+    gmail: "detrojaviveks@gmial.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1qoCHz6UQBZZnDIl_v3x0lSGcfpEchjkJ&export=download",
+    name: "Dev Visavadia",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/dev-visavadia",
+    gmail: "arvinddev82@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1Q043yIgmwLQwApCvZ_oHeUU7FaeIs_KJ&export=download",
+    name: "Dhanani Jatin",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/jatin-dhanani-573a92206",
+    gmail: "jatindhanani32@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1X21-9gZQW6BZ3qJryrA6Q8y4yccixTwW&export=download",
+    name: "Dhiraj Gohil",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/dhiraj-gohil-aa1420247",
+    gmail: "dhirajgohil0612@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1x-gBlgskBk7bn_tcf6ucf7FZBNivDPAY&export=download",
+    name: "Dhruva Wankhade",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/dhruva-wankhade-a3b65921a/",
+    gmail: "dhruva0803@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1fGO_30fN200udhEytT134CnnxbBl_mXt&export=download",
+    name: "Dhyey Bhagat",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/dhyey-bhagat-a36599215",
+    gmail: "dhyeyrbhqgat@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1M4rWzlfT35KfC1FNDof1skA9mVxXM81S&export=download",
+    name: "Ghanistha Singhal",
+    position: "Volunteer",
+    linkedin:
+      "https://www.linkedin.com/in/ghanistha-singhal-718349201?trk=contact-info",
+    gmail: "ghanishtsinghal@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1UUtIgycVJ7mUGC01Fsg86e24BEXYqORd&export=download",
+    name: "Jaimin D. Prajapati",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/jaimin-prajapati-24046721a",
+    gmail: "jaiminprajapati150@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1GUYQEz3rquhWm8KB_AjgUF_sBv5b0EYe&export=download",
+    name: "Kaleshwar Dhar Dubey",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/kaleshwar",
+    gmail: "kaleshwardd2002@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1J9PAn2bfRPSqCtNn8sS52tZbFYdXEllz&export=download",
+    name: "Kenny Arvindbhai Kachhadiya",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/kenny-kachhadiya-7a047021a",
+    gmail: "kennykachhadia@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1IMNDxQk1YJq5-6NuIJktRiE_LwJqlF3H&export=download",
+    name: "Komati Reddy Ganesh Reddy",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/ganesh-reddy-komati-reddy-714206225",
+    gmail: "kganeshreddy2002@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1fWEjdblfT6TI_uoWke0l1FaVespF0NhZ&export=download",
+    name: "Krupa Vaghamshi",
+    position: "Volunteer",
+    linkedin: "www.linkedin.com/in/krupa-vaghamshi",
+    gmail: "krupanahirgpsagb@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=16x-OBmQGMbxRB79oN_C5hXfoAurIxVtu&export=download",
+    name: "Lisa Chaudhari",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/lisa-chaudhari-svnit-767729218",
+    gmail: "chaudharilisa18@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1tlp1awyrG7MOS21jv0Q7OCROEEOu_1j_&export=download",
+    name: "Medisetty Avinash",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/avinash-medisetty-a23a11249",
+    gmail: "avinashmedisetty@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1AErgGX1Bp3iEMiQdEYkHCnsSsSY113p8&export=download",
+    name: "Nimit shah",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/nimit-shah-9886b0198",
+    gmail: "panmnimitshah@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1DinBvCfoAYPVaTpV1TLJ8-y93w3h-Uem&export=download",
+    name: "Noopur Modi",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/noopur-modi-99a500202",
+    gmail: "noopa0305@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=19RqtGesHfWQv0ijvogUm_gmnyjimV5kA&export=download",
+    name: "Pansuriya Tarang Bharatbhai",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/tarang-pansuriya-454850206",
+    gmail: "tarangpansuriya1583@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1j1OFzKIe9fhJVMvyFvJ1B4hX133dY9F2&export=download",
+    name: "Parag Kulshrestha",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/parag-kulshrestha-9018821b8",
+    gmail: "paragkul03@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1CxlCMHSdvrcE9ieQhH7KpZ6v8jIco2lv&export=download",
+    name: "Parmar Kashyap Kishorbhai",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/kashyap-parmar-23844524a",
+    gmail: "Kashyapparmar1920@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1uP57YcsqrobPON8-Q7ldqWhZeyI37-k1&export=download",
+    name: "Pasupuleti Vaishnavi",
+    position: "Volunteer",
+    linkedin:
+      "https://www.linkedin.com/in/pasupuleti-vaishnavi-28566b213?trk=contact-info",
+    gmail: "pasupuletivaishnavi99@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1CE2r1PSxAL2SErM-ZsZti__rFcFlWsp9&export=download",
+    name: "Patel Hanni Bipinbhai",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/hanni-patel-84a64021a",
+    gmail: "hannipatel16@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1qnM7vcraGlws6OxAxYc-UtogUwAnk1l-&export=download",
+    name: "Satya Prakash Singh",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/satya-prakash-singh-52b6151ba",
+    gmail: "satyassm11@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1uH7hZ4-48Gd8YLVvUKjycKqhpMFA-mZ_&export=download",
+    name: "Saurav Singh",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/saurav045",
+    gmail: "sauravsinghrajput045@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1r_n4V2ia_kW8j7aKr1NhYE5zpF6GEi-O&export=download",
+    name: "Shashwat Gupta",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/shashwat-gupta-45574221a",
+    gmail: "shashwatutube3672@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1BO_nihzL0w4ZvaIkd_noF0xRoKhPWJi1&export=download",
+    name: "Srushti Modh",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/srushti-modh-11b642202",
+    gmail: "srishhh540@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1UYxMT4kNA4N6p2DHRsiCbjyPFilTh3mT&export=download",
+    name: "Sushma Muppaneni",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/sushma-muppaneni-783348201",
+    gmail: "sushmacmuppaneni46@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1lA0W_2E5gj3PO-CQO4Of_rCELdQpoyEu&export=download",
+    name: "Teena Dhoke",
+    position: "Volunteer",
+    linkedin: "www.linkedin.com/in/teena413",
+    gmail: "teenabest123@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1xEDm5CBQq1Vo_GKnfGBpTXBjnylkILgI&export=download",
+    name: "Vaidehi Khatri",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/vaidehi-khatri-3520921b2",
+    gmail: "vaidehikhatri123@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1O1DkeiRsL_OZQ97GoaZEjNdQVeafVOlx&export=download",
+    name: "Yash shah",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/yash-shah-b561b3240",
+    gmail: "shahyash1102@gmail.com",
+  },
+];
 
-const Team2021 = [{"image": "https://drive.google.com/uc?id=1xGwTigj-dAJnRu01sODz_GJLHVXGr5Sa&export=download", "name": "Aanchal Vishwakarma", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/anchal-vishwakarma-4935ab229", "gmail": "anchal74v@gmail.com"}, {"image": "https://drive.google.com/uc?id=1xFH8_h2ZbdowOGCYbJTH5AnmZFQpF2L9&export=download", "name": "Aarushi Singh", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/aarushi-singh-nautiyal-217781240", "gmail": "aarushibls@gmail.com"}, {"image": "https://drive.google.com/uc?id=1xEcCzhbptgy-dVQRJLBBsILo-6Kx_eI6&export=download", "name": "Aditi Laddha", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/aditi-laddha-016143248", "gmail": "aditi43laddha@gmail.com"}, {"image": "https://drive.google.com/uc?id=1xDmzuwp4fQIebJJxTEH6Bl4TIy1TdKVz&export=download", "name": "Aditi Sadadiwala", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/aditi-sadadiwala-318510250/", "gmail": "aditi.sadadiwala@gmail.com"}, {"image": "https://drive.google.com/uc?id=1vhZEqCdA2wfaX5i3gyXsA_acal_gyygh&export=download", "name": "Aditi Tapariya", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/aditi-tapariya-942639224/", "gmail": "tapariyaaditi23@gmail.com"}, {"image": "https://drive.google.com/uc?id=1x9apUlUtwJGT5Tph8hnxQhZoRGDLQpUj&export=download", "name": "Aishwarya Mourya", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/aishwarya -mourya-87068a229", "gmail": "0712aishwarya@gmail.com"}, {"image": "https://drive.google.com/uc?id=1x8ew-jkTq0nOMxexqwZtu-y8UKEl70wF&export=download", "name": "Aman Kapuriya", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/aman-kapuriya-280aa2253/", "gmail": "amankapuriya3965@gmail.com"}, {"image": "https://drive.google.com/uc?id=1x8RW0yeRXctUnBJQVuk99yWrsmIKsNwg&export=download", "name": "Amey Amol Patil", "position": "Volunteer", "linkedin": NaN, "gmail": "Ameyamolpatil@gmail.com"}, {"image": "https://drive.google.com/uc?id=1x8DT1E36Kn57FQmC7ijM4LPr--oUSRFO&export=download", "name": "Anagha Mathkari", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/anagha-mathkari-a14708230", "gmail": "anaghamathkari19@gmail.com"}, {"image": "https://drive.google.com/uc?id=1x5tmdbF6o1xuVUiu51ObHlgiE5ykaNDS&export=download", "name": "Anand Movaliya", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/anand-movaliya-3a2a55272", "gmail": "anandmmovaliya496@gmail.com"}, {"image": "https://drive.google.com/uc?id=1x5suUPj4d5hp4Se700JQ76yWboV7JjY4&export=download", "name": "Anjali Chauhan", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/anjali-chauhan2003", "gmail": "anjalichauhan052003@gmail.com"}, {"image": "https://drive.google.com/uc?id=1x4B5_LtCgyeI_2837RTpvTw1bHKNF1Wn&export=download", "name": "Ankush Mahendrakumar Mishra", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/ankush-mishra-7497b7228", "gmail": "mishra.ankush20386@gmail.com"}, {"image": "https://drive.google.com/uc?id=1ufK6SFvRnLPOf8G8L3VvKYgSaDefA2lw&export=download", "name": "Anshul Garg", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/anshul-garg-b12963223", "gmail": "anshul2003garg@gmail.com"}, {"image": "https://drive.google.com/uc?id=1x3LDVv1gjGT-TieBPUDUQHzXZfmRUsuY&export=download", "name": "Anushk Joshi", "position": "Volunteer", "linkedin": "www.linkedin.com/in/anushkjoshi", "gmail": "u21me029@med.svnit.ac.in"}, {"image": "https://drive.google.com/uc?id=1x3AMm27rtCenkSfGe7aC2k6hBUsiySmm&export=download", "name": "Anushka Kundu", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/anushka-kundu-691518229", "gmail": "anu.kundu03@gmail.com"}, {"image": "https://drive.google.com/uc?id=1x32pMvxEtFCvRi3PcFasGlJmXgXw6dlo&export=download", "name": "Archit Shah", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/archit-shah-58775b247", "gmail": "architshah612@gmail.com"}, {"image": "https://drive.google.com/uc?id=1x-uOb4JhlfapEBysq71tMsWiH--RwyEh&export=download", "name": "Archit Sinojiya", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/archit-sinojiya-58b917264", "gmail": "sinojiyaarchit@gmail.com"}, {"image": "https://drive.google.com/uc?id=1wyrU8yd5ib7EPvK5rl7rcO1anE-gMXvs&export=download", "name": "Arjama Mohanty", "position": "Volunteer", "linkedin": "linkedin.com/in/arjama-mohanty-17616a243", "gmail": "arjamamohanty@gmail.com"}, {"image": "https://drive.google.com/uc?id=17ADY71Jjotl3FeV9BpJXE8qn8kWfLBdR&export=download", "name": "Aseem Sugandhi", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/aseemsugandhi", "gmail": "aseemsugandhi@gmail.com"}, {"image": "https://drive.google.com/uc?id=1wuyPbCMg8a74pAVo9ylZWupDSnZOelX4&export=download", "name": "Ashok Chotiya", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/ashok-chotiya-a35672235", "gmail": "2103ashokchotiya@gmail.com"}, {"image": "https://drive.google.com/uc?id=1wuxM_es-XU-cJAvgKs8SO0jjTLSr5Kb0&export=download", "name": "Brinsu Baldha", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/brinsu-baldha-834aa926b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", "gmail": "brinsubaldha25@gmail.com"}, {"image": "https://drive.google.com/uc?id=1g0XMUuB0VBW4x9PJ0QNgmrWKfBj9uDa4&export=download", "name": "Chakshu Gupta", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/chakshu-gupta-0222b71a1", "gmail": "chakshugupta841@gmail.com"}, {"image": "https://drive.google.com/uc?id=1wpm8Ac3QaDNQcjzMikDICBhsDs2afhRq&export=download", "name": "Deep Gemlawala", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/deep-gemlawala-718999248", "gmail": "deepgemlawala@gmail.com"}, {"image": "https://drive.google.com/uc?id=1_1kwnlcX6-BmgBuTPbWOSJ0Z2-tMJrXL&export=download", "name": "Deep Khandhedia", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/deep-khandhedia-499901220", "gmail": "deepkhandhedia@gmail.com"}, {"image": "https://drive.google.com/uc?id=1wiu3f9sUnYJ7lfCjhTx3aTp5iV81B23t&export=download", "name": "Dev Desai", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/dev-desai-344501235", "gmail": "devdesaiyt@gmail.com"}, {"image": "https://drive.google.com/uc?id=1wgG1ZEeJPs6DDkfoODIXdX4qCpGnN2fH&export=download", "name": "Devendra Pratap Singh", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/devendra-pr-singh-b1726a27b", "gmail": "devpratap20770672@gmail.com"}, {"image": "https://drive.google.com/uc?id=1wf0C8P0nxpUji87uFQKbdUeUBBWZhMRx&export=download", "name": "Dibyam Jalan", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/dibyam-jalan-89b50b248/", "gmail": "dibyam1jalan@gmail.com"}, {"image": "https://drive.google.com/uc?id=1RwCCcZkDS3_PLIxwy8uZyMTHId8X32Oe&export=download", "name": "Disha Lad", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/disha-lad-732862247", "gmail": "disha.lad2003@gmail.com"}, {"image": "https://drive.google.com/uc?id=1wdzD7MetzrjKUQtYBFwRUeM8OrEvMPQY&export=download", "name": "Divya Thakar", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/divy-thakar-62132a218", "gmail": "thakardivya337@gmail.com"}, {"image": "https://drive.google.com/uc?id=1vhfJ2X4DMyFls3eUAL9OZHf4XBBx4weS&export=download", "name": "Divyansh Verma", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/div193/", "gmail": "divyanshv193@gmail.com"}, {"image": "https://drive.google.com/uc?id=1wpOf7FwgeIco9B06OKk7RXxsm6vKAlLv&export=download", "name": "Falguni Likhare", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/falguni-likhare-81Oa42252/", "gmail": "likharefalguni@gmail.com"}, {"image": "https://drive.google.com/uc?id=1war6tUgRZ38rlCmZMIXhTygD-7ksDB9z&export=download", "name": "Gadariya Priya", "position": "Volunteer", "linkedin": "www.linkedin.com/in/priya-gadariya-a21312248", "gmail": "pgadariya8@gmail.com"}, {"image": "https://drive.google.com/uc?id=1wULRt0Xf7aB-N_SST78ejFZFFTiY8v6Q&export=download", "name": "Harshil Mistry", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/harshilmistry23", "gmail": "harshilmistry23@gmail.com"}, {"image": "https://drive.google.com/uc?id=1wYIW-b612HATG9ImIELuhI7g88VWkveK&export=download", "name": "Harshit Sahu", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/harshit009", "gmail": "harshitsahu2k2@gmail.com"}, {"image": "https://drive.google.com/uc?id=1wEj_SlsmgsXCiz1TDw2KnvEqUmduyghk&export=download", "name": "Himanshu Soni", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/himanshusoni01/", "gmail": "himanshusoni9282@gmail.com"}, {"image": "https://drive.google.com/uc?id=1-xcw99FBJUc5r-x86q_zD1cJ31q7lQ9g&export=download", "name": "Ishan Nahar", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/ishan-nahar-65200b224", "gmail": "naharishan0305@gmail.com"}, {"image": "https://drive.google.com/uc?id=1vxZ22s3sxcEEA10i7JbTOvj7FoONuy4T&export=download", "name": "Jinhal Maheshwari", "position": "Volunteer", "linkedin": "linkedin.com/in/jinhal-maheshwari-71a217212/", "gmail": "jinhalmaheshwari1256@gmail.com"}, {"image": "https://drive.google.com/uc?id=1vvX107s4WAaWmkcGTfDPpnIa4dYX12oX&export=download", "name": "Jitaksha Gajjar", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/jitaksha-gajjar-101873217", "gmail": "gajjarjk2105@gmail.com"}, {"image": "https://drive.google.com/uc?id=1U6ApFSVu0n7APvV9TIAQglTPNECNpKhg&export=download", "name": "Kashish Mittal", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/kashish-mittal-7bb690263", "gmail": "kashishmittal028@gmail.com"}, {"image": "https://drive.google.com/uc?id=1vsDgSNwydos4hWLN3JFhD_K0F4GvWdPX&export=download", "name": "Keval Kanpariya", "position": "Volunteer", "linkedin": "linkedIn.in/in/kevalkanpariya", "gmail": "kevalkanpariya5051@gmail.com"}, {"image": "https://drive.google.com/uc?id=1vpUBlOpnpyt2MshG2pSeSqDvAEYOUh4d&export=download", "name": "Khush Pandya", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/khush-pandya-387992234", "gmail": "khushpandya705@gmail.com"}, {"image": "https://drive.google.com/uc?id=1vnzp5q8pIN3IGOcxG1LJVqT8niNjB_WX&export=download", "name": "Khushi Kher", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/khushi-kher-66aa29221/", "gmail": "khus.kher@gmail.com"}, {"image": "https://drive.google.com/uc?id=1vnWMmfKfwd_qT4mMUNwj8Yk_WCUEM7iS&export=download", "name": "Khushi Solanki", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/khushi-solanki", "gmail": "solankikhushi1824@gmail.com"}, {"image": "https://drive.google.com/uc?id=1wKzzl6CLJlW14oOWhN8vCgeKERxOXdpE&export=download", "name": "Krupal Chaudhari", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/krupal-chaudhari-85b0391ba", "gmail": "krupalchaudhari2607@gmail.com"}, {"image": "https://drive.google.com/uc?id=1vnLuGNTLEcCkn837oFxmACs1SugcgAO1&export=download", "name": "Kush Dalsaniya", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/kush-dalsaniya", "gmail": "kushp9386@gmail.com"}, {"image": "https://drive.google.com/uc?id=1dYP1qrm6ADqeih9C64U6FNrjj2Xie_iV&export=download", "name": "Kushal Doshi", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/kushal-doshi-033569241", "gmail": "kushaldoshi1203@gmail.com"}, {"image": "https://drive.google.com/uc?id=1w45GJ4WQe78TyudukvWL-HgEK6Emqz1F&export=download", "name": "Lucky Goyal", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/lucky-goyal-5050321a8", "gmail": "goyallucky91@gmail.com"}, {"image": "https://drive.google.com/uc?id=1w7ccS_oq009UnpLASiD3lELXXo2wCzdY&export=download", "name": "Martin Prajapati", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/martin-prajapati", "gmail": "martinprajapati3107@gmail.com"}, {"image": "https://drive.google.com/uc?id=1w8Sr1XWpAe9q5JM69JP61e8qFWBatKDh&export=download", "name": "Mistry Divyang", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/divyang-mistry-55b9a122a", "gmail": "divyangmistry30@gmail.com"}, {"image": "https://drive.google.com/uc?id=1wCFD9Oiop3PV1rOcnC4iI_mqrb_LDc7p&export=download", "name": "Namrata Kumari", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/namrata-kumari-ab233b241", "gmail": "namratalakra7782@gmail.com"}, {"image": "https://drive.google.com/uc?id=1wD9UFDsY73yXhf81NhmLj4TON9EmUsUu&export=download", "name": "Namrata Rathod", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/namrata-rathod-548b03252", "gmail": "namarata.rathod028@gmail.com"}, {"image": "https://drive.google.com/uc?id=1wF8FshfJvZfjA3FaFNFotIXS0Yf5iauu&export=download", "name": "Nishank Sudhir", "position": "Volunteer", "linkedin": "www.linkedin.com/in/nishank-sudhir-654924228", "gmail": "nishanksudhir03@gmail.com"}, {"image": "https://drive.google.com/uc?id=1wGxmR5hEBJd0lwESvQRHemHPMfecTPA7&export=download", "name": "Om Pandey", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/om-pandey-3a339722b", "gmail": "ompandey1822002@gmail.com"}, {"image": "https://drive.google.com/uc?id=1wKDtiasOBSOdFZLGE7hGmqtHpFM7gvlC&export=download", "name": "Param Shah", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/param-shah-716322227", "gmail": "shahparam1903@gmail.com"}, {"image": "https://drive.google.com/uc?id=1wNOKNO2AfRA9RcIR-HHUc5MLXfc92NbN&export=download", "name": "Pragnesh Barik", "position": "Volunteer", "linkedin": "https://in.linkedin.com/in/pragnesh-barik ", "gmail": "barikpragnesh@gmail.com"}, {"image": "https://drive.google.com/uc?id=1U0Zz9IE4cP3vHTyENtdDQQsxYTvU0Kno&export=download", "name": "Pranav Pimple", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/pranav-pimple-423b33233", "gmail": "pranavpimple28@gmail.com"}, {"image": "https://drive.google.com/uc?id=1wUrCKTpxU0ycH3FsUxZ9BCBzPzX8Ujr9&export=download", "name": "Pranit Satpute", "position": "Volunteer", "linkedin": "https://pranitsatpute.com", "gmail": "pranitsatpute29@gmail.com"}, {"image": "https://drive.google.com/uc?id=1wUzJnt4x0n1UH_-0jyAJN1SZS4ra9e8u&export=download", "name": "Preksha Pandya", "position": "Volunteer", "linkedin": "https://www.linkedin.com/preksha_n", "gmail": "prekshapandya03@gmail.com"}, {"image": "https://drive.google.com/uc?id=1vgZuxoTFi9Xkgrj2u-CRy-YyYK5PELT6&export=download", "name": "Priya Kanthariya", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/priyakanthariya", "gmail": "priyakanthariya12@gmail.com"}, {"image": "https://drive.google.com/uc?id=1cV5hHvEZeAUSacZIT_MFPkBR3SQ-AMWc&export=download", "name": "Priyanshu Bhushan", "position": "Volunteer", "linkedin": "http://linkedin.com/in/priyanshu-bhushan-5b07b422a", "gmail": "smartguypriyanshu111@gmail.com"}, {"image": "https://drive.google.com/uc?id=1vKw4OA6IFYXzESNvW_VZGrfF2A6pHgaI&export=download", "name": "Radhika Jajoo", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/radhika-jajoo-7a3867227/", "gmail": "radhikaj0653@gmail.com"}, {"image": "https://drive.google.com/uc?id=1vOphjNpuPYUabXRZGh13yxPH9FGA9QMn&export=download", "name": "Rahul Mavaliya", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/rahul-mavaliya", "gmail": "rdmavaliya@gmail.com"}, {"image": "https://drive.google.com/uc?id=1vPy77BsOJyDvUT3nG1BSZnMbXzhqtz-c&export=download", "name": "Rahul Nautiyal", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/rahul-nautiyal-b54b4522a", "gmail": "rnautiyal131@gmail.com"}, {"image": "https://drive.google.com/uc?id=1v_PGv9tD1VDjDgPMkR9x5nnrUY0cph_T&export=download", "name": "Renu Chaudhary", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/renu-chaudhary-892769247", "gmail": "chaudharyrenu997@gmail.com"}, {"image": "https://drive.google.com/uc?id=1vROMWshZ8_619ZUYh4B8mFV20NXll0Hs&export=download", "name": "Riya Gupta", "position": "Volunteer", "linkedin": "http://www.linkedin.com/in/riya-gupta-a61487248", "gmail": "riyagupta0238@gmail.com"}, {"image": "https://drive.google.com/uc?id=1vRyFfHljvxnZNNbZIuHuR5vfFwTX82aP&export=download", "name": "Satyam Roy", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/satyam-roy-5577a8233", "gmail": "satyamroy256@gmail.com"}, {"image": "https://drive.google.com/uc?id=1TTB1hKDHWbySTmZ5srDr3VkEuNCpcQF5&export=download", "name": "Shivam Pathak", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/shivam-pathak-684419225", "gmail": "shivampathak112151@gmail.com"}, {"image": "https://drive.google.com/uc?id=1vWa6nLxSAzsuW-J_KjlJ8e24UZXRDnAy&export=download", "name": "Shreeya Dave", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/shreeya-dave-444166232/", "gmail": "shreeyadave776@gmail.com"}, {"image": "https://drive.google.com/uc?id=1bqiHrVn4NWsCRO2le7QdCFFi5NsKPRLs&export=download", "name": "Shreya Rana", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/shreya-rana-253568255", "gmail": "shreyaarana999@gmail.com"}, {"image": "https://drive.google.com/uc?id=1eu13qMDF0rJzooJ_LEcQc7xBHtylyx4Q&export=download", "name": "Shubham Chandak", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/shubham-chandak-7b8636263", "gmail": "shubhamchandak6629@gmail.com"}, {"image": "https://drive.google.com/uc?id=1v-ZifMHQMzF1eITRVil2eSYQzhrEPyfj&export=download", "name": "Shubhambhai Solanki", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/shubhambhai-s-396277235", "gmail": "ss7490080545@gmail.com"}, {"image": "https://drive.google.com/uc?id=1s8a3lpMrN03U9Zku3bIbyYNBQa1Vd456&export=download", "name": "Smriti Mishra", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/smriti-mishra-383302268", "gmail": "smriti2140@gmail.com"}, {"image": "https://drive.google.com/uc?id=1v0rIv7q8p0kFX-CtbmgYmMZLX4P6007s&export=download", "name": "Sneha Sharma", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/sneha-sharma-982664280", "gmail": "Snehash251@gmail.com"}, {"image": "https://drive.google.com/uc?id=1v2Vwnqygz-fe7pJMfLWL_lbJ_eo5Mj5f&export=download", "name": "Soham Parmar", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/soham-parmar0072", "gmail": "parmarsoham566@gmail.com"}, {"image": "https://drive.google.com/uc?id=1v6H3IOL_5BeUp14eGP8_w-HBhtqTYeIm&export=download", "name": "Sudhakar Pathak", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/sudhakar-pathak-66b888235", "gmail": "pathaksudhakar835@gmail.com"}, {"image": "https://drive.google.com/uc?id=1uU7MjH2hKyV0IOg2pbwkWVzhxKmmZLDj&export=download", "name": "Tarun Singh", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/tarun-singh-23369626a?trk=contact-info", "gmail": "ts14102002@gmail.com"}, {"image": "https://drive.google.com/uc?id=1BC5Uc3rf6qH4lNRg_OfZPOObaWNYgnIx&export=download", "name": "Tej Sheth", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/tejsheth02", "gmail": "tejsheth02@gmail.com"}, {"image": "https://drive.google.com/uc?id=1vDFrtmWK0qQUNdo4VlSDxEDVYb8EisIM&export=download", "name": "Tejavathu Harika", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/tejavathu-harika-684065251", "gmail": "harikatejavathu@gmail.com"}, {"image": "https://drive.google.com/uc?id=1vECBYrYBPP_LtjkGWh4gZNnq1WP6ikWa&export=download", "name": "Vandita Rawat", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/vandita-rawat-75504a25b", "gmail": "vanditarawat02@gmail.com"}, {"image": "https://drive.google.com/uc?id=1vECC51hO9C_ChPC_7nzBGReyBzOiaXZJ&export=download", "name": "Varun Modi", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/varun-modi-450569223", "gmail": "varunmodi18@gmail.com"}, {"image": "https://drive.google.com/uc?id=1vHIvFaGwFztfHRwrQzujBYJCkqrOif9H&export=download", "name": "Ved Chadderwala", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/ved-chadderwala-196529223/", "gmail": "ved29022004@gmail.com"}, {"image": "https://drive.google.com/uc?id=1umYK4UIaEtPwoFhG9seDkAOwQ2seAlvu&export=download", "name": "Vedanshi Pithadia", "position": "Volunteer", "linkedin": "https://linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=vedanshi-pithadia-55068626b", "gmail": "vedanshi29204@gmail.com"}, {"image": "https://drive.google.com/uc?id=1uos2aTQW3b1eybXSQJJ3A7dwNN_2pnWE&export=download", "name": "Vedant Surti", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/vedant-surti-83615a227/", "gmail": "vedantsurti@gmail.com"}, {"image": "https://drive.google.com/uc?id=1upzXefv4T51MUANyN7cKcwPhnd4lWV_6&export=download", "name": "Yash Jamine", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/yash-jamine-b20656227", "gmail": "yashjamine2003@gmail.com"}, {"image": "https://drive.google.com/uc?id=1utfVPpUlSc4Lieb8B0DoACUeXsA48hv7&export=download", "name": "Yash Surti", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/yash-surti-5440b21ab", "gmail": "yashsurti85@gmail.com"}, {"image": "https://drive.google.com/uc?id=1vIbU6qVXK4pkVEVkC60eUX65hEBycPdo&export=download", "name": "Yaswanth Naidu Maradana", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/yaswanth-maradana-688b39226", "gmail": "yaswanthmaradana2003@gmail.com"}, {"image": "https://drive.google.com/uc?id=1utpge0Sqt6ZvOm7eQGvgAN5I2NkEKYdJ&export=download", "name": "Yug Rana", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/yug-rana-ba57a1233", "gmail": "yug170503@gmail.com"}, {"image": "https://drive.google.com/uc?id=1uuyxsyp-AZvEvKlp0Wy24AD_AXw1ABQz&export=download", "name": "Yuvraj Malav", "position": "Volunteer", "linkedin": "https://www.linkedin.com/in/yuvraj-malav-780184213", "gmail": "uvmalav077@gmail.com"}];
+const Team2021 = [
+  {
+    image:
+      "https://drive.google.com/uc?id=1xGwTigj-dAJnRu01sODz_GJLHVXGr5Sa&export=download",
+    name: "Aanchal Vishwakarma",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/anchal-vishwakarma-4935ab229",
+    gmail: "anchal74v@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1xFH8_h2ZbdowOGCYbJTH5AnmZFQpF2L9&export=download",
+    name: "Aarushi Singh",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/aarushi-singh-nautiyal-217781240",
+    gmail: "aarushibls@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1xEcCzhbptgy-dVQRJLBBsILo-6Kx_eI6&export=download",
+    name: "Aditi Laddha",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/aditi-laddha-016143248",
+    gmail: "aditi43laddha@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1xDmzuwp4fQIebJJxTEH6Bl4TIy1TdKVz&export=download",
+    name: "Aditi Sadadiwala",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/aditi-sadadiwala-318510250/",
+    gmail: "aditi.sadadiwala@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1vhZEqCdA2wfaX5i3gyXsA_acal_gyygh&export=download",
+    name: "Aditi Tapariya",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/aditi-tapariya-942639224/",
+    gmail: "tapariyaaditi23@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1x9apUlUtwJGT5Tph8hnxQhZoRGDLQpUj&export=download",
+    name: "Aishwarya Mourya",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/aishwarya -mourya-87068a229",
+    gmail: "0712aishwarya@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1x8ew-jkTq0nOMxexqwZtu-y8UKEl70wF&export=download",
+    name: "Aman Kapuriya",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/aman-kapuriya-280aa2253/",
+    gmail: "amankapuriya3965@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1x8RW0yeRXctUnBJQVuk99yWrsmIKsNwg&export=download",
+    name: "Amey Amol Patil",
+    position: "Volunteer",
+    linkedin: NaN,
+    gmail: "Ameyamolpatil@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1x8DT1E36Kn57FQmC7ijM4LPr--oUSRFO&export=download",
+    name: "Anagha Mathkari",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/anagha-mathkari-a14708230",
+    gmail: "anaghamathkari19@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1x5tmdbF6o1xuVUiu51ObHlgiE5ykaNDS&export=download",
+    name: "Anand Movaliya",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/anand-movaliya-3a2a55272",
+    gmail: "anandmmovaliya496@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1x5suUPj4d5hp4Se700JQ76yWboV7JjY4&export=download",
+    name: "Anjali Chauhan",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/anjali-chauhan2003",
+    gmail: "anjalichauhan052003@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1x4B5_LtCgyeI_2837RTpvTw1bHKNF1Wn&export=download",
+    name: "Ankush Mahendrakumar Mishra",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/ankush-mishra-7497b7228",
+    gmail: "mishra.ankush20386@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1ufK6SFvRnLPOf8G8L3VvKYgSaDefA2lw&export=download",
+    name: "Anshul Garg",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/anshul-garg-b12963223",
+    gmail: "anshul2003garg@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1x3LDVv1gjGT-TieBPUDUQHzXZfmRUsuY&export=download",
+    name: "Anushk Joshi",
+    position: "Volunteer",
+    linkedin: "www.linkedin.com/in/anushkjoshi",
+    gmail: "u21me029@med.svnit.ac.in",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1x3AMm27rtCenkSfGe7aC2k6hBUsiySmm&export=download",
+    name: "Anushka Kundu",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/anushka-kundu-691518229",
+    gmail: "anu.kundu03@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1x32pMvxEtFCvRi3PcFasGlJmXgXw6dlo&export=download",
+    name: "Archit Shah",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/archit-shah-58775b247",
+    gmail: "architshah612@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1x-uOb4JhlfapEBysq71tMsWiH--RwyEh&export=download",
+    name: "Archit Sinojiya",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/archit-sinojiya-58b917264",
+    gmail: "sinojiyaarchit@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1wyrU8yd5ib7EPvK5rl7rcO1anE-gMXvs&export=download",
+    name: "Arjama Mohanty",
+    position: "Volunteer",
+    linkedin: "linkedin.com/in/arjama-mohanty-17616a243",
+    gmail: "arjamamohanty@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=17ADY71Jjotl3FeV9BpJXE8qn8kWfLBdR&export=download",
+    name: "Aseem Sugandhi",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/aseemsugandhi",
+    gmail: "aseemsugandhi@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1wuyPbCMg8a74pAVo9ylZWupDSnZOelX4&export=download",
+    name: "Ashok Chotiya",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/ashok-chotiya-a35672235",
+    gmail: "2103ashokchotiya@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1wuxM_es-XU-cJAvgKs8SO0jjTLSr5Kb0&export=download",
+    name: "Brinsu Baldha",
+    position: "Volunteer",
+    linkedin:
+      "https://www.linkedin.com/in/brinsu-baldha-834aa926b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    gmail: "brinsubaldha25@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1g0XMUuB0VBW4x9PJ0QNgmrWKfBj9uDa4&export=download",
+    name: "Chakshu Gupta",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/chakshu-gupta-0222b71a1",
+    gmail: "chakshugupta841@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1wpm8Ac3QaDNQcjzMikDICBhsDs2afhRq&export=download",
+    name: "Deep Gemlawala",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/deep-gemlawala-718999248",
+    gmail: "deepgemlawala@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1_1kwnlcX6-BmgBuTPbWOSJ0Z2-tMJrXL&export=download",
+    name: "Deep Khandhedia",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/deep-khandhedia-499901220",
+    gmail: "deepkhandhedia@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1wiu3f9sUnYJ7lfCjhTx3aTp5iV81B23t&export=download",
+    name: "Dev Desai",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/dev-desai-344501235",
+    gmail: "devdesaiyt@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1wgG1ZEeJPs6DDkfoODIXdX4qCpGnN2fH&export=download",
+    name: "Devendra Pratap Singh",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/devendra-pr-singh-b1726a27b",
+    gmail: "devpratap20770672@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1wf0C8P0nxpUji87uFQKbdUeUBBWZhMRx&export=download",
+    name: "Dibyam Jalan",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/dibyam-jalan-89b50b248/",
+    gmail: "dibyam1jalan@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1RwCCcZkDS3_PLIxwy8uZyMTHId8X32Oe&export=download",
+    name: "Disha Lad",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/disha-lad-732862247",
+    gmail: "disha.lad2003@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1wdzD7MetzrjKUQtYBFwRUeM8OrEvMPQY&export=download",
+    name: "Divya Thakar",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/divy-thakar-62132a218",
+    gmail: "thakardivya337@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1vhfJ2X4DMyFls3eUAL9OZHf4XBBx4weS&export=download",
+    name: "Divyansh Verma",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/div193/",
+    gmail: "divyanshv193@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1wpOf7FwgeIco9B06OKk7RXxsm6vKAlLv&export=download",
+    name: "Falguni Likhare",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/falguni-likhare-81Oa42252/",
+    gmail: "likharefalguni@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1war6tUgRZ38rlCmZMIXhTygD-7ksDB9z&export=download",
+    name: "Gadariya Priya",
+    position: "Volunteer",
+    linkedin: "www.linkedin.com/in/priya-gadariya-a21312248",
+    gmail: "pgadariya8@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1wULRt0Xf7aB-N_SST78ejFZFFTiY8v6Q&export=download",
+    name: "Harshil Mistry",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/harshilmistry23",
+    gmail: "harshilmistry23@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1emfchxV1KCWoBRjdfr4Di8XQ1RuTo5qj&export=download",
+    name: "Harshit Pathak",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/harshit-pathak-4ba6aa22a/",
+    gmail: "pathakharshit281@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1wYIW-b612HATG9ImIELuhI7g88VWkveK&export=download",
+    name: "Harshit Sahu",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/harshit009",
+    gmail: "harshitsahu2k2@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1wEj_SlsmgsXCiz1TDw2KnvEqUmduyghk&export=download",
+    name: "Himanshu Soni",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/himanshusoni01/",
+    gmail: "himanshusoni9282@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1-xcw99FBJUc5r-x86q_zD1cJ31q7lQ9g&export=download",
+    name: "Ishan Nahar",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/ishan-nahar-65200b224",
+    gmail: "naharishan0305@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1vxZ22s3sxcEEA10i7JbTOvj7FoONuy4T&export=download",
+    name: "Jinhal Maheshwari",
+    position: "Volunteer",
+    linkedin: "linkedin.com/in/jinhal-maheshwari-71a217212/",
+    gmail: "jinhalmaheshwari1256@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1vvX107s4WAaWmkcGTfDPpnIa4dYX12oX&export=download",
+    name: "Jitaksha Gajjar",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/jitaksha-gajjar-101873217",
+    gmail: "gajjarjk2105@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1U6ApFSVu0n7APvV9TIAQglTPNECNpKhg&export=download",
+    name: "Kashish Mittal",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/kashish-mittal-7bb690263",
+    gmail: "kashishmittal028@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1vsDgSNwydos4hWLN3JFhD_K0F4GvWdPX&export=download",
+    name: "Keval Kanpariya",
+    position: "Volunteer",
+    linkedin: "linkedIn.in/in/kevalkanpariya",
+    gmail: "kevalkanpariya5051@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1vpUBlOpnpyt2MshG2pSeSqDvAEYOUh4d&export=download",
+    name: "Khush Pandya",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/khush-pandya-387992234",
+    gmail: "khushpandya705@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1vnzp5q8pIN3IGOcxG1LJVqT8niNjB_WX&export=download",
+    name: "Khushi Kher",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/khushi-kher-66aa29221/",
+    gmail: "khus.kher@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1vnWMmfKfwd_qT4mMUNwj8Yk_WCUEM7iS&export=download",
+    name: "Khushi Solanki",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/khushi-solanki",
+    gmail: "solankikhushi1824@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1wKzzl6CLJlW14oOWhN8vCgeKERxOXdpE&export=download",
+    name: "Krupal Chaudhari",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/krupal-chaudhari-85b0391ba",
+    gmail: "krupalchaudhari2607@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1vnLuGNTLEcCkn837oFxmACs1SugcgAO1&export=download",
+    name: "Kush Dalsaniya",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/kush-dalsaniya",
+    gmail: "kushp9386@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1dYP1qrm6ADqeih9C64U6FNrjj2Xie_iV&export=download",
+    name: "Kushal Doshi",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/kushal-doshi-033569241",
+    gmail: "kushaldoshi1203@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1w45GJ4WQe78TyudukvWL-HgEK6Emqz1F&export=download",
+    name: "Lucky Goyal",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/lucky-goyal-5050321a8",
+    gmail: "goyallucky91@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1w7ccS_oq009UnpLASiD3lELXXo2wCzdY&export=download",
+    name: "Martin Prajapati",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/martin-prajapati",
+    gmail: "martinprajapati3107@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1w8Sr1XWpAe9q5JM69JP61e8qFWBatKDh&export=download",
+    name: "Mistry Divyang",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/divyang-mistry-55b9a122a",
+    gmail: "divyangmistry30@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1wCFD9Oiop3PV1rOcnC4iI_mqrb_LDc7p&export=download",
+    name: "Namrata Kumari",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/namrata-kumari-ab233b241",
+    gmail: "namratalakra7782@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1wD9UFDsY73yXhf81NhmLj4TON9EmUsUu&export=download",
+    name: "Namrata Rathod",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/namrata-rathod-548b03252",
+    gmail: "namarata.rathod028@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1wF8FshfJvZfjA3FaFNFotIXS0Yf5iauu&export=download",
+    name: "Nishank Sudhir",
+    position: "Volunteer",
+    linkedin: "www.linkedin.com/in/nishank-sudhir-654924228",
+    gmail: "nishanksudhir03@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1wGxmR5hEBJd0lwESvQRHemHPMfecTPA7&export=download",
+    name: "Om Pandey",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/om-pandey-3a339722b",
+    gmail: "ompandey1822002@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1wKDtiasOBSOdFZLGE7hGmqtHpFM7gvlC&export=download",
+    name: "Param Shah",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/param-shah-716322227",
+    gmail: "shahparam1903@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1wNOKNO2AfRA9RcIR-HHUc5MLXfc92NbN&export=download",
+    name: "Pragnesh Barik",
+    position: "Volunteer",
+    linkedin: "https://in.linkedin.com/in/pragnesh-barik ",
+    gmail: "barikpragnesh@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1U0Zz9IE4cP3vHTyENtdDQQsxYTvU0Kno&export=download",
+    name: "Pranav Pimple",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/pranav-pimple-423b33233",
+    gmail: "pranavpimple28@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1wUrCKTpxU0ycH3FsUxZ9BCBzPzX8Ujr9&export=download",
+    name: "Pranit Satpute",
+    position: "Volunteer",
+    linkedin: "https://pranitsatpute.com",
+    gmail: "pranitsatpute29@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1wUzJnt4x0n1UH_-0jyAJN1SZS4ra9e8u&export=download",
+    name: "Preksha Pandya",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/preksha_n",
+    gmail: "prekshapandya03@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1vgZuxoTFi9Xkgrj2u-CRy-YyYK5PELT6&export=download",
+    name: "Priya Kanthariya",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/priyakanthariya",
+    gmail: "priyakanthariya12@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1cV5hHvEZeAUSacZIT_MFPkBR3SQ-AMWc&export=download",
+    name: "Priyanshu Bhushan",
+    position: "Volunteer",
+    linkedin: "http://linkedin.com/in/priyanshu-bhushan-5b07b422a",
+    gmail: "smartguypriyanshu111@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1vKw4OA6IFYXzESNvW_VZGrfF2A6pHgaI&export=download",
+    name: "Radhika Jajoo",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/radhika-jajoo-7a3867227/",
+    gmail: "radhikaj0653@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1vOphjNpuPYUabXRZGh13yxPH9FGA9QMn&export=download",
+    name: "Rahul Mavaliya",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/rahul-mavaliya",
+    gmail: "rdmavaliya@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1vPy77BsOJyDvUT3nG1BSZnMbXzhqtz-c&export=download",
+    name: "Rahul Nautiyal",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/rahul-nautiyal-b54b4522a",
+    gmail: "rnautiyal131@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1v_PGv9tD1VDjDgPMkR9x5nnrUY0cph_T&export=download",
+    name: "Renu Chaudhary",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/renu-chaudhary-892769247",
+    gmail: "chaudharyrenu997@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1vROMWshZ8_619ZUYh4B8mFV20NXll0Hs&export=download",
+    name: "Riya Gupta",
+    position: "Volunteer",
+    linkedin: "http://www.linkedin.com/in/riya-gupta-a61487248",
+    gmail: "riyagupta0238@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1vRyFfHljvxnZNNbZIuHuR5vfFwTX82aP&export=download",
+    name: "Satyam Roy",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/satyam-roy-5577a8233",
+    gmail: "satyamroy256@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1TTB1hKDHWbySTmZ5srDr3VkEuNCpcQF5&export=download",
+    name: "Shivam Pathak",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/shivam-pathak-684419225",
+    gmail: "shivampathak112151@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1vWa6nLxSAzsuW-J_KjlJ8e24UZXRDnAy&export=download",
+    name: "Shreeya Dave",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/shreeya-dave-444166232/",
+    gmail: "shreeyadave776@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1bqiHrVn4NWsCRO2le7QdCFFi5NsKPRLs&export=download",
+    name: "Shreya Rana",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/shreya-rana-253568255",
+    gmail: "shreyaarana999@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1eu13qMDF0rJzooJ_LEcQc7xBHtylyx4Q&export=download",
+    name: "Shubham Chandak",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/shubham-chandak-7b8636263",
+    gmail: "shubhamchandak6629@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1v-ZifMHQMzF1eITRVil2eSYQzhrEPyfj&export=download",
+    name: "Shubhambhai Solanki",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/shubhambhai-s-396277235",
+    gmail: "ss7490080545@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1s8a3lpMrN03U9Zku3bIbyYNBQa1Vd456&export=download",
+    name: "Smriti Mishra",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/smriti-mishra-383302268",
+    gmail: "smriti2140@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1v0rIv7q8p0kFX-CtbmgYmMZLX4P6007s&export=download",
+    name: "Sneha Sharma",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/sneha-sharma-982664280",
+    gmail: "Snehash251@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1v2Vwnqygz-fe7pJMfLWL_lbJ_eo5Mj5f&export=download",
+    name: "Soham Parmar",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/soham-parmar0072",
+    gmail: "parmarsoham566@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1v6H3IOL_5BeUp14eGP8_w-HBhtqTYeIm&export=download",
+    name: "Sudhakar Pathak",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/sudhakar-pathak-66b888235",
+    gmail: "pathaksudhakar835@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1uU7MjH2hKyV0IOg2pbwkWVzhxKmmZLDj&export=download",
+    name: "Tarun Singh",
+    position: "Volunteer",
+    linkedin:
+      "https://www.linkedin.com/in/tarun-singh-23369626a?trk=contact-info",
+    gmail: "ts14102002@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1BC5Uc3rf6qH4lNRg_OfZPOObaWNYgnIx&export=download",
+    name: "Tej Sheth",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/tejsheth02",
+    gmail: "tejsheth02@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1vDFrtmWK0qQUNdo4VlSDxEDVYb8EisIM&export=download",
+    name: "Tejavathu Harika",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/tejavathu-harika-684065251",
+    gmail: "harikatejavathu@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1vECBYrYBPP_LtjkGWh4gZNnq1WP6ikWa&export=download",
+    name: "Vandita Rawat",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/vandita-rawat-75504a25b",
+    gmail: "vanditarawat02@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1vECC51hO9C_ChPC_7nzBGReyBzOiaXZJ&export=download",
+    name: "Varun Modi",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/varun-modi-450569223",
+    gmail: "varunmodi18@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1vHIvFaGwFztfHRwrQzujBYJCkqrOif9H&export=download",
+    name: "Ved Chadderwala",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/ved-chadderwala-196529223/",
+    gmail: "ved29022004@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1umYK4UIaEtPwoFhG9seDkAOwQ2seAlvu&export=download",
+    name: "Vedanshi Pithadia",
+    position: "Volunteer",
+    linkedin:
+      "https://linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=vedanshi-pithadia-55068626b",
+    gmail: "vedanshi29204@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1uos2aTQW3b1eybXSQJJ3A7dwNN_2pnWE&export=download",
+    name: "Vedant Surti",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/vedant-surti-83615a227/",
+    gmail: "vedantsurti@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1upzXefv4T51MUANyN7cKcwPhnd4lWV_6&export=download",
+    name: "Yash Jamine",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/yash-jamine-b20656227",
+    gmail: "yashjamine2003@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1utfVPpUlSc4Lieb8B0DoACUeXsA48hv7&export=download",
+    name: "Yash Surti",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/yash-surti-5440b21ab",
+    gmail: "yashsurti85@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1vIbU6qVXK4pkVEVkC60eUX65hEBycPdo&export=download",
+    name: "Yaswanth Naidu Maradana",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/yaswanth-maradana-688b39226",
+    gmail: "yaswanthmaradana2003@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1utpge0Sqt6ZvOm7eQGvgAN5I2NkEKYdJ&export=download",
+    name: "Yug Rana",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/yug-rana-ba57a1233",
+    gmail: "yug170503@gmail.com",
+  },
+  {
+    image:
+      "https://drive.google.com/uc?id=1uuyxsyp-AZvEvKlp0Wy24AD_AXw1ABQz&export=download",
+    name: "Yuvraj Malav",
+    position: "Volunteer",
+    linkedin: "https://www.linkedin.com/in/yuvraj-malav-780184213",
+    gmail: "uvmalav077@gmail.com",
+  },
+];
 
 export { Sir, Founder, CoFounder, Team2019, Team2020, Team2021 };
