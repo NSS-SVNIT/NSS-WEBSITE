@@ -5,6 +5,9 @@ import DutySection from './Home/DutySection';
 import { motion } from "framer-motion";
 import { Typography, Box, Grid } from '@mui/material';
 import { makeStyles } from '@material-ui/core/styles';
+import { useState } from 'react';
+import { getStorage, ref, getDownloadURL } from '@firebase/storage';
+
 
 const useStyles = makeStyles({
   gradientBackground: {
@@ -25,6 +28,19 @@ const About = () => {
     };
   }, []); // The empty dependency array ensures this effect runs only once when the component mounts
 
+  const [url, setUrl] = useState('aaaa');
+  const func = async() => {
+    const storage = getStorage();
+    const reference = ref(storage, 'aboutImages/nss_logo.png');
+    await getDownloadURL(reference).then((x)=> {
+      setUrl(x);
+    })
+  }
+  useEffect(()=>{
+    func()
+  }, []);
+
+  // console.log(url)
   return (
     <Layout>
       <Typography variant='h1' sx={{ px:10,pt:5 ,fontWeight:400 }}>ABOUT NSS</Typography>
@@ -91,7 +107,7 @@ const About = () => {
             transition={{ duration: 2 }}>
 
                 {/* <Slide direction="left" in={true} timeout={2000} mountOnEnter> */}
-                  <img src="src/assets/nss_logo.png" alt="Right Content" height="80%" style={{ position: 'absolute', top: 90 , left: 90,  right: 90,  bottom: 90, width: '80%', objectFit: 'cover', borderRadius: '50%'} } 
+                  <img src={url} alt="Right Content" height="80%" style={{ position: 'absolute', top: 90 , left: 90,  right: 90,  bottom: 90, width: '80%', objectFit: 'cover', borderRadius: '50%'} } 
                   
                   alignItems="center" justifyContent="center" />
                 {/* </Slide> */}
