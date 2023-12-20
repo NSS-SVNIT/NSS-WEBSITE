@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import TeamCard from "./TeamCard";
 import { Link } from "react-router-dom";
+import { CenterFocusStrong } from "@mui/icons-material";
 
 // Component for displaying a batch of Team
 const TeamBatch = ({ year, TeamList }) => {
@@ -62,7 +63,7 @@ const TeamBatch = ({ year, TeamList }) => {
       <div style={{ fontFamily: "DM Sans", overflowX: "hidden" }}>
         <Box
           sx={{
-            mx: 60,
+            mx: 70,
             my: 2,
             px: 8,
             py: 4,
