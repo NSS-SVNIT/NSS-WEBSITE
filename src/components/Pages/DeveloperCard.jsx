@@ -12,26 +12,28 @@ import namrata from "./namrata.jpg";
 function DeveloperCard(props) {
   console.log(props.imageLink);
   console.log(props.linkedin);
+  const subtitle =
+    props.name === "Namrata Rathod" || props.name === "Keval Kanpariya"
+      ? "Designer"
+      : "WebDeveloper";
   return (
+    // <div class="card">
+    //   <div class="card-info">
+    //     <div class="card-avatar">
+    //       <img src={props.imageLink} alt="Avatar" className="avatar-image" />
+    //     </div>
+    //     <div class="card-title">{props.name}</div>
+    //     {/* <div class="card-subtitle">CEO &amp; Co-Founder</div> */}
+    //   </div>
+    //   <ul class="card-social">
+
+    //   </ul>
+    // </div>
     <div class="card">
-      <div class="card-info">
-        <div class="card-avatar">
-          <img src={props.imageLink} alt="Avatar" className="avatar-image" />
-        </div>
-        <div class="card-title">{props.name}</div>
-        {/* <div class="card-subtitle">CEO &amp; Co-Founder</div> */}
+      <div class="card-img">
+        <img src={props.imageLink} alt="Avatar" className="avatar-image" />
       </div>
-      <ul class="card-social">
-        <li class="card-social__item">
-          <a href={props.github} target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M12 0C5.37 0 0 5.37 0 12c0 5.303 3.438 9.8 8.207 11.387.6.11.793-.258.793-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.033-1.61-4.033-1.61-.545-1.38-1.332-1.745-1.332-1.745-1.09-.743.083-.727.083-.727 1.206.086 1.838 1.24 1.838 1.24 1.07 1.833 2.81 1.305 3.495.997.108-.776.417-1.305.76-1.605-2.665-.303-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.236-3.22-.124-.303-.54-1.523.12-3.176 0 0 1.007-.323 3.3 1.23.958-.267 1.983-.4 3.002-.405 1.02.005 2.044.138 3.004.405 2.29-1.553 3.297-1.23 3.297-1.23.66 1.653.244 2.873.12 3.176.77.84 1.234 1.91 1.234 3.22 0 4.61-2.805 5.623-5.476 5.92.43.37.81 1.1.81 2.22 0 1.6-.015 2.885-.015 3.28 0 .32.192.692.8.574C20.565 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12"
-                fill="#000"
-              />
-            </svg>
-          </a>
-        </li>
+      <ul class="social-media">
         <li class="card-social__item">
           <a
             href={props.mail}
@@ -56,6 +58,16 @@ function DeveloperCard(props) {
           </a>
         </li>
         <li class="card-social__item">
+          <a href={props.github} target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.303 3.438 9.8 8.207 11.387.6.11.793-.258.793-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.033-1.61-4.033-1.61-.545-1.38-1.332-1.745-1.332-1.745-1.09-.743.083-.727.083-.727 1.206.086 1.838 1.24 1.838 1.24 1.07 1.833 2.81 1.305 3.495.997.108-.776.417-1.305.76-1.605-2.665-.303-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.236-3.22-.124-.303-.54-1.523.12-3.176 0 0 1.007-.323 3.3 1.23.958-.267 1.983-.4 3.002-.405 1.02.005 2.044.138 3.004.405 2.29-1.553 3.297-1.23 3.297-1.23.66 1.653.244 2.873.12 3.176.77.84 1.234 1.91 1.234 3.22 0 4.61-2.805 5.623-5.476 5.92.43.37.81 1.1.81 2.22 0 1.6-.015 2.885-.015 3.28 0 .32.192.692.8.574C20.565 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12"
+                fill="#000"
+              />
+            </svg>
+          </a>
+        </li>
+        <li class="card-social__item">
           <a href={props.linkedin} target="_blank" rel="noopener noreferrer">
             <svg
               viewBox="0 0 24 24"
@@ -67,6 +79,10 @@ function DeveloperCard(props) {
           </a>
         </li>
       </ul>
+      <div class="card-info">
+        <p class="title">{props.name}</p>
+        <p className="subtitle">{subtitle}</p>
+      </div>
     </div>
   );
 }

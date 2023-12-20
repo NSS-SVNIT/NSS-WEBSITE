@@ -124,6 +124,7 @@ function Developers() {
                 github={developer.github}
                 mail={developer.mail}
                 linkedin={developer.linkedin}
+                work="Web Developer"
                 imageLink={developer.imageLink} // Use the correct prop name
               />
             ))}
@@ -144,6 +145,7 @@ function Developers() {
                 github={developer.github}
                 mail={developer.mail}
                 linkedin={developer.linkedin}
+                work="Designer"
                 // insta={developer.insta}
                 imageLink={developer.imageLink} // Use the correct prop name
               />
