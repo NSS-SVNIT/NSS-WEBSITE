@@ -67,7 +67,7 @@ export default function ImageGrid() {
   const [Camp, setCamp] = useState([]);
   const [MorningRoutine, setMorningRoutine] = useState([]);
   const [Workshop, setWorkshop] = useState([]);
-  // const [AwarenessCampaign, setAwarenessCampaign] = useState([]);
+  const [AwarenessCampaign, setAwarenessCampaign] = useState([]);
   const [PlantationDrive, setPlantationDrive] = useState([]);
   const func = async() => {
     const storage = getStorage();
@@ -94,6 +94,9 @@ export default function ImageGrid() {
 
     const reference8 = ref(storage, 'aboutImages/Plantation.jpg');
     getDownloadURL(reference8).then((x)=>{setPlantationDrive(x);})
+
+    const reference9 = ref(storage, 'aboutImages/Awareness.jpg');
+    getDownloadURL(reference9).then((x)=>{setAwarenessCampaign(x);})
 }
 
 useEffect(()=>{
@@ -154,12 +157,12 @@ const images = [
     title: "Workshops",
     width: "40%",
   },
-  // {
-  //   // url: "src/components/Pages/Home/photos/Awareness.jpg",
-  //   url: imageUrls[0],
-  //   title: "Awareness Campaigns",
-  //   width: "40%",
-  // },
+  {
+    // url: "src/components/Pages/Home/photos/Awareness.jpg",
+    url: AwarenessCampaign,
+    title: "Awareness Campaigns",
+    width: "40%",
+  },
   {
     url: PlantationDrive,
     title: "Plantation Drives",
