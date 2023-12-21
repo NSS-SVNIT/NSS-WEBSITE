@@ -42,6 +42,7 @@ const About = () => {
 
   // console.log(url)
   return (
+    <div style={{ overflowX: 'hidden' }}>
     <Layout>
       <Typography variant='h1' sx={{ px:10,pt:5 ,fontWeight:400 }}>ABOUT NSS</Typography>
       <br/>
@@ -56,7 +57,7 @@ const About = () => {
           Through several campus-wide initiatives like cleanliness drives, we tirelessly work to not only improve the lives of the underprivileged and oppressed, but also to ensure that the community's development is not halted.Our commitment to quality is all-encompassing, and it only gets stronger with time, as shown by the diversification that is occurring while simultaneously making sure that the core principles and concepts don't get lost in the process.</Typography>
           </motion.div></Box>
 
-          <Typography variant='h1' sx={{ px:10,pt:5 ,fontWeight:400 }}>ABOUT NSS INDIA</Typography>
+          <Typography variant='h2' sx={{ px:10,pt:5 ,fontWeight:400 }}>ABOUT NSS INDIA</Typography>
       <br/>
           <Box>
       <motion.div >
@@ -205,6 +206,7 @@ const About = () => {
         
       </div>
     </Layout>
+    </div>
   )
 }
 
