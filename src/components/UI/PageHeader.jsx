@@ -1,6 +1,5 @@
 import React from "react";
-
-import { Stack, Box } from "@mui/material";
+import { Stack, Typography, Box } from "@mui/material";
 
 export default function PageHeader(props) {
   return (
@@ -9,16 +8,15 @@ export default function PageHeader(props) {
       sx={{
         pl: 10,
         fontFamily: "DM Sans",
-        //   fontFamily: "Nothing You Could Do",
-        // fontSize: "4rem",
         pt: 4,
       }}
     >
-      <Box sx={{ fontSize: "4rem", fontFamily: "Nothing You Could Do" }}>
+      <Typography variant='h1' sx={{  fontWeight: 400 }}>
         {props.title}
-        {/* <Divider /> */}
+      </Typography>
+      <Box sx={{ fontSize: "1.5rem", py: 2, pr: 9 }}>
+        {props.children}
       </Box>
-      <Box sx={{ fontSize: "1.5rem", py: 2, pr: 9 }}>{props.children}</Box>
     </Stack>
   );
 }

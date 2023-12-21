@@ -63,7 +63,7 @@ const TeamBatch = ({ year, TeamList }) => {
       <div style={{ fontFamily: "DM Sans", overflowX: "hidden" }}>
         <Box
           sx={{
-            mx: 70,
+            mx: 60,
             my: 2,
             px: 8,
             py: 4,

@@ -65,6 +65,7 @@ const Contact = () => {
         textAlign="center"
         paddingRight="50px"
         marginBottom="30px"
+        fontWeight={400}
       >
         GET IN TOUCH
       </Typography>
@@ -85,7 +86,7 @@ const Contact = () => {
             color: "white",
             display: "flex",
             // flexDirection: "column",
-            fontSize: "25px",
+            fontSize: "30px",
           }}
         >
           <span style={{ color: "grey", marginRight: "5px" }}>LOCATE </span>{" "}
@@ -121,7 +122,7 @@ const Contact = () => {
               borderRadius: 0,
               textTransform: "none",
               height: "80px",
-              width: "400px",
+              width: "450px",
               marginTop: "10px",
               alignItems: "center",
               justifyContent: "center",
@@ -132,7 +133,7 @@ const Contact = () => {
               color: "white",
               display: "flex",
               // flexDirection: "column",
-              fontSize: "25px",
+              fontSize: "30px",
             }}
           >
             <span style={{ color: "grey", marginRight: "5px" }}>
@@ -194,13 +195,13 @@ const Contact = () => {
           </Box>
         </Grid>
 
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={6} >
           <div
             style={{
               borderRadius: 0,
               textTransform: "none",
               height: "80px",
-              width: "400px",
+              width: "350px",
               marginTop: "10px",
               alignItems: "center",
               justifyContent: "center",
@@ -211,7 +212,7 @@ const Contact = () => {
               color: "white",
               display: "flex",
               // flexDirection: "column",
-              fontSize: "25px",
+              fontSize: "30px",
               marginBottom: "20px",
             }}
           >
@@ -219,7 +220,7 @@ const Contact = () => {
             DETAILS
           </div>
           <List>
-            <ListItem
+            <ListItem 
               component="a"
               href="mailto:nss_svnit@gmail.com"
               target="_blank"
