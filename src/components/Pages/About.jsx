@@ -3,11 +3,11 @@ import Layout from '../Layout/Layout';
 import ComitteeSection from './Home/ComitteeSection';
 import DutySection from './Home/DutySection';
 import { motion } from "framer-motion";
-import { Typography, Box, Grid } from '@mui/material';
+import { Typography, Box, Grid,Button } from '@mui/material';
 import { makeStyles } from '@material-ui/core/styles';
 import { useState } from 'react';
 import { getStorage, ref, getDownloadURL } from '@firebase/storage';
-
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   gradientBackground: {
@@ -56,7 +56,39 @@ const About = () => {
           Through several campus-wide initiatives like cleanliness drives, we tirelessly work to not only improve the lives of the underprivileged and oppressed, but also to ensure that the community's development is not halted.Our commitment to quality is all-encompassing, and it only gets stronger with time, as shown by the diversification that is occurring while simultaneously making sure that the core principles and concepts don't get lost in the process.</Typography>
           </motion.div></Box>
 
-
+          <Typography variant='h1' sx={{ px:10,pt:5 ,fontWeight:400 }}>ABOUT NSS INDIA</Typography>
+      <br/>
+          <Box>
+      <motion.div >
+      <Typography variant='h6' sx={{m:"23px",p:"25px" ,textAlign:"justify", bgcolor:"#ffebff" , borderRadius:"25px",
+      display:"flex",
+      justifyContent:"center",
+      alignItems:"center",
+   rows:"10"}} >The National Service Scheme (NSS) is a Central Sector Scheme of Government of India, Ministry of Youth Affairs & Sports. It provides opportunity to the student youth of 11th & 12th Class of schools at +2 Board level and student youth of Technical Institution, Graduate & Post Graduate at colleges and University level of India to take part in various government led community service activities & programmes.The sole aim of the NSS is to provide hands on experience to young students in delivering community service.
+   
+   
+  </Typography>
+  <Link to="https://nss.gov.in/nss-detail-page">
+          <Button
+                  color="primary"
+                  style={{
+                    borderRadius: 0,
+                    height: "40px",
+                    marginTop: "1rem",
+                    color: "black",
+                    width: "150px",
+                    border: "2px black solid",
+                    fontSize: "1.1rem",
+                    fontFamily: "DM Sans",
+                    marginLeft: "50px",
+                  
+                  }}
+                >
+                  READ MORE
+                </Button>
+                </Link>
+          </motion.div></Box>
+          
       <div style={{ overflowX: 'hidden' }}>
         <Grid container spacing={2} sx={{ marginTop: '45px', marginLeft: '60px', marginBottom: '60px' }}>
           <Grid item xs={6} sm={6} md={5}>
