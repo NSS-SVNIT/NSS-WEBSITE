@@ -203,18 +203,22 @@ const Contact = () => {
             </ListItem>
             <ListItem disablePadding>
               <ListItemButton>
+              
                 <ListItemIcon>
                   <Instagram />
                 </ListItemIcon>
+                <a href="https://www.instagram.com/nss_svnit" linkstyle='none'  text-decoration= "none">
                 <ListItemText primary="@nss_svnit" />
+                </a>
               </ListItemButton>
+
             </ListItem>
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon>
                   <Facebook />
                 </ListItemIcon>
-                <ListItemText primary="nss_svnit" />
+                <ListItemText primary="NSS-SVNIT" />
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>

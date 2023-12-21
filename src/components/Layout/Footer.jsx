@@ -24,11 +24,11 @@ const Footer = () => {
   };
 
   const hrStyle = {
-    height: "2px",
+    height: "1px",
     width: "100%",
     backgroundColor: "white",
     border: "none",
-    margin: "20px 0", // Adjust the margin as needed
+    margin: "10px 0", // Adjust the margin as needed
   };
 
   const linkStyleIcon = {
@@ -55,10 +55,10 @@ const Footer = () => {
         justifyContent="space-around"
         alignItems="center"
       >
-        <Grid item lg={3} xs={12}>
+        <Grid item lg={6} xs={8}>
           <FooterLogo />
         </Grid>
-        <Grid item lg={6} xs={8} justifyContent="center">
+        <Grid item lg={3} xs={6} justifyContent="center">
           <div
             style={{
               display: "flex",
@@ -75,8 +75,7 @@ const Footer = () => {
             <Link to="/developers" style={linkStyle}>
               Developers
             </Link>
-            <a style={linkStyle}>Third Link</a>
-            <a style={linkStyle}>Fourth Link</a>
+            
           </div>
           <hr style={hrStyle} />
           <div
