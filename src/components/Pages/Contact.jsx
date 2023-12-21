@@ -21,13 +21,18 @@ import {
   ListItemText,
   ListItemIcon,
 } from "@mui/material";
-import { Facebook, Instagram, Twitter } from "@mui/icons-material";
+import { Facebook, Instagram, Twitter, YouTube } from "@mui/icons-material";
 const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
     emailjs
-      .sendForm(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, e.target, import.meta.env.VITE_EMAILJS_USER_ID)
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        e.target,
+        import.meta.env.VITE_EMAILJS_USER_ID
+      )
       .then((result) => {
         console.log("Email sent successfully:", result.text);
         Swal.fire({
@@ -47,6 +52,10 @@ const Contact = () => {
   };
 
   const position = [21.164583, 72.785239]; // Coordinates for SVnit location
+  const linkStyle = {
+    color: "inherit", // Inherit color from parent, which should be the default text color
+    textDecoration: "none", // Remove underline
+  };
   return (
     <Layout>
       <Typography
@@ -55,12 +64,13 @@ const Contact = () => {
         justifyContent="center"
         textAlign="center"
         paddingRight="50px"
+        marginBottom="30px"
+        fontWeight={400}
       >
         GET IN TOUCH
       </Typography>
       <Grid container direction={"column"}>
-        <Button
-          variant="contained"
+        <div
           style={{
             borderRadius: 0,
             textTransform: "none",
@@ -70,14 +80,18 @@ const Contact = () => {
             alignItems: "center",
             justifyContent: "center",
             backgroundColor: "black",
-            fontSize: "1.1rem",
+            // fontSize: "1.1rem",
             fontFamily: "DM Sans",
             margin: "0 auto",
+            color: "white",
+            display: "flex",
+            // flexDirection: "column",
+            fontSize: "30px",
           }}
-          disableElevation
         >
-          LOCATE US
-        </Button>
+          <span style={{ color: "grey", marginRight: "5px" }}>LOCATE </span>{" "}
+          <span style={{ color: "white" }}>US</span>
+        </div>
         <Grid item lg={12} xs={4} sm={2} sx={{ px: 8, py: 4 }}>
           <MapContainer
             center={position}
@@ -103,25 +117,31 @@ const Contact = () => {
 
       <Grid container spacing={3}>
         <Grid item xs={12} md={6}>
-          <Button
-            variant="contained"
+          <div
             style={{
               borderRadius: 0,
               textTransform: "none",
               height: "80px",
-              width: "300px",
-              // marginTop: "10px",
-              margin: "10px 160px",
+              width: "450px",
+              marginTop: "10px",
               alignItems: "center",
               justifyContent: "center",
               backgroundColor: "black",
-              fontSize: "1.1rem",
+              // fontSize: "1.1rem",
               fontFamily: "DM Sans",
+              margin: "0 auto",
+              color: "white",
+              display: "flex",
+              // flexDirection: "column",
+              fontSize: "30px",
             }}
-            disableElevation
           >
-            SEND YOUR MESSAGE HERE
-          </Button>
+            <span style={{ color: "grey", marginRight: "5px" }}>
+              {" "}
+              SEND YOUR{" "}
+            </span>
+            MESSAGE HERE
+          </div>
           <Box
             // component="form"
             noValidate
@@ -175,59 +195,90 @@ const Contact = () => {
           </Box>
         </Grid>
 
-        <Grid item xs={12} md={6}>
-          <Button
-            variant="contained"
+        <Grid item xs={12} md={6} >
+          <div
             style={{
               borderRadius: 0,
               textTransform: "none",
               height: "80px",
-              width: "300px",
-              margin: "20px 160px",
+              width: "350px",
+              marginTop: "10px",
+              alignItems: "center",
+              justifyContent: "center",
               backgroundColor: "black",
-              fontSize: "1.1rem",
+              // fontSize: "1.1rem",
               fontFamily: "DM Sans",
+              margin: "0 auto",
+              color: "white",
+              display: "flex",
+              // flexDirection: "column",
+              fontSize: "30px",
+              marginBottom: "20px",
             }}
-            disableElevation
           >
-            CONTACT DETAILS
-          </Button>
+            <span style={{ color: "grey", marginRight: "5px" }}>CONTACT</span>
+            DETAILS
+          </div>
           <List>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  <MailIcon />
-                </ListItemIcon>
-                <ListItemText primary="nss_svnit@gmail.com" />
-              </ListItemButton>
+            <ListItem 
+              component="a"
+              href="mailto:nss_svnit@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={linkStyle}
+            >
+              <ListItemIcon>
+                <MailIcon />
+              </ListItemIcon>
+              <ListItemText primary="nss_svnit@gmail.com" />
             </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton>
-              
-                <ListItemIcon>
-                  <Instagram />
-                </ListItemIcon>
-                <a href="https://www.instagram.com/nss_svnit" linkstyle='none'  text-decoration= "none">
-                <ListItemText primary="@nss_svnit" />
-                </a>
-              </ListItemButton>
-
+            <ListItem
+              component="a"
+              href="https://www.instagram.com/nss_svnit"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={linkStyle}
+            >
+              <ListItemIcon>
+                <Instagram />
+              </ListItemIcon>
+              <ListItemText primary="@nss_svnit" />
             </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  <Facebook />
-                </ListItemIcon>
-                <ListItemText primary="NSS-SVNIT" />
-              </ListItemButton>
+            <ListItem
+              component="a"
+              href="https://www.facebook.com/p/NSS-SVNIT-100064799047910/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={linkStyle}
+            >
+              <ListItemIcon>
+                <Facebook />
+              </ListItemIcon>
+              <ListItemText primary="nss_svnit" />
             </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  <Twitter />
-                </ListItemIcon>
-                <ListItemText primary="nss_svnit" />
-              </ListItemButton>
+            <ListItem
+              component="a"
+              href="https://twitter.com/nss_svnit"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={linkStyle}
+            >
+              <ListItemIcon>
+                <Twitter />
+              </ListItemIcon>
+              <ListItemText primary="nss_svnit" />
+            </ListItem>
+            <ListItem
+              component="a"
+              href="https://www.youtube.com/@nsssvnit6353"
+              target="_blank"
+              style={linkStyle}
+              rel="noopener noreferrer"
+            >
+              <ListItemIcon>
+                <YouTube />
+              </ListItemIcon>
+              <ListItemText primary="NSS SVNIT" />
             </ListItem>
           </List>
         </Grid>

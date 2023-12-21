@@ -15,6 +15,7 @@ export default function ComitteeCard(props) {
   const handleCloseModal = () => {
     setOpenModal(false);
   };
+
   return (
     <Stack
       onMouseEnter={() => setHovered(true)}
@@ -43,7 +44,19 @@ export default function ComitteeCard(props) {
       > */}
       {/* <SettingsSuggestIcon sx={{ color: "gray", fontSize: "2rem" }} /> */}
       {/* </Box> */}
-      {props.url && <img height="150px" src={props.url} alt={props.title} />}
+      {/* {props.url && <img height="150px" src={props.url} alt={props.title} />} */}
+      <Typography
+        component="span"
+        style={{
+          fontFamily: "'Material Symbols Outlined'",
+          fontSize: "8rem",
+          textAlign: "center",
+          lineHeight: "1", // Adjust line height to remove extra space
+          verticalAlign: "middle", // Align the icon vertically in the middle
+        }}
+      >
+        {props.icon}
+      </Typography>
       <Box
         sx={{
           fontFamily: "DM Sans",

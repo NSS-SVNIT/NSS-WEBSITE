@@ -18,9 +18,10 @@ export default function Events() {
         ...doc.data(),
         id: doc.id,
       }));
-      setPosts(newData);
+      setPosts(newData.reverse()); // Reverse the order of the posts
     });
   };
+  
 
   useEffect(() => {
     // Scroll to the top of the page when the component mounts
@@ -36,7 +37,7 @@ export default function Events() {
     fetchPosts();
   }, []);
 
-  const displayedPosts = showAll ? posts : posts.slice(0, 8);
+  const displayedPosts = showAll ? posts.reverse() : posts.slice(0, 8);
 
   return(
     <Layout>

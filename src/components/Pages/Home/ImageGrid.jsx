@@ -5,6 +5,9 @@ import ButtonBase from "@mui/material/ButtonBase";
 import Container from "@mui/material/Container";
 import { Typography } from "@mui/material";
 import { motion } from "framer-motion";
+import { getStorage, ref, getDownloadURL, listAll } from '@firebase/storage';
+import { useState, useEffect } from 'react';
+
 
 const ImageBackdrop = styled("div")(({ theme }) => ({
   position: "absolute",
@@ -56,19 +59,62 @@ const ImageIconButton = styled(ButtonBase)(({ theme }) => ({
   },
 }));
 
+export default function ImageGrid() {
+  const [CulturalActivity, setCulturalActivity] = useState([]);
+  const [Parade, setParade] = useState([]);
+  const [Industrial, setIndustrial] = useState([]);
+  const [Cleanliness, setCleanliness] = useState([]);
+  const [Camp, setCamp] = useState([]);
+  const [MorningRoutine, setMorningRoutine] = useState([]);
+  const [Workshop, setWorkshop] = useState([]);
+  // const [AwarenessCampaign, setAwarenessCampaign] = useState([]);
+  const [PlantationDrive, setPlantationDrive] = useState([]);
+  const func = async() => {
+    const storage = getStorage();
+    const reference1 = ref(storage, 'aboutImages/Cultural.jpg');
+    getDownloadURL(reference1).then((x)=>{setCulturalActivity(x);})
+
+    const reference2 = ref(storage, 'aboutImages/Parade.jpg');
+    getDownloadURL(reference2).then((x)=>{setParade(x);})
+
+    const reference3 = ref(storage, 'aboutImages/Industrial.jpg');
+    getDownloadURL(reference3).then((x)=>{setIndustrial(x);})
+
+    const reference4 = ref(storage, 'aboutImages/Cleanliness.jpg');
+    getDownloadURL(reference4).then((x)=>{setCleanliness(x);})
+
+    const reference5 = ref(storage, 'aboutImages/Camp.jpg');
+    getDownloadURL(reference5).then((x)=>{setCamp(x);})
+
+    const reference6 = ref(storage, 'aboutImages/MorningRoutine.jpg');
+    getDownloadURL(reference6).then((x)=>{setMorningRoutine(x);})
+
+    const reference7 = ref(storage, 'aboutImages/workshops.png');
+    getDownloadURL(reference7).then((x)=>{setWorkshop(x);})
+
+    const reference8 = ref(storage, 'aboutImages/Plantation.jpg');
+    getDownloadURL(reference8).then((x)=>{setPlantationDrive(x);})
+}
+
+useEffect(()=>{
+  func()
+}, []);
+console.log(CulturalActivity);
+
 const images = [
   {
-    url: "src/components/Pages/Home/photos/Cultural.jpg",
+    // url: "src/components/Pages/Home/photos/Cultural.jpg",
+    url: CulturalActivity,
     title: "Cultural Activities",
     width: "40%",
   },
   {
-    url: "src/components/Pages/Home/photos/Parade.jpg",
+    url: Parade,
     title: "Parade",
     width: "20%",
   },
   {
-    url: "src/components/Pages/Home/photos/Industrial.jpg",
+    url: Industrial,
     title: "Industrial Visits and Projects",
     width: "40%",
   },
@@ -88,32 +134,34 @@ const images = [
   //   width: "24%",
   // },
   {
-    url: "src/components/Pages/Home/photos/Cleanliness.jpg",
+    url: Cleanliness,
+    // url: {c},
     title: "Cleanliness Drives",
     width: "20%",
   },
   {
-    url: "src/components/Pages/Home/photos/Camp.jpg",
+    url: Camp,
     title: "Camps",
     width: "40%",
   },
   {
-    url: "src/components/Pages/Home/photos/MorningRoutine.jpg",
+    url: MorningRoutine,
     title: "Morning Routines and Yoga Sessions",
     width: "40%",
   },
   {
-    url: "src/components/Pages/Home/photos/Workshops.png",
+    url: Workshop,
     title: "Workshops",
     width: "40%",
   },
+  // {
+  //   // url: "src/components/Pages/Home/photos/Awareness.jpg",
+  //   url: imageUrls[0],
+  //   title: "Awareness Campaigns",
+  //   width: "40%",
+  // },
   {
-    url: "src/components/Pages/Home/photos/Awareness.jpg",
-    title: "Awareness Campaigns",
-    width: "40%",
-  },
-  {
-    url: "src/components/Pages/Home/photos/Plantation.jpg",
+    url: PlantationDrive,
     title: "Plantation Drives",
     width: "20%",
   },
@@ -134,7 +182,9 @@ const images = [
   // },
 ];
 
-export default function ImageGrid() {
+
+
+
   return (
     <motion.div
       initial={{ opacity: 0 }}

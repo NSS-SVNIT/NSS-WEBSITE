@@ -2,6 +2,14 @@ import React from "react";
 import Layout from "../Layout/Layout";
 import DeveloperCard from "./DeveloperCard";
 import { Typography } from "@mui/material";
+import param from "./param.jpg";
+import aditi from "./aditi.jpg";
+import jinhal from "./jinhal.jpg";
+import shreeya from "./shreeya.jpg";
+import pragnesh from "./pragnesh.jpg";
+import keval from "./keval.jpg";
+import namrata from "./namrata.jpg";
+import "./underline.css";
 
 function Developers() {
   const developers = [
@@ -9,43 +17,55 @@ function Developers() {
       id: 1,
       name: "Aditi Tapariya",
       github: "https://github.com/adititapariya",
-      mail: "tapariyaaditi23@gmail.com",
+      mail: "mailto:tapariyaaditi23@gmail.com",
       linkedin: "https://www.linkedin.com/in/aditi-tapariya/",
+      imageLink:
+        "https://drive.google.com/uc?id=1vhZEqCdA2wfaX5i3gyXsA_acal_gyygh&export=download",
     },
     {
       id: 2,
       name: "Harshit Pathak",
       github: "https://github.com/Story27",
-      mail: "Pathakharshit281@gmail.com",
+      mail: "mailto:pathakharshit281@gmail.com",
       linkedin: "https://www.linkedin.com/in/harshit-pathak-4ba6aa22a/",
+      imageLink:
+        "https://drive.google.com/uc?id=1emfchxV1KCWoBRjdfr4Di8XQ1RuTo5qj&export=download",
     },
     {
       id: 3,
       name: "Jinhal Maheshwari",
       github: "https://github.com/Jinhal01",
-      mail: "jinhalmaheshwari1256@gmail.com",
+      mail: "mailto:jinhalmaheshwari1256@gmail.com",
       linkedin: "linkedin.com/in/jinhal-maheshwari-71a217212/",
+      imageLink:
+        "https://drive.google.com/uc?id=1vxZ22s3sxcEEA10i7JbTOvj7FoONuy4T&export=download",
     },
     {
       id: 4,
       name: "Param Shah",
       github: "https://github.com/paramshah1903",
-      mail: "shahparam1903@gmail.com",
+      mail: "mailto:shahparam1903@gmail.com",
       linkedin: "https://www.linkedin.com/in/param-shah-716322227/",
+      imageLink:
+        "https://drive.google.com/uc?id=1wKDtiasOBSOdFZLGE7hGmqtHpFM7gvlC&export=download",
     },
     {
       id: 5,
       name: "Pragnesh Barik",
       github: "https://github.com/pragneshbarik",
-      mail: "barikpragnesh@gmail.com",
+      mail: "mailto:barikpragnesh@gmail.com",
       linkedin: "https://www.linkedin.com/in/pragnesh-barik",
+      imageLink:
+        "https://drive.google.com/uc?id=1wNOKNO2AfRA9RcIR-HHUc5MLXfc92NbN&export=download",
     },
     {
       id: 6,
       name: "Shreeya Dave",
       github: "https://github.com/shreeyadave",
-      mail: "shreeyadave776@gmail.com",
+      mail: "mailto:shreeyadave776@gmail.com",
       linkedin: "https://www.linkedin.com/in/shreeya-dave-444166232/",
+      imageLink:
+        "https://drive.google.com/uc?id=1vWa6nLxSAzsuW-J_KjlJ8e24UZXRDnAy&export=download",
     },
   ];
 
@@ -54,15 +74,19 @@ function Developers() {
       id: 1,
       name: "Keval Kanpariya",
       github: "https://github.com/keval-kanp-1011",
-      mail: "kevalkanpariya5051@gmail.com",
+      mail: "mailto:kevalkanpariya5051@gmail.com",
       linkedin: "http://linkedin.com/in/kevalkanpariya",
+      imageLink:
+        "https://drive.google.com/uc?id=1vsDgSNwydos4hWLN3JFhD_K0F4GvWdPX&export=download",
     },
     {
       id: 2,
       name: "Namrata Rathod",
       github: "https://github.com/Namarata28",
-      mail: "namrata.rathod028@gmail.com",
+      mail: "mailto:namrata.rathod028@gmail.com",
       linkedin: "www.linkedin.com/in/nr28",
+      imageLink:
+        "https://drive.google.com/uc?id=1wD9UFDsY73yXhf81NhmLj4TON9EmUsUu&export=download",
     },
   ];
 
@@ -73,9 +97,11 @@ function Developers() {
   return (
     <div>
       <Layout>
-        <Typography variant="h1" align="center">
-          Developers
-        </Typography>
+        <div className="heading">
+          <Typography variant="h1" align="center">
+            Developers
+          </Typography>
+        </div>
         <div
           style={{
             display: "flex",
@@ -97,7 +123,9 @@ function Developers() {
                 name={developer.name}
                 github={developer.github}
                 mail={developer.mail}
-                insta={developer.insta}
+                linkedin={developer.linkedin}
+                work="Web Developer"
+                imageLink={developer.imageLink} // Use the correct prop name
               />
             ))}
           </div>
@@ -116,14 +144,19 @@ function Developers() {
                 name={developer.name}
                 github={developer.github}
                 mail={developer.mail}
-                insta={developer.insta}
+                linkedin={developer.linkedin}
+                work="Designer"
+                // insta={developer.insta}
+                imageLink={developer.imageLink} // Use the correct prop name
               />
             ))}
           </div>
         </div>
-        <Typography variant="h1" align="center">
-          Designers
-        </Typography>
+        <div className="heading">
+          <Typography variant="h1" align="center">
+            Designers
+          </Typography>
+        </div>
         <div
           style={{
             display: "flex",
@@ -138,9 +171,11 @@ function Developers() {
             <DeveloperCard
               key={designer.id}
               name={designer.name}
-              portfolio={designer.portfolio}
-              email={designer.email}
-              behance={designer.behance}
+              github={designer.github}
+              mail={designer.mail}
+              linkedin={designer.linkedin}
+              // insta={designer.insta}
+              imageLink={designer.imageLink} // Use the correct prop name
             />
           ))}
         </div>
