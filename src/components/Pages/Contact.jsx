@@ -221,7 +221,7 @@ const Contact = () => {
           <List>
             <ListItem
               component="a"
-              href="mailto:nss_svnit@gmail.com"
+              href="mailto:nss@svnit.ac.in"
               target="_blank"
               rel="noopener noreferrer"
               style={linkStyle}
@@ -229,7 +229,7 @@ const Contact = () => {
               <ListItemIcon>
                 <MailIcon />
               </ListItemIcon>
-              <ListItemText primary="nss_svnit@gmail.com" />
+              <ListItemText primary="nss@svnit.ac.in" />
             </ListItem>
             <ListItem
               component="a"
