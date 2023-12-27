@@ -3,7 +3,7 @@ import { Typography, Card, CardContent, CardMedia, Link, Box } from '@mui/materi
 import { LinkedIn, GitHub, Email } from '@mui/icons-material';
 
 // Card component for displaying Team information
-const TeamCard = ({ image, name, position, linkedin, github, gmail }) => {
+const TeamCard = React.memo(({ image, name, position, linkedin, github, gmail }) => {
   const [isHovered, setIsHovered] = useState(false);
   const hasLinkedIn = !!linkedin; // Check if the LinkedIn link is provided
   const hasGitHub = !!github; // Check if the GitHub link is provided
@@ -124,6 +124,6 @@ const TeamCard = ({ image, name, position, linkedin, github, gmail }) => {
       </CardContent>
     </Card>
   );
-};
+});
 
 export default TeamCard;

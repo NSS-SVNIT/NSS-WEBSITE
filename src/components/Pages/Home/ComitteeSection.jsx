@@ -2,22 +2,19 @@ import React from "react";
 import { Stack, Box, Grid } from "@mui/material";
 import ComitteeCard from "./CommitteeCard";
 import { motion } from "framer-motion";
-// import technical from "./technical.png";
 
-const ComitteeSection = () => {
+const ComitteeSection = React.memo(() => {
   const comittees = [
     {
       name: "Technical",
       description:
         "The NSS Technical Committee facilitates student engagement in engineering and technology by organizing projects, workshops, and industrial trips, promoting practical experiences to enhance technical skills and address societal challenges.",
-      // url: "https://static.vecteezy.com/system/resources/thumbnails/006/298/276/small/gear-smart-eps-icon-digital-tech-business-logo-free-vector.jpg",
       icon: "memory",
     },
     {
       name: "Sports",
       description:
         "The NSS Sports Committee prioritizes volunteers' physical health through morning routines and organizes sporting events. It manages discipline at NSS events and trains volunteers for the NSS parade, ensuring their overall well-being.",
-
       icon: "sports_soccer",
     },
     {
@@ -36,7 +33,6 @@ const ComitteeSection = () => {
       name: "Documentation",
       description:
         "The Documentation Committee maintains detailed records of event planning, meeting minutes, and creates reports. Their meticulous documentation fosters effective communication with the faculty advisor, promoting transparency and informed decision-making within the unit.",
-
       icon: "description",
     },
     {
@@ -48,10 +44,11 @@ const ComitteeSection = () => {
     {
       name: "Cultural",
       description:
-        "The NSS Creative Committee utilizes creative abilities for the greater good, engaging in tasks from designing posters to video editing. It channels creativity to effectively promote welfare initiatives and spread messages that resonate with the audience.",
+        "The NSS Creative Committee utilizes creative abilities for the greater good, engaging in tasks from designing posters to video editing. It channels creativity to effectively promote welfare initiatives and spread messages that resonate with the audience.",
       icon: "attractions",
     },
   ];
+
   return (
     <Stack>
       <Box
@@ -65,7 +62,7 @@ const ComitteeSection = () => {
           pr: "40px",
         }}
       >
-        About Our Comittees
+        About Our Committees
       </Box>
       <Grid
         container
@@ -75,27 +72,25 @@ const ComitteeSection = () => {
         spacing={2}
         sx={{ px: 8, py: 6 }}
       >
-        {comittees.map((title, index) => {
-          return (
-            <Grid item xs={6} lg={3} key={index}>
-              <motion.div
-                initial={{ opacity: 0, y: (index + 1) * 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1 }}
-              >
-                <ComitteeCard
-                  title={title.name}
-                  about={title.description}
-                  icon={title.icon}
-                />
-              </motion.div>
-            </Grid>
-          );
-        })}
+        {comittees.map((title, index) => (
+          <Grid item xs={6} lg={3} key={index}>
+            <motion.div
+              initial={{ opacity: 0, y: (index + 1) * 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1 }}
+            >
+              <ComitteeCard
+                title={title.name}
+                about={title.description}
+                icon={title.icon}
+              />
+            </motion.div>
+          </Grid>
+        ))}
       </Grid>
     </Stack>
   );
-};
+});
 
 export default ComitteeSection;

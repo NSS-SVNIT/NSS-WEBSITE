@@ -2,12 +2,11 @@ import React from "react";
 import { Stack, Box } from "@mui/material";
 import ImageGrid from "./ImageGrid";
 
-export default function DutySection() {
+const DutySection = React.memo(() => {
   return (
     <Stack>
       <Box
         sx={{
-          // textAlign: "center",
           bgcolor: "black",
           color: "white",
           fontFamily: "DM Sans",
@@ -20,7 +19,6 @@ export default function DutySection() {
       </Box>
       <Box
         sx={{
-          // textAlign: "center",
           bgcolor: "black",
           color: "white",
           fontFamily: "DM Sans",
@@ -33,7 +31,7 @@ export default function DutySection() {
         primary objectives of NSS. With innovative activities across the
         departments catering to all classes of the campus residents, we try to
         create small, happy and memorable moments in their lives. We aim to
-        bring about a positive change in the society with focus on education and
+        bring about a positive change in the society with a focus on education and
         development.
       </Box>
 
@@ -42,4 +40,6 @@ export default function DutySection() {
       </Stack>
     </Stack>
   );
-}
+});
+
+export default DutySection;

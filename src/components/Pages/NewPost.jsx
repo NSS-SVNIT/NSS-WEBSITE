@@ -23,12 +23,20 @@ export default function NewPost() {
     content: [],
   };
 
-  const handleSubmit = async () => {
-    const uuid = uuidv4();
-    postData["timestamp"] = today.getTime();
-    await setDoc(doc(firestore, "posts", uuid), postData);
-  };
   const [postData, setPostData] = useState(initPostData);
+
+  const handleSubmit = async () => {
+    try {
+      const uuid = uuidv4();
+      postData["timestamp"] = today.getTime();
+      await setDoc(doc(firestore, "posts", uuid), postData);
+      // Reset form after successful submission
+      setPostData(initPostData);
+    } catch (error) {
+      console.error("Error submitting post:", error.message);
+      // Handle error and provide user feedback
+    }
+  };
 
   function handleChange(field) {
     return (event) => {
@@ -40,14 +48,15 @@ export default function NewPost() {
   }
 
   function handleTextChange(e) {
-    setText(e.target.value);
+    const newText = e.target.value;
+    setText(newText);
     setPostData((prev) => ({
       ...prev,
-      ["content"]: text.split("\n"),
+      ["content"]: newText.split("\n"),
     }));
   }
 
-  const [text, setText] = useState(``);
+  const [text, setText] = useState("");
 
   useEffect(() => {
     // Scroll to the top of the page when the component mounts
@@ -65,22 +74,24 @@ export default function NewPost() {
               size="small"
               onChange={handleChange("author")}
               fullWidth
-            ></TextField>
+              value={postData.author}
+            />
             <TextField
               variant="standard"
               fullWidth
               label="Title"
               onChange={handleChange("title")}
               size="small"
-            ></TextField>
+              value={postData.title}
+            />
             <TextField
               variant="standard"
               label="Reading time"
               onChange={handleChange("readingTime")}
               size="small"
               fullWidth
-            ></TextField>
-
+              value={postData.readingTime}
+            />
             <TextField
               style={{ width: "100%" }}
               onChange={handleTextChange}
@@ -88,7 +99,7 @@ export default function NewPost() {
               label="Content"
               multiline
               variant="standard"
-            ></TextField>
+            />
             <Button variant="contained" onClick={handleSubmit}>
               SUBMIT
             </Button>
@@ -100,7 +111,7 @@ export default function NewPost() {
             author={postData.author}
             content={text}
             readingTime={postData.readingTime}
-          ></BlogPost>
+          />
         </Grid>
       </Grid>
     </Layout>

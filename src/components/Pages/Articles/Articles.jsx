@@ -9,7 +9,7 @@ import LatestEdition from "./LatestEditionMagazine";
 import OtherMagazines from "./OtherMagazines";
 import PageHeader from "../../UI/PageHeader";
 
-export default function Articles() {
+const Articles = React.memo(() => {
   const [value, setValue] = React.useState("1");
 
   const handleChange = (event, newValue) => {
@@ -70,4 +70,6 @@ export default function Articles() {
       </Box>
     </Layout>
   );
-}
+});
+
+export default Articles;

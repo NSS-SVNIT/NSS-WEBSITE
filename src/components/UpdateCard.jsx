@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, memo } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
@@ -10,8 +10,9 @@ import { Box } from "@mui/material";
 import { firestore } from "../firebase";
 import { collection, getDocs } from "@firebase/firestore";
 
-const UpdateCard = () => {
+const UpdateCard = memo(() => {
   const [updates, setUpdates] = useState([]);
+
   const fetchUpdates = async () => {
     await getDocs(collection(firestore, "updates")).then((querySnapshot) => {
       const newData = querySnapshot.docs.map((doc) => ({
@@ -69,6 +70,6 @@ const UpdateCard = () => {
       </CardContent>
     </Card>
   );
-};
+});
 
 export default UpdateCard;

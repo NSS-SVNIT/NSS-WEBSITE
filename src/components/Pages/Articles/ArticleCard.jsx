@@ -10,7 +10,8 @@ import "./ArticleCard.css";
 
 const url =
   "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/articleImages%2FReport%2FCamp%20Report1.pdf?alt=media&token=f04dc8ff-2bed-41ee-a5ee-98473afb3e98";
-export default function ArticleCard(props) {
+
+const ArticleCard = React.memo((props) => {
   const theme = useTheme();
 
   const download = (url) => {
@@ -86,4 +87,6 @@ export default function ArticleCard(props) {
       />
     </Card>
   );
-}
+});
+
+export default ArticleCard;

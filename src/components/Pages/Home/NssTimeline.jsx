@@ -7,7 +7,7 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 
-export default function NssTimeline() {
+const NssTimeline = React.memo(() => {
   return (
     <Timeline>
       <TimelineItem>
@@ -32,7 +32,7 @@ export default function NssTimeline() {
           <TimelineDot />
           <TimelineConnector />
         </TimelineSeparator>
-        <TimelineContent>Recieved Funding from Government.</TimelineContent>
+        <TimelineContent>Received Funding from Government.</TimelineContent>
       </TimelineItem>
       <TimelineItem>
         <TimelineOppositeContent>2022</TimelineOppositeContent>
@@ -41,4 +41,6 @@ export default function NssTimeline() {
       </TimelineItem>
     </Timeline>
   );
-}
+});
+
+export default NssTimeline;

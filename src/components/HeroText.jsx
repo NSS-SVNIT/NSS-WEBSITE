@@ -1,33 +1,18 @@
 import { Box, Button, Stack } from "@mui/material";
-import React from "react";
+import React, { memo } from "react";
 import "./HeroText.css";
-export default function HeroText() {
+
+const HeroText = memo(() => {
   return (
-    <Box
-      sx={{
-        flexBasis: "60%",
-      }}
-    >
-      <div
-        // style={{
-        //   background: "rgba(255, 255, 255, 0.2)",
-        //   boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
-        //   backdropFilter: "blur(5px)",
-        //   WebkitBackdropFilter: "blur(5px)",
-        //   borderRadius: "10px",
-        //   border: "1px solid rgba(255, 255, 255, 0.18)",
-        // }}
-        className="glass"
-      >
+    <Box sx={{ flexBasis: "60%" }}>
+      <div className="glass">
         <h3
           style={{
             fontSize: "6rem",
             fontFamily: "Poppins",
             fontWeight: "100",
-            // color: "white",
           }}
         >
-          {/* Celebrating 1 Year of{" "} */}
           <span style={{ fontWeight: "400" }}>NSS SVNIT</span>
         </h3>
 
@@ -50,7 +35,6 @@ export default function HeroText() {
           {/* <Button
             variant="contained"
             style={{
-              // borderRadius: 0,
               textTransform: "none",
               height: "40px",
               width: "150px",
@@ -67,7 +51,6 @@ export default function HeroText() {
           <Button
             variant="outlined"
             style={{
-              // borderRadius: 0,
               textTransform: "none",
               height: "40px",
               color: "black",
@@ -86,4 +69,6 @@ export default function HeroText() {
       </div>
     </Box>
   );
-}
+});
+
+export default HeroText;

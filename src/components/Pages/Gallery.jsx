@@ -1,18 +1,12 @@
-import * as React from "react";
-import PropTypes from "prop-types";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
-import Layout from "../Layout/Layout";
-import GalleryView from "./Home/GalleryView";
-import { Divider, Stack } from "@mui/material";
-import LightGalleryView from "./LightGalleryView";
-import PageHeader from "../UI/PageHeader";
-import { useEffect } from "react";
-import { getDocs, collection, doc } from "@firebase/firestore";
-import { firestore } from "../../firebase";
-import { useState } from "react";
+import React, { useEffect } from 'react';
+import Layout from '../Layout/Layout';
+import GalleryView from './Home/GalleryView';
+import LightGalleryView from './LightGalleryView';
+import PageHeader from '../UI/PageHeader';
+import { getDocs, collection } from '@firebase/firestore';
+import { firestore } from '../../firebase';
+import { useState } from 'react';
+import { Stack, Tabs, Tab, Box, Typography } from '@mui/material';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -34,27 +28,17 @@ function TabPanel(props) {
   );
 }
 
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
-};
-
 function a11yProps(index) {
   return {
     id: `vertical-tab-${index}`,
-    "aria-controls": `vertical-tabpanel-${index}`,
+    'aria-controls': `vertical-tabpanel-${index}`,
   };
 }
 
-export default function Gallery() {
+const MemoizedTabPanel = React.memo(TabPanel);
+
+const Gallery = () => {
   const [value, setValue] = React.useState(0);
-  const categories = [];
-
-  for (let i = 0; i < 10; i++) {
-    categories.push("EVENT " + (i + 1));
-  }
-
   const [foldersList, setFoldersList] = useState([]);
 
   useEffect(() => {
@@ -72,7 +56,7 @@ export default function Gallery() {
   }, []);
 
   const fetchFolders = async () => {
-    const querySnapshot = await getDocs(collection(firestore, "images"));
+    const querySnapshot = await getDocs(collection(firestore, 'images'));
     const newData = querySnapshot.docs.map((doc) => ({
       ...doc.data(),
       id: doc.id,
@@ -97,9 +81,8 @@ export default function Gallery() {
         sx={{
           flexGrow: 1,
           pl: 8,
-          display: "flex",
-          height: "100%",
-          // alignItems: "center",
+          display: 'flex',
+          height: '100%',
         }}
       >
         <Tabs
@@ -111,31 +94,28 @@ export default function Gallery() {
           aria-label="Vertical tabs example"
           sx={{
             borderRight: 0,
-            minWidth: "150px",
-            // borderColor: "divider",
-            fontFamily: "DM Sans",
+            minWidth: '150px',
+            fontFamily: 'DM Sans',
           }}
         >
-          {foldersList.map((items, i) => {
-            return (
-              <Tab
-                key={i}
-                sx={{ fontFamily: "DM Sans" }}
-                label={items.name}
-                {...a11yProps(i)}
-              />
-            );
-          })}
+          {foldersList.map((items, i) => (
+            <Tab
+              key={i}
+              sx={{ fontFamily: 'DM Sans' }}
+              label={items.name}
+              {...a11yProps(i)}
+            />
+          ))}
         </Tabs>
 
-        {foldersList.map((folder, i) => {
-          return (
-            <TabPanel value={value} key={i} index={i}>
-              <LightGalleryView images={folder.image_links} />
-            </TabPanel>
-          );
-        })}
+        {foldersList.map((folder, i) => (
+          <MemoizedTabPanel value={value} key={i} index={i}>
+            <LightGalleryView images={folder.image_links} />
+          </MemoizedTabPanel>
+        ))}
       </Stack>
     </Layout>
   );
-}
+};
+
+export default React.memo(Gallery);

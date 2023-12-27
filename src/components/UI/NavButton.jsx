@@ -1,9 +1,10 @@
-import React from "react";
+import React, { memo } from "react";
 import { NavLink } from "react-router-dom";
 import { Button } from "@mui/material";
 
-export default function NavButton(props) {
+const NavButton = memo((props) => {
   const { to, scrolling, children } = props;
+
   return (
     <NavLink to={props.to}>
       {({ isActive, isPending }) => (
@@ -20,4 +21,6 @@ export default function NavButton(props) {
       )}
     </NavLink>
   );
-}
+});
+
+export default NavButton;

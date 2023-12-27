@@ -8,6 +8,8 @@ import { getDocs, collection } from "@firebase/firestore";
 import { firestore } from "../../firebase";
 import { Grid, Button } from "@mui/material";
 
+const MemoizedBlogCard = React.memo(BlogCard);
+
 export default function Events() {
   const [posts, setPosts] = useState([]);
   const [showAll, setShowAll] = useState(false);
@@ -21,7 +23,6 @@ export default function Events() {
       setPosts(newData.reverse()); // Reverse the order of the posts
     });
   };
-  
 
   useEffect(() => {
     // Scroll to the top of the page when the component mounts
@@ -39,7 +40,7 @@ export default function Events() {
 
   const displayedPosts = showAll ? posts.reverse() : posts.slice(0, 8);
 
-  return(
+  return (
     <Layout>
       <PageHeader title="Events">
         The National Service Scheme (NSS) is a youth-focused voluntary
@@ -51,29 +52,34 @@ export default function Events() {
       <Grid container spacing={3} lg={12} sx={{ px: 10, py: 4 }}>
         {displayedPosts.map((post, index) => (
           <Grid item key={index} lg={3} md={6}>
-            <BlogCard key={index} title={post.title} to={`/events/${post.id}`} />
+            <MemoizedBlogCard
+              key={index}
+              title={post.title}
+              to={`/events/${post.id}`}
+              image={post.image}
+            />
           </Grid>
         ))}
       </Grid>
       {!showAll && posts.length > 8 && (
         <Button
-        onClick={() => setShowAll(true)}
-        sx={{
-          mt: 1,
-          marginLeft: 84,
-          marginBottom: 3,
-          fontSize: 20,
-          border: "2px black solid",
-          color: 'black',
-          borderColor: 'black',
-          '&:hover': {
-            backgroundColor: 'black',
-            color: 'white',
-          },
-        }}
-      >
-        Explore More
-      </Button>
+          onClick={() => setShowAll(true)}
+          sx={{
+            mt: 1,
+            marginLeft: 84,
+            marginBottom: 3,
+            fontSize: 20,
+            border: "2px black solid",
+            color: "black",
+            borderColor: "black",
+            "&:hover": {
+              backgroundColor: "black",
+              color: "white",
+            },
+          }}
+        >
+          Explore More
+        </Button>
       )}
     </Layout>
   );

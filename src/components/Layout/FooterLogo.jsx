@@ -7,7 +7,7 @@ export default function FooterLogo() {
       direction="column"
       justifyContent={"center"}
       alignItems="center"
-      marginRight="175px"
+      marginRight="500px"
     >
       <Stack direction="row" gap={2} height={75}>
         <img
