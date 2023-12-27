@@ -47,22 +47,22 @@ export default function Articles() {
             <br />
             <br />
             <OtherMagazines
-              nameGrey="Magazine "
-              nameWhite="Archives"
+              nameGrey="MAGAZINE "
+              nameWhite="ARCHIVES"
               type="Magazine"
             />
           </TabPanel>
           <TabPanel value="2" style={{ paddingLeft: "0px" }}>
             <OtherMagazines
-              nameGrey="Camp "
-              nameWhite="Report"
+              nameGrey="CAMP "
+              nameWhite="REPORT"
               type="Camp Report"
             />
           </TabPanel>
           <TabPanel value="3" style={{ paddingLeft: "0px" }}>
             <OtherMagazines
-              nameGrey="Annual "
-              nameWhite="Report"
+              nameGrey="ANNUAL "
+              nameWhite="REPORT"
               type="Annual Report"
             />
           </TabPanel>

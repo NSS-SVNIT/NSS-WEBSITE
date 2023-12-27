@@ -11,17 +11,17 @@ export default function HeadingSection() {
     <div style={{ overflowX: 'hidden' }}>
     <Grid container spacing={2} sx={{ marginTop: '45px', marginLeft: '60px', marginBottom: '60px' }}>
       <Grid item xs={6} sm={6} md={5}>
-        <Slide direction="right" in={true} timeout={1000} mountOnEnter>
-        <Typography variant="h2" fontSize={'50px'} gutterBottom sx={{ marginTop: '100px' }}>
+        <Slide direction="right" in={true} timeout={500} mountOnEnter>
+        <Typography variant="h2" fontSize={'70px'} gutterBottom sx={{ marginLeft: '10px', marginTop: '100px', fontWeight: '400', marginBottom: '-20px' }}>
           Meet Our
         </Typography>
         </Slide>
-        <Slide direction="right" in={true} timeout={1300} mountOnEnter>
-          <Typography variant="h1" fontSize={'100px'} gutterBottom>
+        <Slide direction="right" in={true} timeout={800} mountOnEnter>
+          <Typography variant="h1" fontSize={'160px'} gutterBottom>
             Team
           </Typography>
         </Slide>
-        <Slide direction="right" in={true} timeout={1500} mountOnEnter>
+        <Slide direction="right" in={true} timeout={800} mountOnEnter>
           <Typography variant="subtitle2" gutterBottom style={{ textAlign: "justify" }} >
           Embark on a transformative journey with the extraordinary team at NSS SVNIT. Dedicated to making a delta change every day, we combine passion, expertise, and unwavering commitment. Let's create a better tomorrow by taking one impactful step at a time. Together, let's make a lasting difference and inspire a wave of positive transformation.
           </Typography>

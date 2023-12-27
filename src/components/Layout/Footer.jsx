@@ -10,7 +10,13 @@ import {
 import React from "react";
 import { MapContainer, TileLayer, useMap, Popup, Marker } from "react-leaflet";
 import FooterLogo from "./FooterLogo";
-import { FaInstagram, FaFacebook, FaTwitter, FaEnvelope } from "react-icons/fa";
+import {
+  FaInstagram,
+  FaFacebook,
+  FaTwitter,
+  FaEnvelope,
+  FaYoutube,
+} from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -24,11 +30,11 @@ const Footer = () => {
   };
 
   const hrStyle = {
-    height: "2px",
+    height: "1px",
     width: "100%",
     backgroundColor: "white",
     border: "none",
-    margin: "20px 0", // Adjust the margin as needed
+    margin: "10px 0", // Adjust the margin as needed
   };
 
   const linkStyleIcon = {
@@ -55,10 +61,10 @@ const Footer = () => {
         justifyContent="space-around"
         alignItems="center"
       >
-        <Grid item lg={3} xs={12}>
+        <Grid item lg={6} xs={8}>
           <FooterLogo />
         </Grid>
-        <Grid item lg={6} xs={8} justifyContent="center">
+        <Grid item lg={3} xs={6} justifyContent="center">
           <div
             style={{
               display: "flex",
@@ -102,6 +108,12 @@ const Footer = () => {
             </a>
             <a href="https://twitter.com/nss_svnit" style={linkStyleIcon}>
               <FaTwitter size={30} />
+            </a>
+            <a
+              href="https://www.youtube.com/@nsssvnit6353"
+              style={linkStyleIcon}
+            >
+              <FaYoutube size={30} />
             </a>
             <Link to="/contact" style={linkStyle}>
               <FaEnvelope size={30} />

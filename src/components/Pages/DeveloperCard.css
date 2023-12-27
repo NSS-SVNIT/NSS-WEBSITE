@@ -14,7 +14,6 @@
   align-items: center;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
-
 /*Image*/
 .card-avatar {
   --size: 150px;
@@ -70,7 +69,7 @@
   font-size: 0.8em;
 }
 
-/*Hover*/
+/* Hover*/
 .card:hover {
   box-shadow: 0 8px 50px #23232333;
 }
@@ -84,10 +83,6 @@
   opacity: 1;
 }
 
-.card-social__item svg:hover {
-  fill: #232323;
-  transform: scale(1.1);
-}
 
 .card-avatar:hover {
   transform: scale(1.1);

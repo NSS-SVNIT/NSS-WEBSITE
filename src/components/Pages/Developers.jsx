@@ -29,7 +29,7 @@ function Developers() {
       mail: "mailto:pathakharshit281@gmail.com",
       linkedin: "https://www.linkedin.com/in/harshit-pathak-4ba6aa22a/",
       imageLink:
-        "https://drive.google.com/uc?id=1vhZEqCdA2wfaX5i3gyXsA_acal_gyygh&export=download",
+        "https://drive.google.com/uc?id=1emfchxV1KCWoBRjdfr4Di8XQ1RuTo5qj&export=download",
     },
     {
       id: 3,

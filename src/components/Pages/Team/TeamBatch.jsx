@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import TeamCard from "./TeamCard";
 import { Link } from "react-router-dom";
+import { CenterFocusStrong } from "@mui/icons-material";
 
 // Component for displaying a batch of Team
 const TeamBatch = ({ year, TeamList }) => {
@@ -28,29 +29,29 @@ const TeamBatch = ({ year, TeamList }) => {
   let headingText;
   let headingColor;
   if (year === 2000) {
-    headingText = "Faculty";
+    headingText = "FACULTY";
     headingColor = "grey";
   } else if (year === 2001) {
-    headingText = "Our";
+    headingText = "OUR";
     headingColor = "grey";
   } else if (year === 2002) {
-    headingText = "Co -";
+    headingText = "CO -";
     headingColor = "grey";
   } else {
-    headingText = `Team of`;
+    headingText = `TEAM OF`;
     headingColor = "grey";
   }
 
   let coordinatorText;
   let coordinatorColor;
   if (year === 2000) {
-    coordinatorText = "Advisor";
+    coordinatorText = "ADVISOR";
     coordinatorColor = "white";
   } else if (year === 2001) {
-    coordinatorText = "Founder";
+    coordinatorText = "FOUNDER";
     coordinatorColor = "white";
   } else if (year === 2002) {
-    coordinatorText = "Founders";
+    coordinatorText = "FOUNDERS";
     coordinatorColor = "white";
   } else {
     coordinatorText = year;
@@ -62,7 +63,7 @@ const TeamBatch = ({ year, TeamList }) => {
       <div style={{ fontFamily: "DM Sans", overflowX: "hidden" }}>
         <Box
           sx={{
-            mx: 65,
+            mx: 60,
             my: 2,
             px: 8,
             py: 4,
