@@ -5,7 +5,7 @@ import { Typography } from "@mui/material";
 import param from "./param.jpg";
 import aditi from "./aditi.jpg";
 import jinhal from "./jinhal.jpg";
-import shreeya from "./shreeya.jpeg";
+import shreeya from "./shreeya.jpg";
 import pragnesh from "./pragnesh.jpg";
 import keval from "./keval.jpg";
 import namrata from "./namrata.jpg";

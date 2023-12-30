@@ -4,7 +4,7 @@ import p1Image from "./p1.png";
 import param from "./param.jpg";
 import aditi from "./aditi.jpg";
 import jinhal from "./jinhal.jpg";
-import shreeya from "./shreeya.jpgeg";
+import shreeya from "./shreeya.jpg";
 import pragnesh from "./pragnesh.jpg";
 import keval from "./keval.jpg";
 import namrata from "./namrata.jpg";
