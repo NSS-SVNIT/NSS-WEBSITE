@@ -16,13 +16,14 @@ import { Link } from "react-router-dom";
 
 export default function BlogCard(props) {
   return (
-    <Card sx={{ display: "flex", boxShadow: 0 }} disableRipple>
+    <Card sx={{ display: "flex", boxShadow: 0}} disableRipple>
       <CardActionArea disableRipple>
-        <Stack direction="column">
+        <Stack direction="column" sx={{objectFit: "cover"}}>
           <CardMedia
             component="img"
-            sx={{ fontFamily: "DM Sans", width: "100%" }}
-            image="https://media.nomadicmatt.com/2023/oaxitinerary2.jpeg"
+            sx={{ fontFamily: "DM Sans", width: "100%", height: "35vh", objectFit: "cover" }}
+            // image="https://media.nomadicmatt.com/2023/oaxitinerary2.jpeg"
+            image= {props.image}
             alt="green iguana"
           />
           <CardContent>

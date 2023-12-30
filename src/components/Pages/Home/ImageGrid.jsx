@@ -7,8 +7,8 @@ import { useState, useEffect } from 'react';
 import { getStorage, ref, getDownloadURL } from '@firebase/storage';
 import { Typography } from "@mui/material";
 import { motion } from "framer-motion";
-import { getStorage, ref, getDownloadURL, listAll } from '@firebase/storage';
-import { useState, useEffect } from 'react';
+// import { getStorage, ref, getDownloadURL, listAll } from '@firebase/storage';
+// import { useState, useEffect } from 'react';
 
 
 const ImageBackdrop = styled("div")(({ theme }) => ({
