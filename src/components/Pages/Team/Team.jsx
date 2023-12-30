@@ -4,7 +4,7 @@ import TeamBatch from './TeamBatch';
 import * as Data from './TeamData';
 import HeadingSection from './HeadingSection';
 
-const Team = () => {
+const Team = React.memo(() => {
   const years = Object.keys(Data)
     .filter(key => key.startsWith('Team'))
     .map(year => parseInt(year.replace('Team', '')))
@@ -31,6 +31,6 @@ const Team = () => {
       ))}
     </Layout>
   );
-};
+});
 
 export default Team;

@@ -1,11 +1,10 @@
-// Component for scroll triggered counter.
-
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 import ScrollTrigger from "react-scroll-trigger";
 import CountUp from "react-countup";
 
-export default function Counter(props) {
+const Counter = memo((props) => {
   const [counterOn, setCounter] = useState(false);
+
   return (
     <ScrollTrigger
       onEnter={() => setCounter(true)}
@@ -43,4 +42,6 @@ export default function Counter(props) {
       </div>
     </ScrollTrigger>
   );
-}
+});
+
+export default Counter;

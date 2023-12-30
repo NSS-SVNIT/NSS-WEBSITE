@@ -8,6 +8,8 @@ import { getDocs, collection } from "@firebase/firestore";
 import { firestore } from "../../firebase";
 import { Grid, Button } from "@mui/material";
 
+const MemoizedBlogCard = React.memo(BlogCard);
+
 export default function Events() {
   const [posts, setPosts] = useState([]);
   const [showAll, setShowAll] = useState(false);
@@ -21,7 +23,6 @@ export default function Events() {
       setPosts(newData.reverse()); // Reverse the order of the posts
     });
   };
-  
 
   useEffect(() => {
     // Scroll to the top of the page when the component mounts
@@ -39,7 +40,7 @@ export default function Events() {
 
   const displayedPosts = showAll ? posts.reverse() : posts.slice(0, 8);
 
-  return(
+  return (
     <Layout>
       <PageHeader title="Events">
         The National Service Scheme (NSS) is a youth-focused voluntary
@@ -57,23 +58,23 @@ export default function Events() {
       </Grid>
       {!showAll && posts.length > 8 && (
         <Button
-        onClick={() => setShowAll(true)}
-        sx={{
-          mt: 1,
-          marginLeft: 84,
-          marginBottom: 3,
-          fontSize: 20,
-          border: "2px black solid",
-          color: 'black',
-          borderColor: 'black',
-          '&:hover': {
-            backgroundColor: 'black',
-            color: 'white',
-          },
-        }}
-      >
-        Explore More
-      </Button>
+          onClick={() => setShowAll(true)}
+          sx={{
+            mt: 1,
+            marginLeft: 84,
+            marginBottom: 3,
+            fontSize: 20,
+            border: "2px black solid",
+            color: "black",
+            borderColor: "black",
+            "&:hover": {
+              backgroundColor: "black",
+              color: "white",
+            },
+          }}
+        >
+          Explore More
+        </Button>
       )}
     </Layout>
   );

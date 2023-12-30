@@ -4,7 +4,7 @@ import SettingsSuggestIcon from "@mui/icons-material/SettingsSuggest";
 import { motion } from "framer-motion";
 import ButtonReadMore from "./ButtonReadMore";
 
-export default function ComitteeCard(props) {
+const CommitteeCard = React.memo((props) => {
   const [isHovered, setHovered] = useState(false);
   const [openModal, setOpenModal] = useState(false);
 
@@ -108,4 +108,6 @@ export default function ComitteeCard(props) {
       </Modal>
     </Stack>
   );
-}
+});
+
+export default CommitteeCard;

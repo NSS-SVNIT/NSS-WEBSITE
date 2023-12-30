@@ -1,8 +1,7 @@
-import * as React from "react";
+import React, { useEffect } from "react";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
 import Home_1 from "../../../assets/Home_1.jpg";
 import Home_2 from "../../../assets/Home_2.jpg";
 import Home_3 from "../../../assets/Home_3.jpg";
@@ -28,8 +27,7 @@ function srcset(image, size, rows = 1, cols = 1) {
   };
 }
 
-
-export default function GalleryView() {
+const GalleryView = React.memo(() => {
   const controls = useAnimation();
 
   useEffect(() => {
@@ -75,10 +73,10 @@ export default function GalleryView() {
               transition={{ duration: 2, type: "spring" }}
             >
               <img
-              src={item.img}
-              alt={item.title}
-              loading="lazy"
-              style={srcset(item.img, 121, item.rows, item.cols).style}
+                src={item.img}
+                alt={item.title}
+                loading="lazy"
+                style={srcset(item.img, 121, item.rows, item.cols).style}
               />
             </motion.div>
           </ImageListItem>
@@ -86,7 +84,7 @@ export default function GalleryView() {
       </ImageList>
     </div>
   );
-}
+});
 
 const itemData = [
   {
@@ -107,8 +105,6 @@ const itemData = [
     rows: 2,
     cols: 1,
   },
-  
-  
   {
     img: Home_5,
     title: "Lucky",
@@ -170,3 +166,5 @@ const itemData = [
     cols: 3,
   },
 ];
+
+export default GalleryView;

@@ -1,3 +1,4 @@
+import React, { memo } from "react";
 import "./App.css";
 import GalleryView from "./components/Pages/Home/GalleryView";
 import Events from "./components/Pages/Events";
@@ -14,22 +15,35 @@ import About from "./components/Pages/About";
 import Developers from "./components/Pages/Developers";
 import Articles from "./components/Pages/Articles/Articles";
 
+const MemoizedAbout = memo(About);
+const MemoizedGallery = memo(Gallery);
+const MemoizedAdmin = memo(Admin);
+const MemoizedDevelopers = memo(Developers);
+const MemoizedArticles = memo(Articles);
+const MemoizedNewPost = memo(NewPost);
+const MemoizedEvents = memo(Events);
+const MemoizedTeam = memo(Team);
+const MemoizedTeamBatchPage = memo(TeamBatchPage);
+const MemoizedContact = memo(Contact);
+const MemoizedPost = memo(Post);
+const MemoizedHome = memo(Home);
+
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/about" element={<About />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/Developers" element={<Developers />} />
-        <Route path="/articles" element={<Articles />} />
-        <Route path="/newpost" element={<NewPost />} />
-        <Route path="/events" element={<Events />} />
-        <Route exact path="/team" element={<Team />} />
-        <Route path="/team/:year" element={<TeamBatchPage />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/events/:id" element={<Post />} />
-        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<MemoizedAbout />} />
+        <Route path="/gallery" element={<MemoizedGallery />} />
+        <Route path="/admin" element={<MemoizedAdmin />} />
+        <Route path="/Developers" element={<MemoizedDevelopers />} />
+        <Route path="/articles" element={<MemoizedArticles />} />
+        <Route path="/newpost" element={<MemoizedNewPost />} />
+        <Route path="/events" element={<MemoizedEvents />} />
+        <Route exact path="/team" element={<MemoizedTeam />} />
+        <Route path="/team/:year" element={<MemoizedTeamBatchPage />} />
+        <Route path="/contact" element={<MemoizedContact />} />
+        <Route path="/events/:id" element={<MemoizedPost />} />
+        <Route path="/" element={<MemoizedHome />} />
       </Routes>
     </Router>
   );

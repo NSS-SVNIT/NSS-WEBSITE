@@ -1,20 +1,14 @@
-import * as React from "react";
+import React, { memo } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import {
-  Avatar,
-  Box,
-  Button,
-  CardActionArea,
-  CardActions,
-  Rating,
-  Stack,
-} from "@mui/material";
+import { Box, Button, CardActionArea, Stack } from "@mui/material";
 import { Link } from "react-router-dom";
 
-export default function BlogCard(props) {
+const BlogCard = memo((props) => {
+  const { title, to, image } = props;
+
   return (
     <Card sx={{ display: "flex", boxShadow: 0}} disableRipple>
       <CardActionArea disableRipple>
@@ -35,29 +29,10 @@ export default function BlogCard(props) {
                   variant="h5"
                   component="div"
                 >
-                  {props.title}
+                  {title}
                 </Typography>
-                {/* <Avatar>P</Avatar> */}
               </Stack>
-              {/* <Rating
-                value={4.5}
-                precision={0.5}
-                readOnly
-                sx={{ pb: 2 }}
-              ></Rating> */}
-              {/* <Typography
-                variant="body"
-                sx={{ fontFamily: "Poppins", fontSize: "1.1rem" }}
-                color="text.secondary"
-              >
-                Step into a world of wonder and adventure as we invite you to
-                join our enchanting Winter Camp. Embrace the magic of the winter
-                season and create lifelong memories in a cozy and vibrant
-                atmosphere. Our Winter Camp offers an unforgettable experience
-                filled with exciting activities, heartwarming moments, and
-                opportunities for personal growth.
-              </Typography> */}
-              <Link to={props.to}>
+              <Link to={to}>
                 <Button
                   color="primary"
                   style={{
@@ -80,4 +55,6 @@ export default function BlogCard(props) {
       </CardActionArea>
     </Card>
   );
-}
+});
+
+export default BlogCard;

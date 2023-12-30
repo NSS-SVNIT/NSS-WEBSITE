@@ -22,6 +22,7 @@ import {
   ListItemIcon,
 } from "@mui/material";
 import { Facebook, Instagram, Twitter, YouTube } from "@mui/icons-material";
+
 const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -289,4 +290,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default React.memo(Contact);

@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import { Stack, Typography, Box } from "@mui/material";
 
-export default function PageHeader(props) {
+const PageHeader = memo((props) => {
   return (
     <Stack
       direction="column"
@@ -11,7 +11,7 @@ export default function PageHeader(props) {
         pt: 4,
       }}
     >
-      <Typography variant='h1' sx={{  fontWeight: 400 }}>
+      <Typography variant="h1" sx={{ fontWeight: 400 }}>
         {props.title}
       </Typography>
       <Box sx={{ fontSize: "1.5rem", py: 2, pr: 9 }}>
@@ -19,4 +19,6 @@ export default function PageHeader(props) {
       </Box>
     </Stack>
   );
-}
+});
+
+export default PageHeader;

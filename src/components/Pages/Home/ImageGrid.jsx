@@ -7,8 +7,7 @@ import { useState, useEffect } from 'react';
 import { getStorage, ref, getDownloadURL } from '@firebase/storage';
 import { Typography } from "@mui/material";
 import { motion } from "framer-motion";
-// import { getStorage, ref, getDownloadURL, listAll } from '@firebase/storage';
-// import { useState, useEffect } from 'react';
+
 
 
 const ImageBackdrop = styled("div")(({ theme }) => ({
@@ -61,7 +60,7 @@ const ImageIconButton = styled(ButtonBase)(({ theme }) => ({
   },
 }));
 
-export default function ImageGrid() {
+const ImageGrid = React.memo(() => {
   const [CulturalActivity, setCulturalActivity] = useState([]);
   const [Parade, setParade] = useState([]);
   const [Industrial, setIndustrial] = useState([]);
@@ -71,124 +70,91 @@ export default function ImageGrid() {
   const [Workshop, setWorkshop] = useState([]);
   const [AwarenessCampaign, setAwarenessCampaign] = useState([]);
   const [PlantationDrive, setPlantationDrive] = useState([]);
-  const func = async() => {
+
+  const func = async () => {
     const storage = getStorage();
+
     const reference1 = ref(storage, 'aboutImages/Cultural.jpg');
-    getDownloadURL(reference1).then((x)=>{setCulturalActivity(x);})
+    getDownloadURL(reference1).then((x) => { setCulturalActivity(x); })
 
     const reference2 = ref(storage, 'aboutImages/Parade.jpg');
-    getDownloadURL(reference2).then((x)=>{setParade(x);})
+    getDownloadURL(reference2).then((x) => { setParade(x); })
 
     const reference3 = ref(storage, 'aboutImages/Industrial.jpg');
-    getDownloadURL(reference3).then((x)=>{setIndustrial(x);})
+    getDownloadURL(reference3).then((x) => { setIndustrial(x); })
 
     const reference4 = ref(storage, 'aboutImages/Cleanliness.jpg');
-    getDownloadURL(reference4).then((x)=>{setCleanliness(x);})
+    getDownloadURL(reference4).then((x) => { setCleanliness(x); })
 
     const reference5 = ref(storage, 'aboutImages/Camp.jpg');
-    getDownloadURL(reference5).then((x)=>{setCamp(x);})
+    getDownloadURL(reference5).then((x) => { setCamp(x); })
 
     const reference6 = ref(storage, 'aboutImages/MorningRoutine.jpg');
-    getDownloadURL(reference6).then((x)=>{setMorningRoutine(x);})
+    getDownloadURL(reference6).then((x) => { setMorningRoutine(x); })
 
     const reference7 = ref(storage, 'aboutImages/workshops.png');
-    getDownloadURL(reference7).then((x)=>{setWorkshop(x);})
+    getDownloadURL(reference7).then((x) => { setWorkshop(x); })
 
     const reference8 = ref(storage, 'aboutImages/Plantation.jpg');
-    getDownloadURL(reference8).then((x)=>{setPlantationDrive(x);})
+    getDownloadURL(reference8).then((x) => { setPlantationDrive(x); })
 
     const reference9 = ref(storage, 'aboutImages/Awareness.jpg');
-    getDownloadURL(reference9).then((x)=>{setAwarenessCampaign(x);})
-}
+    getDownloadURL(reference9).then((x) => { setAwarenessCampaign(x); })
+  }
 
-useEffect(()=>{
-  func()
-}, []);
-console.log(CulturalActivity);
+  useEffect(() => {
+    func()
+  }, []);
 
-const images = [
-  {
-    // url: "src/components/Pages/Home/photos/Cultural.jpg",
-    url: CulturalActivity,
-    title: "Cultural Activities",
-    width: "40%",
-  },
-  {
-    url: Parade,
-    title: "Parade",
-    width: "20%",
-  },
-  {
-    url: Industrial,
-    title: "Industrial Visits and Projects",
-    width: "40%",
-  },
-  // {
-  //   url: "https://images.unsplash.com/photo-1453747063559-36695c8771bd?auto=format&fit=crop&w=400",
-  //   title: "",
-  //   width: "38%",
-  // },
-  // {
-  //   url: "https://images.unsplash.com/photo-1523309996740-d5315f9cc28b?auto=format&fit=crop&w=400",
-  //   title: "",
-  //   width: "38%",
-  // },
-  // {
-  //   url: "https://images.unsplash.com/photo-1506941433945-99a2aa4bd50a?auto=format&fit=crop&w=400",
-  //   title: " Drives",
-  //   width: "24%",
-  // },
-  {
-    url: Cleanliness,
-    // url: {c},
-    title: "Cleanliness Drives",
-    width: "20%",
-  },
-  {
-    url: Camp,
-    title: "Camps",
-    width: "40%",
-  },
-  {
-    url: MorningRoutine,
-    title: "Morning Routines and Yoga Sessions",
-    width: "40%",
-  },
-  {
-    url: Workshop,
-    title: "Workshops",
-    width: "40%",
-  },
-  {
-    // url: "src/components/Pages/Home/photos/Awareness.jpg",
-    url: AwarenessCampaign,
-    title: "Awareness Campaigns",
-    width: "40%",
-  },
-  {
-    url: PlantationDrive,
-    title: "Plantation Drives",
-    width: "20%",
-  },
-  // {
-  //   url: "https://images.unsplash.com/photo-1518136247453-74e7b5265980?auto=format&fit=crop&w=400",
-  //   title: "Education",
-  //   width: "40%",
-  // },
-  // {
-  //   url: "https://images.unsplash.com/photo-1518136247453-74e7b5265980?auto=format&fit=crop&w=400",
-  //   title: "Talk Sessions",
-  //   width: "20%",
-  // },
-  // {
-  //   url: "https://images.unsplash.com/photo-1518136247453-74e7b5265980?auto=format&fit=crop&w=400",
-  //   title: "Parade",
-  //   width: "40%",
-  // },
-];
+  console.log(CulturalActivity);
 
-
-
+  const images = [
+    {
+      url: CulturalActivity,
+      title: "Cultural Activities",
+      width: "40%",
+    },
+    {
+      url: Parade,
+      title: "Parade",
+      width: "20%",
+    },
+    {
+      url: Industrial,
+      title: "Industrial Visits and Projects",
+      width: "40%",
+    },
+    {
+      url: Cleanliness,
+      title: "Cleanliness Drives",
+      width: "20%",
+    },
+    {
+      url: Camp,
+      title: "Camps",
+      width: "40%",
+    },
+    {
+      url: MorningRoutine,
+      title: "Morning Routines and Yoga Sessions",
+      width: "40%",
+    },
+    {
+      url: Workshop,
+      title: "Workshops",
+      width: "40%",
+    },
+    {
+      url: AwarenessCampaign,
+      title: "Awareness Campaigns",
+      width: "40%",
+    },
+    {
+      url: PlantationDrive,
+      title: "Plantation Drives",
+      width: "20%",
+    },
+  ];
 
   return (
     <motion.div
@@ -253,4 +219,6 @@ const images = [
       </Box>
     </motion.div>
   );
-}
+});
+
+export default ImageGrid;

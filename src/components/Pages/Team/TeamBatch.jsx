@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 import { CenterFocusStrong } from "@mui/icons-material";
 
 // Component for displaying a batch of Team
-const TeamBatch = ({ year, TeamList }) => {
+const TeamBatch = React.memo(({ year, TeamList }) => {
   const displayedTeam = TeamList.slice(0, 6); // Get the first six Team from the list
   const trigger = useScrollTrigger({
     disableHysteresis: true,
@@ -126,6 +126,6 @@ const TeamBatch = ({ year, TeamList }) => {
       )}
     </>
   );
-};
+});
 
 export default TeamBatch;

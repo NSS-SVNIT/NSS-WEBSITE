@@ -5,20 +5,20 @@ import { Link, useParams } from "react-router-dom";
 import * as Data from './TeamData';
 import Layout from "../../Layout/Layout";
 
-const TeamBatchPage = () => {
+const TeamBatchPage = React.memo(() => {
   const { year } = useParams();
-const TeamList = React.useMemo(() => {
-  if (year === "2002") {
-    return Data.CoFounder || [];
-  } else if (year === "2001") {
-    return Data.Founder || [];
-  } else if (year === "2000") {
-    return Data.Sir || [];
-  } else {
-    const dataKey = `Team${year}`;
-    return Data[dataKey] || [];
-  }
-}, [year]);
+  const TeamList = React.useMemo(() => {
+    if (year === "2002") {
+      return Data.CoFounder || [];
+    } else if (year === "2001") {
+      return Data.Founder || [];
+    } else if (year === "2000") {
+      return Data.Sir || [];
+    } else {
+      const dataKey = `Team${year}`;
+      return Data[dataKey] || [];
+    }
+  }, [year]);
 
 
   const [animateCards, setAnimateCards] = React.useState(false);
@@ -76,6 +76,6 @@ const TeamList = React.useMemo(() => {
       </div>
     </Layout>
   );
-};
+});
 
 export default TeamBatchPage;

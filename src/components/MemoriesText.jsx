@@ -1,11 +1,16 @@
+import React, { memo } from "react";
 import { Box, Button, Stack } from "@mui/material";
-import React from "react";
 import { Link } from "react-router-dom";
-export default function Memories() {
+
+const Memories = memo(() => {
   return (
     <Box sx={{ flexBasis: "60%" }}>
       <h6
-        style={{ fontSize: "5rem", fontFamily: "Poppins", fontWeight: "100" }}
+        style={{
+          fontSize: "5rem",
+          fontFamily: "Poppins",
+          fontWeight: "100",
+        }}
       >
         Collected awesome{" "}
         <span
@@ -54,4 +59,6 @@ export default function Memories() {
       </Stack>
     </Box>
   );
-}
+});
+
+export default Memories;

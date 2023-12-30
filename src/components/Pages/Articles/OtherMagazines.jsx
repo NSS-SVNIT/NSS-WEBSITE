@@ -17,14 +17,13 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-export default function OtherMagazines(props) {
+const OtherMagazines = React.memo((props) => {
   const [post, setPost] = useState([]);
   const fetchPosts = async () => {
     const q = query(
       collection(firestore, "articles"),
       where("Type", "==", props.type)
     );
-    // const q = collection(firestore, 'articles');
 
     return getDocs(q).then((posts) => setPost(posts.docs));
   };
@@ -33,7 +32,6 @@ export default function OtherMagazines(props) {
     fetchPosts();
   }, []);
 
-  // console.log(posts.data())
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Box
@@ -43,7 +41,6 @@ export default function OtherMagazines(props) {
           py: 4,
           fontSize: "3rem",
           backgroundColor: "black",
-
           fontFamily: "DM Sans",
           color: "grey",
           width: "41%",
@@ -54,7 +51,6 @@ export default function OtherMagazines(props) {
           style={{
             fontWeight: 400,
             color: "white",
-            // textTransform: "capitalize",
           }}
         >
           {props.nameWhite}
@@ -68,7 +64,7 @@ export default function OtherMagazines(props) {
           columns={{ xs: 4, sm: 8, md: 12 }}
         >
           {post.map((posts) => (
-            <Grid item xs={2} sm={4} md={4}>
+            <Grid item xs={2} sm={4} md={4} key={posts.id}>
               <ArticleCard
                 name={posts.data().Title}
                 description={posts.data().Description}
@@ -80,7 +76,8 @@ export default function OtherMagazines(props) {
           ))}
         </Grid>
       </Box>
-      {/* {post.map((posts => <ArticleCard name={posts.data().title}></ArticleCard>))} */}
     </Box>
   );
-}
+});
+
+export default OtherMagazines;

@@ -3,7 +3,7 @@ import { Stack, Divider } from "@mui/material";
 import Counter from "../../UI/counter";
 // import useMediaQuery from "@mui/material/useMediaQuery";
 
-export default function CounterSection() {
+const CounterSection = React.memo(() => {
   const isPhone = false;
   // const isPhone = useMediaQuery(theme.breakpoints.up("sm"));
   return (
@@ -29,4 +29,6 @@ export default function CounterSection() {
       <Counter start={0} end={15} duration={2} title="Activities" />
     </Stack>
   );
-}
+});
+
+export default CounterSection;

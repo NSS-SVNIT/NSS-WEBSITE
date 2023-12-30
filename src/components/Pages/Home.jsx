@@ -1,10 +1,17 @@
 import React, { useEffect } from 'react';
 import Layout from '../Layout/Layout';
-import HeroSection from './Home/HeroSection';
-import CounterSection from './Home/CounterSection';
 import AboutSection from './Home/AboutSection';
-import GallerySection from './Home/GallerySection';
+import CounterSection from './Home/CounterSection';
 import Example from './Home/Carousel';
+import GallerySection from './Home/GallerySection';
+import HeroSection from './Home/HeroSection';
+
+// Apply React.memo to functional components to memoize them
+const MemoizedHeroSection = React.memo(HeroSection);
+const MemoizedCounterSection = React.memo(CounterSection);
+const MemoizedAboutSection = React.memo(AboutSection);
+const MemoizedGallerySection = React.memo(GallerySection);
+const MemoizedExample = React.memo(Example);
 
 function App() {
   useEffect(() => {
@@ -20,13 +27,12 @@ function App() {
   return (
     <>
       <Layout>
-        <HeroSection />
-        <CounterSection />
-        <AboutSection />
-        <GallerySection />
-        <Example />
-        {/* <ComitteeSection />
-        <DutySection /> */}
+        {/* Use the memoized components */}
+        <MemoizedHeroSection />
+        <MemoizedCounterSection />
+        <MemoizedAboutSection />
+        <MemoizedGallerySection />
+        <MemoizedExample />
       </Layout>
     </>
   );

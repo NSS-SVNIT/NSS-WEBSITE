@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import GalleryView from "./GalleryView";
 import Memories from "../../MemoriesText";
 
-export default function GallerySection() {
+const GallerySection = React.memo(() => {
   return (
     <Stack
       direction={"row"}
@@ -24,4 +24,6 @@ export default function GallerySection() {
       <GalleryView />
     </Stack>
   );
-}
+});
+
+export default GallerySection;

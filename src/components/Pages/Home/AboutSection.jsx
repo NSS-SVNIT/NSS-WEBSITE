@@ -3,7 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import NssTimeline from "./NssTimeline";
 
-export default function AboutSection() {
+const AboutSection = React.memo(() => {
   return (
     <Grid
       container
@@ -25,6 +25,7 @@ export default function AboutSection() {
           <img
             style={{ width: "90%", borderRadius: 4 }}
             src="https://images.news18.com/ibnlive/uploads/2021/09/nss-163241541916x9.jpg"
+            alt="NSS Event"
           ></img>
         </motion.div>
       </Grid>
@@ -53,7 +54,7 @@ export default function AboutSection() {
               sx={{ bgcolor: "rgba(255,255,255,0.3)", width: "65%" }}
             />
 
-            <Box sx={{ fontFamily: "DM Sans", fontSize: "1.5rem" , textAlign: "justify" }}>
+            <Box sx={{ fontFamily: "DM Sans", fontSize: "1.5rem", textAlign: "justify" }}>
               The Motto of NSS <b>"Not Me But You"</b>, reflects the essence of
               democratic living and upholds the need for self-less service. NSS
               helps the students development & appreciation to other person's
@@ -63,31 +64,8 @@ export default function AboutSection() {
           </Stack>
         </motion.div>
       </Grid>
-      {/* <Grid item lg={6} sx={12}>
-        <Stack gap={4}>
-          <Box sx={{ fontFamily: "Nothing You Could Do", fontSize: "4rem" }}>
-            Our History
-          </Box>
-
-          <Box sx={{ fontFamily: "DM Sans", fontSize: "1.5rem" }}>
-            TNSS Unit SVNIT started its journey in 2018 as a Self Financing Unit
-            (SFU). Our volunteers worked dedicatedly for the betterment of the
-            society. And our work was recognised by the Ministry of Youth
-            Affairs and Sports by upgrading us to a Government Financed Unit. We
-            received our first funding from the government in September 2022. As
-            of the same date, NSS Unit SVNIT had over 200 volunteers who
-            continue to work tirelessly for social growth and environmental
-            wellness. NSS Unit SVNIT organises various on-campus and off-campus
-            activities aimed at the integration of the community and generating
-            widespread awareness about prevailing social issues.We live by our
-            motto ‘Not Me But You.’ Our volunteers regulary visit nearby
-            villages to educate people
-          </Box>
-        </Stack>
-      </Grid> */}
-      {/* <Grid item lg={6} sx={12}>
-        <NssTimeline />
-      </Grid> */}
     </Grid>
   );
-}
+});
+
+export default AboutSection;

@@ -3,7 +3,7 @@ import React from "react";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import remarkGfm from "remark-gfm";
 
-export default function BlogPost(props) {
+const BlogPost = React.memo((props) => {
   const today = new Date();
   const year = today.getFullYear();
   const month = today.getMonth() + 1; // Note: months are zero-based
@@ -35,7 +35,6 @@ export default function BlogPost(props) {
           <Box sx={{ fontFamily: "DM Sans", color: "grey" }}>
             by <u>@{props.author}</u>
           </Box>
-          <Rating value={4.5} precision={0.5} size="small"></Rating>
         </Stack>
         <Box
           sx={{
@@ -60,4 +59,6 @@ export default function BlogPost(props) {
       </Stack>
     </Stack>
   );
-}
+});
+
+export default BlogPost;
