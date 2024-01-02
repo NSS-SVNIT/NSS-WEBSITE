@@ -78,13 +78,14 @@ export default function NewEvent() {
         ></TextField>
 
         <TextField
-          style={{ width: "100%" }}
+          style={{ width: "100%", minWidth: "300px" }}
           onChange={handleTextChange}
           value={text}
           label="Content"
           multiline
           variant="standard"
-        ></TextField>
+        />
+
         <Button variant="contained" onClick={handleSubmit}>
           SUBMIT
         </Button>
