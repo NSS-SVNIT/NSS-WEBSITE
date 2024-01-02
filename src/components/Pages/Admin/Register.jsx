@@ -30,7 +30,7 @@ function Copyright(props) {
       {"Facing problems ?"} <br /> {"Contact "}
       <Link
         color="inherit"
-        href="mailto://barikpragnesh@gmail.com"
+        href="mailto://svnitnss@gmail.com"
         target="blank"
       >
         NSS SVNIT
