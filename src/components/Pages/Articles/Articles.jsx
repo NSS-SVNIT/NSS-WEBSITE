@@ -35,7 +35,7 @@ const Articles = React.memo(() => {
               <Tab label="Annual Report" value="3" />
             </TabList>
           </Box>
-          <PageHeader title="Articles">
+          <PageHeader>
             The National Service Scheme (NSS) is a youth-focused voluntary
             organization in India that aims to develop the personality and
             character of students through community service. NSS events are

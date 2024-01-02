@@ -42,7 +42,7 @@ const About = () => {
 
   return (
       <Layout>
-        <Typography variant='h1' sx={{ px: 10, pt: 5, fontWeight: 400, overflowX: 'hidden'}}>ABOUT NSS</Typography>
+        <Typography variant='h1' sx={{ px: 10, pt: 5, fontWeight: 400, overflowX: 'hidden', overflowY: 'hidden'}}>ABOUT NSS</Typography>
         <br />
         <Box>
           <motion.div >
@@ -87,7 +87,8 @@ const About = () => {
                   fontSize: "1.1rem",
                   fontFamily: "DM Sans",
                   marginLeft: "50px",
-                  overflowX: 'hidden'
+                  overflowX: 'hidden', 
+                  overflowY: 'hidden'
                 }}
               >
                 READ MORE
@@ -97,14 +98,14 @@ const About = () => {
         </Box>
 
         <div style={{ overflowX: 'hidden' }}>
-          <Grid container spacing={2} sx={{ marginTop: '45px', marginLeft: '60px', marginBottom: '60px', overflowX: 'hidden' }}>
+          <Grid container spacing={2} sx={{ marginTop: '45px', marginLeft: '60px', marginBottom: '60px', overflowX: 'hidden', overflowY: 'hidden' }}>
             <Grid item xs={6} sm={6} md={5}>
               <motion.div
                 initial={{ opacity: 0, x: -100 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1 }}>
-                <Typography variant="h3" fontSize={'50px'} gutterBottom sx={{ marginTop: '50px',overflowX: 'hidden', fontSize: { xs: "20px", sm: "30px", md: "40px", lg: "50px" } }}>
+                <Typography variant="h3" fontSize={'50px'} gutterBottom sx={{ marginTop: '50px',overflowX: 'hidden', overflowY: 'hidden', fontSize: { xs: "20px", sm: "30px", md: "40px", lg: "50px" } }}>
                   About Our
                 </Typography>
               </motion.div>
@@ -114,7 +115,7 @@ const About = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 1.5 }}
               >
-                <Typography variant="h1" fontSize={'100px'} gutterBottom sx={{ overflowX: 'hidden', fontSize: { xs: "40px", sm: "40px", md: "50px", lg: "100px" } }}>
+                <Typography variant="h1" fontSize={'100px'} gutterBottom sx={{ overflowX: 'hidden', overflowY: 'hidden', fontSize: { xs: "40px", sm: "40px", md: "50px", lg: "100px" } }}>
                   History
                 </Typography>
               </motion.div>
@@ -124,7 +125,7 @@ const About = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 1 }}
               >
-                <Typography variant="subtitle2" gutterBottom sx={{ overflowX: 'hidden', fontSize: { xs: "16px", sm: "14px", md: "20px", lg: "20px" } }}>
+                <Typography variant="subtitle2" gutterBottom sx={{ overflowX: 'hidden', overflowY: 'hidden', fontSize: { xs: "16px", sm: "14px", md: "20px", lg: "20px" } }}>
                   The history of the National Service Scheme (NSS) unit at the Sardar Vallabhbhai National Institute of Technology (SVNIT) is a testament to the spirit of volunteerism and social responsibility among the students. The NSS unit at SVNIT was established in 2018, with the aim of fostering social welfare and community development through various initiatives. Over the years, the unit has played a vital role in organizing numerous activities and campaigns that have made a positive impact on the lives of people in and around the campus. From conducting blood donation drives, health camps, and awareness programs to promoting cleanliness, environmental conservation, and education, the NSS unit has actively engaged students in serving society and creating a better world. With a rich history of service and a strong commitment to social change, the NSS SVNIT unit continues to inspire and empower students to contribute to the betterment of society.
                 </Typography>
               </motion.div>

@@ -637,7 +637,7 @@ const Team2021 = [
   },
   {
     image:
-      "https://drive.google.com/uc?id=1wpm8Ac3QaDNQcjzMikDICBhsDs2afhRq&export=download",
+      "https://drive.google.com/uc?id=1AgQs17TvwTCQRRJ9J79ywjQCTdov_Y_3&export=download",
     name: "Deep Gemlawala",
     position: "Volunteer",
     linkedin: "https://www.linkedin.com/in/deep-gemlawala-718999248",
