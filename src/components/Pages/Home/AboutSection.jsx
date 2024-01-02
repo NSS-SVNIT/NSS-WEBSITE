@@ -24,7 +24,7 @@ const AboutSection = React.memo(() => {
         >
           <img
             style={{ width: "90%", borderRadius: 4 }}
-            src="https://images.news18.com/ibnlive/uploads/2021/09/nss-163241541916x9.jpg"
+            src="https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/Not%20Me%20But%20You.jpg?alt=media&token=cd079525-7886-4bee-bd64-e7cd21920b51"
             alt="NSS Event"
           ></img>
         </motion.div>
