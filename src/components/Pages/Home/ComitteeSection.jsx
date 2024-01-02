@@ -75,7 +75,7 @@ const ComitteeSection = React.memo(() => {
         {comittees.map((title, index) => (
           <Grid item xs={6} lg={3} key={index}>
             <motion.div
-              initial={{ opacity: 0, y: (index + 1) * 50 }}
+              initial={{ opacity: 0, y: (index + 1) * 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 1 }}

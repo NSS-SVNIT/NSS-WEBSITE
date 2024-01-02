@@ -29,7 +29,7 @@ const HeadingSection = React.memo(() => {
         </Grid>
         <Grid item xs={6} sm={6} md={6}>
           <Slide direction="left" in={true} timeout={1200} mountOnEnter>
-            <img src="src/components/Pages/Home/photos/team.jpg" alt="Right Content" height="500px" />
+          <img src="https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/team%20page%2Fteam.jpg?alt=media&token=67d7bd13-4a69-41e9-ba17-d12da8ba2602" alt="Right Content" height="500px" />
           </Slide>
         </Grid>
       </Grid>
