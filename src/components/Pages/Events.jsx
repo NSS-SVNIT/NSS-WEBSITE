@@ -52,12 +52,7 @@ export default function Events() {
       <Grid container spacing={3} lg={12} sx={{ px: 10, py: 4 }}>
         {displayedPosts.map((post, index) => (
           <Grid item key={index} lg={3} md={6}>
-            <MemoizedBlogCard
-              key={index}
-              title={post.title}
-              to={`/events/${post.id}`}
-              image={post.image}
-            />
+            <BlogCard key={index} title={post.title} to={`/events/${post.id}`} image = {post.image}/>
           </Grid>
         ))}
       </Grid>
