@@ -13,6 +13,7 @@ import {
   DialogTitle,
   DialogContent,
   DialogActions,
+  Avatar,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import NavDialog from "./NavDialog";
@@ -86,12 +87,27 @@ export default function NavBar() {
         sx={{
           backdropFilter: "blur(10px)",
           px: 8,
+          py: 1,
           backgroundColor: scrolling ? "black" : "transparent",
         }}
         elevation={5}
       >
         <Toolbar>
-          <Stack component="div" sx={{ flexGrow: 1 }}>
+          <Stack
+            component="div"
+            direction="row"
+            alignItems="center"
+            sx={{ flexGrow: 1 }}
+          >
+            <Avatar
+              alt="Logo"
+              src="../../nss_logo.png"
+              sx={{
+                width: isPhone ? 40 : 60,
+                height: isPhone ? 40 : 60,
+                marginRight: 1,
+              }}
+            />
             <NavLink
               to="/"
               style={{
