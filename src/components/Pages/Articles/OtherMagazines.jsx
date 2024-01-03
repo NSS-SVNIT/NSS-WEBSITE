@@ -57,14 +57,21 @@ const OtherMagazines = React.memo((props) => {
         </span>
       </Box>
       <br />
-      <Box style={{ paddingLeft: "80px" }}>
+      <Box
+        style={{
+          paddingLeft: "80px",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
         <Grid
           container
-          spacing={{ xs: 2, md: 3 }}
-          columns={{ xs: 4, sm: 8, md: 12 }}
+          spacing={3}
+          justifyContent={post.length < 3 ? "center" : "flex-start"}
+          columns={{ xs: 12, sm: 12, md: 12 }}
         >
           {post.map((posts) => (
-            <Grid item xs={2} sm={4} md={4} key={posts.id}>
+            <Grid item xs={12} sm={6} md={4} key={posts.id}>
               <ArticleCard
                 name={posts.data().Title}
                 description={posts.data().Description}

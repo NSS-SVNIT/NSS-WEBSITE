@@ -64,12 +64,14 @@ export default function Events() {
             marginLeft: 84,
             marginBottom: 3,
             fontSize: 20,
-            border: "2px black solid",
-            color: "black",
+            backgroundColor: "black",
+            color: "white",
+            border: "2px white solid",
+            color: "white",
             borderColor: "black",
             "&:hover": {
-              backgroundColor: "black",
-              color: "white",
+              backgroundColor: "white",
+              color: "black",
             },
           }}
         >
