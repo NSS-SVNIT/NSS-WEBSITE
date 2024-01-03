@@ -19,8 +19,8 @@ const AboutSection = React.memo(() => {
       <Grid item lg={6} sx={12}>
         <motion.div
           initial={{ opacity: 0, x: -200 }}
-          whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
-          whileHover={{ scale: 1.1, transition: { duration: 0.5 } }}
+          whileInView={{ opacity: 1, x: 0, scale: 1.1, transition: { duration: 0.5 } }}
+          whileHover={{ scale: 1.13, transition: { duration: 0.5 } }}
         >
           <img
             style={{ width: "90%", borderRadius: 4 }}
