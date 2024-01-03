@@ -2,20 +2,16 @@ import { Avatar, Box, Card, LinearProgress, Typography } from "@mui/material";
 import { Stack } from "@mui/system";
 import React from "react";
 
-export default function Profile() {
-  return (
+export default function Profile({ profilePic, profileName }) {  return (
     <>
-      <Stack>
+       <Stack>
         <Stack direction="row">
-          <Avatar sx={{ height: "4rem", width: "4rem" }}> P</Avatar>
+          <Avatar src={profilePic} sx={{ height: "4rem", width: "4rem" }}>
+            {profileName.charAt(0)}
+          </Avatar>
           <Stack sx={{ pl: 2 }}>
             <Box sx={{ fontFamily: "DM Sans", fontSize: "1.5rem" }}>
-              Pragnesh Barik
-            </Box>
-            <Box
-              sx={{ fontFamily: "DM Sans", fontSize: "1rem", color: "gray" }}
-            >
-              Technical Executive
+              {profileName}
             </Box>
           </Stack>
         </Stack>

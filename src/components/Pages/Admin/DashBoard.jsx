@@ -49,7 +49,6 @@ export default function DashBoard() {
 
   const profilePic = localStorage.getItem("profilePic");
   const profileName = localStorage.getItem("name");
-
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -96,7 +95,7 @@ export default function DashBoard() {
         </Tabs>
       </Stack>
       <TabPanel value={value} index={0}>
-        <Profile />
+      <Profile profilePic={profilePic} profileName={profileName} />
       </TabPanel>
       <TabPanel value={value} index={1}>
         <NewEvent />
