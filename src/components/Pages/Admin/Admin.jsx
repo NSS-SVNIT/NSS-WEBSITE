@@ -4,7 +4,6 @@ import { Grid } from "@mui/material";
 import { getDoc, doc } from "@firebase/firestore";
 import { auth, firestore } from "../../../firebase";
 import { GoogleAuthProvider, signInWithPopup, signOut } from "@firebase/auth";
-import { Button } from "@mui/material";
 import DashBoard from "./DashBoard";
 import SignIn from "./Register";
 import { analytics } from "../../../firebase";
@@ -79,6 +78,23 @@ export default function Admin() {
     // Cleanup function to scroll to the top when the component unmounts
     return () => {
       window.scrollTo(0, 0);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Add event listener to handle tab close
+    const handleTabClose = (event) => {
+      // Remove login information from both sessionStorage and localStorage
+      logginFields.forEach((field) => localStorage.removeItem(field));
+      sessionStorage.removeItem("loggedIn");
+    };
+
+    // Attach the event listener
+    window.addEventListener("beforeunload", handleTabClose);
+
+    // Cleanup function to remove event listener when the component unmounts
+    return () => {
+      window.removeEventListener("beforeunload", handleTabClose);
     };
   }, []);
 

@@ -67,7 +67,6 @@ export default function Events() {
             backgroundColor: "black",
             color: "white",
             border: "2px white solid",
-            color: "white",
             borderColor: "black",
             "&:hover": {
               backgroundColor: "white",
