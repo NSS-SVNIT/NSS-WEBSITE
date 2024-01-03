@@ -16,20 +16,20 @@ const AboutSection = React.memo(() => {
       }}
       alignItems={"center"}
     >
-      <Grid item lg={6} sx={12}>
+      <Grid item lg={3} sx={12}>
         <motion.div
           initial={{ opacity: 0, x: -200 }}
-          whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
-          whileHover={{ scale: 1.1, transition: { duration: 0.5 } }}
+          whileInView={{ opacity: 1, x: 0, scale: 1.1, transition: { duration: 0.5 } }}
+          whileHover={{ scale: 1.13, transition: { duration: 0.5 } }}
         >
           <img
-            style={{ width: "90%", borderRadius: 4 }}
+            style={{  height: "350px", borderRadius: 4 }}
             src="https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/Not%20Me%20But%20You.jpg?alt=media&token=cd079525-7886-4bee-bd64-e7cd21920b51"
             alt="NSS Event"
           ></img>
         </motion.div>
       </Grid>
-      <Grid item lg={6} sx={12}>
+      <Grid item lg={9} sx={12}>
         <motion.div
           initial={{ opacity: 0, x: 200 }}
           whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
@@ -39,19 +39,19 @@ const AboutSection = React.memo(() => {
               sx={{
                 fontFamily: "Poppins",
                 fontWeight: "100",
-                fontSize: "3rem",
+                fontSize: "4rem",
               }}
             >
               Celebrating our Motto...
               <Box
-                sx={{ fontFamily: "Nothing You Could Do", fontSize: "4rem" }}
+                sx={{ fontFamily: "Nothing You Could Do", fontSize: "5rem" }}
               >
                 Not Me, But You !
               </Box>
             </Box>
             <Divider
               flexItem
-              sx={{ bgcolor: "rgba(255,255,255,0.3)", width: "65%" }}
+              sx={{ bgcolor: "rgba(255,255,255,0.3)", width: "70%" }}
             />
 
             <Box sx={{ fontFamily: "DM Sans", fontSize: "1.5rem", textAlign: "justify" }}>
