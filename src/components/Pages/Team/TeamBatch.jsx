@@ -94,7 +94,7 @@ const TeamBatch = React.memo(({ year, TeamList }) => {
             <Grow
               key={Team.name}
               in={trigger}
-              timeout={1000 + index * 300}
+              timeout={500 + index * 200}
               style={{ transformOrigin: "150px 168px 0" }}
             >
               <Grid item xs={4} sm={4} md={2} lg={2} xl={2}>
@@ -107,7 +107,7 @@ const TeamBatch = React.memo(({ year, TeamList }) => {
         </Grid>
       </div>
       {TeamList.length > 6 && (
-        <Grow in={trigger} timeout={3000}>
+        <Grow in={trigger} timeout={1000}>
           <Button
             component={Link}
             to={`/team/${year}`}

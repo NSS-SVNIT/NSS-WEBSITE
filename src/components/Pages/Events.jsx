@@ -42,7 +42,7 @@ export default function Events() {
 
   return (
     <Layout>
-      <PageHeader title="Events">
+      <PageHeader >
         The National Service Scheme (NSS) is a youth-focused voluntary
         organization in India that aims to develop the personality and character
         of students through community service. NSS events are organized by
@@ -64,12 +64,13 @@ export default function Events() {
             marginLeft: 84,
             marginBottom: 3,
             fontSize: 20,
-            border: "2px black solid",
-            color: "black",
+            backgroundColor: "black",
+            color: "white",
+            border: "2px white solid",
             borderColor: "black",
             "&:hover": {
-              backgroundColor: "black",
-              color: "white",
+              backgroundColor: "white",
+              color: "black",
             },
           }}
         >

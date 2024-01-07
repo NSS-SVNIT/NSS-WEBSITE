@@ -25,6 +25,7 @@ const TeamCard = React.memo(({ image, name, position, linkedin, github, gmail })
     <Card
       sx={{
         width: '200px',
+        maxHeight:'350px',
         borderRadius: '16px',
         transition: 'transform 0.3s ease',
         overflow: 'hidden',

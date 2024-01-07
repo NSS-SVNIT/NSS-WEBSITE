@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../../Layout/Layout";
 import { Grid } from "@mui/material";
-import { getDoc, collection, doc } from "@firebase/firestore";
+import { getDoc, doc } from "@firebase/firestore";
 import { auth, firestore } from "../../../firebase";
 import { GoogleAuthProvider, signInWithPopup, signOut } from "@firebase/auth";
-import { Button } from "@mui/material";
 import DashBoard from "./DashBoard";
 import SignIn from "./Register";
 import { analytics } from "../../../firebase";
@@ -40,10 +39,16 @@ export default function Admin() {
 
         logEvent(analytics, "executive_login", { email: email });
 
-        // localStorage.setItem("loggedIn", true);
+        // Use sessionStorage to persist login state across tabs
+        sessionStorage.setItem("loggedIn", "true");
+
+        // Use localStorage to persist login state across page reloads
+        localStorage.setItem("loggedIn", "true");
         localStorage.setItem("name", name);
         localStorage.setItem("email", email);
         localStorage.setItem("profilePic", profilePic);
+
+        setLogged(true); // Set the logged state to true after successful sign-in
       })
       .catch((error) => {
         console.log(error);
@@ -54,12 +59,19 @@ export default function Admin() {
     signOut(auth)
       .then(() => {
         setLogged(false);
-        logginFields.map((field) => localStorage.removeItem(field));
+        logginFields.forEach((field) => localStorage.removeItem(field));
+        sessionStorage.removeItem("loggedIn");
       })
       .catch((err) => console.log(err));
   };
 
   useEffect(() => {
+    // Check if the user is logged in on component mount
+    const isLoggedIn =
+      sessionStorage.getItem("loggedIn") === "true" ||
+      localStorage.getItem("loggedIn") === "true";
+    setLogged(isLoggedIn);
+
     // Scroll to the top of the page when the component mounts
     window.scrollTo(0, 0);
 
@@ -69,10 +81,31 @@ export default function Admin() {
     };
   }, []);
 
+  useEffect(() => {
+    // Add event listener to handle tab close
+    const handleTabClose = (event) => {
+      // Remove login information from both sessionStorage and localStorage
+      logginFields.forEach((field) => localStorage.removeItem(field));
+      sessionStorage.removeItem("loggedIn");
+    };
+
+    // Attach the event listener
+    window.addEventListener("beforeunload", handleTabClose);
+
+    // Cleanup function to remove event listener when the component unmounts
+    return () => {
+      window.removeEventListener("beforeunload", handleTabClose);
+    };
+  }, []);
+
   return (
     <Layout>
       <Grid container>
-        {logged ? <DashBoard /> : <SignIn handleSignIn={handleSignIn} />}
+        {logged ? (
+          <DashBoard handleSignOut={handleSignOut} />
+        ) : (
+          <SignIn handleSignIn={handleSignIn} />
+        )}
       </Grid>
     </Layout>
   );

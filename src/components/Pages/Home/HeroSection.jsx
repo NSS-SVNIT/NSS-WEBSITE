@@ -10,7 +10,7 @@ const HeroSection = React.memo(() => {
     <div
       style={{
         marginTop: "-64px",
-        backgroundImage: `url(${bg})`,
+        backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/bg1.png?alt=media&token=8cbad320-e909-46f7-b003-5368a97204c5)`,
         height: "100vh",
         backgroundSize: "cover", // Adjust the background size property
         backgroundPosition: "center", // Center the background image

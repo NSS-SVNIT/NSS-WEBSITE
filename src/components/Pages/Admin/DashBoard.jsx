@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { Avatar, Stack } from "@mui/material";
 import NewPost from "../NewPost";
-import Profile from "./Profile";
+// import Profile from "./Profile";
 import NewEvent from "./NewEvent";
 import ImageUpload from "./ImageUpload";
 import Updates from "./Updates";
@@ -49,7 +49,6 @@ export default function DashBoard() {
 
   const profilePic = localStorage.getItem("profilePic");
   const profileName = localStorage.getItem("name");
-
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -87,34 +86,29 @@ export default function DashBoard() {
           aria-label="Vertical tabs example"
           sx={{ borderRight: 0, width: "150px", borderColor: "black" }}
         >
-          <Tab label="PROFILE" {...a11yProps(0)} />
-          <Tab label="EVENTS" {...a11yProps(3)} />
+          {/* <Tab label="PROFILE" {...a11yProps(0)} /> */}
+          <Tab label="EVENTS" {...a11yProps(0)} />
           {/* <Tab label="BLOG" {...a11yProps(0)} /> */}
           <Tab label="IMAGES" {...a11yProps(1)} />
           <Tab label="UPDATES" {...a11yProps(2)} />
           <Tab label="ARTICLES" {...a11yProps(3)} />
         </Tabs>
       </Stack>
+      {/* <TabPanel value={value} index={0}>
+      <Profile profilePic={profilePic} profileName={profileName} />
+      </TabPanel> */}
       <TabPanel value={value} index={0}>
-        <Profile />
-      </TabPanel>
-      <TabPanel value={value} index={1}>
         <NewEvent />
       </TabPanel>
-      <TabPanel value={value} index={2}>
+      <TabPanel value={value} index={1}>
         <ImageUpload />
       </TabPanel>
-      <TabPanel value={value} index={3}>
+      <TabPanel value={value} index={2}>
         <Updates />
       </TabPanel>
-      <TabPanel value={value} index={4}>
-        Item Five
-      </TabPanel>
-      <TabPanel value={value} index={5}>
-        Item Six
-      </TabPanel>
-      <TabPanel value={value} index={6}>
-        Item Seven
+      <TabPanel value={value} index={3}>
+        {/* <Articles /> */}
+        Articles
       </TabPanel>
     </Box>
   );

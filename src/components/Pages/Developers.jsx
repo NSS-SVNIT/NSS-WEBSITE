@@ -20,7 +20,7 @@ function Developers() {
       mail: "mailto:tapariyaaditi23@gmail.com",
       linkedin: "https://www.linkedin.com/in/aditi-tapariya/",
       imageLink:
-        "https://drive.google.com/uc?id=1vhZEqCdA2wfaX5i3gyXsA_acal_gyygh&export=download",
+        "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/Developers%20and%20Designers%2Faditi.jpg?alt=media&token=381119fd-7f69-4480-a05c-940560ecac2a",
     },
     {
       id: 2,
@@ -29,7 +29,7 @@ function Developers() {
       mail: "mailto:pathakharshit281@gmail.com",
       linkedin: "https://www.linkedin.com/in/harshit-pathak-4ba6aa22a/",
       imageLink:
-        "https://drive.google.com/uc?id=1emfchxV1KCWoBRjdfr4Di8XQ1RuTo5qj&export=download",
+        "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/Developers%20and%20Designers%2Fharshit.jpg?alt=media&token=cf30f119-6da7-4167-8c9b-fbd3b69e5a91",
     },
     {
       id: 3,
@@ -38,7 +38,7 @@ function Developers() {
       mail: "mailto:jinhalmaheshwari1256@gmail.com",
       linkedin: "linkedin.com/in/jinhal-maheshwari-71a217212/",
       imageLink:
-        "https://drive.google.com/uc?id=1vxZ22s3sxcEEA10i7JbTOvj7FoONuy4T&export=download",
+        "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/Developers%20and%20Designers%2Fjinhal.jpg?alt=media&token=ceb14311-8bfb-472d-b48c-34774f0ca7d9",
     },
     {
       id: 4,
@@ -47,7 +47,7 @@ function Developers() {
       mail: "mailto:shahparam1903@gmail.com",
       linkedin: "https://www.linkedin.com/in/param-shah-716322227/",
       imageLink:
-        "https://drive.google.com/uc?id=1wKDtiasOBSOdFZLGE7hGmqtHpFM7gvlC&export=download",
+        "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/Developers%20and%20Designers%2Fparam.jpg?alt=media&token=d04500c6-e748-44e6-a681-fc917e05676b",
     },
     {
       id: 5,
@@ -56,7 +56,7 @@ function Developers() {
       mail: "mailto:barikpragnesh@gmail.com",
       linkedin: "https://www.linkedin.com/in/pragnesh-barik",
       imageLink:
-        "https://drive.google.com/uc?id=1wNOKNO2AfRA9RcIR-HHUc5MLXfc92NbN&export=download",
+        "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/Developers%20and%20Designers%2Fpragnesh.jpg?alt=media&token=0cb1f05d-f0e3-42ce-98b7-f50e36041cf3",
     },
     {
       id: 6,
@@ -65,7 +65,7 @@ function Developers() {
       mail: "mailto:shreeyadave776@gmail.com",
       linkedin: "https://www.linkedin.com/in/shreeya-dave-444166232/",
       imageLink:
-        "https://drive.google.com/uc?id=1vWa6nLxSAzsuW-J_KjlJ8e24UZXRDnAy&export=download",
+        "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/Developers%20and%20Designers%2Fshreeya.jpg?alt=media&token=41f7958c-7d2d-456a-b54f-0495a08febeb",
     },
   ];
 
@@ -77,7 +77,7 @@ function Developers() {
       mail: "mailto:kevalkanpariya5051@gmail.com",
       linkedin: "http://linkedin.com/in/kevalkanpariya",
       imageLink:
-        "https://drive.google.com/uc?id=1vsDgSNwydos4hWLN3JFhD_K0F4GvWdPX&export=download",
+        "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/Developers%20and%20Designers%2Fkeval.jpg?alt=media&token=e8da1dc5-273d-44ba-bf41-b00d4a6e54c6",
     },
     {
       id: 2,
@@ -86,7 +86,7 @@ function Developers() {
       mail: "mailto:namrata.rathod028@gmail.com",
       linkedin: "www.linkedin.com/in/nr28",
       imageLink:
-        "https://drive.google.com/uc?id=1wD9UFDsY73yXhf81NhmLj4TON9EmUsUu&export=download",
+        "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/Developers%20and%20Designers%2Fnamrata.jpg?alt=media&token=367be3ab-97b9-4584-bc62-27b824fd0fc2",
     },
   ];
 

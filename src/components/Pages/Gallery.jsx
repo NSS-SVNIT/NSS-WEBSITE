@@ -71,7 +71,7 @@ const Gallery = () => {
 
   return (
     <Layout>
-      <PageHeader title="Gallery">
+      <PageHeader>
         Welcome to our stunning photo gallery! Each photograph has been
         carefully curated to that has captured some unique emotions, inspire
         wanderlust, and celebrate the joy of community service.
