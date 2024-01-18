@@ -41,10 +41,11 @@ export default function NewEvent() {
   }
 
   function handleTextChange(e) {
-    setText(e.target.value);
+    const newText = e.target.value;
+    setText(newText);
     setPostData((prev) => ({
       ...prev,
-      ["content"]: text.split("\n"),
+      content: newText.split("\n"),
     }));
   }
 
@@ -69,6 +70,19 @@ export default function NewEvent() {
           onChange={handleChange("title")}
           size="small"
         ></TextField>
+        {/* <TextField
+          margin="normal"
+          multiline
+          rows={5}
+          required
+          fullWidth
+          onChange={handleChange("title")}
+          id="message"
+          label="Message"
+          name="message"
+          autoFocus
+          sx={{ width: "100%" }}
+        /> */}
         <TextField
           variant="standard"
           label="Reading time"
@@ -77,15 +91,28 @@ export default function NewEvent() {
           fullWidth
         ></TextField>
 
-        <TextField
+        {/* <TextField
           style={{ width: "100%", minWidth: "300px" }}
           onChange={handleTextChange}
           value={text}
           label="Content"
           multiline
           variant="standard"
+        /> */}
+        <TextField
+          margin="normal"
+          multiline
+          onChange={handleTextChange}
+          rows={5}
+          required
+          fullWidth
+          // id="message"
+          value={text}
+          label="Content"
+          name="content"
+          autoFocus
+          sx={{ width: "100%" }}
         />
-
         <Button variant="contained" onClick={handleSubmit}>
           SUBMIT
         </Button>
