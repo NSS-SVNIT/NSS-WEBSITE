@@ -1,4 +1,4 @@
-import { Box, Rating, Stack } from "@mui/material";
+import { Box, Rating, Stack, Typography } from "@mui/material";
 import React from "react";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import remarkGfm from "remark-gfm";
@@ -52,9 +52,13 @@ const BlogPost = React.memo((props) => {
           {props.readingTime} minute read
         </Box>
         <Box sx={{ width: "100%" }}>
-          <ReactMarkdown className="md" remarkPlugins={[remarkGfm]}>
+          <Typography
+            className="md"
+            remarkPlugins={[remarkGfm]}
+            sx={{ wordWrap: "break-word" }}
+          >
             {props.content}
-          </ReactMarkdown>
+          </Typography>
         </Box>
       </Stack>
     </Stack>
