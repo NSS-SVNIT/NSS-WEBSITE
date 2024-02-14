@@ -101,7 +101,7 @@ export default function NavBar() {
           >
             <Avatar
               alt="Logo"
-              src="../../nss_logo.png"
+              src="../../src/assets/nss_logo.png"
               sx={{
                 width: isPhone ? 40 : 60,
                 height: isPhone ? 40 : 60,
