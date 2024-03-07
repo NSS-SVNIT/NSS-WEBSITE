@@ -65,7 +65,7 @@ function Developers() {
 			mail: "mailto:shreeyadave776@gmail.com",
 			linkedin: "https://www.linkedin.com/in/shreeya-dave-444166232/",
 			imageLink:
-				"https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/Developers%20and%20Designers%2Fshreeya.jpg?alt=media&token=41f7958c-7d2d-456a-b54f-0495a08febeb",
+				"https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/Developers%20and%20Designers%2Fshreeya.jpeg?alt=media&token=5e4dd1b7-ccda-4cfb-8a58-0d663c7ada9b",
 		},
 	];
 
