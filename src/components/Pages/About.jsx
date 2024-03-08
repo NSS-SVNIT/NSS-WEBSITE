@@ -31,7 +31,7 @@ const About = () => {
   const [url, setUrl] = useState('aaaa');
   const func = async () => {
     const storage = getStorage();
-    const reference = ref(storage, 'aboutImages/nss_logo.png');
+    const reference = ref(storage, 'aboutImages/nss_logo.jpg');
     await getDownloadURL(reference).then((x) => {
       setUrl(x);
     })
