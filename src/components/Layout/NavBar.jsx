@@ -101,7 +101,7 @@ export default function NavBar() {
           >
             <Avatar
               alt="Logo"
-              src="../../src/assets/nss_logo.png"
+              src="https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/NSS%20LOGO.svg?alt=media&token=25ab44e5-3427-4c5d-aab6-da7bdc32da93"
               sx={{
                 width: isPhone ? 40 : 60,
                 height: isPhone ? 40 : 60,
