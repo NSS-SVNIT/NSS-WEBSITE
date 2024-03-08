@@ -1,7 +1,6 @@
 import React from "react";
 import { Grid } from "@mui/material";
 import HeroText from "../../HeroText";
-import bg from "../../../assets/bg1.png";
 import UpdateCard from "../../UpdateCard";
 
 const HeroSection = React.memo(() => {
