@@ -92,7 +92,7 @@ const ImageGrid = React.memo(() => {
     const reference6 = ref(storage, 'aboutImages/MorningRoutine.jpg');
     getDownloadURL(reference6).then((x) => { setMorningRoutine(x); })
 
-    const reference7 = ref(storage, 'aboutImages/workshops.png');
+    const reference7 = ref(storage, 'aboutImages/workshops.jpg');
     getDownloadURL(reference7).then((x) => { setWorkshop(x); })
 
     const reference8 = ref(storage, 'aboutImages/Plantation.jpg');
