@@ -1,11 +1,7 @@
 import React from "react";
 import Carousel from "react-material-ui-carousel";
 import {
-  Paper,
-  Button,
   Card,
-  Box,
-  Grid,
   Typography,
   Avatar,
 } from "@mui/material";
