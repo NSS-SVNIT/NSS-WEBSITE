@@ -9,7 +9,6 @@ import { useState } from "react";
 import { getStorage, ref, getDownloadURL } from "@firebase/storage";
 import { Link } from "react-router-dom";
 
-
 const useStyles = makeStyles({
 	gradientBackground: {
 		background: "linear-gradient(to bottom, #ffebff, #FFE6FF)",
@@ -46,9 +45,12 @@ const About = () => {
 			<Typography
 				variant="h1"
 				sx={{
+					fontFamily: "Inria Sans",
+					// fontStyle: "oblique",
+					fontSize: "96px",
 					px: 10,
 					pt: 5,
-					fontWeight: 400,
+					fontWeight: 500,
 					overflowX: "hidden",
 					overflowY: "hidden",
 				}}>
@@ -96,7 +98,13 @@ const About = () => {
 
 			<Typography
 				variant="h2"
-				sx={{ px: 10, pt: 5, fontWeight: 400, overflowX: "hidden" }}>
+				sx={{
+					px: 10,
+					pt: 5,
+					fontWeight: 400,
+					overflowX: "hidden",
+					fontFamily: "Inria Sans",
+				}}>
 				ABOUT NSS INDIA
 			</Typography>
 			<br />
@@ -171,6 +179,7 @@ const About = () => {
 								fontSize={"50px"}
 								gutterBottom
 								sx={{
+									fontFamily: "Inria Sans",
 									marginTop: "50px",
 									overflowX: "hidden",
 									overflowY: "hidden",
@@ -194,6 +203,7 @@ const About = () => {
 								fontSize={"100px"}
 								gutterBottom
 								sx={{
+									// fontFamily: "Inria Sans",
 									overflowX: "hidden",
 									overflowY: "hidden",
 									fontSize: {
@@ -330,7 +340,10 @@ const About = () => {
 							className={classes.gradientBackground}>
 							<Typography
 								variant="h4"
-								sx={{ m: { xs: 2, sm: 3, md: 4, lg: 5 } }}>
+								sx={{
+									m: { xs: 2, sm: 3, md: 4, lg: 5 },
+									fontFamily: "Inria Sans",
+								}}>
 								OUR MISSION
 							</Typography>
 							<Typography
@@ -384,7 +397,10 @@ const About = () => {
 							className={classes.gradientBackground}>
 							<Typography
 								variant="h4"
-								sx={{ m: { xs: 2, sm: 3, md: 4, lg: 5 } }}>
+								sx={{
+									m: { xs: 2, sm: 3, md: 4, lg: 5 },
+									fontFamily: "Inria Sans",
+								}}>
 								OUR VISION
 							</Typography>
 							<Typography
@@ -411,7 +427,7 @@ const About = () => {
 			</Grid>
 			<DutySection></DutySection>
 			<ComitteeSection />
-      
+
 			<div
 				style={{
 					overflowX: "hidden",
