@@ -123,6 +123,7 @@ const About = () => {
 							alignItems: "center",
 							rows: "10",
 							overflowX: "hidden",
+							fontFamily: "DM Sans",
 						}}>
 						The National Service Scheme (NSS) is a Central Sector
 						Scheme of the Government of India, Ministry of Youth
@@ -203,7 +204,7 @@ const About = () => {
 								fontSize={"100px"}
 								gutterBottom
 								sx={{
-									// fontFamily: "Inria Sans",
+									fontFamily: "DM Sans",
 									overflowX: "hidden",
 									overflowY: "hidden",
 									fontSize: {
@@ -225,6 +226,7 @@ const About = () => {
 								variant="subtitle2"
 								gutterBottom
 								sx={{
+									fontFamily: "DM Sans",
 									overflowX: "hidden",
 									overflowY: "hidden",
 									fontSize: {
@@ -348,6 +350,7 @@ const About = () => {
 							</Typography>
 							<Typography
 								sx={{
+									fontFamily: "DM Sans",
 									overflowX: "hidden",
 									fontSize: {
 										xs: "10px",
@@ -405,6 +408,7 @@ const About = () => {
 							</Typography>
 							<Typography
 								sx={{
+									fontFamily: "DM Sans",
 									overflowX: "hidden",
 									fontSize: {
 										xs: "10px",

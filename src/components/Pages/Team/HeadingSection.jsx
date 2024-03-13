@@ -22,7 +22,7 @@ const HeadingSection = React.memo(() => {
             </Typography>
           </Slide>
           <Slide direction="right" in={true} timeout={800} mountOnEnter>
-            <Typography variant="subtitle2" gutterBottom style={{ textAlign: "justify" }} >
+            <Typography variant="subtitle2" gutterBottom style={{ textAlign: "justify",fontFamily:'DM Sans', }} >
               Embark on a transformative journey with the extraordinary team at NSS SVNIT. Dedicated to making a delta change every day, we combine passion, expertise, and unwavering commitment. Let's create a better tomorrow by taking one impactful step at a time. Together, let's make a lasting difference and inspire a wave of positive transformation.
             </Typography>
           </Slide>
