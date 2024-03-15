@@ -33,7 +33,7 @@ const Post = () => {
 
   return (
     <Layout>
-      <Grid container justifyContent={"center"}>
+      <Grid container justifyContent={"center"} sx={{ marginBottom: "40px" }}>
         <Grid item lg={6}>
           {/* Memoized BlogPost */}
           <MemoizedBlogPost
