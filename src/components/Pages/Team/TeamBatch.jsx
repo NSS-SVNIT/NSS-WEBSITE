@@ -29,7 +29,7 @@ const TeamBatch = React.memo(({ year, TeamList }) => {
   let headingText;
   let headingColor;
   if (year === 2000) {
-    headingText = "FACULTY";
+    headingText = "PROGRAM";
     headingColor = "grey";
   } else if (year === 2001) {
     headingText = "OUR";
@@ -45,7 +45,7 @@ const TeamBatch = React.memo(({ year, TeamList }) => {
   let coordinatorText;
   let coordinatorColor;
   if (year === 2000) {
-    coordinatorText = "ADVISOR";
+    coordinatorText = "COORDINATOR";
     coordinatorColor = "white";
   } else if (year === 2001) {
     coordinatorText = "FOUNDER";
@@ -63,7 +63,7 @@ const TeamBatch = React.memo(({ year, TeamList }) => {
       <div style={{ fontFamily: "DM Sans", overflowX: "hidden" }}>
         <Box
           sx={{
-            mx: 60,
+            mx: headingText === "PROGRAM" ? 50 : 65,
             my: 2,
             px: 8,
             py: 4,
@@ -72,6 +72,7 @@ const TeamBatch = React.memo(({ year, TeamList }) => {
             display: "inline-block",
             fontFamily: "DM Sans",
             color: headingColor,
+            whiteSpace: "nowrap",
           }}
         >
           {headingText}{" "}
