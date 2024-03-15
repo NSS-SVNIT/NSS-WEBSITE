@@ -5,11 +5,11 @@ import ButtonReadMore from "./ButtonReadMore";
 import coin from "./coin.gif";
 import document from "./document.gif";
 import social from "./social.gif";
-import technical from './technical.gif'
-import sports from './sports.gif'
-import creative from './creative.gif'
-import culture from './culture.gif'
-const Example = () => {
+import technical from "./technical.gif";
+import sports from "./sports.gif";
+import creative from "./creative.gif";
+import culture from "./culture.gif";
+const AboutCommittee = () => {
 	return (
 		<div
 			className="bg-neutral-800"
@@ -20,26 +20,33 @@ const Example = () => {
 };
 
 const HorizontalScrollCarousel = () => {
-	const targetRef = useRef(null);
-	const { scrollYProgress } = useScroll({
-		target: targetRef,
-	});
+	// const targetRef = useRef(null);
+	// const { scrollYProgress } = useScroll({
+	// 	target: targetRef,
+	// });
 
-	const x = useTransform(scrollYProgress, [0, 1], ["95%", "-90%"]);
+	// const x = useTransform(scrollYProgress, [0, 1], ["95%", "-90%"]);
 
 	return (
-		<section ref={targetRef} className="relative h-[300vh] bg-neutral-900">
-			<div className="sticky top-0 flex h-screen items-center overflow-hidden">
+		<section>
+			<div>
 				<motion.div
 					style={{
-						x,
 						flexDirection: "row",
 						display: "flex",
-						gap: "48px",
+						gap: "50px",
 					}}
 					className="gap-4">
 					{cards.map((card) => {
-						return <Card card={card} />;
+						return (
+							<div
+								style={{
+									padding: "0px 0px 0px 14px",
+									width: "150px",
+								}}>
+								<Card card={card} />
+							</div>
+						);
 					})}
 				</motion.div>
 			</div>
@@ -62,23 +69,18 @@ const Card = ({ card }) => {
 	};
 	return (
 		<div
-			// onMouseEnter={() => setHovered(true)}
-			onMouseLeave={() => setHovered(false)}
 			key={card.id}
 			className="group relative h-[450px] w-[450px] overflow-hidden bg-neutral-200">
 			<img
 				onMouseEnter={reload}
 				src={card.icon}
 				style={{
-					// backgroundImage: `url(${card.icon})`,
 					backgroundSize: "cover",
 					backgroundPosition: "center",
-					height: "150px",
 				}}
 				className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110"></img>
 			<div className="absolute inset-0 z-10 grid place-content-center">
 				<p className="bg-gradient-to-br from-white/20 to-white/0 p-8 text-6xl font-black uppercase text-white backdrop-blur-lg">
-					{/* {card.name} */}
 					<ButtonReadMore
 						text={card.name}
 						onClick={handleOpenModal}
@@ -107,7 +109,6 @@ const Card = ({ card }) => {
 							<Typography textAlign="justify">
 								{card.description}
 							</Typography>
-							{/* <br /> */}
 							<Button
 								onClick={handleCloseModal}
 								variant="outlined"
@@ -117,7 +118,6 @@ const Card = ({ card }) => {
 								}}>
 								Close
 							</Button>
-							{/* <Box></Box> */}
 						</Box>
 					</Modal>
 				</p>
@@ -126,8 +126,15 @@ const Card = ({ card }) => {
 	);
 };
 
-export default Example;
+export default AboutCommittee;
 const cards = [
+	{
+		id: 5,
+		name: "Documentation",
+		description:
+			"The Documentation Committee maintains detailed records of event planning, meeting minutes, and creates reports. Their meticulous documentation fosters effective communication with the faculty advisor, promoting transparency and informed decision-making within the unit.",
+		icon: document,
+	},
 	{
 		id: "1",
 		name: "Technical",
@@ -157,23 +164,17 @@ const cards = [
 		icon: coin,
 	},
 	{
-		id: 5,
-		name: "Documentation",
-		description:
-			"The Documentation Committee maintains detailed records of event planning, meeting minutes, and creates reports. Their meticulous documentation fosters effective communication with the faculty advisor, promoting transparency and informed decision-making within the unit.",
-		icon: document,
-	},
-	{
 		id: 6,
 		name: "Creative",
 		description:
-		"The NSS Creative Committee utilizes creative abilities for the greater good, engaging in tasks from designing posters to video editing. It channels creativity to effectively promote welfare initiatives and spread messages that resonate with the audience.",
+			"The NSS Creative Committee utilizes creative abilities for the greater good, engaging in tasks from designing posters to video editing. It channels creativity to effectively promote welfare initiatives and spread messages that resonate with the audience.",
 		icon: creative,
 	},
 	{
 		id: 7,
 		name: "Cultural",
-		description:"The NSS Cultural Committee organizes diverse cultural events, providing a platform for talent expression in music, dance, and art. It promotes and preserves cultural heritage, encouraging student participation in celebrations that showcase their cultural identity.",
+		description:
+			"The NSS Cultural Committee organizes diverse cultural events, providing a platform for talent expression in music, dance, and art. It promotes and preserves cultural heritage, encouraging student participation in celebrations that showcase their cultural identity.",
 		icon: culture,
 	},
 ];

@@ -2,8 +2,8 @@ import React from "react";
 import { Stack, Box, Grid } from "@mui/material";
 import ComitteeCard from "./CommitteeCard";
 import { motion } from "framer-motion";
+import AboutCommittee from "./AboutCommittee";
 
-import Example from "./Example";
 const ComitteeSection = React.memo(() => {
 	return (
 		<Stack>
@@ -41,7 +41,7 @@ const ComitteeSection = React.memo(() => {
 						</motion.div>
 					</Grid>
 				))} */}
-				<Example />
+				<AboutCommittee />
 			</Grid>
 		</Stack>
 	);
