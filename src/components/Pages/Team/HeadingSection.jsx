@@ -82,6 +82,7 @@ const HeadingSection = React.memo(() => {
 							src="https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/team%20page%2Fteam.jpg?alt=media&token=250a96b8-c607-44f3-a1c7-d10c7072c89f"
 							alt="Right Content"
 							height="500px"
+							style={{ borderRadius: "10px" }}
 						/>
 					</Slide>
 				</Grid>
