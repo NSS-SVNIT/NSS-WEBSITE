@@ -130,7 +130,7 @@ export default function NewArticle() {
     
   
   const handleSubmit = async (event) => {
-    // event.preventDefault();
+    event.preventDefault();
     console.log(selectedImage);
     await uploadImage(selectedImage, selectedFile).then(async(data) => {
       const [Image, Download] = data;
@@ -140,6 +140,10 @@ export default function NewArticle() {
           const uuid = uuidv4();
           // postData["timestamp"] = today.getTime();
           await setDoc(doc(firestore, "articles", uuid), postArticle);
+          setTimeout(function() {
+            alert('Form submitted successfully!');
+            // You can also redirect the user to another page or perform any other action here
+          }, 1000);
     }).catch((error)=>{
       console.log(error);
     });

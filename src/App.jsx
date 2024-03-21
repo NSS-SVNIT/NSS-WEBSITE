@@ -14,12 +14,14 @@ import Contact from "./components/Pages/Contact";
 import About from "./components/Pages/About";
 import Developers from "./components/Pages/Developers";
 import Articles from "./components/Pages/Articles/Articles";
+import NewArticle from "./components/Pages/Articles/newarticle";
 
 const MemoizedAbout = memo(About);
 const MemoizedGallery = memo(Gallery);
 const MemoizedAdmin = memo(Admin);
 const MemoizedDevelopers = memo(Developers);
 const MemoizedArticles = memo(Articles);
+const MemoizedNewarticle = memo(NewArticle);
 const MemoizedNewPost = memo(NewPost);
 const MemoizedEvents = memo(Events);
 const MemoizedTeam = memo(Team);
@@ -37,6 +39,7 @@ function App() {
         <Route path="/admin" element={<MemoizedAdmin />} />
         <Route path="/Developers" element={<MemoizedDevelopers />} />
         <Route path="/articles" element={<MemoizedArticles />} />
+        <Route path="/newarticle" element={<MemoizedNewarticle />} />
         <Route path="/newpost" element={<MemoizedNewPost />} />
         <Route path="/events" element={<MemoizedEvents />} />
         <Route exact path="/team" element={<MemoizedTeam />} />
