@@ -23,8 +23,7 @@ export default function NewArticle() {
   const [Description, setDescription] = useState("")
   const [selectedFile, setSelectedFile] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
-  // const [Image, setImage] = useState("null");
-  // const [Download, setDownload] = useState("null");
+
 
   const handleSelectChange = (event) => {
     setType(event.target.value);
@@ -41,43 +40,8 @@ export default function NewArticle() {
   };
 
 
-//   const uploadImage = async (selectedImage, selectedFile) => {
-//     return new Promise((resolve, reject) => {
-//         const storage = getStorage();
-//         const uniqueFilename = `${uuidv4()}_${selectedImage.name}`;
-//         const uniquePDFname = `${uuidv4()}_${selectedFile.name}`;
-//         const imageRef = ref(storage, `articleImages/${uniqueFilename}`);
-//         const PDFRef = ref(storage, `articleImages/Report/${uniquePDFname}`);
-        
-//         Promise.all([
-//             uploadBytes(imageRef, selectedImage),
-//             uploadBytes(PDFRef, selectedFile),
-            
-//         ]).then(() => {
-//             // Get download URLs for both image and PDF
-//             let p2 = new Promise((resolve, reject)=>{
-//               const imageUrl = getDownloadURL(imageRef);
-//               const pdfUrl = getDownloadURL(PDFRef);
-//               resolve({ imageUrl, pdfUrl });
-//             })
-//             return p2;}).then((imageUrl, pdfUrl)=>{
-//               setImage(imageUrl);
-//               setDownload(pdfUrl);
-//             })
-            
-//             console.log(Image);
-//             console.log(Download);
-//             console.log('Image and PDF uploaded successfully.');
-//             // Resolve the promise with the generated filenames and download URLs
-//             resolve({ imageFilename: uniqueFilename, pdfFilename: uniquePDFname, imageUrl, pdfUrl });
-//           }).catch(error => {
-//             console.error('Error uploading image or PDF:', error);
-//             reject(error);
-//         });
-//     });
-// };
   const storage = getStorage();
-  // const storage = getStorage();
+
 
   const uploadImage = async (selectedImage, selectedFile) => {
       return new Promise(async (resolve, reject) => {
@@ -94,12 +58,6 @@ export default function NewArticle() {
   
               const Image = await getDownloadURL(imageRef);
               const Download = await getDownloadURL(PDFRef);
-              // console.log(imageUrl);
-              // console.log(pdfUrl);
-              // setImage(imageUrl);
-              // setDownload(pdfUrl);
-              // console.log(Image);
-              // console.log(Download);
               
               resolve([Image, Download]);
           } catch (error) {
@@ -109,61 +67,22 @@ export default function NewArticle() {
       });
   };
   
-
-  // const url = async (imageUrl, pdfUrl) => {
-        
-  //     try {
-          
-  //         setImage(imageUrl);
-  //         setDownload(pdfUrl);
-  //         console.log(Image);
-  //         console.log(Download);
-          
-  //         resolve([imageUrl, pdfUrl]);
-  //     } catch (error) {
-  //         console.error("Error uploading image or PDF:", error);
-  //         reject(error);
-  //     }
-
-
-  // };
-    
   
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(selectedImage);
     await uploadImage(selectedImage, selectedFile).then(async(data) => {
       const [Image, Download] = data;
-      // await url(imageUrl, pdfUrl);
       const postArticle = { Description, Download, Image, Title, Type };
           console.log(postArticle)
           const uuid = uuidv4();
-          // postData["timestamp"] = today.getTime();
           await setDoc(doc(firestore, "articles", uuid), postArticle);
           setTimeout(function() {
             alert('Form submitted successfully!');
-            // You can also redirect the user to another page or perform any other action here
           }, 1000);
     }).catch((error)=>{
       console.log(error);
     });
-    
-    
-    // try {
-    //   // await uploadImage(selectedImage, selectedFile);
-    //   const postArticle = {Description, Download, Image, Title, Type};
-    //   console.log(postArticle)
-    //   const uuid = uuidv4();
-    //   // postData["timestamp"] = today.getTime();
-    //   await setDoc(doc(firestore, "articles", uuid), postArticle);
-    //   // Reset form after successful submission
-    //   // setPostData(initPostData);
-    // } catch (error) {
-    //   // console.error("Error submitting post:", error.message);
-    //   console.log("error");
-    //   // Handle error and provide user feedback
-    // }
-    
     
     
   };
@@ -174,9 +93,9 @@ export default function NewArticle() {
         <Grid item lg={6}>
         <form onSubmit={handleSubmit}>
           <Stack gap={2}>
-          <TextField label="Title" type = "title" id="outlined-size-normal" variant="outlined" InputLabelProps={{shrink: true,}} onChange={(e)=>setTitle(e.target.value)} />
-          <TextField label="Description" type = "description" id="outlined-size-normal" variant="outlined" InputLabelProps={{shrink: true,}} onChange={(e)=>setDescription(e.target.value)} />
-          <TextField select label="Type" type = "type" id="outlined-size-normal" defaultValue="Magazine" variant="outlined" fullWidth onChange={handleSelectChange}>
+          <TextField label="Title" type = "title" id="outlined-size-normal" variant="outlined" InputLabelProps={{shrink: true,}} onChange={(e)=>setTitle(e.target.value)} autoComplete="off"/>
+          <TextField label="Description" type = "description" id="outlined-size-normal" variant="outlined" InputLabelProps={{shrink: true,}} onChange={(e)=>setDescription(e.target.value)} autoComplete="off"/>
+          <TextField select label="Type" type = "type" id="outlined-size-normal" defaultValue="Magazine" variant="outlined" fullWidth onChange={handleSelectChange} autoComplete="off">
             {options.map((option) => (
                 <MenuItem key={option.label} value={option.value}>
                 {option.value}
@@ -187,7 +106,6 @@ export default function NewArticle() {
            />
           <TextField  fullWidth id="outlined-uncontrolled" label="Upload Image" type="file" inputProps={{ accept: 'image/*' }} InputLabelProps={{shrink: true,}} onChange={handleImageChange}
            />
-           {/* <h1>{selectedImage.name}</h1> */}
            
           </Stack>
           <Button variant="contained" type="submit"> Submit </Button>
