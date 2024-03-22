@@ -87,7 +87,6 @@ export default function NewArticle() {
     
   };
   return (
-    <Layout>
       
         <Grid container spacing={5} style={{marginTop:'1vh', marginBottom:'1vh'}}>
         <Grid item lg={6}>
@@ -108,11 +107,12 @@ export default function NewArticle() {
            />
            
           </Stack>
+          <br></br>
           <Button variant="contained" type="submit"> Submit </Button>
           </form>
         </Grid>        
       </Grid>
       
-   </Layout>
+  
   );
 }

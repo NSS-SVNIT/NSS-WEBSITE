@@ -10,6 +10,7 @@ import NewPost from "../NewPost";
 import NewEvent from "./NewEvent";
 import ImageUpload from "./ImageUpload";
 import Updates from "./Updates";
+import Articles from "../Articles/newarticle";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -107,8 +108,7 @@ export default function DashBoard() {
         <Updates />
       </TabPanel>
       <TabPanel value={value} index={3}>
-        {/* <Articles /> */}
-        Articles
+        <Articles />
       </TabPanel>
     </Box>
   );
