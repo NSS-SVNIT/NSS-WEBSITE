@@ -17,7 +17,7 @@ export default function FooterLogo() {
         <Divider orientation="vertical" flexItem />
         <img
           style={{ height: "75px" }}
-          src="https://www.svnit.ac.in/conference/frsm2023/hit/svnit_logo.png"
+          src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/NIT_Surat_Logo.svg/300px-NIT_Surat_Logo.svg.png"
         ></img>
       </Stack>
 
