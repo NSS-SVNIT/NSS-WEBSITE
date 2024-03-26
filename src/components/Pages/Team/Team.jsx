@@ -24,6 +24,7 @@ const Team = React.memo(() => {
     <Layout>
       <HeadingSection />
       <TeamBatch year={2000} TeamList={Data.Sir} /> {/* If year is 2000, it means it's for Faculty Advisor */}
+      <TeamBatch year={2003} TeamList={Data.ProgramCoordinators} /> {/* If year is 2003, it means it's for Program Coordinators */}
       <TeamBatch year={2001} TeamList={Data.Founder} /> {/* If year is 2001, it means it's for Founders */}
       <TeamBatch year={2002} TeamList={Data.CoFounder} /> {/* If year is 2002, it means it's for Co-Founders */}
       {years.map(year => (

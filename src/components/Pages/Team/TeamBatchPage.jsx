@@ -14,7 +14,10 @@ const TeamBatchPage = React.memo(() => {
       return Data.Founder || [];
     } else if (year === "2000") {
       return Data.Sir || [];
-    } else {
+    }else if (year === "2003") {
+      return Data.ProgramCoordinators || [];
+    } 
+    else {
       const dataKey = `Team${year}`;
       return Data[dataKey] || [];
     }
