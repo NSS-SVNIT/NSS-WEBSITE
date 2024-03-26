@@ -108,6 +108,15 @@ export default function NavBar() {
                 marginRight: 1,
               }}
             />
+            <Avatar
+              alt="Logo"
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/NIT_Surat_Logo.svg/300px-NIT_Surat_Logo.svg.png"
+              sx={{
+                width: isPhone ? 40 : 60,
+                height: isPhone ? 40 : 60,
+                marginRight: 1,
+              }}
+            />
             <NavLink
               to="/"
               style={{
