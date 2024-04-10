@@ -3,36 +3,37 @@ import React, { memo } from "react";
 import "./HeroText.css";
 
 const HeroText = memo(() => {
-  return (
-    <Box sx={{ flexBasis: "60%" }}>
-      <div className="glass">
-        <h3
-          style={{
-            fontSize: "6rem",
-            fontFamily: "Poppins",
-            fontWeight: "100",
-          }}
-        >
-          <span style={{ fontWeight: "400" }}>NSS SVNIT</span>
-        </h3>
+	return (
+		<Box sx={{ flexBasis: "60%" }}>
+			<div className="glass">
+				<h3
+					style={{
+						fontSize: "6rem",
+						fontFamily: "Poppins",
+						fontWeight: "100",
+					}}>
+					<span style={{ fontWeight: "400" }}>NSS SVNIT</span>
+				</h3>
 
-        <p
-          style={{
-            fontFamily: "DM Sans",
-            fontSize: "1.5rem",
-            fontWeight: "400",
-          }}
-        >
-          Serving our community for a year and counting signifies the commitment
-          and dedication of the National Service Scheme (NSS) towards making a
-          positive impact on the community.
-        </p>
-        <Stack
-          direction="row"
-          gap={4}
-          sx={{ pt: 2, alignItems: "center", justifyContent: "center" }}
-        >
-          {/* <Button
+				<p
+					style={{
+						fontFamily: "DM Sans",
+						fontSize: "1.5rem",
+						fontWeight: "400",
+					}}>
+					Serving our community for a year and counting signifies the
+					commitment and dedication of the National Service Scheme
+					(NSS) towards making a positive impact on the community.
+				</p>
+				<Stack
+					direction="row"
+					gap={4}
+					sx={{
+						pt: 2,
+						alignItems: "center",
+						justifyContent: "center",
+					}}>
+					{/* <Button
             variant="contained"
             style={{
               textTransform: "none",
@@ -65,10 +66,10 @@ const HeroText = memo(() => {
           >
             JOIN
           </Button> */}
-        </Stack>
-      </div>
-    </Box>
-  );
+				</Stack>
+			</div>
+		</Box>
+	);
 });
 
 export default HeroText;
