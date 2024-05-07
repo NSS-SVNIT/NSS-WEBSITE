@@ -44,6 +44,7 @@ const OtherMagazines = React.memo((props) => {
           fontFamily: "DM Sans",
           color: "grey",
           width: "41%",
+          textAlign: "center",
         }}
       >
         {props.nameGrey}

@@ -32,6 +32,7 @@ const LatestEdition = React.memo((props) => {
           fontFamily: "DM Sans",
           color: "grey",
           width: "35%",
+          textAlign: "center",
         }}
       >
         LATEST <span style={{ fontWeight: 400, color: "white" }}>EDITION</span>
