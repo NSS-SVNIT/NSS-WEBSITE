@@ -60,7 +60,8 @@ const OtherMagazines = React.memo((props) => {
       <br />
       <Box
         style={{
-          paddingLeft: "80px",
+          paddingLeft: "30px",
+          paddingRight: "30px",
           display: "flex",
           justifyContent: "center",
         }}
