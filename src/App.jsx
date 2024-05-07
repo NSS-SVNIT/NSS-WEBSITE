@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React, { memo,Suspense,lazy } from "react";
 import "./App.css";
 import GalleryView from "./components/Pages/Home/GalleryView";
 import Events from "./components/Pages/Events";
@@ -15,6 +15,9 @@ import About from "./components/Pages/About";
 import Developers from "./components/Pages/Developers";
 import Articles from "./components/Pages/Articles/Articles";
 import NewArticle from "./components/Pages/Articles/newarticle";
+import CircularWithValueLabel from "./components/UI/CircularWithValueLabel";
+
+const LazyHome = lazy(() => import("./components/Pages/Home"));
 
 const MemoizedAbout = memo(About);
 const MemoizedGallery = memo(Gallery);
@@ -28,10 +31,24 @@ const MemoizedTeam = memo(Team);
 const MemoizedTeamBatchPage = memo(TeamBatchPage);
 const MemoizedContact = memo(Contact);
 const MemoizedPost = memo(Post);
-const MemoizedHome = memo(Home);
+const MemoizedHome = memo(LazyHome);
 
 function App() {
-  return (
+  const [loading, setLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    // Simulate a network request
+    setTimeout(() => {
+      setLoading(false);
+    }, 10000);
+  }, []);
+  return (  
+    <>
+    {loading ? (<div style={{display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  height: "100vh"}}><CircularWithValueLabel/></div>): (
+    <Suspense fallback={<div>Loading</div>}>
     <Router>
       <Routes>
         <Route path="/about" element={<MemoizedAbout />} />
@@ -46,9 +63,12 @@ function App() {
         <Route path="/team/:year" element={<MemoizedTeamBatchPage />} />
         <Route path="/contact" element={<MemoizedContact />} />
         <Route path="/events/:id" element={<MemoizedPost />} />
-        <Route path="/" element={<MemoizedHome />} />
+        <Route path="/" element={<MemoizedHome />} /> 
       </Routes>
     </Router>
+    </Suspense>
+    )}
+    </>
   );
 }
 
