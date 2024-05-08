@@ -44,6 +44,7 @@ const OtherMagazines = React.memo((props) => {
           fontFamily: "DM Sans",
           color: "grey",
           width: "41%",
+          textAlign: "center",
         }}
       >
         {props.nameGrey}
@@ -59,7 +60,8 @@ const OtherMagazines = React.memo((props) => {
       <br />
       <Box
         style={{
-          paddingLeft: "80px",
+          paddingLeft: "30px",
+          paddingRight: "30px",
           display: "flex",
           justifyContent: "center",
         }}

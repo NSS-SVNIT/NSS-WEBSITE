@@ -60,3 +60,7 @@
 .button:active {
   border: 1px solid #2196f3;
 }
+
+.name{
+  font-size: 3rem;
+}

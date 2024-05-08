@@ -30,7 +30,7 @@ const ArticleCard = React.memo((props) => {
         borderRadius: 4,
         boxShadow: "0 10px 16px rgba(0, 0, 0, 0.2)",
         backgroundColor: "#f5f5f5",
-        height: "30vh",
+        height: "25vh",
         margin: "20px",
         width: "30vw",
       }}
@@ -40,16 +40,18 @@ const ArticleCard = React.memo((props) => {
           sx={{ flex: "1 0 auto" }}
           style={{ boxSizing: "border-box", heigth: "100%", width: "20vw" }}
         >
-          <Typography component="div" variant="h5">
+          <Typography component="div" variant="h5" textAlign={"center"}>
             {props.name}
           </Typography>
           <Typography
             variant="subtitle1"
             color="text.secondary"
             component="div"
+            align="center"
           >
             {props.description}
           </Typography>
+          <div style={{ display: "flex", justifyContent: "center" }}>
           <Button
             onClick={() => {
               download(props.download);
@@ -72,6 +74,7 @@ const ArticleCard = React.memo((props) => {
               </span>
             </button>
           </Button>
+          </div>
         </CardContent>
 
         <Box sx={{ display: "flex", alignItems: "center", pl: 1, pb: 1 }}>
