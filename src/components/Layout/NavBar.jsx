@@ -80,6 +80,13 @@ export default function NavBar() {
 
   const isDevelopersPage = location.pathname === "/developers";
 
+  const scrollToTop = () => {
+    window.scrollTo({
+        top: 0,
+        left:0,
+        behavior: "smooth",
+    });
+};
   return (
     <>
       <AppBar
@@ -99,7 +106,8 @@ export default function NavBar() {
             alignItems="center"
             sx={{ flexGrow: 1 }}
           >
-            <NavLink to="/">
+            <NavLink to="/" 
+            onClick={scrollToTop}>
             <Avatar
               alt="Logo"
               src="https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/aboutImages%2Fnss_logo.jpg?alt=media&token=860074c2-3cf7-4e5d-86b4-f4bc61a37626"
@@ -110,7 +118,8 @@ export default function NavBar() {
               }}
             />
             </NavLink>
-            <NavLink to="/">
+            <NavLink to="/"
+            onClick={scrollToTop}>
             <Avatar
               alt="Logo"
               src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/NIT_Surat_Logo.svg/300px-NIT_Surat_Logo.svg.png"
@@ -127,6 +136,7 @@ export default function NavBar() {
                 textDecoration: "none",
                 color: scrolling ? "white" : "black",
               }}
+              onClick={scrollToTop}
             >
               <div
                 style={{
