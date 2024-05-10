@@ -16,6 +16,7 @@ import Developers from "./components/Pages/Developers";
 import Articles from "./components/Pages/Articles/Articles";
 import NewArticle from "./components/Pages/Articles/newarticle";
 import CircularWithValueLabel from "./components/UI/CircularWithValueLabel";
+import Loader from "./components/UI/Loader";
 
 const LazyHome = lazy(() => import("./components/Pages/Home"));
 
@@ -44,11 +45,8 @@ function App() {
   }, []);
   return (  
     <>
-    {loading ? (<div style={{display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  height: "100vh"}}><CircularWithValueLabel/></div>): (
-    <Suspense fallback={<div>Loading</div>}>
+    {loading ? (<Loader />): (
+    <Suspense fallback={<div></div>}>
     <Router>
       <Routes>
         <Route path="/about" element={<MemoizedAbout />} />
