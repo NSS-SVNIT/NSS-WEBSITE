@@ -4,6 +4,7 @@ import TeamCard from "./TeamCard";
 import { Link, useParams } from "react-router-dom";
 import * as Data from './TeamData';
 import Layout from "../../Layout/Layout";
+import NavButton from "../../UI/NavButton";
 
 const TeamBatchPage = React.memo(() => {
   const { year } = useParams();
@@ -77,6 +78,20 @@ const TeamBatchPage = React.memo(() => {
           ))}
         </Grid>
       </div>
+      <Button
+						component={Link}
+						to={`/team/`}
+						variant="outlined"
+						color="inherit"
+						sx={{
+							bottom: "20px",
+							left: "750px",
+							borderRadius: 0,
+              alignItems: 'center',
+							fontFamily: "DM Sans",
+						}}>
+						Back
+					</Button>
     </Layout>
   );
 });
