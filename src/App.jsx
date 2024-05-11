@@ -15,7 +15,6 @@ import About from "./components/Pages/About";
 import Developers from "./components/Pages/Developers";
 import Articles from "./components/Pages/Articles/Articles";
 import NewArticle from "./components/Pages/Articles/newarticle";
-import CircularWithValueLabel from "./components/UI/CircularWithValueLabel";
 import Loader from "./components/UI/Loader";
 
 const LazyHome = lazy(() => import("./components/Pages/Home"));
@@ -41,7 +40,7 @@ function App() {
     // Simulate a network request
     setTimeout(() => {
       setLoading(false);
-    }, 10000);
+    }, 5000);
   }, []);
   return (  
     <>

@@ -1,6 +1,5 @@
 import React from "react";
 import Button from "@mui/material/Button";
-
 import {
   Stack,
   useMediaQuery,
@@ -17,26 +16,17 @@ export default function NavDialog({ openDialog, handleCloseDialog }) {
       <DialogTitle sx={{ textAlign: "center" }}>Menu</DialogTitle>
       <DialogContent>
         <Stack direction="column">
-          <NavButton to="/" color="inherit" onClick={handleCloseDialog}>
-            Home
-          </NavButton>
           <NavButton to="/about" color="inherit" onClick={handleCloseDialog}>
             About
           </NavButton>
           <NavButton to="/events" color="inherit" onClick={handleCloseDialog}>
             Events
           </NavButton>
-          <NavButton to="/gallery" color="inherit" onClick={handleCloseDialog}>
-            Gallery
-          </NavButton>
-          <NavButton to="/Articles" color="inherit" onClick={handleCloseDialog}>
-            Articles
-          </NavButton>
           <NavButton to="/team" color="inherit" onClick={handleCloseDialog}>
             Team
           </NavButton>
           <NavButton to="/contact" color="inherit" onClick={handleCloseDialog}>
-            Contacts
+            Contact
           </NavButton>
         </Stack>
       </DialogContent>

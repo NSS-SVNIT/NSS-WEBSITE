@@ -1,5 +1,6 @@
 import React from "react";
 import Carousel from "react-material-ui-carousel";
+import "../../UI/Carousel.css";
 import {
   Card,
   Typography,
@@ -55,21 +56,21 @@ export default function Example(props) {
   return (
     <Card
       sx={{
-        p: 5,
+        p: 3,
         bgcolor: "beige",
         m: "30px auto",
         width: "80%",
         borderRadius: "15px",
-        height: "7vh",
+        height: "55vh",
       }}
     >
       <Carousel
-        next={(next, active) =>
-          console.log(`we left ${active}, and are now at ${next}`)
-        }
-        prev={(prev, active) =>
-          console.log(`we left ${active}, and are now at ${prev}`)
-        }
+        // next={(next, active) =>
+        //   console.log(`we left ${active}, and are now at ${next}`)
+        // }
+        // prev={(prev, active) =>
+        //   console.log(`we left ${active}, and are now at ${prev}`)
+        // }
         autoplay={true}
         timeout={5000}
         navButtonsAlwaysVisible={true}
@@ -92,13 +93,15 @@ function Item(props) {
         margin: "auto",
         height: "400px",
         overflow: "hidden",
+        display: "flex",
+        flexDirection: "column",
       }}
     >
       <h1 style={{ textAlign: "center" }}>
         <Typography variant="h3">{props.item.title}</Typography>
       </h1>
 
-      <div style={{ display: "flex", alignItems: "center" }}>
+      <div style={{ display: "flex",alignItems:'center',textAlign:'justify'}}>
         <div>
           <h2>
             <Typography
@@ -113,11 +116,19 @@ function Item(props) {
               {props.item.name}
             </Typography>
           </h2>
-
           <Typography>{props.item.description}</Typography>
         </div>
-
-        <div style={{ marginLeft: "auto", flexShrink: 0 }}>
+          {props.item.name==="Gulshan Rana" && (
+            <div style={{ flexShrink: 0, marginLeft: "3%" }}>
+              <Avatar
+                alt="Profile Image"
+                src={props.item.imageUrl}
+                sx={{ width: 200, height: 200 }}
+              />
+            </div>
+          )}
+          {props.item.name!=="Gulshan Rana" && (
+            <div style={{ margin: "5% 0 0 3%", flexShrink: 0 }}>
           {props.item.imageUrl && (
             <Avatar
               alt="Profile Image"
@@ -126,6 +137,7 @@ function Item(props) {
             />
           )}
         </div>
+          )}
       </div>
     </div>
   );

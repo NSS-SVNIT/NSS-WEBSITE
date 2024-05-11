@@ -76,6 +76,26 @@ export default function Events() {
         >
           Explore More
         </Button>
+      )}{showAll && (
+        <Button
+          onClick={() => setShowAll(false)}
+          sx={{
+            mt: 1,
+            marginLeft: 84,
+            marginBottom: 3,
+            fontSize: 20,
+            backgroundColor: "black",
+            color: "white",
+            border: "2px white solid",
+            borderColor: "black",
+            "&:hover": {
+              backgroundColor: "white",
+              color: "black",
+            },
+          }}
+        >
+          Show Less
+        </Button>
       )}
     </Layout>
   );
