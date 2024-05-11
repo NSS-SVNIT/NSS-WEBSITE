@@ -22,6 +22,12 @@ export default function NavDialog({ openDialog, handleCloseDialog }) {
           <NavButton to="/events" color="inherit" onClick={handleCloseDialog}>
             Events
           </NavButton>
+          <NavButton to="/gallery" color="inherit" onClick={handleCloseDialog}>
+                Gallery
+          </NavButton>
+          <NavButton to="/articles" color="inherit" onClick={handleCloseDialog}>
+                Articles
+          </NavButton>
           <NavButton to="/team" color="inherit" onClick={handleCloseDialog}>
             Team
           </NavButton>

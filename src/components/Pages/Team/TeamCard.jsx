@@ -25,7 +25,7 @@ const TeamCard = React.memo(({ name, position, linkedin, github, gmail, firebase
     <Card
       sx={{
         width: '200px',
-        maxHeight:'350px',
+        maxHeight:'370px',
         borderRadius: '16px',
         transition: 'transform 0.3s ease',
         overflow: 'hidden',
@@ -38,7 +38,7 @@ const TeamCard = React.memo(({ name, position, linkedin, github, gmail, firebase
     >
       <CardMedia
         component="img"
-        height={isHovered ? '180px' : '200px'}
+        height={isHovered ? '200px' : '250px'}
         image={firebase}
         alt={name}
         sx={{
