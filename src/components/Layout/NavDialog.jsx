@@ -9,6 +9,7 @@ import {
   DialogContent,
   DialogActions,
 } from "@mui/material";
+import NavButton from "../UI/NavButton";
 
 export default function NavDialog({ openDialog, handleCloseDialog }) {
   return (
@@ -16,18 +17,27 @@ export default function NavDialog({ openDialog, handleCloseDialog }) {
       <DialogTitle sx={{ textAlign: "center" }}>Menu</DialogTitle>
       <DialogContent>
         <Stack direction="column">
-          <Button color="inherit" onClick={handleCloseDialog}>
+          <NavButton to="/" color="inherit" onClick={handleCloseDialog}>
+            Home
+          </NavButton>
+          <NavButton to="/about" color="inherit" onClick={handleCloseDialog}>
             About
-          </Button>
-          <Button color="inherit" onClick={handleCloseDialog}>
+          </NavButton>
+          <NavButton to="/events" color="inherit" onClick={handleCloseDialog}>
             Events
-          </Button>
-          <Button color="inherit" onClick={handleCloseDialog}>
+          </NavButton>
+          <NavButton to="/gallery" color="inherit" onClick={handleCloseDialog}>
+            Gallery
+          </NavButton>
+          <NavButton to="/Articles" color="inherit" onClick={handleCloseDialog}>
+            Articles
+          </NavButton>
+          <NavButton to="/team" color="inherit" onClick={handleCloseDialog}>
             Team
-          </Button>
-          <Button color="inherit" onClick={handleCloseDialog}>
+          </NavButton>
+          <NavButton to="/contact" color="inherit" onClick={handleCloseDialog}>
             Contacts
-          </Button>
+          </NavButton>
         </Stack>
       </DialogContent>
       <DialogActions>

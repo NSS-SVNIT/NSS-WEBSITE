@@ -60,7 +60,7 @@ export default function Example(props) {
         m: "30px auto",
         width: "80%",
         borderRadius: "15px",
-        height: "400px",
+        height: "7vh",
       }}
     >
       <Carousel
