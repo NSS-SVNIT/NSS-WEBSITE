@@ -2,7 +2,7 @@ import { Grid, Stack, Box, Divider } from "@mui/material";
 import React from "react";
 import { motion } from "framer-motion";
 import NssTimeline from "./NssTimeline";
-
+import "./AboutSection.css"
 const AboutSection = React.memo(() => {
   return (
     <Grid
@@ -23,7 +23,7 @@ const AboutSection = React.memo(() => {
           whileHover={{ scale: 1.13, transition: { duration: 0.5 } }}
         >
           <img
-            style={{  height: "350px", borderRadius: 4 }}
+            className="about-image"
             src="https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/Not%20Me%20But%20You.jpg?alt=media&token=cd079525-7886-4bee-bd64-e7cd21920b51"
             alt="NSS Event"
           ></img>
@@ -39,12 +39,12 @@ const AboutSection = React.memo(() => {
               sx={{
                 fontFamily: "Poppins",
                 fontWeight: "100",
-                fontSize: "4rem",
+                fontSize: {xs:"2rem",sm:"4rem"},
               }}
             >
               Celebrating our Motto...
               <Box
-                sx={{ fontFamily: "Nothing You Could Do", fontSize: "5rem" }}
+                sx={{ fontFamily: "Nothing You Could Do", fontSize: {xs:"3.5rem",sm:"5rem"} }}
               >
                 Not Me, But You !
               </Box>
@@ -54,7 +54,7 @@ const AboutSection = React.memo(() => {
               sx={{ bgcolor: "rgba(255,255,255,0.3)", width: "70%" }}
             />
 
-            <Box sx={{ fontFamily: "DM Sans", fontSize: "1.5rem", textAlign: "justify" }}>
+            <Box sx={{ fontFamily: "DM Sans", fontSize: {xs:"1.1rem",sm:"1.5rem"}, textAlign: "justify" }}>
               The Motto of NSS <b>"Not Me But You"</b>, reflects the essence of
               democratic living and upholds the need for self-less service. NSS
               helps the students development & appreciation to other person's

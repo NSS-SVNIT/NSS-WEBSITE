@@ -1,0 +1,12 @@
+.about-image {
+    height: 350px;
+    border-radius: 4px;    
+}
+
+@media (max-width: 768px) {
+    .about-image {
+        height: 250px;
+        margin-left: 12%;
+        border-radius: 4px;
+    }
+}

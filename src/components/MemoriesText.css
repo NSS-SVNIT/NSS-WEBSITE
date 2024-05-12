@@ -1,0 +1,14 @@
+.memories-text {
+    font-family: DM Sans;
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding-top: 20px;
+    text-align: justify;
+}
+
+@media (max-width: 768px){
+    .memories-text {
+        font-size: 1rem;
+        max-width: 90%;
+    }
+}

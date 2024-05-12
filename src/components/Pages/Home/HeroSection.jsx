@@ -18,15 +18,16 @@ const HeroSection = React.memo(() => {
 				container
 				lg={12}
 				height="100%"
-				direction="row"
+				direction={{ sm: "row"}}
 				justifyContent="space-between"
-				sx={{ px: 10 }}
+				sx={{ px: {xs:3,sm:10}}}
 				gap={6}
-				alignItems={"center"}>
-				<Grid item lg={7} sx={12}>
+				alignItems={"center"}
+				>
+				<Grid item lg={7} xs={12}>
 					<HeroText />
 				</Grid>
-				<Grid item lg={4} sx={12}>
+				<Grid item lg={4} xs={12}>
 					<UpdateCard />
 				</Grid>
 			</Grid>

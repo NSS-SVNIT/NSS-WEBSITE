@@ -7,7 +7,7 @@ import Memories from "../../MemoriesText";
 const GallerySection = React.memo(() => {
   return (
     <Stack
-      direction={"row"}
+      direction={{xs:'column',sm:"row"}}
       gap={5}
       justifyContent={"space-between"}
       alignItems={"center"}
@@ -17,7 +17,7 @@ const GallerySection = React.memo(() => {
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
       >
-        <Box sx={{ pl: 10 }}>
+        <Box sx={{ pl: {xs:3,sm:10}}}>
           <Memories />
         </Box>
       </motion.div>

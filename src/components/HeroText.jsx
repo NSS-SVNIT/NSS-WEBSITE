@@ -6,26 +6,16 @@ const HeroText = memo(() => {
 	return (
 		<Box sx={{ flexBasis: "60%" }}>
 			<div className="glass">
-				<h3
-					style={{
-						fontSize: "6rem",
-						fontFamily: "Poppins",
-						fontWeight: "100",
-					}}>
-					<span style={{ fontWeight: "400" }}>NSS SVNIT</span>
+				<h3 className="hero-text">
+					<span>NSS SVNIT</span>
 				</h3>
 
-				<p
-					style={{
-						fontFamily: "DM Sans",
-						fontSize: "1.5rem",
-						fontWeight: "400",
-					}}>
+				<p className="hero-para">
 					Serving our community for a year and counting signifies the
 					commitment and dedication of the National Service Scheme
 					(NSS) towards making a positive impact on the community.
 				</p>
-				<Stack
+				{/*<Stack
 					direction="row"
 					gap={4}
 					sx={{
@@ -33,7 +23,7 @@ const HeroText = memo(() => {
 						alignItems: "center",
 						justifyContent: "center",
 					}}>
-					{/* <Button
+					 <Button
             variant="contained"
             style={{
               textTransform: "none",
@@ -65,8 +55,9 @@ const HeroText = memo(() => {
             disableElevation
           >
             JOIN
-          </Button> */}
+          </Button> 
 				</Stack>
+				*/}
 			</div>
 		</Box>
 	);

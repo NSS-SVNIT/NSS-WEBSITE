@@ -9,3 +9,24 @@
   margin-top: 60px;
   text-align: center;
 }
+.hero-text {
+  font-size: 6rem;
+	font-family: Poppins;
+  font-weight: 400;
+}
+
+.hero-para {
+  font-family: DM Sans;
+	font-size: 1.5rem;
+	font-weight: 400;
+}
+@media (max-width: 768px) {
+  .hero-text {
+    font-size: 2rem;
+    font-weight: 100;
+  } 
+  .hero-para {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+}

@@ -8,14 +8,14 @@ const CounterSection = React.memo(() => {
   // const isPhone = useMediaQuery(theme.breakpoints.up("sm"));
   return (
     <Stack
-      direction={isPhone ? "column" : "row"}
-      justifyContent={"space-around"}
+      direction={{xs: "column", sm: "row"}}
+      justifyContent={"space-evenly"}
       sx={{
         fontFamily: "Poppins",
         fontWeight: "100",
         fontSize: "4rem",
         bgcolor: "#E1F0EE",
-        px: 30,
+        px: {xs: 0, sm: 30},
         py: 5,
       }}
       alignItems={"center"}
