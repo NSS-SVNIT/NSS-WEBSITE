@@ -1,6 +1,6 @@
 import React from "react";
 import Carousel from "react-material-ui-carousel";
-import "../../UI/Carousel.css";
+
 import {
   Card,
   Typography,

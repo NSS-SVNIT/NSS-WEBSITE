@@ -17,8 +17,6 @@ import Articles from "./components/Pages/Articles/Articles";
 import NewArticle from "./components/Pages/Articles/newarticle";
 import Loader from "./components/UI/Loader";
 
-const LazyHome = lazy(() => import("./components/Pages/Home"));
-
 const MemoizedAbout = memo(About);
 const MemoizedGallery = memo(Gallery);
 const MemoizedAdmin = memo(Admin);
@@ -31,7 +29,7 @@ const MemoizedTeam = memo(Team);
 const MemoizedTeamBatchPage = memo(TeamBatchPage);
 const MemoizedContact = memo(Contact);
 const MemoizedPost = memo(Post);
-const MemoizedHome = memo(LazyHome);
+const MemoizedHome = memo(Home);
 
 function App() {
   const [loading, setLoading] = React.useState(true);

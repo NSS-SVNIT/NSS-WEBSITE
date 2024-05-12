@@ -4,7 +4,7 @@ import Counter from "../../UI/counter";
 // import useMediaQuery from "@mui/material/useMediaQuery";
 
 const CounterSection = React.memo(() => {
-  const isPhone = false;
+  let isPhone = false;
   // const isPhone = useMediaQuery(theme.breakpoints.up("sm"));
   return (
     <Stack
