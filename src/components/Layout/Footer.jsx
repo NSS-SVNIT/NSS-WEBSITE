@@ -6,6 +6,7 @@ import {
   ListItem,
   ListItemButton,
   Stack,
+  useMediaQuery
 } from "@mui/material";
 import React from "react";
 import { MapContainer, TileLayer, useMap, Popup, Marker } from "react-leaflet";
@@ -18,15 +19,16 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { he } from "@faker-js/faker";
+import { PhotoSizeSelectSmall } from "@mui/icons-material";
 
 const Footer = () => {
-  // const position = [21.1702, 72.8311]; // Coordinates for SVnit location
-
-  const isPhone = false;
+  const isMobile = useMediaQuery('(max-width:600px)');
   const linkStyle = {
     color: "white",
     fontWeight: "semi-bold", // You can adjust the font weight as needed
     textDecoration: "none", // Optional: Remove underline style
+    marginTop:isMobile?"6px":"0", // Adjust the margin as needed
   };
 
   const hrStyle = {
@@ -41,7 +43,7 @@ const Footer = () => {
     color: "white",
     fontWeight: "bold",
     textDecoration: "none",
-    marginRight: "20px", // Adjust the margin as needed
+    marginRight: isMobile?"5px":"20px", // Adjust the margin as needed
   };
   return (
     <footer
@@ -57,7 +59,7 @@ const Footer = () => {
     >
       <Grid
         container
-        direction="row"
+        direction={isMobile?"column":"row"}
         justifyContent="space-around"
         alignItems="center"
       >
@@ -68,10 +70,11 @@ const Footer = () => {
           <div
             style={{
               display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-between",
-              marginRight: "0px",
-              // marginLeft: "30px",
+              flexDirection: isMobile?"column":"row",
+              justifyContent: "space-around",
+              marginTop:isMobile?"-120px":"0",
+              marginLeft:isMobile?"250px":"0",
+              marginBottom:isMobile?"30px":"0"
             }}
           >
             <Link to="/admin" style={linkStyle}>
@@ -94,7 +97,7 @@ const Footer = () => {
               display: "flex",
               flexDirection: "row",
               // justifyContent: "space-between",
-              justifyContent: "flex-end",
+              justifyContent: "space-evenly",
             }}
           >
             <a href="https://www.instagram.com/nss_svnit" style={linkStyleIcon}>

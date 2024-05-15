@@ -1,47 +1,51 @@
 import React from "react";
-import { Stack, Divider } from "@mui/material";
+import { Stack, Divider, Typography } from "@mui/material";
+import { useMediaQuery } from '@mui/material';
 
 export default function FooterLogo() {
+  const isMobile = useMediaQuery('(max-width:600px)');
   return (
     <Stack
       direction="column"
       justifyContent={"center"}
       alignItems="center"
-      marginRight="500px"
+      marginRight={isMobile?"150px":"500px"}
     >
-      <Stack direction="row" gap={2} height={75}>
+      <Stack direction="row" gap={2} height={isMobile?55:75}>
         <img
-          style={{ height: "75px" }}
+          style={{ height: `${isMobile?"55px":"75px"}`,marginLeft:`${isMobile?"-40px":"0px"}` }}
           src="https://seeklogo.com/images/N/new-nss-logo-F8180B4F6C-seeklogo.com.png"
         ></img>
-        <Divider orientation="vertical" flexItem />
+        {!isMobile&&<Divider orientation="vertical" flexItem />}
         <img
-          style={{ height: "75px" }}
+          style={{ height: `${isMobile?"55px":"75px"}` }}
           src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/NIT_Surat_Logo.svg/300px-NIT_Surat_Logo.svg.png"
         ></img>
       </Stack>
 
-      <Stack alignItems={"center"} sx={{ mt: 2 }}>
-        <div
-          style={{
+      <Stack alignItems={"center"} sx={{ mt: isMobile?1:2 }}>
+        <Typography
+          sx={{
             fontFamily: "DM Sans",
-            fontSize: "2rem",
+            fontSize: {xs:"1.5rem",sm:"2rem"},
             fontWeight: "100",
             color: "white",
+            ml:isMobile?-5:0
           }}
         >
           NSS SVNIT
-        </div>
-        <div
-          style={{
+        </Typography>
+        <Typography
+          sx={{
             fontFamily: "DM Sans",
-            fontSize: "1rem",
+            fontSize: {xs:"0.7rem",sm:"1rem"},
             fontWeight: "400",
             color: "white",
+            ml:isMobile?-4:0
           }}
         >
           National Service Scheme
-        </div>
+        </Typography>
       </Stack>
     </Stack>
   );
