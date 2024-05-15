@@ -15,8 +15,11 @@ import Home_10 from "../../../assets/Home_10.jpg";
 import Home_11 from "../../../assets/Home_11.jpg";
 import Home_12 from "../../../assets/Home_12.jpg";
 import Home_13 from "../../../assets/Home_13.jpg";
+import { useMediaQuery } from '@mui/material';
 
 function srcset(image, size, rows = 1, cols = 1) {
+  
+
   return {
     style: {
       width: `${size * cols}px`,
@@ -29,7 +32,7 @@ function srcset(image, size, rows = 1, cols = 1) {
 
 const GalleryView = React.memo(() => {
   const controls = useAnimation();
-
+  const isMobile = useMediaQuery('(max-width:600px)');
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -52,9 +55,9 @@ const GalleryView = React.memo(() => {
   return (
     <div id="gallery-container">
       <ImageList
-        sx={{ width: 500, background: "transparent", overflowY: "hidden" }}
+        sx={{ width:"500", background: "transparent", overflow: "hidden" }}
         variant="quilted"
-        cols={4}
+        cols={isMobile ? 2 : 4}
         rowHeight={121}
       >
         {itemData.map((item, index) => (
@@ -75,7 +78,7 @@ const GalleryView = React.memo(() => {
               <img
                 src={item.img}
                 alt={item.title}
-                loading="lazy"
+                // loading="lazy"
                 style={srcset(item.img, 121, item.rows, item.cols).style}
               />
             </motion.div>
