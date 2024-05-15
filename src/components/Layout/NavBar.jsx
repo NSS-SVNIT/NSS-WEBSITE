@@ -96,6 +96,7 @@ export default function NavBar() {
           px: 8,
           py: 1,
           backgroundColor: scrolling ? "black" : "transparent",
+          transition: "background-color 0.5s",
         }}
         elevation={5}
       >
@@ -105,7 +106,6 @@ export default function NavBar() {
             direction="row"
             alignItems="center"
             sx={{ flexGrow: 1 }}
-            
           >
             <NavLink to="/" 
             onClick={scrollToTop}>
@@ -113,10 +113,10 @@ export default function NavBar() {
               alt="Logo"
               src="https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/aboutImages%2Fnss_logo.jpg?alt=media&token=860074c2-3cf7-4e5d-86b4-f4bc61a37626"
               sx={{
-                width: isPhone ? 30 : 75,
-                height: isPhone ? 30 : 75,
+                width: isPhone ? 40 : 75,
+                height: isPhone ? 40 : 75,
                 marginRight: isPhone?1:3,
-                marginLeft: isPhone?-5:3,
+                marginLeft: isPhone?-7:3,
               }}
             />
             </NavLink>
@@ -126,9 +126,10 @@ export default function NavBar() {
               alt="Logo"
               src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/NIT_Surat_Logo.svg/300px-NIT_Surat_Logo.svg.png"
               sx={{
-                width: isPhone ? 30 : 75,
-                height: isPhone ? 30 : 75,
+                width: isPhone ? 40 : 75,
+                height: isPhone ? 40 : 75,
                 marginRight: isPhone?1:3,
+                ml:isPhone?-1:0,
               }}
             />
             </NavLink>
@@ -166,6 +167,7 @@ export default function NavBar() {
               edge="end"
               color="inherit"
               aria-label="menu"
+              
             >
               <MenuIcon onClick={handleMenuClick} />
             </IconButton>
