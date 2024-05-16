@@ -37,11 +37,11 @@ const Post = () => {
         <Grid item lg={6}>
           {/* Memoized BlogPost */}
           <MemoizedBlogPost
-            author={postData.author}
-            readingTime={postData.readingTime}
+            // author={postData.author}
+            // readingTime={postData.readingTime}
             title={postData.title}
             content={postData.content}
-            date={postData.date}
+            // date={postData.date}
           />
         </Grid>
       </Grid>
