@@ -38,7 +38,7 @@ function App() {
     // Simulate a network request
     setTimeout(() => {
       setLoading(false);
-    }, 5000);
+    }, 2000);
   }, []);
   return (  
     <>
