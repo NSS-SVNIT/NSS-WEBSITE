@@ -1,7 +1,8 @@
-import { Box, Rating, Stack, Typography } from "@mui/material";
+import { Box, Rating, Stack, Typography,Button } from "@mui/material";
 import React from "react";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import remarkGfm from "remark-gfm";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 const BlogPost = React.memo((props) => {
   const today = new Date();
@@ -11,10 +12,14 @@ const BlogPost = React.memo((props) => {
 
   const date = `${day}/${month}/${year}`;
 
+  const handleGoBack = () => {
+    window.history.back();
+  };
+
   return (
-    <Stack alignItems={"center"} sx={{ px: 5, width: "100%" }}>
+    <Stack alignItems={"center"} sx={{ px: 5, width: "100%"}}>
       <Stack sx={{ width: "100%" }}>
-        <Box
+        {/* <Box
           sx={{
             fontFamily: "Poppins",
             fontWeight: "400",
@@ -23,7 +28,7 @@ const BlogPost = React.memo((props) => {
           }}
         >
           Published on <u>{props.date}</u>
-        </Box>
+        </Box> */}
         <Box sx={{ fontFamily: "DM Sans", fontSize: "4em", width: "100%" }}>
           {props.title}
         </Box>
@@ -33,10 +38,11 @@ const BlogPost = React.memo((props) => {
           alignItems={"flex-end"}
         >
           <Box sx={{ fontFamily: "DM Sans", color: "grey" }}>
-            by <u>@{props.author}</u>
+            {/* Author: <u>{props.author}</u> */}
+            Venue:  <u>{props.venue}</u>
           </Box>
         </Stack>
-        <Box
+        {/* <Box
           sx={{
             bgcolor: "rgba(0,0,0,0.2)",
             fontFamily: "DM Sans",
@@ -50,17 +56,36 @@ const BlogPost = React.memo((props) => {
           }}
         >
           {props.readingTime} minute read
-        </Box>
+        </Box> */}
         <Box sx={{ width: "100%" }}>
           <Typography
             className="md"
             remarkPlugins={[remarkGfm]}
-            sx={{ wordWrap: "break-word" }}
+            sx={{ wordWrap: "break-word" ,textAlign: "justify"}}
           >
             {props.content}
           </Typography>
         </Box>
       </Stack>
+      <Button 
+        variant="contained" 
+        color="primary" 
+        onClick={handleGoBack}
+        startIcon={<ArrowBackIcon />}
+        sx={{
+          mt:1,
+          backgroundColor: "black",
+            color: "white",
+            border: "2px white solid",
+            borderColor: "black",
+            "&:hover": {
+              backgroundColor: "white",
+              color: "black",
+            }
+        }}
+      >
+        Back
+      </Button>
     </Stack>
   );
 });
