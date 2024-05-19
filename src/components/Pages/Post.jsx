@@ -41,7 +41,12 @@ const Post = () => {
             // readingTime={postData.readingTime}
             title={postData.title}
             content={postData.content}
+            Updated upstream
             // date={postData.date}
+            date={postData.date}
+            venue = {postData.Venue}
+            description = {postData.description}
+            Eventdate = {postData.Eventdate} 
           />
         </Grid>
       </Grid>

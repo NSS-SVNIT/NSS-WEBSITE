@@ -54,8 +54,14 @@ import remarkGfm from "remark-gfm";
           <Typography
             className="md"
             remarkPlugins={[remarkGfm]}
+            Updated upstream
             sx={{ wordWrap: "break-word" }}
           >
+            sx={{ wordWrap: "break-word" ,textAlign: "justify"}}
+           <p>{props.description}</p>
+          <p><Box sx={{ fontFamily: "DM Sans", color: "grey" }}>
+            Date : <u>{props.Eventdate}</u>
+          </Box></p>
             {props.content}
           </Typography>
         </Box>
