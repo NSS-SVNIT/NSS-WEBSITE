@@ -43,6 +43,7 @@ const HorizontalScrollCarousel = () => {
 								style={{
 									padding: "0px 0px 0px 14px",
 									width: "150px",
+									
 								}}>
 								<Card card={card} />
 							</div>
@@ -77,6 +78,7 @@ const Card = ({ card }) => {
 				style={{
 					backgroundSize: "cover",
 					backgroundPosition: "center",
+					marginLeft:card.name=="Documentation"?"-20px":"0px"
 				}}
 				className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110"></img>
 			<div className="absolute inset-0 z-10 grid place-content-center">

@@ -3,13 +3,13 @@ import React from "react";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import remarkGfm from "remark-gfm";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { Typewriter } from 'react-simple-typewriter'
 
 const BlogPost = React.memo((props) => {
   const today = new Date();
   const year = today.getFullYear();
   const month = today.getMonth() + 1; // Note: months are zero-based
   const day = today.getDate();
-
   const date = `${day}/${month}/${year}`;
 
   const handleGoBack = () => {
@@ -37,7 +37,10 @@ const BlogPost = React.memo((props) => {
           Published on <u>{props.date}</u>
         </Box> */}
         <Box sx={{ fontFamily: "DM Sans", fontSize: "4em", width: "100%" }}>
-          {props.title}
+          <Typewriter 
+            words={props.title&&props.title.split()}
+            typeSpeed={70}
+          />
         </Box>
         {/* <hr style={hrStyle}/> */}
         <Stack
@@ -47,7 +50,7 @@ const BlogPost = React.memo((props) => {
         >
           <Box sx={{ fontFamily: "DM Sans", color: "grey" }}>
             {/* Author: <u>{props.author}</u> */}
-            {props.Date&&<div>
+            {props.eventDate&&<div>
               Date: <u>{props.eventDate}</u>
             </div>}
             {props.venue&&<div>
@@ -55,8 +58,10 @@ const BlogPost = React.memo((props) => {
             </div>}
           </Box>
         </Stack>
+        <br />
         {props.description&&<Typography>Summary: {props.description}</Typography>}
-        <hr style={hrStyle} />
+        {/* <hr style={hrStyle} /> */}
+        <br />
         {/* <Box
           sx={{
             bgcolor: "rgba(0,0,0,0.2)",
