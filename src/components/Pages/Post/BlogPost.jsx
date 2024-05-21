@@ -15,6 +15,13 @@ const BlogPost = React.memo((props) => {
   const handleGoBack = () => {
     window.history.back();
   };
+  const hrStyle = {
+    height: "1px",
+    width: "100%",
+    backgroundColor: "black",
+    border: "none",
+    margin: "10px 0", // Adjust the margin as needed
+  };
 
   return (
     <Stack alignItems={"center"} sx={{ px: 5, width: "100%"}}>
@@ -32,6 +39,7 @@ const BlogPost = React.memo((props) => {
         <Box sx={{ fontFamily: "DM Sans", fontSize: "4em", width: "100%" }}>
           {props.title}
         </Box>
+        {/* <hr style={hrStyle}/> */}
         <Stack
           direction="row"
           justifyContent={"space-between"}
@@ -39,9 +47,16 @@ const BlogPost = React.memo((props) => {
         >
           <Box sx={{ fontFamily: "DM Sans", color: "grey" }}>
             {/* Author: <u>{props.author}</u> */}
-            Venue:  <u>{props.venue}</u>
+            {props.Date&&<div>
+              Date: <u>{props.eventDate}</u>
+            </div>}
+            {props.venue&&<div>
+              Venue:  <u>{props.venue}</u>
+            </div>}
           </Box>
         </Stack>
+        {props.description&&<Typography>Summary: {props.description}</Typography>}
+        <hr style={hrStyle} />
         {/* <Box
           sx={{
             bgcolor: "rgba(0,0,0,0.2)",
@@ -57,7 +72,7 @@ const BlogPost = React.memo((props) => {
         >
           {props.readingTime} minute read
         </Box> */}
-        <Box sx={{ width: "100%" }}>
+        {props.content&&<Box sx={{ width: "100%" }}>
           <Typography
             className="md"
             remarkPlugins={[remarkGfm]}
@@ -65,7 +80,7 @@ const BlogPost = React.memo((props) => {
           >
             {props.content}
           </Typography>
-        </Box>
+        </Box>}
       </Stack>
       <Button 
         variant="contained" 
