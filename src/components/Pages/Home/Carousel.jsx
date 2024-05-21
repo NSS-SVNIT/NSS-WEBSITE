@@ -63,7 +63,7 @@ export default function Example(props) {
       m: isMobile?"10px auto":"30px auto",
       width: isMobile?"90%":"80%",
       borderRadius: "15px",
-      height: isMobile?"110vh":"55vh",
+      height: isMobile?"80vh":"55vh",
     }}
     >
       <Carousel
@@ -73,6 +73,7 @@ export default function Example(props) {
         // prev={(prev, active) =>
           //   console.log(`we left ${active}, and are now at ${prev}`)
         // }
+        
         autoplay={true}
         timeout={5000}
         navButtonsAlwaysVisible={isMobile?false:true}
@@ -119,7 +120,7 @@ function Item(props) {
               {props.item.name}
             </Typography>
           </h2>
-          <Typography fontSize={isMobile?"12px":"16px"}>{props.item.description}</Typography>
+          <Typography fontSize={isMobile?props.item.name==="Gulshan Rana"?"9px":"11px":"16px"}>{props.item.description}</Typography>
         </div>
           {props.item.name==="Gulshan Rana" && (
             <div style={{ flexShrink: 0, marginLeft: "3%" }}>
