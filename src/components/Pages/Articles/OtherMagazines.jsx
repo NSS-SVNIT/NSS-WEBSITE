@@ -80,6 +80,7 @@ const OtherMagazines = React.memo((props) => {
                 type={posts.data().Type}
                 image={posts.data().Image}
                 download={posts.data().Download}
+                flipbook = {posts.data().flipbook}
               ></ArticleCard>
             </Grid>
           ))}
