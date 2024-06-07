@@ -6,14 +6,14 @@ import PageHeader from "../UI/PageHeader";
 import firebase from "firebase/compat/app";
 import { getDocs, collection } from "@firebase/firestore";
 import { firestore } from "../../firebase";
-import { Grid, Button } from "@mui/material";
+import { Grid, Button,Box, useMediaQuery } from "@mui/material";
 
 const MemoizedBlogCard = React.memo(BlogCard);
 
 export default function Events() {
   const [posts, setPosts] = useState([]);
   const [showAll, setShowAll] = useState(false);
-
+  const isMobile = useMediaQuery("(max-width:900px)");
   const fetchPosts = async () => {
     await getDocs(collection(firestore, "posts")).then((querySnapshot) => {
       const newData = querySnapshot.docs.map((doc) => ({
@@ -61,7 +61,7 @@ export default function Events() {
           onClick={() => setShowAll(true)}
           sx={{
             mt: 1,
-            marginLeft: 84,
+            marginLeft: isMobile?'10%':'80%',
             marginBottom: 3,
             fontSize: 20,
             backgroundColor: "black",
@@ -81,7 +81,7 @@ export default function Events() {
           onClick={() => setShowAll(false)}
           sx={{
             mt: 1,
-            marginLeft: 84,
+            marginLeft: isMobile?'10%':'80%',
             marginBottom: 3,
             fontSize: 20,
             backgroundColor: "black",
