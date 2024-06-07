@@ -23,7 +23,7 @@ import { he } from "@faker-js/faker";
 import { PhotoSizeSelectSmall } from "@mui/icons-material";
 
 const Footer = () => {
-  const isMobile = useMediaQuery('(max-width:600px)');
+  const isMobile = useMediaQuery('(max-width:900px)');
   const linkStyle = {
     color: "white",
     fontWeight: "semi-bold", // You can adjust the font weight as needed

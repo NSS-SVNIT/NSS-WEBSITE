@@ -1,12 +1,19 @@
-import React, { useEffect } from 'react';
-import Layout from '../Layout/Layout';
-import GalleryView from './Home/GalleryView';
-import LightGalleryView from './LightGalleryView';
-import PageHeader from '../UI/PageHeader';
-import { getDocs, collection } from '@firebase/firestore';
-import { firestore } from '../../firebase';
-import { useState } from 'react';
-import { Stack, Tabs, Tab, Box, Typography } from '@mui/material';
+import React, { useEffect } from "react";
+import Layout from "../Layout/Layout";
+import GalleryView from "./Home/GalleryView";
+import LightGalleryView from "./LightGalleryView";
+import PageHeader from "../UI/PageHeader";
+import { getDocs, collection } from "@firebase/firestore";
+import { firestore } from "../../firebase";
+import { useState } from "react";
+import {
+  Stack,
+  Tabs,
+  Tab,
+  Box,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -31,7 +38,7 @@ function TabPanel(props) {
 function a11yProps(index) {
   return {
     id: `vertical-tab-${index}`,
-    'aria-controls': `vertical-tabpanel-${index}`,
+    "aria-controls": `vertical-tabpanel-${index}`,
   };
 }
 
@@ -40,6 +47,7 @@ const MemoizedTabPanel = React.memo(TabPanel);
 const Gallery = () => {
   const [value, setValue] = React.useState(0);
   const [foldersList, setFoldersList] = useState([]);
+  const isMobile = useMediaQuery("(max-width:900px)");
 
   useEffect(() => {
     // Scroll to the top of the page when the component mounts
@@ -56,7 +64,7 @@ const Gallery = () => {
   }, []);
 
   const fetchFolders = async () => {
-    const querySnapshot = await getDocs(collection(firestore, 'images'));
+    const querySnapshot = await getDocs(collection(firestore, "images"));
     const newData = querySnapshot.docs.map((doc) => ({
       ...doc.data(),
       id: doc.id,
@@ -77,31 +85,32 @@ const Gallery = () => {
         wanderlust, and celebrate the joy of community service.
       </PageHeader>
       <Stack
-        direction="row"
+        direction={isMobile ? "column" : "row"}
         sx={{
           flexGrow: 1,
           pl: 8,
-          display: 'flex',
-          height: '100%',
+          display: "flex",
+          height: "100%",
         }}
       >
         <Tabs
-          orientation="vertical"
+          orientation={isMobile ? "horizontal" : "vertical"}
           variant="scrollable"
-          centered
+          scrollButtons="auto"
+          // centered
           value={value}
           onChange={handleChange}
           aria-label="Vertical tabs example"
           sx={{
             borderRight: 0,
-            minWidth: '150px',
-            fontFamily: 'DM Sans',
+            minWidth: "150px",
+            fontFamily: "DM Sans",
           }}
         >
           {foldersList.map((items, i) => (
             <Tab
               key={i}
-              sx={{ fontFamily: 'DM Sans' }}
+              sx={{ fontFamily: "DM Sans" }}
               label={items.name}
               {...a11yProps(i)}
             />
