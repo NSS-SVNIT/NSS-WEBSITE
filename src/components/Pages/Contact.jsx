@@ -20,10 +20,12 @@ import {
   Button,
   ListItemText,
   ListItemIcon,
+  useMediaQuery
 } from "@mui/material";
 import { Facebook, Instagram, Twitter, YouTube } from "@mui/icons-material";
 
 const Contact = () => {
+  const isMobile = useMediaQuery("(max-width:900px)");
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -60,11 +62,11 @@ const Contact = () => {
   return (
     <Layout>
       <Typography
-        variant="h1"
+        variant= {isMobile?"h2":"h1"}
         alignItems="center"
         justifyContent="center"
         textAlign="center"
-        paddingRight="50px"
+        px='20%'
         marginBottom="30px"
         fontWeight={400}
       >
@@ -76,14 +78,14 @@ const Contact = () => {
             borderRadius: 0,
             textTransform: "none",
             height: "80px",
-            width: "300px",
+            width: isMobile?'auto':"300px",
             marginTop: "10px",
             alignItems: "center",
             justifyContent: "center",
             backgroundColor: "black",
             // fontSize: "1.1rem",
             fontFamily: "DM Sans",
-            margin: "0 auto",
+            margin: isMobile?"5%":"0 auto",
             color: "white",
             display: "flex",
             // flexDirection: "column",
@@ -123,17 +125,17 @@ const Contact = () => {
               borderRadius: 0,
               textTransform: "none",
               height: "80px",
-              width: "450px",
+              width: isMobile?"auto":"450px",
               marginTop: "10px",
               alignItems: "center",
               justifyContent: "center",
               backgroundColor: "black",
               // fontSize: "1.1rem",
               fontFamily: "DM Sans",
-              margin: "0 auto",
+              margin: isMobile?'5%':"0 auto",
               color: "white",
               display: "flex",
-              // flexDirection: "column",
+              flexDirection: isMobile?"column":'row',
               fontSize: "30px",
             }}
           >
@@ -202,14 +204,14 @@ const Contact = () => {
               borderRadius: 0,
               textTransform: "none",
               height: "80px",
-              width: "350px",
+              width: isMobile?'auto':"350px",
               marginTop: "10px",
               alignItems: "center",
               justifyContent: "center",
               backgroundColor: "black",
               // fontSize: "1.1rem",
               fontFamily: "DM Sans",
-              margin: "0 auto",
+              margin:isMobile?"5%":"0 auto",
               color: "white",
               display: "flex",
               // flexDirection: "column",
@@ -220,7 +222,7 @@ const Contact = () => {
             <span style={{ color: "grey", marginRight: "5px" }}>CONTACT</span>
             DETAILS
           </div>
-          <List sx={{ m: 3,mx:'auto',width: "50%" }}>
+          <List sx={{ m: 3,mx:isMobile?'none':'auto',width: "50%" }}>
             <ListItem 
               component="a"
               href="mailto:nss@svnit.ac.in"
