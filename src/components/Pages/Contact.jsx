@@ -146,7 +146,7 @@ const Contact = () => {
           <Box
             // component="form"
             noValidate
-            sx={{ m: 3, width: "80%" }}
+            sx={{ m: 3,mx:'auto',width: "80%" }}
           >
             <form autoComplete="off" onSubmit={handleSubmit}>
               <TextField
@@ -220,7 +220,7 @@ const Contact = () => {
             <span style={{ color: "grey", marginRight: "5px" }}>CONTACT</span>
             DETAILS
           </div>
-          <List>
+          <List sx={{ m: 3,mx:'auto',width: "50%" }}>
             <ListItem 
               component="a"
               href="mailto:nss@svnit.ac.in"
