@@ -1,7 +1,8 @@
 import React from "react";
 import Layout from "../Layout/Layout";
 import DeveloperCard from "./DeveloperCard";
-import { Typography } from "@mui/material";
+import { Typography, useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import "./underline.css";
 
 function Developers() {
@@ -83,15 +84,18 @@ function Developers() {
 		},
 	];
 
-	const row1 = developers.slice(0, 3);
-	const row2 = developers.slice(3);
+	const theme = useTheme();
+	const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
+	const row1 = developers.slice(0, 6);
+	// const row2 = developers.slice(0);
 	const row1Designers = designers.slice(0, 2);
 
 	return (
 		<div>
 			<Layout>
 				<div className="heading">
-					<Typography variant="h1" align="center">
+					<Typography variant={isMobile ? "h2" : "h1"} align="center">
 						Developers
 					</Typography>
 				</div>
@@ -100,75 +104,132 @@ function Developers() {
 						display: "flex",
 						flexDirection: "column",
 						alignItems: "center",
-						gap: "16px", // Adjust the gap according to your design
+						gap: "10px", 
+						margin:"30px",
 					}}>
-					<div
-						style={{
-							display: "flex",
-							gap: "56px", // Adjust the gap according to your design
-							margin: "30px",
-							position: "relative",
-						}}>
-						{row1.map((developer) => (
-							<DeveloperCard
+					{isMobile ? (
+						// Mobile view: one card per row
+						developers.map((developer) => (
+							<div
 								key={developer.id}
-								name={developer.name}
-								github={developer.github}
-								mail={developer.mail}
-								linkedin={developer.linkedin}
-								imageLink={developer.imageLink} // Use the correct prop name
-							/>
-						))}
-					</div>
-					<div
-						style={{
-							display: "flex",
-							gap: "56px", // Adjust the gap according to your design
-							margin: "30px",
-							position: "relative",
-							marginTop: "30px",
-							marginBottom: "50px",
-						}}>
-						{row2.map((developer) => (
-							<DeveloperCard
-								key={developer.id}
-								name={developer.name}
-								github={developer.github}
-								mail={developer.mail}
-								linkedin={developer.linkedin}
-								// insta={developer.insta}
-								imageLink={developer.imageLink} // Use the correct prop name
-							/>
-						))}
-					</div>
+								style={{
+									display: "flex",
+									flexDirection: "column",
+									alignItems: "center", 
+									margin: "10px",
+									width: "100%",
+								}}>
+								<DeveloperCard
+									name={developer.name}
+									github={developer.github}
+									mail={developer.mail}
+									linkedin={developer.linkedin}
+									imageLink={developer.imageLink}
+								/>
+							</div>
+						))
+					) : (
+						// Original layout for larger screens
+						<>
+							<div
+								style={{
+									display: "flex",
+									gap: "20px", 
+									margin: "20px",
+									position: "relative",
+								}}>
+								{row1.map((developer) => (
+									<DeveloperCard
+										key={developer.id}
+										name={developer.name}
+										github={developer.github}
+										mail={developer.mail}
+										linkedin={developer.linkedin}
+										imageLink={developer.imageLink}
+									/>
+								))}
+							</div>
+							{/* <div
+								style={{
+									display: "flex",
+									gap: "56px", 
+									margin: "30px",
+									position: "relative",
+									marginTop: "30px",
+									marginBottom: "50px",
+								}}>
+								{row2.map((developer) => (
+									<DeveloperCard
+										key={developer.id}
+										name={developer.name}
+										github={developer.github}
+										mail={developer.mail}
+										linkedin={developer.linkedin}
+										imageLink={developer.imageLink}
+									/>
+								))}
+							</div> */}
+						</>
+					)}
 				</div>
 
 				<div className="heading">
-					<Typography variant="h1" align="center">
+					<Typography variant={isMobile ? "h2" : "h1"} align="center">
 						Designers
 					</Typography>
 				</div>
 				<div
 					style={{
 						display: "flex",
-						flexDirection: "row",
+						flexDirection: isMobile ? "column" : "row",
 						alignItems: "center",
 						justifyContent: "center",
 						position: "relative",
-						gap: "46px", // Adjust the gap according to your design
-						margin: "50px",
+						gap: "10px",
+						margin: "30px",
 					}}>
-					{row1Designers.map((designer) => (
-						<DeveloperCard
-							key={designer.id}
-							name={designer.name}
-							github={designer.github}
-							mail={designer.mail}
-							linkedin={designer.linkedin}
-							// insta={designer.insta}
-							imageLink={designer.imageLink} // Use the correct prop name
-						/>
-					))}
+					{isMobile ? (
+						// Mobile view: one card per row
+						designers.map((designer) => (
+							<div
+								key={designer.id}
+								style={{
+									display: "flex",
+									flexDirection: "column",
+									alignItems: "center", 
+									margin: "10px",
+									width: "100%",
+								}}>
+								<DeveloperCard
+									name={designer.name}
+									github={designer.github}
+									mail={designer.mail}
+									linkedin={designer.linkedin}
+									imageLink={designer.imageLink}
+								/>
+							</div>
+						))
+					) : (
+						// Desktop view: two cards side by side
+						<div
+							style={{
+								display: "flex",
+								gap: "20px", 
+								margin: "20px",
+								position: "relative",
+							}}>
+							{row1Designers.map((designer) => (
+								<DeveloperCard
+									key={designer.id}
+									name={designer.name}
+									github={designer.github}
+									mail={designer.mail}
+									linkedin={designer.linkedin}
+									imageLink={designer.imageLink}
+								/>
+							))}
+						</div>
+					)}
 				</div>
 			</Layout>
 		</div>
