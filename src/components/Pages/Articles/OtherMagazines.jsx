@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import ArticleCard from "./ArticleCard";
-import { Card, Typography } from "@mui/material";
+import { Card, Typography, useMediaQuery } from "@mui/material";
 import { getDocs, collection, where, query } from "@firebase/firestore";
 import { firestore } from "../../../firebase";
 import { Await } from "react-router-dom";
@@ -18,6 +18,7 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const OtherMagazines = React.memo((props) => {
+  const isMobile = useMediaQuery("(max-width:900px)");
   const [post, setPost] = useState([]);
   const fetchPosts = async () => {
     const q = query(
@@ -37,13 +38,13 @@ const OtherMagazines = React.memo((props) => {
       <Box
         sx={{
           margin: "20px auto",
-          px: 8,
-          py: 4,
-          fontSize: "3rem",
+          px: isMobile?0:8,
+          py: isMobile?2:4,
+          fontSize: isMobile?"1.7rem":"3rem",
           backgroundColor: "black",
           fontFamily: "DM Sans",
           color: "grey",
-          width: "41%",
+          width: isMobile?"100%":"41%",
           textAlign: "center",
         }}
       >
@@ -57,10 +58,10 @@ const OtherMagazines = React.memo((props) => {
           {props.nameWhite}
         </span>
       </Box>
-      <br />
+      {!isMobile&&<br />}
       <Box
         style={{
-          paddingLeft: "30px",
+          paddingLeft: isMobile?"0":"30px",
           paddingRight: "30px",
           display: "flex",
           justifyContent: "center",
@@ -68,7 +69,7 @@ const OtherMagazines = React.memo((props) => {
       >
         <Grid
           container
-          spacing={3}
+          spacing={{ xs: 2, md: 3 }}
           justifyContent={post.length < 3 ? "center" : "flex-start"}
           columns={{ xs: 12, sm: 12, md: 12 }}
         >

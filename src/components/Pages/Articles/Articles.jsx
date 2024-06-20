@@ -8,10 +8,11 @@ import Layout from "../../Layout/Layout";
 import LatestEdition from "./LatestEditionMagazine";
 import OtherMagazines from "./OtherMagazines";
 import PageHeader from "../../UI/PageHeader";
+import { useMediaQuery } from "@mui/material";
 
 const Articles = React.memo(() => {
   const [value, setValue] = React.useState("1");
-
+  const isMobile = useMediaQuery("(max-width:900px)");
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -23,13 +24,17 @@ const Articles = React.memo(() => {
 
   return (
     <Layout>
-      <Box sx={{ width: "100%", typography: "body1" }}>
+      <Box sx={{ width: "auto", typography: "body1" }}>
         <TabContext value={value}>
           <Box
             sx={{ borderBottom: 1, borderColor: "divider" }}
-            style={{ paddingLeft: "80px" }}
+            style={{ paddingLeft: isMobile?"0":"80px" }}
           >
-            <TabList onChange={handleChange} aria-label="lab API tabs example">
+            <TabList onChange={handleChange} 
+            variant="scrollable"
+            scrollButtons
+            allowScrollButtonsMobile
+            aria-label="lab API tabs example">
               <Tab label="Magazine" value="1" />
               <Tab label="Camp Report" value="2" />
               <Tab label="Annual Report" value="3" />
@@ -42,7 +47,7 @@ const Articles = React.memo(() => {
             organized by educational institutions, particularly colleges and
             universities, that have NSS units.
           </PageHeader>
-          <TabPanel value="1" style={{ paddingLeft: "0px" }}>
+          <TabPanel value="1" >
             <LatestEdition />
             <br />
             <br />
@@ -52,14 +57,14 @@ const Articles = React.memo(() => {
               type="Magazine"
             />
           </TabPanel>
-          <TabPanel value="2" style={{ paddingLeft: "0px" }}>
+          <TabPanel value="2" >
             <OtherMagazines
               nameGrey="CAMP "
               nameWhite="REPORT"
               type="Camp Report"
             />
           </TabPanel>
-          <TabPanel value="3" style={{ paddingLeft: "0px" }}>
+          <TabPanel value="3" >
             <OtherMagazines
               nameGrey="ANNUAL "
               nameWhite="REPORT"

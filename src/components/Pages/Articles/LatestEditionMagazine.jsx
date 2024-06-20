@@ -4,8 +4,10 @@ import Grid from "@mui/material/Grid";
 import ArticleCard from "./ArticleCard";
 import { getDocs, collection, where, query } from "@firebase/firestore";
 import { firestore } from "../../../firebase";
+import { useMediaQuery } from "@mui/material";
 
 const LatestEdition = React.memo((props) => {
+  const isMobile = useMediaQuery("(max-width:900px)");
   const [post, setPost] = useState([]);
   const fetchPosts = async () => {
     const q = query(
@@ -25,20 +27,20 @@ const LatestEdition = React.memo((props) => {
       <Box
         sx={{
           margin: "20px auto",
-          px: 8,
-          py: 4,
-          fontSize: "3rem",
+          px: isMobile?0:8,
+          py: isMobile?2:4,
+          fontSize: isMobile?"1.7rem":"3rem",
           backgroundColor: "black",
           fontFamily: "DM Sans",
           color: "grey",
-          width: "35%",
+          width: isMobile?"100%":"35%",
           textAlign: "center",
         }}
       >
         LATEST <span style={{ fontWeight: 400, color: "white" }}>EDITION</span>
       </Box>
 
-      <br />
+      {!isMobile&&<br />}
       <Box
         style={{
           paddingLeft: "80px",
@@ -47,8 +49,8 @@ const LatestEdition = React.memo((props) => {
           justifyContent: "center",
         }}
       >
-        <br />
-        <Box style={{ paddingLeft: "0px" }}>
+        {!isMobile&&<br />}
+        <Box>
           <Grid
             container
             spacing={{ xs: 2, md: 3 }}
