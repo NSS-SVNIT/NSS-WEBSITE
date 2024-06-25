@@ -3,7 +3,7 @@ import Layout from "../Layout/Layout";
 import ComitteeSection from "./Home/ComitteeSection";
 import DutySection from "./Home/DutySection";
 import { motion } from "framer-motion";
-import { Typography, Box, Grid, Button } from "@mui/material";
+import { Typography, Box, Grid, Button, useMediaQuery } from "@mui/material";
 import { makeStyles } from "@material-ui/core/styles";
 import { useState } from "react";
 import { getStorage, ref, getDownloadURL } from "@firebase/storage";
@@ -17,7 +17,8 @@ const useStyles = makeStyles({
 
 const About = () => {
 	const classes = useStyles();
-
+	const isMobile =useMediaQuery('(max-width:900px)');
+	const isLargeScreen = useMediaQuery('(min-width:1440px)');
 	useEffect(() => {
 		// Scroll to the top of the page when the component mounts
 		window.scrollTo(0, 0);
@@ -47,12 +48,13 @@ const About = () => {
 				sx={{
 					fontFamily: "Inria Sans",
 					// fontStyle: "oblique",
-					fontSize: "96px",
+					fontSize: isMobile?"44px":'96px',
 					px: 10,
 					pt: 5,
 					fontWeight: 500,
 					overflowX: "hidden",
 					overflowY: "hidden",
+					textAlign: isMobile?"center":"initial",
 				}}>
 				ABOUT NSS
 			</Typography>
@@ -99,11 +101,13 @@ const About = () => {
 			<Typography
 				variant="h2"
 				sx={{
-					px: 10,
-					pt: 5,
+					textAlign: isMobile?"center":"intial",
+					px: isMobile?5:10,
+					pt: isMobile?3:5,
 					fontWeight: 400,
 					overflowX: "hidden",
 					fontFamily: "Inria Sans",
+					fontSize: isMobile?"36px":'76px'
 				}}>
 				ABOUT NSS INDIA
 			</Typography>
@@ -163,13 +167,13 @@ const About = () => {
 					container
 					spacing={2}
 					sx={{
-						marginTop: "45px",
-						marginLeft: "60px",
+						marginTop: isMobile?"0px":"45px",
+						marginLeft: isMobile?"30px":"60px",
 						marginBottom: "60px",
 						overflowX: "hidden",
 						overflowY: "hidden",
 					}}>
-					<Grid item xs={6} sm={6} md={5}>
+					<Grid item xs={9} sm={6} md={5}>
 						<motion.div
 							initial={{ opacity: 0, x: -100 }}
 							whileInView={{ opacity: 1, x: 0 }}
@@ -229,6 +233,7 @@ const About = () => {
 									fontFamily: "DM Sans",
 									overflowX: "hidden",
 									overflowY: "hidden",
+									textAlign: isMobile?"justify":"initial",
 									fontSize: {
 										xs: "16px",
 										sm: "14px",
@@ -280,7 +285,7 @@ const About = () => {
 								overflowX: "hidden",
 								position: "relative",
 								width: "100%",
-								height: "600px",
+								height: isMobile?"0px":'600px',
 								paddingTop: "100%",
 								backgroundColor: "#ffebff",
 								borderRadius: "50%",
@@ -292,15 +297,15 @@ const About = () => {
 							<motion.img
 								src={url}
 								alt="Right Content"
-								height="80%"
 								style={{
 									overflowX: "hidden",
 									position: "absolute",
-									top: 90,
-									left: 90,
-									right: 90,
-									bottom: 90,
-									width: "80%",
+									top: isMobile?45:isLargeScreen?90:60,
+									left: isMobile?45:isLargeScreen?90:40,
+									right: isMobile?45:isLargeScreen?90:50,
+									bottom: isMobile?45:isLargeScreen?90:50,
+									width: isMobile?"70%":"80%",
+									height: isMobile?"70%":"80%",
 									objectFit: "cover",
 									borderRadius: "50%",
 								}}
@@ -429,7 +434,7 @@ const About = () => {
 					</motion.div>
 				</Grid>
 			</Grid>
-			<DutySection></DutySection>
+			<DutySection />
 			<ComitteeSection />
 
 			<div

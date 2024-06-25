@@ -1,6 +1,13 @@
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef, useState } from "react";
-import { Box, Button, Stack, Typography, Modal } from "@mui/material";
+import {
+	Box,
+	Button,
+	Stack,
+	Typography,
+	Modal,
+	useMediaQuery,
+} from "@mui/material";
 import ButtonReadMore from "./ButtonReadMore";
 import coin from "./coin.gif";
 import document from "./document.gif";
@@ -10,31 +17,19 @@ import sports from "./sports.gif";
 import creative from "./creative.gif";
 import culture from "./culture.gif";
 const AboutCommittee = () => {
-	return (
-		<div
-			className="bg-neutral-800"
-			style={{ display: "flex", flexDirection: "row" }}>
-			<HorizontalScrollCarousel />
-		</div>
-	);
+	return <HorizontalScrollCarousel />;
 };
 
 const HorizontalScrollCarousel = () => {
-	// const targetRef = useRef(null);
-	// const { scrollYProgress } = useScroll({
-	// 	target: targetRef,
-	// });
-
-	// const x = useTransform(scrollYProgress, [0, 1], ["95%", "-90%"]);
-
+	const isMobile = useMediaQuery("(max-width:600px)");
 	return (
 		<section>
 			<div>
 				<motion.div
 					style={{
-						flexDirection: "row",
+						flexDirection: isMobile ? "column" : "row",
 						display: "flex",
-						gap: "50px",
+						gap:"50px",
 					}}
 					className="gap-4">
 					{cards.map((card) => {
@@ -43,7 +38,6 @@ const HorizontalScrollCarousel = () => {
 								style={{
 									padding: "0px 0px 0px 14px",
 									width: "150px",
-									
 								}}>
 								<Card card={card} />
 							</div>
@@ -56,6 +50,7 @@ const HorizontalScrollCarousel = () => {
 };
 
 const Card = ({ card }) => {
+	const isMobile	= useMediaQuery("(max-width:900px)");
 	const [openModal, setOpenModal] = useState(false);
 
 	const handleOpenModal = () => {
@@ -78,7 +73,7 @@ const Card = ({ card }) => {
 				style={{
 					backgroundSize: "cover",
 					backgroundPosition: "center",
-					marginLeft:card.name=="Documentation"?"-20px":"0px"
+					marginLeft: card.name == "Documentation" ? "-20px" : "0px",
 				}}
 				className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110"></img>
 			<div className="absolute inset-0 z-10 grid place-content-center">
@@ -98,7 +93,7 @@ const Card = ({ card }) => {
 								boxShadow: 24,
 								p: 3,
 								borderRadius: "15px",
-								width: "35%", // Adjust the width as needed
+								width: isMobile?"80%":"35%", // Adjust the width as needed
 								padding: "20px", // Adjust padding values as needed
 							}}>
 							<Typography
