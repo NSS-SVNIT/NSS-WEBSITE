@@ -78,7 +78,7 @@ const GalleryView = React.memo(() => {
               <img
                 src={item.img}
                 alt={item.title}
-                // loading="lazy"
+                loading="lazy"
                 style={srcset(item.img, 121, item.rows, item.cols).style}
               />
             </motion.div>

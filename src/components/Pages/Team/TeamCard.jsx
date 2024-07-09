@@ -38,6 +38,7 @@ const TeamCard = React.memo(({ name, position, linkedin, github, gmail, firebase
     >
       <CardMedia
         component="img"
+        loading='lazy'
         height={isHovered ? '200px' : '260px'}
         image={firebase}
         alt={name}

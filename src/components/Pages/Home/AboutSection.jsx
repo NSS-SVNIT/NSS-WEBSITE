@@ -24,6 +24,7 @@ const AboutSection = React.memo(() => {
         >
           <img
             className="about-image"
+            loading="lazy"
             src="https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/Not%20Me%20But%20You.jpg?alt=media&token=cd079525-7886-4bee-bd64-e7cd21920b51"
             alt="NSS Event"
           ></img>
