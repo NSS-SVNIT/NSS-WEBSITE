@@ -45,6 +45,14 @@ export default function Example(props) {
       "To my dear family, continue to flourish and reach new pinnacles as you are currently doing. Looking at each of you dedicating yourselves to the betterment of society and those around you is truly inspiring and that's what we are always known for. Our journey from a small group to a dedicated force within a few years has been remarkable, yet there is a lot to do. Strive for transformative progress, and the outcomes will undoubtedly follow. Just Believe in yourself.",
       imageUrl: photo2020,
     },
+    {
+      title: "Message From Our Convenor Batch 2021",
+      name: "Shubham Chandak",
+      description:
+      "Dear Readers, I hope this message finds you in the best of spirits. It is with immense gratitude that I reflect on my journey with the NSS Unit SVNIT, an organization that has truly become a second family to me. The NSS Unit SVNIT has consistently dedicated itself to community service, all while ensuring the holistic development of its volunteers. Our guiding motto, 'NOT ME BUT YOU' is a testament to the selflessness and commitment that each volunteer embodies.To the current batch of volunteers, I extend my heartfelt best wishes for your ongoing NSS activities. Your dedication and hard work continue to raise the bar and inspire all of us. Keep up the excellent work, and continue to make a difference in the community and yourselves.",
+      imageUrl: "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/team%20page%2F2021%2FShubham.jpg?alt=media&token=162ebe8b-3068-46ba-861a-f98823c12647",
+    },
+    
   ];
   
   const indicatorButtonStyle = {
