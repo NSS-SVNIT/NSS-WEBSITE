@@ -1,55 +1,56 @@
-import React, { memo, useEffect, useState } from "react";
-import Layout from "../Layout/Layout";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import { useParams } from "react-router-dom";
-import { doc, getDoc } from "@firebase/firestore";
-import { firestore } from "../../firebase";
 import { Grid } from "@mui/material";
+import { doc, getDoc } from "firebase/firestore";
+import React, { memo, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { firestore } from "../../firebase";
+import Layout from "../Layout/Layout";
 import BlogPost from "./Post/BlogPost";
 
 const Post = () => {
-  const { id } = useParams();
-  const [postData, setPostData] = useState({});
+	const { id } = useParams();
+	const [postData, setPostData] = useState({});
 
-  useEffect(() => {
-    getPost();
-  }, []);
+	useEffect(() => {
+		getPost();
+	}, []);
 
-  const getPost = async () => {
-    const docRef = doc(firestore, "posts", id);
-    const docSnap = await getDoc(docRef);
+	const getPost = async () => {
+		const docRef = doc(firestore, "posts", id);
+		const docSnap = await getDoc(docRef);
 
-    if (docSnap.exists()) {
-      setPostData(docSnap.data());
-      setPostData((prev) => ({
-        ...prev,
-        ["content"]: prev.content.join("\n"),
-      }));
-    } else {
-      console.log("No such document!");
-    }
-  };
+		if (docSnap.exists()) {
+			setPostData(docSnap.data());
+			setPostData((prev) => ({
+				...prev,
+				["content"]: prev.content.join("\n"),
+			}));
+		} else {
+			console.log("No such document!");
+		}
+	};
 
-  return (
-    <Layout>
-      <Grid container justifyContent={"center"} sx={{ marginBottom: "40px" }}>
-        <Grid item lg={6}>
-          {/* Memoized BlogPost */}
-          <MemoizedBlogPost
-            author={postData.author}
-            readingTime={postData.readingTime}
-            title={postData.title}
-            content={postData.content}
-            date={postData.date}
-            venue = {postData.Venue}
-            eventDate={postData.Eventdate}
-            description={postData.description}
-          />
-        </Grid>
-      </Grid>
-    </Layout>
-  );
+	return (
+		<Layout>
+			<Grid
+				container
+				justifyContent={"center"}
+				sx={{ marginBottom: "40px" }}>
+				<Grid item lg={6}>
+					{/* Memoized BlogPost */}
+					<MemoizedBlogPost
+						author={postData.author}
+						readingTime={postData.readingTime}
+						title={postData.title}
+						content={postData.content}
+						date={postData.date}
+						venue={postData.Venue}
+						eventDate={postData.Eventdate}
+						description={postData.description}
+					/>
+				</Grid>
+			</Grid>
+		</Layout>
+	);
 };
 
 // Memoized BlogPost

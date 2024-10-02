@@ -1,14 +1,11 @@
-import React, { useEffect, useState, memo } from "react";
+import { Box, useMediaQuery } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
+import { collection, getDocs } from "firebase/firestore";
 import { motion } from "framer-motion";
-import ListItemText from "@mui/material/ListItemText";
-import { Box,useMediaQuery } from "@mui/material";
+import React, { memo, useEffect, useState } from "react";
 import { firestore } from "../firebase";
-import { collection, getDocs } from "@firebase/firestore";
 
 const MAXUPDATECOUNT = 2;
 const UpdateCard = memo(() => {
@@ -21,7 +18,7 @@ const UpdateCard = memo(() => {
 					...doc.data(),
 					id: doc.id,
 				}));
-				newData.sort((a, b) =>  b.index - a.index);
+				newData.sort((a, b) => b.index - a.index);
 				setUpdates(newData);
 				// console.log(updates, newData);
 			}
@@ -35,7 +32,6 @@ const UpdateCard = memo(() => {
 	return (
 		<Card
 			sx={{
-				
 				flexBasis: "30%",
 				color: "#CCC",
 				backdropFilter: "blur(10px)",
@@ -54,41 +50,51 @@ const UpdateCard = memo(() => {
 						Latest Updates
 					</Typography>
 				</motion.div>
-				{!isMobile&&updates.map((update, index) => (
-					<motion.div
-						key={index}
-						animate={{ y: [(index + 1) * 20, 0] }}
-						transition={{ duration: 0.5 }}>
-						<Box
-							sx={{
-								fontFamily: "DM Sans",
-								fontSize: "1.2rem",
-								py: 1.3,
-							}}
-							key={index}>
+				{!isMobile &&
+					updates.map((update, index) => (
+						<motion.div
+							key={index}
+							animate={{ y: [(index + 1) * 20, 0] }}
+							transition={{ duration: 0.5 }}>
+							<Box
+								sx={{
+									fontFamily: "DM Sans",
+									fontSize: "1.2rem",
+									py: 1.3,
+								}}
+								key={index}>
 								{update.text}
-							<div style={{opacity:'.7'}}> - {update.date}</div>
-						</Box>
-					</motion.div>
-				))}
-				{isMobile&&updates.map((update, index) => (
-					index<MAXUPDATECOUNT&&
-					<motion.div
-						key={index}
-						animate={{ y: [(index + 1) * 20, 0] }}
-						transition={{ duration: 0.5 }}>
-						<Box
-							sx={{
-								fontFamily: "DM Sans",
-								fontSize: "1.2rem",
-								py: 1.3,
-							}}
-							key={index}>
-								{update.text}
-							<div style={{opacity:'.7'}}> - {update.date}</div>
-						</Box>
-					</motion.div>
-				))}
+								<div style={{ opacity: ".7" }}>
+									{" "}
+									- {update.date}
+								</div>
+							</Box>
+						</motion.div>
+					))}
+				{isMobile &&
+					updates.map(
+						(update, index) =>
+							index < MAXUPDATECOUNT && (
+								<motion.div
+									key={index}
+									animate={{ y: [(index + 1) * 20, 0] }}
+									transition={{ duration: 0.5 }}>
+									<Box
+										sx={{
+											fontFamily: "DM Sans",
+											fontSize: "1.2rem",
+											py: 1.3,
+										}}
+										key={index}>
+										{update.text}
+										<div style={{ opacity: ".7" }}>
+											{" "}
+											- {update.date}
+										</div>
+									</Box>
+								</motion.div>
+							)
+					)}
 			</CardContent>
 		</Card>
 	);

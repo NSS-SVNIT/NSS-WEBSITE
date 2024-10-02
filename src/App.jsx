@@ -1,9 +1,8 @@
 import React, { memo,Suspense,lazy } from "react";
 import "./App.css";
-import GalleryView from "./components/Pages/Home/GalleryView";
 import Events from "./components/Pages/Events";
 import Gallery from "./components/Pages/Gallery";
-import Home from "./components/Pages/Home";
+// import Home from "./components/Pages/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Post from "./components/Pages/Post";
 import NewPost from "./components/Pages/NewPost";
@@ -16,7 +15,8 @@ import Developers from "./components/Pages/Developers";
 import Articles from "./components/Pages/Articles/Articles";
 import NewArticle from "./components/Pages/Articles/newarticle";
 import Loader from "./components/UI/Loader";
-
+import Home from './components/Pages/Home'
+// const Home = lazy(()=>import('./components/Pages/Home'))
 const MemoizedAbout = memo(About);
 const MemoizedGallery = memo(Gallery);
 const MemoizedAdmin = memo(Admin);
@@ -38,7 +38,7 @@ function App() {
     // Simulate a network request
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1000);
   }, []);
   return (  
     <>
