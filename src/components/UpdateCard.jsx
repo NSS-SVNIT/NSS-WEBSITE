@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import ListItemText from "@mui/material/ListItemText";
 import { Box,useMediaQuery } from "@mui/material";
 import { firestore } from "../firebase";
-import { collection, getDocs } from "@firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 
 const MAXUPDATECOUNT = 2;
 const UpdateCard = memo(() => {

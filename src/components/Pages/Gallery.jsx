@@ -3,7 +3,7 @@ import Layout from "../Layout/Layout";
 import GalleryView from "./Home/GalleryView";
 import LightGalleryView from "./LightGalleryView";
 import PageHeader from "../UI/PageHeader";
-import { getDocs, collection } from "@firebase/firestore";
+import { getDocs, collection } from "firebase/firestore";
 import { firestore } from "../../firebase";
 import { useState } from "react";
 import {

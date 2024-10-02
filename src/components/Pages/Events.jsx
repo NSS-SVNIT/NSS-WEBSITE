@@ -4,7 +4,7 @@ import Layout from "../Layout/Layout";
 import BlogCard from "../UI/BlogCard";
 import PageHeader from "../UI/PageHeader";
 import firebase from "firebase/compat/app";
-import { getDocs, collection } from "@firebase/firestore";
+import { getDocs, collection } from "firebase/firestore";
 import { firestore } from "../../firebase";
 import { Grid, Button,Box, useMediaQuery } from "@mui/material";
 

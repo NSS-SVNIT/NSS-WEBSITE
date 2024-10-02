@@ -3,7 +3,7 @@ import Layout from "../Layout/Layout";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { useParams } from "react-router-dom";
-import { doc, getDoc } from "@firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 import { firestore } from "../../firebase";
 import { Grid } from "@mui/material";
 import BlogPost from "./Post/BlogPost";

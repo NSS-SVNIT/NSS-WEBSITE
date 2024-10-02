@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import ArticleCard from "./ArticleCard";
-import { getDocs, collection, where, query } from "@firebase/firestore";
+import { getDocs, collection, where, query } from "firebase/firestore";
 import { firestore } from "../../../firebase";
 import { useMediaQuery } from "@mui/material";
 

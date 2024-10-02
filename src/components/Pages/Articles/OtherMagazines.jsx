@@ -5,7 +5,7 @@ import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import ArticleCard from "./ArticleCard";
 import { Card, Typography, useMediaQuery } from "@mui/material";
-import { getDocs, collection, where, query } from "@firebase/firestore";
+import { getDocs, collection, where, query } from "firebase/firestore";
 import { firestore } from "../../../firebase";
 import { Await } from "react-router-dom";
 
