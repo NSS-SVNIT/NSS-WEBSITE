@@ -1,10 +1,11 @@
 import React from "react";
+
 import LightGallery from "lightgallery/react";
 import lgZoom from "lightgallery/plugins/zoom";
 import { useMediaQuery } from "@mui/material";
 
-
-function LightGalleryView(props) {
+export default function LightGalleryView(props) {
+  console.log(props.images);
   const isMobile = useMediaQuery("(max-width:900px)");
   return (
     <LightGallery plugins={[lgZoom]} mode="lg-fade">
@@ -30,5 +31,3 @@ function LightGalleryView(props) {
     </LightGallery>
   );
 }
-
-export default React.memo(LightGalleryView)

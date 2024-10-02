@@ -5,11 +5,11 @@ import {useForm} from "react-hook-form"
 import { styled } from '@mui/material/styles';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
-import { Firestore } from "firebase/firestore";
-import { doc, setDoc } from "firebase/firestore";
+import { Firestore } from "@firebase/firestore";
+import { doc, setDoc } from "@firebase/firestore";
 import { v4 as uuidv4 } from "uuid";
 import { firestore} from "../../../firebase";
-import {getStorage, uploadBytes, ref, getDownloadURL} from "firebase/storage"
+import {getStorage, uploadBytes, ref, getDownloadURL} from "@firebase/storage"
 
 export default function NewArticle() {
   const options = [

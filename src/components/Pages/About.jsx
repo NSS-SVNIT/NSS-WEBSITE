@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { Typography, Box, Grid, Button, useMediaQuery } from "@mui/material";
 import { makeStyles } from "@material-ui/core/styles";
 import { useState } from "react";
-import { getStorage, ref, getDownloadURL } from "firebase/storage";
+import { getStorage, ref, getDownloadURL } from "@firebase/storage";
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
