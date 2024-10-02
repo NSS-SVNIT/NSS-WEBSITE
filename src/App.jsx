@@ -1,6 +1,6 @@
-import React, { memo,Suspense,lazy } from "react";
+import React, { memo,Suspense } from "react";
 import "./App.css";
-import GalleryView from "./components/Pages/Home/GalleryView";
+// import GalleryView from "./components/Pages/Home/GalleryView";
 import Events from "./components/Pages/Events";
 import Gallery from "./components/Pages/Gallery";
 import Home from "./components/Pages/Home";

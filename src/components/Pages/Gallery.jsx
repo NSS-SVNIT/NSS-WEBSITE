@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Layout from "../Layout/Layout";
-import GalleryView from "./Home/GalleryView";
+// import GalleryView from "./Home/GalleryView";
 import LightGalleryView from "./LightGalleryView";
 import PageHeader from "../UI/PageHeader";
 import { getDocs, collection } from "@firebase/firestore";
@@ -14,6 +14,7 @@ import {
   Typography,
   useMediaQuery,
 } from "@mui/material";
+import ParentGallery from './ParentGallery'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -119,6 +120,7 @@ const Gallery = () => {
 
         {foldersList.map((folder, i) => (
           <MemoizedTabPanel value={value} key={i} index={i}>
+            {/* <ParentGallery children={}/> */}
             <LightGalleryView images={folder.image_links} />
           </MemoizedTabPanel>
         ))}
@@ -126,5 +128,4 @@ const Gallery = () => {
     </Layout>
   );
 };
-
 export default React.memo(Gallery);

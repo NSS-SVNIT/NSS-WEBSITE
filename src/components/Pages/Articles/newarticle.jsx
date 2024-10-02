@@ -1,11 +1,5 @@
-import React, { useState, useEffect } from "react";
-import Layout from "../../Layout/Layout";
-import { Box, Button, Grid, Stack, TextField, MenuItem } from "@mui/material";
-import {useForm} from "react-hook-form"
-import { styled } from '@mui/material/styles';
-import CloudUploadIcon from '@mui/icons-material/CloudUpload';
-import { ReactMarkdown } from "react-markdown/lib/react-markdown";
-import { Firestore } from "@firebase/firestore";
+import React, { useState } from "react";
+import { Button, Grid, Stack, TextField, MenuItem } from "@mui/material";
 import { doc, setDoc } from "@firebase/firestore";
 import { v4 as uuidv4 } from "uuid";
 import { firestore} from "../../../firebase";
