@@ -11,13 +11,13 @@ export default function FooterLogo() {
       alignItems="center"
       marginRight={isMobile ? "150px" : "500px"}
     >
-      
+
       <Stack direction="row" gap={2} height={isMobile ? 55 : 75}>
         <img
           style={{
             height: `${isMobile ? "55px" : "75px"}`,
             marginLeft: `${isMobile ? "-40px" : "0px"}`,
-            borderRadius: "50%",
+            borderRadius: 50,
           }}
           src="https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/aboutImages%2Fnss_logo.jpg?alt=media&token=860074c2-3cf7-4e5d-86b4-f4bc61a37626"
         ></img>
