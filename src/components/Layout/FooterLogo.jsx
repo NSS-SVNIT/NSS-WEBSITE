@@ -11,6 +11,7 @@ export default function FooterLogo() {
       alignItems="center"
       marginRight={isMobile ? "150px" : "500px"}
     >
+      
       <Stack direction="row" gap={2} height={isMobile ? 55 : 75}>
         <img
           style={{
