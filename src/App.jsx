@@ -1,6 +1,5 @@
 import React, { memo,Suspense,lazy } from "react";
 import "./App.css";
-import GalleryView from "./components/Pages/Home/GalleryView";
 import Events from "./components/Pages/Events";
 import Gallery from "./components/Pages/Gallery";
 import Home from "./components/Pages/Home";
@@ -35,7 +34,6 @@ function App() {
   const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
-    // Simulate a network request
     setTimeout(() => {
       setLoading(false);
     }, 2000);

@@ -2,8 +2,6 @@ import React from "react";
 import "./DeveloperCard.css";
 
 function DeveloperCard(props) {
-	// console.log(props.imageLink);
-	// console.log(props.linkedin);
 	return (
 		<div className="card">
 			<div className="card-info">
@@ -15,7 +13,6 @@ function DeveloperCard(props) {
 					/>
 				<div className="card-title">{props.name}</div>
 				</div>
-				{/* <div class="card-subtitle">CEO &amp; Co-Founder</div> */}
 			</div>
 			<ul className="card-social">
 				<li className="card-social__item">

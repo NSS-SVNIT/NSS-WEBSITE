@@ -1,13 +1,6 @@
-import { motion, useTransform, useScroll } from "framer-motion";
-import { useRef, useState } from "react";
-import {
-	Box,
-	Button,
-	Stack,
-	Typography,
-	Modal,
-	useMediaQuery,
-} from "@mui/material";
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { Box, Button, Typography, Modal, useMediaQuery } from "@mui/material";
 import ButtonReadMore from "./ButtonReadMore";
 import coin from "./coin.gif";
 import document from "./document.gif";
@@ -29,7 +22,7 @@ const HorizontalScrollCarousel = () => {
 					style={{
 						flexDirection: isMobile ? "column" : "row",
 						display: "flex",
-						gap:"50px",
+						gap: "50px",
 					}}
 					className="gap-4">
 					{cards.map((card) => {
@@ -50,7 +43,7 @@ const HorizontalScrollCarousel = () => {
 };
 
 const Card = ({ card }) => {
-	const isMobile	= useMediaQuery("(max-width:900px)");
+	const isMobile = useMediaQuery("(max-width:900px)");
 	const [openModal, setOpenModal] = useState(false);
 
 	const handleOpenModal = () => {
@@ -93,7 +86,7 @@ const Card = ({ card }) => {
 								boxShadow: 24,
 								p: 3,
 								borderRadius: "15px",
-								width: isMobile?"80%":"35%", // Adjust the width as needed
+								width: isMobile ? "80%" : "35%", // Adjust the width as needed
 								padding: "20px", // Adjust padding values as needed
 							}}>
 							<Typography

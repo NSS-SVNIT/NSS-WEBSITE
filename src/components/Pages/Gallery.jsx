@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import Layout from "../Layout/Layout";
-import GalleryView from "./Home/GalleryView";
 import LightGalleryView from "./LightGalleryView";
 import PageHeader from "../UI/PageHeader";
 import { getDocs, collection } from "@firebase/firestore";

@@ -7,7 +7,7 @@ const NavButton = memo((props) => {
 
   return (
     <NavLink to={props.to}>
-      {({ isActive, isPending }) => (
+      {({ isActive }) => (
         <Button
           sx={{
             textDecoration: "none",

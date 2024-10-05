@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+
 import Layout from "../Layout/Layout";
 import BlogCard from "../UI/BlogCard";
 import PageHeader from "../UI/PageHeader";
+<<<<<<< Updated upstream
 import firebase from "firebase/compat/app";
 import { getDocs, collection } from "@firebase/firestore";
+=======
+import { getDocs, collection } from "firebase/firestore";
+>>>>>>> Stashed changes
 import { firestore } from "../../firebase";
-import { Grid, Button,Box, useMediaQuery } from "@mui/material";
+import { Grid, Button, useMediaQuery } from "@mui/material";
 
 const MemoizedBlogCard = React.memo(BlogCard);
 
@@ -38,7 +42,7 @@ export default function Events() {
     fetchPosts();
   }, []);
 
-  const displayedPosts = showAll ? posts.reverse() : posts.slice(0, 8);
+  const displayedPosts =showAll?posts:posts.slice(0, 8);
 
   return (
     <Layout>

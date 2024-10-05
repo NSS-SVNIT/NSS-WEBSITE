@@ -23,7 +23,6 @@ const UpdateCard = memo(() => {
 				}));
 				newData.sort((a, b) =>  b.index - a.index);
 				setUpdates(newData);
-				// console.log(updates, newData);
 			}
 		);
 	};
