@@ -2,17 +2,11 @@ import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import {
   Stack,
   useMediaQuery,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
   Avatar,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
@@ -191,12 +185,6 @@ export default function NavBar() {
               <NavButton to="/contact" scrolling={scrolling}>
                 Contact
               </NavButton>
-              {/* <NavButton to="/admin" scrolling={scrolling}>
-                Admin
-              </NavButton>
-              <NavButton to="/developers" scrolling={scrolling}>
-                Developers
-              </NavButton> */}
             </Box>
           )}
         </Toolbar>

@@ -3,7 +3,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Box, Button, CardActionArea, Stack } from "@mui/material";
+import {  Button, CardActionArea, Stack } from "@mui/material";
 import { Link } from "react-router-dom";
 
 const BlogCard = memo((props) => {
@@ -16,7 +16,6 @@ const BlogCard = memo((props) => {
           <CardMedia
             component="img"
             sx={{ fontFamily: "DM Sans", width: "100%", height: "35vh", objectFit: "cover" }}
-            // image="https://media.nomadicmatt.com/2023/oaxitinerary2.jpeg"
             image= {props.image}
             alt="green iguana"
           />

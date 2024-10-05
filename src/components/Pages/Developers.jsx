@@ -88,7 +88,6 @@ function Developers() {
 	const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
 	const row1 = developers.slice(0, 6);
-	// const row2 = developers.slice(0);
 	const row1Designers = designers.slice(0, 2);
 
 	return (
@@ -149,26 +148,6 @@ function Developers() {
 									/>
 								))}
 							</div>
-							{/* <div
-								style={{
-									display: "flex",
-									gap: "56px", 
-									margin: "30px",
-									position: "relative",
-									marginTop: "30px",
-									marginBottom: "50px",
-								}}>
-								{row2.map((developer) => (
-									<DeveloperCard
-										key={developer.id}
-										name={developer.name}
-										github={developer.github}
-										mail={developer.mail}
-										linkedin={developer.linkedin}
-										imageLink={developer.imageLink}
-									/>
-								))}
-							</div> */}
 						</>
 					)}
 				</div>

@@ -14,7 +14,7 @@ import { CenterFocusStrong } from "@mui/icons-material";
 
 // Component for displaying a batch of Team
 const TeamBatch = React.memo(({ year, TeamList }) => {
-	const isMobile = useMediaQuery('(max-width:600px)')
+	const isMobile = useMediaQuery("(max-width:600px)");
 	const displayedTeam = TeamList.slice(0, 6); // Get the first six Team from the list
 	const trigger = useScrollTrigger({
 		disableHysteresis: true,
@@ -68,20 +68,21 @@ const TeamBatch = React.memo(({ year, TeamList }) => {
 
 	return (
 		<>
-			<div style={{ fontFamily: "DM Sans", overflowX: "hidden"}}>
+			<div style={{ fontFamily: "DM Sans", overflowX: "hidden" }}>
 				<Box
 					sx={{
-						mx:isMobile?"auto":
-							coordinatorText === "COORDINATOR"
-								? 50 //This is margin for Program Coordinator
-								: coordinatorText === "OFFICERS" &&
-								  headingText === "PROGRAM"
-								? 56 //this is margin for Program Officers
-								: 65, //this is margin for Founder
-						my: isMobile?1:2,
-						px: isMobile?1:8,
+						mx: isMobile
+							? "auto"
+							: coordinatorText === "COORDINATOR"
+							? 50 //This is margin for Program Coordinator
+							: coordinatorText === "OFFICERS" &&
+							  headingText === "PROGRAM"
+							? 56 //this is margin for Program Officers
+							: 65, //this is margin for Founder
+						my: isMobile ? 1 : 2,
+						px: isMobile ? 1 : 8,
 						py: 4,
-						fontSize: isMobile?"1.5rem":"3rem",
+						fontSize: isMobile ? "1.5rem" : "3rem",
 						backgroundColor: "black",
 						display: "inline-block",
 						fontFamily: "DM Sans",
@@ -109,8 +110,8 @@ const TeamBatch = React.memo(({ year, TeamList }) => {
 								: "30px", // Center align if year is 2000 or 2001 or 2003
 						marginBottom: "60px",
 						justifyContent: "center",
-						display:isMobile?'flex':'',
-						flexDirection:isMobile?'column':''
+						display: isMobile ? "flex" : "",
+						flexDirection: isMobile ? "column" : "",
 					}}>
 					{displayedTeam.map((Team, index) => (
 						<Grow
@@ -136,7 +137,7 @@ const TeamBatch = React.memo(({ year, TeamList }) => {
 						color="inherit"
 						sx={{
 							bottom: "20px",
-							left: isMobile?"5%":"1397px",
+							left: isMobile ? "5%" : "1397px",
 							borderRadius: 0,
 							fontFamily: "DM Sans",
 						}}>

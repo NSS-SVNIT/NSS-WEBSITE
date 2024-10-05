@@ -6,7 +6,6 @@ import Example from './Home/Carousel';
 import GallerySection from './Home/GallerySection';
 import HeroSection from './Home/HeroSection';
 
-// Apply React.memo to functional components to memoize them
 const MemoizedHeroSection = React.memo(HeroSection);
 const MemoizedCounterSection = React.memo(CounterSection);
 const MemoizedAboutSection = React.memo(AboutSection);
