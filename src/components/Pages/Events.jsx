@@ -3,12 +3,7 @@ import React, { useEffect, useState } from "react";
 import Layout from "../Layout/Layout";
 import BlogCard from "../UI/BlogCard";
 import PageHeader from "../UI/PageHeader";
-<<<<<<< Updated upstream
-import firebase from "firebase/compat/app";
-import { getDocs, collection } from "@firebase/firestore";
-=======
 import { getDocs, collection } from "firebase/firestore";
->>>>>>> Stashed changes
 import { firestore } from "../../firebase";
 import { Grid, Button, useMediaQuery } from "@mui/material";
 
