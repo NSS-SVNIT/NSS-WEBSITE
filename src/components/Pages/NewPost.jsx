@@ -3,7 +3,7 @@ import Layout from "../Layout/Layout";
 import { Button, Grid, Stack, TextField } from "@mui/material";
 import BlogPost from "./Post/BlogPost";
 import { firestore } from "../../firebase";
-import { doc, setDoc } from "@firebase/firestore";
+import { doc, setDoc } from "firebase/firestore";
 import { v4 as uuidv4 } from "uuid";
 
 export default function NewPost() {

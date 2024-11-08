@@ -12,13 +12,13 @@ import {
   Select,
   Stack,
 } from "@mui/material";
-import { collection, getDocs, setDoc, getDoc, doc } from "@firebase/firestore";
+import { collection, getDocs, setDoc, getDoc, doc } from "firebase/firestore";
 import { firestore, storage } from "../../../firebase";
 import { v4 as uuidv4 } from "uuid";
-import { ref, uploadBytesResumable, getDownloadURL } from "@firebase/storage";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import Compressor from "compressorjs";
 import { analytics } from "../../../firebase";
-import { logEvent } from "@firebase/analytics";
+import { logEvent } from "firebase/analytics";
 export default function ImageUpload() {
   const [foldersList, setFoldersList] = useState([]);
   const [quality, setQuality] = useState(0.8);

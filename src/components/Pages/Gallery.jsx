@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Layout from "../Layout/Layout";
 import LightGalleryView from "./LightGalleryView";
 import PageHeader from "../UI/PageHeader";
-import { getDocs, collection } from "@firebase/firestore";
+import { getDocs, collection } from "firebase/firestore";
 import { firestore } from "../../firebase";
 import { useState } from "react";
 import {

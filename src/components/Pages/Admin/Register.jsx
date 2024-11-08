@@ -16,8 +16,8 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Google } from "@mui/icons-material";
 import { firestore } from "../../../firebase";
 import { analytics } from "../../../firebase";
-import { setDoc, doc } from "@firebase/firestore";
-import { logEvent } from "@firebase/analytics";
+import { setDoc, doc } from "firebase/firestore";
+import { logEvent } from "firebase/analytics";
 
 function Copyright(props) {
   return (
