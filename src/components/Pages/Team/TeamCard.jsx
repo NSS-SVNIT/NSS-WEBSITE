@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Typography, Card, CardContent, CardMedia, Link, Box } from '@mui/material';
 import { LinkedIn, GitHub, Email } from '@mui/icons-material';
+import { useMediaQuery } from '@material-ui/core';
 
 // Card component for displaying Team information
 const TeamCard = React.memo(({ name, position, linkedin, github, gmail, firebase }) => {
+  const isMobile = useMediaQuery("(max-width:600px)");
   const [isHovered, setIsHovered] = useState(false);
   const hasLinkedIn = !!linkedin; // Check if the LinkedIn link is provided
   const hasGitHub = !!github; // Check if the GitHub link is provided

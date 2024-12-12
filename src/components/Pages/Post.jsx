@@ -1,7 +1,7 @@
 import React, { memo, useEffect, useState } from "react";
 import Layout from "../Layout/Layout";
 import { useParams } from "react-router-dom";
-import { doc, getDoc } from "@firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 import { firestore } from "../../firebase";
 import { Grid } from "@mui/material";
 import BlogPost from "./Post/BlogPost";

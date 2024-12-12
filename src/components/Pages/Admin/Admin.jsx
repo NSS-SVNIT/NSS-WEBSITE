@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../../Layout/Layout";
 import { Grid } from "@mui/material";
-import { getDoc, doc } from "@firebase/firestore";
+import { getDoc, doc } from "firebase/firestore";
 import { auth, firestore } from "../../../firebase";
-import { GoogleAuthProvider, signInWithPopup, signOut } from "@firebase/auth";
+import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 import DashBoard from "./DashBoard";
 import SignIn from "./Register";
 import { analytics } from "../../../firebase";
-import { logEvent } from "@firebase/analytics";
+import { logEvent } from "firebase/analytics";
 
 export default function Admin() {
   const [logged, setLogged] = useState(false);

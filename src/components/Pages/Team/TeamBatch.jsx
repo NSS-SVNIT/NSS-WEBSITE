@@ -72,15 +72,21 @@ const TeamBatch = React.memo(({ year, TeamList }) => {
 				<Box
 					sx={{
 						mx: isMobile
-							? "auto"
-							: coordinatorText === "COORDINATOR"
+							? coordinatorText === "COORDINATOR"
+							? 3//This is margin for Program Coordinator
+							: coordinatorText === "OFFICERS" &&
+							  headingText === "PROGRAM"
+							? 6//this is margin for Program Officers
+							: 10
+							: //this is margin for Founder
+							coordinatorText === "COORDINATOR"
 							? 50 //This is margin for Program Coordinator
 							: coordinatorText === "OFFICERS" &&
 							  headingText === "PROGRAM"
 							? 56 //this is margin for Program Officers
 							: 65, //this is margin for Founder
 						my: isMobile ? 1 : 2,
-						px: isMobile ? 1 : 8,
+						px: isMobile ? 2 : 8,
 						py: 4,
 						fontSize: isMobile ? "1.5rem" : "3rem",
 						backgroundColor: "black",
@@ -106,8 +112,8 @@ const TeamBatch = React.memo(({ year, TeamList }) => {
 						marginTop: "20px",
 						marginLeft:
 							year === 2000 || year === 2001 || year === 2003
-								? "auto"
-								: "30px", // Center align if year is 2000 or 2001 or 2003
+								? isMobile? "50px" : "auto"
+								: "50px", // Center align if year is 2000 or 2001 or 2003
 						marginBottom: "60px",
 						justifyContent: "center",
 						display: isMobile ? "flex" : "",
@@ -118,9 +124,9 @@ const TeamBatch = React.memo(({ year, TeamList }) => {
 							key={Team.name}
 							in={trigger}
 							timeout={500 + index * 200}
-							style={{ transformOrigin: "150px 168px 0" }}>
-							<Grid item xs={4} sm={4} md={2} lg={2} xl={2}>
-								<Box>
+							style={{ transformOrigin: "150px 168px 0"}}>
+							<Grid item xs={6} sm={6} md={2} lg={2} xl={2}>
+								<Box sx={{my:'10px',mx:isMobile?'30px':''}}>
 									<TeamCard {...Team} />
 								</Box>
 							</Grid>
