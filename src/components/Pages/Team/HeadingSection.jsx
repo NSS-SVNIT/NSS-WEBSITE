@@ -15,7 +15,7 @@ const HeadingSection = React.memo(() => {
 				spacing={2}
 				sx={{
 					marginTop: isMobile?0:"45px",
-					marginLeft: isMobile?"10px":"60px",
+					marginLeft: isMobile?"10px":"20px",
 					marginBottom:"60px",
 				}}>
 				<Grid item xs={isMobile?11:6} sm={6} md={5}>
@@ -26,11 +26,11 @@ const HeadingSection = React.memo(() => {
 						mountOnEnter>
 						<Typography
 							variant="h2"
-							fontSize={isMobile?"3rem":"70px"}
+							fontSize={isMobile?"3rem":"5rem"}
 							gutterBottom
 							sx={{
 								marginLeft: "10px",
-								marginTop: isMobile?0:"40px",
+								marginTop: isMobile?0:"20px",
 								fontWeight: "400",
 								marginBottom: "-20px",
 							}}>
@@ -44,7 +44,7 @@ const HeadingSection = React.memo(() => {
 						mountOnEnter>
 						<Typography
 							variant="h1"
-							fontSize={isMobile?"7rem":"160px"}
+							fontSize={isMobile?"7rem":"10rem"}
 							gutterBottom={isMobile?false:true}>
 							Team
 						</Typography>
@@ -60,7 +60,7 @@ const HeadingSection = React.memo(() => {
 							style={{
 								textAlign: "justify",
 								fontFamily: "DM Sans",
-								fontSize: "18px",
+								fontSize: "1.1rem",
 								marginRight: "20px",
 							}}>
 							Embark on a transformative journey with the
@@ -73,7 +73,7 @@ const HeadingSection = React.memo(() => {
 						</Typography>
 					</Slide>
 				</Grid>
-				<Grid item xs={6} sm={6} md={6}>
+				<Grid item xs={11} sm={8} md={6.5}>
 					<Slide
 						direction="left"
 						in={true}
@@ -82,8 +82,10 @@ const HeadingSection = React.memo(() => {
 						<img
 							src="https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/team%20page%2Fteam.jpg?alt=media&token=250a96b8-c607-44f3-a1c7-d10c7072c89f"
 							alt="Right Content"
-							height={isMobile?"200x":"500px"}
+							width= "100%"
+							height={isMobile?"200px":"500px"}
 							style={{ borderRadius: "10px" }}
+							objectFit="cover"
 						/>
 					</Slide>
 				</Grid>
@@ -93,3 +95,5 @@ const HeadingSection = React.memo(() => {
 });
 
 export default HeadingSection;
+
+
