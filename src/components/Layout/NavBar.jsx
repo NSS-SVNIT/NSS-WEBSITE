@@ -33,7 +33,6 @@ export default function NavBar() {
   React.useEffect(() => {
     const handleScroll = () => {
       const scrollThreshold = getScrollThreshold(location.pathname);
-      console.log(window.scrollY);
       setScrolling(window.scrollY > scrollThreshold);
     };
 

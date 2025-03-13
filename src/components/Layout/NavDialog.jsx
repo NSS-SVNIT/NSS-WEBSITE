@@ -1,47 +1,119 @@
 import React from "react";
 import Button from "@mui/material/Button";
 import {
-  Stack,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
+	Stack,
+	Dialog,
+	DialogTitle,
+	DialogContent,
+	DialogActions,
+	Box,
+	Typography,
+	ListItem,
+	ListItemButton,
+	ListItemText,
+	Drawer,
+	Divider,
+	List,
+	Avatar,
 } from "@mui/material";
 import NavButton from "../UI/NavButton";
-
+import { NavLink } from "react-router-dom";
+const drawerWidth = 240;
+const navItems = [
+	{ route: "About", link: "/about" },
+	{ route: "Events", link: "/events" },
+	{ route: "Gallery", link: "/gallery" },
+	{ route: "Articles", link: "/articles" },
+	{ route: "Team", link: "/team" },
+	{ route: "Contact", link: "/contact" },
+];
+const scrollToTop = () => {
+	window.scrollTo({
+		top: 0,
+		left: 0,
+		behavior: "smooth",
+	});
+};
 export default function NavDialog({ openDialog, handleCloseDialog }) {
-  return (
-    <Dialog open={openDialog} onClose={handleCloseDialog}>
-      <DialogTitle sx={{ textAlign: "center" }}>Menu</DialogTitle>
-      <DialogContent>
-        <Stack direction="column">
-          <NavButton to="/about" color="inherit" onClick={handleCloseDialog}>
-            About
-          </NavButton>
-          <NavButton to="/events" color="inherit" onClick={handleCloseDialog}>
-            Events
-          </NavButton>
-          <NavButton to="/gallery" color="inherit" onClick={handleCloseDialog}>
-                Gallery
-          </NavButton>
-          <NavButton to="/articles" color="inherit" onClick={handleCloseDialog}>
-                Articles
-          </NavButton>
-          <NavButton to="/team" color="inherit" onClick={handleCloseDialog}>
-            Team
-          </NavButton>
-          <NavButton to="/contact" color="inherit" onClick={handleCloseDialog}>
-            Contact
-          </NavButton>
-        </Stack>
-      </DialogContent>
-      <DialogActions>
-        <Stack direction="column">
-          <Button onClick={handleCloseDialog} color="primary">
-            Close
-          </Button>
-        </Stack>
-      </DialogActions>
-    </Dialog>
-  );
+	const drawer = (
+		<Box onClick={handleCloseDialog} sx={{ textAlign: "center" }}>
+			<Stack
+				component="div"
+				direction="row"
+				alignItems="center"
+				sx={{ flexGrow: 1 }}>
+				<NavLink to="/" onClick={scrollToTop}>
+					<Avatar
+						alt="Logo"
+						src="https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/aboutImages%2Fnss_logo.jpg?alt=media&token=860074c2-3cf7-4e5d-86b4-f4bc61a37626"
+						sx={{
+							width: 30,
+							height: 30,
+							marginRight: 1,
+							marginLeft: 1,
+						}}
+					/>
+				</NavLink>
+				<NavLink to="/" onClick={scrollToTop}>
+					<Avatar
+						alt="Logo"
+						src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/NIT_Surat_Logo.svg/300px-NIT_Surat_Logo.svg.png"
+						sx={{
+							width: 30,
+							height: 30,
+							marginRight: 1,
+						}}
+					/>
+				</NavLink>
+				<NavLink
+					to="/"
+					style={{
+						textDecoration: "none",
+						marginLeft: 1,
+						color: "black",
+					}}
+					onClick={scrollToTop}>
+					<Typography variant="h6" sx={{ my: 2 }}>
+						NSS SVNIT
+					</Typography>
+				</NavLink>
+			</Stack>
+
+			<Divider />
+			<List>
+				{navItems.map((item) => (
+					<ListItem key={item} disablePadding>
+						<ListItemButton sx={{ textAlign: "center" }}>
+							<NavButton to={item.link}>
+								<ListItemText primary={item.route} />
+							</NavButton>
+						</ListItemButton>
+					</ListItem>
+				))}
+			</List>
+		</Box>
+	);
+	return (
+		<Box>
+			<nav>
+				<Drawer
+					container={document.body}
+					variant="temporary"
+					open={openDialog}
+					onClose={handleCloseDialog}
+					ModalProps={{
+						keepMounted: true, // Better open performance on mobile.
+					}}
+					sx={{
+						display: { xs: "block", sm: "none" },
+						"& .MuiDrawer-paper": {
+							boxSizing: "border-box",
+							width: drawerWidth,
+						},
+					}}>
+					{drawer}
+				</Drawer>
+			</nav>
+		</Box>
+	);
 }
