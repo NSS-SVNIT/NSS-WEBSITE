@@ -1,7 +1,11 @@
+.spacer {
+    height: 10px; /* Adjust the height as needed */
+}
+
 .card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	width: 230px;
 	height: 310px;
 	background: whitesmoke;
@@ -11,7 +15,8 @@
 }
 
 .card-info {
-	/* position: absolute; */
+	display: flex;
+	justify-content: center;
 	bottom: 2em;
 	width: 100%;
 	text-align: center;
@@ -60,7 +65,7 @@
 .avatar-image {
 	width: 100%; /* Make the image fill the container */
 	height: 100%; /* Make the image fill the container */
-	border-radius: 50%;  
+	border-radius: 50%;
 }
 /*Card footer*/
 .card-social {
@@ -71,30 +76,20 @@
 	opacity: 0;
 	transition: transform 0.2s ease, opacity 0.2s ease;
 	margin-left: -20px;
+	gap: 20px;
 }
 
 .card-social__item {
 	list-style: none;
+	display: flex;
 }
 
 .card-social__item svg {
 	display: block;
-	height: 28px;
-	width: 28px;
-	fill: #515f65;
+	height: 30px;
+	width: 30px;
 	cursor: pointer;
 	transition: fill 0.2s ease, transform 0.2s ease;
-	/* margin: 10px; */
-	/* margin-left: 10px; */
-}
-
-/*Text*/
-.card-title {
-	color: #333;
-	font-size: 1.3rem;
-	font-weight: 600;
-	line-height: 2rem;
-	margin-top: 10px;
 }
 
 .card-subtitle {
@@ -104,7 +99,8 @@
 
 /* Hover*/
 .card:hover {
-	box-shadow: 0 8px 50px #23232333;
+	transform: translateY(-5px);
+	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
 .card:hover .card-info {
@@ -118,4 +114,28 @@
 
 .card-avatar:hover {
 	transform: scale(1.1);
+}
+
+.card-title {
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: #333;
+}
+
+.social-link {
+	color: #444;
+	transition: color 0.3s ease;
+	scale: 1.2;
+}
+
+.social-link.github:hover {
+	color: #000;
+}
+
+.social-link.email:hover {
+	color: #d44638;
+}
+
+.social-link.linkedin:hover {
+	color: #0077b5;
 }

@@ -61,6 +61,15 @@ function Developers() {
 			imageLink:
 				"https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/Developers%20and%20Designers%2Fshreeya.jpeg?alt=media&token=5e4dd1b7-ccda-4cfb-8a58-0d663c7ada9b",
 		},
+		{
+			id: 7,
+			name: "Samarth Chaplot",
+			github: "https://github.com/sam-arth07",
+			mail: "mailto:samarthchaplot7@gmail.com",
+			linkedin: "https://www.linkedin.com/in/samarth-chaplot-130b88256/",
+			imageLink:
+				"https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/team%20page%2F2022%2FSAMARTH_CHAPLOT.jpg?alt=media&token=1f573e6e-3afa-4f12-995b-2079160f5948",
+		},
 	];
 
 	const designers = [
@@ -87,7 +96,8 @@ function Developers() {
 	const theme = useTheme();
 	const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-	const row1 = developers.slice(0, 6);
+	const row1 = developers.slice(0, 4);
+	const row2 = developers.slice(4, developers.length);
 	const row1Designers = designers.slice(0, 2);
 
 	return (
@@ -138,6 +148,24 @@ function Developers() {
 									position: "relative",
 								}}>
 								{row1.map((developer) => (
+									<DeveloperCard
+										key={developer.id}
+										name={developer.name}
+										github={developer.github}
+										mail={developer.mail}
+										linkedin={developer.linkedin}
+										imageLink={developer.imageLink}
+									/>
+								))}
+							</div>
+							<div
+								style={{
+									display: "flex",
+									gap: "20px", 
+									margin: "20px",
+									position: "relative",
+								}}>
+								{row2.map((developer) => (
 									<DeveloperCard
 										key={developer.id}
 										name={developer.name}
