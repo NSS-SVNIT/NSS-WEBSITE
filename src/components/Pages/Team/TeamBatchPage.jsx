@@ -1,107 +1,103 @@
 import React, { useEffect } from "react";
-import { Typography, Button, Grow, Grid, Box } from "@mui/material";
+import { Typography, Button, Grow, Grid, Box, useTheme } from "@mui/material";
 import TeamCard from "./TeamCard";
 import { Link, useParams } from "react-router-dom";
 import * as Data from "./TeamData";
 import Layout from "../../Layout/Layout";
 
 const TeamBatchPage = React.memo(() => {
-	const { year } = useParams();
-	const TeamList = React.useMemo(() => {
-		if (year === "2002") {
-			return Data.CoFounder || [];
-		} else if (year === "2001") {
-			return Data.Founder || [];
-		} else if (year === "2000") {
-			return Data.Sir || [];
-		} else if (year === "2003") {
-			return Data.ProgramCoordinators || [];
-		} else {
-			const dataKey = `Team${year}`;
-			return Data[dataKey] || [];
-		}
-	}, [year]);
+  const theme = useTheme();
+  const { year } = useParams();
+  const TeamList = React.useMemo(() => {
+    if (year === "2002") return Data.CoFounder || [];
+    if (year === "2001") return Data.Founder || [];
+    if (year === "2000") return Data.Sir || [];
+    if (year === "2003") return Data.ProgramCoordinators || [];
+    const dataKey = `Team${year}`;
+    return Data[dataKey] || [];
+  }, [year]);
 
-	const [animateCards, setAnimateCards] = React.useState(false);
+  const [animateCards, setAnimateCards] = React.useState(false);
 
-	useEffect(() => {
-		setAnimateCards(true);
-		window.scrollTo(0, 0); // Scroll to top on page load
-	}, []);
+  useEffect(() => {
+    setAnimateCards(true);
+    window.scrollTo(0, 0);
+  }, []);
 
-	return (
-		<Layout>
-			<div style={{ overflowX: "hidden" }}>
-				<Grid container justifyContent="center" alignItems="center">
-					<Box
-						sx={{
-							my: "30px",
-							px: 6,
-							fontFamily: "DM Sans",
-							backgroundColor: "#000",
-							py: 4,
-							color: "grey",
-							fontSize: "3rem",
-							display: "inline-block",
-							justifyContent: "center",
-							alignContent: "center",
-							alignSelf: "center",
-							transition:
-								"transform 0.5s ease-in-out, opacity 0.5s ease-in-out",
-							transform: animateCards
-								? "translateY(0)"
-								: "translateY(20px)",
-							opacity: animateCards ? 1 : 0,
-						}}>
-						{year === "2002" ? "Co-" : "Team of"}{" "}
-						<span style={{ color: "#fff" }}>
-							{year === "2002" ? "Founders" : year}
-						</span>
-					</Box>
-				</Grid>
+  const titleText = year === "2002" ? "Co-Founders" : `Team of ${year}`;
 
-				<Grid
-					container
-					spacing={1}
-					rowSpacing={4}
-					sx={{
-						marginTop: "20px",
-						marginLeft: "30px",
-						marginBottom: "60px",
-					}}
-					alignItems={"center"}
-					justifyContent={"center"}>
-					{TeamList.map((Team, index) => (
-						<Grow
-							key={Team.name}
-							in={animateCards}
-							timeout={1000 + index * 150}
-							style={{ transformOrigin: "150px 168px 0" }}>
-							<Grid item xs={4} sm={4} md={2} lg={2} xl={2}>
-								<Box>
-									<TeamCard {...Team} />
-								</Box>
-							</Grid>
-						</Grow>
-					))}
-				</Grid>
-			</div>
-			<Button
-				component={Link}
-				to={`/team/`}
-				variant="outlined"
-				color="inherit"
-				sx={{
-					bottom: "20px",
-					left: "750px",
-					borderRadius: 0,
-					alignItems: "center",
-					fontFamily: "DM Sans",
-				}}>
-				Back
-			</Button>
-		</Layout>
-	);
+  return (
+    <Layout>
+      <Box sx={{ overflowX: "hidden", px: { xs: 2, sm: 4, md: 6 }, py: { xs: 3, md: 6 } }}>
+        <Box sx={{ textAlign: 'center', mb: { xs: 3, md: 6 } }}>
+          <Typography
+            variant="h4"
+            component="h1"
+            sx={{
+              fontFamily: "DM Sans",
+              color: "grey.700",
+              fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
+              display: 'inline-block',
+              backgroundColor: 'grey.900',
+              px: 2,
+              py: 1,
+              transform: animateCards ? 'translateY(0)' : 'translateY(20px)',
+              opacity: animateCards ? 1 : 0,
+              transition: 'transform 0.5s ease-in-out, opacity 0.5s ease-in-out'
+            }}
+          >
+            {titleText.split(' ').map((word, idx) => (
+              <Box
+                key={idx}
+                component="span"
+                sx={{ color: idx === 1 ? 'common.white' : 'grey.500', ml: idx === 1 ? 1 : 0 }}
+              >
+                {word}
+              </Box>
+            ))}
+          </Typography>
+        </Box>
+
+        <Grid
+          container
+          spacing={{ xs: 2, sm: 3, md: 4 }}
+          justifyContent="center"
+        >
+          {TeamList.map((team, index) => (
+            <Grow
+              key={team.name}
+              in={animateCards}
+              timeout={1000 + index * 150}
+              style={{ transformOrigin: "center bottom" }}
+            >
+              <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+                <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+                  <TeamCard {...team} />
+                </Box>
+              </Grid>
+            </Grow>
+          ))}
+        </Grid>
+
+        <Box sx={{ textAlign: 'center', mt: { xs: 4, md: 6 } }}>
+          <Button
+            component={Link}
+            to="/team"
+            variant="outlined"
+            color="inherit"
+            sx={{
+              fontFamily: "DM Sans",
+              borderRadius: 0,
+              px: 4,
+              py: 1.5,
+            }}
+          >
+            Back
+          </Button>
+        </Box>
+      </Box>
+    </Layout>
+  );
 });
 
 export default TeamBatchPage;

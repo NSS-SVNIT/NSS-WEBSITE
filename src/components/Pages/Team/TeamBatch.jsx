@@ -131,7 +131,7 @@ const TeamBatch = React.memo(({ year, TeamList }) => {
 								<Box
 									sx={{
 										my: "10px",
-										mx: isMobile ? "30px" : "",
+										mx: isMobile ? "30px" : "-20px",
 									}}>
 									<TeamCard {...Team} />
 								</Box>
