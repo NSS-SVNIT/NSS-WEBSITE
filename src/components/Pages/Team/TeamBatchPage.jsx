@@ -4,9 +4,10 @@ import TeamCard from "./TeamCard";
 import { Link, useParams } from "react-router-dom";
 import * as Data from "./TeamData";
 import Layout from "../../Layout/Layout";
+import { useMediaQuery } from "@material-ui/core";
 
 const TeamBatchPage = React.memo(() => {
-  const theme = useTheme();
+  const isMobile = useMediaQuery("(max-width:600px)");
   const { year } = useParams();
   const TeamList = React.useMemo(() => {
     if (year === "2002") return Data.CoFounder || [];
@@ -24,7 +25,7 @@ const TeamBatchPage = React.memo(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const titleText = year === "2002" ? "Co-Founders" : `Team of ${year}`;
+  const titleText = year === "2002" ? "Co-Founders" : `TEAM OF ${year}`;
 
   return (
     <Layout>
@@ -39,8 +40,8 @@ const TeamBatchPage = React.memo(() => {
               fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
               display: 'inline-block',
               backgroundColor: 'grey.900',
-              px: 2,
-              py: 1,
+              px: isMobile ? 4 : 8,
+              py: 4,
               transform: animateCards ? 'translateY(0)' : 'translateY(20px)',
               opacity: animateCards ? 1 : 0,
               transition: 'transform 0.5s ease-in-out, opacity 0.5s ease-in-out'
@@ -50,9 +51,9 @@ const TeamBatchPage = React.memo(() => {
               <Box
                 key={idx}
                 component="span"
-                sx={{ color: idx === 1 ? 'common.white' : 'grey.500', ml: idx === 1 ? 1 : 0 }}
+                sx={{ color: idx === 2 ? 'common.white' : 'grey.500', ml: idx === 1 ? 1 : 0 }}
               >
-                {word}
+                {word}{idx == titleText.split(' ').length - 2 ? ' ' : ''}
               </Box>
             ))}
           </Typography>
