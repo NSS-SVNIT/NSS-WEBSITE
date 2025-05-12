@@ -22,6 +22,8 @@ import Carousel from "react-material-ui-carousel";
 import photo2018 from "./2018.jpg";
 import photo2019 from "./2019.jpg";
 import photo2020 from "./2020.jpg";
+import photo2021 from "./2021.jpg";
+import photo2022 from "./2022.jpg";
 import founder from "./founder.jpg";
 
 const items = [
@@ -66,11 +68,26 @@ const items = [
 		name: "Shubham Chandak",
 		description:
 			"Dear Readers, I hope this message finds you in the best of spirits. It is with immense gratitude that I reflect on my journey with the NSS Unit SVNIT, an organization that has truly become a second family to me. The NSS Unit SVNIT has consistently dedicated itself to community service, all while ensuring the holistic development of its volunteers. Our guiding motto, 'NOT ME BUT YOU' is a testament to the selflessness and commitment that each volunteer embodies.To the current batch of volunteers, I extend my heartfelt best wishes for your ongoing NSS activities. Your dedication and hard work continue to raise the bar and inspire all of us. Keep up the excellent work, and continue to make a difference in the community and yourselves.",
-		imageUrl:
-			"https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/team%20page%2F2021%2FShubham.jpg?alt=media&token=162ebe8b-3068-46ba-861a-f98823c12647",
+		imageUrl: photo2021,
 		role: "Convenor",
 		year: "Batch 2021",
 	},
+{
+	title: "Message From Our Convenor Batch 2022",
+	name: "Shrishti Arya",
+	description: `As I look back on our journey so far, I am filled with a sense of pride and appreciation for the incredible work we've done together. Each step we’ve taken, every challenge we’ve faced, and all the moments of success reflect our dedication and hard work. The NSS Unit SVNIT has been more than just an organization – it's a family that thrives on compassion, empathy, and service. Through our diverse activities and outreach programs, we've not only made a difference in the lives of many but also grown as individuals, learning leadership, teamwork, and community spirit.
+
+Our motto, "NOT ME BUT YOU," serves as a constant reminder of the selfless spirit that drives us. It’s not just a motto; it’s a way of life that we carry in every action, every programs, and every interaction.
+
+Dedication, devotion, and discipline are the three pillars on which our unit stands, together, these principles have empowered us to bring delta change, not just in the communities we serve, but also within ourselves.
+
+To the team, I offer my sincerest appreciation for the tireless efforts you all are putting to take NSS SVNIT beyond the limits.
+Keep Going, Keep Shining!!!`,
+	imageUrl:photo2022 ,
+	role: "Convenor",
+	year: "Batch 2022",
+}
+,
 ];
 
 // Custom Navigation Button component for better accessibility

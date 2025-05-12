@@ -13,6 +13,8 @@ import { useTheme } from "@mui/material/styles";
 import NavDialog from "./NavDialog";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import NavButton from "../UI/NavButton";
+import nsslogo from "../../assets/nss_logo.jpg";
+import svnitlogo from "../../assets/svnit_logo.png";
 
 export default function NavBar() {
   const theme = useTheme();
@@ -103,7 +105,7 @@ export default function NavBar() {
             <NavLink to="/" onClick={scrollToTop}>
               <Avatar
                 alt="Logo"
-                src="https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/aboutImages%2Fnss_logo.jpg?alt=media&token=860074c2-3cf7-4e5d-86b4-f4bc61a37626"
+                src={nsslogo}
                 sx={{
                   width: isPhone ? 40 : 75,
                   height: isPhone ? 40 : 75,
@@ -115,7 +117,7 @@ export default function NavBar() {
             <NavLink to="/" onClick={scrollToTop}>
               <Avatar
                 alt="Logo"
-                src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/NIT_Surat_Logo.svg/300px-NIT_Surat_Logo.svg.png"
+                src={svnitlogo}
                 sx={{
                   width: isPhone ? 40 : 75,
                   height: isPhone ? 40 : 75,
