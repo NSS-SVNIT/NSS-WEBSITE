@@ -1,23 +1,17 @@
-import React from "react";
-import Button from "@mui/material/Button";
 import {
-	Stack,
-	Dialog,
-	DialogTitle,
-	DialogContent,
-	DialogActions,
+	Avatar,
 	Box,
-	Typography,
+	Divider,
+	Drawer,
+	List,
 	ListItem,
 	ListItemButton,
 	ListItemText,
-	Drawer,
-	Divider,
-	List,
-	Avatar,
+	Stack,
+	Typography,
 } from "@mui/material";
-import NavButton from "../UI/NavButton";
 import { NavLink } from "react-router-dom";
+import NavButton from "../UI/NavButton";
 const drawerWidth = 240;
 const navItems = [
 	{ route: "About", link: "/about" },
@@ -25,6 +19,7 @@ const navItems = [
 	{ route: "Gallery", link: "/gallery" },
 	{ route: "Articles", link: "/articles" },
 	{ route: "Team", link: "/team" },
+	{ route: "Join Team", link: "/team/volunteer" },
 	{ route: "Contact", link: "/contact" },
 ];
 const scrollToTop = () => {

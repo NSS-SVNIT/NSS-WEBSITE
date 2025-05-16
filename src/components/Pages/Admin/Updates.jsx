@@ -1,14 +1,25 @@
-import { Box, Card, CardActionArea, TextField } from "@mui/material";
-import React from "react";
+import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
 import SortableList from "./SortableList";
 
 export default function Updates() {
-  const updates = ["Update 1", "Update 2", "Update 3", "Update 4"];
+	const theme = useTheme();
+	const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-  return (
-    <Box sx={{ fontFamily: "DM Sans" }}>
-      <SortableList />
-      {/* <TextField variant="filled" fullWidth label="New Update" /> */}
-    </Box>
-  );
+	return (
+		<Stack
+			sx={{
+				fontFamily: "DM Sans",
+				width: "100%",
+				alignItems: "center",
+			}}>
+			<Box
+				sx={{
+					width: isMobile ? "100%" : "80%",
+					maxWidth: "600px",
+				}}>
+				<SortableList />
+			</Box>
+			{/* <TextField variant="filled" fullWidth label="New Update" /> */}
+		</Stack>
+	);
 }
