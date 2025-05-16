@@ -2,6 +2,7 @@ import React from "react";
 import { Grid } from "@mui/material";
 import HeroText from "../../HeroText";
 import UpdateCard from "../../UpdateCard";
+import Background from "./backgroundHeroSection.jpg";
 
 const HeroSection = React.memo(() => {
 	const isPhone = false;
@@ -9,7 +10,7 @@ const HeroSection = React.memo(() => {
 		<div
 			style={{
 				marginTop: "-64px",
-				backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/aboutImages%2Fbg1.jpg?alt=media&token=b828c754-67a8-476d-8423-614817a3b1eb)`,
+				backgroundImage: `url(${Background})`,
 				height: "100vh",
 				backgroundSize: "cover", // Adjust the background size property
 				backgroundPosition: "center", // Center the background image
