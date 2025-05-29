@@ -76,7 +76,8 @@ export class CustomDateFnsAdapter extends AdapterDateFns {
 				console.warn(
 					`Unknown format string "${formatString}", using fallback format`
 				);
-				return format(date, "dd/MM/yyyy");			}
+				return format(date, "dd/MM/yyyy");
+			}
 		};
 	}
 }
