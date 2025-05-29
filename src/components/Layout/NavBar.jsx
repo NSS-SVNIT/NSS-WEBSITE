@@ -164,11 +164,12 @@ export default function NavBar() {
 					</Stack>
 					{isPhone ? (
 						<IconButton
+							onClick={handleMenuClick}
 							size="large"
 							edge="end"
 							color={scrolling ? "inherit" : "default"}
 							aria-label="menu">
-							<MenuIcon onClick={handleMenuClick} />
+							<MenuIcon />
 						</IconButton>
 					) : (
 						<Box>

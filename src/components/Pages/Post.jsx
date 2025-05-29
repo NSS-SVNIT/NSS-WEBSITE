@@ -43,6 +43,7 @@ const Post = () => {
             venue = {postData.Venue}
             eventDate={postData.Eventdate}
             description={postData.description}
+            image={postData.image}
           />
         </Grid>
       </Grid>
