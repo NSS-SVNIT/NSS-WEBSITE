@@ -1,5 +1,7 @@
-import DeleteIcon from "@mui/icons-material/Delete";
-import DragHandleIcon from "@mui/icons-material/DragHandle";
+import React, { useEffect, useState } from "react";
+import { Container, Draggable } from "react-smooth-dnd";
+import { arrayMoveImmutable } from "array-move";
+import { firestore } from "../../../firebase";
 import {
 	List,
 	ListItem,
@@ -8,7 +10,8 @@ import {
 	ListItemText,
 	TextField,
 } from "@mui/material";
-import { arrayMoveImmutable } from "array-move";
+import DragHandleIcon from "@mui/icons-material/DragHandle";
+import DeleteIcon from "@mui/icons-material/Delete";
 import {
 	addDoc,
 	collection,
@@ -17,9 +20,6 @@ import {
 	getDocs,
 	updateDoc,
 } from "firebase/firestore"; // Import Firestore related functions
-import { useEffect, useState } from "react";
-import { Container, Draggable } from "react-smooth-dnd";
-import { firestore } from "../../../firebase";
 
 function SortableList() {
 	const [items, setItems] = useState([]);
@@ -36,7 +36,7 @@ function SortableList() {
 					index: doc.data().index,
 				}));
 				setItems(loadedItems.sort((a, b) => a.index - b.index));
-				// console.log(items); // Removed
+				console.log(items);
 			});
 		};
 
@@ -65,9 +65,9 @@ function SortableList() {
 					index: rearrangedItems[i].index,
 				});
 			}
-			// console.log("Items rearranged on Firestore collection"); // Removed
+			console.log("Items rearranged on Firestore collection");
 		} catch (error) {
-			// console.error("Error rearranging items: ", error); // Kept as error
+			console.error("Error rearranging items: ", error);
 		}
 	};
 
@@ -76,9 +76,9 @@ function SortableList() {
 		try {
 			const docRef = doc(firestore, "updates", id);
 			await deleteDoc(docRef);
-			// console.log("Document deleted with ID: ", id); // Removed
+			console.log("Document deleted with ID: ", id);
 		} catch (error) {
-			// console.error("Error deleting document: ", error); // Kept as error
+			console.error("Error deleting document: ", error);
 		}
 
 		// Delete the item from the local state
@@ -98,9 +98,9 @@ function SortableList() {
 				text: newItemText,
 				index: items.length + 1,
 			});
-			// console.log("New item added with ID: ", docRef.id); // Removed
+			console.log("New item added with ID: ", docRef.id);
 		} catch (error) {
-			// console.error("Error adding new item: ", error); // Kept as error
+			console.error("Error adding new item: ", error);
 		}
 
 		// Add the new item to the local state

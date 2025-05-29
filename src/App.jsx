@@ -1,5 +1,6 @@
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import { Fab } from "@mui/material";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import React, { memo, Suspense } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
@@ -22,6 +23,7 @@ import Team from "./components/Pages/Team/Team";
 import TeamBatchPage from "./components/Pages/Team/TeamBatchPage";
 import VolunteerPage from "./components/Pages/Team/VolunteerPage";
 import Loader from "./components/UI/Loader";
+import { CustomDateFnsAdapter } from "./utils/dateFnsAdapter";
 const MemoizedAbout = memo(About);
 const MemoizedGallery = memo(Gallery);
 const MemoizedAdmin = memo(Admin);
@@ -53,70 +55,78 @@ function App() {
 				<Loader />
 			) : (
 				<Suspense fallback={<div></div>}>
-					<Router>
-						<Routes>
-							<Route path="/about" element={<MemoizedAbout />} />
-							<Route
-								path="/gallery"
-								element={<MemoizedGallery />}
-							/>
-							<Route path="/admin" element={<MemoizedAdmin />} />
-							<Route
-								path="/Developers"
-								element={<MemoizedDevelopers />}
-							/>
-							<Route
-								path="/articles"
-								element={<MemoizedArticles />}
-							/>
-							<Route
-								path="/newarticle"
-								element={<MemoizedNewarticle />}
-							/>
-							<Route
-								path="/newpost"
-								element={<MemoizedNewPost />}
-							/>
-							<Route
-								path="/events"
-								element={<MemoizedEvents />}
-							/>{" "}
-							<Route
-								exact
-								path="/team"
-								element={<MemoizedTeam />}
-							/>
-							<Route
-								path="/team/:year"
-								element={<MemoizedTeamBatchPage />}
-							/>{" "}
-							<Route
-								path="/team/volunteer"
-								element={<MemoizedVolunteerPage />}
-							/>{" "}
-							<Route
-								path="/admin-login"
-								element={<MemoizedAdminLogin />}
-							/>
-							<Route
-								path="/team/admin"
-								element={
-									<AuthGuard>
-										<MemoizedAdminPage />
-									</AuthGuard>
-								}
-							/>
-							<Route
-								path="/contact"
-								element={<MemoizedContact />}
-							/>
-							<Route
-								path="/events/:id"
-								element={<MemoizedPost />}
-							/>
-							<Route path="/" element={<MemoizedHome />} />
-						</Routes>
-					</Router>
+					<LocalizationProvider dateAdapter={CustomDateFnsAdapter}>
+						<Router>
+							<Routes>
+								<Route
+									path="/about"
+									element={<MemoizedAbout />}
+								/>
+								<Route
+									path="/gallery"
+									element={<MemoizedGallery />}
+								/>
+								<Route
+									path="/admin"
+									element={<MemoizedAdmin />}
+								/>
+								<Route
+									path="/Developers"
+									element={<MemoizedDevelopers />}
+								/>
+								<Route
+									path="/articles"
+									element={<MemoizedArticles />}
+								/>
+								<Route
+									path="/newarticle"
+									element={<MemoizedNewarticle />}
+								/>
+								<Route
+									path="/newpost"
+									element={<MemoizedNewPost />}
+								/>
+								<Route
+									path="/events"
+									element={<MemoizedEvents />}
+								/>{" "}
+								<Route
+									exact
+									path="/team"
+									element={<MemoizedTeam />}
+								/>
+								<Route
+									path="/team/:year"
+									element={<MemoizedTeamBatchPage />}
+								/>{" "}
+								<Route
+									path="/team/volunteer"
+									element={<MemoizedVolunteerPage />}
+								/>{" "}
+								<Route
+									path="/admin-login"
+									element={<MemoizedAdminLogin />}
+								/>
+								<Route
+									path="/team/admin"
+									element={
+										<AuthGuard>
+											<MemoizedAdminPage />
+										</AuthGuard>
+									}
+								/>
+								<Route
+									path="/contact"
+									element={<MemoizedContact />}
+								/>
+								<Route
+									path="/events/:id"
+									element={<MemoizedPost />}
+								/>
+								<Route path="/" element={<MemoizedHome />} />
+							</Routes>{" "}
+						</Router>
+					</LocalizationProvider>
 					<ScrollTop>
 						<Fab
 							size="small"

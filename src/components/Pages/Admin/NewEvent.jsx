@@ -10,7 +10,6 @@ import {
 	useMediaQuery,
 	useTheme,
 } from "@mui/material";
-import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import Compressor from "compressorjs";
@@ -19,6 +18,7 @@ import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { useEffect, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { firestore, storage } from "../../../firebase";
+import { CustomDateFnsAdapter } from "../../../utils/dateFnsAdapter";
 import BlogPost from "../Post/BlogPost";
 
 export default function NewEvent() {
@@ -44,8 +44,8 @@ export default function NewEvent() {
 	const [imageFile, setImageFile] = useState(null);
 	const [imagePreview, setImagePreview] = useState(null);
 
-	// Format date manually for eventDate
-	const formatEventDate = (date) => {
+	// Format date manually for Eventdate
+	const formatEventdate = (date) => {
 		const months = [
 			"January",
 			"February",
@@ -71,8 +71,8 @@ export default function NewEvent() {
 		title: "",
 		timestamp: today.getTime(), // For sorting events
 		content: [], // Content paragraphs
-		eventDate: formatEventDate(today), // Actual date of the event
-		venue: "",
+		Eventdate: formatEventdate(today), // Actual date of the event
+		Venue: "",
 		description: "",
 		image: "",
 		readingTime: "1", // Automatically calculated
@@ -91,8 +91,8 @@ export default function NewEvent() {
 				return;
 			}
 
-			if (!postData.venue.trim()) {
-				setSnackbarMessage("Please enter a venue for the event");
+			if (!postData.Venue.trim()) {
+				setSnackbarMessage("Please enter a Venue for the event");
 				setSnackbarSeverity("error");
 				setSnackbarOpen(true);
 				return;
@@ -204,7 +204,7 @@ export default function NewEvent() {
 		setSelectedDate(newDate);
 		setPostData((prev) => ({
 			...prev,
-			eventDate: formatEventDate(newDate),
+			Eventdate: formatEventdate(newDate),
 		}));
 	};
 	// Update reading time when description changes
@@ -302,7 +302,7 @@ export default function NewEvent() {
 	useEffect(() => {
 		// Check if there are unsaved changes
 		const hasUnsavedChanges =
-			postData.title || postData.venue || postData.description || text;
+			postData.title || postData.Venue || postData.description || text;
 
 		// Function to warn users before leaving
 		const handleBeforeUnload = (event) => {
@@ -321,7 +321,7 @@ export default function NewEvent() {
 		return () => {
 			window.removeEventListener("beforeunload", handleBeforeUnload);
 		};
-	}, [postData.title, postData.venue, postData.description, text]);
+	}, [postData.title, postData.Venue, postData.description, text]);
 
 	// Handle image file selection
 	const handleFileChange = (event) => {
@@ -488,15 +488,17 @@ export default function NewEvent() {
 						onChange={handleChange("title")}
 						fullWidth
 						placeholder="E.g., Blood Donation Camp"
-					/>
+					/>{" "}
 					<Stack direction={isMobile ? "column" : "row"} spacing={2}>
+						{" "}
 						<LocalizationProvider
-							dateAdapter={AdapterDateFns}
+							dateAdapter={CustomDateFnsAdapter}
 							sx={{ flex: 1 }}>
 							<DatePicker
 								label="Event Date *"
 								value={selectedDate}
 								onChange={handleDateChange}
+								format="dd/MM/yyyy"
 								slotProps={{
 									textField: {
 										variant: "outlined",
@@ -511,12 +513,12 @@ export default function NewEvent() {
 						variant="outlined"
 						label="Venue *"
 						size="small"
-						value={postData.venue}
-						onChange={handleChange("venue")}
+						value={postData.Venue}
+						onChange={handleChange("Venue")}
 						fullWidth
 						placeholder="E.g., Main Auditorium, SVNIT"
 						sx={{ flex: 1 }}
-						helperText="Enter the complete venue (building, institution, etc.)"
+						helperText="Enter the complete Venue (building, institution, etc.)"
 					/>
 					<Box sx={{ width: "100%" }}>
 						<Typography
@@ -824,13 +826,12 @@ export default function NewEvent() {
 							</Button>
 						)}
 					</Box>
-
 					<BlogPost
 						title={postData.title}
 						content={text}
 						readingTime={postData.readingTime}
-						eventDate={postData.eventDate}
-						venue={postData.venue}
+						Eventdate={postData.Eventdate}
+						Venue={postData.Venue}
 						description={postData.description}
 						image={postData.image}
 					/>

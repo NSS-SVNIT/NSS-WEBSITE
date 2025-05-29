@@ -1,5 +1,6 @@
 {
-    "rewrites":  [
-      {"source": "/(.*)", "destination": "/"}
-    ]
-  }
+	"rewrites": [{ "source": "/(.*)", "destination": "/" }],
+	"buildCommand": "pnpm install date-fns@2.30.0 --save-exact && pnpm install glob@10.3.10 --save-dev && pnpm install && node scripts/patch-date-fns.js && node scripts/patch-mui-adapter.js && pnpm build",
+	"installCommand": "pnpm install",
+	"framework": "vite"
+}
