@@ -4,39 +4,27 @@ import { Typewriter } from "react-simple-typewriter";
 import remarkGfm from "remark-gfm";
 
 const BlogPost = React.memo((props) => {
-	const today = new Date();
-	const year = today.getFullYear();
-	const month = today.getMonth() + 1; // Note: months are zero-based
-	const day = today.getDate();
-	// const date = `${day}/${month}/${year}`;
-
-	// const hrStyle = {
-	//   height: "1px",
-	//   width: "100%",
-	//   backgroundColor: "black",
-	//   border: "none",
-	//   margin: "10px 0", // Adjust the margin as needed
-	// };
-
 	return (
 		<Stack alignItems={"center"} sx={{ px: 5, width: "100%" }}>
 			<Stack sx={{ width: "100%" }}>
 				<Box
 					sx={{
 						fontFamily: "DM Sans",
-						fontSize: "4em",
+						fontSize: "3em",
 						width: "100%",
 					}}>
-					<Typewriter
-						words={props.title && props.title.split()}
-						typeSpeed={70}
-					/>
+					{props.title}
 				</Box>
 				<Stack
 					direction="row"
 					justifyContent={"space-between"}
 					alignItems={"flex-end"}>
-					<Box sx={{ fontFamily: "DM Sans", color: "grey" }}>
+					<Box
+						sx={{
+							fontFamily: "DM Sans",
+							color: "grey",
+							fontStyle: "italic",
+						}}>
 						{props.eventDate && (
 							<div>
 								Date: <u>{props.eventDate}</u>
@@ -50,6 +38,27 @@ const BlogPost = React.memo((props) => {
 					</Box>
 				</Stack>
 				<br />
+				{props.image && (
+					<Box
+						sx={{
+							mb: 2,
+							width: "100%",
+							height: "80%",
+							borderRadius: 1,
+							overflow: "hidden",
+						}}>
+						<img
+							src={props.image}
+							alt={props.title || "Event Image"}
+							style={{
+								width: "100%",
+								maxHeight: "80%",
+								objectFit: "cover",
+							}}
+						/>
+					</Box>
+				)}
+
 				{props.description && (
 					<Typography>Summary: {props.description}</Typography>
 				)}
