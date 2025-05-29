@@ -16,7 +16,7 @@ import {
 	default as formatWithOptionsDefault,
 } from "date-fns/format";
 import formatDistanceDefault from "date-fns/formatDistance";
-import formatISODefault from "date-fns/getISODay";
+import formatISODefault from "date-fns/formatISO";
 import getDateDefault from "date-fns/getDate";
 import getDaysInMonthDefault from "date-fns/getDaysInMonth";
 import getHoursDefault from "date-fns/getHours";
