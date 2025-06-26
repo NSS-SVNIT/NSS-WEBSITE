@@ -1,59 +1,86 @@
+// src/components/MemoriesText.js
+
 import React, { memo } from "react";
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import './MemoriesText.css'
+import { motion } from "framer-motion";
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+
+// Animation variants for each text block
+const textBlockVariants = {
+	hidden: { opacity: 0, y: 50 },
+	visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
+
 const Memories = memo(() => {
-  return (
-    <Box sx={{ flexBasis: "60%",maxWidth:{xs:"90%",sm:"100%"},ml:{xs:"15px",sm:"0px"} }}>
-      <Typography
-        sx={{
-          fontSize: {xs:"3rem",sm:"5rem"},
-          fontFamily: "Poppins",
-          fontWeight: "100",
-        }}
-      >
-        Collected awesome{" "}
-        <Typography
-          sx={{
-            fontWeight: "400",
-            fontSize: {xs:"4rem",sm:"6rem"},
-            fontFamily: "Nothing You Could Do",
-          }}
-        >
-          Memories
-        </Typography>{" "}
-        over the year...
-      </Typography>
-      <p
-      className="memories-text"
-      >
-        NSS SVNIT organises various on-campus and off-campus activities aimed at
-        the integration of the community and generating widespread awareness
-        about prevailing social issues. We live by our motto
-        <b> ‘Not Me But You.’ </b>
-      </p>
-      <Stack direction="row" gap={1} sx={{ pt: 5}}>
-        <Link to="/gallery">
-          <Button
-            variant="outlined"
-            style={{
-              borderRadius: 0,
-              textTransform: "none",
-              height: "40px",
-              color: "black",
-              width: "200px",
-              border: "2px black solid",
-              fontSize: "1.1rem",
-              fontFamily: "DM Sans",
-            }}
-            disableElevation
-          >
-            EXPLORE GALLERY
-          </Button>
-        </Link>
-      </Stack>
-    </Box>
-  );
+	return (
+		<motion.div variants={textBlockVariants}>
+			<Stack sx={{ px: { xs: 3, lg: 10 } }} spacing={4}>
+				{/* The Heading */}
+				<Typography
+					component="h2"
+					sx={{
+						fontSize: { xs: "2.5rem", sm: "3.5rem" },
+						fontFamily: "Poppins",
+						fontWeight: 300,
+						lineHeight: 1.2,
+					}}
+				>
+					Collected awesome
+					<Typography
+						component="span"
+						sx={{
+							display: 'block', // Puts "Memories" on a new line
+							fontWeight: "400",
+							fontSize: { xs: "3.5rem", sm: "6rem" },
+							fontFamily: "Nothing You Could Do",
+							color: 'primary.light', // Use a theme color
+							textShadow: '0 0 15px rgba(13, 71, 161, 0.4)'
+						}}
+					>
+						Memories
+					</Typography>
+					over the years...
+				</Typography>
+
+				{/* The Paragraph */}
+				<Typography variant="body1" sx={{ color: 'grey.400', lineHeight: 1.8, textAlign: 'justify' }}>
+					NSS SVNIT organises various on-campus and off-campus activities aimed at
+					the integration of the community and generating widespread awareness
+					about prevailing social issues. We live by our motto{' '}
+					<b>‘Not Me But You.’</b>
+				</Typography>
+				
+				{/* The Button */}
+				<Box>
+					<Button
+						component={Link}
+						to="/gallery"
+						variant="contained"
+						size="large"
+						endIcon={<ArrowForwardIcon />}
+						sx={{
+							borderRadius: '50px',
+							textTransform: 'none',
+							fontSize: "1rem",
+							fontFamily: "DM Sans",
+							fontWeight: 'bold',
+							py: 1.5,
+							px: 4,
+							boxShadow: '0 4px 20px rgba(13, 71, 161, 0.5)',
+							transition: 'transform 0.3s ease',
+							'&:hover': {
+								transform: 'translateY(-3px)',
+								boxShadow: '0 6px 25px rgba(13, 71, 161, 0.7)',
+							}
+						}}
+					>
+						Explore Gallery
+					</Button>
+				</Box>
+			</Stack>
+		</motion.div>
+	);
 });
 
 export default Memories;

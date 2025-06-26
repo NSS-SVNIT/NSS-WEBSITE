@@ -1,127 +1,134 @@
-import React, { useState } from 'react';
-import { Typography, Card, CardContent, CardMedia, Link, Box } from '@mui/material';
+import React from 'react';
+import { Typography, Card, CardMedia, Link, Box, CardContent } from '@mui/material';
 import { LinkedIn, GitHub, Email } from '@mui/icons-material';
-import { useMediaQuery } from '@material-ui/core';
 
-// Card component for displaying Team information
-const TeamCard = React.memo(({ name, position, linkedin, github, gmail, firebase}) => {
-  const isMobile = useMediaQuery("(max-width:600px)");
-  const [isHovered, setIsHovered] = useState(false);
-  const hasLinkedIn = !!linkedin; // Check if the LinkedIn link is provided
-  const hasGitHub = !!github; // Check if the GitHub link is provided
-  const hasGmail = !!gmail; // Check if the Gmail link is provided
+const TeamCard = React.memo(({ name, position, linkedin, github, gmail, firebase }) => {
 
-  const handleHover = () => {
-    setIsHovered(true);
-  };
-
-  const handleLeave = () => {
-    setIsHovered(false);
-  };
-
-  const handleEmailClick = () => {
-    window.location.href = `mailto:${gmail}`;
+  const iconStyle = {
+    fontSize: '24px',
+    transition: 'transform 0.2s ease-in-out',
+    '&:hover': {
+      transform: 'scale(1.25)',
+    },
   };
 
   return (
     <Card
       sx={{
-        width: '200px',
-        maxHeight:'375px',
-        borderRadius: '16px',
-        transition: 'transform 0.3s ease',
+        display: 'flex',
+        flexDirection: 'column',
+        width: '100%',
+        maxWidth: '300px',
+        borderRadius: '20px',
         overflow: 'hidden',
+        transition: 'transform 0.4s ease, box-shadow 0.4s ease',
+        boxShadow: '0 8px 16px rgba(0,0,0,0.08)',
+        
         '&:hover': {
-          transform: 'scale(1.05)',
+          transform: 'translateY(-10px)',
+          boxShadow: '0 12px 24px rgba(0,0,0,0.15)',
+          '.card-media': {
+            transform: 'scale(1.1)',
+          },
+          '.social-icons': {
+            transform: 'translateY(0)',
+            opacity: 1,
+            height: 'auto',
+            marginTop: '16px',
+          },
         },
       }}
-      onMouseEnter={handleHover}
-      onMouseLeave={handleLeave}
     >
-      <CardMedia
-        component="img"
-        loading='lazy'
-        height={isHovered ? '200px' : '260px'}
-        image={firebase}
-        alt={name}
+      {/* ===== IMAGE CONTAINER ===== */}
+      <Box
         sx={{
-          transition: 'height 0.3s ease',
-        }}
-      />
-      <CardContent
-        sx={{
-          transition: 'transform 0.3s ease',
-          transform: isHovered ? 'translateY(-10px)' : 'translateY(0)',
+          width: '100%',
+          aspectRatio: '4 / 5',
+          overflow: 'hidden',
+          position: 'relative', // This is required for the absolute positioning of the gradient
         }}
       >
-        <Typography variant="subtitle1" color="textSecondary" sx={{ fontSize: '12', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          {position}
-        </Typography>
-        <Typography variant="h6" sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <CardMedia
+          className="card-media"
+          component="img"
+          loading="lazy"
+          image={firebase}
+          alt={name}
+          sx={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            objectPosition: 'center top',
+            transform: 'scale(1)',
+            transition: 'transform 0.5s ease-in-out',
+          }}
+        />
+
+        {/* --- NEW GRADIENT OVERLAY --- */}
+        {/* This Box sits on top of the image to apply the gradient effect. */}
+        <Box
+          sx={{
+            position: 'absolute',
+            bottom: 0,
+            left: 0,
+            width: '100%',
+            height: '35%',
+            // The gradient starts black at the bottom and fades to transparent.
+            background: 'linear-gradient(to top, rgba(0, 0, 0, 0.75) 10%, transparent 100%)',
+            // This is crucial! It allows mouse events (like hover) to pass through the gradient to the elements underneath.
+            pointerEvents: 'none',
+          }}
+        />
+        {/* --- END OF GRADIENT OVERLAY --- */}
+
+      </Box>
+
+      {/* ===== TEXT & SOCIALS CONTENT AREA ===== */}
+      <CardContent
+        sx={{
+          textAlign: 'center',
+          p: 2.5,
+          backgroundColor: 'background.paper',
+        }}
+      >
+        <Typography 
+          variant="h6" 
+          sx={{ fontWeight: '600', lineHeight: 1.2 }}
+        >
           {name}
         </Typography>
+        <Typography 
+          variant="body2" 
+          color="text.secondary"
+        >
+          {position}
+        </Typography>
+
         <Box
+          className="social-icons"
           sx={{
             display: 'flex',
             justifyContent: 'center',
-            marginTop: '10px',
-            opacity: isHovered ? 1 : 0,
-            transition: 'opacity 0.3s ease',
+            gap: 2.5,
+            opacity: 0,
+            height: 0,
+            transform: 'translateY(10px)',
+            transition: 'all 0.4s ease',
           }}
         >
-          {hasLinkedIn && (
-            <Link
-              href={linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              color="inherit"
-              sx={{
-                marginTop:'10px',
-                marginRight: '10px',
-                transition: 'color 0.3s ease',
-                '&:hover': {
-                  color: '#0077B5', // Change to desired LinkedIn color
-                },
-              }}
-            >
-              <LinkedIn fontSize="large" sx={{ fontSize: '38px' }} />
+          {linkedin && (
+            <Link href={linkedin} target="_blank" color="inherit">
+              <LinkedIn sx={{ ...iconStyle, '&:hover': { ...iconStyle['&:hover'], color: '#0077B5' } }} />
             </Link>
           )}
-          {hasGitHub && (
-            <Link
-              href={github}
-              target="_blank"
-              rel="noopener noreferrer"
-              color="inherit"
-              sx={{
-                marginTop:'10px',
-                marginRight: '10px',
-                transition: 'color 0.3s ease',
-                '&:hover': {
-                  color: '#6f42c1', // Change to desired GitHub color
-                },
-              }}
-            >
-              <GitHub fontSize="large" sx={{ fontSize: '38px' }} />
+          {github && (
+            <Link href={github} target="_blank" color="inherit">
+              <GitHub sx={{ ...iconStyle, '&:hover': { ...iconStyle['&:hover'], color: '#333' } }} />
             </Link>
           )}
-          {hasGmail && (
-            <Link
-              href={`mailto:${gmail}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              color="inherit"
-              onClick={handleEmailClick}
-              sx={{
-                marginTop:'10px',
-                marginLeft: '3px',
-                transition: 'color 0.3s ease',
-                '&:hover': {
-                  color: '#D44638', // Change to desired Gmail color
-                },
-              }}
-            >
-              <Email fontSize="large" sx={{ fontSize: '38px' }} />
+          {gmail && (
+            <Link href={`mailto:${gmail}`} color="inherit">
+              <Email sx={{ ...iconStyle, '&:hover': { ...iconStyle['&:hover'], color: '#EA4335' } }} />
             </Link>
           )}
         </Box>

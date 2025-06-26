@@ -1,285 +1,199 @@
 import React from "react";
 import Layout from "../Layout/Layout";
-import SendRoundedIcon from "@mui/icons-material/SendRounded";
-import MailIcon from "@mui/icons-material/Mail";
-import emailjs from "@emailjs/browser";
-import Swal from "sweetalert2";
-import { MapContainer, TileLayer, Popup, Marker } from "react-leaflet";
-
 import {
 	Box,
 	Grid,
-	List,
-	ListItem,
-	TextField,
 	Typography,
+	TextField,
 	Button,
-	ListItemText,
-	ListItemIcon,
-	useMediaQuery,
+	Stack,
+	IconButton,
+	Tooltip,
 } from "@mui/material";
-import { Facebook, Instagram, Twitter, YouTube } from "@mui/icons-material";
+import { Facebook, Instagram, Twitter, YouTube, Mail, SendRounded } from "@mui/icons-material";
+import { MapContainer, TileLayer, Popup, Marker } from "react-leaflet";
+import emailjs from "@emailjs/browser";
+import Swal from "sweetalert2";
+import { motion } from "framer-motion";
+
+// Animation variant for items fading/sliding in
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
 
 const Contact = () => {
-	const isMobile = useMediaQuery("(max-width:900px)");
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		emailjs
-			.sendForm(
-				import.meta.env.VITE_EMAILJS_SERVICE_ID,
-				import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-				e.target,
-				import.meta.env.VITE_EMAILJS_USER_ID
-			)
-			.then((result) => {
+		// Show loading state with SweetAlert2
+		Swal.fire({
+			title: 'Sending...',
+			text: 'Please wait.',
+			allowOutsideClick: false,
+			didOpen: () => {
+				Swal.showLoading();
+			},
+		});
+
+		emailjs.sendForm(
+			import.meta.env.VITE_EMAILJS_SERVICE_ID,
+			import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+			e.target,
+			import.meta.env.VITE_EMAILJS_USER_ID
+		).then(
+			(result) => {
 				console.log("Email sent successfully:", result.text);
 				Swal.fire({
-					icon: "success",
-					title: "Message sent sucessfully 👍",
+					icon: 'success',
+					title: 'Message Sent!',
+					text: 'Thank you for reaching out. We will get back to you soon.',
 				});
-			})
-			.catch((error) => {
+				e.target.reset();
+			},
+			(error) => {
 				console.log("Error sending email:", error);
 				Swal.fire({
-					icon: "error",
-					title: "Something went wrong!",
-					text: error.text,
+					icon: 'error',
+					title: 'Oops...',
+					text: 'Something went wrong! Please try again later.',
 				});
-			});
-		e.target.reset();
+			}
+		);
 	};
 
 	const position = [21.164583, 72.785239]; // Coordinates for SVnit location
-	const linkStyle = {
-		color: "inherit", // Inherit color from parent, which should be the default text color
-		textDecoration: "none", // Remove underline
-	};
+
+	// Social Media links data for easier mapping
+	const socialLinks = [
+		{ icon: <Instagram />, label: "Instagram", href: "https://www.instagram.com/nss_svnit" },
+		{ icon: <Facebook />, label: "Facebook", href: "https://www.facebook.com/p/NSS-SVNIT-100064799047910/" },
+		{ icon: <Twitter />, label: "Twitter", href: "https://twitter.com/nss_svnit" },
+		{ icon: <YouTube />, label: "YouTube", href: "https://www.youtube.com/@nsssvnit6353" },
+	];
+
 	return (
 		<Layout>
-			<Typography
-				variant={isMobile ? "h2" : "h1"}
-				alignItems="center"
-				justifyContent="center"
-				textAlign="center"
-				px="20%"
-				marginBottom="30px"
-				fontWeight={400}>
-				GET IN TOUCH
-			</Typography>
-			<Grid container direction={"column"}>
-				<div
-					style={{
-						borderRadius: 0,
-						textTransform: "none",
-						height: "80px",
-						width: isMobile ? "auto" : "300px",
-						marginTop: "10px",
-						alignItems: "center",
-						justifyContent: "center",
-						backgroundColor: "black",
-						// fontSize: "1.1rem",
-						fontFamily: "DM Sans",
-						margin: isMobile ? "5%" : "0 auto",
-						color: "white",
-						display: "flex",
-						// flexDirection: "column",
-						fontSize: "30px",
-					}}>
-					<span style={{ color: "grey", marginRight: "5px" }}>
-						LOCATE{" "}
-					</span>{" "}
-					<span style={{ color: "white" }}>US</span>
-				</div>
-				<Grid item lg={12} xs={4} sm={2} sx={{ px: 8, py: 4 }}>
-					<MapContainer
-						center={position}
-						zoom={13}
-						scrollWheelZoom={true}
-						style={{ width: "100%" }}>
-						<TileLayer
-							attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-							url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-						/>
-						<Marker position={position}>
-							<Popup>
-								<h1>Locate Us:</h1>
-								<b>NSS SVNIT</b>
-								<br />
-								SVNIT,Icchchanath, <br /> Dumas Road,Surat
-							</Popup>
-						</Marker>
-					</MapContainer>
-				</Grid>
-			</Grid>
+			<Box sx={{ px: { xs: 2, md: 4 }, py: { xs: 5, md: 10 }, overflow: 'hidden' }}>
+				{/* --- MAIN HEADING --- */}
+				<motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={itemVariants}>
+					<Typography variant="h2" sx={{ textAlign: 'center', mb: 1, fontWeight: 700 }}>
+						Get In Touch
+					</Typography>
+					<Typography color="text.secondary" sx={{ textAlign: 'center', maxWidth: '600px', mx: 'auto', mb: 8 }}>
+						We're here to help and answer any question you might have. We look forward to hearing from you.
+					</Typography>
+				</motion.div>
 
-			<Grid container spacing={3}>
-				<Grid item xs={12} md={6}>
-					<div
-						style={{
-							borderRadius: 0,
-							textTransform: "none",
-							height: "80px",
-							width: isMobile ? "auto" : "450px",
-							marginTop: "10px",
-							alignItems: "center",
-							justifyContent: "center",
-							backgroundColor: "black",
-							// fontSize: "1.1rem",
-							fontFamily: "DM Sans",
-							margin: isMobile ? "5%" : "0 auto",
-							color: "white",
-							display: "flex",
-							flexDirection: isMobile ? "column" : "row",
-							fontSize: "30px",
-						}}>
-						<span style={{ color: "grey", marginRight: "5px" }}>
-							{" "}
-							SEND YOUR{" "}
-						</span>
-						MESSAGE HERE
-					</div>
-					<Box
-						// component="form"
-						noValidate
-						sx={{ m: 3, mx: "auto", width: "80%" }}>
-						<form autoComplete="off" onSubmit={handleSubmit}>
-							<TextField
-								margin="normal"
-								required
-								fullWidth
-								id="name"
-								label="Name"
-								name="name"
-								autoComplete="name"
-								autoFocus
-								error={false}
-								sx={{ width: "100%" }}
-							/>
-							<TextField
-								margin="normal"
-								required
-								fullWidth
-								id="email"
-								label="Email"
-								name="email"
-								autoComplete="email"
-								autoFocus
-								sx={{ width: "100%" }}
-							/>
-							<TextField
-								margin="normal"
-								multiline
-								rows={5}
-								required
-								fullWidth
-								id="message"
-								label="Message"
-								name="message"
-								autoFocus
-								sx={{ width: "100%" }}
-							/>
-							<Button
-								variant="contained"
-								type="submit"
-								endIcon={<SendRoundedIcon />}
-								sx={{ mt: 2, backgroundColor: "black" }}>
-								Send
-							</Button>
-						</form>
+				{/* --- FORM & CONTACT DETAILS GRID --- */}
+				<Grid container spacing={{ xs: 5, md: 8 }}>
+					{/* --- FORM SECTION --- */}
+					<Grid item xs={12} md={7}>
+						<motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={itemVariants}>
+							<Box sx={{ p: { xs: 2, sm: 4 }, bgcolor: 'action.hover', borderRadius: 4 }}>
+								<Typography variant="h4" gutterBottom sx={{ fontWeight: 600, mb: 3 }}>
+									Send us a Message
+								</Typography>
+								<form autoComplete="off" onSubmit={handleSubmit}>
+									<Grid container spacing={3}>
+										<Grid item xs={12} sm={6}>
+											<TextField required fullWidth name="name" label="Your Name" variant="filled" />
+										</Grid>
+										<Grid item xs={12} sm={6}>
+											<TextField required fullWidth name="email" type="email" label="Your Email" variant="filled" />
+										</Grid>
+										<Grid item xs={12}>
+											<TextField required fullWidth multiline rows={6} name="message" label="Your Message" variant="filled" />
+										</Grid>
+										<Grid item xs={12}>
+											<Button
+												type="submit"
+												variant="contained"
+												size="large"
+												endIcon={<SendRounded />}
+												sx={{ fontWeight: 600, px: 4, py: 1.5 }}
+											>
+												Send Message
+											</Button>
+										</Grid>
+									</Grid>
+								</form>
+							</Box>
+						</motion.div>
+					</Grid>
+
+					{/* --- CONTACT DETAILS SECTION --- */}
+					<Grid item xs={12} md={5}>
+						<motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={itemVariants}>
+							<Stack spacing={4}>
+								<Box>
+									<Typography variant="h5" gutterBottom sx={{ fontWeight: 600 }}>
+										Contact Details
+									</Typography>
+									<Stack direction="row" alignItems="center" spacing={2} sx={{ mb: 1 }}>
+										<Mail color="primary" />
+										<Typography variant="body1">
+											<a href="mailto:nss@svnit.ac.in" style={{ textDecoration: 'none', color: 'inherit' }}>
+												nss@svnit.ac.in
+											</a>
+										</Typography>
+									</Stack>
+								</Box>
+								<Box>
+									<Typography variant="h5" gutterBottom sx={{ fontWeight: 600 }}>
+										Follow Us
+									</Typography>
+									<Stack direction="row" spacing={1}>
+										{socialLinks.map((link) => (
+											<Tooltip title={link.label} key={link.label} arrow>
+												<IconButton
+													component="a"
+													href={link.href}
+													target="_blank"
+													rel="noopener noreferrer"
+													sx={{ color: 'text.secondary', '&:hover': { color: 'primary.main' } }}
+												>
+													{link.icon}
+												</IconButton>
+											</Tooltip>
+										))}
+									</Stack>
+								</Box>
+							</Stack>
+						</motion.div>
+					</Grid>
+				</Grid>
+
+				{/* --- MAP SECTION --- */}
+				<motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={itemVariants}>
+					<Box sx={{ mt: { xs: 8, md: 12 } }}>
+						<Typography variant="h3" sx={{ textAlign: 'center', mb: 4, fontWeight: 700 }}>
+							Find Us Here
+						</Typography>
+						<Box sx={{ height: '450px', width: '100%', borderRadius: 4, overflow: 'hidden', boxShadow: 3 }}>
+							<MapContainer center={position} zoom={15} scrollWheelZoom={false} style={{ height: "100%", width: "100%" }}>
+								{/* Using a beautiful monochrome map style */}
+								<TileLayer
+									attribution='© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors © <a href="https://carto.com/attributions">CARTO</a>'
+									url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+								/>
+								<Marker position={position}>
+									<Popup>
+										<b>NSS SVNIT</b> <br /> SVNIT Campus, Ichchhanath, Surat.
+									</Popup>
+								</Marker>
+							</MapContainer>
+						</Box>
 					</Box>
-				</Grid>
-
-				<Grid item xs={12} md={6}>
-					<div
-						style={{
-							borderRadius: 0,
-							textTransform: "none",
-							height: "80px",
-							width: isMobile ? "auto" : "350px",
-							marginTop: "10px",
-							alignItems: "center",
-							justifyContent: "center",
-							backgroundColor: "black",
-							// fontSize: "1.1rem",
-							fontFamily: "DM Sans",
-							margin: isMobile ? "5%" : "0 auto",
-							color: "white",
-							display: "flex",
-							// flexDirection: "column",
-							fontSize: "30px",
-							marginBottom: "20px",
-						}}>
-						<span style={{ color: "grey", marginRight: "5px" }}>
-							CONTACT
-						</span>
-						DETAILS
-					</div>
-					<List
-						sx={{
-							m: 3,
-							mx: isMobile ? "none" : "auto",
-							width: "50%",
-						}}>
-						<ListItem
-							component="a"
-							href="mailto:nss@svnit.ac.in"
-							target="_blank"
-							rel="noopener noreferrer"
-							style={linkStyle}>
-							<ListItemIcon>
-								<MailIcon />
-							</ListItemIcon>
-							<ListItemText primary="nss@svnit.ac.in" />
-						</ListItem>
-						<ListItem
-							component="a"
-							href="https://www.instagram.com/nss_svnit"
-							target="_blank"
-							rel="noopener noreferrer"
-							style={linkStyle}>
-							<ListItemIcon>
-								<Instagram />
-							</ListItemIcon>
-							<ListItemText primary="@nss_svnit" />
-						</ListItem>
-						<ListItem
-							component="a"
-							href="https://www.facebook.com/p/NSS-SVNIT-100064799047910/"
-							target="_blank"
-							rel="noopener noreferrer"
-							style={linkStyle}>
-							<ListItemIcon>
-								<Facebook />
-							</ListItemIcon>
-							<ListItemText primary="nss_svnit" />
-						</ListItem>
-						<ListItem
-							component="a"
-							href="https://twitter.com/nss_svnit"
-							target="_blank"
-							rel="noopener noreferrer"
-							style={linkStyle}>
-							<ListItemIcon>
-								<Twitter />
-							</ListItemIcon>
-							<ListItemText primary="nss_svnit" />
-						</ListItem>
-						<ListItem
-							component="a"
-							href="https://www.youtube.com/@nsssvnit6353"
-							target="_blank"
-							style={linkStyle}
-							rel="noopener noreferrer">
-							<ListItemIcon>
-								<YouTube />
-							</ListItemIcon>
-							<ListItemText primary="NSS SVNIT" />
-						</ListItem>
-					</List>
-				</Grid>
-			</Grid>
-
+				</motion.div>
+			</Box>
 		</Layout>
 	);
 };

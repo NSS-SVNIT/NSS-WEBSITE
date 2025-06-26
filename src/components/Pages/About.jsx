@@ -1,466 +1,344 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { getStorage, ref, getDownloadURL } from "firebase/storage";
+import { motion } from "framer-motion";
+
+// MUI Components
+import {
+	Typography,
+	Box,
+	Grid,
+	Button,
+	Container,
+	Paper,
+	styled,
+} from "@mui/material";
+import {
+	TrackChanges as TrackChangesIcon,
+	Visibility as VisibilityIcon,
+} from "@mui/icons-material";
+
+// Local Components
 import Layout from "../Layout/Layout";
 import ComitteeSection from "./Home/ComitteeSection";
 import DutySection from "./Home/DutySection";
-import { motion } from "framer-motion";
-import { Typography, Box, Grid, Button, useMediaQuery } from "@mui/material";
-import { makeStyles } from "@material-ui/core/styles";
-import { useState } from "react";
-import { getStorage, ref, getDownloadURL } from "firebase/storage";
-import { Link } from "react-router-dom";
 
+// Styled Components for a cleaner and more reusable approach
+const PageContainer = styled("div")(({ theme }) => ({
+	background: " linear-gradient(180deg, #f5faff 0%, #eef6ff 100%)",
+	overflow: "hidden", // Prevents horizontal scroll on the main container
+}));
 
-const useStyles = makeStyles({
-	gradientBackground: {
-		background: "linear-gradient(to bottom, #ffebff, #FFE6FF)",
+const HeroSection = styled(Box)(({ theme }) => ({
+	textAlign: "center",
+	padding: theme.spacing(12, 2, 8),
+	[theme.breakpoints.down("sm")]: {
+		padding: theme.spacing(8, 2, 6),
 	},
-});
+}));
+
+const InfoCard = styled(Paper)(({ theme }) => ({
+	padding: theme.spacing(4),
+	textAlign: "justify",
+	borderRadius: theme.shape.borderRadius * 2,
+	background: "#ffffff",
+	border: "1px solid #e0cce0",
+	boxShadow: "0px 8px 24px rgba(149, 157, 165, 0.1)",
+	height: "100%",
+}));
+
+const HistoryImageCircle = styled(Box)(({ theme }) => ({
+	position: "relative",
+	width: "100%",
+	paddingTop: "100%", // Creates a perfect circle aspect ratio
+	borderRadius: "50%",
+	background: "linear-gradient(145deg, #ffe0ff, #f8c7f8)",
+	boxShadow: "0px 20px 40px -10px rgba(204, 153, 204, 0.5)",
+	display: "flex",
+	alignItems: "center",
+	justifyContent: "center",
+	[theme.breakpoints.down("md")]: {
+		width: "70%",
+		paddingTop: "70%",
+		margin: "auto",
+		marginTop: theme.spacing(4),
+	},
+	[theme.breakpoints.down("sm")]: {
+		width: "80%",
+		paddingTop: "80%",
+	},
+}));
+
+// Framer Motion Variants
+const sectionVariants = {
+	hidden: { opacity: 0, y: 50 },
+	visible: {
+		opacity: 1,
+		y: 0,
+		transition: {
+			duration: 0.7,
+			ease: "easeOut",
+		},
+	},
+};
 
 const About = () => {
-	const classes = useStyles();
-	const isMobile = useMediaQuery("(max-width:900px)");
-	const isLargeScreen = useMediaQuery("(min-width:1440px)");
+	const [imageUrl, setImageUrl] = useState("");
+
+	// Scroll to top on mount
 	useEffect(() => {
-		// Scroll to the top of the page when the component mounts
 		window.scrollTo(0, 0);
+	}, []);
 
-		// Cleanup function to scroll to the top when the component unmounts
-		return () => {
-			window.scrollTo(0, 0);
-		};
-	}, []); // The empty dependency array ensures this effect runs only once when the component mounts
-
-	const [url, setUrl] = useState("aaaa");
-	const func = async () => {
-		const storage = getStorage();
-		const reference = ref(storage, "aboutImages/nss_logo.jpg");
-		await getDownloadURL(reference).then((x) => {
-			setUrl(x);
-		});
-	};
+	// Fetch image from Firebase
 	useEffect(() => {
-		func();
+		const fetchImage = async () => {
+			try {
+				const storage = getStorage();
+				const reference = ref(storage, "aboutImages/nss_logo.jpg");
+				const url = await getDownloadURL(reference);
+				setImageUrl(url);
+			} catch (error) {
+				console.error("Error fetching image from Firebase:", error);
+				// Optionally set a placeholder image URL
+			}
+		};
+		fetchImage();
 	}, []);
 
 	return (
 		<Layout>
-			<Typography
-				variant="h1"
-				sx={{
-					fontFamily: "Inria Sans",
-					// fontStyle: "oblique",
-					fontSize: isMobile ? "44px" : "96px",
-					px: 10,
-					pt: 5,
-					fontWeight: 500,
-					overflowX: "hidden",
-					overflowY: "hidden",
-					textAlign: isMobile ? "center" : "initial",
-				}}>
-				ABOUT NSS
-			</Typography>
-			<br />
-			<Box>
-				<motion.div>
-					<Typography
-						variant="h6"
-						sx={{
-							m: "23px",
-							p: "25px",
-							textAlign: "justify",
-							bgcolor: "#ffebff",
-							borderRadius: "25px",
-							display: "flex",
-							justifyContent: "center",
-							alignItems: "center",
-							rows: "10",
-							overflowX: "hidden",
-						}}>
-						NSS Unit SVNIT has been trying to realise its aim of
-						bringing the community along with it to prosperity in a
-						rising India. Comprehensive and long-term development
-						models have always been prioritised by NSS Unit SVNIT,
-						which is composed of motivated volunteers who are
-						expertly advised by eminent professors. NSS aims to
-						instill service values in students in addition to its
-						core objective of community development. This will help
-						students become aware and responsible citizens who care
-						about their country and the entire world. Through
-						several campus-wide initiatives like cleanliness drives,
-						we tirelessly work to not only improve the lives of the
-						underprivileged and oppressed but also to ensure that
-						the community's development is not halted.Our commitment
-						to quality is all-encompassing, and it only gets
-						stronger with time, as shown by the diversification that
-						is occurring while simultaneously making sure that the
-						core principles and concepts don't get lost in the
-						process.
-					</Typography>
-				</motion.div>
-			</Box>
-
-			<Typography
-				variant="h2"
-				sx={{
-					textAlign: isMobile ? "center" : "intial",
-					px: isMobile ? 5 : 10,
-					pt: isMobile ? 3 : 5,
-					fontWeight: 400,
-					overflowX: "hidden",
-					fontFamily: "Inria Sans",
-					fontSize: isMobile ? "36px" : "76px",
-				}}>
-				ABOUT NSS INDIA
-			</Typography>
-			<br />
-			<Box>
-				<motion.div>
-					<Typography
-						variant="h6"
-						sx={{
-							m: "23px",
-							p: "25px",
-							textAlign: "justify",
-							bgcolor: "#ffebff",
-							borderRadius: "25px",
-							display: "flex",
-							justifyContent: "center",
-							alignItems: "center",
-							rows: "10",
-							overflowX: "hidden",
-							fontFamily: "DM Sans",
-						}}>
-						The National Service Scheme (NSS) is a Central Sector
-						Scheme of the Government of India, Ministry of Youth
-						Affairs & Sports. It provides an opportunity to the
-						student youth of 11th & 12th Class of schools at +2
-						Board level and student youth of Technical Institution,
-						Graduate & Post Graduate at colleges and University
-						level of India to take part in various government-led
-						community service activities & programmes. The sole aim
-						of the NSS is to provide hands-on experience to young
-						students in delivering community service.
-					</Typography>
-					<Link to="https://nss.gov.in/nss-detail-page">
-						<Button
-							color="primary"
-							style={{
-								borderRadius: 0,
-								height: "40px",
-								marginTop: "1rem",
-								color: "black",
-								width: "150px",
-								border: "2px black solid",
-								fontSize: "1.1rem",
-								fontFamily: "DM Sans",
-								marginLeft: "50px",
-								overflowX: "hidden",
-								overflowY: "hidden",
+			<PageContainer>
+				<Container maxWidth="lg">
+					{/* HERO SECTION */}
+					<HeroSection
+						component={motion.div}
+						initial={{ opacity: 0, y: -50 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.8 }}>
+						<Typography
+							variant="h1"
+							component="h1"
+							sx={{
+								fontFamily: "'Inria Sans', serif",
+								fontWeight: 700,
+								color: "#4a0e4a",
+								fontSize: { xs: "3rem", sm: "4.5rem", md: "6rem" },
 							}}>
-							READ MORE
-						</Button>
-					</Link>
-				</motion.div>
-			</Box>
-
-			<div style={{ overflowX: "hidden" }}>
-				<Grid
-					container
-					spacing={2}
-					sx={{
-						marginTop: isMobile ? "0px" : "45px",
-						marginLeft: isMobile ? "30px" : "60px",
-						marginBottom: "60px",
-						overflowX: "hidden",
-						overflowY: "hidden",
-					}}>
-					<Grid item xs={9} sm={6} md={5}>
-						<motion.div
-							initial={{ opacity: 0, x: -100 }}
-							whileInView={{ opacity: 1, x: 0 }}
-							viewport={{ once: true }}
-							transition={{ duration: 1 }}>
-							<Typography
-								variant="h3"
-								fontSize={"50px"}
-								gutterBottom
-								sx={{
-									fontFamily: "Inria Sans",
-									marginTop: "50px",
-									overflowX: "hidden",
-									overflowY: "hidden",
-									fontSize: {
-										xs: "20px",
-										sm: "30px",
-										md: "40px",
-										lg: "50px",
-									},
-								}}>
-								About Our
-							</Typography>
-						</motion.div>
-						<motion.div
-							initial={{ opacity: 0, x: -100 }}
-							whileInView={{ opacity: 1, x: 0 }}
-							viewport={{ once: true }}
-							transition={{ duration: 1.5 }}>
-							<Typography
-								variant="h1"
-								fontSize={"100px"}
-								gutterBottom
-								sx={{
-									fontFamily: "DM Sans",
-									overflowX: "hidden",
-									overflowY: "hidden",
-									fontSize: {
-										xs: "40px",
-										sm: "40px",
-										md: "50px",
-										lg: "100px",
-									},
-								}}>
-								History
-							</Typography>
-						</motion.div>
-						<motion.div
-							initial={{ opacity: 0, x: -100 }}
-							whileInView={{ opacity: 1, x: 0 }}
-							viewport={{ once: true }}
-							transition={{ duration: 1 }}>
-							<Typography
-								variant="subtitle2"
-								gutterBottom
-								sx={{
-									fontFamily: "DM Sans",
-									overflowX: "hidden",
-									overflowY: "hidden",
-									textAlign: isMobile ? "justify" : "initial",
-									fontSize: {
-										xs: "16px",
-										sm: "14px",
-										md: "20px",
-										lg: "20px",
-									},
-								}}>
-								The history of the National Service Scheme (NSS)
-								unit at the Sardar Vallabhbhai National
-								Institute of Technology (SVNIT) is a testament
-								to the spirit of volunteerism and social
-								responsibility among the students. The NSS unit
-								at SVNIT was established in 2018, with the aim
-								of fostering social welfare and community
-								development through various initiatives. Over
-								the years, the unit has played a vital role in
-								organizing numerous activities and campaigns
-								that have made a positive impact on the lives of
-								people in and around the campus. From conducting
-								blood donation drives, health camps, and
-								awareness programs to promoting cleanliness,
-								environmental conservation, and education, the
-								NSS unit has actively engaged students in
-								serving society and creating a better world.
-								With a rich history of service and a strong
-								commitment to social change, the NSS SVNIT unit
-								continues to inspire and empower students to
-								contribute to the betterment of society.
-							</Typography>
-						</motion.div>
-					</Grid>
-					<Grid
-						item
-						xs={12}
-						sm={6}
-						md={7}
-						sx={{
-							overflowX: "hidden",
-							width: {
-								lg: "100%",
-								md: "50%",
-								sm: "40%",
-								xs: "20%",
-							},
-							height: { lg: "100%", md: "50%", sm: "40%" },
-						}}>
-						<motion.div
-							style={{
-								overflowX: "hidden",
-								position: "relative",
-								width: "100%",
-								height: isMobile ? "0px" : "600px",
-								paddingTop: "100%",
-								backgroundColor: "#ffebff",
-								borderRadius: "50%",
-							}}
-							initial={{ opacity: 0, x: 50 }}
-							whileInView={{ opacity: 1, x: 0 }}
-							viewport={{ once: true }}
-							transition={{ duration: 2 }}>
-							<motion.img
-								src={url}
-								alt="Right Content"
-								style={{
-									overflowX: "hidden",
-									position: "absolute",
-									top: isMobile
-										? 45
-										: isLargeScreen
-										? 90
-										: 60,
-									left: isMobile
-										? 45
-										: isLargeScreen
-										? 90
-										: 40,
-									right: isMobile
-										? 45
-										: isLargeScreen
-										? 90
-										: 50,
-									bottom: isMobile
-										? 45
-										: isLargeScreen
-										? 90
-										: 50,
-									width: isMobile ? "70%" : "80%",
-									height: isMobile ? "70%" : "80%",
-									objectFit: "cover",
-									borderRadius: "50%",
-								}}
-								alignItems="center"
-								justifyContent="center"
-							/>
-						</motion.div>
-					</Grid>
-				</Grid>
-			</div>
-
-			<Grid
-				container
-				spacing={1}
-				sx={{ overflowX: "hidden", display: "flex" }}>
-				<Grid item lg={6} xs={12} sm={12} md={6} sx={{ px: 2 }}>
-					<motion.div
-						initial={{ opacity: 0, x: -100 }}
-						whileInView={{ opacity: 1, x: 0 }}
-						viewport={{ once: true }}
-						transition={{ duration: 1 }}>
-						<Box
+							ABOUT NSS SVNIT
+						</Typography>
+						<Typography
+							variant="h6"
+							color="text.secondary"
 							sx={{
-								fontFamily: "DM Sans",
-								ml: "50px",
-								mt: "50px",
-								mb: "50px",
-								fontSize: "70%",
-								display: "flex",
-								height: "300px",
-								width: "80%",
-								borderRadius: "5px",
-								boxShadow: " 3px 3px #ffccff",
-								alignItems: "center",
-								justifyContent: "center",
-								overflowX: "hidden",
-							}}
-							variant="outlined"
-							className={classes.gradientBackground}>
-							<Typography
-								variant="h4"
-								sx={{
-									m: { xs: 2, sm: 3, md: 4, lg: 5 },
-									fontFamily: "Inria Sans",
-								}}>
-								OUR MISSION
-							</Typography>
-							<Typography
-								sx={{
-									fontFamily: "DM Sans",
-									overflowX: "hidden",
-									fontSize: {
-										xs: "10px",
-										sm: "12px",
-										md: "14px",
-										lg: "15px",
-									},
-								}}>
-								Our mission is to transform volunteers into
-								dedicated social servants, embodying the ethos
-								of "not me but you." We prioritize their overall
-								development while instilling a strong sense of
-								social responsibility. Through diverse
-								initiatives, we aim to raise awareness, address
-								societal challenges, and empower marginalized
-								communities. Together, we strive to create a
-								network of changemakers committed to creating a
-								better future.
-							</Typography>
-						</Box>
-					</motion.div>
-				</Grid>
+								mt: 2,
+								maxWidth: "700px",
+								mx: "auto",
+								fontFamily: "'DM Sans', sans-serif",
+							}}>
+							Dedicated to community service, social welfare, and fostering responsible citizenship.
+						</Typography>
+					</HeroSection>
 
-				<Grid item lg={6} xs={12} sm={12} md={6} sx={{ px: 2 }}>
+					{/* ABOUT NSS SVNIT SECTION */}
 					<motion.div
-						initial={{ opacity: 0, x: 100 }}
-						whileInView={{ opacity: 1, x: 0 }}
-						viewport={{ once: true }}
-						transition={{ duration: 1 }}>
-						<Box
-							sx={{
-								fontFamily: "DM Sans",
-								ml: "50px",
-								mt: "50px",
-								mb: "50px",
-								fontSize: "70%",
-								display: "flex",
-								height: "300px",
-								width: "80%",
-								boxShadow: " 3px 3px #ffccff",
-								borderRadius: "5px",
-								alignItems: "center",
-								justifyContent: "center",
-								overflowX: "hidden",
-							}}
-							variant="outlined"
-							className={classes.gradientBackground}>
+						variants={sectionVariants}
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ once: true }}>
+						<InfoCard elevation={0}>
 							<Typography
-								variant="h4"
-								sx={{
-									m: { xs: 2, sm: 3, md: 4, lg: 5 },
-									fontFamily: "Inria Sans",
-								}}>
-								OUR VISION
+								variant="body1"
+								sx={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.1rem" }}>
+								NSS Unit SVNIT has been trying to realise its aim of
+								bringing the community along with it to prosperity in a
+								rising India. Comprehensive and long-term development
+								models have always been prioritised by NSS Unit SVNIT,
+								which is composed of motivated volunteers who are
+								expertly advised by eminent professors. NSS aims to
+								instill service values in students in addition to its
+								core objective of community development. This will help
+								students become aware and responsible citizens who care
+								about their country and the entire world. Through
+								several campus-wide initiatives like cleanliness drives,
+								we tirelessly work to not only improve the lives of the
+								underprivileged and oppressed but also to ensure that
+								the community's development is not halted.
 							</Typography>
-							<Typography
-								sx={{
-									fontFamily: "DM Sans",
-									overflowX: "hidden",
-									fontSize: {
-										xs: "10px",
-										sm: "12px",
-										md: "14px",
-										lg: "15px",
-									},
-								}}>
-								Our vision is a society where individuals
-								embrace empathy and actively contribute to
-								positive change. We strive to foster inclusivity
-								and empower volunteers to make a meaningful
-								impact in their communities. By promoting social
-								awareness, we aim to create a more compassionate
-								and equitable world for all.
-							</Typography>
-						</Box>
+						</InfoCard>
 					</motion.div>
-				</Grid>
-			</Grid>
-			<DutySection />
-			<ComitteeSection />
+					
+					{/* ABOUT NSS INDIA SECTION */}
+					<motion.div
+						variants={sectionVariants}
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ once: true }}
+						style={{ marginTop: "4rem" }}>
+						<InfoCard elevation={0}>
+							<Typography variant="h4" component="h2" sx={{ fontFamily: "'Inria Sans', serif", fontWeight: 500, mb: 2, color: "#4a0e4a"}}>
+								ABOUT NSS INDIA
+							</Typography>
+							<Typography
+								variant="body1"
+								sx={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.1rem", mb: 3 }}>
+								The National Service Scheme (NSS) is a Central Sector
+								Scheme of the Government of India, Ministry of Youth
+								Affairs & Sports. It provides an opportunity to the
+								student youth of India to take part in various government-led
+								community service activities & programmes. The sole aim
+								of the NSS is to provide hands-on experience to young
+								students in delivering community service.
+							</Typography>
+							<Button
+								component={Link}
+								to="https://nss.gov.in/nss-detail-page"
+								target="_blank"
+								rel="noopener noreferrer"
+								variant="outlined"
+								color="primary"
+								sx={{
+									fontFamily: "'DM Sans', sans-serif",
+									fontWeight: 700,
+									borderColor: "#8e24aa",
+									color: "#8e24aa",
+									borderRadius: '50px',
+									px: 3,
+									py: 1,
+									'&:hover': {
+										backgroundColor: 'rgba(142, 36, 170, 0.08)',
+										borderColor: '#6a1b9a',
+									}
+								}}>
+								READ MORE
+							</Button>
+						</InfoCard>
+					</motion.div>
 
-			<div
-				style={{
-					overflowX: "hidden",
-					display: "flex",
-					alignItems: "center",
-					justifyContent: "center",
-				}}></div>
+
+					{/* HISTORY SECTION */}
+					<Grid container spacing={6} sx={{ my: { xs: 6, md: 10 }, alignItems: "center" }}>
+						<Grid item xs={12} md={6}>
+							<motion.div
+								initial={{ opacity: 0, x: -100 }}
+								whileInView={{ opacity: 1, x: 0 }}
+								viewport={{ once: true }}
+								transition={{ duration: 1 }}>
+								<Typography
+									variant="h4"
+									component="h3"
+									sx={{
+										fontFamily: "'Inria Sans', serif",
+										color: "text.secondary",
+										fontWeight: 400,
+									}}>
+									About Our
+								</Typography>
+								<Typography
+									variant="h2"
+									component="h2"
+									sx={{
+										fontFamily: "'DM Sans', sans-serif",
+										fontWeight: 700,
+										color: "#4a0e4a",
+										fontSize: { xs: "3rem", md: "4.5rem" },
+										lineHeight: 1.1,
+										mb: 3,
+									}}>
+									History
+								</Typography>
+								<Typography
+									variant="body1"
+									sx={{
+										textAlign: "justify",
+										fontFamily: "'DM Sans', sans-serif",
+										fontSize: "1.1rem",
+									}}>
+									The NSS unit at SVNIT, established in 2018, is a testament to the spirit
+									of volunteerism and social responsibility. Over the years, the unit has
+									organized numerous activities—from blood drives and health camps to environmental
+									and educational initiatives—making a positive impact on the community.
+									With a rich history of service, the NSS SVNIT unit continues to inspire students
+									to contribute meaningfully to society.
+								</Typography>
+							</motion.div>
+						</Grid>
+						<Grid item xs={12} md={6}>
+							<motion.div
+								initial={{ opacity: 0, scale: 0.8 }}
+								whileInView={{ opacity: 1, scale: 1 }}
+								viewport={{ once: true }}
+								transition={{ duration: 1.2, ease: "circOut" }}>
+								<HistoryImageCircle>
+									{imageUrl && (
+										<motion.img
+											src={imageUrl}
+											alt="NSS SVNIT Logo"
+											style={{
+												position: "absolute",
+												top: "8%",
+												
+												width: "85%",
+												height: "85%",
+												borderRadius: "50%",
+												objectFit: "cover",
+												boxShadow: "inset 0 0 15px rgba(0,0,0,0.2)",
+											}}
+											initial={{ scale: 1.1, opacity: 0 }}
+											animate={{ scale: 1, opacity: 1 }}
+											transition={{ duration: 0.8, delay: 0.5 }}
+										/>
+									)}
+								</HistoryImageCircle>
+							</motion.div>
+						</Grid>
+					</Grid>
+
+					{/* MISSION & VISION SECTION */}
+					<Grid container spacing={4} sx={{ mb: { xs: 8, md: 12 } }}>
+						<Grid item xs={12} md={6}>
+							<motion.div variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} style={{height: '100%'}}>
+								<InfoCard elevation={0} >
+									<Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+										<TrackChangesIcon sx={{ color: '#8e24aa', fontSize: 40, mr: 2 }}/>
+										<Typography variant="h4" component="h3" sx={{ fontFamily: "'Inria Sans', serif", color: "#4a0e4a", fontWeight: 500 }}>
+											OUR MISSION
+										</Typography>
+									</Box>
+									<Typography variant="body1" sx={{ fontFamily: "'DM Sans', sans-serif" }}>
+										To transform volunteers into dedicated social servants, embodying the ethos
+										of "not me but you." We prioritize their overall development while instilling
+										a strong sense of social responsibility to create a network of changemakers
+										committed to building a better future.
+									</Typography>
+								</InfoCard>
+							</motion.div>
+						</Grid>
+						<Grid item xs={12} md={6}>
+							<motion.div variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true, delay: 0.2 }} style={{height: '100%'}}>
+								<InfoCard elevation={0}>
+									<Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+										<VisibilityIcon sx={{ color: '#8e24aa', fontSize: 40, mr: 2 }}/>
+										<Typography variant="h4" component="h3" sx={{ fontFamily: "'Inria Sans', serif", color: "#4a0e4a", fontWeight: 500 }}>
+											OUR VISION
+										</Typography>
+									</Box>
+									<Typography variant="body1" sx={{ fontFamily: "'DM Sans', sans-serif" }}>
+										A society where individuals embrace empathy and actively contribute to
+										positive change. We strive to foster inclusivity, empower volunteers
+										to make a meaningful impact, and promote social awareness to create a
+										more compassionate and equitable world for all.
+									</Typography>
+								</InfoCard>
+							</motion.div>
+						</Grid>
+					</Grid>
+				</Container>
+
+				{/* Sections from other components */}
+				<DutySection />
+				<ComitteeSection />
+			</PageContainer>
 		</Layout>
 	);
 };
