@@ -11,7 +11,7 @@ import PeopleIcon from '@mui/icons-material/People';
 import ChildFriendlyIcon from '@mui/icons-material/ChildFriendly';
 import LocalActivityIcon from '@mui/icons-material/LocalActivity';
 import RssFeedIcon from '@mui/icons-material/RssFeed';
-import BackgroundImage from "../../../../../../44.jpg";
+import BackgroundImage from "../../../assets/44.jpg";
 
 // Data remains the same
 const countersData = [

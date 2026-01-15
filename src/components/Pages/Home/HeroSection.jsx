@@ -1,7 +1,7 @@
 import { Box, Grid } from "@mui/material";
 import React from "react";
 import HeroText from "../../HeroText";
-import Background from "../../../../../../33.jpg";
+import Background from "../../../assets/33.jpg";
 
 const HeroSection = React.memo(() => {
 	return (

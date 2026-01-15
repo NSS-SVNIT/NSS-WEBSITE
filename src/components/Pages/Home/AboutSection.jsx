@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"; // Import Link for navigation
 import { motion } from "framer-motion";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'; // Icon for the button
 
-import imageUrl from "../../../../../../55.jpg";
+import imageUrl from "../../../assets/55.jpg"; // Import the background image
 
 // The internal parallax component remains unchanged.
 const AboutParallaxContent = () => (
