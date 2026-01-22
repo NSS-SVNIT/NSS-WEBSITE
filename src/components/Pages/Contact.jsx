@@ -2,9 +2,9 @@ import React from "react";
 import Layout from "../Layout/Layout";
 import SendRoundedIcon from "@mui/icons-material/SendRounded";
 import MailIcon from "@mui/icons-material/Mail";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
-import { MapContainer, TileLayer, Popup, Marker } from "react-leaflet";
 
 import {
 	Box,
@@ -91,25 +91,53 @@ const Contact = () => {
 					</span>{" "}
 					<span style={{ color: "white" }}>US</span>
 				</div>
-				<Grid item lg={12} xs={4} sm={2} sx={{ px: 8, py: 4 }}>
-					<MapContainer
-						center={position}
-						zoom={13}
-						scrollWheelZoom={true}
-						style={{ width: "100%" }}>
-						<TileLayer
-							attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-							url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+				<Grid item lg={12} xs={4} sm={2} sx={{ px: { xs: 2, md: 8 }, py: 4 }}>
+					{/* Google Maps Embed */}
+					<Box
+						sx={{
+							height: { xs: "350px", md: "500px" },
+							borderRadius: 3,
+							overflow: "hidden",
+							boxShadow: "0 10px 40px rgba(0,0,0,0.2)",
+							border: "3px solid #000",
+							position: "relative",
+							"&:hover": {
+								boxShadow: "0 15px 50px rgba(0,0,0,0.3)",
+								transform: "translateY(-2px)",
+							},
+							transition: "all 0.3s ease",
+						}}>
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.6507653833756!2d72.78287931492656!3d21.164583085916397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04dec8b56fdf1%3A0x423b99085d26d1f9!2sSardar%20Vallabhbhai%20National%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1643234567890!5m2!1sen!2sin"
+							width="100%"
+							height="100%"
+							style={{ border: 0 }}
+							allowFullScreen=""
+							loading="lazy"
+							referrerPolicy="no-referrer-when-downgrade"
+							title="NSS SVNIT Location"
 						/>
-						<Marker position={position}>
-							<Popup>
-								<h1>Locate Us:</h1>
-								<b>NSS SVNIT</b>
-								<br />
-								SVNIT,Icchchanath, <br /> Dumas Road,Surat
-							</Popup>
-						</Marker>
-					</MapContainer>
+					</Box>
+					{/* Direct Link to Google Maps */}
+					<Box sx={{ textAlign: "center", mt: 3 }}>
+						<Button
+							variant="contained"
+							startIcon={<LocationOnIcon />}
+							href="https://maps.google.com/?q=21.164583,72.785239"
+							target="_blank"
+							rel="noopener noreferrer"
+							sx={{
+								backgroundColor: "black",
+								px: 4,
+								py: 1.5,
+								fontSize: "1rem",
+								"&:hover": {
+									backgroundColor: "#333",
+								},
+							}}>
+							Open in Google Maps
+						</Button>
+					</Box>
 				</Grid>
 			</Grid>
 
