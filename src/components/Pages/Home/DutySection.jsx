@@ -1,42 +1,55 @@
+// DutySection.js
 import React from "react";
-import { Stack, Box } from "@mui/material";
+import { Typography, Box, Container } from "@mui/material";
+import { motion } from "framer-motion";
 import ImageGrid from "./ImageGrid";
 
 const DutySection = React.memo(() => {
 	return (
-		<Stack>
-			<Box
-				sx={{
-					bgcolor: "black",
-					color: "white",
-					fontFamily: "Inria Sans",
-					fontSize: "4rem",
-					px: 8,
-					pt: 2,
-				}}>
-				What we do ?
-			</Box>
-			<Box
-				sx={{
-					bgcolor: "black",
-					color: "white",
-					fontFamily: "DM Sans",
-					fontSize: "1.2rem",
-					px: 8,
-					py: 2,
-				}}>
-				Spreading happiness through community service has been one of
-				the primary objectives of NSS. With innovative activities across
-				the departments catering to all classes of the campus residents,
-				we try to create small, happy and memorable moments in their
-				lives. We aim to bring about a positive change in the society
-				with a focus on education and development.
-			</Box>
+		<Box sx={{ py: { xs: 8, md: 12 }, background: 'linear-gradient(180deg, #fdeeff 0%, #fff9ff 100%)' }}>
+			<Container maxWidth="md">
+				<motion.div
+					initial={{ opacity: 0, y: 50 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
+					transition={{ duration: 0.8, ease: "easeOut" }}
+				>
+					<Typography
+						variant="h2"
+						component="h2"
+						textAlign="center"
+						sx={{
+							fontFamily: "'Inria Sans', serif",
+							fontWeight: 700,
+							color: "#5A2A7A",
+							mb: 3,
+							fontSize: { xs: "2.5rem", md: "4rem" }
+						}}
+					>
+						What We Do?
+					</Typography>
+					<Typography
+						variant="h6"
+						textAlign="center"
+						color="text.secondary"
+						sx={{
+							fontFamily: "'DM Sans', sans-serif",
+							maxWidth: "800px",
+							mx: "auto",
+							lineHeight: 1.7,
+						}}
+					>
+						Spreading happiness through community service is our primary objective.
+						With innovative activities across departments, we create small, happy,
+						and memorable moments. We aim to bring about a positive change in
+						society with a focus on education and development.
+					</Typography>
+				</motion.div>
+			</Container>
 
-			<Stack sx={{ bgcolor: "black" }}>
-				<ImageGrid />
-			</Stack>
-		</Stack>
+			{/* The ImageGrid will follow directly after */}
+			<ImageGrid />
+		</Box>
 	);
 });
 
