@@ -20,7 +20,7 @@
 		"@mui/lab": "^5.0.0-alpha.132",
 		"@mui/material": "^5.13.3",
 		"@mui/styles": "^5.13.2",
-		"@mui/x-date-pickers": "^8.4.0",
+		"@mui/x-date-pickers": "^5.0.20",
 		"array-move": "^4.0.0",
 		"compressorjs": "^1.2.1",
 		"date-fns": "2.30.0",

@@ -8,6 +8,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import { useState } from "react";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import { Link } from "react-router-dom";
+import nssBackground from "../../assets/nss_background.png";
+import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 
 
 const useStyles = makeStyles({
@@ -49,7 +51,7 @@ const About = () => {
 				sx={{
 					fontFamily: "Inria Sans",
 					// fontStyle: "oblique",
-					fontSize: isMobile ? "44px" : "96px",
+					fontSize: isMobile ? "32px" : "56px",
 					px: 10,
 					pt: 5,
 					fontWeight: 500,
@@ -108,7 +110,7 @@ const About = () => {
 					fontWeight: 400,
 					overflowX: "hidden",
 					fontFamily: "Inria Sans",
-					fontSize: isMobile ? "36px" : "76px",
+					fontSize: isMobile ? "28px" : "48px",
 				}}>
 				ABOUT NSS INDIA
 			</Typography>
@@ -163,6 +165,66 @@ const About = () => {
 				</motion.div>
 			</Box>
 
+			{/* LOGO DETAILS SECTION */}
+			<Box>
+				<Typography
+					variant="h4"
+					sx={{
+						textAlign: "center",
+						mt: 5,
+						mb: 3,
+						fontFamily: "Inria Sans",
+						fontSize: isMobile ? "28px" : "40px",
+					}}>
+					NSS BADGE DETAILS
+				</Typography>
+				<motion.div>
+					<Typography
+						variant="h6"
+						sx={{
+							m: "23px",
+							p: "25px",
+							textAlign: "justify",
+							bgcolor: "#f0f8ff", // Light AliceBlue for a professional look
+							borderRadius: "15px",
+							borderLeft: "6px solid #293241", // Strong accent color
+							display: "flex",
+							flexDirection: "column",
+							alignItems: "flex-start",
+							fontFamily: "DM Sans",
+							fontSize: isMobile ? "14px" : "18px",
+							color: "#333",
+							boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
+						}}>
+						<ul style={{ listStyleType: "none", padding: 0 }}>
+							<li style={{ marginBottom: "12px" }}>
+								<strong>The Konark Wheel:</strong> The wheel in
+								the NSS badge having 8 bars signifies the 24
+								hours of the day, reminding the wearer to be
+								ready for the service of the nation round the
+								clock, i.e., for 24 hours.
+							</li>
+							<li style={{ marginBottom: "12px" }}>
+								<strong>Red Colour:</strong> The red colour in
+								the badge signifies energy and spirit displayed
+								by the NSS volunteers.
+							</li>
+							<li style={{ marginBottom: "12px" }}>
+								<strong>Motto:</strong> Surrounding the wheel is
+								the NSS motto: "Not Me But You," emphasizing
+								selfless service to others.
+							</li>
+							<li>
+								<strong>Blue Colour:</strong> The blue colour
+								signifies the cosmos of which the NSS is a tiny
+								part, ready to contribute its share for the
+								welfare of mankind.
+							</li>
+						</ul>
+					</Typography>
+				</motion.div>
+			</Box>
+
 			<div style={{ overflowX: "hidden" }}>
 				<Grid
 					container
@@ -191,9 +253,9 @@ const About = () => {
 									overflowY: "hidden",
 									fontSize: {
 										xs: "20px",
-										sm: "30px",
-										md: "40px",
-										lg: "50px",
+										sm: "28px",
+										md: "32px",
+										lg: "36px",
 									},
 								}}>
 								About Our
@@ -213,10 +275,10 @@ const About = () => {
 									overflowX: "hidden",
 									overflowY: "hidden",
 									fontSize: {
-										xs: "40px",
+										xs: "32px",
 										sm: "40px",
-										md: "50px",
-										lg: "100px",
+										md: "48px",
+										lg: "64px",
 									},
 								}}>
 								History
@@ -304,23 +366,23 @@ const About = () => {
 									top: isMobile
 										? 45
 										: isLargeScreen
-										? 90
-										: 60,
+											? 90
+											: 60,
 									left: isMobile
 										? 45
 										: isLargeScreen
-										? 90
-										: 40,
+											? 90
+											: 40,
 									right: isMobile
 										? 45
 										: isLargeScreen
-										? 90
-										: 50,
+											? 90
+											: 50,
 									bottom: isMobile
 										? 45
 										: isLargeScreen
-										? 90
-										: 50,
+											? 90
+											: 50,
 									width: isMobile ? "70%" : "80%",
 									height: isMobile ? "70%" : "80%",
 									objectFit: "cover",
@@ -451,6 +513,199 @@ const About = () => {
 					</motion.div>
 				</Grid>
 			</Grid>
+			<Box
+				sx={{
+					backgroundImage: `url(${nssBackground})`,
+					backgroundSize: "cover",
+					backgroundPosition: "center",
+					backgroundAttachment: "fixed",
+					py: 10,
+					px: 2,
+					position: "relative",
+					"&::before": {
+						content: '""',
+						position: "absolute",
+						top: 0,
+						left: 0,
+						right: 0,
+						bottom: 0,
+						backgroundColor: "rgba(0,0,0,0.3)",
+						zIndex: 1,
+					},
+				}}>
+				<Grid
+					container
+					spacing={4}
+					sx={{
+						position: "relative",
+						zIndex: 2,
+						justifyContent: "center",
+					}}>
+					{/* PLEDGE SECTION */}
+					<Grid item xs={12} md={10} lg={8}>
+						<motion.div
+							initial={{ opacity: 0, scale: 0.9 }}
+							whileInView={{ opacity: 1, scale: 1 }}
+							viewport={{ once: true }}
+							transition={{ duration: 0.8 }}>
+							<Box
+								sx={{
+									background: "rgba(255, 255, 255, 0.85)", // More opaque for readability
+									backdropFilter: "blur(20px)",
+									border: "1px solid rgba(255, 255, 255, 0.4)",
+									borderRadius: isMobile ? "10px" : "15px",
+									p: { xs: 3, md: 5 },
+									textAlign: "center",
+									color: "#1a1a1a", // Darker text for professionalism
+									boxShadow:
+										"0 10px 40px rgba(0, 0, 0, 0.1)", // Softer, premium shadow
+								}}>
+								<FormatQuoteIcon
+									sx={{
+										fontSize: 48,
+										color: "#3f51b5", // Professional blue tone
+										transform: "rotate(180deg)",
+										mb: 2,
+									}}
+								/>
+								<Typography
+									variant="h4"
+									sx={{
+										fontFamily: "Inria Sans",
+										mb: 3,
+										fontWeight: "600",
+										color: "#2c3e50",
+										fontSize: {
+											xs: "24px",
+											md: "32px",
+										},
+									}}>
+									NSS PLEDGE
+								</Typography>
+								<Typography
+									sx={{
+										fontFamily: "DM Sans",
+										fontSize: {
+											xs: "15px",
+											md: "18px",
+										},
+										lineHeight: 1.8,
+										fontStyle: "italic",
+										color: "#444",
+									}}>
+									"I solemnly pledge myself to work with
+									dedication to serve and strengthen the
+									freedom and integrity of the nation. I
+									further affirm that I shall never resort to
+									violence and that all differences and
+									disputes relating to religion, language,
+									region or political or economic grievances
+									shall be settled by peaceful and
+									constitutional means"
+								</Typography>
+							</Box>
+						</motion.div>
+					</Grid>
+
+					{/* NSS SONG SECTION */}
+					<Grid item xs={12} md={10} lg={8}>
+						<motion.div
+							initial={{ opacity: 0, y: 50 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true }}
+							transition={{ duration: 0.8, delay: 0.2 }}>
+							<Box
+								sx={{
+									background: "rgba(255, 255, 255, 0.85)",
+									backdropFilter: "blur(20px)",
+									border: "1px solid rgba(255, 255, 255, 0.4)",
+									borderRadius: isMobile ? "10px" : "15px",
+									p: { xs: 3, md: 5 },
+									textAlign: "center",
+									color: "#1a1a1a",
+									boxShadow:
+										"0 10px 40px rgba(0, 0, 0, 0.1)",
+								}}>
+								<Typography
+									variant="h4"
+									sx={{
+										fontFamily: "Inria Sans",
+										mb: 3,
+										fontWeight: "600",
+										color: "#2c3e50",
+										fontSize: {
+											xs: "24px",
+											md: "32px",
+										},
+									}}>
+									NSS LAKSHYA GEET
+								</Typography>
+								<Typography
+									component="div"
+									sx={{
+										fontFamily: "DM Sans",
+										fontSize: {
+											xs: "15px",
+											md: "18px",
+										},
+										lineHeight: 1.8,
+										whiteSpace: "pre-line",
+										color: "#444",
+									}}>
+									उठें समाज के लिए उठें-उठें,
+									<br />
+									जगे स्वराष्ट्र के लिए जगे-जगे।
+									<br />
+									स्वयं सजे वसुंधरा संवार दें - २
+									<br />
+									<br />
+									हम उठें उठेगा जग हमारे संग साथियों,
+									<br />
+									हम बढ़ें तो सब बढ़ेंगे अपने आप साथियों।
+									<br />
+									जमीं पे आसमान को उतार दें - २<br />
+									स्वयं सजे वसुंधरा संवार दें - २
+									<br />
+									<br />
+									उदासियों को दूर कर ख़ुशी को बाँटते चलें,
+									<br />
+									गाँव और शहर की दूरियों को पाटते चलें।
+									<br />
+									ज्ञान को प्रचार दें प्रसार दें, विज्ञानं को
+									प्रचार दें प्रसार दें।
+									<br />
+									स्वयं सजे वसुंधरा संवार दें - २
+									<br />
+									<br />
+									समर्थ बाल वृद्ध और नारियां रहें सदा,
+									<br />
+									हरे भरे वनों की शाल ओढ़ती रहे धरा।
+									<br />
+									तरक्कियों की एक नई कतार दें - २<br />
+									स्वयं सजे वसुंधरा संवार दें - २
+									<br />
+									<br />
+									ये जाति धर्म बोलियां बनें न शूल राह की,
+									<br />
+									बढ़ाएं बेल प्रेम की अखंडता की चाह की।
+									<br />
+									सद्भावना से ये चमन निखार दें, सद्भावना से ये
+									चमन निखार दें।
+									<br />
+									स्वयं सजे वसुंधरा संवार दें - २
+									<br />
+									<br />
+									उठें समाज के लिए उठें-उठें,
+									<br />
+									जगे स्वराष्ट्र के लिए जगे-जगे।
+									<br />
+									स्वयं सजे वसुंधरा संवार दें - २
+								</Typography>
+							</Box>
+						</motion.div>
+					</Grid>
+				</Grid>
+			</Box>
 			<DutySection />
 			<ComitteeSection />
 
