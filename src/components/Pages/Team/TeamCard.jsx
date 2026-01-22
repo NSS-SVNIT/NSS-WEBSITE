@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Typography, Card, CardContent, CardMedia, Link, Box } from '@mui/material';
 import { LinkedIn, GitHub, Email } from '@mui/icons-material';
-import { useMediaQuery } from '@material-ui/core';
+import { useMediaQuery } from '@mui/material';
 
 // Card component for displaying Team information
 const TeamCard = React.memo(({ name, position, linkedin, github, gmail, firebase}) => {

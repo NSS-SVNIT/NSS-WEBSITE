@@ -4,7 +4,7 @@ import ComitteeSection from "./Home/ComitteeSection";
 import DutySection from "./Home/DutySection";
 import { motion } from "framer-motion";
 import { Typography, Box, Grid, Button, useMediaQuery } from "@mui/material";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@mui/styles";
 import { useState } from "react";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import { Link } from "react-router-dom";

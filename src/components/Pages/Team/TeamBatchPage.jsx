@@ -4,7 +4,7 @@ import TeamCard from "./TeamCard";
 import { Link, useParams } from "react-router-dom";
 import * as Data from "./TeamData";
 import Layout from "../../Layout/Layout";
-import { useMediaQuery } from "@material-ui/core";
+import { useMediaQuery } from "@mui/material";
 
 const TeamBatchPage = React.memo(() => {
   const isMobile = useMediaQuery("(max-width:600px)");
