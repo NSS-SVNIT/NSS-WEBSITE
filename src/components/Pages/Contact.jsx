@@ -5,6 +5,8 @@ import MailIcon from "@mui/icons-material/Mail";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
+import { MapContainer, TileLayer, Popup, Marker } from "react-leaflet";
+import { motion } from "framer-motion";
 
 import {
 	Box,
@@ -17,10 +19,6 @@ import {
 	Tooltip,
 } from "@mui/material";
 import { Facebook, Instagram, Twitter, YouTube, Mail, SendRounded } from "@mui/icons-material";
-import { MapContainer, TileLayer, Popup, Marker } from "react-leaflet";
-import emailjs from "@emailjs/browser";
-import Swal from "sweetalert2";
-import { motion } from "framer-motion";
 
 // Animation variant for items fading/sliding in
 const itemVariants = {
@@ -36,6 +34,8 @@ const itemVariants = {
 };
 
 const Contact = () => {
+	const isMobile = false; // You can use useMediaQuery hook if needed
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
@@ -87,42 +87,22 @@ const Contact = () => {
 
 	return (
 		<Layout>
-			<Typography
-				variant={isMobile ? "h2" : "h1"}
-				alignItems="center"
-				justifyContent="center"
-				textAlign="center"
-				px="20%"
-				marginBottom="30px"
-				fontWeight={400}>
-				GET IN TOUCH
-			</Typography>
-			<Grid container direction={"column"}>
-				<div
-					style={{
-						borderRadius: 0,
-						textTransform: "none",
-						height: "80px",
-						width: isMobile ? "auto" : "300px",
-						marginTop: "10px",
-						alignItems: "center",
-						justifyContent: "center",
-						backgroundColor: "black",
-						// fontSize: "1.1rem",
-						fontFamily: "DM Sans",
-						margin: isMobile ? "5%" : "0 auto",
-						color: "white",
-						display: "flex",
-						// flexDirection: "column",
-						fontSize: "30px",
-					}}>
-					<span style={{ color: "grey", marginRight: "5px" }}>
-						LOCATE{" "}
-					</span>{" "}
-					<span style={{ color: "white" }}>US</span>
-				</div>
-				<Grid item lg={12} xs={4} sm={2} sx={{ px: { xs: 2, md: 8 }, py: 4 }}>
-					{/* Google Maps Embed */}
+			<Box sx={{ px: { xs: 2, md: 4 }, py: { xs: 4, md: 6 } }}>
+				{/* Header */}
+				<Typography
+					variant="h2"
+					textAlign="center"
+					mb={6}
+					fontWeight={600}>
+					GET IN TOUCH
+				</Typography>
+
+				{/* Google Maps Section */}
+				<Box sx={{ mb: 8 }}>
+					<Typography variant="h4" textAlign="center" mb={3} fontWeight={600}>
+						<LocationOnIcon sx={{ verticalAlign: 'middle', mr: 1 }} />
+						LOCATE US
+					</Typography>
 					<Box
 						sx={{
 							height: { xs: "350px", md: "500px" },
@@ -148,7 +128,6 @@ const Contact = () => {
 							title="NSS SVNIT Location"
 						/>
 					</Box>
-					{/* Direct Link to Google Maps */}
 					<Box sx={{ textAlign: "center", mt: 3 }}>
 						<Button
 							variant="contained"
@@ -168,87 +147,69 @@ const Contact = () => {
 							Open in Google Maps
 						</Button>
 					</Box>
-				</Grid>
-			</Grid>
+				</Box>
 
-			<Grid container spacing={3}>
-				<Grid item xs={12} md={6}>
-					<div
-						style={{
-							borderRadius: 0,
-							textTransform: "none",
-							height: "80px",
-							width: isMobile ? "auto" : "450px",
-							marginTop: "10px",
-							alignItems: "center",
-							justifyContent: "center",
-							backgroundColor: "black",
-							// fontSize: "1.1rem",
-							fontFamily: "DM Sans",
-							margin: isMobile ? "5%" : "0 auto",
-							color: "white",
-							display: "flex",
-							flexDirection: isMobile ? "column" : "row",
-							fontSize: "30px",
-						}}>
-						<span style={{ color: "grey", marginRight: "5px" }}>
-							{" "}
-							SEND YOUR{" "}
-						</span>
-						MESSAGE HERE
-					</div>
-					<Box
-						// component="form"
-						noValidate
-						sx={{ m: 3, mx: "auto", width: "80%" }}>
-						<form autoComplete="off" onSubmit={handleSubmit}>
-							<TextField
-								margin="normal"
-								required
-								fullWidth
-								id="name"
-								label="Name"
-								name="name"
-								autoComplete="name"
-								autoFocus
-								error={false}
-								sx={{ width: "100%" }}
-							/>
-							<TextField
-								margin="normal"
-								required
-								fullWidth
-								id="email"
-								label="Email"
-								name="email"
-								autoComplete="email"
-								autoFocus
-								sx={{ width: "100%" }}
-							/>
-							<TextField
-								margin="normal"
-								multiline
-								rows={5}
-								required
-								fullWidth
-								id="message"
-								label="Message"
-								name="message"
-								autoFocus
-								sx={{ width: "100%" }}
-							/>
-							<Button
-								variant="contained"
-								type="submit"
-								endIcon={<SendRoundedIcon />}
-								sx={{ mt: 2, backgroundColor: "black" }}>
-								Send
-							</Button>
-						</form>
-					</Box>
-				</Grid>
+				{/* Contact Form and Details Section */}
+				<Grid container spacing={4}>
+					{/* Contact Form */}
+					<Grid item xs={12} md={7}>
+						<motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={itemVariants}>
+							<Typography variant="h4" mb={3} fontWeight={600}>
+								<SendRoundedIcon sx={{ verticalAlign: 'middle', mr: 1 }} />
+								SEND US A MESSAGE
+							</Typography>
+							<Box component="form" onSubmit={handleSubmit} noValidate>
+								<TextField
+									margin="normal"
+									required
+									fullWidth
+									id="name"
+									label="Your Name"
+									name="name"
+									autoComplete="name"
+									sx={{ mb: 2 }}
+								/>
+								<TextField
+									margin="normal"
+									required
+									fullWidth
+									id="email"
+									label="Your Email"
+									name="email"
+									autoComplete="email"
+									sx={{ mb: 2 }}
+								/>
+								<TextField
+									margin="normal"
+									multiline
+									rows={5}
+									required
+									fullWidth
+									id="message"
+									label="Your Message"
+									name="message"
+									sx={{ mb: 2 }}
+								/>
+								<Button
+									variant="contained"
+									type="submit"
+									endIcon={<SendRoundedIcon />}
+									sx={{
+										mt: 2,
+										backgroundColor: "black",
+										px: 4,
+										py: 1.5,
+										"&:hover": {
+											backgroundColor: "#333",
+										},
+									}}>
+									Send Message
+								</Button>
+							</Box>
+						</motion.div>
+					</Grid>
 
-					{/* --- CONTACT DETAILS SECTION --- */}
+					{/* Contact Details */}
 					<Grid item xs={12} md={5}>
 						<motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={itemVariants}>
 							<Stack spacing={4}>
@@ -257,7 +218,7 @@ const Contact = () => {
 										Contact Details
 									</Typography>
 									<Stack direction="row" alignItems="center" spacing={2} sx={{ mb: 1 }}>
-										<Mail color="primary" />
+										<MailIcon color="action" />
 										<Typography variant="body1">
 											<a href="mailto:nss@svnit.ac.in" style={{ textDecoration: 'none', color: 'inherit' }}>
 												nss@svnit.ac.in
@@ -289,29 +250,6 @@ const Contact = () => {
 						</motion.div>
 					</Grid>
 				</Grid>
-
-				{/* --- MAP SECTION --- */}
-				<motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={itemVariants}>
-					<Box sx={{ mt: { xs: 8, md: 12 } }}>
-						<Typography variant="h3" sx={{ textAlign: 'center', mb: 4, fontWeight: 700 }}>
-							Find Us Here
-						</Typography>
-						<Box sx={{ height: '450px', width: '100%', borderRadius: 4, overflow: 'hidden', boxShadow: 3 }}>
-							<MapContainer center={position} zoom={15} scrollWheelZoom={false} style={{ height: "100%", width: "100%" }}>
-								{/* Using a beautiful monochrome map style */}
-								<TileLayer
-									attribution='© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors © <a href="https://carto.com/attributions">CARTO</a>'
-									url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
-								/>
-								<Marker position={position}>
-									<Popup>
-										<b>NSS SVNIT</b> <br /> SVNIT Campus, Ichchhanath, Surat.
-									</Popup>
-								</Marker>
-							</MapContainer>
-						</Box>
-					</Box>
-				</motion.div>
 			</Box>
 		</Layout>
 	);
