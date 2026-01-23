@@ -16,13 +16,13 @@ import culture from "./culture.gif";
 // --- Data Configuration ---
 // It's cleaner to keep the data in the parent component.
 const committeesData = [
-	{ id: 1, name: "Technical", icon: technical, description: "The NSS Technical Committee facilitates student engagement in engineering and technology by organizing projects, workshops, and industrial trips, promoting practical experiences to enhance technical skills and address societal challenges." },
-	{ id: 2, name: "Sports", icon: sports, description: "The NSS Sports Committee prioritizes volunteers' physical health through morning routines and organizes sporting events. It manages discipline at NSS events and trains volunteers for the NSS parade, ensuring their overall well-being." },
-	{ id: 3, name: "Social", icon: social, description: "The Social Committee organizes diverse events and campaigns, promoting social engagement, personal development, and community service. From orphanage visits to awareness campaigns, the committee fosters connections with other NSS units and NGOs, utilizing social media for effective communication." },
-	{ id: 4, name: "Finance", icon: coin, description: "The Finance Committee handles all financial aspects, managing bills and obtaining admin approval. It educates volunteers on finance and money management, playing a crucial role in ensuring financial transparency within the NSS SVNIT Unit." },
-	{ id: 5, name: "Documentation", icon: document, description: "The Documentation Committee maintains detailed records of event planning, meeting minutes, and creates reports. Their meticulous documentation fosters effective communication with the faculty advisor, promoting transparency and informed decision-making within the unit." },
-	{ id: 6, name: "Creative", icon: creative, description: "The NSS Creative Committee utilizes creative abilities for the greater good, engaging in tasks from designing posters to video editing. It channels creativity to effectively promote welfare initiatives and spread messages that resonate with the audience." },
-	{ id: 7, name: "Cultural", icon: culture, description: "The NSS Cultural Committee organizes diverse cultural events, providing a platform for talent expression in music, dance, and art. It promotes and preserves cultural heritage, encouraging student participation in celebrations that showcase their cultural identity." },
+	{ id: 1, slug: "technical", name: "Technical", icon: technical, description: "The NSS Technical Committee facilitates student engagement in engineering and technology by organizing projects, workshops, and industrial trips, promoting practical experiences to enhance technical skills and address societal challenges." },
+	{ id: 2, slug: "sports", name: "Sports", icon: sports, description: "The NSS Sports Committee prioritizes volunteers' physical health through morning routines and organizes sporting events. It manages discipline at NSS events and trains volunteers for the NSS parade, ensuring their overall well-being." },
+	{ id: 3, slug: "social", name: "Social", icon: social, description: "The Social Committee organizes diverse events and campaigns, promoting social engagement, personal development, and community service. From orphanage visits to awareness campaigns, the committee fosters connections with other NSS units and NGOs, utilizing social media for effective communication." },
+	{ id: 4, slug: "finance", name: "Finance", icon: coin, description: "The Finance Committee handles all financial aspects, managing bills and obtaining admin approval. It educates volunteers on finance and money management, playing a crucial role in ensuring financial transparency within the NSS SVNIT Unit." },
+	{ id: 5, slug: "documentation", name: "Documentation", icon: document, description: "The Documentation Committee maintains detailed records of event planning, meeting minutes, and creates reports. Their meticulous documentation fosters effective communication with the faculty advisor, promoting transparency and informed decision-making within the unit." },
+	{ id: 6, slug: "creative", name: "Creative", icon: creative, description: "The NSS Creative Committee utilizes creative abilities for the greater good, engaging in tasks from designing posters to video editing. It channels creativity to effectively promote welfare initiatives and spread messages that resonate with the audience." },
+	{ id: 7, slug: "cultural", name: "Cultural", icon: culture, description: "The NSS Cultural Committee organizes diverse cultural events, providing a platform for talent expression in music, dance, and art. It promotes and preserves cultural heritage, encouraging student participation in celebrations that showcase their cultural identity." },
 ];
 
 // --- Framer Motion Variants ---
@@ -74,7 +74,7 @@ const ComitteeSection = React.memo(() => {
 							<CommitteeCard
 								title={committee.name}
 								icon={committee.icon}
-								about={committee.description}
+								slug={committee.slug}
 							/>
 						</Grid>
 					))}
