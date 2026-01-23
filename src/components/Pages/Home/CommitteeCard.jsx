@@ -1,105 +1,80 @@
-import React, { useState } from "react";
-import { Box, Button, Stack, Typography, Modal } from "@mui/material";
-import SettingsSuggestIcon from "@mui/icons-material/SettingsSuggest";
+// CommitteeCard.js
+import React from "react";
+import { Box, Typography, Paper } from "@mui/material";
 import { motion } from "framer-motion";
-import ButtonReadMore from "./ButtonReadMore";
-const CommitteeCard = React.memo((props) => {
-	const [isHovered, setHovered] = useState(false);
-	const [openModal, setOpenModal] = useState(false);
+import ButtonReadMore from "./ButtonReadMore"; // Assuming this is your styled button
+import { useNavigate } from "react-router-dom";
 
-	const handleOpenModal = () => {
-		setOpenModal(true);
+// Framer motion variant for each card to animate in
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: 'easeOut' } },
+};
+
+const CommitteeCard = React.memo(({ title, icon, slug }) => {
+	const navigate = useNavigate();
+
+	// Function to restart GIF on hover for a cool effect
+	const reloadGif = (e) => {
+		e.target.src = e.target.src;
 	};
 
-	const handleCloseModal = () => {
-		setOpenModal(false);
+	const handleReadMore = () => {
+		if (!slug) return;
+		navigate(`/committee/${slug}`);
 	};
 
 	return (
-		<Stack
-			onMouseEnter={() => setHovered(true)}
-			onMouseLeave={() => setHovered(false)}
+		<Paper
+			component={motion.div}
+			variants={itemVariants}
+			elevation={2}
 			sx={{
-				bgcolor: "white",
-				filter: "drop-shadow(2px 2px 15px rgba(0, 0, 0, 0.1))",
-				p: 2,
-				m: 0,
-				borderRadius: "15px",
-				// width:{
-				//   xs:"110%",
-				// },
-			}}>
-			{/* <Box
-        sx={{
-          display: "flex",
-          height: "75px",
-          width: "75px",
-          bgcolor: "#ECECEC",
-          borderRadius: "50%",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      > */}
-			{/* <SettingsSuggestIcon sx={{ color: "gray", fontSize: "2rem" }} /> */}
-			{/* </Box> */}
-			{/* {props.url && <img height="150px" src={props.url} alt={props.title} />} */}
-			<Typography
-				component="span"
-				style={{
-					fontFamily: "'Material Symbols Outlined'",
-					fontSize: "8rem",
-					textAlign: "center",
-					lineHeight: "1", // Adjust line height to remove extra space
-					verticalAlign: "middle", // Align the icon vertically in the middle
-				}}>
-				<img src={props.icon} alt="doc" style={{ height: "150px" }} />
-			</Typography>
+				p: 3,
+				textAlign: 'center',
+				borderRadius: 4,
+				height: '100%',
+				display: 'flex',
+				flexDirection: 'column',
+				transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
+				'&:hover': {
+					transform: 'translateY(-8px)',
+					boxShadow: '0px 16px 32px rgba(90, 42, 122, 0.2)',
+				}
+			}}
+		>
 			<Box
 				sx={{
-					fontFamily: "DM Sans",
-					py: 1,
-					fontSize: "1.8rem",
-				}}>
-				{props.title}
+					height: 180,
+					display: 'flex',
+					alignItems: 'center',
+					justifyContent: 'center',
+					mb: 2,
+				}}
+			>
+				<img
+					src={icon}
+					alt={`${title} committee icon`}
+					onMouseEnter={reloadGif}
+					style={{ maxHeight: '100%', maxWidth: '100%' }}
+				/>
 			</Box>
-			{/* <Button variant="outlined">Read more...</Button> */}
-			<ButtonReadMore onClick={handleOpenModal} />
-			<Modal open={openModal} onClose={handleCloseModal}>
-				<Box
-					sx={{
-						position: "absolute",
-						top: "50%",
-						left: "50%",
-						transform: "translate(-50%, -50%)",
-						bgcolor: "white",
-						boxShadow: 24,
-						p: 3,
-						borderRadius: "15px",
-						width: "35%", // Adjust the width as needed
-						padding: "20px", // Adjust padding values as needed
-					}}>
-					<Typography
-						variant="h4"
-						component="div"
-						textAlign="center"
-						marginBottom="20px">
-						{props.title} Committee
-					</Typography>
-					<Typography textAlign="justify">{props.about}</Typography>
-					{/* <br /> */}
-					<Button
-						onClick={handleCloseModal}
-						variant="outlined"
-						sx={{
-							marginTop: "15px",
-							marginLeft: "0", // Align the button to the left
-						}}>
-						Close
-					</Button>
-					{/* <Box></Box> */}
-				</Box>
-			</Modal>
-		</Stack>
+			
+			<Typography
+				variant="h5"
+				component="h3"
+				sx={{
+					fontFamily: "'DM Sans', sans-serif",
+					fontWeight: 'bold',
+					flexGrow: 1, // Pushes the button to the bottom
+					mb: 2,
+				}}
+			>
+				{title}
+			</Typography>
+
+			<ButtonReadMore onClick={handleReadMore} text="Read More" />
+		</Paper>
 	);
 });
 

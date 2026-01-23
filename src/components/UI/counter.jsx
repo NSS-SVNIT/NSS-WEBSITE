@@ -1,68 +1,56 @@
-import { memo, useEffect, useRef, useState } from "react";
+// src/UI/Counter.js
+
+import { Box, Stack, Typography } from "@mui/material";
 import CountUp from "react-countup";
 
-const Counter = memo((props) => {
-	const [counterOn, setCounter] = useState(false);
-	const elementRef = useRef(null);
-
-	useEffect(() => {
-		// Create observer instance
-		const observer = new IntersectionObserver(
-			([entry]) => {
-				// When element enters viewport
-				if (entry.isIntersecting) {
-					setCounter(true);
-				} else {
-					setCounter(false);
-				}
-			},
-			{ threshold: 0.1 } // trigger when at least 10% of the element is visible
-		);
-
-		// Start observing the element
-		if (elementRef.current) {
-			observer.observe(elementRef.current);
-		}
-
-		// Clean up
-		return () => {
-			if (elementRef.current) {
-				observer.unobserve(elementRef.current);
-			}
-		};
-	}, []);
-
+// 1. The component now accepts an `icon` prop. Props `start` and `duration` are removed for simplicity.
+const Counter = ({ icon, end, title }) => {
 	return (
-		<div ref={elementRef}>
-			<div
-				style={{
-					...props.style,
-					display: "flex",
-					flexDirection: "column",
-					alignItems: "center",
-					justifyContent: "center",
-				}}>
-				<div>
-					{counterOn && (
-						<CountUp
-							start={props.start}
-							end={props.end}
-							duration={props.duration}
-							delay={0}></CountUp>
-					)}
-					+
-				</div>
-				<p
-					style={{
-						fontFamily: "Poppins",
-						fontSize: "1.8rem",
-						fontWeight: "300",
-					}}>
-					{props.title}
-				</p>
-			</div>
-		</div>
+		<Stack spacing={1.5} alignItems="center">
+			
+			{/* 2. Box to display the icon with a styled background */}
+			<Box
+				sx={{
+					// Semi-transparent white background for the icon
+					bgcolor: 'rgba(255, 255, 255, 0.2)',
+					borderRadius: '50%',
+					p: 1.5,
+					display: 'flex',
+					mb: 1,
+					// Style the SVG icon itself
+					'& .MuiSvgIcon-root': {
+						fontSize: { xs: '2rem', md: '2.5rem' },
+					}
+				}}
+			>
+				{icon}
+			</Box>
+			
+			<Typography
+				sx={{
+					fontSize: { xs: "2rem", md: "2.5rem" },
+					fontWeight: "bold",
+					fontFamily: "Poppins, sans-serif",
+					// 3. Color is removed to be inherited from the parent. Text shadow is added.
+					textShadow: "1px 1px 4px rgba(0, 0, 0, 0.5)",
+				}}
+			>
+				{/* 4. Added separator for numbers like 2,000 */}
+				<CountUp start={0} end={end} duration={2.5} enableScrollSpy separator="," />
+			</Typography>
+
+			<Typography
+				variant="body1"
+				sx={{ 
+					fontWeight: 500,
+					// 3. Color is removed. Text shadow is added.
+					textShadow: "1px 1px 4px rgba(0, 0, 0, 0.5)",
+				}}
+			>
+				{title}
+			</Typography>
+		</Stack>
 	);
-});
+};
 
 export default Counter;

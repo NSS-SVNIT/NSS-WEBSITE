@@ -1,223 +1,207 @@
-import * as React from "react";
-import { styled } from "@mui/material/styles";
-import Box from "@mui/material/Box";
-import ButtonBase from "@mui/material/ButtonBase";
-import Container from "@mui/material/Container";
-import { useState, useEffect } from 'react';
+// ImageGrid.js
+import React, { useState, useEffect } from 'react';
+import { styled } from '@mui/material/styles';
+import { Box, Typography, Container, Skeleton } from '@mui/material';
 import { getStorage, ref, getDownloadURL } from 'firebase/storage';
-import { Typography } from "@mui/material";
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
+// --- Data Configuration ---
+// The span property is now primarily for the desktop (lg) view.
+const imageMetadata = [
+  { title: "Cultural Activities", path: 'aboutImages/Cultural.jpg', span: 2 },
+  { title: "Parade", path: 'aboutImages/Parade.jpg', span: 2 },
+  { title: "Industrial Visits", path: 'aboutImages/Industrial.jpg', span: 2 },
+  { title: "Cleanliness Drives", path: 'aboutImages/Cleanliness.jpg', span: 2 },
+  { title: "Camps", path: 'aboutImages/Camp.jpg', span: 2 },
+  { title: "Yoga Sessions", path: 'aboutImages/MorningRoutine.jpg', span: 2 },
+  { title: "Workshops", path: 'aboutImages/workshops.jpg', span: 2 },
+  { title: "Awareness Campaigns", path: 'aboutImages/Awareness.jpg', span: 2 },
+  { title: "Plantation Drives", path: 'aboutImages/Plantation.jpg', span: 2 }, 
+];
 
+// --- Styled Components ---
+const ImageCard = styled(motion.div)(({ theme }) => ({
+  position: 'relative',
+  display: 'block',
+  overflow: 'hidden',
+  borderRadius: theme.shape.borderRadius * 2,
+  cursor: 'pointer',
+  // Responsive height for the cards
+  height: '300px', // Default height for desktop
+  [theme.breakpoints.down('md')]: {
+    height: '240px', // Shorter height for tablet and mobile
+  },
+  boxShadow: '0px 10px 30px rgba(0, 0, 0, 0.1)',
+  '&:hover .imageSrc': {
+    transform: 'scale(1.05)',
+  },
+  '&:hover .imageBackdrop': {
+    opacity: 1,
+  },
+}));
 
-const ImageBackdrop = styled("div")(({ theme }) => ({
-  position: "absolute",
+const ImageSrc = styled('span')({
+  position: 'absolute',
   left: 0,
   right: 0,
   top: 0,
   bottom: 0,
-  background: "#000",
-  opacity: 0.5,
-  transition: theme.transitions.create("opacity"),
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  transition: 'transform 0.4s ease-in-out',
+});
+
+const ImageBackdrop = styled('span')(({ theme }) => ({
+  position: 'absolute',
+  left: 0,
+  right: 0,
+  top: 0,
+  bottom: 0,
+  background: 'linear-gradient(to top, rgba(90, 42, 122, 0.8) 0%, rgba(90, 42, 122, 0) 60%)',
+  opacity: 0,
+  transition: 'opacity 0.3s ease-in-out',
 }));
 
-const ImageIconButton = styled(ButtonBase)(({ theme }) => ({
-  position: "relative",
-  display: "block",
-  padding: 0,
-  borderRadius: 0,
-  height: "40vh",
-  [theme.breakpoints.down("md")]: {
-    width: "100% !important",
-    height: 100,
-  },
-  "&:hover": {
-    zIndex: 1,
-  },
-  "&:hover .imageBackdrop": {
-    opacity: 0.15,
-  },
-  "&:hover .imageMarked": {
-    opacity: 0,
-  },
-  "&:hover .imageTitle": {
-    border: "4px solid currentColor",
-  },
-  "& .imageTitle": {
-    position: "relative",
-    fontFamily: "DM Sans",
-    fontWeight: "400",
-    padding: `${theme.spacing(2)} ${theme.spacing(4)} 14px`,
-  },
-  "& .imageMarked": {
-    height: 3,
-    width: 18,
-    background: theme.palette.common.white,
-    position: "absolute",
-    bottom: -2,
-    left: "calc(50% - 9px)",
-    transition: theme.transitions.create("opacity"),
+const ImageTitle = styled(Typography)(({ theme }) => ({
+  position: 'absolute',
+  left: theme.spacing(3),
+  bottom: theme.spacing(2),
+  color: theme.palette.common.white,
+  fontFamily: "'DM Sans', sans-serif",
+  fontWeight: 'bold',
+  textShadow: '0px 1px 3px rgba(0,0,0,0.5)',
+  // Responsive font size for the title
+  fontSize: theme.typography.h5.fontSize,
+  [theme.breakpoints.down('md')]: {
+    fontSize: theme.typography.h6.fontSize,
+    left: theme.spacing(2),
+    bottom: theme.spacing(1.5),
   },
 }));
+
+// --- Framer Motion Variants ---
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      ease: 'easeOut',
+    },
+  },
+};
 
 const ImageGrid = React.memo(() => {
-  const [CulturalActivity, setCulturalActivity] = useState([]);
-  const [Parade, setParade] = useState([]);
-  const [Industrial, setIndustrial] = useState([]);
-  const [Cleanliness, setCleanliness] = useState([]);
-  const [Camp, setCamp] = useState([]);
-  const [MorningRoutine, setMorningRoutine] = useState([]);
-  const [Workshop, setWorkshop] = useState([]);
-  const [AwarenessCampaign, setAwarenessCampaign] = useState([]);
-  const [PlantationDrive, setPlantationDrive] = useState([]);
-
-  const func = async () => {
-    const storage = getStorage();
-
-    const reference1 = ref(storage, 'aboutImages/Cultural.jpg');
-    getDownloadURL(reference1).then((x) => { setCulturalActivity(x); })
-
-    const reference2 = ref(storage, 'aboutImages/Parade.jpg');
-    getDownloadURL(reference2).then((x) => { setParade(x); })
-
-    const reference3 = ref(storage, 'aboutImages/Industrial.jpg');
-    getDownloadURL(reference3).then((x) => { setIndustrial(x); })
-
-    const reference4 = ref(storage, 'aboutImages/Cleanliness.jpg');
-    getDownloadURL(reference4).then((x) => { setCleanliness(x); })
-
-    const reference5 = ref(storage, 'aboutImages/Camp.jpg');
-    getDownloadURL(reference5).then((x) => { setCamp(x); })
-
-    const reference6 = ref(storage, 'aboutImages/MorningRoutine.jpg');
-    getDownloadURL(reference6).then((x) => { setMorningRoutine(x); })
-
-    const reference7 = ref(storage, 'aboutImages/workshops.jpg');
-    getDownloadURL(reference7).then((x) => { setWorkshop(x); })
-
-    const reference8 = ref(storage, 'aboutImages/Plantation.jpg');
-    getDownloadURL(reference8).then((x) => { setPlantationDrive(x); })
-
-    const reference9 = ref(storage, 'aboutImages/Awareness.jpg');
-    getDownloadURL(reference9).then((x) => { setAwarenessCampaign(x); })
-  }
+  const [images, setImages] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    func()
+    const fetchImages = async () => {
+      setIsLoading(true);
+      try {
+        const storage = getStorage();
+        const promises = imageMetadata.map(async (meta) => {
+          const url = await getDownloadURL(ref(storage, meta.path));
+          return { ...meta, url };
+        });
+        const fetchedImages = await Promise.all(promises);
+        setImages(fetchedImages);
+      } catch (error) {
+        console.error("Failed to fetch images from Firebase:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchImages();
   }, []);
 
-  console.log(CulturalActivity);
-
-  const images = [
-    {
-      url: CulturalActivity,
-      title: "Cultural Activities",
-      width: "40%",
-    },
-    {
-      url: Parade,
-      title: "Parade",
-      width: "20%",
-    },
-    {
-      url: Industrial,
-      title: "Industrial Visits and Projects",
-      width: "40%",
-    },
-    {
-      url: Cleanliness,
-      title: "Cleanliness Drives",
-      width: "20%",
-    },
-    {
-      url: Camp,
-      title: "Camps",
-      width: "40%",
-    },
-    {
-      url: MorningRoutine,
-      title: "Morning Routines and Yoga Sessions",
-      width: "40%",
-    },
-    {
-      url: Workshop,
-      title: "Workshops",
-      width: "40%",
-    },
-    {
-      url: AwarenessCampaign,
-      title: "Awareness Campaigns",
-      width: "40%",
-    },
-    {
-      url: PlantationDrive,
-      title: "Plantation Drives",
-      width: "20%",
-    },
-  ];
+  const renderSkeletons = () => (
+    <Box
+      sx={{
+        display: 'grid',
+        // Responsive gap
+        gap: { xs: 2, md: 2.5 }, 
+        // Responsive grid columns
+        gridTemplateColumns: {
+          xs: 'repeat(1, 1fr)', // 1 column on mobile
+          md: 'repeat(2, 1fr)', // 2 columns on tablet
+          lg: 'repeat(4, 1fr)', // 4 columns on desktop
+        },
+      }}
+    >
+      {imageMetadata.map((meta) => (
+        <Skeleton 
+          key={meta.path}
+          variant="rectangular" 
+          sx={{ 
+            borderRadius: 2,
+            // Responsive height to match the ImageCard
+            height: { xs: '240px', md: '300px'},
+            // Responsive column span to match the final layout
+            gridColumn: {
+              xs: 'span 1',
+              md: 'span 1',
+              lg: `span ${meta.span}`,
+            }
+          }} 
+        />
+      ))}
+    </Box>
+  );
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 2 }}
-    >
-      <Box
-        sx={{
-          display: "flex",
-          flexWrap: "wrap",
-          px: 8,
-          py: 2,
-        }}
-      >
-        {images.map((image) => (
-          <ImageIconButton
-            key={image.title}
-            style={{
-              width: image.width,
-              fontFamily: "DM Sans",
-            }}
-          >
-            <Box
-              sx={{
-                position: "absolute",
-                left: 0,
-                right: 0,
-                top: 0,
-                bottom: 0,
-                backgroundSize: "cover",
-                backgroundPosition: "center 40%",
-                backgroundImage: `url(${image.url})`,
-              }}
-            />
-            <ImageBackdrop className="imageBackdrop" />
-            <Box
-              sx={{
-                position: "absolute",
-                left: 0,
-                right: 0,
-                top: 0,
-                bottom: 0,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "common.white",
+    <Container maxWidth="lg" sx={{ py: { xs: 6, md: 8 } }}>
+      {isLoading ? renderSkeletons() : (
+        <Box
+          component={motion.div}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          sx={{
+            display: 'grid',
+            // Responsive gap
+            gap: { xs: 2, md: 2.5 },
+            // Responsive grid columns
+            gridTemplateColumns: {
+              xs: 'repeat(1, 1fr)', // 1 column on mobile
+              md: 'repeat(2, 1fr)', // 2 columns on tablet
+              lg: 'repeat(4, 1fr)', // 4 columns on desktop
+            },
+          }}
+        >
+          {images.map((image) => (
+            <ImageCard
+              key={image.title}
+              variants={itemVariants}
+              sx={{ 
+                // Responsive column span logic
+                gridColumn: {
+                  xs: 'span 1',        // Each card takes 1 column on mobile
+                  md: 'span 1',        // Each card takes 1 column on tablet
+                  lg: `span ${image.span}`, // Each card uses its defined span on desktop
+                } 
               }}
             >
-              <Typography
-                component="h3"
-                variant="h6"
-                color="inherit"
-                className="imageTitle"
-              >
-                {image.title}
-                <div className="imageMarked" />
-              </Typography>
-            </Box>
-          </ImageIconButton>
-        ))}
-      </Box>
-    </motion.div>
+              <ImageSrc className="imageSrc" style={{ backgroundImage: `url(${image.url})` }} />
+              <ImageBackdrop className="imageBackdrop" />
+              <ImageTitle>{image.title}</ImageTitle>
+            </ImageCard>
+          ))}
+        </Box>
+      )}
+    </Container>
   );
 });
 
