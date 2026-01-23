@@ -1,5 +1,13 @@
 import React from "react";
 import Layout from "../Layout/Layout";
+import SendRoundedIcon from "@mui/icons-material/SendRounded";
+import MailIcon from "@mui/icons-material/Mail";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import emailjs from "@emailjs/browser";
+import Swal from "sweetalert2";
+import { MapContainer, TileLayer, Popup, Marker } from "react-leaflet";
+import { motion } from "framer-motion";
+
 import {
 	Box,
 	Grid,
@@ -11,10 +19,6 @@ import {
 	Tooltip,
 } from "@mui/material";
 import { Facebook, Instagram, Twitter, YouTube, Mail, SendRounded } from "@mui/icons-material";
-import { MapContainer, TileLayer, Popup, Marker } from "react-leaflet";
-import emailjs from "@emailjs/browser";
-import Swal from "sweetalert2";
-import { motion } from "framer-motion";
 
 // Animation variant for items fading/sliding in
 const itemVariants = {
@@ -30,6 +34,8 @@ const itemVariants = {
 };
 
 const Contact = () => {
+	const isMobile = false; // You can use useMediaQuery hook if needed
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
@@ -81,55 +87,129 @@ const Contact = () => {
 
 	return (
 		<Layout>
-			<Box sx={{ px: { xs: 2, md: 4 }, py: { xs: 5, md: 10 }, overflow: 'hidden' }}>
-				{/* --- MAIN HEADING --- */}
-				<motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={itemVariants}>
-					<Typography variant="h2" sx={{ textAlign: 'center', mb: 1, fontWeight: 700 }}>
-						Get In Touch
-					</Typography>
-					<Typography color="text.secondary" sx={{ textAlign: 'center', maxWidth: '600px', mx: 'auto', mb: 8 }}>
-						We're here to help and answer any question you might have. We look forward to hearing from you.
-					</Typography>
-				</motion.div>
+			<Box sx={{ px: { xs: 2, md: 4 }, py: { xs: 4, md: 6 } }}>
+				{/* Header */}
+				<Typography
+					variant="h2"
+					textAlign="center"
+					mb={6}
+					fontWeight={600}>
+					GET IN TOUCH
+				</Typography>
 
-				{/* --- FORM & CONTACT DETAILS GRID --- */}
-				<Grid container spacing={{ xs: 5, md: 8 }}>
-					{/* --- FORM SECTION --- */}
+				{/* Google Maps Section */}
+				<Box sx={{ mb: 8 }}>
+					<Typography variant="h4" textAlign="center" mb={3} fontWeight={600}>
+						<LocationOnIcon sx={{ verticalAlign: 'middle', mr: 1 }} />
+						LOCATE US
+					</Typography>
+					<Box
+						sx={{
+							height: { xs: "350px", md: "500px" },
+							borderRadius: 3,
+							overflow: "hidden",
+							boxShadow: "0 10px 40px rgba(0,0,0,0.2)",
+							border: "3px solid #000",
+							position: "relative",
+							"&:hover": {
+								boxShadow: "0 15px 50px rgba(0,0,0,0.3)",
+								transform: "translateY(-2px)",
+							},
+							transition: "all 0.3s ease",
+						}}>
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.6507653833756!2d72.78287931492656!3d21.164583085916397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04dec8b56fdf1%3A0x423b99085d26d1f9!2sSardar%20Vallabhbhai%20National%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1643234567890!5m2!1sen!2sin"
+							width="100%"
+							height="100%"
+							style={{ border: 0 }}
+							allowFullScreen=""
+							loading="lazy"
+							referrerPolicy="no-referrer-when-downgrade"
+							title="NSS SVNIT Location"
+						/>
+					</Box>
+					<Box sx={{ textAlign: "center", mt: 3 }}>
+						<Button
+							variant="contained"
+							startIcon={<LocationOnIcon />}
+							href="https://maps.google.com/?q=21.164583,72.785239"
+							target="_blank"
+							rel="noopener noreferrer"
+							sx={{
+								backgroundColor: "black",
+								px: 4,
+								py: 1.5,
+								fontSize: "1rem",
+								"&:hover": {
+									backgroundColor: "#333",
+								},
+							}}>
+							Open in Google Maps
+						</Button>
+					</Box>
+				</Box>
+
+				{/* Contact Form and Details Section */}
+				<Grid container spacing={4}>
+					{/* Contact Form */}
 					<Grid item xs={12} md={7}>
 						<motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={itemVariants}>
-							<Box sx={{ p: { xs: 2, sm: 4 }, bgcolor: 'action.hover', borderRadius: 4 }}>
-								<Typography variant="h4" gutterBottom sx={{ fontWeight: 600, mb: 3 }}>
-									Send us a Message
-								</Typography>
-								<form autoComplete="off" onSubmit={handleSubmit}>
-									<Grid container spacing={3}>
-										<Grid item xs={12} sm={6}>
-											<TextField required fullWidth name="name" label="Your Name" variant="filled" />
-										</Grid>
-										<Grid item xs={12} sm={6}>
-											<TextField required fullWidth name="email" type="email" label="Your Email" variant="filled" />
-										</Grid>
-										<Grid item xs={12}>
-											<TextField required fullWidth multiline rows={6} name="message" label="Your Message" variant="filled" />
-										</Grid>
-										<Grid item xs={12}>
-											<Button
-												type="submit"
-												variant="contained"
-												size="large"
-												endIcon={<SendRounded />}
-												sx={{ fontWeight: 600, px: 4, py: 1.5 }}
-											>
-												Send Message
-											</Button>
-										</Grid>
-									</Grid>
-								</form>
+							<Typography variant="h4" mb={3} fontWeight={600}>
+								<SendRoundedIcon sx={{ verticalAlign: 'middle', mr: 1 }} />
+								SEND US A MESSAGE
+							</Typography>
+							<Box component="form" onSubmit={handleSubmit} noValidate>
+								<TextField
+									margin="normal"
+									required
+									fullWidth
+									id="name"
+									label="Your Name"
+									name="name"
+									autoComplete="name"
+									sx={{ mb: 2 }}
+								/>
+								<TextField
+									margin="normal"
+									required
+									fullWidth
+									id="email"
+									label="Your Email"
+									name="email"
+									autoComplete="email"
+									sx={{ mb: 2 }}
+								/>
+								<TextField
+									margin="normal"
+									multiline
+									rows={5}
+									required
+									fullWidth
+									id="message"
+									label="Your Message"
+									name="message"
+									sx={{ mb: 2 }}
+								/>
+								<Button
+									variant="contained"
+									type="submit"
+									endIcon={<SendRoundedIcon />}
+									sx={{
+										mt: 2,
+										backgroundColor: "black",
+										px: 4,
+										py: 1.5,
+										"&:hover": {
+											backgroundColor: "#333",
+										},
+									}}>
+									Send Message
+								</Button>
 							</Box>
 						</motion.div>
 					</Grid>
 
-					{/* --- CONTACT DETAILS SECTION --- */}
+					{/* Contact Details */}
 					<Grid item xs={12} md={5}>
 						<motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={itemVariants}>
 							<Stack spacing={4}>
@@ -138,7 +218,7 @@ const Contact = () => {
 										Contact Details
 									</Typography>
 									<Stack direction="row" alignItems="center" spacing={2} sx={{ mb: 1 }}>
-										<Mail color="primary" />
+										<MailIcon color="action" />
 										<Typography variant="body1">
 											<a href="mailto:nss@svnit.ac.in" style={{ textDecoration: 'none', color: 'inherit' }}>
 												nss@svnit.ac.in
@@ -170,29 +250,6 @@ const Contact = () => {
 						</motion.div>
 					</Grid>
 				</Grid>
-
-				{/* --- MAP SECTION --- */}
-				<motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={itemVariants}>
-					<Box sx={{ mt: { xs: 8, md: 12 } }}>
-						<Typography variant="h3" sx={{ textAlign: 'center', mb: 4, fontWeight: 700 }}>
-							Find Us Here
-						</Typography>
-						<Box sx={{ height: '450px', width: '100%', borderRadius: 4, overflow: 'hidden', boxShadow: 3 }}>
-							<MapContainer center={position} zoom={15} scrollWheelZoom={false} style={{ height: "100%", width: "100%" }}>
-								{/* Using a beautiful monochrome map style */}
-								<TileLayer
-									attribution='© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors © <a href="https://carto.com/attributions">CARTO</a>'
-									url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
-								/>
-								<Marker position={position}>
-									<Popup>
-										<b>NSS SVNIT</b> <br /> SVNIT Campus, Ichchhanath, Surat.
-									</Popup>
-								</Marker>
-							</MapContainer>
-						</Box>
-					</Box>
-				</motion.div>
 			</Box>
 		</Layout>
 	);

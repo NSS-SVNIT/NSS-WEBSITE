@@ -6,7 +6,8 @@ import { motion } from "framer-motion";
 import { Typography, Box, Grid, Button, useMediaQuery } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { useState } from "react";
-import { getStorage, ref, getDownloadURL } from "firebase/storage";
+import { ref, getDownloadURL } from "firebase/storage";
+import { storage } from "../../firebase";
 import { Link } from "react-router-dom";
 import nssBackground from "../../assets/nss_background.png";
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
@@ -14,7 +15,7 @@ import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 
 const useStyles = makeStyles({
 	gradientBackground: {
-		background: "linear-gradient(to bottom, #ffebff, #FFE6FF)",
+		background: "linear-gradient(to bottom, #ffffff, #ffffff)",
 	},
 });
 
@@ -34,7 +35,6 @@ const About = () => {
 
 	const [url, setUrl] = useState("aaaa");
 	const func = async () => {
-		const storage = getStorage();
 		const reference = ref(storage, "aboutImages/nss_logo.jpg");
 		await getDownloadURL(reference).then((x) => {
 			setUrl(x);
@@ -70,7 +70,7 @@ const About = () => {
 							m: "23px",
 							p: "25px",
 							textAlign: "justify",
-							bgcolor: "#ffebff",
+							bgcolor: "background.paper",
 							borderRadius: "25px",
 							display: "flex",
 							justifyContent: "center",
@@ -123,7 +123,7 @@ const About = () => {
 							m: "23px",
 							p: "25px",
 							textAlign: "justify",
-							bgcolor: "#ffebff",
+							bgcolor: "background.paper",
 							borderRadius: "25px",
 							display: "flex",
 							justifyContent: "center",
@@ -228,7 +228,7 @@ const About = () => {
 								width: isMobile ? "280px" : "400px",
 								height: isMobile ? "280px" : "400px",
 								borderRadius: "50%",
-								backgroundColor: "#ffebff",
+								backgroundColor: "#ffffff",
 								display: "flex",
 								alignItems: "center",
 								justifyContent: "center",
@@ -355,7 +355,7 @@ const About = () => {
 								height: "300px",
 								width: "80%",
 								borderRadius: "5px",
-								boxShadow: " 3px 3px #ffccff",
+								boxShadow: "0 4px 10px rgba(0,0,0,0.08)",
 								alignItems: "center",
 								justifyContent: "center",
 								overflowX: "hidden",
@@ -412,7 +412,7 @@ const About = () => {
 								display: "flex",
 								height: "300px",
 								width: "80%",
-								boxShadow: " 3px 3px #ffccff",
+								boxShadow: "0 4px 10px rgba(0,0,0,0.08)",
 								borderRadius: "5px",
 								alignItems: "center",
 								justifyContent: "center",
