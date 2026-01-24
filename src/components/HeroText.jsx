@@ -10,7 +10,7 @@ const HeroText = memo(() => {
 			spacing={2} // Adds space between the heading and the paragraph
 			sx={{
 				// This replaces the .glass CSS class
-				background: "rgba(0, 0, 0, 0.8)",
+				background: "rgba(0, 0, 0, 0.5)",
 				backdropFilter: "blur(10px)",
 				borderRadius: "15px",
 				border: "1px solid rgba(255, 255, 255, 0.2)",
