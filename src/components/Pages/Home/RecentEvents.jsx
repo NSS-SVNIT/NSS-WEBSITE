@@ -1,12 +1,13 @@
 // src/components/sections/CounterSection.js
 
 import { Box, Button, Stack, Typography } from "@mui/material"; // Import Button
+import { ArrowForward } from "@mui/icons-material"; // Import arrow icon
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom"; // Import Link for navigation
 import { motion } from "framer-motion"; // Import motion for animation
 
 // Import icons and background image...
-import BackgroundImage from "../../../assets/44.jpg";
+import BackgroundImage from "../../../assets/eventBg.jpg";
 
 // Import photos for initiatives
 import Awareness from './photos/Awareness.jpg';
@@ -39,7 +40,7 @@ const ParallaxContent = () => {
                 backgroundAttachment: "fixed",
                 backgroundPosition: "center",
                 backgroundSize: "cover",
-                py: { xs: 10, md: 16 }, // Adjusted padding for more space
+                py: { xs: 6, md: 10 }, // Reduced padding to make section shorter
                 color: 'white',
             }}
         >
@@ -47,32 +48,41 @@ const ParallaxContent = () => {
             
 
             {/* --- NEW BUTTON ADDED HERE --- */}
-            
+           
             <motion.div
                 initial={{ opacity:0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.2 } }}
                 viewport={{ once: true }}
             >
                 
+                
+            </motion.div>
+
+            <InitiativeSlider />
+
+            {/* Button added after the slider */}
+            <motion.div
+                initial={{ opacity:0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.2 } }}
+                viewport={{ once: true }}
+            >
                 <Button
                     component={Link}
                     to="/events"
-                    variant="contained" // Solid, attention-grabbing style
+                    variant="contained"
                     size="large"
                     sx={{
-                        // Style the button to stand out
                         py: 1.5,
                         px: 4,
                         fontSize: '1rem',
                         fontWeight: 'bold',
-                        borderRadius: '50px', // Pill-shaped button
+                        borderRadius: '50px',
                     }}
                 >
-                    Explore our Events
+                    Explore more Events
+                    <ArrowForward sx={{ ml: 1 }} />
                 </Button>
             </motion.div>
-
-            <InitiativeSlider />
         </Stack>
     );
 };
@@ -112,8 +122,8 @@ function InitiativeSlider() {
                 {initiatives.map((item, i) => {
                     let style = {
                         position: 'absolute',
-                        width: '300px',
-                        height: '400px',
+                        width: '500px',
+                        height: '500px',
                         borderRadius: '15px',
                         overflow: 'hidden',
                         boxShadow: '0 10px 30px rgba(0,0,0,0.3)',
@@ -127,11 +137,11 @@ function InitiativeSlider() {
                     } else if (i === (active - 1 + initiatives.length) % initiatives.length) {
                         style.transform = 'translateX(-350px) scale(0.8) rotateY(15deg)';
                         style.zIndex = 2;
-                        style.opacity = 0.7;
+                        style.opacity = 0.9;
                     } else if (i === (active + 1) % initiatives.length) {
                         style.transform = 'translateX(350px) scale(0.8) rotateY(-15deg)';
                         style.zIndex = 2;
-                        style.opacity = 0.7;
+                        style.opacity = 0.9;
                     } else {
                         style.transform = 'translateX(0) scale(0.6) rotateY(0deg)';
                         style.zIndex = 1;
@@ -146,13 +156,30 @@ function InitiativeSlider() {
                                 bottom: '0',
                                 left: '0',
                                 right: '0',
-                                background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)',
+                                background: 'linear-gradient(to top, rgba(0,0,0,0.9), transparent)',
                                 color: 'white',
                                 padding: '20px',
                                 fontSize: '18px',
                                 fontWeight: 'bold',
-                                textAlign: 'center'
-                            }}>{item.title}</div>
+                                textAlign: 'center',
+                                borderRadius: '0 0 15px 15px',
+                                border: '1px solid rgba(255,255,255,0.2)',
+                                borderTop: 'none'
+                            }}>
+                                <span style={{
+                                    background: "rgba(0,0,0,0.8)",
+                                    color: "white",
+                                    padding: "8px 16px",
+                                    borderRadius: "20px",
+                                    border: "1px solid rgba(255,255,255,0.3)",
+                                    fontSize: "16px",
+                                    fontWeight: "bold",
+                                    display: "inline-block",
+                                    marginTop: "10px"
+                                }}>
+                                {item.title}
+                                </span>
+                            </div>
                         </div>
                     );
                 })}

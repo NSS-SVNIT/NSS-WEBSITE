@@ -13,6 +13,7 @@ const HeroSection = React.memo(() => {
 				backgroundImage: `url(${Background})`,
 				backgroundSize: "cover",
 				backgroundPosition: "center",
+				
 			}}
 		>
 			<Grid
