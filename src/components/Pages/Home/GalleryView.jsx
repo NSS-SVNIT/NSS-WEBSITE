@@ -7,9 +7,9 @@ import { motion } from "framer-motion";
 // Import your images...
 import Home_1 from "../../../assets/Home_1.jpg";
 import Home_2 from "../../../assets/Home_2.jpg";
-import Home_3 from "../../../assets/Home_3.jpg";
+import Home_3 from "../../../assets/Home_3.png";
 import Home_4 from "../../../assets/Home_4.jpg";
-import Home_5 from "../../../assets/Home_5.jpg";
+import Home_5 from "../../../assets/Home_5.jpeg";
 import Home_6 from "../../../assets/Home_6.jpg";
 import Home_7 from "../../../assets/Home_7.jpg";
 import Home_8 from "../../../assets/Home_8.jpg";

@@ -11,7 +11,7 @@ import BackgroundImage from "../../../assets/44.jpg";
 // Import photos for initiatives
 import Awareness from './photos/Awareness.jpg';
 import Camp from './photos/Camp.jpg';
-import Cleanliness from './photos/Cleanliness.jpg';
+import Cleanliness from './photos/Cleanliness.jpeg';
 import Cultural from './photos/Cultural.jpg';
 
 
@@ -79,20 +79,20 @@ const ParallaxContent = () => {
 
 const initiatives = [
     {
-        title: "Awareness Campaign",
-        image: Awareness,
+        title: "Republic Day Skit",
+        image: Cultural,
     },
     {
-        title: "NSS Camp",
+        title: "Annual Camp",
         image: Camp,
     },
     {
-        title: "Cleanliness Drive",
-        image: Cleanliness,
+        title: "Industrial Visit",
+        image: Awareness,
     },
     {
-        title: "Cultural Event",
-        image: Cultural,
+        title: "Beach Cleaning",
+        image: Cleanliness,
     },
 ];
 
