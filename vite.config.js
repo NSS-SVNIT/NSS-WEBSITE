@@ -26,5 +26,33 @@ export default defineConfig({
 		commonjsOptions: {
 			transformMixedEsModules: true,
 		},
+		minify: "terser",
+		terserOptions: {
+			compress: {
+				drop_console: true,
+				drop_debugger: true,
+			},
+		},
+		sourcemap: false,
+		rollupOptions: {
+			output: {
+				manualChunks: {
+					'vendor-mui': [
+						'@mui/material',
+						'@mui/icons-material',
+						'@mui/system',
+						'@mui/x-date-pickers',
+					],
+					'vendor-firebase': ['firebase', 'react-firebase-hooks'],
+					'vendor-utils': [
+						'react-router-dom',
+						'framer-motion',
+						'react-markdown',
+						'leaflet',
+						'lightgallery',
+					],
+				},
+			},
+		},
 	},
 });
