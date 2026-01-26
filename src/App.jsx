@@ -1,5 +1,6 @@
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import { Fab } from "@mui/material";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import React, { memo, Suspense } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
@@ -15,6 +16,7 @@ import Gallery from "./components/Pages/Gallery";
 import Home from "./components/Pages/Home";
 import NewPost from "./components/Pages/NewPost";
 import Post from "./components/Pages/Post";
+import CommitteeDetail from "./components/Pages/CommitteeDetail";
 import AdminLogin from "./components/Pages/Team/AdminLogin";
 import AdminPage from "./components/Pages/Team/AdminPage";
 import AuthGuard from "./components/Pages/Team/AuthGuard";
@@ -22,6 +24,13 @@ import Team from "./components/Pages/Team/Team";
 import TeamBatchPage from "./components/Pages/Team/TeamBatchPage";
 import VolunteerPage from "./components/Pages/Team/VolunteerPage";
 import Loader from "./components/UI/Loader";
+import TechnicalCommittee from "./components/Pages/Committees/TechnicalCommittee";
+import SportsCommittee from "./components/Pages/Committees/SportsCommittee";
+import SocialCommittee from "./components/Pages/Committees/SocialCommittee";
+import FinanceCommittee from "./components/Pages/Committees/FinanceCommittee";
+import DocumentationCommittee from "./components/Pages/Committees/DocumentationCommittee";
+import CreativeCommittee from "./components/Pages/Committees/CreativeCommittee";
+import CulturalCommittee from "./components/Pages/Committees/CulturalCommittee";
 const MemoizedAbout = memo(About);
 const MemoizedGallery = memo(Gallery);
 const MemoizedAdmin = memo(Admin);
@@ -38,9 +47,16 @@ const MemoizedAdminLogin = memo(AdminLogin);
 const MemoizedContact = memo(Contact);
 const MemoizedPost = memo(Post);
 const MemoizedHome = memo(Home);
+const MemoizedTechnicalCommittee = memo(TechnicalCommittee);
+const MemoizedSportsCommittee = memo(SportsCommittee);
+const MemoizedSocialCommittee = memo(SocialCommittee);
+const MemoizedFinanceCommittee = memo(FinanceCommittee);
+const MemoizedDocumentationCommittee = memo(DocumentationCommittee);
+const MemoizedCreativeCommittee = memo(CreativeCommittee);
+const MemoizedCulturalCommittee = memo(CulturalCommittee);
 
 function App() {
-	const [loading, setLoading] = React.useState(true);
+  const [loading, setLoading] = React.useState(true);
 
 	React.useEffect(() => {
 		setTimeout(() => {
@@ -113,6 +129,34 @@ function App() {
 							<Route
 								path="/events/:id"
 								element={<MemoizedPost />}
+							/>
+							<Route
+								path="/committee/technical"
+								element={<MemoizedTechnicalCommittee />}
+							/>
+							<Route
+								path="/committee/sports"
+								element={<MemoizedSportsCommittee />}
+							/>
+							<Route
+								path="/committee/social"
+								element={<MemoizedSocialCommittee />}
+							/>
+							<Route
+								path="/committee/finance"
+								element={<MemoizedFinanceCommittee />}
+							/>
+							<Route
+								path="/committee/documentation"
+								element={<MemoizedDocumentationCommittee />}
+							/>
+							<Route
+								path="/committee/creative"
+								element={<MemoizedCreativeCommittee />}
+							/>
+							<Route
+								path="/committee/cultural"
+								element={<MemoizedCulturalCommittee />}
 							/>
 							<Route path="/" element={<MemoizedHome />} />
 						</Routes>
