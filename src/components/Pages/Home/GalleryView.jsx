@@ -75,7 +75,7 @@ const GalleryView = React.memo(() => {
 	
 	return (
 		// A wrapping Box to control alignment and padding
-		<Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', p: 2, width: '100%' }}>
+		<Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', p: { xs: 1, sm: 2 }, width: '100%' }}>
 			<ImageList
 				// Use motion component directly for easy animation
 				component={motion.div}
@@ -85,16 +85,15 @@ const GalleryView = React.memo(() => {
 				viewport={{ once: true, amount: 0.1 }}
 				sx={{ 
 					width: "100%", 
-					maxWidth: 700, 
-					// IMPORTANT: Set overflow to 'visible' to allow hover scales to work without being cut off
-					overflow: "visible" 
+					maxWidth: { xs: '100%', sm: 600, md: 700 }, 
+					overflow: "hidden" // Changed to hidden to prevent layout issues
 				}}
 				variant="quilted"
 				cols={isMobile ? 2 : 4}
-				rowHeight={140}
-				gap={12} // Increased gap for a cleaner look
+				rowHeight={isMobile ? 100 : 140}
+				gap={isMobile ? 8 : 12} // Responsive gap
 			>
-				{itemData.map((item) => (
+				{itemData.map((item, index) => (
 					<ImageListItem
 						// Animate the list item container
 						component={motion.div}
@@ -104,17 +103,36 @@ const GalleryView = React.memo(() => {
 						rows={item.rows || 1}
 						// --- STEP 4: BEAUTIFY THE ITEMS ---
 						sx={{ 
-							borderRadius: '12px', 
-							overflow: 'hidden', // Hides the parts of the image that scale outside the rounded border
-							boxShadow: '0 8px 25px rgba(0,0,0,0.5)'
+							borderRadius: { xs: '8px', md: '12px' }, 
+							overflow: 'hidden', // Keep overflow hidden for rounded corners
+							boxShadow: { xs: '0 4px 15px rgba(0,0,0,0.4)', md: '0 8px 25px rgba(0,0,0,0.5)' }
 						}}
 					>
 						<motion.img
 							src={item.img}
 							alt={item.title}
 							loading="lazy"
-							whileHover={{ scale: 1.1, rotate: 2 }} // Adds a great hover effect
-							transition={{ duration: 0.3 }}
+							// Desktop: hover effect
+							whileHover={!isMobile ? { scale: 1.05 } : {}}
+							// Mobile: tap effect with brightness change
+							whileTap={isMobile ? { scale: 0.95, filter: "brightness(0.8)" } : {}}
+							// Add a subtle continuous animation on mobile for interactivity
+							animate={isMobile ? {
+								boxShadow: [
+									"0 4px 15px rgba(0,0,0,0.4)",
+									"0 6px 20px rgba(72, 169, 224, 0.3)",
+									"0 4px 15px rgba(0,0,0,0.4)"
+								]
+							} : {}}
+							transition={
+								isMobile 
+									? { 
+										boxShadow: { duration: 3, repeat: Infinity, ease: "easeInOut", delay: index * 0.2 },
+										scale: { duration: 0.2 },
+										filter: { duration: 0.2 }
+									}
+									: { duration: 0.3 }
+							}
 							// --- THIS IS THE KEY FIX ---
 							// This style makes the image perfectly fill its container without distortion.
 							style={{

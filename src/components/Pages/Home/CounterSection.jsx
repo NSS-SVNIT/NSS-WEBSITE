@@ -27,13 +27,13 @@ const ParallaxContent = () => (
 		justifyContent="center"
 		alignItems="center"
 		// --- The main change is here: increase the gap to space out the new button ---
-		gap={{ xs: 6, md: 8 }} 
+		gap={{ xs: 4, sm: 6, md: 8 }} 
 		sx={{
 			backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url(${BackgroundImage})`,
-			backgroundAttachment: "fixed",
+			backgroundAttachment: { xs: "scroll", md: "fixed" },
 			backgroundPosition: "center",
 			backgroundSize: "cover",
-			py: { xs: 10, md: 16 }, // Adjusted padding for more space
+			py: { xs: 6, sm: 8, md: 12, lg: 16 }, // More responsive padding
 			color: 'white',
 		}}
 	>
@@ -42,8 +42,8 @@ const ParallaxContent = () => (
 			direction={{ xs: "column", sm: "row" }}
 			justifyContent="center"
 			alignItems="center"
-			gap={{ xs: 5, sm: 8 }}
-			px={2}
+			gap={{ xs: 4, sm: 6, md: 8 }}
+			px={{ xs: 2, sm: 3 }}
 		>
 			{countersData.map((counter, index) => (
 				<React.Fragment key={counter.title}>
@@ -72,9 +72,9 @@ const ParallaxContent = () => (
 				size="large"
 				sx={{
 					// Style the button to stand out
-					py: 1.5,
-					px: 4,
-					fontSize: '1rem',
+					py: { xs: 1.2, md: 1.5 },
+					px: { xs: 3, sm: 4 },
+					fontSize: { xs: '0.9rem', md: '1rem' },
 					fontWeight: 'bold',
 					borderRadius: '50px', // Pill-shaped button
 				}}

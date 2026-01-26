@@ -7,12 +7,14 @@ const HeroSection = React.memo(() => {
 	return (
 		<Box
 			sx={{
-				height: "100vh",
+				height: { xs: "100vh", md: "100vh" },
+				minHeight: { xs: "600px", md: "700px" },
 				width: "100%",
 				display: "flex",
 				backgroundImage: `url(${Background})`,
 				backgroundSize: "cover",
 				backgroundPosition: "center",
+				backgroundAttachment: { xs: "scroll", md: "fixed" },
 			}}
 		>
 			<Grid
@@ -21,11 +23,11 @@ const HeroSection = React.memo(() => {
 				alignItems="flex-end"
 				justifyContent="center"
 				sx={{
-					px: { xs: 3, sm: 10 },
+					px: { xs: 2, sm: 4, md: 10 },
 					// --- CHANGE IS HERE ---
 					// Increased the padding-bottom to move the text further up.
 					// Old values were { xs: 4, md: 8 }.
-					pb: { xs: 8, md: 12 }, // <-- Increased values
+					pb: { xs: 6, sm: 8, md: 12 }, // <-- Increased values
 				}}
 			>
 				<Grid item lg={12} xs={12}>
