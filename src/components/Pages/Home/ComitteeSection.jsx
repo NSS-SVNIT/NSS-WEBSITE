@@ -35,6 +35,10 @@ const containerVariants = {
 };
 
 const ComitteeSection = React.memo(() => {
+  const firstRow = committeesData.slice(0, 2);
+  const middleRow = committeesData.slice(2, 5);
+  const lastRow = committeesData.slice(5);
+
   return (
     <Box sx={{ py: { xs: 8, md: 12 }, background: ' linear-gradient(180deg, #f5faff 0%, #eef6ff 100%)' }}>
       <Container maxWidth="lg">
@@ -59,25 +63,78 @@ const ComitteeSection = React.memo(() => {
             Our Committees
           </Typography>
         </motion.div>
-        <Grid
-          container
-          spacing={4}
-          component={motion.div}
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          {committeesData.map((committee) => (
-            <Grid item xs={12} sm={6} md={4} key={committee.id}>
-              <CommitteeCard
-                title={committee.name}
-                icon={committee.icon}
-                about={committee.description}
-                route={committee.route}
-              />
-            </Grid>
-          ))}
+        <Grid container spacing={4}>
+          <Grid
+            container
+            item
+            xs={12}
+            spacing={4}
+            justifyContent="center"
+            component={motion.div}
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            {firstRow.map((committee) => (
+              <Grid item xs={12} sm={6} md={6} key={committee.id}>
+                <CommitteeCard
+                  title={committee.name}
+                  icon={committee.icon}
+                  about={committee.description}
+                  route={committee.route}
+                />
+              </Grid>
+            ))}
+          </Grid>
+
+          <Grid
+            container
+            item
+            xs={12}
+            spacing={4}
+            justifyContent="center"
+            component={motion.div}
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            {middleRow.map((committee) => (
+              <Grid item xs={12} sm={6} md={4} key={committee.id}>
+                <CommitteeCard
+                  title={committee.name}
+                  icon={committee.icon}
+                  about={committee.description}
+                  route={committee.route}
+                />
+              </Grid>
+            ))}
+          </Grid>
+
+          <Grid
+            container
+            item
+            xs={12}
+            spacing={4}
+            justifyContent="center"
+            component={motion.div}
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            {lastRow.map((committee) => (
+              <Grid item xs={12} sm={6} md={6} key={committee.id}>
+                <CommitteeCard
+                  title={committee.name}
+                  icon={committee.icon}
+                  about={committee.description}
+                  route={committee.route}
+                />
+              </Grid>
+            ))}
+          </Grid>
         </Grid>
       </Container>
     </Box>

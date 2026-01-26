@@ -6,8 +6,11 @@ import {
   Box,
   Grid,
   Container,
+  Button,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import { useNavigate } from "react-router-dom";
+import CommitteeTeamSection from "./CommitteeTeamSection";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import MusicNoteIcon from "@mui/icons-material/MusicNote";
@@ -348,7 +351,12 @@ const useStyles = makeStyles({
 
 const CulturalCommittee = () => {
   const classes = useStyles();
+  const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  const handleBackToAbout = () => {
+    navigate("/about");
+  };
 
   const heroImages = [
     "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1000&h=600&fit=crop",
@@ -471,10 +479,15 @@ const CulturalCommittee = () => {
         />
 
         <Container maxWidth="lg">
+          <Box sx={{ display: "flex", justifyContent: "flex-start", mb: 2 }}>
+            <Button variant="outlined" startIcon={<ArrowBackIcon />} onClick={handleBackToAbout}>
+              Back to About
+            </Button>
+          </Box>
           {/* Hero Section */}
           <motion.div
             className={classes.heroSection}
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: -40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}>
             <h1 className={classes.centeredTitle}>Cultural</h1>
@@ -626,6 +639,8 @@ const CulturalCommittee = () => {
               </Grid>
             ))}
           </Grid>
+
+          <CommitteeTeamSection />
         </Container>
       </motion.div>
     </Layout>
