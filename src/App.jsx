@@ -24,7 +24,15 @@ import Team from "./components/Pages/Team/Team";
 import TeamBatchPage from "./components/Pages/Team/TeamBatchPage";
 import VolunteerPage from "./components/Pages/Team/VolunteerPage";
 import Loader from "./components/UI/Loader";
-import { CustomDateFnsAdapter } from "./utils/dateFnsAdapter";
+import TechnicalCommittee from "./components/Pages/Committees/TechnicalCommittee";
+import SportsCommittee from "./components/Pages/Committees/SportsCommittee";
+import SocialCommittee from "./components/Pages/Committees/SocialCommittee";
+import FinanceCommittee from "./components/Pages/Committees/FinanceCommittee";
+import DocumentationCommittee from "./components/Pages/Committees/DocumentationCommittee";
+import CreativeCommittee from "./components/Pages/Committees/CreativeCommittee";
+import CulturalCommittee from "./components/Pages/Committees/CulturalCommittee";
+import CustomDateFnsAdapter from "./utils/dateFnsAdapter";
+
 const MemoizedAbout = memo(About);
 const MemoizedGallery = memo(Gallery);
 const MemoizedAdmin = memo(Admin);
@@ -42,6 +50,13 @@ const MemoizedContact = memo(Contact);
 const MemoizedPost = memo(Post);
 const MemoizedHome = memo(Home);
 const MemoizedCommitteeDetail = memo(CommitteeDetail);
+const MemoizedTechnicalCommittee = memo(TechnicalCommittee);
+const MemoizedSportsCommittee = memo(SportsCommittee);
+const MemoizedSocialCommittee = memo(SocialCommittee);
+const MemoizedFinanceCommittee = memo(FinanceCommittee);
+const MemoizedDocumentationCommittee = memo(DocumentationCommittee);
+const MemoizedCreativeCommittee = memo(CreativeCommittee);
+const MemoizedCulturalCommittee = memo(CulturalCommittee);
 
 function App() {
   const [loading, setLoading] = React.useState(true);
@@ -51,6 +66,7 @@ function App() {
       setLoading(false);
     }, 2000);
   }, []);
+  
   return (
     <>
       {loading ? (
@@ -60,55 +76,18 @@ function App() {
           <LocalizationProvider dateAdapter={CustomDateFnsAdapter}>
             <Router>
               <Routes>
-                <Route
-                  path="/about"
-                  element={<MemoizedAbout />}
-                />
-                <Route
-                  path="/gallery"
-                  element={<MemoizedGallery />}
-                />
-                <Route
-                  path="/admin"
-                  element={<MemoizedAdmin />}
-                />
-                <Route
-                  path="/Developers"
-                  element={<MemoizedDevelopers />}
-                />
-                <Route
-                  path="/articles"
-                  element={<MemoizedArticles />}
-                />
-                <Route
-                  path="/newarticle"
-                  element={<MemoizedNewarticle />}
-                />
-                <Route
-                  path="/newpost"
-                  element={<MemoizedNewPost />}
-                />
-                <Route
-                  path="/events"
-                  element={<MemoizedEvents />}
-                />{" "}
-                <Route
-                  exact
-                  path="/team"
-                  element={<MemoizedTeam />}
-                />
-                <Route
-                  path="/team/:year"
-                  element={<MemoizedTeamBatchPage />}
-                />{" "}
-                <Route
-                  path="/team/volunteer"
-                  element={<MemoizedVolunteerPage />}
-                />{" "}
-                <Route
-                  path="/admin-login"
-                  element={<MemoizedAdminLogin />}
-                />
+                <Route path="/about" element={<MemoizedAbout />} />
+                <Route path="/gallery" element={<MemoizedGallery />} />
+                <Route path="/admin" element={<MemoizedAdmin />} />
+                <Route path="/Developers" element={<MemoizedDevelopers />} />
+                <Route path="/articles" element={<MemoizedArticles />} />
+                <Route path="/newarticle" element={<MemoizedNewarticle />} />
+                <Route path="/newpost" element={<MemoizedNewPost />} />
+                <Route path="/events" element={<MemoizedEvents />} />
+                <Route exact path="/team" element={<MemoizedTeam />} />
+                <Route path="/team/:year" element={<MemoizedTeamBatchPage />} />
+                <Route path="/team/volunteer" element={<MemoizedVolunteerPage />} />
+                <Route path="/admin-login" element={<MemoizedAdminLogin />} />
                 <Route
                   path="/team/admin"
                   element={
@@ -117,20 +96,18 @@ function App() {
                     </AuthGuard>
                   }
                 />
-                <Route
-                  path="/contact"
-                  element={<MemoizedContact />}
-                />
-                <Route
-                  path="/events/:id"
-                  element={<MemoizedPost />}
-                />
-                <Route
-                  path="/committee/:slug"
-                  element={<MemoizedCommitteeDetail />}
-                />
+                <Route path="/contact" element={<MemoizedContact />} />
+                <Route path="/events/:id" element={<MemoizedPost />} />
+                <Route path="/committee/:slug" element={<MemoizedCommitteeDetail />} />
+                <Route path="/committee/technical" element={<MemoizedTechnicalCommittee />} />
+                <Route path="/committee/sports" element={<MemoizedSportsCommittee />} />
+                <Route path="/committee/social" element={<MemoizedSocialCommittee />} />
+                <Route path="/committee/finance" element={<MemoizedFinanceCommittee />} />
+                <Route path="/committee/documentation" element={<MemoizedDocumentationCommittee />} />
+                <Route path="/committee/creative" element={<MemoizedCreativeCommittee />} />
+                <Route path="/committee/cultural" element={<MemoizedCulturalCommittee />} />
                 <Route path="/" element={<MemoizedHome />} />
-              </Routes>{" "}
+              </Routes>
             </Router>
           </LocalizationProvider>
           <ScrollTop>

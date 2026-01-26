@@ -1,9 +1,9 @@
 // CommitteeCard.js
 import React from "react";
 import { Box, Typography, Paper } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import ButtonReadMore from "./ButtonReadMore"; // Assuming this is your styled button
-import { useNavigate } from "react-router-dom";
 
 // Framer motion variant for each card to animate in
 const itemVariants = {
@@ -11,7 +11,7 @@ const itemVariants = {
   visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: 'easeOut' } },
 };
 
-const CommitteeCard = React.memo(({ title, icon, slug }) => {
+const CommitteeCard = React.memo(({ title, icon, about, route }) => {
 	const navigate = useNavigate();
 
 	// Function to restart GIF on hover for a cool effect
@@ -20,8 +20,7 @@ const CommitteeCard = React.memo(({ title, icon, slug }) => {
 	};
 
 	const handleReadMore = () => {
-		if (!slug) return;
-		navigate(`/committee/${slug}`);
+		navigate(route);
 	};
 
 	return (
