@@ -5,12 +5,14 @@ import Caraousel from "./Home/Carousel";
 import CounterSection from "./Home/CounterSection";
 import GallerySection from "./Home/GallerySection";
 import HeroSection from "./Home/HeroSection";
+import RecentEvent from "./Home/RecentEvents"
 
 const MemoizedHeroSection = React.memo(HeroSection);
 const MemoizedCounterSection = React.memo(CounterSection);
 const MemoizedAboutSection = React.memo(AboutSection);
 const MemoizedGallerySection = React.memo(GallerySection);
 const MemoizedCaraousel = React.memo(Caraousel);
+const MemoizedRecentEvent = React.memo(RecentEvent);
 
 function App() {
 	useEffect(() => {
@@ -30,8 +32,10 @@ function App() {
 				<MemoizedHeroSection />
 				<MemoizedCounterSection />
 				<MemoizedAboutSection />
+				<MemoizedRecentEvent />
 				<MemoizedGallerySection />
 				<MemoizedCaraousel />
+				
 			</Layout>
 		</>
 	);

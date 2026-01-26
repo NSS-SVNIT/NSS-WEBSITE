@@ -30,8 +30,7 @@ const HeroText = memo(() => {
 					lineHeight: 1.2,
 				}}
 			>
-				{/* The colored span is replicated with a `span` and sx prop */}
-				<span style={{ color: "#48a9e0" }}>NSS</span> SVNIT
+				NSS SVNIT
 			</Typography>
 
 			<Typography
@@ -42,9 +41,9 @@ const HeroText = memo(() => {
 					textAlign: "justify",
 				}}
 			>
-				Serving our community for a year and counting signifies the
-				commitment and dedication of the National Service Scheme (NSS)
-				towards making a positive impact on the community.
+				Empowering Society, Transforming Lives. Serving 
+				our community with unwavering commitment and a 
+				dedication to making a lasting positive impact.
 			</Typography>
 		</Stack>
 	);
