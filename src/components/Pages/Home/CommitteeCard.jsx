@@ -1,6 +1,7 @@
 // CommitteeCard.js
-import React, { useState } from "react";
-import { Box, Button, Typography, Modal, Paper } from "@mui/material";
+import React from "react";
+import { Box, Typography, Paper } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import ButtonReadMore from "./ButtonReadMore"; // Assuming this is your styled button
 
@@ -10,15 +11,16 @@ const itemVariants = {
   visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: 'easeOut' } },
 };
 
-const CommitteeCard = React.memo(({ title, icon, about }) => {
-	const [openModal, setOpenModal] = useState(false);
-
-	const handleOpenModal = () => setOpenModal(true);
-	const handleCloseModal = () => setOpenModal(false);
+const CommitteeCard = React.memo(({ title, icon, about, route }) => {
+	const navigate = useNavigate();
 
 	// Function to restart GIF on hover for a cool effect
 	const reloadGif = (e) => {
 		e.target.src = e.target.src;
+	};
+
+	const handleReadMore = () => {
+		navigate(route);
 	};
 
 	return (
@@ -71,54 +73,8 @@ const CommitteeCard = React.memo(({ title, icon, about }) => {
 					{title}
 				</Typography>
 
-				<ButtonReadMore onClick={handleOpenModal} text="Read More" />
+				<ButtonReadMore onClick={handleReadMore} text="Read More" />
 			</Paper>
-
-			<Modal open={openModal} onClose={handleCloseModal} closeAfterTransition>
-				<motion.div
-					initial={{ opacity: 0, scale: 0.9 }}
-					animate={{ opacity: 1, scale: 1 }}
-					exit={{ opacity: 0, scale: 0.9 }}
-				>
-					<Box sx={{
-						position: "absolute",
-						top: "50%",
-						left: "50%",
-						transform: "translate(-50%, -50%)",
-						bgcolor: "background.paper",
-						boxShadow: 24,
-						borderRadius: 4,
-						width: { xs: "90%", md: "50%", lg: "35%" },
-						maxWidth: '600px',
-						overflow: 'hidden',
-					}}>
-						<Box sx={{ bgcolor: '#5A2A7A', p: 2 }}>
-							<Typography variant="h5" component="h2" sx={{ color: 'white', fontFamily: "'Inria Sans', serif" }}>
-								{title} Committee
-							</Typography>
-						</Box>
-						<Box sx={{ p: 3 }}>
-							<Typography textAlign="justify" sx={{ mb: 3 }}>
-								{about}
-							</Typography>
-							<Button
-								onClick={handleCloseModal}
-								variant="outlined"
-								sx={{
-									color: '#5A2A7A',
-									borderColor: '#5A2A7A',
-									'&:hover': {
-										backgroundColor: 'rgba(90, 42, 122, 0.08)',
-										borderColor: '#5A2A7A',
-									}
-								}}
-							>
-								Close
-							</Button>
-						</Box>
-					</Box>
-				</motion.div>
-			</Modal>
 		</>
 	);
 });
