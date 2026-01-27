@@ -93,71 +93,24 @@ const Contact = () => {
 					variant="h2"
 					textAlign="center"
 					mb={6}
-					fontWeight={600}>
+					fontWeight={600}
+					sx={{
+						whiteSpace: "nowrap",
+						fontSize: { xs: "2.1rem", sm: "2.75rem", md: "3.5rem" },
+						lineHeight: 1.1,
+					}}>
 					GET IN TOUCH
 				</Typography>
 
-				{/* Google Maps Section */}
-				<Box sx={{ mb: 8 }}>
-					<Typography variant="h4" textAlign="center" mb={3} fontWeight={600}>
-						<LocationOnIcon sx={{ verticalAlign: 'middle', mr: 1 }} />
-						LOCATE US
-					</Typography>
-					<Box
-						sx={{
-							height: { xs: "350px", md: "500px" },
-							borderRadius: 3,
-							overflow: "hidden",
-							boxShadow: "0 10px 40px rgba(0,0,0,0.2)",
-							border: "3px solid #000",
-							position: "relative",
-							"&:hover": {
-								boxShadow: "0 15px 50px rgba(0,0,0,0.3)",
-								transform: "translateY(-2px)",
-							},
-							transition: "all 0.3s ease",
-						}}>
-						<iframe
-							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.6507653833756!2d72.78287931492656!3d21.164583085916397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04dec8b56fdf1%3A0x423b99085d26d1f9!2sSardar%20Vallabhbhai%20National%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1643234567890!5m2!1sen!2sin"
-							width="100%"
-							height="100%"
-							style={{ border: 0 }}
-							allowFullScreen=""
-							loading="lazy"
-							referrerPolicy="no-referrer-when-downgrade"
-							title="NSS SVNIT Location"
-						/>
-					</Box>
-					<Box sx={{ textAlign: "center", mt: 3 }}>
-						<Button
-							variant="contained"
-							startIcon={<LocationOnIcon />}
-							href="https://maps.google.com/?q=21.164583,72.785239"
-							target="_blank"
-							rel="noopener noreferrer"
-							sx={{
-								backgroundColor: "black",
-								px: 4,
-								py: 1.5,
-								fontSize: "1rem",
-								"&:hover": {
-									backgroundColor: "#333",
-								},
-							}}>
-							Open in Google Maps
-						</Button>
-					</Box>
-				</Box>
-
-				{/* Contact Form and Details Section */}
+				{/* Contact Form Section */}
 				<Grid container spacing={4}>
-					{/* Contact Form */}
-					<Grid item xs={12} md={7}>
+					<Grid item xs={12} md={12}>
 						<motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={itemVariants}>
 							<Typography variant="h4" mb={3} fontWeight={600}>
 								<SendRoundedIcon sx={{ verticalAlign: 'middle', mr: 1 }} />
 								SEND US A MESSAGE
 							</Typography>
+
 							<Box component="form" onSubmit={handleSubmit} noValidate>
 								<TextField
 									margin="normal"
@@ -208,48 +161,100 @@ const Contact = () => {
 							</Box>
 						</motion.div>
 					</Grid>
-
-					{/* Contact Details */}
-					<Grid item xs={12} md={5}>
-						<motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={itemVariants}>
-							<Stack spacing={4}>
-								<Box>
-									<Typography variant="h5" gutterBottom sx={{ fontWeight: 600 }}>
-										Contact Details
-									</Typography>
-									<Stack direction="row" alignItems="center" spacing={2} sx={{ mb: 1 }}>
-										<MailIcon color="action" />
-										<Typography variant="body1">
-											<a href="mailto:nss@svnit.ac.in" style={{ textDecoration: 'none', color: 'inherit' }}>
-												nss@svnit.ac.in
-											</a>
-										</Typography>
-									</Stack>
-								</Box>
-								<Box>
-									<Typography variant="h5" gutterBottom sx={{ fontWeight: 600 }}>
-										Follow Us
-									</Typography>
-									<Stack direction="row" spacing={1}>
-										{socialLinks.map((link) => (
-											<Tooltip title={link.label} key={link.label} arrow>
-												<IconButton
-													component="a"
-													href={link.href}
-													target="_blank"
-													rel="noopener noreferrer"
-													sx={{ color: 'text.secondary', '&:hover': { color: 'primary.main' } }}
-												>
-													{link.icon}
-												</IconButton>
-											</Tooltip>
-										))}
-									</Stack>
-								</Box>
-							</Stack>
-						</motion.div>
-					</Grid>
 				</Grid>
+
+				{/* Google Maps Section */}
+				<Box sx={{ mt: 8 }}>
+					<Typography variant="h4" textAlign="center" mb={3} fontWeight={600}>
+						<LocationOnIcon sx={{ verticalAlign: 'middle', mr: 1 }} />
+						LOCATE US
+					</Typography>
+					<Box
+						sx={{
+							height: { xs: "350px", md: "500px" },
+							borderRadius: 3,
+							overflow: "hidden",
+							boxShadow: "0 10px 40px rgba(0,0,0,0.2)",
+							border: "3px solid #000",
+							position: "relative",
+							"&:hover": {
+								boxShadow: "0 15px 50px rgba(0,0,0,0.3)",
+								transform: "translateY(-2px)",
+							},
+							transition: "all 0.3s ease",
+						}}>
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.6507653833756!2d72.78287931492656!3d21.164583085916397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04dec8b56fdf1%3A0x423b99085d26d1f9!2sSardar%20Vallabhbhai%20National%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1643234567890!5m2!1sen!2sin"
+							width="100%"
+							height="100%"
+							style={{ border: 0 }}
+							allowFullScreen=""
+							loading="lazy"
+							referrerPolicy="no-referrer-when-downgrade"
+							title="NSS SVNIT Location"
+						/>
+					</Box>
+					<Box sx={{ textAlign: "center", mt: 3 }}>
+						<Button
+							variant="contained"
+							startIcon={<LocationOnIcon />}
+							href="https://maps.google.com/?q=21.164583,72.785239"
+							target="_blank"
+							rel="noopener noreferrer"
+							sx={{
+								backgroundColor: "black",
+								px: 4,
+								py: 1.5,
+								fontSize: "1rem",
+								"&:hover": {
+									backgroundColor: "#333",
+								},
+							}}>
+							Open in Google Maps
+						</Button>
+					</Box>
+				</Box>
+
+				{/* Contact Details Section */}
+				<Box sx={{ mt: 8 }}>
+					<motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={itemVariants}>
+						<Stack spacing={4}>
+							<Box>
+								<Typography variant="h5" gutterBottom sx={{ fontWeight: 600 }}>
+									Contact Details
+								</Typography>
+								<Stack direction="row" alignItems="center" spacing={2} sx={{ mb: 1 }}>
+									<MailIcon color="action" />
+									<Typography variant="body1">
+										<a href="mailto:nss@svnit.ac.in" style={{ textDecoration: 'none', color: 'inherit' }}>
+											nss@svnit.ac.in
+										</a>
+									</Typography>
+								</Stack>
+							</Box>
+							<Box>
+								<Typography variant="h5" gutterBottom sx={{ fontWeight: 600 }}>
+									Follow Us
+								</Typography>
+								<Stack direction="row" spacing={1}>
+									{socialLinks.map((link) => (
+										<Tooltip title={link.label} key={link.label} arrow>
+											<IconButton
+												component="a"
+												href={link.href}
+												target="_blank"
+												rel="noopener noreferrer"
+												sx={{ color: 'text.secondary', '&:hover': { color: 'primary.main' } }}
+											>
+												{link.icon}
+											</IconButton>
+										</Tooltip>
+									))}
+								</Stack>
+							</Box>
+						</Stack>
+					</motion.div>
+				</Box>
 			</Box>
 		</Layout>
 	);
