@@ -33,7 +33,7 @@ const itemVariants = {
 
 // Skeleton loader that matches the new card's aspect ratio
 const ArticleCardSkeleton = () => (
-	<Grid item xs={12} sm={6} md={4}>
+	<Grid item xs={6} sm={6} md={4}>
 		<Skeleton variant="rectangular" sx={{ borderRadius: 4, width: '100%', aspectRatio: '3 / 4' }} />
 	</Grid>
 );
@@ -108,17 +108,22 @@ const ArticleGrid = React.memo(({ title, firestoreFilter }) => {
 
 			{/* --- CONTENT --- */}
 			{loading && (
-				<Grid container spacing={4}>
+				<Grid container spacing={4} justifyContent="center">
 					{[...Array(3)].map((_, index) => <ArticleCardSkeleton key={index} />)}
 				</Grid>
 			)}
 			{error && <Alert severity="error">{error}</Alert>}
 			{!loading && !error && (
 				<motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} variants={containerVariants}>
-					<Grid container spacing={4} alignItems="stretch">
+					<Grid
+						container
+						spacing={4}
+						alignItems="stretch"
+						justifyContent={articles.length === 1 ? "center" : "flex-start"}
+					>
 						{articles.length > 0 ? (
 							articles.map((article) => (
-								<Grid item xs={12} sm={6} md={4} key={article.id}>
+								<Grid item xs={6} sm={6} md={4} key={article.id}>
 									{/* Wrap card in motion.div for staggered animation */}
 									<motion.div variants={itemVariants} style={{ height: '100%' }}>
 										<ArticleCard
