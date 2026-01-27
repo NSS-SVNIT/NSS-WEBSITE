@@ -652,7 +652,7 @@ const FinanceCommittee = () => {
             </Grid>
           </motion.div>
 
-          <CommitteeTeamSection />
+          <CommitteeTeamSection committeekey="Finance" />
         </Container>
       </Box>
     </Layout>
