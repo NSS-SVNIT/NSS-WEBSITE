@@ -37,7 +37,7 @@ export default function Events() {
     fetchPosts();
   }, []);
 
-  const displayedPosts =showAll?posts:posts.slice(0, 8);
+  const displayedPosts = showAll ? posts : posts.slice(0, 8);
 
   return (
     <Layout>
@@ -48,10 +48,10 @@ export default function Events() {
         educational institutions, particularly colleges and universities, that
         have NSS units.
       </PageHeader>
-      <Grid container spacing={3} lg={12} sx={{ px: 10, py: 4 }}>
+      <Grid container spacing={2} lg={12} sx={{ px: { xs: 2, md: 10 }, py: 4 }}>
         {displayedPosts.map((post, index) => (
-          <Grid item key={index} lg={3} md={6}>
-            <BlogCard key={index} title={post.title} to={`/events/${post.id}`} image = {post.image}/>
+          <Grid item key={index} lg={3} md={6} xs={6}>
+            <BlogCard key={index} title={post.title} to={`/events/${post.id}`} image={post.image} />
           </Grid>
         ))}
       </Grid>
@@ -60,7 +60,7 @@ export default function Events() {
           onClick={() => setShowAll(true)}
           sx={{
             mt: 1,
-            marginLeft: isMobile?'10%':'80%',
+            marginLeft: isMobile ? '10%' : '80%',
             marginBottom: 3,
             fontSize: 20,
             backgroundColor: "black",
@@ -80,7 +80,7 @@ export default function Events() {
           onClick={() => setShowAll(false)}
           sx={{
             mt: 1,
-            marginLeft: isMobile?'10%':'80%',
+            marginLeft: isMobile ? '10%' : '80%',
             marginBottom: 3,
             fontSize: 20,
             backgroundColor: "black",
