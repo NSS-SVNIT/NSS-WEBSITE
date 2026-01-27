@@ -360,7 +360,7 @@ const TechnicalCommittee = () => {
 
   const heroImages = [
     "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1000&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1000&h=600&fit=crop",
+    "https://media.istockphoto.com/id/1191045922/photo/group-of-business-people-visiting-a-warehouse.jpg?s=612x612&w=0&k=20&c=WLQX68JwLfBbYa0wyZoGvRQlB-2GvwrbBVi4ChsXPBA=",
     "https://images.unsplash.com/photo-1527014849847-b654de08e0fd?w=1000&h=600&fit=crop",
   ];
 
