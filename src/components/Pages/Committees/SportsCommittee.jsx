@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../../Layout/Layout";
 import { motion } from "framer-motion";
+import parade from "../../../assets/Parade.jpeg"
+
 import {
   Typography,
   Box,
@@ -360,7 +362,7 @@ const SportsCommittee = () => {
 
   const heroImages = [
     "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1000&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1517836357463-d25ddfcbf042?w=1000&h=600&fit=crop",
+     parade,
     "https://images.unsplash.com/photo-1588286840104-8957b019727f?w=1000&h=600&fit=crop",
   ];
 
@@ -400,7 +402,7 @@ const SportsCommittee = () => {
       role: "Parade & Events",
       description:
         "Ensures discipline and coordination during NSS parades and sports events. Trains volunteers for synchronized marching and manages logistics of major sporting celebrations.",
-      image1: "https://images.unsplash.com/photo-1479623459231-19429f2b4374?w=500&h=400&fit=crop",
+      image1: parade,
       image2: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=500&h=400&fit=crop",
       color: "#42A5F5",
       borderColor: "#0D47A1",

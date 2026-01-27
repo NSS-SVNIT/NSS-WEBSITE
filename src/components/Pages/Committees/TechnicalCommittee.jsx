@@ -360,8 +360,8 @@ const TechnicalCommittee = () => {
 
   const heroImages = [
     "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1000&h=600&fit=crop",
-    "https://media.istockphoto.com/id/1191045922/photo/group-of-business-people-visiting-a-warehouse.jpg?s=612x612&w=0&k=20&c=WLQX68JwLfBbYa0wyZoGvRQlB-2GvwrbBVi4ChsXPBA=",
-    "https://images.unsplash.com/photo-1527014849847-b654de08e0fd?w=1000&h=600&fit=crop",
+    "https://contentstatic.techgig.com/thumb/msid-115055298,width-800,resizemode-4/Top-10-Open-source-AI-projects-that-every-developer-should-know-about.jpg?57882",
+    "https://plus.unsplash.com/premium_photo-1661963107317-e178575c92cf?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   ];
 
   const roleCards = [
@@ -380,7 +380,7 @@ const TechnicalCommittee = () => {
       role: "Industrial Visits",
       description:
         "Coordinates and organizes industrial visits for NSS volunteers. Establishes relationships with industries, manages logistics, and ensures enriching learning experiences.",
-      image1: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop",
+      image1: "https://plus.unsplash.com/premium_photo-1661963107317-e178575c92cf?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       image2: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop",
       color: "#5C6BC0",
       borderColor: "#283593",
@@ -390,7 +390,7 @@ const TechnicalCommittee = () => {
       role: "AI/ML Projects",
       description:
         "Guides and supervises mini projects in Artificial Intelligence and Machine Learning. Provides resources, mentorship, and hands-on experience in cutting-edge technologies.",
-      image1: "https://images.unsplash.com/photo-1527014849847-b654de08e0fd?w=500&h=400&fit=crop",
+      image1: "https://contentstatic.techgig.com/thumb/msid-115055298,width-800,resizemode-4/Top-10-Open-source-AI-projects-that-every-developer-should-know-about.jpg?57882",
       image2: "https://images.unsplash.com/photo-1531746790731-6c087fecd65b?w=500&h=400&fit=crop",
       color: "#5C6BC0",
       borderColor: "#1a237e",
@@ -400,7 +400,7 @@ const TechnicalCommittee = () => {
       role: "Certificates & Recognition",
       description:
         "Issues certificates to all volunteers recognizing their participation and contributions. Maintains records and ensures volunteers receive due recognition for their technical work.",
-      image1: "https://images.unsplash.com/photo-1516321318423-f06f70d504f0?w=500&h=400&fit=crop",
+      image1: "https://plus.unsplash.com/premium_vector-1720939039468-8e71e7e80fd6?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       image2: "https://images.unsplash.com/photo-1450101499163-c8917c7b4c3e?w=500&h=400&fit=crop",
       color: "#5C6BC0",
       borderColor: "#283593",
