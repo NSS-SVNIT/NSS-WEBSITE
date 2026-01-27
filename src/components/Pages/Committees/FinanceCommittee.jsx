@@ -51,7 +51,7 @@ const useStyles = makeStyles({
   centeredTitle: {
     fontFamily: "'Poppins', 'Inria Sans', sans-serif",
     fontWeight: 500,
-    fontSize: "100px",
+    fontSize: "100px !important",
     background: "linear-gradient(135deg, #F9A825 0%, #7CB342 30%, #F9A825 60%, #F9A825 100%)",
     backgroundSize: "250% 250%",
     WebkitBackgroundClip: "text",
@@ -63,7 +63,7 @@ const useStyles = makeStyles({
     textShadow: "0 2px 10px rgba(249, 168, 37, 0.1)",
     lineHeight: 1.1,
     "@media (max-width:900px)": {
-      fontSize: "56px",
+      fontSize: "56px !important",
       letterSpacing: "-2px",
     },
   },
@@ -236,6 +236,10 @@ const useStyles = makeStyles({
     background: "#ffffff",
     borderRadius: "26px",
     padding: "2.4rem",
+    height: "100%",
+    minHeight: "560px",
+    display: "flex",
+    flexDirection: "column",
     boxShadow: "0 10px 28px rgba(0,0,0,0.08)",
     transition: "all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)",
     borderLeft: "6px solid",
@@ -296,7 +300,7 @@ const useStyles = makeStyles({
   },
 
   roleTitle: {
-    fontSize: "2.1rem",
+    fontSize: "2.1rem !important",
     fontWeight: 700,
     color: "#222",
     transition: "color 0.4s ease",
@@ -308,6 +312,9 @@ const useStyles = makeStyles({
     color: "#555",
     textAlign: "justify",
     padding: "0.3rem 0.4rem",
+    flexGrow: 1,
+    maxHeight: "180px",
+    overflowY: "auto",
     transition: "all 0.4s ease",
     "&:hover": {
       background: "rgba(249, 168, 37, 0.15)",
@@ -602,7 +609,7 @@ const FinanceCommittee = () => {
             viewport={{ once: true }}>
             <Grid container spacing={4}>
               {roles.map((role, i) => (
-                <Grid item xs={12} md={6} key={i}>
+                <Grid item xs={12} md={6} key={i} sx={{ display: "flex" }}>
                   <motion.div
                     variants={{
                       hidden: { opacity: 0, y: 40, rotateX: -20 },
@@ -616,7 +623,8 @@ const FinanceCommittee = () => {
                           damping: 15,
                         },
                       },
-                    }}>
+                    }}
+                    style={{ height: "100%" }}>
                     <Box
                       className={classes.roleCard}
                       style={{ borderLeftColor: roleColors[i] }}>

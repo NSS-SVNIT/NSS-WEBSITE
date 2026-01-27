@@ -70,7 +70,7 @@ const HeadingSection = React.memo(() => (
 				</Box>
 			</Grid>
 			<Grid item xs={11} sm={8} md={5} sx={{ order: { xs: 1, md: 2 } }}>
-				<Slide direction="left" in timeout={1000}><div><Box component="img" src="https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/team%20page%2Fteam.jpg?alt=media&token=250a96b8-c607-44f3-a1c7-d10c7072c89f" alt="NSS Team" sx={{ width: '100%', height: 'auto', borderRadius: '16px', objectFit: 'cover', maxHeight: { xs: 350, md: 550 }, boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}/></div></Slide>
+				<Slide direction="left" in timeout={1000}><div><Box component="img" src="https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454758/developers/team.jpg" alt="NSS Team" sx={{ width: '100%', height: 'auto', borderRadius: '16px', objectFit: 'cover', maxHeight: { xs: 350, md: 550 }, boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}/></div></Slide>
 			</Grid>
 		</Grid>
 	</Box>
