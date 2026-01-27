@@ -1,9 +1,9 @@
 // CommitteeCard.js
 import React from "react";
 import { Box, Typography, Paper } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import ButtonReadMore from "./ButtonReadMore"; // Assuming this is your styled button
-import { useNavigate } from "react-router-dom";
 
 // Framer motion variant for each card to animate in
 const itemVariants = {
@@ -11,7 +11,7 @@ const itemVariants = {
   visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: 'easeOut' } },
 };
 
-const CommitteeCard = React.memo(({ title, icon, slug }) => {
+const CommitteeCard = React.memo(({ title, icon, about, route }) => {
 	const navigate = useNavigate();
 
 	// Function to restart GIF on hover for a cool effect
@@ -20,8 +20,7 @@ const CommitteeCard = React.memo(({ title, icon, slug }) => {
 	};
 
 	const handleReadMore = () => {
-		if (!slug) return;
-		navigate(`/committee/${slug}`);
+		navigate(route);
 	};
 
 	return (
@@ -30,7 +29,7 @@ const CommitteeCard = React.memo(({ title, icon, slug }) => {
 			variants={itemVariants}
 			elevation={2}
 			sx={{
-				p: 3,
+				p: { xs: 1.5, sm: 3 },
 				textAlign: 'center',
 				borderRadius: 4,
 				height: '100%',
@@ -45,7 +44,7 @@ const CommitteeCard = React.memo(({ title, icon, slug }) => {
 		>
 			<Box
 				sx={{
-					height: 180,
+					height: { xs: 120, sm: 180 },
 					display: 'flex',
 					alignItems: 'center',
 					justifyContent: 'center',
@@ -66,6 +65,10 @@ const CommitteeCard = React.memo(({ title, icon, slug }) => {
 				sx={{
 					fontFamily: "'DM Sans', sans-serif",
 					fontWeight: 'bold',
+					fontSize: { xs: '1rem', sm: '1.25rem', md: '1.5rem' },
+					lineHeight: 1.2,
+					overflowWrap: 'anywhere',
+					wordBreak: 'break-word',
 					flexGrow: 1, // Pushes the button to the bottom
 					mb: 2,
 				}}
