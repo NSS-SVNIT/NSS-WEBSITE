@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Layout from "../../Layout/Layout";
 import { motion } from "framer-motion";
 import parade from "../../../assets/Parade.jpeg"
-
+import Morning from "../../../assets/Morning.png"
 import {
   Typography,
   Box,
@@ -372,7 +372,7 @@ const SportsCommittee = () => {
       role: "Morning Routines",
       description:
         "Organizes and facilitates daily morning routines for NSS volunteers, promoting physical fitness, discipline, and healthy lifestyle habits to build stronger volunteers.",
-      image1: "https://images.unsplash.com/photo-1517836357463-d25ddfcbf042?w=500&h=400&fit=crop",
+      image1: Morning,
       image2: "https://images.unsplash.com/photo-1517836357463-d25ddfcbf042?w=500&h=400&fit=crop",
       color: "#42A5F5",
       borderColor: "#1976D2",
