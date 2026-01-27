@@ -16,7 +16,7 @@ const HeroText = () => {
 				boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
 				// background: 'linear-gradient(to right, rgba(26, 35, 126, 0.5), rgba(198, 40, 40, 0.5))',
 				p: { xs: 4, md: 6 },
-				backdropFilter: 'blur(4px)',
+				backdropFilter: 'blur(10px)',
 				border: '1px solid rgba(255, 255, 255, 0.1)',
 			}}
 		>
