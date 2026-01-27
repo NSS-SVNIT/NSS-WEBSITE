@@ -1,4 +1,4 @@
-import { Box, Stack, Typography } from "@mui/material"; // Import Stack and Typography
+import { Stack, Typography } from "@mui/material"; // Import Stack and Typography
 import React, { memo } from "react";
 // No need to import "./HeroText.css" anymore
 
@@ -9,18 +9,6 @@ const HeroText = memo(() => {
 		<Stack
 			spacing={{ xs: 1.5, md: 2 }} // Responsive spacing
 			sx={{
-<<<<<<< HEAD
-				position: 'relative',
-				width: '100%',
-				// maxWidth: '32rem',
-				overflow: 'hidden',
-				borderRadius: '1.5rem',
-				boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-				// background: 'linear-gradient(to right, rgba(26, 35, 126, 0.5), rgba(198, 40, 40, 0.5))',
-				p: { xs: 4, md: 6 },
-				backdropFilter: 'blur(10px)',
-				border: '1px solid rgba(255, 255, 255, 0.1)',
-=======
 				// This replaces the .glass CSS class
 				background: "rgba(0, 0, 0, 0.8)",
 				backdropFilter: "blur(10px)",
@@ -30,7 +18,6 @@ const HeroText = memo(() => {
 				p: { xs: 2, sm: 3, md: 4 }, // More responsive padding
 				color: "white", // Set a base text color
 				maxWidth: "100%",
->>>>>>> beccea9bd0b392c8c4802e7bcdeeec9113ae7b62
 			}}
 		>
 			{/* Use Typography for semantic and consistent text styling */}
