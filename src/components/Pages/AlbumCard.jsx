@@ -43,12 +43,12 @@ const AlbumCard = React.memo(({ albumName, images = [], onOpen }) => {
 				}}/>
 				<Box sx={{
 					position: 'relative', zIndex: 3, color: 'white', height: '100%',
-					display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', p: 3,
+					display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', p: 1,
 				}}>
-					<Typography variant="h5" sx={{ fontWeight: 'bold', textShadow: '1px 1px 3px rgba(0,0,0,0.7)' }}>
+					<Typography variant="body2" sx={{ fontWeight: 'bold', textShadow: '1px 1px 3px rgba(0,0,0,0.7)', fontSize: '0.8rem', lineHeight: 1 }}>
 						{albumName}
 					</Typography>
-					<Typography variant="body2" sx={{ opacity: 0.9 }}>
+					<Typography variant="caption" sx={{ opacity: 0.9, fontSize: '0.65rem', lineHeight: 1 }}>
 						{images.length} photos
 					</Typography>
 				</Box>

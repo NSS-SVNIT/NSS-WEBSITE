@@ -1,183 +1,95 @@
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import { Fab } from "@mui/material";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import React, { memo, Suspense } from "react";
+import React, { Suspense } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
 import ScrollTop from "./components/Layout/ScrollTop";
-import About from "./components/Pages/About";
-import Admin from "./components/Pages/Admin/Admin";
-import Articles from "./components/Pages/Articles/Articles";
-import NewArticle from "./components/Pages/Articles/newarticle";
-import Contact from "./components/Pages/Contact";
-import Developers from "./components/Pages/Developers";
-import Events from "./components/Pages/Events";
-import Gallery from "./components/Pages/Gallery";
-import Home from "./components/Pages/Home";
-import NewPost from "./components/Pages/NewPost";
-import Post from "./components/Pages/Post";
-import CommitteeDetail from "./components/Pages/CommitteeDetail";
-import AdminLogin from "./components/Pages/Team/AdminLogin";
-import AdminPage from "./components/Pages/Team/AdminPage";
-import AuthGuard from "./components/Pages/Team/AuthGuard";
-import Team from "./components/Pages/Team/Team";
-import TeamBatchPage from "./components/Pages/Team/TeamBatchPage";
-import VolunteerPage from "./components/Pages/Team/VolunteerPage";
 import Loader from "./components/UI/Loader";
-import TechnicalCommittee from "./components/Pages/Committees/TechnicalCommittee";
-import SportsCommittee from "./components/Pages/Committees/SportsCommittee";
-import SocialCommittee from "./components/Pages/Committees/SocialCommittee";
-import FinanceCommittee from "./components/Pages/Committees/FinanceCommittee";
-import DocumentationCommittee from "./components/Pages/Committees/DocumentationCommittee";
-import CreativeCommittee from "./components/Pages/Committees/CreativeCommittee";
-import CulturalCommittee from "./components/Pages/Committees/CulturalCommittee";
-const MemoizedAbout = memo(About);
-const MemoizedGallery = memo(Gallery);
-const MemoizedAdmin = memo(Admin);
-const MemoizedDevelopers = memo(Developers);
-const MemoizedArticles = memo(Articles);
-const MemoizedNewarticle = memo(NewArticle);
-const MemoizedNewPost = memo(NewPost);
-const MemoizedEvents = memo(Events);
-const MemoizedTeam = memo(Team);
-const MemoizedTeamBatchPage = memo(TeamBatchPage);
-const MemoizedVolunteerPage = memo(VolunteerPage);
-const MemoizedAdminPage = memo(AdminPage);
-const MemoizedAdminLogin = memo(AdminLogin);
-const MemoizedContact = memo(Contact);
-const MemoizedPost = memo(Post);
-const MemoizedHome = memo(Home);
-const MemoizedTechnicalCommittee = memo(TechnicalCommittee);
-const MemoizedSportsCommittee = memo(SportsCommittee);
-const MemoizedSocialCommittee = memo(SocialCommittee);
-const MemoizedFinanceCommittee = memo(FinanceCommittee);
-const MemoizedDocumentationCommittee = memo(DocumentationCommittee);
-const MemoizedCreativeCommittee = memo(CreativeCommittee);
-const MemoizedCulturalCommittee = memo(CulturalCommittee);
+import AuthGuard from "./components/Pages/Team/AuthGuard";
+
+// Lazy load all route components for code splitting
+const Home = React.lazy(() => import("./components/Pages/Home"));
+const About = React.lazy(() => import("./components/Pages/About"));
+const Admin = React.lazy(() => import("./components/Pages/Admin/Admin"));
+const Articles = React.lazy(() => import("./components/Pages/Articles/Articles"));
+const NewArticle = React.lazy(() => import("./components/Pages/Articles/newarticle"));
+const Contact = React.lazy(() => import("./components/Pages/Contact"));
+const Developers = React.lazy(() => import("./components/Pages/Developers"));
+const Events = React.lazy(() => import("./components/Pages/Events"));
+const Gallery = React.lazy(() => import("./components/Pages/Gallery"));
+const NewPost = React.lazy(() => import("./components/Pages/NewPost"));
+const Post = React.lazy(() => import("./components/Pages/Post"));
+const CommitteeDetail = React.lazy(() => import("./components/Pages/CommitteeDetail"));
+const AdminLogin = React.lazy(() => import("./components/Pages/Team/AdminLogin"));
+const AdminPage = React.lazy(() => import("./components/Pages/Team/AdminPage"));
+const Team = React.lazy(() => import("./components/Pages/Team/Team"));
+const TeamBatchPage = React.lazy(() => import("./components/Pages/Team/TeamBatchPage"));
+const VolunteerPage = React.lazy(() => import("./components/Pages/Team/VolunteerPage"));
+const TechnicalCommittee = React.lazy(() => import("./components/Pages/Committees/TechnicalCommittee"));
+const SportsCommittee = React.lazy(() => import("./components/Pages/Committees/SportsCommittee"));
+const SocialCommittee = React.lazy(() => import("./components/Pages/Committees/SocialCommittee"));
+const FinanceCommittee = React.lazy(() => import("./components/Pages/Committees/FinanceCommittee"));
+const DocumentationCommittee = React.lazy(() => import("./components/Pages/Committees/DocumentationCommittee"));
+const CreativeCommittee = React.lazy(() => import("./components/Pages/Committees/CreativeCommittee"));
+const CulturalCommittee = React.lazy(() => import("./components/Pages/Committees/CulturalCommittee"));
+
+// Fallback loader component for lazy routes
+const PageFallback = () => <Loader />;
 
 function App() {
-  const [loading, setLoading] = React.useState(true);
-
-	React.useEffect(() => {
-		setTimeout(() => {
-			setLoading(false);
-		}, 2000);
-	}, []);
 	return (
-		<>
-			{loading ? (
-				<Loader />
-			) : (
-				<Suspense fallback={<div></div>}>
-					<Router>
-						<Routes>
-							<Route path="/about" element={<MemoizedAbout />} />
-							<Route
-								path="/gallery"
-								element={<MemoizedGallery />}
-							/>
-							<Route path="/admin" element={<MemoizedAdmin />} />
-							<Route
-								path="/Developers"
-								element={<MemoizedDevelopers />}
-							/>
-							<Route
-								path="/articles"
-								element={<MemoizedArticles />}
-							/>
-							<Route
-								path="/newarticle"
-								element={<MemoizedNewarticle />}
-							/>
-							<Route
-								path="/newpost"
-								element={<MemoizedNewPost />}
-							/>
-							<Route
-								path="/events"
-								element={<MemoizedEvents />}
-							/>{" "}
-							<Route
-								exact
-								path="/team"
-								element={<MemoizedTeam />}
-							/>
-							<Route
-								path="/team/:year"
-								element={<MemoizedTeamBatchPage />}
-							/>{" "}
-							<Route
-								path="/team/volunteer"
-								element={<MemoizedVolunteerPage />}
-							/>{" "}
-							<Route
-								path="/admin-login"
-								element={<MemoizedAdminLogin />}
-							/>
-							<Route
-								path="/team/admin"
-								element={
-									<AuthGuard>
-										<MemoizedAdminPage />
-									</AuthGuard>
-								}
-							/>
-							<Route
-								path="/contact"
-								element={<MemoizedContact />}
-							/>
-							<Route
-								path="/events/:id"
-								element={<MemoizedPost />}
-							/>
-							<Route
-								path="/committee/technical"
-								element={<MemoizedTechnicalCommittee />}
-							/>
-							<Route
-								path="/committee/sports"
-								element={<MemoizedSportsCommittee />}
-							/>
-							<Route
-								path="/committee/social"
-								element={<MemoizedSocialCommittee />}
-							/>
-							<Route
-								path="/committee/finance"
-								element={<MemoizedFinanceCommittee />}
-							/>
-							<Route
-								path="/committee/documentation"
-								element={<MemoizedDocumentationCommittee />}
-							/>
-							<Route
-								path="/committee/creative"
-								element={<MemoizedCreativeCommittee />}
-							/>
-							<Route
-								path="/committee/cultural"
-								element={<MemoizedCulturalCommittee />}
-							/>
-							<Route path="/" element={<MemoizedHome />} />
-						</Routes>
-					</Router>
-					<ScrollTop>
-						<Fab
-							size="small"
-							aria-label="scroll back to top"
-							onClick={() => {
-								window.scrollTo({
-									top: 0,
-									left:0,
-									behavior: "smooth",
-								});
-							}}>
-							<ArrowUpwardIcon />
-						</Fab>
-					</ScrollTop>
-				</Suspense>
-			)}
-		</>
+		<Suspense fallback={<PageFallback />}>
+			<Router>
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/about" element={<About />} />
+					<Route path="/gallery" element={<Gallery />} />
+					<Route path="/admin" element={<Admin />} />
+					<Route path="/Developers" element={<Developers />} />
+					<Route path="/articles" element={<Articles />} />
+					<Route path="/newarticle" element={<NewArticle />} />
+					<Route path="/newpost" element={<NewPost />} />
+					<Route path="/events" element={<Events />} />
+					<Route exact path="/team" element={<Team />} />
+					<Route path="/team/:year" element={<TeamBatchPage />} />
+					<Route path="/team/volunteer" element={<VolunteerPage />} />
+					<Route path="/admin-login" element={<AdminLogin />} />
+					<Route
+						path="/team/admin"
+						element={
+							<AuthGuard>
+								<AdminPage />
+							</AuthGuard>
+						}
+					/>
+					<Route path="/contact" element={<Contact />} />
+					<Route path="/events/:id" element={<Post />} />
+					<Route path="/committee/technical" element={<TechnicalCommittee />} />
+					<Route path="/committee/sports" element={<SportsCommittee />} />
+					<Route path="/committee/social" element={<SocialCommittee />} />
+					<Route path="/committee/finance" element={<FinanceCommittee />} />
+					<Route path="/committee/documentation" element={<DocumentationCommittee />} />
+					<Route path="/committee/creative" element={<CreativeCommittee />} />
+					<Route path="/committee/cultural" element={<CulturalCommittee />} />
+				</Routes>
+			</Router>
+			<ScrollTop>
+				<Fab
+					size="small"
+					aria-label="scroll back to top"
+					onClick={() => {
+						window.scrollTo({
+							top: 0,
+							left: 0,
+							behavior: "smooth",
+						});
+					}}
+				>
+					<ArrowUpwardIcon />
+				</Fab>
+			</ScrollTop>
+		</Suspense>
 	);
 }
 
