@@ -59,7 +59,7 @@ const OtherMagazines = React.memo((props) => {
 					justifyContent={post.length < 3 ? "center" : "flex-start"}
 					columns={{ xs: 12, sm: 12, md: 12 }}>
 					{post.map((posts) => (
-						<Grid item xs={12} sm={6} md={4} key={posts.id}>
+						<Grid item xs={6} sm={6} md={4} key={posts.id}>
 							<ArticleCard
 								name={posts.data().Title}
 								description={posts.data().Description}

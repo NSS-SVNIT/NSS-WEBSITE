@@ -1,8 +1,8 @@
 // Gallery.jsx
 
-import React, { useEffect, useState } from "react";
-import { Box, Typography, Grid, Container, Skeleton, Alert, Fade, Dialog, AppBar, Toolbar, IconButton, Slide } from "@mui/material";
-import { getDocs, collection } from "firebase/firestore";
+import React, { useEffect, useState, useCallback } from "react";
+import { Box, Typography, Grid, Container, Skeleton, Alert, Fade, Dialog, AppBar, Toolbar, IconButton, Slide, Button } from "@mui/material";
+import { getDocs, collection, limit, query, orderBy } from "firebase/firestore";
 import { firestore } from "../../firebase";
 import Layout from "../Layout/Layout";
 import PageHeader from "../UI/PageHeader";
@@ -25,35 +25,51 @@ const AlbumCardSkeleton = () => (
 	</Grid>
 );
 
+const ITEMS_PER_PAGE = 12; // Load 12 albums at a time
+
 const Gallery = () => {
 	const [albums, setAlbums] = useState([]);
+	const [displayedAlbums, setDisplayedAlbums] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
+	const [page, setPage] = useState(1);
+	const [hasMore, setHasMore] = useState(true);
 
 	// --- State for our custom lightbox ---
 	const [selectedAlbum, setSelectedAlbum] = useState(null);
 	const [currentIndex, setCurrentIndex] = useState(0);
 	
-	const handleOpenAlbum = (album) => {
+	const handleOpenAlbum = useCallback((album) => {
 		setSelectedAlbum(album);
 		setCurrentIndex(0);
-	};
+	}, []);
 	
-	const handleCloseAlbum = () => {
+	const handleCloseAlbum = useCallback(() => {
 		setSelectedAlbum(null);
-	};
+	}, []);
 	
-	const handleNext = () => {
+	const handleNext = useCallback(() => {
 		setCurrentIndex((prevIndex) => (prevIndex + 1) % selectedAlbum.image_links.length);
-	};
+	}, [selectedAlbum]);
 	
-	const handlePrev = () => {
+	const handlePrev = useCallback(() => {
 		setCurrentIndex((prevIndex) => (prevIndex - 1 + selectedAlbum.image_links.length) % selectedAlbum.image_links.length);
-	};
+	}, [selectedAlbum]);
 	
-	const handleThumbnailClick = (index) => {
+	const handleThumbnailClick = useCallback((index) => {
 		setCurrentIndex(index);
-	};
+	}, []);
+
+	// Load more albums function
+	const loadMoreAlbums = useCallback(() => {
+		const startIndex = (page - 1) * ITEMS_PER_PAGE;
+		const endIndex = startIndex + ITEMS_PER_PAGE;
+		const newDisplayedAlbums = albums.slice(0, endIndex);
+		
+		setDisplayedAlbums(newDisplayedAlbums);
+		setHasMore(endIndex < albums.length);
+		setPage(page + 1);
+	}, [albums, page]);
 
 	useEffect(() => {
 		const fetchAlbums = async () => {
@@ -63,6 +79,10 @@ const Gallery = () => {
 				const newData = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
 				newData.sort((a, b) => a.name.localeCompare(b.name));
 				setAlbums(newData);
+				// Display first batch
+				setDisplayedAlbums(newData.slice(0, ITEMS_PER_PAGE));
+				setHasMore(newData.length > ITEMS_PER_PAGE);
+				setPage(2);
 			} catch (err) {
 				console.error("Error fetching albums:", err);
 				setError("Failed to load the gallery. Please try again later.");
@@ -87,27 +107,42 @@ const Gallery = () => {
 
 			<Container maxWidth="lg" sx={{ py: 6 }}>
 				{loading && (
-					<Grid container spacing={4}>
-						{[...Array(6)].map((_, index) => <AlbumCardSkeleton key={index} />)}
+					<Grid container spacing={1}>
+						{[...Array(12)].map((_, index) => <AlbumCardSkeleton key={index} />)}
 					</Grid>
 				)}
 
 				{error && <Alert severity="error">{error}</Alert>}
 
 				{!loading && !error && (
-					<Grid container spacing={4} alignItems="stretch">
-						{albums.map((album, index) => (
-							<Fade in key={album.id} timeout={500} style={{ transitionDelay: `${index * 100}ms` }}>
-								<Grid item xs={12} sm={6} md={4}>
-									<AlbumCard
-										albumName={album.name}
-										images={album.image_links}
-										onOpen={() => handleOpenAlbum(album)}
-									/>
-								</Grid>
-							</Fade>
-						))}
-					</Grid>
+					<>
+						<Grid container spacing={1} alignItems="stretch">
+							{displayedAlbums.map((album, index) => (
+								<Fade in key={album.id} timeout={500} style={{ transitionDelay: `${index * 100}ms` }}>
+									<Grid item xs={4} sm={3} md={2.4} lg={2}>
+										<AlbumCard
+											albumName={album.name}
+											images={album.image_links}
+											onOpen={() => handleOpenAlbum(album)}
+										/>
+									</Grid>
+								</Fade>
+							))}
+						</Grid>
+
+						{/* Load More Button */}
+						{hasMore && (
+							<Box sx={{ mt: 4, display: 'flex', justifyContent: 'center' }}>
+								<Button 
+									variant="contained" 
+									onClick={loadMoreAlbums}
+									sx={{ px: 4, py: 1.5, fontSize: '1rem' }}
+								>
+									Load More
+								</Button>
+							</Box>
+						)}
+					</>
 				)}
 			</Container>
 
