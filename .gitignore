@@ -42,3 +42,5 @@ yarn.lock
 .env
 *.md
 *serviceAccountKey*
+
+migrate_images.py
