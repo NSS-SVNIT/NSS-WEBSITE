@@ -25,10 +25,8 @@ const GallerySection = React.memo(() => {
 				bgcolor: "#111", // A softer, modern black
 				color: "white",
 				overflow: "hidden",
-				py: { xs: 8, md: 12 },
-				minHeight: '100vh',
-				display: 'flex',
-				alignItems: 'center'
+				py: { xs: 4, sm: 6, md: 10, lg: 12 },
+				minHeight: { xs: 'auto', md: '100vh' },
 			}}
 		>
 			<motion.div
@@ -38,7 +36,7 @@ const GallerySection = React.memo(() => {
 				viewport={{ once: true, amount: 0.2 }}
 				style={{ width: '100%' }}
 			>
-				<Grid container alignItems="center" spacing={{ xs: 6, lg: 2 }}>
+				<Grid container alignItems="center" spacing={{ xs: 4, sm: 6, lg: 2 }} sx={{ minHeight: { xs: 'auto', md: '100vh' } }}>
 					{/* Left Side: The Text */}
 					<Grid item xs={12} lg={5}>
 						<Memories />

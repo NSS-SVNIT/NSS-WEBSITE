@@ -29,7 +29,7 @@ const CommitteeCard = React.memo(({ title, icon, about, route }) => {
 			variants={itemVariants}
 			elevation={2}
 			sx={{
-				p: 3,
+				p: { xs: 1.5, sm: 3 },
 				textAlign: 'center',
 				borderRadius: 4,
 				height: '100%',
@@ -44,7 +44,7 @@ const CommitteeCard = React.memo(({ title, icon, about, route }) => {
 		>
 			<Box
 				sx={{
-					height: 180,
+					height: { xs: 120, sm: 180 },
 					display: 'flex',
 					alignItems: 'center',
 					justifyContent: 'center',
@@ -65,6 +65,10 @@ const CommitteeCard = React.memo(({ title, icon, about, route }) => {
 				sx={{
 					fontFamily: "'DM Sans', sans-serif",
 					fontWeight: 'bold',
+					fontSize: { xs: '1rem', sm: '1.25rem', md: '1.5rem' },
+					lineHeight: 1.2,
+					overflowWrap: 'anywhere',
+					wordBreak: 'break-word',
 					flexGrow: 1, // Pushes the button to the bottom
 					mb: 2,
 				}}

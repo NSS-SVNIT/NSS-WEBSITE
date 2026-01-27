@@ -108,34 +108,33 @@ const CarouselItem = ({ item }) => {
 
 	return (
 		<motion.div variants={containerVariants} initial="hidden" animate="visible" exit="hidden">
-			<Grid container spacing={{ xs: 4, md: 6 }} alignItems="center">
-				{/* Left Side: Photo and Name */}
-				<Grid item xs={12} md={4}>
-					<motion.div variants={itemVariants}>
-						<Stack alignItems="center" spacing={2.5}>
-							<Avatar
-								src={item.imageUrl}
-								alt={`Photo of ${item.name}`}
-								sx={{
-									width: { xs: 160, md: 220 },
-									height: { xs: 160, md: 220 },
-									// A more elegant border and shadow
-									border: `3px solid ${theme.palette.primary.light}`,
-									boxShadow: `0 10px 30px ${alpha(theme.palette.primary.main, 0.2)}`,
-								}}
-							/>
-							<Box textAlign="center">
-								<Typography variant="h5" sx={{ fontWeight: 700, color: 'text.primary' }}>
-									{item.name}
-								</Typography>
-								<Chip
-									label={`${item.role} | ${item.year}`}
-									size="medium"
-									sx={{ 
-										mt: 1, 
-										fontWeight: 500,
-										// A softer, more integrated chip style
-										bgcolor: alpha(theme.palette.primary.main, 0.1),
+				<Grid container spacing={{ xs: 3, sm: 4, md: 6 }} alignItems="center">
+					{/* Left Side: Photo and Name */}
+					<Grid item xs={12} md={4}>
+						<motion.div variants={itemVariants}>
+							<Stack alignItems="center" spacing={{ xs: 1.5, md: 2.5 }}>
+								<Avatar
+									src={item.imageUrl}
+									alt={`Photo of ${item.name}`}
+									sx={{
+										width: { xs: 120, sm: 160, md: 220 },
+										height: { xs: 120, sm: 160, md: 220 },
+										// A more elegant border and shadow
+										border: { xs: `2px solid ${theme.palette.primary.light}`, md: `3px solid ${theme.palette.primary.light}` },
+										boxShadow: `0 10px 30px ${alpha(theme.palette.primary.main, 0.2)}`,
+									}}
+								/>
+								<Box textAlign="center">
+									<Typography sx={{ fontWeight: 700, color: 'text.primary', fontSize: { xs: '1.1rem', sm: '1.3rem', md: '1.5rem' } }}>
+										{item.name}
+									</Typography>
+									<Chip
+										label={`${item.role} | ${item.year}`}
+										size="medium"
+										sx={{ 
+											mt: 1, 
+											fontWeight: 500,
+											fontSize: { xs: '0.75rem', sm: '0.85rem' },
 										color: 'primary.dark',
 									}}
 								/>
@@ -190,13 +189,13 @@ export default function CarouselResponsive() {
 		<Box sx={{
 			// Add a soft background to the whole section
 			bgcolor: alpha(theme.palette.primary.main, 0.03),
-			py: { xs: 6, md: 10 }
+			py: { xs: 4, sm: 6, md: 10 }
 		}}>
-			<Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 6, px: 2 }}>
-				<Typography variant="h2" component="h2" sx={{ fontWeight: 'bold', color: 'text.primary' }}>
+			<Stack spacing={{ xs: 1.5, md: 2 }} alignItems="center" textAlign="center" sx={{ mb: { xs: 4, md: 6 }, px: 2 }}>
+				<Typography component="h2" sx={{ fontWeight: 'bold', color: 'text.primary', fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' } }}>
 					Words of Wisdom
 				</Typography>
-				<Typography variant="h6" component="p" sx={{ color: 'text.secondary', maxWidth: '600px', fontWeight: 300 }}>
+				<Typography component="p" sx={{ color: 'text.secondary', maxWidth: '600px', fontWeight: 300, fontSize: { xs: '0.95rem', sm: '1rem', md: '1.1rem' } }}>
 					Inspiring messages from the leaders who have shaped our journey.
 				</Typography>
 			</Stack>
