@@ -249,98 +249,104 @@ const CommitteeTeamSection = React.memo(({ committeeKey }) => {
   if (!committee) return null;
 
   const renderBatch = (title, names) => (
-    <Card
-      elevation={0}
+  <Box
+    sx={{
+      position: "relative",
+      height: "100%",
+      borderRadius: 4,
+      overflow: "hidden",
+      background: "#fff",
+      border: "1px solid rgba(90,42,122,0.15)",
+      boxShadow: "0 10px 30px rgba(90,42,122,0.12)",
+    }}
+  >
+    {/* Accent bar */}
+    <Box
       sx={{
+        position: "absolute",
+        left: 0,
+        top: 0,
         height: "100%",
-        borderRadius: 3,
-        border: "1px solid rgba(90, 42, 122, 0.12)",
-        background:
-          "linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(245,250,255,0.9) 100%)",
+        width: 6,
+        background: "linear-gradient(180deg,#5A2A7A,#8E44AD)",
       }}
-    >
-      <CardContent sx={{ p: { xs: 2, md: 2.5 } }}>
-        <Typography
-          variant="h5"
-          sx={{
-            fontFamily: "'DM Sans', sans-serif",
-            fontWeight: 800,
-            color: "#5A2A7A",
-          }}
-        >
-          {title}
-        </Typography>
+    />
 
-        <Typography
-          variant="body2"
-          sx={{
-            mt: 0.25,
-            color: "text.secondary",
-            fontFamily: "'DM Sans', sans-serif",
-          }}
-        >
-          Team members
-        </Typography>
+    <Box sx={{ p: 3, pl: 4 }}>
+      {/* Batch Header */}
+      <Typography
+        variant="h6"
+        sx={{
+          fontWeight: 900,
+          color: "#5A2A7A",
+          letterSpacing: 1,
+          mb: 1,
+        }}
+      >
+        {title.toUpperCase()}
+      </Typography>
 
-        <Divider sx={{ my: 1.5 }} />
+      <Divider sx={{ mb: 2 }} />
 
-        <Stack
-          direction="column"
-          useFlexGap
-          sx={{
-            gap: 1,
-            pb: 0.25,
-            maxHeight: { xs: 170, sm: 210, md: 250 },
-            minHeight: { xs: 170, sm: 210, md: 250 },
-            overflowY: "auto",
-            pr: 0.5,
-            scrollbarGutter: "stable",
-            "&::-webkit-scrollbar": { width: 8 },
-            "&::-webkit-scrollbar-track": { background: "transparent" },
-            "&::-webkit-scrollbar-thumb": {
-              backgroundColor: "rgba(90, 42, 122, 0.25)",
-              borderRadius: 8,
-            },
-            "&::-webkit-scrollbar-thumb:hover": {
-              backgroundColor: "rgba(90, 42, 122, 0.35)",
-            },
-          }}
-        >
-          {names.map((name, index) => (
-            <Chip
-              key={index}
-              label={name}
-              size="small"
-              variant="outlined"
-              sx={{
-                borderRadius: 999,
-                fontFamily: "'DM Sans', sans-serif",
-                borderColor: "rgba(90, 42, 122, 0.2)",
-                "&:hover": {
-                  borderColor: "rgba(90, 42, 122, 0.35)",
-                  backgroundColor: "rgba(90, 42, 122, 0.06)",
-                },
-              }}
-            />
-          ))}
-        </Stack>
-      </CardContent>
-    </Card>
-  );
+      {/* Member Grid */}
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: "repeat(2, 1fr)",
+          gap: 1.2,
+          maxHeight: 250,
+          overflowY: "auto",
+          pr: 1,
+          "&::-webkit-scrollbar": { width: 6 },
+          "&::-webkit-scrollbar-thumb": {
+            background: "rgba(90,42,122,0.3)",
+            borderRadius: 6,
+          },
+        }}
+      >
+        {names.map((name, index) => (
+          <Box
+            key={index}
+            sx={{
+              px: 1.5,
+              py: 0.7,
+              borderRadius: 2,
+              fontSize: 14,
+              fontWeight: 500,
+              background: "rgba(90,42,122,0.06)",
+              border: "1px solid rgba(90,42,122,0.2)",
+              transition: "all .2s ease",
+              "&:hover": {
+                background: "rgba(90,42,122,0.15)",
+                transform: "translateY(-2px)",
+              },
+            }}
+          >
+            {name}
+          </Box>
+        ))}
+      </Box>
+    </Box>
+  </Box>
+);
+
 
   return (
     <Box sx={{ mt: { xs: 5, md: 6 } }}>
       <Box sx={{ textAlign: "center", mb: { xs: 2.5, md: 3 } }}>
-        <Typography
-          variant="h3"
-          sx={{
-            fontFamily: "'Inria Sans', serif",
-            fontWeight: 800,
-            color: "#5A2A7A",
-          }}
-        >
-          {committee.title}
-        </Typography>
+       <Typography
+  variant="h3"
+  sx={{
+    fontWeight: 900,
+    textAlign: "center",
+    mb: 4,
+    color: "#5A2A7A",
+    letterSpacing: "1.5px",
+    textTransform: "uppercase",
+  }}
+>
+  {committee.title}
+</Typography>
       </Box>
 
       <Grid container spacing={{ xs: 2, md: 3 }}>

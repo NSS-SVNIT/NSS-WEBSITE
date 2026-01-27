@@ -640,7 +640,7 @@ const SportsCommittee = () => {
             ))}
           </Grid>
 
-          <CommitteeTeamSection committeekey="Sports" />
+          <CommitteeTeamSection committeeKey="Sports" />
         </Container>
       </motion.div>
     </Layout>

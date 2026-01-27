@@ -652,7 +652,7 @@ const DocumentationCommittee = () => {
             </Grid>
           </motion.div>
 
-          <CommitteeTeamSection committeekey="Documentation" />
+          <CommitteeTeamSection committeeKey="Documentation" />
         </Container>
       </Box>
     </Layout>
