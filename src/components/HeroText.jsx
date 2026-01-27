@@ -7,17 +7,17 @@ const HeroText = memo(() => {
 		// Using a Stack component makes managing space between elements easy.
 		// The glass effect is now defined directly in the sx prop.
 		<Stack
-			spacing={{ xs: 1.5, md: 2 }} // Responsive spacing
+			spacing={{ xs: 1.5, md: 2 }}
 			sx={{
-				// This replaces the .glass CSS class
-				background: "rgba(0, 0, 0, 0.8)",
-				backdropFilter: "blur(10px)",
-				borderRadius: { xs: "10px", md: "15px" },
-				border: "1px solid rgba(255, 255, 255, 0.2)",
-				boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
-				p: { xs: 2, sm: 3, md: 4 }, // More responsive padding
-				color: "white", // Set a base text color
-				maxWidth: "100%",
+				position: 'relative',
+				width: '100%',
+				overflow: 'hidden',
+				borderRadius: '1.5rem',
+				boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+				p: { xs: 4, md: 6 },
+				backdropFilter: 'blur(10px)',
+				border: '1px solid rgba(255, 255, 255, 0.1)',
+				color: 'white',
 			}}
 		>
 			{/* Use Typography for semantic and consistent text styling */}

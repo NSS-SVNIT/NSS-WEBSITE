@@ -640,7 +640,7 @@ const CulturalCommittee = () => {
             ))}
           </Grid>
 
-          <CommitteeTeamSection />
+          <CommitteeTeamSection committeeKey="Cultural" />
         </Container>
       </motion.div>
     </Layout>
