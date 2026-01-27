@@ -65,14 +65,14 @@ const CommitteeTeamSection = React.memo(({ committeeKey }) => {
         
       ],
       batch2024: [
-        "AAviral Singh",
+        "Aviral Singh",
         "Sapna",
         "Vidhi Patel",
         "Abhinav Singh",
         "Ayush Sharma",
         "Vedant Chanawala",
         "Rajeev Kumar",
-        "Anjli Sharma",
+        "Anjali Sharma",
         "Dhyani Patel",
         "Uppunnutala Saidulu",
         "Manav Sahu"
@@ -152,7 +152,7 @@ const CommitteeTeamSection = React.memo(({ committeeKey }) => {
   "Bhavesh Pandey",
   "Bhavya Purohit",
   "Bhuvana Bolla",
-  "Herry Patel",
+  "Herryn Patel",
   "Manya Sinha",
   "Mohit Singh",
   "Ruchita Parmar",
