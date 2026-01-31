@@ -3,7 +3,7 @@ import Layout from "../Layout/Layout";
 import ComitteeSection from "./Home/ComitteeSection";
 import DutySection from "./Home/DutySection";
 import { motion } from "framer-motion";
-import { Typography, Box, Grid, Button, useMediaQuery } from "@mui/material";
+import { Typography, Box, Grid, Button, useMediaQuery, Container, Paper } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { useState } from "react";
 import { ref, getDownloadURL } from "firebase/storage";
@@ -12,12 +12,19 @@ import { Link } from "react-router-dom";
 import nssBackground from "../../assets/nss_background.png";
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 
-
 const useStyles = makeStyles({
-	gradientBackground: {
-		background: "linear-gradient(to bottom, #ffffff, #ffffff)",
-	},
+  gradientBackground: {
+    background: "linear-gradient(to bottom, #ffffff, #ffffff)",
+  },
 });
+
+const sectionVariants = {
+	hidden: { opacity: 0, y: 70 },
+	visible: { opacity: 1, y: 0 },
+};
+
+const HeroSection = Box;
+const InfoCard = Paper;
 
 const About = () => {
 	const classes = useStyles();
@@ -46,129 +53,123 @@ const About = () => {
 
 	return (
 		<Layout>
-			<Typography
-				variant="h1"
-				sx={{
-					fontFamily: "Inria Sans",
-					// fontStyle: "oblique",
-					fontSize: { xs: "24px", sm: "32px", md: "56px" },
-					px: { xs: 2, sm: 5, md: 10 },
-					pt: { xs: 3, md: 5 },
-					fontWeight: 500,
-					overflowX: "hidden",
-					overflowY: "hidden",
-					textAlign: isMobile ? "center" : "initial",
-				}}>
-				ABOUT NSS
-			</Typography>
-			<br />
-			<Box>
-				<motion.div>
-					<Typography
-						variant="h6"
+			<Box sx={{ backgroundColor: "#d3d4d4ff", minHeight: "100vh" }}>
+			<Container maxWidth="lg" sx={{ py: { xs: 4, md: 6 } }}>
+				<HeroSection
+					sx={{ textAlign: "center", mb: { xs: 4, md: 6 } }}>
+					<motion.div
+						initial={{ opacity: 0, y: -70 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 1.1, ease: "easeOut" }}>
+						<Typography
+						variant="h1"
+						component="h1"
 						sx={{
-							my: { xs: 2, sm: 3, md: 3 },
-							mx: "auto",
-							p: { xs: 2, sm: 3, md: 4 },
-							width: { xs: "92%", sm: "90%", md: "85%", lg: "75%" },
-							textAlign: "justify",
-							bgcolor: "background.paper",
-							borderRadius: "25px",
-							display: "flex",
-							justifyContent: "center",
-							alignItems: "center",
-							rows: "10",
-							overflowX: "hidden",
-							fontSize: { xs: "0.95rem", sm: "1rem", md: "1.1rem" },
+							fontFamily: "'Inria Sans', serif",
+							fontWeight: 700,
+							color: "#4a0e4a",
+							fontSize: { xs: "3rem", sm: "4.5rem", md: "6rem" },
 						}}>
-						NSS Unit SVNIT has been trying to realise its aim of
-						bringing the community along with it to prosperity in a
-						rising India. Comprehensive and long-term development
-						models have always been prioritised by NSS Unit SVNIT,
-						which is composed of motivated volunteers who are
-						expertly advised by eminent professors. NSS aims to
-						instill service values in students in addition to its
-						core objective of community development. This will help
-						students become aware and responsible citizens who care
-						about their country and the entire world. Through
-						several campus-wide initiatives like cleanliness drives,
-						we tirelessly work to not only improve the lives of the
-						underprivileged and oppressed but also to ensure that
-						the community's development is not halted.Our commitment
-						to quality is all-encompassing, and it only gets
-						stronger with time, as shown by the diversification that
-						is occurring while simultaneously making sure that the
-						core principles and concepts don't get lost in the
-						process.
-					</Typography>
-				</motion.div>
-			</Box>
+						ABOUT NSS SVNIT
+						</Typography>
+					</motion.div>
+					<motion.div
+						initial={{ opacity: 0, y: 30 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 1.1, ease: "easeOut", delay: 0.15 }}>
+						<Typography
+						variant="h6"
+						color="text.secondary"
+						sx={{
+							mt: 2,
+							maxWidth: "700px",
+							mx: "auto",
+							fontFamily: "'DM Sans', sans-serif",
+						}}>
+						Dedicated to community service, social welfare, and fostering responsible citizenship.
+						</Typography>
+					</motion.div>
+				</HeroSection>
 
-			<Typography
-				variant="h2"
-				sx={{
-					textAlign: isMobile ? "center" : "intial",
-					px: { xs: 2, sm: 5, md: 10 },
-					pt: { xs: 3, md: 5 },
-					fontWeight: 400,
-					overflowX: "hidden",
-					fontFamily: "Inria Sans",
-					fontSize: { xs: "22px", sm: "28px", md: "48px" },
-				}}>
-				ABOUT NSS INDIA
-			</Typography>
-			<br />
-			<Box>
-				<motion.div>
-					<Typography
-						variant="h6"
+				<motion.div
+					initial={{ opacity: 0, y: 70 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 1.2, ease: "easeOut", delay: 0.25 }}>
+					<InfoCard
+						elevation={0}
 						sx={{
-							my: { xs: 2, sm: 3, md: 3 },
-							mx: "auto",
-							p: { xs: 2, sm: 3, md: 4 },
-							width: { xs: "92%", sm: "90%", md: "85%", lg: "75%" },
-							textAlign: "justify",
-							bgcolor: "background.paper",
+							p: { xs: 2.5, md: 4 },
 							borderRadius: "25px",
-							display: "flex",
-							justifyContent: "center",
-							alignItems: "center",
-							rows: "10",
-							overflowX: "hidden",
-							fontFamily: "DM Sans",
-							fontSize: { xs: "0.95rem", sm: "1rem", md: "1.1rem" },
+							bgcolor: "background.paper",
+							maxWidth: "1000px",
+							mx: "auto",
 						}}>
-						The National Service Scheme (NSS) is a Central Sector
-						Scheme of the Government of India, Ministry of Youth
-						Affairs & Sports. It provides an opportunity to the
-						student youth of 11th & 12th Class of schools at +2
-						Board level and student youth of Technical Institution,
-						Graduate & Post Graduate at colleges and University
-						level of India to take part in various government-led
-						community service activities & programmes. The sole aim
-						of the NSS is to provide hands-on experience to young
-						students in delivering community service.
-					</Typography>
-					<Link to="https://nss.gov.in/nss-detail-page">
+						<Typography
+							variant="body1"
+							sx={{
+								fontFamily: "'DM Sans', sans-serif",
+								fontSize: { xs: "0.95rem", sm: "1.05rem", md: "1.1rem" },
+							}}>
+							NSS Unit SVNIT has been trying to realise its aim of bringing the community along with it to prosperity in a rising India. Comprehensive and long-term development models have always been prioritised by NSS Unit SVNIT, which is composed of motivated volunteers who are expertly advised by eminent professors. NSS aims to instill service values in students in addition to its core objective of community development. This will help students become aware and responsible citizens who care about their country and the entire world. Through several campus-wide initiatives like cleanliness drives, we tirelessly work to not only improve the lives of the underprivileged and oppressed but also to ensure that the community's development is not halted.
+						</Typography>
+					</InfoCard>
+				</motion.div>
+
+				<motion.div
+					initial={{ opacity: 0, y: 80 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.35 }}
+					transition={{ duration: 1.35, ease: "easeOut" }}
+					style={{ marginTop: "4rem" }}>
+					<InfoCard
+						elevation={0}
+						sx={{
+							p: { xs: 2.5, md: 4 },
+							borderRadius: "25px",
+							bgcolor: "background.paper",
+							maxWidth: "1000px",
+							mx: "auto",
+						}}>
+						<Typography
+							variant="h4"
+							component="h2"
+							sx={{ fontFamily: "'Inria Sans', serif", fontWeight: 500, mb: 2, color: "#4a0e4a" }}>
+							ABOUT NSS INDIA
+						</Typography>
+						<Typography
+							variant="body1"
+							sx={{
+								fontFamily: "'DM Sans', sans-serif",
+								fontSize: { xs: "0.95rem", sm: "1.05rem", md: "1.1rem" },
+								mb: 3,
+							}}>
+							The National Service Scheme (NSS) is a Central Sector Scheme of the Government of India, Ministry of Youth Affairs & Sports. It provides an opportunity to the student youth of India to take part in various government-led community service activities & programmes. The sole aim of the NSS is to provide hands-on experience to young students in delivering community service.
+						</Typography>
 						<Button
+							component={Link}
+							to="https://nss.gov.in/nss-detail-page"
+							target="_blank"
+							rel="noopener noreferrer"
+							variant="outlined"
 							color="primary"
 							sx={{
-								borderRadius: 0,
-								height: "40px",
-								mt: 2,
-								color: "black",
-								width: "150px",
-								border: "2px black solid",
-								fontSize: "1.1rem",
-								fontFamily: "DM Sans",
-								mx: { xs: "auto", md: 0 },
-								display: "block",
+								fontFamily: "'DM Sans', sans-serif",
+								fontWeight: 700,
+								borderColor: "#8e24aa",
+								color: "#8e24aa",
+								borderRadius: "50px",
+								px: 3,
+								py: 1,
+								"&:hover": {
+									backgroundColor: "rgba(142, 36, 170, 0.08)",
+									borderColor: "#6a1b9a",
+								},
 							}}>
 							READ MORE
 						</Button>
-					</Link>
+					</InfoCard>
 				</motion.div>
-			</Box>
+			</Container>
 
 			{/* LOGO SECTION - Refactored to separate Logo Image and Details */}
 			<Box sx={{ flexGrow: 1, overflow: "hidden", px: isMobile ? 2 : 10, py: 5 }}>
@@ -196,12 +197,17 @@ const About = () => {
 								sx={{
 									p: "25px",
 									textAlign: "justify",
-									bgcolor: "#fce3d8ff",
+									bgcolor: "#473858ff",
 									borderRadius: "15px",
 									fontFamily: "DM Sans",
 									fontSize: isMobile ? "14px" : "18px",
-									color: "#333",
+									color: "white",
 									boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
+									"& strong": {
+										color: "#ffd54f",
+										fontWeight: 800,
+										textShadow: "0 2px 10px rgba(255, 213, 79, 0.35)",
+									},
 								}}>
 								<ul style={{ listStyleType: "none", padding: 0 }}>
 									<li style={{ marginBottom: "12px" }}>
@@ -361,23 +367,35 @@ const About = () => {
 								boxSizing: "border-box",
 								height: { xs: "auto", md: "300px" },
 								width: { xs: "100%", md: "80%" },
-								borderRadius: "5px",
-								boxShadow: "0 4px 10px rgba(0,0,0,0.08)",
-								alignItems: "center",
-								justifyContent: "center",
-								overflowX: "hidden",
+								borderRadius: "18px",
+								backgroundColor: "#ffffff",
+								border: "1px solid rgba(0,0,0,0.08)",
+								boxShadow: "0 10px 28px rgba(0,0,0,0.10)",
+								alignItems: "stretch",
+								justifyContent: "flex-start",
+								transition: "transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease",
+								gap: { xs: 1.5, md: 2 },
+								"&:hover": {
+									transform: "translateY(-6px)",
+									boxShadow: "0 16px 38px rgba(0,0,0,0.14)",
+									borderColor: "rgba(0,0,0,0.12)",
+								},
 							}}
 							variant="outlined"
 							className={classes.gradientBackground}>
+							<Box sx={{ display: "flex", alignItems: "center", mb: { xs: 1.5, md: 2 } }}>
 							<Typography
 								variant="h4"
 								sx={{
-									mb: { xs: 2, md: 3 },
+									mb: 0,
 									fontFamily: "Inria Sans",
 									textAlign: "center",
+									fontWeight: 800,
+									letterSpacing: "0.5px",
 								}}>
 								OUR MISSION
 							</Typography>
+							</Box>
 							<Typography
 								sx={{
 									fontFamily: "DM Sans",
@@ -385,8 +403,8 @@ const About = () => {
 									width: "100%",
 									textAlign: "justify",
 									fontSize: {
-										xs: "10px",
-										sm: "12px",
+										xs: "14px",
+										sm: "14px",
 										md: "14px",
 										lg: "15px",
 									},
@@ -425,23 +443,35 @@ const About = () => {
 								boxSizing: "border-box",
 								height: { xs: "auto", md: "300px" },
 								width: { xs: "100%", md: "80%" },
-								boxShadow: "0 4px 10px rgba(0,0,0,0.08)",
-								borderRadius: "5px",
-								alignItems: "center",
-								justifyContent: "center",
-								overflowX: "hidden",
+								borderRadius: "18px",
+								backgroundColor: "#ffffff",
+								border: "1px solid rgba(0,0,0,0.08)",
+								boxShadow: "0 10px 28px rgba(0,0,0,0.10)",
+								alignItems: "stretch",
+								justifyContent: "flex-start",
+								transition: "transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease",
+								gap: { xs: 1.5, md: 2 },
+								"&:hover": {
+									transform: "translateY(-6px)",
+									boxShadow: "0 16px 38px rgba(0,0,0,0.14)",
+									borderColor: "rgba(0,0,0,0.12)",
+								},
 							}}
 							variant="outlined"
 							className={classes.gradientBackground}>
+							<Box sx={{ display: "flex", alignItems: "center", mb: { xs: 1.5, md: 2 } }}>
 							<Typography
 								variant="h4"
 								sx={{
-									mb: { xs: 2, md: 3 },
+									mb: 0,
 									fontFamily: "Inria Sans",
 									textAlign: "center",
+									fontWeight: 800,
+									letterSpacing: "0.5px",
 								}}>
 								OUR VISION
 							</Typography>
+							</Box>
 							<Typography
 								sx={{
 									fontFamily: "DM Sans",
@@ -449,8 +479,8 @@ const About = () => {
 									width: "100%",
 									textAlign: "justify",
 									fontSize: {
-										xs: "10px",
-										sm: "12px",
+										xs: "14px",
+										sm: "14px",
 										md: "14px",
 										lg: "15px",
 									},
@@ -497,7 +527,7 @@ const About = () => {
 						item
 						xs={12}
 						sx={{
-                            width: { xs: "95%", md: "70%", lg: "60%" }, // Reduced width for better readability
+                            width: { xs: "95%", md: "70%", lg: "60%" }, 
                             mb: { xs: 4, md: 6 },
                             mx: 'auto' // Center the component
                         }}
@@ -525,7 +555,6 @@ const About = () => {
 										boxShadow: "0 15px 50px rgba(0,0,0,0.15)",
 									}
 								}}>
-								{/* Icon Removed as requested */}
 								<Typography
 									variant="h4"
 									sx={{
@@ -689,6 +718,7 @@ const About = () => {
 					alignItems: "center",
 					justifyContent: "center",
 				}}></div>
+			</Box>
 		</Layout>
 	);
 };

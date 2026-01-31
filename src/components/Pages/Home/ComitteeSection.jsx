@@ -76,6 +76,7 @@ const ComitteeSection = React.memo(() => {
               sm={6}
               md={4}
               key={committee.id}
+              sx={{ display: 'flex' }}
             >
               <CommitteeCard
                 title={committee.name}
