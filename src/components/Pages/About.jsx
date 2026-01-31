@@ -19,7 +19,7 @@ const useStyles = makeStyles({
 });
 
 const sectionVariants = {
-	hidden: { opacity: 0, y: 30 },
+	hidden: { opacity: 0, y: 70 },
 	visible: { opacity: 1, y: 0 },
 };
 
@@ -56,12 +56,12 @@ const About = () => {
 			<Box sx={{ backgroundColor: "#d3d4d4ff", minHeight: "100vh" }}>
 			<Container maxWidth="lg" sx={{ py: { xs: 4, md: 6 } }}>
 				<HeroSection
-					component={motion.div}
-					initial={{ opacity: 0, y: -50 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.8 }}
 					sx={{ textAlign: "center", mb: { xs: 4, md: 6 } }}>
-					<Typography
+					<motion.div
+						initial={{ opacity: 0, y: -70 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 1.1, ease: "easeOut" }}>
+						<Typography
 						variant="h1"
 						component="h1"
 						sx={{
@@ -71,8 +71,13 @@ const About = () => {
 							fontSize: { xs: "3rem", sm: "4.5rem", md: "6rem" },
 						}}>
 						ABOUT NSS SVNIT
-					</Typography>
-					<Typography
+						</Typography>
+					</motion.div>
+					<motion.div
+						initial={{ opacity: 0, y: 30 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 1.1, ease: "easeOut", delay: 0.15 }}>
+						<Typography
 						variant="h6"
 						color="text.secondary"
 						sx={{
@@ -82,14 +87,14 @@ const About = () => {
 							fontFamily: "'DM Sans', sans-serif",
 						}}>
 						Dedicated to community service, social welfare, and fostering responsible citizenship.
-					</Typography>
+						</Typography>
+					</motion.div>
 				</HeroSection>
 
 				<motion.div
-					variants={sectionVariants}
-					initial="hidden"
-					whileInView="visible"
-					viewport={{ once: true }}>
+					initial={{ opacity: 0, y: 70 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 1.2, ease: "easeOut", delay: 0.25 }}>
 					<InfoCard
 						elevation={0}
 						sx={{
@@ -111,10 +116,10 @@ const About = () => {
 				</motion.div>
 
 				<motion.div
-					variants={sectionVariants}
-					initial="hidden"
-					whileInView="visible"
-					viewport={{ once: true }}
+					initial={{ opacity: 0, y: 80 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.35 }}
+					transition={{ duration: 1.35, ease: "easeOut" }}
 					style={{ marginTop: "4rem" }}>
 					<InfoCard
 						elevation={0}
@@ -363,37 +368,17 @@ const About = () => {
 								height: { xs: "auto", md: "300px" },
 								width: { xs: "100%", md: "80%" },
 								borderRadius: "18px",
-								background: "linear-gradient(180deg, #ffffff 0%, #f7fbff 100%)",
+								backgroundColor: "#ffffff",
 								border: "1px solid rgba(0,0,0,0.08)",
-								position: "relative",
-								overflow: "hidden",
 								boxShadow: "0 10px 28px rgba(0,0,0,0.10)",
-								alignItems: "center",
-								justifyContent: "center",
-								transition: "transform 0.25s ease, box-shadow 0.25s ease",
-								"&::before": {
-									content: '""',
-									position: "absolute",
-									top: 0,
-									left: 0,
-									right: 0,
-									height: "6px",
-									background: "linear-gradient(90deg, #4a0e4a 0%, #7b2a7b 50%, #4a0e4a 100%)",
-								},
-								"&::after": {
-									content: '""',
-									position: "absolute",
-									top: "-55px",
-									right: "-55px",
-									width: "170px",
-									height: "170px",
-									borderRadius: "50%",
-									background: "radial-gradient(circle at 30% 30%, rgba(74, 14, 74, 0.14), rgba(74, 14, 74, 0))",
-									pointerEvents: "none",
-								},
+								alignItems: "stretch",
+								justifyContent: "flex-start",
+								transition: "transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease",
+								gap: { xs: 1.5, md: 2 },
 								"&:hover": {
 									transform: "translateY(-6px)",
 									boxShadow: "0 16px 38px rgba(0,0,0,0.14)",
+									borderColor: "rgba(0,0,0,0.12)",
 								},
 							}}
 							variant="outlined"
@@ -459,37 +444,17 @@ const About = () => {
 								height: { xs: "auto", md: "300px" },
 								width: { xs: "100%", md: "80%" },
 								borderRadius: "18px",
-								background: "linear-gradient(180deg, #ffffff 0%, #f6f9ff 100%)",
+								backgroundColor: "#ffffff",
 								border: "1px solid rgba(0,0,0,0.08)",
-								position: "relative",
-								overflow: "hidden",
 								boxShadow: "0 10px 28px rgba(0,0,0,0.10)",
-								alignItems: "center",
-								justifyContent: "center",
-								transition: "transform 0.25s ease, box-shadow 0.25s ease",
-								"&::before": {
-									content: '""',
-									position: "absolute",
-									top: 0,
-									left: 0,
-									right: 0,
-									height: "6px",
-									background: "linear-gradient(90deg, #020a63 0%, #1e55ff 50%, #020a63 100%)",
-								},
-								"&::after": {
-									content: '""',
-									position: "absolute",
-									bottom: "-65px",
-									left: "-65px",
-									width: "190px",
-									height: "190px",
-									borderRadius: "50%",
-									background: "radial-gradient(circle at 40% 40%, rgba(2, 10, 99, 0.14), rgba(2, 10, 99, 0))",
-									pointerEvents: "none",
-								},
+								alignItems: "stretch",
+								justifyContent: "flex-start",
+								transition: "transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease",
+								gap: { xs: 1.5, md: 2 },
 								"&:hover": {
 									transform: "translateY(-6px)",
 									boxShadow: "0 16px 38px rgba(0,0,0,0.14)",
+									borderColor: "rgba(0,0,0,0.12)",
 								},
 							}}
 							variant="outlined"
