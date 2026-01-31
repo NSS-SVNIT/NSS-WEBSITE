@@ -103,6 +103,10 @@ const useStyles = makeStyles({
     gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
     gap: "1.5rem",
     marginTop: "2rem",
+    "@media (max-width:600px)": {
+      gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+      gap: "1rem",
+    },
   },
 
   infoCard: {
