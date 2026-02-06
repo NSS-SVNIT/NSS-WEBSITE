@@ -19,7 +19,6 @@ const navItems = [
 	{ route: "Gallery", link: "/gallery" },
 	{ route: "Articles", link: "/articles" },
 	{ route: "Team", link: "/team" },
-	{ route: "Join Team", link: "/team/volunteer" },
 	{ route: "Contact", link: "/contact" },
 ];
 const scrollToTop = () => {

@@ -73,7 +73,7 @@ const ArticleCard = React.memo(({ name, description, image, download, flipbook }
 					display: 'flex',
 					flexDirection: 'column',
 					justifyContent: 'flex-end', // Aligns content to the bottom
-					p: 3,
+					p: { xs: 2, sm: 3 },
 				}}
 			>
 				<Typography variant="h5" component="div" sx={{ fontWeight: 'bold', mb: 1, textShadow: '1px 1px 3px rgba(0,0,0,0.7)' }}>
@@ -83,12 +83,14 @@ const ArticleCard = React.memo(({ name, description, image, download, flipbook }
 					{description}
 				</Typography>
 
-				<Stack direction="row" spacing={2}>
+				<Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
 					{download && (
 						<Button
 							href={download}
 							target="_blank"
 							variant="contained"
+							fullWidth
+							size="small"
 							startIcon={<DownloadIcon />}
 							onClick={(e) => e.stopPropagation()} // Prevent card link from firing
 						>
@@ -100,6 +102,8 @@ const ArticleCard = React.memo(({ name, description, image, download, flipbook }
 							href={flipbook}
 							target="_blank"
 							variant="outlined"
+							fullWidth
+							size="small"
 							startIcon={<AutoStoriesIcon />}
 							onClick={(e) => e.stopPropagation()} // Prevent card link from firing
 							sx={{ color: 'white', borderColor: 'rgba(255,255,255,0.5)', '&:hover': { borderColor: 'white', bgcolor: 'rgba(255,255,255,0.1)' } }}

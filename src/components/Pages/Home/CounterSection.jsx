@@ -33,18 +33,19 @@ const ParallaxContent = () => {
 		}, 3000);
 		return () => clearInterval(interval);
 	}, []);
+	
 	return (
 		<Stack
 			justifyContent="center"
 			alignItems="center"
 			// --- The main change is here: increase the gap to space out the new button ---
-			gap={{ xs: 6, md: 8 }} 
+			gap={{ xs: 4, sm: 6, md: 8 }} 
 			sx={{
 				backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url(${BackgroundImage})`,
-				backgroundAttachment: "fixed",
+				backgroundAttachment: { xs: "scroll", md: "fixed" },
 				backgroundPosition: "center",
 				backgroundSize: "cover",
-				py: { xs: 10, md: 16 }, // Adjusted padding for more space
+				py: { xs: 6, sm: 8, md: 12, lg: 16 }, // More responsive padding
 				color: 'white',
 			}}
 		>
@@ -53,8 +54,8 @@ const ParallaxContent = () => {
 				direction={{ xs: "column", sm: "row" }}
 				justifyContent="center"
 				alignItems="center"
-				gap={{ xs: 5, sm: 8 }}
-				px={2}
+				gap={{ xs: 4, sm: 6, md: 8 }}
+				px={{ xs: 2, sm: 3 }}
 			>
 				{countersData.map((counter, index) => (
 					<React.Fragment key={counter.title}>
@@ -69,9 +70,6 @@ const ParallaxContent = () => {
 					</React.Fragment>
 				))}
 			</Stack>
-
-			{/* --- NEW BUTTON ADDED HERE --- */}
-			
 		</Stack>
 	);
 };
@@ -85,14 +83,17 @@ const CounterSection = React.memo(() => {
 				alignItems="center"
 				sx={{ 
 					bgcolor: 'background.default', 
-					pt: { xs: 6, md: 10 },
-					pb: { xs: 4, md: 6 },
+					pt: { xs: 4, sm: 6, md: 10 },
+					pb: { xs: 3, sm: 4, md: 6 },
+					px: { xs: 2, sm: 3 },
 				}} 
 			>
 				<Typography
-					variant="h2"
 					component="h2"
-					sx={{ fontWeight: 'bold' }} 
+					sx={{ 
+						fontWeight: 'bold',
+						fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
+					}} 
 				>
 					Our Reach
 				</Typography>

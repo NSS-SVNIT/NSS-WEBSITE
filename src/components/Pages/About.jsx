@@ -51,9 +51,9 @@ const About = () => {
 				sx={{
 					fontFamily: "Inria Sans",
 					// fontStyle: "oblique",
-					fontSize: isMobile ? "32px" : "56px",
-					px: 10,
-					pt: 5,
+					fontSize: { xs: "24px", sm: "32px", md: "56px" },
+					px: { xs: 2, sm: 5, md: 10 },
+					pt: { xs: 3, md: 5 },
 					fontWeight: 500,
 					overflowX: "hidden",
 					overflowY: "hidden",
@@ -67,8 +67,10 @@ const About = () => {
 					<Typography
 						variant="h6"
 						sx={{
-							m: "23px",
-							p: "25px",
+							my: { xs: 2, sm: 3, md: 3 },
+							mx: "auto",
+							p: { xs: 2, sm: 3, md: 4 },
+							width: { xs: "92%", sm: "90%", md: "85%", lg: "75%" },
 							textAlign: "justify",
 							bgcolor: "background.paper",
 							borderRadius: "25px",
@@ -77,6 +79,7 @@ const About = () => {
 							alignItems: "center",
 							rows: "10",
 							overflowX: "hidden",
+							fontSize: { xs: "0.95rem", sm: "1rem", md: "1.1rem" },
 						}}>
 						NSS Unit SVNIT has been trying to realise its aim of
 						bringing the community along with it to prosperity in a
@@ -105,12 +108,12 @@ const About = () => {
 				variant="h2"
 				sx={{
 					textAlign: isMobile ? "center" : "intial",
-					px: isMobile ? 5 : 10,
-					pt: isMobile ? 3 : 5,
+					px: { xs: 2, sm: 5, md: 10 },
+					pt: { xs: 3, md: 5 },
 					fontWeight: 400,
 					overflowX: "hidden",
 					fontFamily: "Inria Sans",
-					fontSize: isMobile ? "28px" : "48px",
+					fontSize: { xs: "22px", sm: "28px", md: "48px" },
 				}}>
 				ABOUT NSS INDIA
 			</Typography>
@@ -120,8 +123,10 @@ const About = () => {
 					<Typography
 						variant="h6"
 						sx={{
-							m: "23px",
-							p: "25px",
+							my: { xs: 2, sm: 3, md: 3 },
+							mx: "auto",
+							p: { xs: 2, sm: 3, md: 4 },
+							width: { xs: "92%", sm: "90%", md: "85%", lg: "75%" },
 							textAlign: "justify",
 							bgcolor: "background.paper",
 							borderRadius: "25px",
@@ -131,6 +136,7 @@ const About = () => {
 							rows: "10",
 							overflowX: "hidden",
 							fontFamily: "DM Sans",
+							fontSize: { xs: "0.95rem", sm: "1rem", md: "1.1rem" },
 						}}>
 						The National Service Scheme (NSS) is a Central Sector
 						Scheme of the Government of India, Ministry of Youth
@@ -146,18 +152,17 @@ const About = () => {
 					<Link to="https://nss.gov.in/nss-detail-page">
 						<Button
 							color="primary"
-							style={{
+							sx={{
 								borderRadius: 0,
 								height: "40px",
-								marginTop: "1rem",
+								mt: 2,
 								color: "black",
 								width: "150px",
 								border: "2px black solid",
 								fontSize: "1.1rem",
 								fontFamily: "DM Sans",
-								marginLeft: "50px",
-								overflowX: "hidden",
-								overflowY: "hidden",
+								mx: { xs: "auto", md: 0 },
+								display: "block",
 							}}>
 							READ MORE
 						</Button>
@@ -191,7 +196,7 @@ const About = () => {
 								sx={{
 									p: "25px",
 									textAlign: "justify",
-									bgcolor: "#d8e4ffff",
+									bgcolor: "#fce3d8ff",
 									borderRadius: "15px",
 									fontFamily: "DM Sans",
 									fontSize: isMobile ? "14px" : "18px",
@@ -255,9 +260,9 @@ const About = () => {
 					container
 					spacing={2}
 					sx={{
-						marginTop: isMobile ? "0px" : "45px",
-						marginBottom: "60px",
-						paddingX: isMobile ? "20px" : "80px", // Better padding for separate section
+						marginTop: { xs: "0px", md: "45px" },
+						marginBottom: { xs: "40px", md: "60px" },
+						paddingX: { xs: "16px", sm: "24px", md: "48px", lg: "80px" },
 						justifyContent: "center",
 						overflowX: "hidden",
 					}}>
@@ -273,7 +278,7 @@ const About = () => {
 								sx={{
 									fontFamily: "Inria Sans",
 									textAlign: "center",
-									fontSize: { xs: "24px", md: "40px" },
+									fontSize: { xs: "24px", sm: "28px", md: "40px" },
 								}}>
 								About Our
 							</Typography>
@@ -283,7 +288,7 @@ const About = () => {
 								sx={{
 									fontFamily: "DM Sans",
 									textAlign: "center",
-									fontSize: { xs: "48px", md: "80px" },
+									fontSize: { xs: "40px", sm: "48px", md: "80px" },
 									fontWeight: "bold",
 									color: "#2c3e50"
 								}}>
@@ -303,7 +308,7 @@ const About = () => {
 									textAlign: "justify",
 									margin: "0 auto",
 									maxWidth: "1000px",
-									fontSize: { xs: "16px", md: "20px" },
+									fontSize: { xs: "14px", sm: "16px", md: "20px" },
 									lineHeight: 1.8,
 									color: "#444"
 								}}>
@@ -347,13 +352,15 @@ const About = () => {
 						<Box
 							sx={{
 								fontFamily: "DM Sans",
-								ml: "50px",
-								mt: "50px",
-								mb: "50px",
-								fontSize: "70%",
+								mx: "auto",
+								mt: { xs: "24px", md: "50px" },
+								mb: { xs: "24px", md: "50px" },
 								display: "flex",
-								height: "300px",
-								width: "80%",
+								flexDirection: "column",
+								p: { xs: 3, sm: 4, md: 4 },
+								boxSizing: "border-box",
+								height: { xs: "auto", md: "300px" },
+								width: { xs: "100%", md: "80%" },
 								borderRadius: "5px",
 								boxShadow: "0 4px 10px rgba(0,0,0,0.08)",
 								alignItems: "center",
@@ -365,8 +372,9 @@ const About = () => {
 							<Typography
 								variant="h4"
 								sx={{
-									m: { xs: 2, sm: 3, md: 4, lg: 5 },
+									mb: { xs: 2, md: 3 },
 									fontFamily: "Inria Sans",
+									textAlign: "center",
 								}}>
 								OUR MISSION
 							</Typography>
@@ -374,12 +382,15 @@ const About = () => {
 								sx={{
 									fontFamily: "DM Sans",
 									overflowX: "hidden",
+									width: "100%",
+									textAlign: "justify",
 									fontSize: {
 										xs: "10px",
 										sm: "12px",
 										md: "14px",
 										lg: "15px",
 									},
+									lineHeight: 1.6,
 								}}>
 								Our mission is to transform volunteers into
 								dedicated social servants, embodying the ethos
@@ -405,13 +416,15 @@ const About = () => {
 						<Box
 							sx={{
 								fontFamily: "DM Sans",
-								ml: "50px",
-								mt: "50px",
-								mb: "50px",
-								fontSize: "70%",
+								mx: "auto",
+								mt: { xs: "24px", md: "50px" },
+								mb: { xs: "24px", md: "50px" },
 								display: "flex",
-								height: "300px",
-								width: "80%",
+								flexDirection: "column",
+								p: { xs: 3, sm: 4, md: 4 },
+								boxSizing: "border-box",
+								height: { xs: "auto", md: "300px" },
+								width: { xs: "100%", md: "80%" },
 								boxShadow: "0 4px 10px rgba(0,0,0,0.08)",
 								borderRadius: "5px",
 								alignItems: "center",
@@ -423,8 +436,9 @@ const About = () => {
 							<Typography
 								variant="h4"
 								sx={{
-									m: { xs: 2, sm: 3, md: 4, lg: 5 },
+									mb: { xs: 2, md: 3 },
 									fontFamily: "Inria Sans",
+									textAlign: "center",
 								}}>
 								OUR VISION
 							</Typography>
@@ -432,12 +446,15 @@ const About = () => {
 								sx={{
 									fontFamily: "DM Sans",
 									overflowX: "hidden",
+									width: "100%",
+									textAlign: "justify",
 									fontSize: {
 										xs: "10px",
 										sm: "12px",
 										md: "14px",
 										lg: "15px",
 									},
+									lineHeight: 1.6,
 								}}>
 								Our vision is a society where individuals
 								embrace empathy and actively contribute to
@@ -453,23 +470,16 @@ const About = () => {
 			</Grid>
 			<Box
 				sx={{
-					backgroundImage: `url(${nssBackground})`,
+					backgroundImage: `linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url(${nssBackground})`,
 					backgroundSize: "cover",
 					backgroundPosition: "center",
+					backgroundRepeat: "no-repeat",
+					backgroundColor: "#000",
 					backgroundAttachment: "fixed",
 					py: 10,
 					px: 2,
 					position: "relative",
-					"&::before": {
-						content: '""',
-						position: "absolute",
-						top: 0,
-						left: 0,
-						right: 0,
-						bottom: 0,
-						backgroundColor: "rgba(0,0,0,0.3)",
-						zIndex: 1,
-					},
+					zIndex: 0,
 				}}>
 				<Grid
 					container
@@ -477,7 +487,7 @@ const About = () => {
 					direction="column" // Vertical Stack
 					sx={{
 						position: "relative",
-						zIndex: 2,
+						zIndex: 1,
 						px: { xs: 0, md: 5 }, // Add padding on desktop for better spacing
 						alignItems: "center" // Center all children
 					}}>
@@ -502,6 +512,7 @@ const About = () => {
 								sx={{
 									background: "rgba(255, 255, 255, 0.1)", // Transparent Glass
 									backdropFilter: "blur(16px)", // Stronger blur
+									WebkitBackdropFilter: "blur(16px)",
 									border: "1px solid rgba(255, 255, 255, 0.6)", // Crisp glass border
 									borderRadius: isMobile ? "20px" : "30px",
 									p: { xs: 3, md: 5 },
@@ -569,6 +580,7 @@ const About = () => {
 								sx={{
 									background: "rgba(255, 255, 255, 0.1)", // Transparent Glass
 									backdropFilter: "blur(16px)",
+									WebkitBackdropFilter: "blur(16px)",
 									border: "1px solid rgba(255, 255, 255, 0.6)",
 									borderRadius: isMobile ? "20px" : "30px",
 									p: { xs: 3, md: 5 },
