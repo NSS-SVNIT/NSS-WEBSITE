@@ -14,7 +14,7 @@ function Developers() {
 			mail: "mailto:tapariyaaditi23@gmail.com",
 			linkedin: "https://www.linkedin.com/in/aditi-tapariya/",
 			imageLink:
-				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454735/developers/aditi.jpg",
+				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770405361/developer/developers/Aditi_Tapariya.jpg",
 		},
 		{
 			id: 2,
@@ -23,7 +23,7 @@ function Developers() {
 			mail: "mailto:pathakharshit281@gmail.com",
 			linkedin: "https://www.linkedin.com/in/harshit-pathak-4ba6aa22a/",
 			imageLink:
-				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454737/developers/harshit.jpg",
+				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770405366/developer/developers/Harshit_Pathak.jpg",
 		},
 		{
 			id: 3,
@@ -32,7 +32,7 @@ function Developers() {
 			mail: "mailto:jinhalmaheshwari1256@gmail.com",
 			linkedin: "linkedin.com/in/jinhal-maheshwari-71a217212/",
 			imageLink:
-				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454739/developers/jinhal.jpg",
+				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770405372/developer/developers/Jinhal_Maheshwari.jpg",
 		},
 		{
 			id: 4,
@@ -41,7 +41,7 @@ function Developers() {
 			mail: "mailto:shahparam1903@gmail.com",
 			linkedin: "https://www.linkedin.com/in/param-shah-716322227/",
 			imageLink:
-				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454741/developers/param.jpg",
+				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770405376/developer/developers/Param_Shah.jpg",
 		},
 		{
 			id: 5,
@@ -50,7 +50,7 @@ function Developers() {
 			mail: "mailto:barikpragnesh@gmail.com",
 			linkedin: "https://www.linkedin.com/in/pragnesh-barik",
 			imageLink:
-				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454743/developers/pragnesh.jpg",
+				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770405387/developer/developers/Pragnesh_Barik.jpg",
 		},
 		{
 			id: 6,
@@ -59,7 +59,7 @@ function Developers() {
 			mail: "mailto:shreeyadave776@gmail.com",
 			linkedin: "https://www.linkedin.com/in/shreeya-dave-444166232/",
 			imageLink:
-				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454745/developers/shreeya.jpg",
+				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770405391/developer/developers/Shreeya_Dave.jpg",
 		},
 		{
 			id: 7,
@@ -68,7 +68,7 @@ function Developers() {
 			mail: "mailto:samarthchaplot7@gmail.com",
 			linkedin: "https://www.linkedin.com/in/samarth-chaplot-130b88256/",
 			imageLink:
-				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454748/developers/SAMARTH_CHAPLOT.jpg",
+				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770405395/developer/developers/Samarth_Chaplot.jpg",
 		},
 	];
 
@@ -80,7 +80,7 @@ function Developers() {
 			mail: "mailto:kevalkanpariya5051@gmail.com",
 			linkedin: "http://linkedin.com/in/kevalkanpariya",
 			imageLink:
-				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454752/developers/keval.jpg",
+				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770405414/developer/developers/Keval_Kanpariya.jpg",
 		},
 		{
 			id: 2,
@@ -89,7 +89,7 @@ function Developers() {
 			mail: "mailto:namrata.rathod028@gmail.com",
 			linkedin: "www.linkedin.com/in/nr28",
 			imageLink:
-				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454756/developers/namrata.jpg",
+				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770405426/developer/developers/Namrata_Rathod.jpg",
 		},
 	];
 

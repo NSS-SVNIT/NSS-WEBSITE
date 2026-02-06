@@ -6,7 +6,7 @@ const Sir = [
     position: "Faculty Advisor",
     gmail: "bmh@med.svnit.ac.in",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454761/developers/Bade%20Mukund%20Sir.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770403304/team/Sir/Dr._Bade_Mukund.jpg",
   },
 ];
 
@@ -16,28 +16,28 @@ const ProgramCoordinators = [
     position: "Program Officer",
     gmail: "ritambhara.jangir@chem.svnit.ac.in",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454763/developers/rithambarimaam.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770396876/team/ProgramCoordinators/Dr._Ritambhara_Jangir.jpg",
   },
   {
     name: "Dr Yogendra Kuwar",
     position: "Program Officer",
     gmail: "yvk@med.svnit.ac.in",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454765/developers/Yogendra%20Sir.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770396879/team/ProgramCoordinators/Dr_Yogendra_Kuwar.jpg",
   },
   {
     name: "Dr. Aeidapu Mahesh",
     position: "Program Officer",
     gmail: "aeidapumahesh@eed.svnit.ac.in",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454768/developers/Mahesh%20Adeipu.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770396882/team/ProgramCoordinators/Dr._Aeidapu_Mahesh.jpg",
   },
   {
     name: "Dr. Shail Pandey",
     position: "Program Officer",
     gmail: "sp@phy.svnit.ac.in",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454770/developers/Shail_pandey.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770396886/team/ProgramCoordinators/Dr._Shail_Pandey.jpg",
   },
 ];
 
@@ -50,7 +50,7 @@ const Founder = [
     linkedin: "www.linkedin.com/in/gulshan- r-39361ba8",
     gmail: "ranagulshan10@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454773/developers/GULSHAN%20RANA.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770396901/team/Founder/Gulshan_Rana.jpg",
   },
 ];
 
@@ -63,7 +63,7 @@ const CoFounder = [
     linkedin: "https://www.linkedin.com/in/himanshi-agrawal-337286177",
     gmail: "himanshiagrawal26@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454776/developers/Himanshi.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770396915/team/CoFounder/Himanshi_Agarwal.jpg",
   },
   {
     image:
@@ -73,7 +73,7 @@ const CoFounder = [
     linkedin: "https://www.linkedin.com/in/nikhilpandey75532",
     gmail: "nskp18073@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455258/developers/Nikhil%20Pandey.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770396922/team/CoFounder/Nikhil_Pandey.jpg",
   },
   {
     image:
@@ -83,7 +83,7 @@ const CoFounder = [
     linkedin: "https://www.linkedin.com/in/pulkit-agrawal-953687176",
     gmail: "pulkitagrawal452@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454782/developers/PULKIT%20AGRAWAL.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770396934/team/CoFounder/Pulkit_Agarwal.jpg",
   },
   {
     image:
@@ -94,7 +94,7 @@ const CoFounder = [
       "https://www.linkedin.com/in/sudhanshu-mall-b175b2195?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     gmail: "sushilm1272@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454785/developers/Sudhanshu.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770396940/team/CoFounder/Sudhanshu_Mall.jpg",
   },
   {
     image:
@@ -105,7 +105,7 @@ const CoFounder = [
       "https://www.linkedin.com/in/tushar-sanwarey-%F0%9F%87%AE%F0%9F%87%B3-32a598195",
     gmail: "tusharsvnit@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454787/developers/TUSHAR%20RAJKUMAR%20SANWAREY.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770396946/team/CoFounder/Tushar_Sanwarey.jpg",
   },
 ];
 
@@ -118,7 +118,7 @@ const Team2019 = [
     linkedin: "https://www.linkedin.com/in/bukya-arun-kumar-63716824a",
     gmail: "arunbukya12@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454789/developers/BUKYA%20ARUN%20KUMAR.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770403380/team/Team2019/Bukya_Arun_Kumar.jpg",
   },
   {
     image:
@@ -128,7 +128,7 @@ const Team2019 = [
     linkedin: NaN,
     gmail: "vchinnababu1323@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454791/developers/VANIPENTA%20CHINNABABU.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770403384/team/Team2019/Chinnababu_Vanipenta.jpg",
   },
   {
     image:
@@ -138,7 +138,7 @@ const Team2019 = [
     linkedin: "http://www.linkedin.com/in/disha-parmar-18a87a193",
     gmail: "parmardisha434@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454793/developers/Disha%20parmar.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770403389/team/Team2019/Disha_Parmar.jpg",
   },
   {
     image:
@@ -148,7 +148,7 @@ const Team2019 = [
     linkedin: "https://www.linkedin.com/in/hirenvaghela",
     gmail: "Hvaghela98@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454795/developers/VAGHELA%20HIREN%20NARENDRABHAI.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770403512/team/Team2019/Hiren_Vaghela.jpg",
   },
   {
     image:
@@ -158,7 +158,7 @@ const Team2019 = [
     linkedin: "https://www.linkedin.com/in/kunal-mahajan-891760191",
     gmail: "mahajankunal143km@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454797/developers/Kunal%20Mahajan.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770403516/team/Team2019/Kunal_Mahajan.jpg",
   },
   {
     image:
@@ -168,7 +168,7 @@ const Team2019 = [
     linkedin: "https://www.linkedin.com/in/nikhilpandey75532",
     gmail: "nskp18073@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455281/developers/Nikhil%20Pandey.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770403520/team/Team2019/Nikhil_Pandey.jpg",
   },
   {
     image:
@@ -178,7 +178,7 @@ const Team2019 = [
     linkedin: "https://www.linkedin.com/in/nisarg-shah2001",
     gmail: "Nisargsh2001@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454801/developers/Nisarg%20Shah.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770403524/team/Team2019/Nisarg_Shah.jpg",
   },
   {
     image:
@@ -188,7 +188,7 @@ const Team2019 = [
     linkedin: "https://www.linkedin.com/in/nishika-ratnam-03325a1a6",
     gmail: "nishikaratnam00@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454803/developers/Nishika%20Ratnam.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770403528/team/Team2019/Nishika_Ratnam.jpg",
   },
   {
     image:
@@ -198,7 +198,7 @@ const Team2019 = [
     linkedin: "https://www.linkedin.com/in/prashant-bariya",
     gmail: "prashantbariya208@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454804/developers/Prashant%20Bariya.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770403532/team/Team2019/Prashant_Bariya.jpg",
   },
   {
     image:
@@ -208,7 +208,7 @@ const Team2019 = [
     linkedin: "https://www.linkedin.com/in/ravi-khagad-397a9918b",
     gmail: "ravikhagad2002@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454807/developers/RAVI%20KHAGAD.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770403536/team/Team2019/Ravi_Khagad.jpg",
   },
   {
     image:
@@ -218,7 +218,7 @@ const Team2019 = [
     linkedin: "https://www.linkedin.com/in/vaishnavi-bajpai-36b2791a7",
     gmail: "vaishnavibajpai2000@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454812/developers/VAISHNAVI%20BAJPAI%20SVNIT.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770403541/team/Team2019/Vaishnavi_Bajpai.jpg",
   },
 ];
 
@@ -231,7 +231,7 @@ const Team2020 = [
     linkedin: "https://www.linkedin.com/in/abhijeetmis",
     gmail: "abhijeetmis15@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454815/developers/Abhijeet%20Kumar.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770403545/team/Team2020/Abhijeet_Kumar.jpg",
   },
   {
     image:
@@ -241,7 +241,7 @@ const Team2020 = [
     linkedin: "https://www.linkedin.com/in/akansh-singh-raghuvanshi-245924213",
     gmail: "raghuvanshiakansh20@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454817/developers/Akansh%20Raghuvanshi.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770403550/team/Team2020/Akansh_Raghuvanshi.jpg",
   },
   {
     image:
@@ -251,7 +251,7 @@ const Team2020 = [
     linkedin: "https://www.linkedin.com/in/anuj-mishra-b88718212",
     gmail: "anujmishra85378@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454819/developers/Anuj%20Mishra.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770403554/team/Team2020/Anuj_Mishra.jpg",
   },
   {
     image:
@@ -261,7 +261,7 @@ const Team2020 = [
     linkedin: "https://www.linkedin.com/in/anupam-kumar-a6594a214",
     gmail: "k.anupam5041@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454821/developers/Anupam%20Kumar.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770403559/team/Team2020/Anupam_Kumar.jpg",
   },
   {
     image:
@@ -271,7 +271,7 @@ const Team2020 = [
     linkedin: "www.linkedin.com/in/hemanth-kumar-avidi-814b93226",
     gmail: "avidihemanthkumar3263@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454823/developers/Avidi%20Hemanth%20Kumar.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770403563/team/Team2020/Avidi_Hemanth_Kumar.jpg",
   },
   {
     image:
@@ -281,7 +281,7 @@ const Team2020 = [
     linkedin: "https://www.linkedin.com/in/chanchal-kumar-jaiswal-4963981bb",
     gmail: "ck18091997@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454825/developers/Chanchal%20Kumar%20Jaiswal.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770403568/team/Team2020/Chanchal_Kumar_Jaiswal.jpg",
   },
   {
     image:
@@ -291,7 +291,7 @@ const Team2020 = [
     linkedin: "https://www.linkedin.com/in/darshitdesai09",
     gmail: "darshitd090502@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454827/developers/Darshit%20Desai.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770403572/team/Team2020/Darshit_Desai.jpg",
   },
   {
     image:
@@ -301,7 +301,7 @@ const Team2020 = [
     linkedin: "https://www.linkedin.com/in/aspirate",
     gmail: "deepanshudcchachan@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454829/developers/Deepanshu%20Chachan.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770403577/team/Team2020/Deepanshu_Chachan.jpg",
   },
   {
     image:
@@ -311,7 +311,7 @@ const Team2020 = [
     linkedin: "https://www.linkedin.com/in/vivek-detroja-561b52218/",
     gmail: "detrojaviveks@gmial.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454833/developers/Detroja%20Vivek%20Shaileshbhai.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770403581/team/Team2020/Detroja_Vivek_Shaileshbhai.jpg",
   },
   {
     image:
@@ -321,7 +321,7 @@ const Team2020 = [
     linkedin: "https://www.linkedin.com/in/dev-visavadia",
     gmail: "arvinddev82@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454835/developers/Dev%20Visavadia.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770403587/team/Team2020/Dev_Visavadia.jpg",
   },
   {
     image:
@@ -331,7 +331,7 @@ const Team2020 = [
     linkedin: "https://www.linkedin.com/in/jatin-dhanani-573a92206",
     gmail: "jatindhanani32@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454836/developers/Dhanani%20Jatin.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770403591/team/Team2020/Dhanani_Jatin.jpg",
   },
   {
     image:
@@ -341,7 +341,7 @@ const Team2020 = [
     linkedin: "https://www.linkedin.com/in/dhiraj-gohil-aa1420247",
     gmail: "dhirajgohil0612@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454838/developers/Dhiraj%20Gohil.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770403595/team/Team2020/Dhiraj_Gohil.jpg",
   },
   {
     image:
@@ -351,7 +351,7 @@ const Team2020 = [
     linkedin: "https://www.linkedin.com/in/dhruva-wankhade-a3b65921a/",
     gmail: "dhruva0803@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454840/developers/Dhruva%20Wankhade.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770403599/team/Team2020/Dhruva_Wankhade.jpg",
   },
   {
     image:
@@ -361,7 +361,7 @@ const Team2020 = [
     linkedin: "https://www.linkedin.com/in/dhyey-bhagat-a36599215",
     gmail: "dhyeyrbhqgat@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454842/developers/Dhyey%20Bhagat.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770403603/team/Team2020/Dhyey_Bhagat.jpg",
   },
   {
     image:
@@ -372,7 +372,7 @@ const Team2020 = [
       "https://www.linkedin.com/in/ghanistha-singhal-718349201?trk=contact-info",
     gmail: "ghanishtsinghal@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454845/developers/Ghanistha%20Singhal.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770403607/team/Team2020/Ghanistha_Singhal.jpg",
   },
   {
     image:
@@ -382,7 +382,7 @@ const Team2020 = [
     linkedin: "https://www.linkedin.com/in/jaimin-prajapati-24046721a",
     gmail: "jaiminprajapati150@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454847/developers/Jaimin%20D.%20Prajapati.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770403611/team/Team2020/Jaimin_D._Prajapati.jpg",
   },
   {
     image:
@@ -392,7 +392,7 @@ const Team2020 = [
     linkedin: "https://www.linkedin.com/in/kaleshwar",
     gmail: "kaleshwardd2002@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454848/developers/Kaleshwar%20Dhar%20Dubey.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770403615/team/Team2020/Kaleshwar_Dhar_Dubey.jpg",
   },
   {
     image:
@@ -402,7 +402,7 @@ const Team2020 = [
     linkedin: "https://www.linkedin.com/in/kenny-kachhadiya-7a047021a",
     gmail: "kennykachhadia@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454850/developers/Kenny%20Arvindbhai%20Kachhadiya.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770403619/team/Team2020/Kenny_Arvindbhai_Kachhadiya.jpg",
   },
   {
     image:
@@ -412,7 +412,7 @@ const Team2020 = [
     linkedin: "https://www.linkedin.com/in/ganesh-reddy-komati-reddy-714206225",
     gmail: "kganeshreddy2002@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454852/developers/Komati%20Reddy%20Ganesh%20Reddy.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770403623/team/Team2020/Komati_Reddy_Ganesh_Reddy.jpg",
   },
   {
     image:
@@ -422,7 +422,7 @@ const Team2020 = [
     linkedin: "www.linkedin.com/in/krupa-vaghamshi",
     gmail: "krupanahirgpsagb@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454854/developers/Krupa%20Vaghamshi.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770403627/team/Team2020/Krupa_Vaghamshi.jpg",
   },
   {
     image:
@@ -432,7 +432,7 @@ const Team2020 = [
     linkedin: "https://www.linkedin.com/in/lisa-chaudhari-svnit-767729218",
     gmail: "chaudharilisa18@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454856/developers/Lisa%20Chaudhari.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404059/team/Team2020/Lisa_Chaudhari.jpg",
   },
   {
     image:
@@ -442,7 +442,7 @@ const Team2020 = [
     linkedin: "https://www.linkedin.com/in/avinash-medisetty-a23a11249",
     gmail: "avinashmedisetty@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454859/developers/Medisetty%20Avinash.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404064/team/Team2020/Medisetty_Avinash.jpg",
   },
   {
     image:
@@ -452,7 +452,7 @@ const Team2020 = [
     linkedin: "https://www.linkedin.com/in/nimit-shah-9886b0198",
     gmail: "panmnimitshah@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454861/developers/Nimit%20shah.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404067/team/Team2020/Nimit_shah.jpg",
   },
   {
     image:
@@ -462,7 +462,7 @@ const Team2020 = [
     linkedin: "https://www.linkedin.com/in/noopur-modi-99a500202",
     gmail: "noopa0305@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454863/developers/Noopur%20Modi.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404071/team/Team2020/Noopur_Modi.jpg",
   },
   {
     image:
@@ -472,7 +472,7 @@ const Team2020 = [
     linkedin: "https://www.linkedin.com/in/tarang-pansuriya-454850206",
     gmail: "tarangpansuriya1583@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454865/developers/Pansuriya%20Tarang%20Bharatbha.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404074/team/Team2020/Pansuriya_Tarang_Bharatbhai.jpg",
   },
   {
     image:
@@ -482,7 +482,7 @@ const Team2020 = [
     linkedin: "https://www.linkedin.com/in/parag-kulshrestha-9018821b8",
     gmail: "paragkul03@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454867/developers/Parag%20Kulshrestha.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404080/team/Team2020/Parag_Kulshrestha.jpg",
   },
   {
     image:
@@ -492,7 +492,7 @@ const Team2020 = [
     linkedin: "https://www.linkedin.com/in/kashyap-parmar-23844524a",
     gmail: "Kashyapparmar1920@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454870/developers/Parmar%20Kashyap%20Kishorbhai.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404084/team/Team2020/Parmar_Kashyap_Kishorbhai.jpg",
   },
   {
     image:
@@ -503,7 +503,7 @@ const Team2020 = [
       "https://www.linkedin.com/in/pasupuleti-vaishnavi-28566b213?trk=contact-info",
     gmail: "pasupuletivaishnavi99@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454872/developers/Pasupuleti%20Vaishnavi.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404089/team/Team2020/Pasupuleti_Vaishnavi.jpg",
   },
   {
     image:
@@ -513,7 +513,7 @@ const Team2020 = [
     linkedin: "https://www.linkedin.com/in/hanni-patel-84a64021a",
     gmail: "hannipatel16@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454875/developers/Patel%20Hanni%20Bipinbhai.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404092/team/Team2020/Patel_Hanni_Bipinbhai.jpg",
   },
   {
     image:
@@ -523,7 +523,7 @@ const Team2020 = [
     linkedin: "https://www.linkedin.com/in/satya-prakash-singh-52b6151ba",
     gmail: "satyassm11@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454877/developers/Satya%20Prakash%20Singh.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404095/team/Team2020/Satya_Prakash_Singh.jpg",
   },
   {
     image:
@@ -533,7 +533,7 @@ const Team2020 = [
     linkedin: "https://www.linkedin.com/in/saurav045",
     gmail: "sauravsinghrajput045@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454879/developers/saurav%20singh.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404100/team/Team2020/Saurav_Singh.jpg",
   },
   {
     image:
@@ -543,7 +543,7 @@ const Team2020 = [
     linkedin: "https://www.linkedin.com/in/shashwat-gupta-45574221a",
     gmail: "shashwatutube3672@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454881/developers/Shashwat%20Gupta.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404106/team/Team2020/Shashwat_Gupta.jpg",
   },
   {
     image:
@@ -553,7 +553,7 @@ const Team2020 = [
     linkedin: "https://www.linkedin.com/in/srushti-modh-11b642202",
     gmail: "srishhh540@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454883/developers/Srushti%20Modh.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404110/team/Team2020/Srushti_Modh.jpg",
   },
   {
     image:
@@ -563,7 +563,7 @@ const Team2020 = [
     linkedin: "https://www.linkedin.com/in/sushma-muppaneni-783348201",
     gmail: "sushmacmuppaneni46@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454885/developers/Sushma%20Muppaneni.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404113/team/Team2020/Sushma_Muppaneni.jpg",
   },
   {
     image:
@@ -573,7 +573,7 @@ const Team2020 = [
     linkedin: "www.linkedin.com/in/teena413",
     gmail: "teenabest123@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454887/developers/Teena%20Dhoke.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404118/team/Team2020/Teena_Dhoke.jpg",
   },
   {
     image:
@@ -583,7 +583,7 @@ const Team2020 = [
     linkedin: "https://www.linkedin.com/in/vaidehi-khatri-3520921b2",
     gmail: "vaidehikhatri123@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454889/developers/Vaidehi%20Khatri.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404124/team/Team2020/Vaidehi_Khatri.jpg",
   },
   {
     image:
@@ -593,7 +593,7 @@ const Team2020 = [
     linkedin: "https://www.linkedin.com/in/yash-shah-b561b3240",
     gmail: "shahyash1102@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454890/developers/Yash%20shah.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404128/team/Team2020/Yash_shah.jpg",
   },
 ];
 
@@ -606,7 +606,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/anchal-vishwakarma-4935ab229",
     gmail: "anchal74v@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454893/developers/ANCHAL%20VISHWAKARMA.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404131/team/Team2021/Aanchal_Vishwakarma.jpg",
   },
   {
     image:
@@ -616,7 +616,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/aarushi-singh-nautiyal-217781240",
     gmail: "aarushibls@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454895/developers/AARUSHI%20SINGH%20NAUTIYAL.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404135/team/Team2021/Aarushi_Singh.jpg",
   },
   {
     image:
@@ -626,7 +626,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/aditi-laddha-016143248",
     gmail: "aditi43laddha@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455384/developers/ADITI%20LADDHA.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404139/team/Team2021/Aditi_Laddha.jpg",
   },
   {
     image:
@@ -636,7 +636,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/aditi-sadadiwala-318510250/",
     gmail: "aditi.sadadiwala@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455385/developers/Aditi%20Sadadiwala.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404143/team/Team2021/Aditi_Sadadiwala.jpg",
   },
   {
     image:
@@ -646,7 +646,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/aditi-tapariya-942639224/",
     gmail: "tapariyaaditi23@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455387/developers/Aditi%20Tapariya.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404147/team/Team2021/Aditi_Tapariya.jpg",
   },
   {
     image:
@@ -656,7 +656,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/aishwarya -mourya-87068a229",
     gmail: "0712aishwarya@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455389/developers/AISHWARYA%20MOURYA.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404150/team/Team2021/Aishwarya_Mourya.jpg",
   },
   {
     image:
@@ -666,7 +666,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/aman-kapuriya-280aa2253/",
     gmail: "amankapuriya3965@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455391/developers/AMAN%20kapuriya.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404154/team/Team2021/Aman_Kapuriya.jpg",
   },
   {
     image:
@@ -676,7 +676,7 @@ const Team2021 = [
     linkedin: NaN,
     gmail: "Ameyamolpatil@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455393/developers/AMEY%20AMOL%20PATIL.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404158/team/Team2021/Amey_Amol_Patil.jpg",
   },
   {
     image:
@@ -686,7 +686,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/anagha-mathkari-a14708230",
     gmail: "anaghamathkari19@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455396/developers/Anagha%20Mathkari.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404161/team/Team2021/Anagha_Mathkari.jpg",
   },
   {
     image:
@@ -696,7 +696,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/anand-movaliya-3a2a55272",
     gmail: "anandmmovaliya496@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455397/developers/ANAND%20MOVALIYA.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404165/team/Team2021/Anand_Movaliya.jpg",
   },
   {
     image:
@@ -706,7 +706,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/anjali-chauhan2003",
     gmail: "anjalichauhan052003@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455400/developers/ANJALI%20chauhan.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404168/team/Team2021/Anjali_Chauhan.jpg",
   },
   {
     image:
@@ -716,7 +716,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/ankush-mishra-7497b7228",
     gmail: "mishra.ankush20386@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455401/developers/ankush%20mishra.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404172/team/Team2021/Ankush_Mishra.jpg",
   },
   {
     image:
@@ -726,7 +726,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/anshul-garg-b12963223",
     gmail: "anshul2003garg@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455403/developers/Anshul.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404175/team/Team2021/Anshul_Garg.jpg",
   },
   {
     image:
@@ -736,7 +736,7 @@ const Team2021 = [
     linkedin: "www.linkedin.com/in/anushkjoshi",
     gmail: "u21me029@med.svnit.ac.in",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455406/developers/ANUSHK%20BHARAT%20JOSHI.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404179/team/Team2021/Anushk_Joshi.jpg",
   },
   {
     image:
@@ -746,7 +746,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/anushka-kundu-691518229",
     gmail: "anu.kundu03@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455409/developers/ANUSHKA%20KUNDU.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404181/team/Team2021/Anushka_Kundu.jpg",
   },
   {
     image:
@@ -756,7 +756,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/archit-shah-58775b247",
     gmail: "architshah612@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455411/developers/Archit%20Shah.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404185/team/Team2021/Archit_Shah.jpg",
   },
   {
     image:
@@ -766,7 +766,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/archit-sinojiya-58b917264",
     gmail: "sinojiyaarchit@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455413/developers/Archit%20sinojiya.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404189/team/Team2021/Archit_Sinojiya.jpg",
   },
   {
     image:
@@ -776,7 +776,7 @@ const Team2021 = [
     linkedin: "linkedin.com/in/arjama-mohanty-17616a243",
     gmail: "arjamamohanty@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455415/developers/ARJAMA%20MOHANTY%20SVNIT.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404192/team/Team2021/Arjama_Mohanty.jpg",
   },
   {
     image:
@@ -786,7 +786,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/aseemsugandhi",
     gmail: "aseemsugandhi@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455417/developers/Aseem.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404197/team/Team2021/Aseem_Sugandhi.jpg",
   },
   {
     image:
@@ -796,7 +796,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/ashok-chotiya-a35672235",
     gmail: "2103ashokchotiya@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455419/developers/ASHOK%20CHOTIYA.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404200/team/Team2021/Ashok_Chotiya.jpg",
   },
   {
     image:
@@ -807,7 +807,7 @@ const Team2021 = [
       "https://www.linkedin.com/in/brinsu-baldha-834aa926b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     gmail: "brinsubaldha25@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455421/developers/BRINSU%20BALDHA.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404204/team/Team2021/Brinsu_Baldha.jpg",
   },
   {
     image:
@@ -817,7 +817,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/chakshu-gupta-0222b71a1",
     gmail: "chakshugupta841@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455424/developers/Chakshu.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404207/team/Team2021/Chakshu_Gupta.jpg",
   },
   {
     image:
@@ -827,7 +827,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/deep-gemlawala-718999248",
     gmail: "deepgemlawala@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455426/developers/Deep%20Gemlawala_.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404211/team/Team2021/Deep_Gemlawala.jpg",
   },
   {
     image:
@@ -837,7 +837,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/deep-khandhedia-499901220",
     gmail: "deepkhandhedia@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455428/developers/DEEP%20KHANDHEDIA.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404214/team/Team2021/Deep_Khandhedia.jpg",
   },
   {
     image:
@@ -847,7 +847,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/dev-desai-344501235",
     gmail: "devdesaiyt@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455430/developers/DEV%20DESAI.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404218/team/Team2021/Dev_Desai.jpg",
   },
   {
     image:
@@ -857,7 +857,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/devendra-pr-singh-b1726a27b",
     gmail: "devpratap20770672@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455432/developers/DEVENDRA%20PRATAP%20SINGH.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404221/team/Team2021/Devendra_Pratap_Singh.jpg",
   },
   {
     image:
@@ -867,7 +867,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/dibyam-jalan-89b50b248/",
     gmail: "dibyam1jalan@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455434/developers/DIBYAM%20JALAN.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404225/team/Team2021/Dibyam_Jalan.jpg",
   },
   {
     image:
@@ -877,7 +877,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/disha-lad-732862247",
     gmail: "disha.lad2003@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455436/developers/Disha%20Lad.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404228/team/Team2021/Disha_Lad.jpg",
   },
   {
     image:
@@ -887,7 +887,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/divy-thakar-62132a218",
     gmail: "thakardivya337@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455439/developers/Divya%20Thakar.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404232/team/Team2021/Divya_Thakar.jpg",
   },
   {
     image:
@@ -897,7 +897,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/div193/",
     gmail: "divyanshv193@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455441/developers/DIVYANSH%20VERMA.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404235/team/Team2021/Divyansh_Verma.jpg",
   },
   {
     image:
@@ -907,7 +907,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/falguni-likhare-81Oa42252/",
     gmail: "likharefalguni@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455443/developers/FALGUNI%20LIKHARE.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404239/team/Team2021/Falguni_Likhare.jpg",
   },
   {
     image:
@@ -917,7 +917,7 @@ const Team2021 = [
     linkedin: "www.linkedin.com/in/priya-gadariya-a21312248",
     gmail: "pgadariya8@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455445/developers/Priya%20Gadariya.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404243/team/Team2021/Gadariya_Priya.jpg",
   },
   {
     image:
@@ -927,7 +927,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/harshilmistry23",
     gmail: "harshilmistry23@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455447/developers/HARSHIL%20MISTRY.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404246/team/Team2021/Harshil_Mistry.jpg",
   },
   {
     image:
@@ -937,7 +937,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/harshit-pathak-4ba6aa22a/",
     gmail: "pathakharshit281@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455449/developers/Harshit%20Pathak.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404250/team/Team2021/Harshit_Pathak.jpg",
   },
   {
     image:
@@ -947,7 +947,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/harshit009",
     gmail: "harshitsahu2k2@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455451/developers/HARSHIT%20SAHU.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404253/team/Team2021/Harshit_Sahu.jpg",
   },
   {
     image:
@@ -957,7 +957,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/himanshusoni01/",
     gmail: "himanshusoni9282@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455453/developers/himanshu%20Soni.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404256/team/Team2021/Himanshu_Soni.jpg",
   },
   {
     image:
@@ -967,7 +967,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/ishan-nahar-65200b224",
     gmail: "naharishan0305@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455455/developers/Ishan.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404260/team/Team2021/Ishan_Nahar.jpg",
   },
   {
     image:
@@ -977,7 +977,7 @@ const Team2021 = [
     linkedin: "linkedin.com/in/jinhal-maheshwari-71a217212/",
     gmail: "jinhalmaheshwari1256@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455457/developers/MAHESHWARI%20JINHAL%20RAHULBHAI.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404264/team/Team2021/Jinhal_Maheshwari.jpg",
   },
   {
     image:
@@ -987,7 +987,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/jitaksha-gajjar-101873217",
     gmail: "gajjarjk2105@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455460/developers/Jitaksha%20Gajjar.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404267/team/Team2021/Jitaksha_Gajjar.jpg",
   },
   {
     image:
@@ -997,7 +997,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/kashish-mittal-7bb690263",
     gmail: "kashishmittal028@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455462/developers/Kashish.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404271/team/Team2021/Kashish_Mittal.jpg",
   },
   {
     image:
@@ -1007,7 +1007,7 @@ const Team2021 = [
     linkedin: "linkedIn.in/in/kevalkanpariya",
     gmail: "kevalkanpariya5051@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455464/developers/KEVAL%20KANPARIYA.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404274/team/Team2021/Keval_Kanpariya.jpg",
   },
   {
     image:
@@ -1017,7 +1017,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/khush-pandya-387992234",
     gmail: "khushpandya705@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455466/developers/KHUSH%20PANDYA.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404277/team/Team2021/Khush_Pandya.jpg",
   },
   {
     image:
@@ -1027,7 +1027,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/khushi-kher-66aa29221/",
     gmail: "khus.kher@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455469/developers/Khushi%20Kher.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404281/team/Team2021/Khushi_Kher.jpg",
   },
   {
     image:
@@ -1037,7 +1037,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/khushi-solanki",
     gmail: "solankikhushi1824@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455470/developers/SOLANKI%20KHUSHI%20R.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404285/team/Team2021/Khushi_Solanki.jpg",
   },
   {
     image:
@@ -1047,7 +1047,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/krupal-chaudhari-85b0391ba",
     gmail: "krupalchaudhari2607@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455472/developers/Krupal%20Kumar%20Chaudhari.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404289/team/Team2021/Krupal_Chaudhari.jpg",
   },
   {
     image:
@@ -1057,7 +1057,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/kush-dalsaniya",
     gmail: "kushp9386@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455474/developers/DALSANIYA%20KUSH%20SANJAYBHAI%20SVNIT.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404292/team/Team2021/Kush_Dalsaniya.jpg",
   },
   {
     image:
@@ -1067,7 +1067,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/kushal-doshi-033569241",
     gmail: "kushaldoshi1203@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455476/developers/KUSHAL.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404295/team/Team2021/Kushal_Doshi.jpg",
   },
   {
     image:
@@ -1077,7 +1077,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/lucky-goyal-5050321a8",
     gmail: "goyallucky91@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455478/developers/Lucky%20Goyal.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404299/team/Team2021/Lucky_Goyal.jpg",
   },
   {
     image:
@@ -1087,7 +1087,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/martin-prajapati",
     gmail: "martinprajapati3107@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455480/developers/MARTIN.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404302/team/Team2021/Martin_Prajapati.jpg",
   },
   {
     image:
@@ -1097,7 +1097,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/divyang-mistry-55b9a122a",
     gmail: "divyangmistry30@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455482/developers/MISTRY%20DIVYANG.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404306/team/Team2021/Mistry_Divyang.jpg",
   },
   {
     image:
@@ -1107,7 +1107,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/namrata-kumari-ab233b241",
     gmail: "namratalakra7782@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455483/developers/NAMRATA%20KUMARI.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404310/team/Team2021/Namrata_Kumari.jpg",
   },
   {
     image:
@@ -1117,7 +1117,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/namrata-rathod-548b03252",
     gmail: "namarata.rathod028@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455485/developers/RATHOD%20NAMRATA%20RAJESHBHAI.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404313/team/Team2021/Namrata_Rathod.jpg",
   },
   {
     image:
@@ -1127,7 +1127,7 @@ const Team2021 = [
     linkedin: "www.linkedin.com/in/nishank-sudhir-654924228",
     gmail: "nishanksudhir03@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455486/developers/Nishank%20Sudhir.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404317/team/Team2021/Nishank_Sudhir.jpg",
   },
   {
     image:
@@ -1137,7 +1137,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/om-pandey-3a339722b",
     gmail: "ompandey1822002@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455489/developers/OM%20PANDEY.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404321/team/Team2021/Om_Pandey.jpg",
   },
   {
     image:
@@ -1147,7 +1147,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/param-shah-716322227",
     gmail: "shahparam1903@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455490/developers/PARAM%20SHAH.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404325/team/Team2021/Param_Shah.jpg",
   },
   {
     image:
@@ -1157,7 +1157,7 @@ const Team2021 = [
     linkedin: "https://in.linkedin.com/in/pragnesh-barik",
     gmail: "barikpragnesh@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455493/developers/PRAGNESH%20BARIK.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404328/team/Team2021/Pragnesh_Barik.jpg",
   },
   {
     image:
@@ -1167,7 +1167,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/pranav-pimple-423b33233",
     gmail: "pranavpimple28@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455494/developers/Pranav.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404333/team/Team2021/Pranav_Pimple.jpg",
   },
   {
     image:
@@ -1177,7 +1177,7 @@ const Team2021 = [
     linkedin: "https://pranitsatpute.com",
     gmail: "pranitsatpute29@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455496/developers/SATPUTE%20PRANIT%20UMAKANT.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404336/team/Team2021/Pranit_Satpute.jpg",
   },
   {
     image:
@@ -1187,7 +1187,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/preksha_n",
     gmail: "prekshapandya03@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455498/developers/PREKSHA%20PANDYA.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404339/team/Team2021/Preksha_Pandya.jpg",
   },
   {
     image:
@@ -1197,7 +1197,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/priyakanthariya",
     gmail: "priyakanthariya12@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455501/developers/Priya%20Kanthariya.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404343/team/Team2021/Priya_Kanthariya.jpg",
   },
   {
     image:
@@ -1207,7 +1207,7 @@ const Team2021 = [
     linkedin: "http://linkedin.com/in/priyanshu-bhushan-5b07b422a",
     gmail: "smartguypriyanshu111@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455502/developers/Priyanshu%20Bhushan.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404347/team/Team2021/Priyanshu_Bhushan.jpg",
   },
   {
     image:
@@ -1217,7 +1217,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/radhika-jajoo-7a3867227/",
     gmail: "radhikaj0653@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455504/developers/Radhika%20Jajoo.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404351/team/Team2021/Radhika_Jajoo.jpg",
   },
   {
     image:
@@ -1227,7 +1227,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/rahul-mavaliya",
     gmail: "rdmavaliya@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455506/developers/RAHUL%20MAVALIYA.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404354/team/Team2021/Rahul_Mavaliya.jpg",
   },
   {
     image:
@@ -1237,7 +1237,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/rahul-nautiyal-b54b4522a",
     gmail: "rnautiyal131@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455508/developers/RAHUL%20NAUTIYAL.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404358/team/Team2021/Rahul_Nautiyal.jpg",
   },
   {
     image:
@@ -1247,7 +1247,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/renu-chaudhary-892769247",
     gmail: "chaudharyrenu997@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455510/developers/CHAUDHARY%20RENU%20SOHANSINGH.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404361/team/Team2021/Renu_Chaudhary.jpg",
   },
   {
     image:
@@ -1257,7 +1257,7 @@ const Team2021 = [
     linkedin: "http://www.linkedin.com/in/riya-gupta-a61487248",
     gmail: "riyagupta0238@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455512/developers/RIYA%20GUPTA.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404364/team/Team2021/Riya_Gupta.jpg",
   },
   {
     image:
@@ -1267,7 +1267,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/satyam-roy-5577a8233",
     gmail: "satyamroy256@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455514/developers/SATYAM%20ROY.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404367/team/Team2021/Satyam_Roy.jpg",
   },
   {
     image:
@@ -1277,7 +1277,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/shivam-pathak-684419225",
     gmail: "shivampathak112151@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455515/developers/Shivam.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404371/team/Team2021/Shivam_Pathak.jpg",
   },
   {
     image:
@@ -1287,7 +1287,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/shreeya-dave-444166232/",
     gmail: "shreeyadave776@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455517/developers/Shreeya%20Dave.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404375/team/Team2021/Shreeya_Dave.jpg",
   },
   {
     image:
@@ -1297,7 +1297,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/shreya-rana-253568255",
     gmail: "shreyaarana999@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455519/developers/Shreya%20Rana.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404379/team/Team2021/Shreya_Rana.jpg",
   },
   {
     image:
@@ -1307,7 +1307,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/shubham-chandak-7b8636263",
     gmail: "shubhamchandak6629@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455521/developers/Shubham.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404382/team/Team2021/Shubham_Chandak.jpg",
   },
   {
     image:
@@ -1317,7 +1317,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/shubhambhai-s-396277235",
     gmail: "ss7490080545@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455522/developers/SHUBHAMBHAI%20SOLANKI.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404386/team/Team2021/Shubhambhai_Solanki.jpg",
   },
   {
     image:
@@ -1327,7 +1327,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/smriti-mishra-383302268",
     gmail: "smriti2140@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455524/developers/Smriti%20Mishra.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404389/team/Team2021/Smriti_Mishra.jpg",
   },
   {
     image:
@@ -1337,7 +1337,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/sneha-sharma-982664280",
     gmail: "Snehash251@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455526/developers/SNEHA%20SHARMA.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404393/team/Team2021/Sneha_Sharma.jpg",
   },
   {
     image:
@@ -1347,7 +1347,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/soham-parmar0072",
     gmail: "parmarsoham566@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455529/developers/SOHAM%20PARMAR.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404396/team/Team2021/Soham_Parmar.jpg",
   },
   {
     image:
@@ -1357,7 +1357,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/sudhakar-pathak-66b888235",
     gmail: "pathaksudhakar835@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455532/developers/Sudhakar%20Pathak.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404400/team/Team2021/Sudhakar_Pathak.jpg",
   },
   {
     image:
@@ -1368,7 +1368,7 @@ const Team2021 = [
       "https://www.linkedin.com/in/tarun-singh-23369626a?trk=contact-info",
     gmail: "ts14102002@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455534/developers/Tarun%20Singh.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404403/team/Team2021/Tarun_Singh.jpg",
   },
   {
     image:
@@ -1378,7 +1378,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/tejsheth02",
     gmail: "tejsheth02@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455537/developers/Tej.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404407/team/Team2021/Tej_Sheth.jpg",
   },
   {
     image:
@@ -1388,7 +1388,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/tejavathu-harika-684065251",
     gmail: "harikatejavathu@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455538/developers/TEJAVATHU%20HARIKA.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404410/team/Team2021/Tejavathu_Harika.jpg",
   },
   {
     image:
@@ -1398,7 +1398,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/vandita-rawat-75504a25b",
     gmail: "vanditarawat02@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455540/developers/VANDITA%20RAWAT%20SVNIT.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404414/team/Team2021/Vandita_Rawat.jpg",
   },
   {
     image:
@@ -1408,7 +1408,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/varun-modi-450569223",
     gmail: "varunmodi18@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455543/developers/Varun%20Modi.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404418/team/Team2021/Varun_Modi.jpg",
   },
   {
     image:
@@ -1418,7 +1418,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/ved-chadderwala-196529223/",
     gmail: "ved29022004@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455545/developers/VED%20CHADDERWALA.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404421/team/Team2021/Ved_Chadderwala.jpg",
   },
   {
     image:
@@ -1429,7 +1429,7 @@ const Team2021 = [
       "https://linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=vedanshi-pithadia-55068626b",
     gmail: "vedanshi29204@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455547/developers/Vedanshi%20Pithadia.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404425/team/Team2021/Vedanshi_Pithadia.jpg",
   },
   {
     image:
@@ -1439,7 +1439,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/vedant-surti-83615a227/",
     gmail: "vedantsurti@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455549/developers/Vedant%20Surti.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404427/team/Team2021/Vedant_Surti.jpg",
   },
   {
     image:
@@ -1449,7 +1449,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/yash-jamine-b20656227",
     gmail: "yashjamine2003@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455551/developers/Yash%20Jamine.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404431/team/Team2021/Yash_Jamine.jpg",
   },
   {
     image:
@@ -1459,7 +1459,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/yash-surti-5440b21ab",
     gmail: "yashsurti85@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455553/developers/YASH%20SURATI%20SVNIT.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404438/team/Team2021/Yash_Surti.jpg",
   },
   {
     image:
@@ -1469,7 +1469,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/yaswanth-maradana-688b39226",
     gmail: "yaswanthmaradana2003@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455554/developers/I%20YASWANTH%20NAIDU.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404442/team/Team2021/Yaswanth_Naidu_Maradana.jpg",
   },
   {
     image:
@@ -1479,7 +1479,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/yug-rana-ba57a1233",
     gmail: "yug170503@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455556/developers/YUG%20PRAVINCHANDRA%20RANA.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404446/team/Team2021/Yug_Rana.jpg",
   },
   {
     image:
@@ -1489,7 +1489,7 @@ const Team2021 = [
     linkedin: "https://www.linkedin.com/in/yuvraj-malav-780184213",
     gmail: "uvmalav077@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455558/developers/Yuvraj%20Malav.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404451/team/Team2021/Yuvraj_Malav.jpg",
   },
 ];
 
@@ -1503,7 +1503,7 @@ const Team2022 = [
       "https://www.linkedin.com/in/aashish-gupta-2b4aa9326?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     gmail: "aashishg8160@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455560/developers/AASHISH%20GUPTA%20SVNIT.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404455/team/Team2022/Aashish_Gupta_.jpg",
   },
   {
     image:
@@ -1514,7 +1514,7 @@ const Team2022 = [
       "https://www.linkedin.com/in/abhinav-anand-5a2611292?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     gmail: "anandabhinav2003@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455562/developers/Abhinav%20Anand.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404458/team/Team2022/Abhinav_Anand.jpg",
   },
   {
     image:
@@ -1525,7 +1525,7 @@ const Team2022 = [
       "https://www.linkedin.com/in/adarsh-kumar-srivastava-b48641248?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     gmail: "adarshsrivastava450@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455564/developers/ADARSH%20KUMAR%20SRIVASTAVA%20SVNIT.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404462/team/Team2022/Adarsh_Kumar_Srivastava_.jpg",
   },
   {
     image:
@@ -1536,7 +1536,7 @@ const Team2022 = [
       "https://www.linkedin.com/in/adarshtiwari25?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     gmail: "adarshtiwari2505@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455566/developers/ADARSH%20KRISHNANAND%20TIWARI%20SVNIT.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404465/team/Team2022/Adarsh_Tiwari.jpg",
   },
   {
     image:
@@ -1546,7 +1546,7 @@ const Team2022 = [
     linkedin: "https://www.linkedin.com/in/ajay-kr-rajak-755b99263/",
     gmail: "u22ce052@ced.svnit.ac.in",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455568/developers/AJAY%20KUMAR%20RAJAK%20SVNIT.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404468/team/Team2022/Ajay_kr_Rajak.jpg",
   },
   {
     image:
@@ -1557,7 +1557,7 @@ const Team2022 = [
       "https://www.linkedin.com/in/amisha-soni-6716722b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     gmail: "u22ee075@eed.svnit.ac.in",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455569/developers/Amisha%20soni.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404472/team/Team2022/Amisha_soni.jpg",
   },
   {
     image:
@@ -1568,7 +1568,7 @@ const Team2022 = [
       "https://www.linkedin.com/in/ansh-dwivedi-146494251?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     gmail: "anshdwivedi611@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455571/developers/ANSH_DWIVEDI_SVNIT.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404476/team/Team2022/Ansh_Dwivedi_.jpg",
   },
   {
     image:
@@ -1578,7 +1578,7 @@ const Team2022 = [
     linkedin: "https://www.linkedin.com/in/a04b30251",
     gmail: "ashishmehra8690@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455573/developers/Ashish%20Mehra.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404479/team/Team2022/Ashish_mehra.jpg",
   },
   {
     image:
@@ -1588,7 +1588,7 @@ const Team2022 = [
     linkedin: "https://www.linkedin.com/in/ashishrajput0904/",
     gmail: "rajputashishsingh018@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455575/developers/RAJPUT%20ASHISHKUMAR%20SVNIT.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404482/team/Team2022/Ashish_Rajput_.jpg",
   },
   {
     image:
@@ -1598,7 +1598,7 @@ const Team2022 = [
     linkedin: "https://www.linkedin.com/in/ayukta-labh-776469283",
     gmail: "ayuktalabh@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455577/developers/AYUKTA%20LABH.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404485/team/Team2022/Ayukta_Labh.jpg",
   },
   {
     image:
@@ -1608,7 +1608,7 @@ const Team2022 = [
     linkedin: "www.linkedin.com/in/bolle-ranjith-901771285",
     gmail: "ranjithbolle13@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455579/developers/B.Ranjith.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404489/team/Team2022/B_Ranjith_.jpg",
   },
   {
     image:
@@ -1618,7 +1618,7 @@ const Team2022 = [
     linkedin: "https://www.linkedin.com/in/rongali-balaji-36916a289/",
     gmail: "balajirongali0504@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455581/developers/RONGALI%20BALAJI%20SVNIT.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404492/team/Team2022/Balaji_Rongali_.jpg",
   },
   {
     image:
@@ -1628,7 +1628,7 @@ const Team2022 = [
     linkedin: "https://www.linkedin.com/in/bodepu-harika-901ba624a/",
     gmail: "harika.bodepu2005@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455583/developers/Harika%20Bodepu.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404496/team/Team2022/Bodepu_Harika.jpg",
   },
   {
     image:
@@ -1639,7 +1639,7 @@ const Team2022 = [
       "https://www.linkedin.com/in/chaitanya-singh-b771b2254?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     gmail: "u22ec079@eced.svnit.ac.in",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455586/developers/CHAITANYA%20SINGH%20SVNIT.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404499/team/Team2022/Chaitanya_Singh_.jpg",
   },
   {
     image:
@@ -1650,7 +1650,7 @@ const Team2022 = [
       "https://www.linkedin.com/in/devanshi-thaker-4a18a7257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     gmail: "devanshi2034@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455588/developers/THAKER%20DEVANSHI%20ROMESHKUMAR%20SVNIT.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404503/team/Team2022/Devanshi_Thaker.jpg",
   },
   {
     image:
@@ -1660,7 +1660,7 @@ const Team2022 = [
     linkedin: "https://www.linkedin.com/in/dharti-chauhan-8027a4282/",
     gmail: "u22ce087@ced.svnit.ac.in",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455591/developers/CHAUHAN%20DHARTI%20JAGDISH%20SVNIT.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404506/team/Team2022/Dharti_Chauhan.jpg",
   },
   {
     image:
@@ -1671,7 +1671,7 @@ const Team2022 = [
       "https://www.linkedin.com/in/dilipkumar-kalsariya-303474283?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     gmail: "dilipkalsariya22@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455593/developers/DILIPKUMAR%20SVNIT.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404509/team/Team2022/Dilipkumar_kalsariya.jpg",
   },
   {
     image:
@@ -1681,7 +1681,7 @@ const Team2022 = [
     linkedin: "https://www.linkedin.com/in/divyesh-pankhaniya/",
     gmail: "divyeshjpankhaniya022@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455596/developers/DIVYESH_PANKHANIYA.png",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404516/team/Team2022/Divyesh_Pankhaniya_.png",
   },
   {
     image:
@@ -1692,7 +1692,7 @@ const Team2022 = [
       "https://www.linkedin.com/in/eshaan-goel-0361a2256?trk=contact-info",
     gmail: "eshaangoel2503@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455598/developers/Eshaan%20Goel.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404519/team/Team2022/Eshaan_Goel.jpg",
   },
   {
     image:
@@ -1702,7 +1702,7 @@ const Team2022 = [
     linkedin: " https://www.linkedin.com/in/pesala-eswar-485031262",
     gmail: "pesalaeswar7@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455600/developers/PESALA%20ESWAR%20SVNIT.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404522/team/Team2022/Eswar_Pesala.jpg",
   },
   {
     image:
@@ -1713,7 +1713,7 @@ const Team2022 = [
 
     gmail: "u22ce093@ced.svnit.ac.in",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455602/developers/NAMBIAR%20GAURAV%20GOPINATH%20SVNIT.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404525/team/Team2022/Gaurav_Nambiar.jpg",
   },
   {
     image:
@@ -1723,7 +1723,7 @@ const Team2022 = [
     linkedin: "harsh-rai-277370273",
     gmail: "hrai7706@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455604/developers/Harsh%20Rai.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404529/team/Team2022/Harsh_Rai_.jpg",
   },
   {
     image:
@@ -1734,7 +1734,7 @@ const Team2022 = [
       "https://www.linkedin.com/in/himani-gupta-05210425a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     gmail: "himuu0904@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455607/developers/HIMANI.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404532/team/Team2022/Himani_gupta_.jpg",
   },
   {
     image:
@@ -1744,7 +1744,7 @@ const Team2022 = [
     linkedin: "https://www.linkedin.com/in/honey-bohra-38322a261",
     gmail: "honeybohra26@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455609/developers/Honey%20Bohra.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404536/team/Team2022/Honey_Bohra.jpg",
   },
   {
     image:
@@ -1755,7 +1755,7 @@ const Team2022 = [
       "https://www.linkedin.com/in/neelima-kadimisetti-830609258?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     gmail: "neelimakadimisetti@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455611/developers/KADIMISETTI%20VAGDEVI%20VENKATA%20SAI%20NEELIMA%20SVNIT.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404540/team/Team2022/Kadimisetti_Neelima_.jpg",
   },
   {
     image:
@@ -1765,7 +1765,7 @@ const Team2022 = [
     linkedin: "https://www.linkedin.com/in/krutika-joshi-a81501300/",
     gmail: "krutikajoshi2004@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455613/developers/KRUTIKA%20JOSHI%20SVNIT.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404543/team/Team2022/Krutika_Joshi_.jpg",
   },
   {
     image:
@@ -1776,7 +1776,7 @@ const Team2022 = [
       "https://www.linkedin.com/in/kunal-kumar-570016265?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     gmail: "kumarkunal102003@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455615/developers/KunalKumar.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404547/team/Team2022/Kunal_Kumar_.jpg",
   },
   {
     image:
@@ -1787,7 +1787,7 @@ const Team2022 = [
       "https://www.linkedin.com/in/lakshmidurga-saladi-a9b28528a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     gmail: "lakshmidurgasaladi4@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455617/developers/Lakshmi%20durga%20SVNIT.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404550/team/Team2022/Lakshmi_durga_saladi_.jpg",
   },
   {
     image:
@@ -1797,7 +1797,7 @@ const Team2022 = [
     linkedin: "https://www.linkedin.com/in/maahir-malde/",
     gmail: "maldemaahir@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455620/developers/Maahir%20Malde.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404554/team/Team2022/Maahir_Malde.jpg",
   },
   {
     image:
@@ -1807,7 +1807,7 @@ const Team2022 = [
     linkedin: "https://www.linkedin.com/in/meetchudasama",
     gmail: "u22ec125@eced.svnit.ac.in",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455622/developers/Meet%20Kumar%20Chudasama.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404557/team/Team2022/Meet_Kumar_Chudasama_.jpg",
   },
   {
     image:
@@ -1817,7 +1817,7 @@ const Team2022 = [
     linkedin: "https://www.linkedin.com/in/misbahsrshaikh/",
     gmail: "misbahsrshaikh@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455624/developers/MISBAH%20SHAIKH.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404560/team/Team2022/Misbah_Shaikh.jpg",
   },
   {
     image:
@@ -1827,7 +1827,7 @@ const Team2022 = [
     linkedin: "https://www.linkedin.com/in/naina-bansal-5b5859253",
     gmail: "u22ce098@ced.svnit.ac.in",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455626/developers/NAINA%20BANSAL.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404563/team/Team2022/Naina_bansal_.jpg",
   },
   {
     image:
@@ -1837,7 +1837,7 @@ const Team2022 = [
     linkedin: NaN,
     gmail: "u22me147@med.svnit.ac.in",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455627/developers/NANCY%20AGRAWAL.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404567/team/Team2022/Nancy_Agrawal.jpg",
   },
   {
     image:
@@ -1847,7 +1847,7 @@ const Team2022 = [
     linkedin: "https://www.linkedin.com/in/nivas1426",
     gmail: "nnivas235@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455631/developers/NALLAMOTHU%20NIVAS%20SVNIT.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404572/team/Team2022/Nivas.jpg",
   },
   {
     image:
@@ -1857,7 +1857,7 @@ const Team2022 = [
     linkedin: "https://www.linkedin.com/in/pawan-shukla-36pds29",
     gmail: "pkscmshukla1313@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455633/developers/PAWAN%20SHUKLA%20SVNIT.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404576/team/Team2022/Pawan_Shukla.jpg",
   },
   {
     image:
@@ -1867,7 +1867,7 @@ const Team2022 = [
     linkedin: "https://www.linkedin.com/in/puneet-tiwari-8bb0a22a6",
     gmail: "U22ec015@eced.svnit.ac.in",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455635/developers/PUNEET%20RAKESH%20TIWARI.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404580/team/Team2022/Puneet_Tiwari.jpg",
   },
   {
     image:
@@ -1878,7 +1878,7 @@ const Team2022 = [
       "https://www.linkedin.com/in/raja-singh-313147177?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     gmail: "rsingh10111nits@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455637/developers/RAJA%20SINGH.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404583/team/Team2022/Raja_Singh_.jpg",
   },
   {
     image:
@@ -1888,7 +1888,7 @@ const Team2022 = [
     linkedin: "Na ",
     gmail: "rj645231@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455639/developers/RISHABH%20JAIN%20SVNIT.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404587/team/Team2022/Rishabh_jain_.jpg",
   },
   {
     image:
@@ -1898,7 +1898,7 @@ const Team2022 = [
     linkedin: "https://www.linkedin.com/in/samarth-chaplot-130b88256/",
     gmail: "samarthchaplot7@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454748/developers/SAMARTH_CHAPLOT.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404590/team/Team2022/Samarth_Chaplot.jpg",
   },
   {
     image:
@@ -1909,7 +1909,7 @@ const Team2022 = [
       "https://www.linkedin.com/in/shiv-pratap-singh-44a868290/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     gmail: "u22me199@med.svnit.ac.in",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455643/developers/SHIV%20PRATAP%20SINGH%20SVNIT.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404594/team/Team2022/Shiv_Pratap_Singh.jpg",
   },
   {
     image:
@@ -1919,7 +1919,7 @@ const Team2022 = [
     linkedin: "No.",
     gmail: "shivamkaimur2k2@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455645/developers/Shivam%20Singh.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404598/team/Team2022/Shivam_Singh_.jpg",
   },
   {
     image:
@@ -1929,7 +1929,7 @@ const Team2022 = [
     linkedin: "https://www.linkedin.com/in/shrishtiarya",
     gmail: "shrishtiarya2004@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455647/developers/SHRISHTI_ARYA.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404601/team/Team2022/Shrishti_Arya.jpg",
   },
   {
     image:
@@ -1940,7 +1940,7 @@ const Team2022 = [
       "https://www.linkedin.com/in/sneha-vishnoi-80a1222b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     gmail: "snehvi22@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455650/developers/Sneha%20Vishnoi%20SVNIT.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404605/team/Team2022/Sneha_Vishnoi_.jpg",
   },
   {
     image:
@@ -1951,7 +1951,7 @@ const Team2022 = [
       "https://www.linkedin.com/in/sonam-mehra-b19b42293?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     gmail: "elintsonam70996@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455651/developers/SONAM%20SVNIT.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404608/team/Team2022/Sonam.jpg",
   },
   {
     image:
@@ -1962,7 +1962,7 @@ const Team2022 = [
       "https://www.linkedin.com/in/stuti-singh-20255a253?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     gmail: "Sstuti276@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455653/developers/STUTI%20SINGH.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404611/team/Team2022/Stuti_Singh_.jpg",
   },
   {
     image:
@@ -1972,7 +1972,7 @@ const Team2022 = [
     linkedin: NaN,
     gmail: "u22ce099@ced.svnit.ac.in",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455656/developers/SUBHAM%20KUMAR.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404615/team/Team2022/Subham_kumar_.jpg",
   },
   {
     image:
@@ -1983,7 +1983,7 @@ const Team2022 = [
       "https://www.linkedin.com/in/vaibhav-vispute-2134a724a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     gmail: "vaibhavvspt273@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455658/developers/VISPUTE%20VAIBHAV%20SURESH%20SVNIT.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404618/team/Team2022/Vaibhav_Suresh_Vispute_.jpg",
   },
   {
     image:
@@ -1994,7 +1994,7 @@ const Team2022 = [
       "https://www.linkedin.com/in/haritha-veeravalli-b22818258?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     gmail: "harithaveeravalli20@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455659/developers/VEERAVALLI%20HARITHA%20SVNIT.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404624/team/Team2022/Veeravalli_Haritha.jpg",
   },
   {
     image:
@@ -2004,7 +2004,7 @@ const Team2022 = [
     linkedin: "Vidhan Gauswami",
     gmail: "vidhan.gauswami@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455661/developers/GAUSWAMI%20VIDHAN%20SHAILESHPURI%20SVNIT.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404627/team/Team2022/Vidhan_Gauswami_.jpg",
   },
   {
     image:
@@ -2014,7 +2014,7 @@ const Team2022 = [
     linkedin: "https://www.linkedin.com/in/vikrampoonia107",
     gmail: "vikrampoonia107@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455663/developers/VIKRAM%20POONIA.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404630/team/Team2022/Vikram_Poonia.jpg",
   },
   {
     image:
@@ -2024,7 +2024,7 @@ const Team2022 = [
     linkedin: "https://www.linkedin.com/in/vinit-soni-813639332",
     gmail: "vinitsoni073@gmail.com",
     firebase:
-      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769455664/developers/VINIT%20SONI.jpg",
+      "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770404633/team/Team2022/VINIT_SONI_.jpg",
   },
 ];
 
