@@ -7,6 +7,8 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Link as RouterLink } from 'react-router-dom';
 
 import { firestore as db } from "../../../firebase";
+import * as TeamData from "./TeamData";
+
 
 // --- FIX: The placeholder Layout has been removed. ---
 // --- We now import your actual Layout component. ---
@@ -14,7 +16,17 @@ import { firestore as db } from "../../../firebase";
 import Layout from "../../Layout/Layout"; 
 
 // A placeholder for your static data file if needed for fallback
-const StaticData = { Sir: [], Founder: [], CoFounder: [], ProgramCoordinators: [], Team2023: [], Team2022: [] }; 
+const StaticData = {
+  Sir: TeamData.Sir || [],
+  Founder: TeamData.Founder || [],
+  CoFounder: TeamData.CoFounder || [],
+  ProgramCoordinators: TeamData.ProgramCoordinators || [],
+  Team2019: TeamData.Team2019 || [],
+  Team2020: TeamData.Team2020 || [],
+  Team2021: TeamData.Team2021 || [],
+  Team2022: TeamData.Team2022 || [],
+  Team2023: TeamData.Team2023 || [],  // 👈 THIS makes Batch 2023 appear
+};
 
 
 // =====================================================================================
@@ -176,6 +188,8 @@ const Team = React.memo(() => {
 				return acc;
 			}, {});
 			setBatchData(finalBatchData);
+			console.log(finalBatchData);
+
 		} catch (err) {
 			console.error("Error fetching team data:", err);
 			setError("Failed to load team data. Please check your connection and try again.");

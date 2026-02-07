@@ -1,14 +1,24 @@
 import React, { memo, useEffect, useState } from "react";
 import Layout from "../Layout/Layout";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
 import { firestore } from "../../firebase";
-import { Grid } from "@mui/material";
+import { Button, Grid } from "@mui/material";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import BlogPost from "./Post/BlogPost";
 
 const Post = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [postData, setPostData] = useState({});
+
+  const handleBack = () => {
+    if (window.history.length > 1) {
+      navigate(-1);
+      return;
+    }
+    navigate("/events");
+  };
 
   useEffect(() => {
     getPost();
@@ -31,8 +41,19 @@ const Post = () => {
 
   return (
     <Layout>
-      <Grid container justifyContent={"center"} sx={{ marginBottom: "40px" }}>
-        <Grid item lg={6}>
+      <Grid
+        container
+        justifyContent={"center"}
+        sx={{ marginBottom: "40px", px: { xs: 2, md: 10 }, py: 2 }}
+      >
+        <Grid item xs={12} lg={6}>
+          <Button
+            onClick={handleBack}
+            startIcon={<ArrowBackIcon />}
+            sx={{ mb: 2 }}
+          >
+            Go Back
+          </Button>
           {/* Memoized BlogPost */}
           <MemoizedBlogPost
             author={postData.author}

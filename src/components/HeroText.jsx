@@ -1,4 +1,4 @@
-import { Box, Stack, Typography } from "@mui/material"; // Import Stack and Typography
+import { Stack, Typography } from "@mui/material"; // Import Stack and Typography
 import React, { memo } from "react";
 // No need to import "./HeroText.css" anymore
 
