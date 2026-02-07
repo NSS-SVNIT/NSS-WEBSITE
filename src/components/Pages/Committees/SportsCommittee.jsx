@@ -52,7 +52,7 @@ const useStyles = makeStyles({
   centeredTitle: {
     fontFamily: "'Poppins', 'Inria Sans', sans-serif",
     fontWeight: 500,
-    fontSize: "100px",
+    fontSize: "100px !important",
     background: "linear-gradient(135deg, #1976D2 0%, #0D47A1 30%, #1976D2 60%, #9fbbd6ff 100%)",
     backgroundSize: "250% 250%",
     WebkitBackgroundClip: "text",
@@ -64,7 +64,7 @@ const useStyles = makeStyles({
     textShadow: "0 2px 10px rgba(25, 118, 210, 0.1)",
     lineHeight: 1.1,
     "@media (max-width:900px)": {
-      fontSize: "56px",
+      fontSize: "56px !important",
       letterSpacing: "-2px",
     },
   },
@@ -104,6 +104,10 @@ const useStyles = makeStyles({
     gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
     gap: "1.5rem",
     marginTop: "2rem",
+    "@media (max-width:600px)": {
+      gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+      gap: "1rem",
+    },
   },
 
   infoCard: {
@@ -237,6 +241,10 @@ const useStyles = makeStyles({
     background: "#ffffff",
     borderRadius: "26px",
     padding: "2.4rem",
+    height: "100%",
+    minHeight: "560px",
+    display: "flex",
+    flexDirection: "column",
     boxShadow: "0 10px 28px rgba(0,0,0,0.08)",
     transition: "all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)",
     borderLeft: "6px solid",
@@ -297,7 +305,7 @@ const useStyles = makeStyles({
   },
 
   roleTitle: {
-    fontSize: "2.1rem",
+    fontSize: "2.1rem !important",
     fontWeight: 700,
     color: "#222",
     transition: "color 0.4s ease",
@@ -309,6 +317,9 @@ const useStyles = makeStyles({
     color: "#555",
     textAlign: "justify",
     padding: "0.3rem 0.4rem",
+    flexGrow: 1,
+    maxHeight: "180px",
+    overflowY: "auto",
     transition: "all 0.4s ease",
     "&:hover": {
       background: "rgba(25, 118, 210, 0.15)",
@@ -598,12 +609,13 @@ const SportsCommittee = () => {
           {/* Role Cards */}
           <Grid container spacing={3} sx={{ marginBottom: "4rem" }}>
             {roleCards.map((card, idx) => (
-              <Grid item xs={12} sm={6} md={6} key={idx}>
+              <Grid item xs={12} sm={6} md={6} key={idx} sx={{ display: "flex" }}>
                 <motion.div
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.2 }}
-                  transition={{ delay: idx * 0.15 }}>
+                  transition={{ delay: idx * 0.15 }}
+                  style={{ height: "100%" }}>
                   <Box
                     className={classes.roleCard}
                     sx={{ borderLeftColor: card.borderColor }}>

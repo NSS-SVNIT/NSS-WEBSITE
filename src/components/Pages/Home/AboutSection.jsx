@@ -15,18 +15,18 @@ const AboutParallaxContent = () => (
 		alignItems="center"
 		sx={{
 			backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${imageUrl})`,
-			backgroundAttachment: "fixed",
+			backgroundAttachment: { xs: "scroll", md: "fixed" },
 			backgroundPosition: "center",
 			backgroundSize: "cover",
 			color: "white",
-			py: { xs: 10, md: 30 },
+			py: { xs: 6, sm: 8, md: 20, lg: 30 },
 		}}
 	>
 		<Box
 			sx={{
 				width: '100%',
 				maxWidth: '800px',
-				px: { xs: 3, md: 4 },
+				px: { xs: 2, sm: 3, md: 4 },
 			}}
 		>
 			<motion.div
@@ -34,7 +34,7 @@ const AboutParallaxContent = () => (
 				whileInView={{ opacity: 1, y: 0, transition: { duration: 0.8 } }}
 				viewport={{ once: true, amount: 0.4 }}
 			>
-				<Typography sx={{ fontFamily: "DM Sans", fontSize: { xs: "1.1rem", sm: "1.25rem" }, textAlign: "justify", lineHeight: 1.8 }}>
+				<Typography sx={{ fontFamily: "DM Sans", fontSize: { xs: "1rem", sm: "1.1rem", md: "1.25rem" }, textAlign: "justify", lineHeight: { xs: 1.6, md: 1.8 } }}>
 					The Motto of NSS <b>"Not Me But You"</b>, reflects the essence of
 					democratic living and upholds the need for self-less service. NSS
 					helps the student's development & appreciation of other person's
@@ -53,18 +53,19 @@ const AboutSection = React.memo(() => {
 			{/* TOP WHITE SECTION WITH HEADING AND NEW BUTTON */}
 			<Stack 
 				alignItems="center" 
-				spacing={4} // Add spacing between heading and button
+				spacing={{ xs: 3, md: 4 }} // Responsive spacing
 				sx={{ 
 					bgcolor: 'background.default', 
-					pt: { xs: 6, md: 10 },
-					pb: { xs: 6, md: 8 }, // Increase bottom padding for more space
+					pt: { xs: 4, sm: 6, md: 10 },
+					pb: { xs: 4, sm: 6, md: 8 },
+					px: { xs: 2, sm: 3 }, // Add horizontal padding
 				}} 
 			>
-				<Box textAlign="center">
-					<Typography sx={{ fontFamily: "Poppins", fontWeight: 300, fontSize: { xs: "2rem", sm: "3rem" }, color: 'text.secondary' }}>
+				<Box textAlign="center" sx={{ px: { xs: 2, sm: 0 } }}>
+					<Typography sx={{ fontFamily: "Poppins", fontWeight: 300, fontSize: { xs: "1.5rem", sm: "2rem", md: "3rem" }, color: 'text.secondary' }}>
 						Celebrating our Motto...
 					</Typography>
-					<Typography sx={{ fontFamily: "Nothing You Could Do", fontSize: { xs: "3.5rem", sm: "5rem" }, color: 'text.primary' }}>
+					<Typography sx={{ fontFamily: "Nothing You Could Do", fontSize: { xs: "2.5rem", sm: "3.5rem", md: "5rem" }, color: 'text.primary', lineHeight: 1.2 }}>
 						Not Me, But You!
 					</Typography>
 				</Box>
@@ -85,9 +86,9 @@ const AboutSection = React.memo(() => {
 							borderRadius: '50px', // Pill shape
 							fontWeight: 'bold',
 							textTransform: 'none',
-							fontSize: '1.1rem',
-							px: 5,
-							py: 1.5,
+							fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' },
+							px: { xs: 3, sm: 4, md: 5 },
+							py: { xs: 1.2, md: 1.5 },
 						}}
 					>
 						Know More About Us

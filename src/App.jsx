@@ -1,6 +1,5 @@
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import { Fab } from "@mui/material";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import React, { Suspense } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
@@ -65,6 +64,7 @@ function App() {
 					/>
 					<Route path="/contact" element={<Contact />} />
 					<Route path="/events/:id" element={<Post />} />
+					<Route path="/committee/:slug" element={<CommitteeDetail />} />
 					<Route path="/committee/technical" element={<TechnicalCommittee />} />
 					<Route path="/committee/sports" element={<SportsCommittee />} />
 					<Route path="/committee/social" element={<SocialCommittee />} />
