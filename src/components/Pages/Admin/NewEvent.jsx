@@ -10,14 +10,14 @@ import {
 	useMediaQuery,
 	useTheme,
 } from "@mui/material";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+// import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+// import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+// import { CustomDateFnsAdapter } from "../../../utils/dateFnsAdapter";
 import Compressor from "compressorjs";
 import { doc, setDoc } from "firebase/firestore";
 import { useEffect, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { firestore } from "../../../firebase";
-import { CustomDateFnsAdapter } from "../../../utils/dateFnsAdapter";
 import BlogPost from "../Post/BlogPost";
 
 export default function NewEvent() {
@@ -483,23 +483,17 @@ export default function NewEvent() {
 					/>{" "}
 					<Stack direction={isMobile ? "column" : "row"} spacing={2}>
 						{" "}
-						<LocalizationProvider
-							dateAdapter={CustomDateFnsAdapter}
-							sx={{ flex: 1 }}>
-							<DatePicker
-								label="Event Date *"
-								value={selectedDate}
-								onChange={handleDateChange}
-								format="dd/MM/yyyy"
-								slotProps={{
-									textField: {
-										variant: "outlined",
-										fullWidth: true,
-										size: "small",
-									},
-								}}
-							/>
-						</LocalizationProvider>{" "}
+						<TextField
+							label="Event Date *"
+							type="date"
+							value={selectedDate.toISOString().split('T')[0]}
+							onChange={(e) => handleDateChange(new Date(e.target.value))}
+							variant="outlined"
+							fullWidth
+							size="small"
+							sx={{ flex: 1 }}
+							InputLabelProps={{ shrink: true }}
+						/>
 					</Stack>{" "}
 					<TextField
 						variant="outlined"
