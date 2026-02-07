@@ -180,7 +180,7 @@ const useStyles = makeStyles({
   mainTitle: {
     fontFamily: "'Poppins', 'Inria Sans', sans-serif",
     fontWeight: 800,
-    fontSize: "80px",
+    fontSize: "80px ! important",
     color: "#fff",
     letterSpacing: "-1px",
     lineHeight: 1.1,
@@ -350,15 +350,15 @@ const useStyles = makeStyles({
     transform: "scale(1.08)",
   },
 
-  imageWrapperHover: {
-    "&:hover $imageBase": {
-      opacity: 0,
-    },
-    "&:hover $imageHover": {
-      opacity: 1,
-      transform: "scale(1)",
-    },
-  },
+  // imageWrapperHover: {
+  //   "&:hover $imageBase": {
+  //     opacity: 0,
+  //   },
+  //   "&:hover $imageHover": {
+  //     opacity: 1,
+  //     transform: "scale(1)",
+  //   },
+  // },
 });
 
 const CreativeCommittee = () => {
@@ -372,8 +372,8 @@ const CreativeCommittee = () => {
 
   const heroImages = [
     "https://images.unsplash.com/photo-1561070791-2526d30994b5",
-    "https://images.unsplash.com/photo-1561070791-2526d30994b5",
-    "https://images.unsplash.com/photo-1561070791-2526d30994b5",
+    "https://images.pexels.com/photos/13929360/pexels-photo-13929360.jpeg",
+    "https://images.pexels.com/photos/15406294/pexels-photo-15406294.jpeg",
   ];
 
   const roleColors = ["#5B7CFF", "#FF6B9D", "#00D4FF", "#FFB84D"];
@@ -427,7 +427,7 @@ const CreativeCommittee = () => {
       title: "Skills Development",
       desc:
         "Enhances volunteers' artistic and design abilities through training and hands-on creative projects.",
-      img1: heroImages[0],
+      img1: "https://images.pexels.com/photos/1759530/pexels-photo-1759530.jpeg",
       img2: heroImages[2],
     },
   ];
@@ -550,7 +550,7 @@ const CreativeCommittee = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6 }}>
                   <Typography className={classes.mainTitle}>
-                    Our Initiatives
+                    Creative Committee
                   </Typography>
                 </motion.div>
               </Box>

@@ -179,7 +179,7 @@ const useStyles = makeStyles({
   mainTitle: {
     fontFamily: "'Poppins', 'Inria Sans', sans-serif",
     fontWeight: 800,
-    fontSize: "80px",
+    fontSize: "80px !important",
     color: "#fff",
     letterSpacing: "-1px",
     lineHeight: 1.1,
@@ -349,15 +349,15 @@ const useStyles = makeStyles({
     transform: "scale(1.08)",
   },
 
-  imageWrapperHover: {
-    "&:hover $imageBase": {
-      opacity: 0,
-    },
-    "&:hover $imageHover": {
-      opacity: 1,
-      transform: "scale(1)",
-    },
-  },
+  // imageWrapperHover: {
+  //   "&:hover $imageBase": {
+  //     opacity: 0,
+  //   },
+  //   "&:hover $imageHover": {
+  //     opacity: 1,
+  //     transform: "scale(1)",
+  //   },
+  // },
 });
 
 const CulturalCommittee = () => {
@@ -371,7 +371,7 @@ const CulturalCommittee = () => {
 
   const heroImages = [
     "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1000&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=1000&h=600&fit=crop",
+    "https://images.pexels.com/photos/19915775/pexels-photo-19915775.jpeg",
     "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1000&h=600&fit=crop",
   ];
 
@@ -391,7 +391,7 @@ const CulturalCommittee = () => {
       role: "Event Planning",
       description:
         "Hosts music, dance, drama, and performing arts events.",
-      image1: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=500&h=400&fit=crop",
+      image1: "https://images.pexels.com/photos/19915775/pexels-photo-19915775.jpeg",
       image2: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&h=400&fit=crop",
       color: "#FFB366",
       borderColor: "#C71585",

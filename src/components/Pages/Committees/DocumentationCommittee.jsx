@@ -180,12 +180,12 @@ const useStyles = makeStyles({
   mainTitle: {
     fontFamily: "'Poppins', 'Inria Sans', sans-serif",
     fontWeight: 800,
-    fontSize: "80px",
+    fontSize: "60px !important", 
     color: "#fff",
     letterSpacing: "-1px",
     lineHeight: 1.1,
     "@media (max-width:900px)": {
-      fontSize: "48px",
+      fontSize: "45px",
     },
   },
 
@@ -350,15 +350,15 @@ const useStyles = makeStyles({
     transform: "scale(1.08)",
   },
 
-  imageWrapperHover: {
-    "&:hover $imageBase": {
-      opacity: 0,
-    },
-    "&:hover $imageHover": {
-      opacity: 1,
-      transform: "scale(1)",
-    },
-  },
+  // imageWrapperHover: {
+  //   "&:hover $imageBase": {
+  //     opacity: 0,
+  //   },
+  //   "&:hover $imageHover": {
+  //     opacity: 1,
+  //     transform: "scale(1)",
+  //   },
+  // },
 });
 
 const DocumentationCommittee = () => {
@@ -372,8 +372,8 @@ const DocumentationCommittee = () => {
 
   const heroImages = [
     "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40",
-    "https://images.unsplash.com/photo-1553729782-e91953dec042",
-    "https://images.unsplash.com/photo-1507842217343-583f20270319",
+    "https://images.pexels.com/photos/7567600/pexels-photo-7567600.jpeg",
+    "https://images.pexels.com/photos/669619/pexels-photo-669619.jpeg",
   ];
 
   const roleColors = ["#8B7355", "#D4A574", "#A0826D", "#C19A6B"];
@@ -427,7 +427,7 @@ const DocumentationCommittee = () => {
       title: "Permissions",
       desc:
         "Handles venue and event permissions from college administration, ensuring all necessary approvals and coordinating logistics.",
-      img1: heroImages[0],
+      img1: "https://images.pexels.com/photos/7495194/pexels-photo-7495194.jpeg",
       img2: heroImages[2],
     },
   ];
@@ -550,9 +550,10 @@ const DocumentationCommittee = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6 }}>
                   <Typography className={classes.mainTitle}>
-                    Our Initiatives
+                    Documentation Committee
                   </Typography>
                 </motion.div>
+
               </Box>
 
               {/* Slide indicator dots */}

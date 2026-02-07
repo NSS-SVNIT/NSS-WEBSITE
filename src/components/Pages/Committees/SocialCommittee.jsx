@@ -180,7 +180,7 @@ const useStyles = makeStyles({
   mainTitle: {
     fontFamily: "'Poppins', 'Inria Sans', sans-serif",
     fontWeight: 800,
-    fontSize: "80px",
+    fontSize: "80px !important",
     color: "#fff",
     letterSpacing: "-1px",
     lineHeight: 1.1,
@@ -350,15 +350,15 @@ const useStyles = makeStyles({
     transform: "scale(1.08)",
   },
 
-  imageWrapperHover: {
-    "&:hover $imageBase": {
-      opacity: 0,
-    },
-    "&:hover $imageHover": {
-      opacity: 1,
-      transform: "scale(1)",
-    },
-  },
+  // imageWrapperHover: {
+  //   "&:hover $imageBase": {
+  //     opacity: 0,
+  //   },
+  //   "&:hover $imageHover": {
+  //     opacity: 1,
+  //     transform: "scale(1)",
+  //   },
+  // },
 });
 
 const SocialCommittee = () => {
@@ -550,7 +550,7 @@ const SocialCommittee = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6 }}>
                   <Typography className={classes.mainTitle}>
-                    Our Initiatives
+                    Social Committee
                   </Typography>
                 </motion.div>
               </Box>

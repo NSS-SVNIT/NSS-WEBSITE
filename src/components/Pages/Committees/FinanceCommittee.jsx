@@ -180,7 +180,7 @@ const useStyles = makeStyles({
   mainTitle: {
     fontFamily: "'Poppins', 'Inria Sans', sans-serif",
     fontWeight: 800,
-    fontSize: "80px",
+    fontSize: "80px !important",
     color: "#fff",
     letterSpacing: "-1px",
     lineHeight: 1.1,
@@ -350,15 +350,15 @@ const useStyles = makeStyles({
     transform: "scale(1.08)",
   },
 
-  imageWrapperHover: {
-    "&:hover $imageBase": {
-      opacity: 0,
-    },
-    "&:hover $imageHover": {
-      opacity: 1,
-      transform: "scale(1)",
-    },
-  },
+  // imageWrapperHover: {
+  //   "&:hover $imageBase": {
+  //     opacity: 0,
+  //   },
+  //   "&:hover $imageHover": {
+  //     opacity: 1,
+  //     transform: "scale(1)",
+  //   },
+  // },
 });
 
 const FinanceCommittee = () => {
@@ -371,8 +371,8 @@ const FinanceCommittee = () => {
   };
 
   const heroImages = [
-    "https://images.unsplash.com/photo-1579621970563-430f63602d4e",
-    "https://images.unsplash.com/photo-1633356122544-f134324ef6db",
+    "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1709534486708-fb8f94150d0a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40",
   ];
 
@@ -427,7 +427,7 @@ const FinanceCommittee = () => {
       title: "Resource Allocation",
       desc:
         "Distributes funds to committees based on their needs and project requirements, ensuring efficient utilization of financial resources.",
-      img1: heroImages[0],
+      img1:"https://images.pexels.com/photos/7707016/pexels-photo-7707016.jpeg",
       img2: heroImages[2],
     },
   ];
@@ -550,7 +550,7 @@ const FinanceCommittee = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6 }}>
                   <Typography className={classes.mainTitle}>
-                    Our Initiatives
+                    Finance Committee
                   </Typography>
                 </motion.div>
               </Box>
