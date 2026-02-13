@@ -201,15 +201,12 @@ const CommitteeTeamSection = React.memo(({ committeeKey }) => {
         "Mohit Kumar Soni",
         "Kislay Gupta",
         "Akash Panjiyar",
-        "Vedant Thakkar",
         "Jignasa Palakala",
         "Vasishali Dak",
         "Bolisetty Samanvitha",
-        "Vyomini Joshi",
         "Drashti Singh",
         "Rimmalapudi Jaswanth Vinay",
         "M. Devi Sree Prasad",
-        "Aryan Divyang Shah"
       ],
     },
 

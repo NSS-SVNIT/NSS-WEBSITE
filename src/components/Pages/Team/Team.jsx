@@ -9,7 +9,6 @@ import { Link as RouterLink } from 'react-router-dom';
 import { firestore as db } from "../../../firebase";
 import * as TeamData from "./TeamData";
 
-
 // --- FIX: The placeholder Layout has been removed. ---
 // --- We now import your actual Layout component. ---
 // --- IMPORTANT: Make sure this path is correct for your project structure ---
@@ -81,7 +80,7 @@ const HeadingSection = React.memo(() => (
 					<Fade in timeout={1200}><Typography variant="body1" sx={{ textAlign: "justify", fontFamily: "DM Sans, sans-serif", fontSize: { xs: '1rem', md: '1.125rem' }, lineHeight: 1.7, maxWidth: '500px', mx: { xs: 'auto', md: 0 } }}>Embark on a transformative journey with the extraordinary team at NSS SVNIT. Dedicated to making a delta change every day, we combine passion, expertise, and unwavering commitment to create a better tomorrow, one impactful step at a time.</Typography></Fade>
 				</Box>
 			</Grid>
-			<Grid item xs={11} sm={8} md={5} sx={{ order: { xs: 1, md: 2 } }}>
+			<Grid item xs={20} sm={18} md={5} sx={{ order: { xs: 1, md: 2 } }}>
 				<Slide direction="left" in timeout={1000}><div><Box component="img" src="https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454758/developers/team.jpg" alt="NSS Team" sx={{ width: '100%', height: 'auto', borderRadius: '16px', objectFit: 'cover', maxHeight: { xs: 350, md: 550 }, boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}/></div></Slide>
 			</Grid>
 		</Grid>

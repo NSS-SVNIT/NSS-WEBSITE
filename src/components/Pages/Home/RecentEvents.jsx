@@ -1,236 +1,203 @@
-// src/components/sections/CounterSection.js
+import React, { useEffect, useState } from "react";
+import { Box, Button, Stack, Typography } from "@mui/material";
+import { ArrowForward } from "@mui/icons-material";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
-import { Box, Button, Stack, Typography } from "@mui/material"; // Import Button
-import { ArrowForward } from "@mui/icons-material"; // Import arrow icon
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom"; // Import Link for navigation
-import { motion } from "framer-motion"; // Import motion for animation
+// Firebase (same pattern as Gallery.jsx)
+import { collection, getDocs, orderBy, query, limit } from "firebase/firestore";
+import { firestore } from "../../../firebase"; // ⚠️ adjust path if needed
 
-// Import icons and background image...
+// Background image
 import BackgroundImage from "../../../assets/eventBg.jpg";
 
-// Import photos for initiatives
-import Awareness from './photos/Awareness.jpg';
-import Camp from './photos/Camp.jpg';
-import Cleanliness from './photos/Cleanliness.jpeg';
-import Cultural from './photos/Cultural.jpg';
+// ------------------ Main Component ------------------
+const RecentEvents = () => {
+  return (
+    <React.Fragment>
+      <Stack
+        alignItems="center"
+        sx={{
+          bgcolor: "background.default",
+          pt: { xs: 6, md: 10 },
+          pb: { xs: 4, md: 6 },
+        }}
+      >
+        <Typography variant="h2" component="h2" sx={{ fontWeight: "bold" }}>
+          Recent Events
+        </Typography>
+      </Stack>
 
-
-
-// Data remains the same
-
-// The internal component for the parallax section
-const ParallaxContent = () => {
-    const [indices, setIndices] = useState([0, 0, 0, 0]);
-    
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setIndices(prev => prev.map(i => (i + 1) % 3));
-        }, 3000);
-        return () => clearInterval(interval);
-    }, []);
-    return (
-        <Stack
-            justifyContent="center"
-            alignItems="center"
-            // --- The main change is here: increase the gap to space out the new button ---
-            gap={{ xs: 6, md: 8 }} 
-            sx={{
-                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url(${BackgroundImage})`,
-                backgroundAttachment: "fixed",
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-                py: { xs: 6, md: 10 }, // Reduced padding to make section shorter
-                color: 'white',
-            }}
-        >
-            {/* The Stack for the counters */}
-            
-
-            {/* --- NEW BUTTON ADDED HERE --- */}
-           
-            <motion.div
-                initial={{ opacity:0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.2 } }}
-                viewport={{ once: true }}
-            >
-                
-                
-            </motion.div>
-
-            <InitiativeSlider />
-
-            {/* Button added after the slider */}
-            <motion.div
-                initial={{ opacity:0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.2 } }}
-                viewport={{ once: true }}
-            >
-                <Button
-                    component={Link}
-                    to="/events"
-                    variant="contained"
-                    size="large"
-                    sx={{
-                        py: 1.5,
-                        px: 4,
-                        fontSize: '1rem',
-                        fontWeight: 'bold',
-                        borderRadius: '50px',
-                    }}
-                >
-                    Explore more Events
-                    <ArrowForward sx={{ ml: 1 }} />
-                </Button>
-            </motion.div>
-        </Stack>
-    );
+      <ParallaxContent />
+    </React.Fragment>
+  );
 };
 
-const initiatives = [
-    {
-        title: "Republic Day Skit",
-        image: Cultural,
-    },
-    {
-        title: "Annual Camp",
-        image: Camp,
-    },
-    {
-        title: "Industrial Visit",
-        image: Awareness,
-    },
-    {
-        title: "Beach Cleaning",
-        image: Cleanliness,
-    },
-];
+// ------------------ Parallax Section ------------------
+const ParallaxContent = () => {
+  return (
+    <Stack
+      justifyContent="center"
+      alignItems="center"
+      gap={{ xs: 6, md: 8 }}
+      sx={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url(${BackgroundImage})`,
+        backgroundAttachment: "fixed",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        py: { xs: 6, md: 10 },
+        color: "white",
+      }}
+    >
+      <InitiativeSlider />
 
-function InitiativeSlider() {
-    const [active, setActive] = useState(0);
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.2 } }}
+        viewport={{ once: true }}
+      >
+        <Button
+          component={Link}
+          to="/events"
+          variant="contained"
+          size="large"
+          sx={{
+            py: 1.5,
+            px: 4,
+            fontSize: "1rem",
+            fontWeight: "bold",
+            borderRadius: "50px",
+          }}
+        >
+          Explore more Events
+          <ArrowForward sx={{ ml: 1 }} />
+        </Button>
+      </motion.div>
+    </Stack>
+  );
+};
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setActive((prev) => (prev + 1) % initiatives.length);
-        }, 3500);
-        return () => clearInterval(interval);
-    }, []);
+// ------------------ Slider Component ------------------
+const InitiativeSlider = () => {
+  const [events, setEvents] = useState([]);
+  const [active, setActive] = useState(0);
+  const [error, setError] = useState(null);
 
-    return (
-        <div style={{ position: 'relative', width: '100%', maxWidth: '1000px', margin: '0 auto', perspective: '1000px' }}>
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '500px', position: 'relative' }}>
-                {initiatives.map((item, i) => {
-                    let style = {
-                        position: 'absolute',
-                        width: '500px',
-                        height: '500px',
-                        borderRadius: '15px',
-                        overflow: 'hidden',
-                        boxShadow: '0 10px 30px rgba(0,0,0,0.3)',
-                        transition: 'all 0.6s ease',
-                        cursor: 'pointer',
-                    };
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const q = query(
+          collection(firestore, "events"),
+          orderBy("created_at", "desc"), // or "event_timestamp"
+          limit(4)
+        );
 
-                    if (i === active) {
-                        style.transform = 'translateX(0) scale(1) rotateY(0deg)';
-                        style.zIndex = 3;
-                    } else if (i === (active - 1 + initiatives.length) % initiatives.length) {
-                        style.transform = 'translateX(-350px) scale(0.8) rotateY(15deg)';
-                        style.zIndex = 2;
-                        style.opacity = 0.9;
-                    } else if (i === (active + 1) % initiatives.length) {
-                        style.transform = 'translateX(350px) scale(0.8) rotateY(-15deg)';
-                        style.zIndex = 2;
-                        style.opacity = 0.9;
-                    } else {
-                        style.transform = 'translateX(0) scale(0.6) rotateY(0deg)';
-                        style.zIndex = 1;
-                        style.opacity = 0.3;
-                    }
+        const snapshot = await getDocs(q);
+        const data = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
 
-                    return (
-                        <div key={i} style={style} onClick={() => setActive(i)}>
-                            <img src={item.image} alt={item.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                            <div style={{
-                                position: 'absolute',
-                                bottom: '0',
-                                left: '0',
-                                right: '0',
-                                background: 'linear-gradient(to top, rgba(0,0,0,0.9), transparent)',
-                                color: 'white',
-                                padding: '20px',
-                                fontSize: '18px',
-                                fontWeight: 'bold',
-                                textAlign: 'center',
-                                borderRadius: '0 0 15px 15px',
-                                border: '1px solid rgba(255,255,255,0.2)',
-                                borderTop: 'none'
-                            }}>
-                                <span style={{
-                                    background: "rgba(0,0,0,0.8)",
-                                    color: "white",
-                                    padding: "8px 16px",
-                                    borderRadius: "20px",
-                                    border: "1px solid rgba(255,255,255,0.3)",
-                                    fontSize: "16px",
-                                    fontWeight: "bold",
-                                    display: "inline-block",
-                                    marginTop: "10px"
-                                }}>
-                                {item.title}
-                                </span>
-                            </div>
-                        </div>
-                    );
-                })}
-            </div>
+        // Only keep valid items
+        setEvents(data.filter((e) => e.cover_image && e.name));
+      } catch (err) {
+        console.error("Error fetching events:", err);
+        setError("Failed to load events");
+      }
+    };
 
-            <div style={{ textAlign: 'center', marginTop: '30px' }}>
-                {initiatives.map((_, i) => (
-                    <span
-                        key={i}
-                        style={{
-                            display: 'inline-block',
-                            width: '12px',
-                            height: '12px',
-                            borderRadius: '50%',
-                            background: i === active ? '#007bff' : '#ddd',
-                            margin: '0 8px',
-                            cursor: 'pointer',
-                            transition: 'background 0.3s',
-                        }}
-                        onClick={() => setActive(i)}
-                    />
-                ))}
-            </div>
-        </div>
-    );
-}
+    fetchEvents();
+  }, []);
 
-// The main component that frames the parallax content
-const CounterSection = React.memo(() => {
-    // ... (This part remains unchanged)
-    return (
-        <React.Fragment>
-            <Stack 
-                alignItems="center"
-                sx={{ 
-                    bgcolor: 'background.default', 
-                    pt: { xs: 6, md: 10 },
-                    pb: { xs: 4, md: 6 },
-                }} 
-            >
-                <Typography
-                    variant="h2"
-                    component="h2"
-                    sx={{ fontWeight: 'bold' }} 
+  useEffect(() => {
+    if (events.length === 0) return;
+    const interval = setInterval(() => {
+      setActive((prev) => (prev + 1) % events.length);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, [events]);
+
+  if (error) {
+    return <Typography sx={{ color: "white" }}>{error}</Typography>;
+  }
+
+  if (events.length === 0) {
+    return <Typography sx={{ color: "white" }}>Loading events...</Typography>;
+  }
+
+  return (
+    <div style={{ position: "relative", width: "100%", maxWidth: "1000px", margin: "0 auto", perspective: "1000px" }}>
+      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "500px", position: "relative" }}>
+        {events.map((item, i) => {
+          let style = {
+            position: "absolute",
+            width: "500px",
+            height: "500px",
+            borderRadius: "15px",
+            overflow: "hidden",
+            boxShadow: "0 10px 30px rgba(0,0,0,0.3)",
+            transition: "all 0.6s ease",
+            cursor: "pointer",
+          };
+
+          if (i === active) {
+            style.transform = "translateX(0) scale(1) rotateY(0deg)";
+            style.zIndex = 3;
+            style.opacity = 1;
+          } else if (i === (active - 1 + events.length) % events.length) {
+            style.transform = "translateX(-350px) scale(0.8) rotateY(15deg)";
+            style.zIndex = 2;
+            style.opacity = 0.9;
+          } else if (i === (active + 1) % events.length) {
+            style.transform = "translateX(350px) scale(0.8) rotateY(-15deg)";
+            style.zIndex = 2;
+            style.opacity = 0.9;
+          } else {
+            style.transform = "translateX(0) scale(0.6) rotateY(0deg)";
+            style.zIndex = 1;
+            style.opacity = 0.3;
+          }
+
+          return (
+            <div key={item.id} style={style} onClick={() => setActive(i)}>
+              <img
+                src={item.cover_image}
+                alt={item.name}
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: "0",
+                  left: "0",
+                  right: "0",
+                  background: "linear-gradient(to top, rgba(0,0,0,0.9), transparent)",
+                  color: "white",
+                  padding: "20px",
+                  textAlign: "center",
+                }}
+              >
+                <span
+                  style={{
+                    background: "rgba(0,0,0,0.8)",
+                    color: "white",
+                    padding: "8px 16px",
+                    borderRadius: "20px",
+                    border: "1px solid rgba(255,255,255,0.3)",
+                    fontSize: "16px",
+                    fontWeight: "bold",
+                    display: "inline-block",
+                  }}
                 >
-                    Recent Events
-                </Typography>
-            </Stack>
-            <ParallaxContent />
-        </React.Fragment>
-    );
-});
+                  {item.name}
+                </span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
 
-export default CounterSection;
+export default RecentEvents;

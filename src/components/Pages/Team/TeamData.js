@@ -2044,14 +2044,7 @@ const Team2023 = [
     gmail: "utkarshsaxena047@gmail.com",
     firebase: "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770451853/team/Team2023/Utkarsh_Saxena.jpg",
   },
-  {
-    image: "https://drive.google.com/uc?id=1r_bya-AT7GSN7uybrneyGSjUDYt4tRrb&export=download",
-    name: "B.Sri harshitha",
-    position: "Volunteer",
-    linkedin: "https://www.linkedin.com/in/sriharshithab",
-    gmail: "sriharshithab107@gmail.com",
-    firebase: "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770451856/team/Team2023/B.Sri_harshitha.jpg",
-  },
+ 
   {
     image: "https://drive.google.com/uc?id=1u2vrK5tF2XUC4Dq_UTDC8M3Ho8v7L2v0&export=download",
     name: "Aditi Bhushan",
@@ -2330,7 +2323,7 @@ const Team2023 = [
     position: "Volunteer",
     linkedin: "https://www.linkedin.com/in/raghvendra-singh-677560314?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     gmail: "raghavsholankii3011@gmail.com",
-    firebase: "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770451951/team/Team2023/Raghvendra_Singh_Solanki.heic",
+    firebase: "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770964235/Raghvendra_Singh_Solanki_b79hnk.jpg",
   },
   {
     image: "https://drive.google.com/uc?id=1eF35BN1LgmaKJLLcpBqDWGCsaxWSmFlB&export=download",
