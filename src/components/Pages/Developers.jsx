@@ -14,7 +14,7 @@ function Developers() {
 			mail: "mailto:tapariyaaditi23@gmail.com",
 			linkedin: "https://www.linkedin.com/in/aditi-tapariya/",
 			imageLink:
-				"https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/Developers%20and%20Designers%2Faditi.jpg?alt=media&token=381119fd-7f69-4480-a05c-940560ecac2a",
+				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770405361/developer/developers/Aditi_Tapariya.jpg",
 		},
 		{
 			id: 2,
@@ -23,7 +23,7 @@ function Developers() {
 			mail: "mailto:pathakharshit281@gmail.com",
 			linkedin: "https://www.linkedin.com/in/harshit-pathak-4ba6aa22a/",
 			imageLink:
-				"https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/Developers%20and%20Designers%2Fharshit.jpg?alt=media&token=cf30f119-6da7-4167-8c9b-fbd3b69e5a91",
+				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770405366/developer/developers/Harshit_Pathak.jpg",
 		},
 		{
 			id: 3,
@@ -32,7 +32,7 @@ function Developers() {
 			mail: "mailto:jinhalmaheshwari1256@gmail.com",
 			linkedin: "linkedin.com/in/jinhal-maheshwari-71a217212/",
 			imageLink:
-				"https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/Developers%20and%20Designers%2Fjinhal.jpg?alt=media&token=ceb14311-8bfb-472d-b48c-34774f0ca7d9",
+				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770405372/developer/developers/Jinhal_Maheshwari.jpg",
 		},
 		{
 			id: 4,
@@ -41,7 +41,7 @@ function Developers() {
 			mail: "mailto:shahparam1903@gmail.com",
 			linkedin: "https://www.linkedin.com/in/param-shah-716322227/",
 			imageLink:
-				"https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/Developers%20and%20Designers%2Fparam.jpg?alt=media&token=d04500c6-e748-44e6-a681-fc917e05676b",
+				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770405376/developer/developers/Param_Shah.jpg",
 		},
 		{
 			id: 5,
@@ -50,7 +50,7 @@ function Developers() {
 			mail: "mailto:barikpragnesh@gmail.com",
 			linkedin: "https://www.linkedin.com/in/pragnesh-barik",
 			imageLink:
-				"https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/Developers%20and%20Designers%2Fpragnesh.jpg?alt=media&token=0cb1f05d-f0e3-42ce-98b7-f50e36041cf3",
+				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770405387/developer/developers/Pragnesh_Barik.jpg",
 		},
 		{
 			id: 6,
@@ -59,7 +59,7 @@ function Developers() {
 			mail: "mailto:shreeyadave776@gmail.com",
 			linkedin: "https://www.linkedin.com/in/shreeya-dave-444166232/",
 			imageLink:
-				"https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/Developers%20and%20Designers%2Fshreeya.jpeg?alt=media&token=5e4dd1b7-ccda-4cfb-8a58-0d663c7ada9b",
+				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770405391/developer/developers/Shreeya_Dave.jpg",
 		},
 		{
 			id: 7,
@@ -68,7 +68,7 @@ function Developers() {
 			mail: "mailto:samarthchaplot7@gmail.com",
 			linkedin: "https://www.linkedin.com/in/samarth-chaplot-130b88256/",
 			imageLink:
-				"https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/team%20page%2F2022%2FSAMARTH_CHAPLOT.jpg?alt=media&token=1f573e6e-3afa-4f12-995b-2079160f5948",
+				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770405395/developer/developers/Samarth_Chaplot.jpg",
 		},
 	];
 
@@ -80,7 +80,7 @@ function Developers() {
 			mail: "mailto:kevalkanpariya5051@gmail.com",
 			linkedin: "http://linkedin.com/in/kevalkanpariya",
 			imageLink:
-				"https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/Developers%20and%20Designers%2Fkeval.jpg?alt=media&token=e8da1dc5-273d-44ba-bf41-b00d4a6e54c6",
+				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770405414/developer/developers/Keval_Kanpariya.jpg",
 		},
 		{
 			id: 2,
@@ -89,7 +89,7 @@ function Developers() {
 			mail: "mailto:namrata.rathod028@gmail.com",
 			linkedin: "www.linkedin.com/in/nr28",
 			imageLink:
-				"https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/Developers%20and%20Designers%2Fnamrata.jpg?alt=media&token=367be3ab-97b9-4584-bc62-27b824fd0fc2",
+				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770405426/developer/developers/Namrata_Rathod.jpg",
 		},
 	];
 

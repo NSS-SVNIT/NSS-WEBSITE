@@ -1,100 +1,125 @@
-import {
-	Grid,
-	Slide,
-	Typography,
-	useMediaQuery,
-	useScrollTrigger,
-} from "@mui/material";
+import { Grid, Slide, Typography, Box, Fade } from "@mui/material";
 import React from "react";
 
-const HeadingSection = React.memo(() => {
-	const isMobile = useMediaQuery("(max-width:600px)");
-	const trigger = useScrollTrigger({
-		disableHysteresis: true,
-		threshold: 100,
-	});
+// A new component for a subtle, animated background element.
+const BackgroundBlob = () => (
+	<Fade in={true} timeout={2000}>
+		<Box
+			sx={{
+				position: 'absolute',
+				top: '50%',
+				left: '25%',
+				width: { xs: 300, md: 700 },
+				height: { xs: 300, md: 700 },
+				// A soft radial gradient using our new color palette
+				background: 'radial-gradient(circle, rgba(0, 180, 216, 0.1) 0%, rgba(0, 180, 216, 0) 70%)',
+				transform: 'translate(-50%, -50%)',
+				zIndex: -1, // Places it behind all other content
+				filter: 'blur(80px)', // Creates the soft, blurry effect
+			}}
+		/>
+	</Fade>
+);
 
+// The image is enhanced with an interactive hover effect and a new entry animation.
+const HeroImage = () => (
+	<Box
+		component="img"
+		src="https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454758/developers/team.jpg"
+		alt="NSS Team"
+		sx={{
+			width: '100%',
+			height: 'auto',
+			borderRadius: '24px',
+			objectFit: 'cover',
+			maxHeight: { xs: 380, md: 580 },
+			// A colored shadow matching our new theme for a professional 'lifted' look
+			boxShadow: '0 20px 40px -10px rgba(0, 119, 182, 0.4)',
+			// The interactive hover effect!
+			transition: 'transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out',
+			'&:hover': {
+				transform: 'scale(1.03) translateY(-10px)',
+				boxShadow: '0 30px 50px -15px rgba(0, 119, 182, 0.5)',
+			},
+		}}
+	/>
+);
+
+const HeadingSection = React.memo(() => {
 	return (
-		<div style={{ overflowX: "hidden" }}>
-			<Grid
-				container
-				spacing={2}
-				sx={{
-					marginTop: isMobile ? 0 : "45px",
-					marginLeft: isMobile ? "10px" : "60px",
-					marginBottom: "60px",
-				}}>
-				<Grid item xs={isMobile ? 11 : 6} sm={6} md={5}>
-					<Slide
-						direction="right"
-						in={true}
-						timeout={500}
-						mountOnEnter>
-						<Typography
-							variant="h2"
-							fontSize={isMobile ? "3rem" : "70px"}
-							gutterBottom
-							sx={{
-								marginLeft: "10px",
-								marginTop: isMobile ? 0 : "40px",
-								fontWeight: "400",
-								marginBottom: "-20px",
-							}}>
-							Meet Our
-						</Typography>
-					</Slide>
-					<Slide
-						direction="right"
-						in={true}
-						timeout={800}
-						mountOnEnter>
-						<Typography
-							variant="h1"
-							fontSize={isMobile ? "7rem" : "160px"}
-							gutterBottom={isMobile ? false : true}>
-							Team
-						</Typography>
-					</Slide>
-					<Slide
-						direction="right"
-						in={true}
-						timeout={800}
-						mountOnEnter>
-						<Typography
-							variant="subtitle2"
-							gutterBottom
-							style={{
-								textAlign: "justify",
-								fontFamily: "DM Sans",
-								fontSize: "18px",
-								marginRight: "20px",
-							}}>
-							Embark on a transformative journey with the
-							extraordinary team at NSS SVNIT. Dedicated to making
-							a delta change every day, we combine passion,
-							expertise, and unwavering commitment. Let's create a
-							better tomorrow by taking one impactful step at a
-							time. Together, let's make a lasting difference and
-							inspire a wave of positive transformation.
-						</Typography>
-					</Slide>
+		// The main container needs position: 'relative' for the blob to be positioned correctly.
+		<Box sx={{ position: 'relative', overflow: 'hidden', py: { xs: 6, md: 10 } }}>
+			<BackgroundBlob />
+			<Grid container spacing={{ xs: 4, md: 2 }} alignItems="center" justifyContent="center">
+				{/* Text Content Column */}
+				<Grid item xs={12} md={6} sx={{ order: { xs: 2, md: 1 }, textAlign: { xs: 'center', md: 'left' } }}>
+					<Box sx={{ px: { xs: 3, md: 0 }, pl: { md: 10 } }}>
+						<Slide direction="right" in={true} timeout={500} mountOnEnter>
+							<Typography
+								variant="h2"
+								sx={{
+									fontSize: { xs: "2.5rem", md: "4rem" },
+									fontWeight: 300,
+									color: 'text.secondary', // Softer color to make the main title pop
+								}}
+							>
+								Meet Our
+							</Typography>
+						</Slide>
+
+						<Slide direction="right" in={true} timeout={700} mountOnEnter>
+							<Typography
+								variant="h1"
+								sx={{
+									fontSize: { xs: "5.5rem", sm: "7rem", md: "9.5rem" },
+									fontWeight: 800, // Bolder for more impact
+									lineHeight: 1,
+									// A beautiful new blue/teal gradient
+									background: 'linear-gradient(45deg, #0077B6 30%, #00B4D8 90%)',
+									WebkitBackgroundClip: 'text',
+									WebkitTextFillColor: 'transparent',
+									mb: 4,
+								}}
+							>
+								Team
+							</Typography>
+						</Slide>
+
+						<Fade in={true} timeout={1200} mountOnEnter>
+							<Typography
+								variant="body1"
+								sx={{
+									textAlign: 'justify',
+									fontFamily: "DM Sans, sans-serif",
+									fontSize: { xs: '1rem', md: '1.125rem' },
+									lineHeight: 1.7,
+									maxWidth: '520px',
+									mx: { xs: 'auto', md: 0 },
+									color: 'text.primary',
+								}}
+							>
+								Embark on a transformative journey with the extraordinary team
+								at NSS SVNIT. Dedicated to making a delta change every day, we
+								combine passion, expertise, and unwavering commitment to create a
+								better tomorrow, one impactful step at a time.
+							</Typography>
+						</Fade>
+					</Box>
 				</Grid>
-				<Grid item xs={6} sm={6} md={6}>
-					<Slide
-						direction="left"
-						in={true}
-						timeout={1200}
-						mountOnEnter>
-						<img
-							src="https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/team%20page%2Fteam.jpg?alt=media&token=250a96b8-c607-44f3-a1c7-d10c7072c89f"
-							alt="Right Content"
-							height={isMobile ? "200x" : "500px"}
-							style={{ borderRadius: "10px" }}
-						/>
-					</Slide>
+
+				{/* Image Column */}
+				<Grid item xs={11} sm={8} md={5} sx={{ order: { xs: 1, md: 2 } }}>
+					{/* New animation combo: Fades in while sliding up */}
+					<Fade in={true} timeout={1000}>
+						<Slide direction="up" in={true} timeout={1000} mountOnEnter>
+							<div>
+								<HeroImage />
+							</div>
+						</Slide>
+					</Fade>
 				</Grid>
 			</Grid>
-		</div>
+		</Box>
 	);
 });
 

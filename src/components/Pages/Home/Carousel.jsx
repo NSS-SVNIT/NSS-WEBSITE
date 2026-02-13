@@ -1,6 +1,4 @@
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
-import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
-import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import PauseIcon from "@mui/icons-material/Pause";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import {
@@ -8,17 +6,20 @@ import {
 	Box,
 	Card,
 	Chip,
-	Fade,
+	Grid,
 	IconButton,
-	Paper,
 	Stack,
 	Tooltip,
 	Typography,
+	alpha, // Import alpha for transparent colors
 	useMediaQuery,
 	useTheme,
 } from "@mui/material";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import Carousel from "react-material-ui-carousel";
+import { motion } from "framer-motion";
+
+// --- All Image Imports ---
 import photo2018 from "./2018.jpg";
 import photo2019 from "./2019.jpg";
 import photo2020 from "./2020.jpg";
@@ -26,6 +27,7 @@ import photo2021 from "./2021.jpg";
 import photo2022 from "./2022.jpg";
 import founder from "./founder.jpg";
 
+// --- Testimonial Data Array (No Changes) ---
 const items = [
 	{
 		title: "Message From Our Founder",
@@ -72,376 +74,179 @@ const items = [
 		role: "Convenor",
 		year: "Batch 2021",
 	},
-{
-	title: "Message From Our Convenor Batch 2022",
-	name: "Shrishti Arya",
-	description: `As I look back on our journey so far, I am filled with a sense of pride and appreciation for the incredible work we've done together. Each step we’ve taken, every challenge we’ve faced, and all the moments of success reflect our dedication and hard work. The NSS Unit SVNIT has been more than just an organization – it's a family that thrives on compassion, empathy, and service. Through our diverse activities and outreach programs, we've not only made a difference in the lives of many but also grown as individuals, learning leadership, teamwork, and community spirit.
-
-Our motto, "NOT ME BUT YOU," serves as a constant reminder of the selfless spirit that drives us. It’s not just a motto; it’s a way of life that we carry in every action, every programs, and every interaction.
-
-Dedication, devotion, and discipline are the three pillars on which our unit stands, together, these principles have empowered us to bring delta change, not just in the communities we serve, but also within ourselves.
-
-To the team, I offer my sincerest appreciation for the tireless efforts you all are putting to take NSS SVNIT beyond the limits.
-Keep Going, Keep Shining!!!`,
-	imageUrl:photo2022 ,
-	role: "Convenor",
-	year: "Batch 2022",
-}
-,
+	{
+		title: "Message From Our Convenor Batch 2022",
+		name: "Shrishti Arya",
+		description: `As I look back on our journey so far, I am filled with a sense of pride and appreciation for the incredible work we've done together. Each step we’ve taken, every challenge we’ve faced, and all the moments of success reflect our dedication and hard work. The NSS Unit SVNIT has been more than just an organization – it's a family that thrives on compassion, empathy, and service. Through our diverse activities and outreach programs, we've not only made a difference in the lives of many but also grown as individuals, learning leadership, teamwork, and community spirit. Our motto, "NOT ME BUT YOU," serves as a constant reminder of the selfless spirit that drives us. It’s not just a motto; it’s a way of life that we carry in every action, every programs, and every interaction. Dedication, devotion, and discipline are the three pillars on which our unit stands, together, these principles have empowered us to bring delta change, not just in the communities we serve, but also within ourselves. To the team, I offer my sincerest appreciation for the tireless efforts you all are putting to take NSS SVNIT beyond the limits. Keep Going, Keep Shining!!!`,
+		imageUrl: photo2022,
+		role: "Convenor",
+		year: "Batch 2022",
+	},
 ];
 
-// Custom Navigation Button component for better accessibility
-const NavButton = ({ direction, onClick, label }) => {
-	const Icon = direction === "next" ? NavigateNextIcon : NavigateBeforeIcon;
-	return (
-		<IconButton
-			onClick={onClick}
-			aria-label={label}
-			color="primary"
-			sx={{
-				position: "absolute",
-				[direction === "next" ? "right" : "left"]: { xs: 4, sm: 16 },
-				top: "50%",
-				transform: "translateY(-50%)",
-				backgroundColor: "rgba(255, 255, 255, 0.7)",
-				"&:hover": {
-					backgroundColor: "rgba(255, 255, 255, 0.9)",
-					transform: "translateY(-50%) scale(1.1)",
-				},
-				zIndex: 2,
-				transition: "all 0.3s ease",
-			}}>
-			<Icon fontSize="medium" />
-		</IconButton>
-	);
+
+// --- Internal Component for a Single Carousel Slide ---
+const containerVariants = {
+	hidden: { opacity: 0 },
+	visible: {
+		opacity: 1,
+		transition: { staggerChildren: 0.15, delayChildren: 0.1 },
+	},
 };
 
-export default function CarouselResponsive() {
+const itemVariants = {
+	hidden: { opacity: 0, y: 20 },
+	visible: {
+		opacity: 1,
+		y: 0,
+		transition: { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] },
+	},
+};
+
+const CarouselItem = ({ item }) => {
 	const theme = useTheme();
-	const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-	const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
-	const [autoPlay, setAutoPlay] = useState(true);
-	const [activeStep, setActiveStep] = useState(0);
-	const [touchStartY, setTouchStartY] = useState(null);
-	const contentRefs = useRef(
-		Array(5)
-			.fill(null)
-			.map(() => React.createRef())
-	);
-	const [isScrolling, setIsScrolling] = useState(false);
-
-	// Handle pause/play toggle
-	const handlePlayPauseToggle = () => {
-		setAutoPlay(!autoPlay);
-	};
-
-	// Track the active step when it changes
-	const handleChange = (now) => {
-		setActiveStep(now);
-	};
-
-	// Touch handlers to differentiate between scrolling and swiping
-	const handleTouchStart = (e, index) => {
-		// Save the initial touch position
-		setTouchStartY(e.touches[0].clientY);
-		setIsScrolling(false);
-	};
-
-	const handleTouchMove = (e, index) => {
-		if (!touchStartY) return;
-
-		const currentY = e.touches[0].clientY;
-		const deltaY = Math.abs(currentY - touchStartY);
-
-		// If vertical movement is significant, mark as scrolling
-		if (deltaY > 10) {
-			setIsScrolling(true);
-		}
-	};
 
 	return (
-		<Card
-			elevation={3}
-			sx={{
-				p: { xs: 2, sm: 3 },
-				m: { xs: "16px auto", sm: "32px auto" },
-				width: { xs: "95%", sm: "90%", md: "80%", lg: "70%" },
-				height: { xs: "auto" },
-				minHeight: { xs: "50vh", sm: "50vh" },
-				maxHeight: { xs: "none", sm: "none", md: "none" },
-				borderRadius: 3,
-				bgcolor: "background.paper",
-				overflow: "visible",
-				display: "flex",
-				flexDirection: "column",
-				position: "relative",
-				boxShadow: "0 8px 24px rgba(0, 0, 0, 0.12)",
-			}}
-			component="section"
-			aria-label="Messages from NSS leadership">
-			<Box
-				sx={{
-					display: "flex",
-					justifyContent: "space-between",
-					alignItems: "center",
-					mb: 2,
-				}}>
-				<Typography
-					variant="h5"
-					component="h2"
-					textAlign="center"
-					sx={{
-						flex: 1,
-						fontWeight: 700,
-						color: theme.palette.primary.main,
-						borderBottom: `2px solid ${theme.palette.primary.light}`,
-						paddingBottom: 1,
-					}}>
-					Words of Wisdom
-				</Typography>
-
-				<Tooltip title={autoPlay ? "Pause" : "Play"}>
-					<IconButton
-						onClick={handlePlayPauseToggle}
-						color="primary"
-						aria-label={
-							autoPlay ? "Pause carousel" : "Play carousel"
-						}
-						sx={{
-							ml: 2,
-							backgroundColor: "rgba(0, 0, 0, 0.04)",
-							"&:hover": {
-								backgroundColor: "rgba(0, 0, 0, 0.08)",
-							},
-						}}>
-						{autoPlay ? <PauseIcon /> : <PlayArrowIcon />}
-					</IconButton>
-				</Tooltip>
-			</Box>
-
-			<Carousel
-				autoPlay={autoPlay}
-				animation="fade"
-				duration={1000}
-				interval={15000}
-				swipe={!isMobile} // Disable swipe on mobile devices
-				navButtonsAlwaysVisible
-				indicators={true}
-				cycleNavigation
-				fullHeightHover
-				onChange={handleChange}
-				index={activeStep}
-				stopAutoPlayOnHover
-				navButtonsProps={{
-					style: {
-						display: "none", // Hide default buttons, we'll use our custom ones
-					},
-				}}
-				indicatorContainerProps={{
-					style: {
-						marginTop: "16px",
-						textAlign: "center",
-					},
-				}}
-				indicatorIconButtonProps={{
-					style: {
-						padding: "3px",
-						margin: "0 4px",
-						color: theme.palette.grey[400],
-					},
-				}}
-				activeIndicatorIconButtonProps={{
-					style: {
-						color: theme.palette.primary.main,
-					},
-				}}
-				NextIcon={<NavButton direction="next" label="Next message" />}
-				PrevIcon={
-					<NavButton direction="prev" label="Previous message" />
-				}>
-				{items.map((item, index) => {
-					const isLong = item.description.length > 300;
-
-					return (
-						<Paper
-							elevation={0}
-							key={index}
-							sx={{
-								display: "flex",
-								flexDirection: { xs: "column", md: "row" },
-								alignItems: { xs: "center", md: "flex-start" },
-								textAlign: { xs: "center", md: "left" },
-								overflow: "visible",
-								height: "100%",
-								backgroundColor: "transparent",
-								pb: 4,
-							}}>
-							{/* Left side - Person Info */}
-							<Box
-								sx={{
-									flexShrink: 0,
-									p: { xs: 1, sm: 2 },
-									display: "flex",
-									flexDirection: "column",
-									justifyContent: "center",
-									alignItems: "center",
-									width: { xs: "100%", md: "30%" },
-								}}>
+		<motion.div variants={containerVariants} initial="hidden" animate="visible" exit="hidden">
+				<Grid container spacing={{ xs: 3, sm: 4, md: 6 }} alignItems="center">
+					{/* Left Side: Photo and Name */}
+					<Grid item xs={12} md={4}>
+						<motion.div variants={itemVariants}>
+							<Stack alignItems="center" spacing={{ xs: 1.5, md: 2.5 }}>
 								<Avatar
 									src={item.imageUrl}
 									alt={`Photo of ${item.name}`}
-									variant="rounded"
 									sx={{
-										width: { xs: 130, sm: 160, md: 180 },
-										height: { xs: 130, sm: 160, md: 180 },
-										mb: 2,
-										boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
-										border: `3px solid ${theme.palette.primary.light}`,
-										transition: "transform 0.3s ease",
-										"&:hover": {
-											transform: "scale(1.05)",
-										},
+										width: { xs: 120, sm: 160, md: 220 },
+										height: { xs: 120, sm: 160, md: 220 },
+										// A more elegant border and shadow
+										border: { xs: `2px solid ${theme.palette.primary.light}`, md: `3px solid ${theme.palette.primary.light}` },
+										boxShadow: `0 10px 30px ${alpha(theme.palette.primary.main, 0.2)}`,
 									}}
 								/>
-								<Typography
-									variant={
-										isMobile ? "h6" : isTablet ? "h5" : "h4"
-									}
-									component="h3"
-									sx={{ fontWeight: 700 }}>
-									{item.name}
-								</Typography>
-
-								<Chip
-									label={`${item.role} | ${item.year}`}
-									color="primary"
-									size={isMobile ? "small" : "medium"}
-									sx={{ mt: 1 }}
-								/>
-							</Box>
-
-							{/* Right side - Message */}
-							<Box
-								sx={{
-									flex: 1,
-									p: { xs: 1, sm: 2, md: 3 },
-									position: "relative",
-									width: { xs: "100%", md: "70%" },
-									display: "flex",
-									flexDirection: "column",
-									justifyContent: "center",
-									mt: { xs: 2, md: 0 },
-								}}>
-								<FormatQuoteIcon
-									sx={{
-										fontSize: { xs: 30, sm: 40 },
-										opacity: 0.2,
-										color: theme.palette.primary.main,
-										position: "absolute",
-										top: 0,
-										left: 0,
+								<Box textAlign="center">
+									<Typography sx={{ fontWeight: 700, color: 'text.primary', fontSize: { xs: '1.1rem', sm: '1.3rem', md: '1.5rem' } }}>
+										{item.name}
+									</Typography>
+									<Chip
+										label={`${item.role} | ${item.year}`}
+										size="medium"
+										sx={{ 
+											mt: 1, 
+											fontWeight: 500,
+											fontSize: { xs: '0.75rem', sm: '0.85rem' },
+										color: 'primary.dark',
 									}}
 								/>
-
-								<Fade in={true} timeout={1000}>
-									<Stack
-										ref={(el) =>
-											(contentRefs.current[index] = el)
-										}
-										onTouchStart={
-											isMobile
-												? (e) =>
-														handleTouchStart(
-															e,
-															index
-														)
-												: undefined
-										}
-										onTouchMove={
-											isMobile
-												? (e) =>
-														handleTouchMove(
-															e,
-															index
-														)
-												: undefined
-										}
-										spacing={2}
-										className="scrollable-content"
-										sx={{
-											maxHeight: {
-												xs: "40vh",
-												sm: "40vh",
-												md: "40vh",
-											},
-											overflowY: "auto",
-											pr: 1,
-											pl: { xs: 0, md: 2 },
-											pt: { xs: 3, md: 2 },
-											pb: 2,
-											WebkitOverflowScrolling: "touch", // Enable momentum scrolling on iOS
-											touchAction: "pan-y", // Allow vertical scrolling
-											"&::-webkit-scrollbar": {
-												width: "6px",
-												borderRadius: "8px",
-											},
-											"&::-webkit-scrollbar-thumb": {
-												backgroundColor:
-													theme.palette.primary.light,
-												borderRadius: "8px",
-											},
-											"&::-webkit-scrollbar-track": {
-												backgroundColor:
-													"rgba(0,0,0,0.05)",
-												borderRadius: "8px",
-											},
-										}}>
-										<Box
-											className="message-content"
-											sx={{
-												backgroundColor:
-													"rgba(0, 0, 0, 0.02)",
-												borderRadius: 2,
-												p: 2,
-												borderLeft: `4px solid ${theme.palette.primary.light}`,
-												position: "relative", // Added to ensure proper containment
-											}}>
-											<Typography
-												variant={
-													isMobile ? "body2" : "body1"
-												}
-												textAlign={"justify"}
-												sx={{
-													lineHeight: 1.7,
-													fontStyle: "italic",
-													color: theme.palette.text
-														.primary,
-												}}>
-												{item.description}
-											</Typography>
-										</Box>
-									</Stack>
-								</Fade>
 							</Box>
-						</Paper>
-					);
-				})}
-			</Carousel>
+						</Stack>
+					</motion.div>
+				</Grid>
 
-			{isMobile && (
-				<Box
-					sx={{
-						width: "100%",
-						textAlign: "center",
-						mt: 1,
-						color: "text.secondary",
-						fontSize: "0.75rem",
-					}}>
-					<Typography variant="caption">
-						Tap the navigation arrows to change slides
-					</Typography>
+				{/* Right Side: The Message */}
+				<Grid item xs={12} md={8}>
+					<motion.div variants={itemVariants} style={{ position: "relative" }}>
+						<FormatQuoteIcon
+							sx={{
+								fontSize: { xs: 90, md: 140 },
+								color: theme.palette.grey[100], // Lighter for a more subtle background effect
+								position: "absolute",
+								top: {xs: -40, md: -60},
+								left: {xs: -20, md: -40},
+								zIndex: 0,
+								transform: 'rotate(180deg)',
+							}}
+						/>
+						{/* --- KEY CHANGE: Improved typography for readability and elegance --- */}
+						<Typography
+							variant="body1" // Use body1 for better semantics
+							sx={{
+								position: "relative",
+								zIndex: 1,
+								textAlign: "justify",
+								lineHeight: 1.8,
+								color: "text.secondary", // Secondary color is good for contrast
+								fontWeight: 400, // Use a readable regular weight
+								fontSize: { xs: '1rem', md: '1.1rem' }, // Slightly larger on desktop
+								// No more italics for long text
+							}}
+						>
+							{item.description}
+						</Typography>
+					</motion.div>
+				</Grid>
+			</Grid>
+		</motion.div>
+	);
+};
+
+// --- Main Exported Component ---
+export default function CarouselResponsive() {
+	const theme = useTheme();
+	const [autoPlay, setAutoPlay] = useState(true);
+
+	return (
+		<Box sx={{
+			// Add a soft background to the whole section
+			bgcolor: alpha(theme.palette.primary.main, 0.03),
+			py: { xs: 4, sm: 6, md: 10 }
+		}}>
+			<Stack spacing={{ xs: 1.5, md: 2 }} alignItems="center" textAlign="center" sx={{ mb: { xs: 4, md: 6 }, px: 2 }}>
+				<Typography component="h2" sx={{ fontWeight: 'bold', color: 'text.primary', fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' } }}>
+					Words of Wisdom
+				</Typography>
+				<Typography component="p" sx={{ color: 'text.secondary', maxWidth: '600px', fontWeight: 300, fontSize: { xs: '0.95rem', sm: '1rem', md: '1.1rem' } }}>
+					Inspiring messages from the leaders who have shaped our journey.
+				</Typography>
+			</Stack>
+
+			<Card
+				elevation={0} // Remove card shadow, use section shadow instead
+				sx={{
+					p: { xs: 2, sm: 4, md: 5 },
+					mx: "auto",
+					width: { xs: "95%", sm: "90%", lg: "80%" },
+					maxWidth: '1200px',
+					borderRadius: 4,
+					// Use a subtle gradient for a premium feel
+					background: `linear-gradient(145deg, ${theme.palette.background.paper}, ${alpha(theme.palette.grey[100], 0.5)})`,
+					overflow: "hidden",
+					position: "relative",
+					boxShadow: "0 20px 50px -10px rgba(0, 0, 0, 0.1)",
+					border: `1px solid ${theme.palette.grey[200]}`,
+				}}
+			>
+				<Box sx={{ position: 'absolute', top: 16, right: 16, zIndex: 10 }}>
+					<Tooltip title={autoPlay ? "Pause Autoplay" : "Resume Autoplay"}>
+						<IconButton onClick={() => setAutoPlay(!autoPlay)} color="primary">
+							{autoPlay ? <PauseIcon /> : <PlayArrowIcon />}
+						</IconButton>
+					</Tooltip>
 				</Box>
-			)}
-		</Card>
+
+				<Carousel
+					autoPlay={autoPlay}
+					animation="slide"
+					duration={700}
+					interval={8000}
+					navButtonsAlwaysVisible
+					cycleNavigation
+					indicatorContainerProps={{ style: { marginTop: "32px" } }}
+					indicatorIconButtonProps={{ style: { padding: "4px", color: theme.palette.grey[300] } }}
+					activeIndicatorIconButtonProps={{ style: { color: theme.palette.primary.main } }}
+					navButtonsProps={{
+						style: {
+							backgroundColor: alpha(theme.palette.primary.main, 0.6),
+							color: "white",
+							boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
+						},
+					}}
+				>
+					{items.map((item, index) => (
+						<CarouselItem key={index} item={item} />
+					))}
+				</Carousel>
+			</Card>
+		</Box>
 	);
 }

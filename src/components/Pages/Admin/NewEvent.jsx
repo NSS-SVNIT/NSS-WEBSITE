@@ -10,15 +10,14 @@ import {
 	useMediaQuery,
 	useTheme,
 } from "@mui/material";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+// import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+// import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+// import { CustomDateFnsAdapter } from "../../../utils/dateFnsAdapter";
 import Compressor from "compressorjs";
 import { doc, setDoc } from "firebase/firestore";
-import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { useEffect, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { firestore, storage } from "../../../firebase";
-import { CustomDateFnsAdapter } from "../../../utils/dateFnsAdapter";
+import { firestore } from "../../../firebase";
 import BlogPost from "../Post/BlogPost";
 
 export default function NewEvent() {
@@ -336,7 +335,7 @@ export default function NewEvent() {
 			// Do not set postData.image yet - wait for upload button
 		}
 	};
-	// Upload image to Firebase Storage with compression
+	// Upload image to Cloudinary with compression
 	const handleImageUpload = async () => {
 		if (!imageFile) {
 			setSnackbarMessage("Please select an image file first");
@@ -359,57 +358,50 @@ export default function NewEvent() {
 					const uniqueId = uuidv4();
 					const fileName = imageFile.name.replace(/\.[^/.]+$/, ""); // Remove file extension
 					const fileExtension = imageFile.name.split(".").pop();
-					const storageRef = ref(
-						storage,
-						`eventImages/${uniqueId}_${fileName}.${fileExtension}`
-					);
+					
+					// Create FormData for Cloudinary upload
+					const formData = new FormData();
+					formData.append('file', compressedFile);
+					formData.append('upload_preset', 'nss-upload-preset');
+					formData.append('folder', 'events_images');
+					formData.append('public_id', `${uniqueId}_${fileName}`);
 
-					// Start upload process with compressed file
-					const uploadTask = uploadBytesResumable(
-						storageRef,
-						compressedFile
-					);
+					// Upload to Cloudinary
+					try {
+						const response = await fetch(
+							`https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUDINARY_CLOUD_NAME}/image/upload`,
+							{
+								method: 'POST',
+								body: formData
+							}
+						);
 
-					// Monitor upload progress
-					uploadTask.on(
-						"state_changed",
-						(snapshot) => {
-							// Update progress
-							const progress = Math.round(
-								(snapshot.bytesTransferred /
-									snapshot.totalBytes) *
-									100
-							);
-							setUploadProgress(progress);
-						},
-						(error) => {
-							// Handle error
-							setUploading(false);
-							setSnackbarMessage(
-								"Error uploading image: " + error.message
-							);
-							setSnackbarSeverity("error");
-							setSnackbarOpen(true);
-						},
-						() => {
-							// Upload completed successfully
-							getDownloadURL(uploadTask.snapshot.ref).then(
-								(downloadURL) => {
-									// Update the form with the image URL
-									setPostData((prev) => ({
-										...prev,
-										image: downloadURL,
-									}));
-									setUploading(false);
-									setSnackbarMessage(
-										"Image uploaded successfully!"
-									);
-									setSnackbarSeverity("success");
-									setSnackbarOpen(true);
-								}
-							);
+						if (!response.ok) {
+							throw new Error('Upload failed');
 						}
-					);
+
+						const result = await response.json();
+						
+						// Update the form with the Cloudinary URL
+						setPostData((prev) => ({
+							...prev,
+							image: result.secure_url,
+						}));
+						setUploading(false);
+						setSnackbarMessage(
+							"Image uploaded successfully to Cloudinary!"
+						);
+						setSnackbarSeverity("success");
+						setSnackbarOpen(true);
+
+					} catch (uploadError) {
+						setUploading(false);
+						setSnackbarMessage(
+							"Error uploading to Cloudinary: " + uploadError.message
+						);
+						setSnackbarSeverity("error");
+						setSnackbarOpen(true);
+					}
 				},
 				error: (err) => {
 					setUploading(false);
@@ -491,23 +483,17 @@ export default function NewEvent() {
 					/>{" "}
 					<Stack direction={isMobile ? "column" : "row"} spacing={2}>
 						{" "}
-						<LocalizationProvider
-							dateAdapter={CustomDateFnsAdapter}
-							sx={{ flex: 1 }}>
-							<DatePicker
-								label="Event Date *"
-								value={selectedDate}
-								onChange={handleDateChange}
-								format="dd/MM/yyyy"
-								slotProps={{
-									textField: {
-										variant: "outlined",
-										fullWidth: true,
-										size: "small",
-									},
-								}}
-							/>
-						</LocalizationProvider>{" "}
+						<TextField
+							label="Event Date *"
+							type="date"
+							value={selectedDate.toISOString().split('T')[0]}
+							onChange={(e) => handleDateChange(new Date(e.target.value))}
+							variant="outlined"
+							fullWidth
+							size="small"
+							sx={{ flex: 1 }}
+							InputLabelProps={{ shrink: true }}
+						/>
 					</Stack>{" "}
 					<TextField
 						variant="outlined"

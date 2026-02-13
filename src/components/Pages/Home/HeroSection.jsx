@@ -1,38 +1,40 @@
+import { Box, Grid } from "@mui/material";
 import React from "react";
-import { Grid } from "@mui/material";
 import HeroText from "../../HeroText";
-import UpdateCard from "../../UpdateCard";
-import Background from "./backgroundHeroSection.jpg";
+import Background from "../../../assets/33.jpg";
 
 const HeroSection = React.memo(() => {
-	const isPhone = false;
 	return (
-		<div
-			style={{
-				marginTop: "-64px",
+		<Box
+			sx={{
+				height: { xs: "100vh", md: "100vh" },
+				minHeight: { xs: "600px", md: "700px" },
+				width: "100%",
+				display: "flex",
 				backgroundImage: `url(${Background})`,
-				height: "100vh",
-				backgroundSize: "cover", // Adjust the background size property
-				backgroundPosition: "center", // Center the background image
-			}}>
+				backgroundSize: "cover",
+				backgroundPosition: "center",
+				backgroundAttachment: { xs: "scroll", md: "fixed" },
+			}}
+		>
 			<Grid
 				container
-				lg={12}
 				height="100%"
-				direction={{ sm: "row"}}
-				justifyContent="space-between"
-				sx={{ px: {xs:3,sm:10}}}
-				gap={6}
-				alignItems={"center"}
-				>
-				<Grid item lg={7} xs={12}>
+				alignItems="flex-end"
+				justifyContent="center"
+				sx={{
+					px: { xs: 2, sm: 4, md: 10 },
+					// --- CHANGE IS HERE ---
+					// Increased the padding-bottom to move the text further up.
+					// Old values were { xs: 4, md: 8 }.
+					pb: { xs: 6, sm: 8, md: 12 }, // <-- Increased values
+				}}
+			>
+				<Grid item lg={12} xs={12}>
 					<HeroText />
 				</Grid>
-				<Grid item lg={4} xs={12}>
-					<UpdateCard />
-				</Grid>
 			</Grid>
-		</div>
+		</Box>
 	);
 });
 

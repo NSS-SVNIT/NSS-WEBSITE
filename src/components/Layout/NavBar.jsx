@@ -1,12 +1,10 @@
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 import MenuIcon from "@mui/icons-material/Menu";
 import {
-	Avatar,
-	Button,
-	Menu,
-	MenuItem,
-	Stack,
-	useMediaQuery,
+  Avatar,
+  Stack,
+  Typography,
+  useMediaQuery,
 } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -14,234 +12,146 @@ import IconButton from "@mui/material/IconButton";
 import { useTheme } from "@mui/material/styles";
 import Toolbar from "@mui/material/Toolbar";
 import * as React from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import nsslogo from "../../assets/nss_logo.jpg";
-import svnitlogo from "../../assets/svnit_logo.png";
 import NavButton from "../UI/NavButton";
 import NavDialog from "./NavDialog";
 
+// --- Colors for easy management ---
+const lightTheme = {
+  background: "rgba(255, 255, 255, 0.0)",
+  textColor: "#0d47a1",
+};
+
+const darkTheme = {
+  background: "rgba(26, 32, 44, 0.85)",
+  textColor: "#ffffff",
+};
+
 export default function NavBar() {
-	const theme = useTheme();
-	const isPhone = useMediaQuery(theme.breakpoints.down("md"));
-	const location = useLocation();
+  const theme = useTheme();
+  const isPhone = useMediaQuery(theme.breakpoints.down("lg"));
+  const [scrolling, setScrolling] = React.useState(false);
+  const [openDialog, setOpenDialog] = React.useState(false);
 
-	const [openDialog, setOpenDialog] = React.useState(false);
-	const [scrolling, setScrolling] = React.useState(false);
-	const [teamMenuAnchor, setTeamMenuAnchor] = React.useState(null);
+  const handleMenuClick = () => setOpenDialog(true);
+  const handleCloseDialog = () => setOpenDialog(false);
 
-	const handleMenuClick = () => {
-		setOpenDialog(true);
-	};
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setScrolling(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
-	const handleCloseDialog = () => {
-		setOpenDialog(false);
-	};
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
 
-	const handleTeamMenuOpen = (event) => {
-		setTeamMenuAnchor(event.currentTarget);
-	};
+  const currentTheme = scrolling ? darkTheme : lightTheme;
 
-	const handleTeamMenuClose = () => {
-		setTeamMenuAnchor(null);
-	};
+  // Desktop nav links
+  const DesktopNavLinks = (
+    <Stack direction="row" spacing={scrolling ? 2.5 : 1.5}>
+      <NavButton to="/" scrolling={scrolling}>Home</NavButton>
+      <NavButton to="/about" scrolling={scrolling}>About</NavButton>
+      <NavButton to="/events" scrolling={scrolling}>Events</NavButton>
+      <NavButton to="/team" scrolling={scrolling}>Team</NavButton>
+      <NavButton to="/gallery" scrolling={scrolling}>Gallery</NavButton>
+      <NavButton to="/articles" scrolling={scrolling}>Articles</NavButton>
+      <NavButton to="/contact" scrolling={scrolling}>Contact</NavButton>
+    </Stack>
+  );
 
-	React.useEffect(() => {
-		const handleScroll = () => {
-			const scrollThreshold = getScrollThreshold(location.pathname);
-			setScrolling(window.scrollY > scrollThreshold);
-		};
+  return (
+    <>
+      <AppBar
+        position="sticky"
+        sx={{
+          background: currentTheme.background,
+          backdropFilter: scrolling ? "blur(10px)" : "none",
+          py: scrolling ? 0.25 : 0.5,         // 🔽 reduced height
+          px: { xs: 1.5, md: 3, lg: 6 },
+          transition: "all 0.3s ease-in-out",
+        }}
+        elevation={scrolling ? 8 : 0}
+      >
+        <Toolbar
+          disableGutters
+          sx={{
+            minHeight: { xs: 56, md: 64 },     // 🔽 tighter toolbar
+            px: { xs: 1.5, md: 2 },
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          {/* LEFT GROUP */}
+          <Stack direction="row" alignItems="center" spacing={3}>
+            <NavLink to="/" onClick={scrollToTop}>
+              <Avatar
+                alt="NSS Logo"
+                src={nsslogo}
+                sx={{ width: { xs: 36, md: 48 }, height: { xs: 36, md: 48 } }} // 🔽 smaller logo
+              />
+            </NavLink>
 
-		const getScrollThreshold = (pathname) => {
-			switch (pathname) {
-				case "/":
-					return 900; // Adjust the threshold for the Home page
-				case "/about":
-					return 1980; // Adjust the threshold for the About page
-				case "/gallery":
-					return 300; // Adjust the threshold for the About page
-				case "/contact":
-					return 700; // Adjust the threshold for the About page
-				case "/team":
-					return 100; // Adjust the threshold for the About page
-				case "/events":
-					return 100; // Adjust the threshold for the About page
-				case "/Articles":
-					return 200; // Adjust the threshold for the About page
-				default:
-					return 50000; // Default threshold for other pages
-			}
-		};
+            <NavLink
+              to="/"
+              style={{ textDecoration: "none", color: currentTheme.textColor }}
+              onClick={scrollToTop}
+            >
+              <Typography
+                sx={{
+                  fontFamily: "DM Sans",
+                  fontSize: { xs: "1rem", md: "1.3rem" }, // 🔽 slightly smaller
+                  fontWeight: "bold",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {isPhone || scrolling ? "NSS SVNIT" : "National Service Scheme, SVNIT"}
+              </Typography>
+            </NavLink>
 
-		// Attach the scroll event listener
-		window.addEventListener("scroll", handleScroll);
+            {!isPhone && !scrolling && DesktopNavLinks}
+          </Stack>
 
-		// Detach the event listener when the component unmounts
-		return () => {
-			window.removeEventListener("scroll", handleScroll);
-		};
-	}, [location.pathname]); // Re-run the effect when the pathname changes
+          {/* RIGHT GROUP */}
+          {isPhone ? (
+            <IconButton
+              size="large"
+              edge="end"
+              aria-label="menu"
+              onClick={handleMenuClick}
+              sx={{ color: currentTheme.textColor }}
+            >
+              <MenuIcon />
+            </IconButton>
+          ) : (
+            <>
+              {!scrolling && (
+                <Stack direction="row" alignItems="center" sx={{ color: currentTheme.textColor }}>
+                  <Box sx={{ textAlign: "right" }}>
+                    <Typography variant="body2" sx={{ fontWeight: "bold" }}>
+                      Sardar Vallabhbhai National Institute of Technology
+                    </Typography>
+                    <Typography variant="caption">
+                      Ichchhanath, Surat, Gujarat - 395007
+                    </Typography>
+                  </Box>
+                  <LocationOnIcon sx={{ ml: 1, fontSize: "2.2rem" }} /> {/* 🔽 slightly smaller */}
+                </Stack>
+              )}
 
-	const navButtonStyle = {
-		textDecoration: "none",
-		color: scrolling ? "white" : "black",
-	};
+              {scrolling && DesktopNavLinks}
+            </>
+          )}
+        </Toolbar>
+      </AppBar>
 
-	const isDevelopersPage = location.pathname === "/developers";
-
-	const scrollToTop = () => {
-		window.scrollTo({
-			top: 0,
-			left: 0,
-			behavior: "smooth",
-		});
-	};
-	return (
-		<>
-			<AppBar
-				position="sticky"
-				sx={{
-					backdropFilter: "blur(10px)",
-					px: 8,
-					py: 1,
-					backgroundColor: scrolling ? "black" : "transparent",
-					transition: "background-color 0.5s",
-				}}
-				elevation={5}>
-				<Toolbar>
-					<Stack
-						component="div"
-						direction="row"
-						alignItems="center"
-						sx={{ flexGrow: 1 }}>
-						<NavLink to="/" onClick={scrollToTop}>
-							<Avatar
-								alt="Logo"
-								src={nsslogo}
-								sx={{
-									width: isPhone ? 40 : 75,
-									height: isPhone ? 40 : 75,
-									marginRight: isPhone ? 1 : 3,
-									marginLeft: isPhone ? -7 : 3,
-								}}
-							/>
-						</NavLink>
-						<NavLink to="/" onClick={scrollToTop}>
-							<Avatar
-								alt="Logo"
-								src={svnitlogo}
-								sx={{
-									width: isPhone ? 40 : 75,
-									height: isPhone ? 40 : 75,
-									marginRight: isPhone ? 1 : 3,
-									ml: isPhone ? -1 : 0,
-								}}
-							/>
-						</NavLink>
-						<NavLink
-							to="/"
-							style={{
-								textDecoration: "none",
-								color: scrolling ? "white" : "black",
-							}}
-							onClick={scrollToTop}>
-							<div
-								style={{
-									fontFamily: "DM Sans",
-									fontSize: isPhone ? "1.1rem" : "2rem",
-									fontWeight: "100",
-								}}>
-								NSS SVNIT
-							</div>
-							<div
-								style={{
-									fontFamily: "DM Sans",
-									fontSize: isPhone ? "0.7rem" : "1rem",
-									fontWeight: "400",
-								}}>
-								National Service Scheme
-							</div>
-						</NavLink>
-					</Stack>
-					{isPhone ? (
-						<IconButton
-							onClick={handleMenuClick}
-							size="large"
-							edge="end"
-							color={scrolling ? "inherit" : "default"}
-							aria-label="menu">
-							<MenuIcon />
-						</IconButton>
-					) : (
-						<Box>
-							<NavButton to="/" scrolling={scrolling}>
-								Home
-							</NavButton>
-							<NavButton to="/about" scrolling={scrolling}>
-								About
-							</NavButton>{" "}
-							<NavButton to="/events" scrolling={scrolling}>
-								Events
-							</NavButton>
-							<NavButton to="/gallery" scrolling={scrolling}>
-								Gallery
-							</NavButton>
-							<NavButton to="/Articles" scrolling={scrolling}>
-								Articles
-							</NavButton>
-							{/* Team dropdown */}
-							<Box sx={{ display: "inline-block" }}>
-								<Button
-									sx={{
-										color: scrolling ? "white" : "black",
-										textTransform: "none",
-										fontSize: "1rem",
-										mx: 1,
-										"&:hover": {
-											backgroundColor: "transparent",
-										},
-									}}
-									endIcon={<ExpandMoreIcon />}
-									onClick={handleTeamMenuOpen}>
-									Team
-								</Button>
-								<Menu
-									anchorEl={teamMenuAnchor}
-									open={Boolean(teamMenuAnchor)}
-									onClose={handleTeamMenuClose}
-									MenuListProps={{
-										"aria-labelledby": "team-button",
-									}}>
-									<MenuItem
-										component={Link}
-										to="/team"
-										onClick={handleTeamMenuClose}>
-										View Team
-									</MenuItem>
-									<MenuItem
-										component={Link}
-										to="/team/volunteer"
-										onClick={handleTeamMenuClose}>
-										Join Team
-									</MenuItem>{" "}
-									{/* <MenuItem
-										component={Link}
-										to="/admin-login"
-										onClick={handleTeamMenuClose}>
-										Admin Panel
-									</MenuItem> */}
-								</Menu>
-							</Box>
-							<NavButton to="/contact" scrolling={scrolling}>
-								Contact
-							</NavButton>
-						</Box>
-					)}
-				</Toolbar>
-			</AppBar>
-			<NavDialog
-				openDialog={openDialog}
-				handleCloseDialog={handleCloseDialog}
-			/>
-		</>
-	);
+      <NavDialog openDialog={openDialog} handleCloseDialog={handleCloseDialog} />
+    </>
+  );
 }

@@ -19,7 +19,6 @@ const navItems = [
 	{ route: "Gallery", link: "/gallery" },
 	{ route: "Articles", link: "/articles" },
 	{ route: "Team", link: "/team" },
-	{ route: "Join Team", link: "/team/volunteer" },
 	{ route: "Contact", link: "/contact" },
 ];
 const scrollToTop = () => {
@@ -40,7 +39,7 @@ export default function NavDialog({ openDialog, handleCloseDialog }) {
 				<NavLink to="/" onClick={scrollToTop}>
 					<Avatar
 						alt="Logo"
-						src="https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/aboutImages%2Fnss_logo.jpg?alt=media&token=860074c2-3cf7-4e5d-86b4-f4bc61a37626"
+						src="https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454732/developers/nss_logo.jpg"
 						sx={{
 							width: 30,
 							height: 30,
