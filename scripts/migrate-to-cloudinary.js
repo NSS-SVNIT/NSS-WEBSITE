@@ -7,7 +7,7 @@ import { writeFileSync } from 'fs';
 
 // Firebase configuration (same as your firebase.js)
 const firebaseConfig = {
-  apiKey: "AIzaSyATpTxtw0O4jySPEt03iUrFdIYKwzOtZlM",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: "nss-svnit.firebaseapp.com",
   projectId: "nss-svnit",
   storageBucket: "nss-svnit.appspot.com",
