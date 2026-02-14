@@ -14,7 +14,7 @@ import {
 	useTheme, // Added
 } from "@mui/material";
 import Compressor from "compressorjs";
-import { collection, doc, getDoc, getDocs, setDoc } from "firebase/firestore";
+import { collection, doc, getDoc, getDocs, serverTimestamp, setDoc } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
@@ -68,7 +68,7 @@ export default function ImageUpload() {
 					...prev,
 					{ id: uuid, name: newFolder },
 				]);
-				const newFolderDict = { name: newFolder, image_links: [] };
+				const newFolderDict = { name: newFolder, image_links: [], event_timestamp: serverTimestamp() };
 				// setSelectedFolder(newFolderDict);
 				await setDoc(doc(firestore, "images", uuid), newFolderDict);
 			}
@@ -136,11 +136,16 @@ export default function ImageUpload() {
 
 				await Promise.all(uploadPromises);
 
-				// Update the document with the updated imageLinks array
-				await setDoc(doc(firestore, "images", selectedFolder.id), {
-					image_links: imageLinks,
-					name: selectedFolder.name,
-				});
+				// Update the document with the updated imageLinks array (preserve existing metadata)
+				await setDoc(
+					doc(firestore, "images", selectedFolder.id),
+					{
+						image_links: imageLinks,
+						name: selectedFolder.name,
+						event_timestamp: data.event_timestamp ?? serverTimestamp(),
+					},
+					{ merge: true }
+				);
 
 				// logEvent(analytics, "image_upload_success"); // Removed logEvent
 			}

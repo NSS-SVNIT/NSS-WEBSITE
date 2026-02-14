@@ -94,6 +94,7 @@ const HeadingSection = React.memo(() => (
 // --- Component: LeadershipSection ---
 const LeadershipSection = React.memo(({ title, members = [] }) => {
 	if (!members.length) return null;
+	const isScrollableSection = title === "Founding Team" || title === "Program Coordinators";
 	const FacultyAdvisorLayout = ({ member }) => (
 		<Box sx={{ position: 'relative', py: { xs: 6, md: 10 }, overflow: 'hidden' }}>
 			<Box sx={{ position: 'absolute', top: '50%', left: '10%', width: 500, height: 500, background: 'radial-gradient(circle, rgba(0, 180, 216, 0.08) 0%, rgba(0, 180, 216, 0) 70%)', transform: 'translate(-50%, -50%)', zIndex: -1, filter: 'blur(80px)' }} />
@@ -115,7 +116,34 @@ const LeadershipSection = React.memo(({ title, members = [] }) => {
 			<Grid container spacing={4} justifyContent="center">{members.map((member, index) => (<Fade in key={member.id || member.name} timeout={500 + index * 150}><Grid item xs={12} sm={6} md={4} lg={3} display="flex" justifyContent="center"><TeamCard {...member} /></Grid></Fade>))}</Grid>
 		</Container>
 	);
+	const ScrollableLayout = ({ title, members }) => (
+		<Container maxWidth="lg" sx={{ py: { xs: 5, md: 8 } }}>
+			<Box sx={{ textAlign: 'center', mb: 3 }}><Typography variant="h3" sx={{ fontWeight: 600 }}>{title}</Typography><Divider sx={{ width: '80px', mx: 'auto', mt: 2, height: '2px' }} /></Box>
+			<Box sx={{
+				display: 'flex',
+				justifyContent: members.length <= 4 ? 'center' : 'flex-start',
+				overflowX: 'auto',
+				scrollSnapType: 'x mandatory',
+				gap: { xs: 2, sm: 3 },
+				py: 2,
+				px: 1,
+				'&::-webkit-scrollbar': { height: '8px' },
+				'&::-webkit-scrollbar-track': { backgroundColor: 'transparent' },
+				'&::-webkit-scrollbar-thumb': { backgroundColor: 'rgba(0, 0, 0, 0.2)', borderRadius: '4px' },
+				'&::-webkit-scrollbar-thumb:hover': { backgroundColor: 'rgba(0, 0, 0, 0.4)' },
+			}}>
+				{members.map((member, index) => (
+					<Fade in key={member.id || member.name} timeout={500 + index * 150}>
+						<Box sx={{ scrollSnapAlign: 'start', flex: '0 0 auto', width: { xs: '240px', sm: '220px' } }}>
+							<TeamCard {...member} />
+						</Box>
+					</Fade>
+				))}
+			</Box>
+		</Container>
+	);
 	if (title === "Faculty Advisor") return <FacultyAdvisorLayout member={members[0]} />;
+	if (isScrollableSection) return <ScrollableLayout title={title} members={members} />;
 	return <DefaultLayout title={title} members={members} />;
 });
 

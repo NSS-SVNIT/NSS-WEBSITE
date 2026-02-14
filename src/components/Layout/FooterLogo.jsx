@@ -1,6 +1,7 @@
 import React from "react";
 import { Stack, Divider, Typography } from "@mui/material";
 import { useMediaQuery } from "@mui/material";
+import nsslogo from "../../assets/nss_logo.jpg";
 
 export default function FooterLogo() {
   const isMobile = useMediaQuery("(max-width:900px)");
@@ -18,7 +19,7 @@ export default function FooterLogo() {
             marginLeft: `${isMobile ? "-40px" : "0px"}`,
             borderRadius: 50,
           }}
-          src="https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454732/developers/nss_logo.jpg"
+          src={nsslogo}
         ></img>
         {!isMobile && <Divider orientation="vertical" flexItem />}
         <img

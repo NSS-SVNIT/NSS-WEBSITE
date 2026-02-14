@@ -85,13 +85,13 @@ const GalleryView = React.memo(() => {
 				viewport={{ once: true, amount: 0.1 }}
 				sx={{ 
 					width: "100%", 
-					maxWidth: { xs: '100%', sm: 600, md: 700 }, 
+					maxWidth: { xs: '100%', sm: 800, md: 1100 },
 					overflow: "hidden" // Changed to hidden to prevent layout issues
 				}}
 				variant="quilted"
 				cols={isMobile ? 2 : 4}
-				rowHeight={isMobile ? 100 : 140}
-				gap={isMobile ? 8 : 12} // Responsive gap
+				rowHeight={isMobile ? 120 : 200}
+				gap={isMobile ? 10 : 16} // Responsive gap
 			>
 				{itemData.map((item, index) => (
 					<ImageListItem
