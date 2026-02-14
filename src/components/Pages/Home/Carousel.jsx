@@ -11,8 +11,7 @@ import {
 	Stack,
 	Tooltip,
 	Typography,
-	alpha, // Import alpha for transparent colors
-	useMediaQuery,
+	alpha,
 	useTheme,
 } from "@mui/material";
 import React, { useState } from "react";
@@ -27,7 +26,7 @@ import photo2021 from "./2021.jpg";
 import photo2022 from "./2022.jpg";
 import founder from "./founder.jpg";
 
-// --- Testimonial Data Array (No Changes) ---
+// --- Testimonial Data Array ---
 const items = [
 	{
 		title: "Message From Our Founder",
@@ -84,7 +83,6 @@ const items = [
 	},
 ];
 
-
 // --- Internal Component for a Single Carousel Slide ---
 const containerVariants = {
 	hidden: { opacity: 0 },
@@ -108,33 +106,32 @@ const CarouselItem = ({ item }) => {
 
 	return (
 		<motion.div variants={containerVariants} initial="hidden" animate="visible" exit="hidden">
-				<Grid container spacing={{ xs: 3, sm: 4, md: 6 }} alignItems="center">
-					{/* Left Side: Photo and Name */}
-					<Grid item xs={12} md={4}>
-						<motion.div variants={itemVariants}>
-							<Stack alignItems="center" spacing={{ xs: 1.5, md: 2.5 }}>
-								<Avatar
-									src={item.imageUrl}
-									alt={`Photo of ${item.name}`}
+			<Grid container spacing={{ xs: 3, sm: 4, md: 6 }} alignItems="center">
+				{/* Left Side: Photo and Name */}
+				<Grid item xs={12} md={4}>
+					<motion.div variants={itemVariants}>
+						<Stack alignItems="center" spacing={{ xs: 1.5, md: 2.5 }}>
+							<Avatar
+								src={item.imageUrl}
+								alt={`Photo of ${item.name}`}
+								sx={{
+									width: { xs: 120, sm: 160, md: 220 },
+									height: { xs: 120, sm: 160, md: 220 },
+									border: { xs: `2px solid ${theme.palette.primary.light}`, md: `3px solid ${theme.palette.primary.light}` },
+									boxShadow: `0 10px 30px ${alpha(theme.palette.primary.main, 0.2)}`,
+								}}
+							/>
+							<Box textAlign="center">
+								<Typography sx={{ fontWeight: 700, color: 'text.primary', fontSize: { xs: '1.1rem', sm: '1.3rem', md: '1.5rem' } }}>
+									{item.name}
+								</Typography>
+								<Chip
+									label={`${item.role} | ${item.year}`}
+									size="medium"
 									sx={{
-										width: { xs: 120, sm: 160, md: 220 },
-										height: { xs: 120, sm: 160, md: 220 },
-										// A more elegant border and shadow
-										border: { xs: `2px solid ${theme.palette.primary.light}`, md: `3px solid ${theme.palette.primary.light}` },
-										boxShadow: `0 10px 30px ${alpha(theme.palette.primary.main, 0.2)}`,
-									}}
-								/>
-								<Box textAlign="center">
-									<Typography sx={{ fontWeight: 700, color: 'text.primary', fontSize: { xs: '1.1rem', sm: '1.3rem', md: '1.5rem' } }}>
-										{item.name}
-									</Typography>
-									<Chip
-										label={`${item.role} | ${item.year}`}
-										size="medium"
-										sx={{ 
-											mt: 1, 
-											fontWeight: 500,
-											fontSize: { xs: '0.75rem', sm: '0.85rem' },
+										mt: 1,
+										fontWeight: 500,
+										fontSize: { xs: '0.75rem', sm: '0.85rem' },
 										color: 'primary.dark',
 									}}
 								/>
@@ -149,30 +146,61 @@ const CarouselItem = ({ item }) => {
 						<FormatQuoteIcon
 							sx={{
 								fontSize: { xs: 90, md: 140 },
-								color: theme.palette.grey[100], // Lighter for a more subtle background effect
+								color: theme.palette.grey[100],
 								position: "absolute",
-								top: {xs: -40, md: -60},
-								left: {xs: -20, md: -40},
+								top: { xs: -40, md: -60 },
+								left: { xs: -20, md: -40 },
 								zIndex: 0,
 								transform: 'rotate(180deg)',
 							}}
 						/>
-						{/* --- KEY CHANGE: Improved typography for readability and elegance --- */}
-						<Typography
-							variant="body1" // Use body1 for better semantics
+						
+						{/* --- UPDATE: Fixed Height Box with Scrolling --- */}
+						<Box
 							sx={{
+								// 1. Fix the height so the carousel doesn't jump
+								height: { xs: '250px', sm: '220px', md: '280px' }, 
+								
+								// 2. Enable scrolling for overflow content
+								overflowY: 'auto', 
+								
+								// 3. Add padding right to prevent text from touching scrollbar
+								pr: 2, 
+								
 								position: "relative",
 								zIndex: 1,
-								textAlign: "justify",
-								lineHeight: 1.8,
-								color: "text.secondary", // Secondary color is good for contrast
-								fontWeight: 400, // Use a readable regular weight
-								fontSize: { xs: '1rem', md: '1.1rem' }, // Slightly larger on desktop
-								// No more italics for long text
+
+								// 4. Custom Scrollbar Styling (optional but recommended)
+								'&::-webkit-scrollbar': {
+									width: '6px',
+								},
+								'&::-webkit-scrollbar-track': {
+									background: 'transparent',
+								},
+								'&::-webkit-scrollbar-thumb': {
+									backgroundColor: theme.palette.grey[300],
+									borderRadius: '10px',
+								},
+								'&::-webkit-scrollbar-thumb:hover': {
+									backgroundColor: theme.palette.grey[400],
+								},
 							}}
 						>
-							{item.description}
-						</Typography>
+							<Typography
+								variant="body1"
+								sx={{
+									textAlign: "justify",
+									lineHeight: 1.8,
+									color: "text.secondary",
+									fontWeight: 400,
+									fontSize: { xs: '1rem', md: '1.1rem' },
+								}}
+							>
+								{item.description}
+							</Typography>
+						</Box>
+						{/* --- End of Update --- */}
+						
 					</motion.div>
 				</Grid>
 			</Grid>
@@ -187,7 +215,6 @@ export default function CarouselResponsive() {
 
 	return (
 		<Box sx={{
-			// Add a soft background to the whole section
 			bgcolor: alpha(theme.palette.primary.main, 0.03),
 			py: { xs: 4, sm: 6, md: 10 }
 		}}>
@@ -201,14 +228,13 @@ export default function CarouselResponsive() {
 			</Stack>
 
 			<Card
-				elevation={0} // Remove card shadow, use section shadow instead
+				elevation={0}
 				sx={{
 					p: { xs: 2, sm: 4, md: 5 },
 					mx: "auto",
 					width: { xs: "95%", sm: "90%", lg: "80%" },
 					maxWidth: '1200px',
 					borderRadius: 4,
-					// Use a subtle gradient for a premium feel
 					background: `linear-gradient(145deg, ${theme.palette.background.paper}, ${alpha(theme.palette.grey[100], 0.5)})`,
 					overflow: "hidden",
 					position: "relative",
@@ -231,6 +257,8 @@ export default function CarouselResponsive() {
 					interval={8000}
 					navButtonsAlwaysVisible
 					cycleNavigation
+					// Added height prop to the Carousel itself for extra stability
+					height={{xs: 500, sm: 400, md: 350}} 
 					indicatorContainerProps={{ style: { marginTop: "32px" } }}
 					indicatorIconButtonProps={{ style: { padding: "4px", color: theme.palette.grey[300] } }}
 					activeIndicatorIconButtonProps={{ style: { color: theme.palette.primary.main } }}
