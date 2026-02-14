@@ -2117,14 +2117,7 @@ const Team2023 = [
     gmail: "mbala0709@gmail.com",
     firebase: "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770451879/team/Team2023/Sudipta_Bala.jpg",
   },
-  {
-    image: "https://drive.google.com/uc?id=1C0KQ1RCJs2YJ3mErNXVZHl82DllnDNwI&export=download",
-    name: "Abhishek saini",
-    position: "Volunteer",
-    linkedin: "https://www.linkedin.com/in/abhishek-saini-b89033395?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    gmail: "abhisheksaini08620@gmail.com",
-    firebase: "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770451881/team/Team2023/Abhishek_saini.jpg",
-  },
+ 
   {
     image: "https://drive.google.com/uc?id=1W5yU_Y-D-sQemFLpWIpXb-vBs7bBGBR7&export=download",
     name: "Bolla Bhuvana",
@@ -2437,14 +2430,7 @@ const Team2023 = [
     gmail: "astha28february@gmail.com",
     firebase: "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770451994/team/Team2023/Astha_Mishra.jpg",
   },
-  {
-    image: "https://drive.google.com/uc?id=1x1idIpwLX5ewHAMRmIbchftYgZgY1ytJ&export=download",
-    name: "Palak yadav",
-    position: "Volunteer",
-    linkedin: "https://www.linkedin.com/in/palak-yadav-810919303?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    gmail: "palakyadavv5264@gmail.com",
-    firebase: "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770451997/team/Team2023/Palak_yadav.jpg",
-  },
+ 
   {
     image: "https://drive.google.com/uc?id=1C5uXArLylYE9_fpT-BzFKx2BmrjQPf8i&export=download",
     name: "Abhishek Kumar",
@@ -2509,14 +2495,7 @@ const Team2023 = [
     gmail: "buddapallavi057@gmail.com",
     firebase: "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770452021/team/Team2023/Budda_Pallavi.jpg",
   },
-  {
-    image: "https://drive.google.com/uc?id=1PDMxDD8mzeI2nLXvU7xjp206u9aqzCLf&export=download",
-    name: "Priti Sand",
-    position: "Volunteer",
-    linkedin: "https://www.linkedin.com/in/priti-sand?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    gmail: "pritisand31@gmail.com",
-    firebase: "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770452024/team/Team2023/Priti_Sand.jpg",
-  },
+  
   {
     image: "https://drive.google.com/uc?id=1KoK860-y71v_zd5ofaLFOVtBrcntegXC&export=download",
     name: "Harsh Sarwate",
