@@ -25,7 +25,7 @@ const BackgroundBlob = () => (
 const HeroImage = () => (
 	<Box
 		component="img"
-		src="https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454758/developers/team.jpg"
+		src="https://res.cloudinary.com/dh0zqs0nw/image/upload/v1771061624/team_gokc1o.jpg"
 		alt="NSS Team"
 		sx={{
 			width: '100%',
