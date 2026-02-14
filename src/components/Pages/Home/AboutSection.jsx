@@ -8,6 +8,8 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward'; // Icon for the
 
 import imageUrl from "../../../assets/55.jpg"; // Import the background image
 
+const SECTION_BG = 'linear-gradient(180deg, #fdeeff 0%, #fff9ff 100%)';
+
 // The internal parallax component remains unchanged.
 const AboutParallaxContent = () => (
 	<Stack
@@ -55,7 +57,7 @@ const AboutSection = React.memo(() => {
 				alignItems="center" 
 				spacing={{ xs: 3, md: 4 }} // Responsive spacing
 				sx={{ 
-					bgcolor: 'background.default', 
+					background: SECTION_BG,
 					pt: { xs: 4, sm: 6, md: 10 },
 					pb: { xs: 4, sm: 6, md: 8 },
 					px: { xs: 2, sm: 3 }, // Add horizontal padding
@@ -69,7 +71,6 @@ const AboutSection = React.memo(() => {
 						Not Me, But You!
 					</Typography>
 				</Box>
-
 				{/* --- NEW BUTTON ADDED HERE --- */}
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
@@ -94,6 +95,18 @@ const AboutSection = React.memo(() => {
 						Know More About Us
 					</Button>
 				</motion.div>
+			<Stack 
+				alignItems="center" 
+				spacing={{ xs: 3, md: 4 }} // Responsive spacing
+				sx={{ 
+					background: SECTION_BG,
+					pt: { xs: 4, sm: 6, md: 10 },
+					pb: { xs: 4, sm: 6, md: 8 },
+					px: { xs: 2, sm: 3 }, // Add horizontal padding
+				}} 
+			></Stack>
+
+				
 			</Stack>
 
 			{/* THE MIDDLE PARALLAX SECTION */}
@@ -102,7 +115,7 @@ const AboutSection = React.memo(() => {
 			{/* BOTTOM BLANK WHITE SECTION */}
 			<Box 
 				sx={{ 
-					bgcolor: 'background.default', 
+					background: SECTION_BG,
 					py: { xs: 6, md: 10 } 
 				}} 
 			/>

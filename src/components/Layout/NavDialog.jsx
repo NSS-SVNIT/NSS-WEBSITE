@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import NavButton from "../UI/NavButton";
+import nsslogo from "../../assets/nss_logo.jpg";
 const drawerWidth = 240;
 const navItems = [
 	{ route: "About", link: "/about" },
@@ -39,7 +40,7 @@ export default function NavDialog({ openDialog, handleCloseDialog }) {
 				<NavLink to="/" onClick={scrollToTop}>
 					<Avatar
 						alt="Logo"
-						src="https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454732/developers/nss_logo.jpg"
+						src={nsslogo}
 						sx={{
 							width: 30,
 							height: 30,
