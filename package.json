@@ -77,5 +77,6 @@
   "bugs": {
     "url": "https://github.com/NSS-SVNIT/NSS-WEBSITE/issues"
   },
-  "homepage": "https://github.com/NSS-SVNIT/NSS-WEBSITE#readme"
+  "homepage": "https://github.com/NSS-SVNIT/NSS-WEBSITE#readme",
+  "packageManager": "npm@11.0.0"
 }
