@@ -26,12 +26,9 @@ export default defineConfig({
 		commonjsOptions: {
 			transformMixedEsModules: true,
 		},
-		minify: "terser",
-		terserOptions: {
-			compress: {
-				drop_console: true,
-				drop_debugger: true,
-			},
+		minify: "esbuild",
+		esbuild: {
+			drop: ["console", "debugger"],
 		},
 		sourcemap: false,
 		rollupOptions: {
@@ -43,7 +40,6 @@ export default defineConfig({
 						'@mui/system',
 						'@mui/x-date-pickers',
 					],
-					'vendor-firebase': ['firebase', 'react-firebase-hooks'],
 					'vendor-utils': [
 						'react-router-dom',
 						'framer-motion',
