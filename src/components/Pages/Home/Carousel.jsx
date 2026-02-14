@@ -2,23 +2,23 @@ import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 import PauseIcon from "@mui/icons-material/Pause";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import {
-	Avatar,
-	Box,
-	Card,
-	Chip,
-	Grid,
-	IconButton,
-	Stack,
-	Tooltip,
-	Typography,
-	alpha,
-	useTheme,
+  Avatar,
+  Box,
+  Card,
+  Chip,
+  Grid,
+  IconButton,
+  Stack,
+  Tooltip,
+  Typography,
+  alpha,
+  useTheme,
 } from "@mui/material";
 import React, { useState } from "react";
 import Carousel from "react-material-ui-carousel";
 import { motion } from "framer-motion";
 
-// --- All Image Imports ---
+// --- Images ---
 import photo2018 from "./2018.jpg";
 import photo2019 from "./2019.jpg";
 import photo2020 from "./2020.jpg";
@@ -26,7 +26,7 @@ import photo2021 from "./2021.jpg";
 import photo2022 from "./2022.jpg";
 import founder from "./founder.jpg";
 
-// --- Testimonial Data Array ---
+// --- Data ---
 const items = [
 	{
 		title: "Message From Our Founder",
@@ -82,199 +82,140 @@ const items = [
 		year: "Batch 2022",
 	},
 ];
-
-// --- Internal Component for a Single Carousel Slide ---
+// --- Animations ---
 const containerVariants = {
-	hidden: { opacity: 0 },
-	visible: {
-		opacity: 1,
-		transition: { staggerChildren: 0.15, delayChildren: 0.1 },
-	},
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
 };
 
 const itemVariants = {
-	hidden: { opacity: 0, y: 20 },
-	visible: {
-		opacity: 1,
-		y: 0,
-		transition: { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] },
-	},
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
+// --- Slide ---
 const CarouselItem = ({ item }) => {
-	const theme = useTheme();
+  const theme = useTheme();
 
-	return (
-		<motion.div variants={containerVariants} initial="hidden" animate="visible" exit="hidden">
-			<Grid container spacing={{ xs: 3, sm: 4, md: 6 }} alignItems="center">
-				{/* Left Side: Photo and Name */}
-				<Grid item xs={12} md={4}>
-					<motion.div variants={itemVariants}>
-						<Stack alignItems="center" spacing={{ xs: 1.5, md: 2.5 }}>
-							<Avatar
-								src={item.imageUrl}
-								alt={`Photo of ${item.name}`}
-								sx={{
-									width: { xs: 120, sm: 160, md: 220 },
-									height: { xs: 120, sm: 160, md: 220 },
-									border: { xs: `2px solid ${theme.palette.primary.light}`, md: `3px solid ${theme.palette.primary.light}` },
-									boxShadow: `0 10px 30px ${alpha(theme.palette.primary.main, 0.2)}`,
-								}}
-							/>
-							<Box textAlign="center">
-								<Typography sx={{ fontWeight: 700, color: 'text.primary', fontSize: { xs: '1.1rem', sm: '1.3rem', md: '1.5rem' } }}>
-									{item.name}
-								</Typography>
-								<Chip
-									label={`${item.role} | ${item.year}`}
-									size="medium"
-									sx={{
-										mt: 1,
-										fontWeight: 500,
-										fontSize: { xs: '0.75rem', sm: '0.85rem' },
-										color: 'primary.dark',
-									}}
-								/>
-							</Box>
-						</Stack>
-					</motion.div>
-				</Grid>
+  return (
+    <motion.div variants={containerVariants} initial="hidden" animate="visible">
+      <Grid container spacing={3} alignItems="center">
+        {/* Left */}
+        <Grid item xs={12} md={4}>
+          <motion.div variants={itemVariants}>
+            <Stack alignItems="center" spacing={2}>
+              <Avatar
+                src={item.imageUrl}
+                alt={item.name}
+                sx={{
+                  width: { xs: 120, md: 180 },
+                  height: { xs: 120, md: 180 },
+                  border: `3px solid ${theme.palette.primary.main}`,
+                  boxShadow: `0 10px 30px ${alpha(theme.palette.primary.main, 0.3)}`,
+                }}
+              />
+              <Typography fontWeight={700}>{item.name}</Typography>
+              <Chip label={`${item.role} | ${item.year}`} />
+            </Stack>
+          </motion.div>
+        </Grid>
 
-				{/* Right Side: The Message */}
-				<Grid item xs={12} md={8}>
-					<motion.div variants={itemVariants} style={{ position: "relative" }}>
-						<FormatQuoteIcon
-							sx={{
-								fontSize: { xs: 90, md: 140 },
-								color: theme.palette.grey[100],
-								position: "absolute",
-								top: { xs: -40, md: -60 },
-								left: { xs: -20, md: -40 },
-								zIndex: 0,
-								transform: 'rotate(180deg)',
-							}}
-						/>
-						
-						{/* --- UPDATE: Fixed Height Box with Scrolling --- */}
-						<Box
-							sx={{
-								// 1. Fix the height so the carousel doesn't jump
-								height: { xs: '250px', sm: '220px', md: '280px' }, 
-								
-								// 2. Enable scrolling for overflow content
-								overflowY: 'auto', 
-								
-								// 3. Add padding right to prevent text from touching scrollbar
-								pr: 2, 
-								
-								position: "relative",
-								zIndex: 1,
+        {/* Right */}
+        <Grid item xs={12} md={8}>
+          <motion.div variants={itemVariants} style={{ position: "relative" }}>
+            <FormatQuoteIcon
+              sx={{
+                fontSize: 100,
+                color: theme.palette.grey[200],
+                position: "absolute",
+                top: -40,
+                left: -20,
+                transform: "rotate(180deg)",
+              }}
+            />
 
-								// 4. Custom Scrollbar Styling (optional but recommended)
-								'&::-webkit-scrollbar': {
-									width: '6px',
-								},
-								'&::-webkit-scrollbar-track': {
-									background: 'transparent',
-								},
-								'&::-webkit-scrollbar-thumb': {
-									backgroundColor: theme.palette.grey[300],
-									borderRadius: '10px',
-								},
-								'&::-webkit-scrollbar-thumb:hover': {
-									backgroundColor: theme.palette.grey[400],
-								},
-							}}
-						>
-							<Typography
-								variant="body1"
-								sx={{
-									textAlign: "justify",
-									lineHeight: 1.8,
-									color: "text.secondary",
-									fontWeight: 400,
-									fontSize: { xs: '1rem', md: '1.1rem' },
-								}}
-							>
-								{item.description}
-							</Typography>
-						</Box>
-						{/* --- End of Update --- */}
-						
-					</motion.div>
-				</Grid>
-			</Grid>
-		</motion.div>
-	);
+            {/* ✅ FIXED HEIGHT + SCROLL */}
+            <Box
+              sx={{
+                position: "relative",
+                zIndex: 1,
+                maxHeight: { xs: 260, sm: 280, md: 300 },
+                minHeight: { xs: 220, md: 260 },
+                overflowY: "auto",
+                pr: 1,
+
+                scrollbarWidth: "thin",
+                "&::-webkit-scrollbar": { width: "6px" },
+                "&::-webkit-scrollbar-thumb": {
+                  backgroundColor: "rgba(0,0,0,0.3)",
+                  borderRadius: "8px",
+                },
+              }}
+            >
+              <Typography
+                sx={{
+                  textAlign: "justify",
+                  lineHeight: 1.7,
+                  color: "text.secondary",
+                  fontSize: { xs: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                {item.description}
+              </Typography>
+            </Box>
+          </motion.div>
+        </Grid>
+      </Grid>
+    </motion.div>
+  );
 };
 
-// --- Main Exported Component ---
+// --- Main ---
 export default function CarouselResponsive() {
-	const theme = useTheme();
-	const [autoPlay, setAutoPlay] = useState(true);
+  const theme = useTheme();
+  const [autoPlay, setAutoPlay] = useState(true);
 
-	return (
-		<Box sx={{
-			bgcolor: alpha(theme.palette.primary.main, 0.03),
-			py: { xs: 4, sm: 6, md: 10 }
-		}}>
-			<Stack spacing={{ xs: 1.5, md: 2 }} alignItems="center" textAlign="center" sx={{ mb: { xs: 4, md: 6 }, px: 2 }}>
-				<Typography component="h2" sx={{ fontWeight: 'bold', color: 'text.primary', fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' } }}>
-					Words of Wisdom
-				</Typography>
-				<Typography component="p" sx={{ color: 'text.secondary', maxWidth: '600px', fontWeight: 300, fontSize: { xs: '0.95rem', sm: '1rem', md: '1.1rem' } }}>
-					Inspiring messages from the leaders who have shaped our journey.
-				</Typography>
-			</Stack>
+  return (
+    <Box sx={{ py: { xs: 4, md: 8 }, bgcolor: alpha(theme.palette.primary.main, 0.03) }}>
+      <Stack alignItems="center" spacing={1.5} mb={4}>
+        <Typography variant="h4" fontWeight="bold">
+          Words of Wisdom
+        </Typography>
+        <Typography color="text.secondary" textAlign="center">
+          Inspiring messages from the leaders who shaped our journey.
+        </Typography>
+      </Stack>
 
-			<Card
-				elevation={0}
-				sx={{
-					p: { xs: 2, sm: 4, md: 5 },
-					mx: "auto",
-					width: { xs: "95%", sm: "90%", lg: "80%" },
-					maxWidth: '1200px',
-					borderRadius: 4,
-					background: `linear-gradient(145deg, ${theme.palette.background.paper}, ${alpha(theme.palette.grey[100], 0.5)})`,
-					overflow: "hidden",
-					position: "relative",
-					boxShadow: "0 20px 50px -10px rgba(0, 0, 0, 0.1)",
-					border: `1px solid ${theme.palette.grey[200]}`,
-				}}
-			>
-				<Box sx={{ position: 'absolute', top: 16, right: 16, zIndex: 10 }}>
-					<Tooltip title={autoPlay ? "Pause Autoplay" : "Resume Autoplay"}>
-						<IconButton onClick={() => setAutoPlay(!autoPlay)} color="primary">
-							{autoPlay ? <PauseIcon /> : <PlayArrowIcon />}
-						</IconButton>
-					</Tooltip>
-				</Box>
+      <Card
+        sx={{
+          mx: "auto",
+          p: { xs: 2, md: 4 },
+          width: { xs: "95%", md: "80%" },
+          maxWidth: 1100,
+          borderRadius: 4,
+        }}
+      >
+        <Box sx={{ position: "absolute", top: 16, right: 16, zIndex: 10 }}>
+          <Tooltip title={autoPlay ? "Pause" : "Play"}>
+            <IconButton onClick={() => setAutoPlay(!autoPlay)}>
+              {autoPlay ? <PauseIcon /> : <PlayArrowIcon />}
+            </IconButton>
+          </Tooltip>
+        </Box>
 
-				<Carousel
-					autoPlay={autoPlay}
-					animation="slide"
-					duration={700}
-					interval={8000}
-					navButtonsAlwaysVisible
-					cycleNavigation
-					// Added height prop to the Carousel itself for extra stability
-					height={{xs: 500, sm: 400, md: 350}} 
-					indicatorContainerProps={{ style: { marginTop: "32px" } }}
-					indicatorIconButtonProps={{ style: { padding: "4px", color: theme.palette.grey[300] } }}
-					activeIndicatorIconButtonProps={{ style: { color: theme.palette.primary.main } }}
-					navButtonsProps={{
-						style: {
-							backgroundColor: alpha(theme.palette.primary.main, 0.6),
-							color: "white",
-							boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
-						},
-					}}
-				>
-					{items.map((item, index) => (
-						<CarouselItem key={index} item={item} />
-					))}
-				</Carousel>
-			</Card>
-		</Box>
-	);
+        <Carousel
+          autoPlay={autoPlay}
+          animation="slide"
+          duration={600}
+          interval={8000}
+          navButtonsAlwaysVisible
+          cycleNavigation
+        >
+          {items.map((item, i) => (
+            <CarouselItem key={i} item={item} />
+          ))}
+        </Carousel>
+      </Card>
+    </Box>
+  );
 }
