@@ -1,31 +1,15 @@
-import React, { useEffect, useState, useMemo } from "react";
-import { Box, Typography, Grid, Fade, Skeleton, Button, Container, Card, CardMedia, CardContent, Link, Slide, IconButton, Tooltip, Divider } from "@mui/material";
-import { collection, getDocs, query, where } from "firebase/firestore";
-import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
+import React, { useState, useMemo } from "react";
+import { Box, Typography, Grid, Button, Container, Card, CardMedia, CardContent, Link, Slide, Divider, Fade } from "@mui/material";
 import { LinkedIn, GitHub, Email } from '@mui/icons-material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Link as RouterLink } from 'react-router-dom';
 
-import { firestore as db } from "../../../firebase";
 import * as TeamData from "./TeamData";
 
 // --- FIX: The placeholder Layout has been removed. ---
 // --- We now import your actual Layout component. ---
 // --- IMPORTANT: Make sure this path is correct for your project structure ---
-import Layout from "../../Layout/Layout"; 
-
-// A placeholder for your static data file if needed for fallback
-const StaticData = {
-  Sir: TeamData.Sir || [],
-  Founder: TeamData.Founder || [],
-  CoFounder: TeamData.CoFounder || [],
-  ProgramCoordinators: TeamData.ProgramCoordinators || [],
-  Team2019: TeamData.Team2019 || [],
-  Team2020: TeamData.Team2020 || [],
-  Team2021: TeamData.Team2021 || [],
-  Team2022: TeamData.Team2022 || [],
-  Team2023: TeamData.Team2023 || [],  // 👈 THIS makes Batch 2023 appear
-};
+import Layout from "../../Layout/Layout";
 
 
 // =====================================================================================
@@ -185,72 +169,23 @@ const TeamBatch = React.memo(({ year, TeamList = [] }) => {
 // =====================================================================================
 
 const Team = React.memo(() => {
-	const [advisor, setAdvisor] = useState(null);
-	const [foundingTeam, setFoundingTeam] = useState([]);
-	const [coordinators, setCoordinators] = useState([]);
-	const [batchData, setBatchData] = useState({});
-	const [loading, setLoading] = useState(true);
-	const [error, setError] = useState(null);
+	const [advisor] = useState(TeamData.Sir || []);
+	const [foundingTeam] = useState([...(TeamData.Founder || []), ...(TeamData.CoFounder || [])]);
+	const [coordinators] = useState(TeamData.ProgramCoordinators || []);
+	const [batchData] = useState({
+		2019: TeamData.Team2019 || [],
+		2020: TeamData.Team2020 || [],
+		2021: TeamData.Team2021 || [],
+		2022: TeamData.Team2022 || [],
+		2023: TeamData.Team2023 || [],
+	});
 
-	const fetchAndProcessData = async () => {
-		try {
-			setLoading(true); setError(null);
-			const volunteersQuery = query(collection(db, "volunteers"), where("approved", "==", true));
-			const querySnapshot = await getDocs(volunteersQuery);
-			const firestoreData = {};
-			querySnapshot.forEach((doc) => {
-				const volunteer = { ...doc.data(), id: doc.id };
-				const key = volunteer.category || `Team${volunteer.batch}`;
-				if (!firestoreData[key]) firestoreData[key] = [];
-				firestoreData[key].push(volunteer);
-			});
-			const finalData = { ...StaticData, ...firestoreData };
-			const combinedFounders = [...(finalData.Founder || []), ...(finalData.CoFounder || [])];
-			setAdvisor(finalData.Sir || []);
-			setFoundingTeam(combinedFounders);
-			setCoordinators(finalData.ProgramCoordinators || []);
-			const finalBatchData = Object.keys(finalData).filter(key => key.startsWith("Team")).reduce((acc, key) => {
-				const year = key.replace("Team", "");
-				acc[year] = finalData[key];
-				return acc;
-			}, {});
-			setBatchData(finalBatchData);
-			console.log(finalBatchData);
-
-		} catch (err) {
-			console.error("Error fetching team data:", err);
-			setError("Failed to load team data. Please check your connection and try again.");
-		} finally {
-			setLoading(false);
-		}
-	};
-	useEffect(() => { fetchAndProcessData() }, []);
 	const sortedYears = useMemo(() => Object.keys(batchData).sort((a, b) => b - a), [batchData]);
-
-	if (loading) return (
-		<Layout>
-			<HeadingSection />
-			<Container maxWidth="lg" sx={{ py: 6 }}>
-				<Grid container spacing={4} alignItems="center" sx={{ mb: 6 }}><Grid item xs={12} md={6}><Skeleton variant="text" width="40%" height={40} /><Skeleton variant="text" width="80%" height={80} /><Skeleton variant="text" /><Skeleton variant="text" /></Grid><Grid item xs={12} md={6}><Skeleton variant="rectangular" sx={{ width: '100%', height: 500, borderRadius: '24px' }} /></Grid></Grid>
-				<Grid container spacing={4} justifyContent="center">{[...Array(4)].map((_, i) => (<Grid item key={i} xs={12} sm={6} md={3}><Skeleton variant="rectangular" sx={{ width: '100%', aspectRatio: '4 / 5', borderRadius: '20px' }} /></Grid>))}</Grid>
-			</Container>
-		</Layout>
-	);
-	if (error) return (
-		<Layout>
-			<HeadingSection />
-			<Container maxWidth="sm" sx={{ textAlign: "center", py: 8 }}>
-				<ErrorOutlineIcon color="error" sx={{ fontSize: '4rem', mb: 2 }} /><Typography variant="h5" gutterBottom>Something went wrong</Typography>
-				<Typography color="text.secondary" sx={{ mb: 3 }}>{error}</Typography><Button variant="contained" onClick={fetchAndProcessData}>Retry</Button>
-			</Container>
-		</Layout>
-	);
 
 	return (
 		<Layout>
 			<HeadingSection />
-			<Fade in={!loading} timeout={800}>
-				<Box>
+			<Box>
 					<LeadershipSection title="Faculty Advisor" members={advisor} />
 					<LeadershipSection title="Founding Team" members={foundingTeam} />
 					<LeadershipSection title="Program Coordinators" members={coordinators} />
@@ -271,7 +206,6 @@ const Team = React.memo(() => {
 						</Box>
 					)}
 				</Box>
-			</Fade>
 		</Layout>
 	);
 });
