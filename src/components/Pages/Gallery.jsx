@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, useCallback } from "react";
 import { Box, Typography, Grid, Container, Skeleton, Alert, Fade, Dialog, AppBar, Toolbar, IconButton, Slide, Button } from "@mui/material";
-import { getDocs, collection, limit, query, orderBy } from "firebase/firestore";
+import { getDocs, collection } from "firebase/firestore";
 import { firestore } from "../../firebase";
 import Layout from "../Layout/Layout";
 import PageHeader from "../UI/PageHeader";
@@ -20,12 +20,24 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 // Skeleton loader for a polished loading state
 const AlbumCardSkeleton = () => (
-	<Grid item xs={12} sm={6} md={4}>
+	<Grid item xs={6} sm={4} md={3}>
 		<Skeleton variant="rectangular" sx={{ borderRadius: 4, width: '100%', aspectRatio: '3 / 4' }} />
 	</Grid>
 );
 
 const ITEMS_PER_PAGE = 12; // Load 12 albums at a time
+
+const getTimestampMs = (value) => {
+	if (!value) return 0;
+	if (typeof value?.toMillis === "function") return value.toMillis();
+	if (value instanceof Date) return value.getTime();
+	if (typeof value === "number") return value;
+	if (typeof value === "string") {
+		const parsed = Date.parse(value);
+		return Number.isNaN(parsed) ? 0 : parsed;
+	}
+	return 0;
+};
 
 const Gallery = () => {
 	const [albums, setAlbums] = useState([]);
@@ -77,7 +89,12 @@ const Gallery = () => {
 				setLoading(true);
 				const querySnapshot = await getDocs(collection(firestore, "images"));
 				const newData = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-				newData.sort((a, b) => a.name.localeCompare(b.name));
+				newData.sort((a, b) => {
+					const tsB = getTimestampMs(b.event_timestamp);
+					const tsA = getTimestampMs(a.event_timestamp);
+					if (tsB !== tsA) return tsB - tsA; // latest first
+					return (a.name || "").localeCompare(b.name || "");
+				});
 				setAlbums(newData);
 				// Display first batch
 				setDisplayedAlbums(newData.slice(0, ITEMS_PER_PAGE));
@@ -116,10 +133,10 @@ const Gallery = () => {
 
 				{!loading && !error && (
 					<>
-						<Grid container spacing={1} alignItems="stretch">
+						<Grid container spacing={{ xs: 1.5, sm: 2 }} alignItems="stretch">
 							{displayedAlbums.map((album, index) => (
 								<Fade in key={album.id} timeout={500} style={{ transitionDelay: `${index * 100}ms` }}>
-									<Grid item xs={4} sm={3} md={2.4} lg={2}>
+									<Grid item xs={6} sm={4} md={3}>
 										<AlbumCard
 											albumName={album.name}
 											images={album.image_links}

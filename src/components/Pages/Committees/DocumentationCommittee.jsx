@@ -7,6 +7,8 @@ import {
   Grid,
   Container,
   Button,
+  useTheme,
+  useMediaQuery,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { useNavigate } from "react-router-dom";
@@ -16,7 +18,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import DescriptionIcon from "@mui/icons-material/Description";
 import AssignmentIcon from "@mui/icons-material/Assignment";
 import ArticleIcon from "@mui/icons-material/Article";
-import ChecklistIcon from "@mui/icons-material/Checklist";
+import ChecklistIcon from "@mui/icons-material/Checklist"; // Kept import if needed later
 import ArchiveIcon from "@mui/icons-material/Archive";
 import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
 
@@ -26,65 +28,69 @@ const useStyles = makeStyles({
     minHeight: "100vh",
     position: "relative",
     overflow: "hidden",
+    paddingBottom: "2rem",
   },
 
-  /* Background animated icons */
+  /* Background animated icons - Hidden on mobile */
   iconBg: {
     position: "absolute",
-    opacity: 0.22,
+    opacity: 0.15,
     pointerEvents: "none",
     color: "#8B7355",
+    zIndex: 0,
+    "@media (max-width: 900px)": {
+        opacity: 0.08,
+        transform: "scale(0.6)",
+    },
+    "@media (max-width: 600px)": {
+        display: "none", // Hide entirely on mobile to prevent clutter
+    },
   },
 
   heroSection: {
     position: "relative",
     textAlign: "center",
     paddingTop: "2rem",
-    paddingBottom: "4rem",
-    marginBottom: "2rem",
+    paddingBottom: "2rem",
+    marginBottom: "1rem",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
+    zIndex: 1,
   },
 
   centeredTitle: {
     fontFamily: "'Poppins', 'Inria Sans', sans-serif",
     fontWeight: 500,
-    fontSize: "100px !important",
+    // FLUID TYPOGRAPHY: Scales between 2.5rem and 6rem
+    fontSize: "clamp(2.5rem, 8vw, 6rem) !important",
     background: "linear-gradient(135deg, #8B7355 0%, #D4A574 30%, #8B7355 60%, #8B7355 100%)",
     backgroundSize: "250% 250%",
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
     backgroundClip: "text",
     animation: "$gradientShift 5s ease infinite",
-    letterSpacing: "-3px",
+    letterSpacing: "-1px",
     marginBottom: "1rem",
     textShadow: "0 2px 10px rgba(139, 115, 85, 0.1)",
     lineHeight: 1.1,
-    "@media (max-width:900px)": {
-      fontSize: "56px !important",
-      letterSpacing: "-2px",
-    },
+    width: "100%",
+    padding: "0 10px",
   },
 
   "@keyframes gradientShift": {
-    "0%": {
-      backgroundPosition: "0% 50%",
-    },
-    "50%": {
-      backgroundPosition: "100% 50%",
-    },
-    "100%": {
-      backgroundPosition: "0% 50%",
-    },
+    "0%": { backgroundPosition: "0% 50%" },
+    "50%": { backgroundPosition: "100% 50%" },
+    "100%": { backgroundPosition: "0% 50%" },
   },
 
   subtitleText: {
-    fontSize: "1.3rem",
+    fontSize: "clamp(1rem, 2vw, 1.3rem)",
     color: "#555",
     fontWeight: 500,
     maxWidth: "600px",
+    width: "90%",
     margin: "0 auto",
     letterSpacing: "0.5px",
   },
@@ -92,10 +98,12 @@ const useStyles = makeStyles({
   committeeInfoSection: {
     background: "linear-gradient(135deg, rgba(139, 115, 85, 0.05), rgba(212, 165, 116, 0.05))",
     borderRadius: "24px",
-    padding: "3rem",
+    padding: "clamp(1.5rem, 4vw, 3rem)",
     marginBottom: "4rem",
     border: "2px solid rgba(139, 115, 85, 0.15)",
     backdropFilter: "blur(10px)",
+    position: "relative",
+    zIndex: 1,
   },
 
   infoGrid: {
@@ -103,9 +111,8 @@ const useStyles = makeStyles({
     gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
     gap: "1.5rem",
     marginTop: "2rem",
-    "@media (max-width:600px)": {
-      gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
-      gap: "1rem",
+    "@media (max-width: 600px)": {
+      gridTemplateColumns: "1fr",
     },
   },
 
@@ -114,10 +121,12 @@ const useStyles = makeStyles({
     padding: "1.8rem",
     borderRadius: "16px",
     textAlign: "center",
-    minHeight: "280px",
+    height: "100%",
+    minHeight: "220px",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
+    alignItems: "center",
     boxShadow: "0 8px 24px rgba(0, 0, 0, 0.08)",
     border: "1px solid rgba(139, 115, 85, 0.1)",
     transition: "all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)",
@@ -154,63 +163,65 @@ const useStyles = makeStyles({
     boxShadow: "0 18px 50px rgba(139, 115, 85, 0.18)",
     marginBottom: "4rem",
     background: "#fff",
+    height: "auto",
+    aspectRatio: "16/9",
+    zIndex: 1,
+    "@media (max-width: 600px)": {
+        aspectRatio: "1/1",
+        borderRadius: "16px",
+    }
   },
 
   slideImage: {
     width: "100%",
-    height: "400px",
+    height: "100%",
     objectFit: "cover",
-    "@media (max-width:900px)": {
-      height: "260px",
-    },
   },
 
   slideOverlay: {
     position: "absolute",
     inset: 0,
-    background:
-      "linear-gradient(to right, rgba(0,0,0,0.55), rgba(0,0,0,0.15))",
+    background: "linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%, transparent 100%)",
     display: "flex",
     alignItems: "flex-end",
     justifyContent: "flex-start",
-    paddingLeft: "3rem",
-    paddingBottom: "3rem",
+    padding: "clamp(1.5rem, 5vw, 3rem)",
   },
 
   mainTitle: {
     fontFamily: "'Poppins', 'Inria Sans', sans-serif",
     fontWeight: 800,
-    fontSize: "60px !important", 
+    fontSize: "clamp(1.8rem, 5vw, 5rem) !important",
     color: "#fff",
     letterSpacing: "-1px",
     lineHeight: 1.1,
-    "@media (max-width:900px)": {
-      fontSize: "45px",
-    },
+    textShadow: "0 2px 10px rgba(0,0,0,0.5)",
   },
 
   slideButton: {
     position: "absolute",
     top: "50%",
     transform: "translateY(-50%)",
-    background: "rgba(255,255,255,0.95)",
+    background: "rgba(255,255,255,0.7)",
     border: "none",
     borderRadius: "50%",
-    padding: "12px",
+    padding: "10px",
     cursor: "pointer",
-    transition: "all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)",
+    transition: "all 0.3s ease",
     zIndex: 5,
     color: "#8B7355",
-    fontSize: "1.4rem",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     "&:hover": {
       background: "#8B7355",
       color: "#fff",
-      transform: "translateY(-50%) scale(1.15)",
       boxShadow: "0 8px 24px rgba(139, 115, 85, 0.4)",
     },
+    "@media (max-width: 600px)": {
+        padding: "8px",
+        "& svg": { fontSize: "1rem" }
+    }
   },
 
   slideIndicator: {
@@ -224,24 +235,18 @@ const useStyles = makeStyles({
   },
 
   indicatorDot: {
-    width: "12px",
-    height: "12px",
+    width: "10px",
+    height: "10px",
     borderRadius: "50%",
     cursor: "pointer",
-    background: "rgba(255, 255, 255, 0.6)",
     transition: "all 0.4s ease",
-    "&:hover": {
-      background: "#8B7355",
-      transform: "scale(1.2)",
-    },
   },
 
   roleCard: {
     background: "#ffffff",
     borderRadius: "26px",
-    padding: "2.4rem",
+    padding: "clamp(1.5rem, 3vw, 2.4rem)",
     height: "100%",
-    minHeight: "560px",
     display: "flex",
     flexDirection: "column",
     boxShadow: "0 10px 28px rgba(0,0,0,0.08)",
@@ -249,6 +254,7 @@ const useStyles = makeStyles({
     borderLeft: "6px solid",
     position: "relative",
     overflow: "hidden",
+    zIndex: 1,
     "&::before": {
       content: '""',
       position: "absolute",
@@ -273,19 +279,25 @@ const useStyles = makeStyles({
   roleHeader: {
     display: "flex",
     alignItems: "center",
-    gap: "1.3rem",
-    marginBottom: "1.6rem",
+    gap: "1rem",
+    marginBottom: "1.5rem",
+    "@media (max-width: 400px)": {
+        flexDirection: "column",
+        alignItems: "flex-start",
+        gap: "0.5rem"
+    }
   },
 
   roleNumber: {
-    width: "60px",
-    height: "60px",
+    minWidth: "50px",
+    width: "50px",
+    height: "50px",
     borderRadius: "50%",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     fontWeight: 700,
-    fontSize: "1.6rem",
+    fontSize: "1.4rem",
     color: "#fff",
     boxShadow: "0 8px 20px rgba(0, 0, 0, 0.15)",
     transition: "all 0.4s ease",
@@ -304,21 +316,21 @@ const useStyles = makeStyles({
   },
 
   roleTitle: {
-    fontSize: "2.1rem !important",
+    fontSize: "clamp(1.2rem, 2.5vw, 2.1rem) !important",
     fontWeight: 700,
     color: "#222",
+    lineHeight: 1.2,
     transition: "color 0.4s ease",
   },
 
   roleDescription: {
-    fontSize: "1.05rem",
-    lineHeight: 2,
+    fontSize: "1rem",
+    lineHeight: 1.8,
     color: "#555",
     textAlign: "justify",
-    padding: "0.3rem 0.4rem",
+    padding: "0.3rem 0",
     flexGrow: 1,
-    maxHeight: "180px",
-    overflowY: "auto",
+    marginBottom: "1rem",
     transition: "all 0.4s ease",
     "&:hover": {
       background: "rgba(139, 115, 85, 0.15)",
@@ -328,11 +340,13 @@ const useStyles = makeStyles({
 
   imageWrapper: {
     position: "relative",
-    height: "260px",
+    height: "240px",
+    width: "100%",
     borderRadius: "18px",
     overflow: "hidden",
     marginBottom: "1.4rem",
     boxShadow: "0 8px 24px rgba(0, 0, 0, 0.12)",
+    flexShrink: 0,
   },
 
   imageBase: {
@@ -346,24 +360,33 @@ const useStyles = makeStyles({
   },
 
   imageHover: {
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    position: "absolute",
+    top: 0,
+    left: 0,
     opacity: 0,
     transform: "scale(1.08)",
   },
 
-  // imageWrapperHover: {
-  //   "&:hover $imageBase": {
-  //     opacity: 0,
-  //   },
-  //   "&:hover $imageHover": {
-  //     opacity: 1,
-  //     transform: "scale(1)",
-  //   },
-  // },
+  imageWrapperHover: {
+    "&:hover $imageBase": {
+      opacity: 0,
+    },
+    "&:hover $imageHover": {
+      opacity: 1,
+      transform: "scale(1)",
+    },
+  },
 });
 
 const DocumentationCommittee = () => {
   const classes = useStyles();
   const navigate = useNavigate();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const handleBackToAbout = () => {
@@ -442,32 +465,25 @@ const DocumentationCommittee = () => {
   return (
     <Layout>
       <Box className={classes.gradientBackground}>
-        {/* Background static icons */}
-        <div
-          className={classes.iconBg}
-          style={{ top: "5%", left: "5%", fontSize: "240px" }}>
-          <DescriptionIcon sx={{ fontSize: "240px" }} />
-        </div>
+        {/* Background static icons - Hidden on mobile */}
+        {!isMobile && (
+            <>
+                <div className={classes.iconBg} style={{ top: "5%", left: "5%", fontSize: "240px" }}>
+                <DescriptionIcon sx={{ fontSize: "240px" }} />
+                </div>
+                <div className={classes.iconBg} style={{ top: "60%", right: "3%", fontSize: "200px" }}>
+                <AssignmentIcon sx={{ fontSize: "200px" }} />
+                </div>
+                <div className={classes.iconBg} style={{ bottom: "8%", left: "8%", fontSize: "180px" }}>
+                <ArticleIcon sx={{ fontSize: "180px" }} />
+                </div>
+                <div className={classes.iconBg} style={{ top: "15%", right: "10%", fontSize: "160px" }}>
+                <ArchiveIcon sx={{ fontSize: "160px" }} />
+                </div>
+            </>
+        )}
 
-        <div
-          className={classes.iconBg}
-          style={{ top: "60%", right: "3%", fontSize: "200px" }}>
-          <AssignmentIcon sx={{ fontSize: "200px" }} />
-        </div>
-
-        <div
-          className={classes.iconBg}
-          style={{ bottom: "8%", left: "8%", fontSize: "180px" }}>
-          <ArticleIcon sx={{ fontSize: "180px" }} />
-        </div>
-
-        <div
-          className={classes.iconBg}
-          style={{ top: "15%", right: "10%", fontSize: "160px" }}>
-          <ArchiveIcon sx={{ fontSize: "160px" }} />
-        </div>
-
-        <Container maxWidth="lg" sx={{ py: 6, position: "relative", zIndex: 2 }}>
+        <Container maxWidth="lg" sx={{ pt: 4, pb: 6, px: { xs: 2, md: 3 }, position: "relative", zIndex: 2 }}>
           <Box sx={{ display: "flex", justifyContent: "flex-start", mb: 2 }}>
             <Button variant="outlined" startIcon={<ArrowBackIcon />} onClick={handleBackToAbout}>
               Back to About
@@ -498,7 +514,14 @@ const DocumentationCommittee = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}>
             <Box className={classes.committeeInfoSection}>
-              <Typography sx={{ fontSize: "2rem", fontWeight: 700, color: "#222", textAlign: "center", marginBottom: "2rem", fontStyle: "italic" }}>
+              <Typography sx={{ 
+                  fontSize: { xs: "1.5rem", md: "2rem" }, 
+                  fontWeight: 700, 
+                  color: "#222", 
+                  textAlign: "center", 
+                  marginBottom: "2rem", 
+                  fontStyle: "italic" 
+              }}>
                 About the Documentation Committee
               </Typography>
               <Box className={classes.infoGrid}>
@@ -553,7 +576,6 @@ const DocumentationCommittee = () => {
                     Documentation Committee
                   </Typography>
                 </motion.div>
-
               </Box>
 
               {/* Slide indicator dots */}
@@ -612,7 +634,7 @@ const DocumentationCommittee = () => {
               },
             }}
             viewport={{ once: true }}>
-            <Grid container spacing={4}>
+            <Grid container spacing={4} sx={{ marginBottom: "4rem" }}>
               {roles.map((role, i) => (
                 <Grid item xs={12} md={6} key={i} sx={{ display: "flex" }}>
                   <motion.div
@@ -629,7 +651,7 @@ const DocumentationCommittee = () => {
                         },
                       },
                     }}
-                    style={{ height: "100%" }}>
+                    style={{ height: "100%", width: "100%" }}>
                     <Box
                       className={classes.roleCard}
                       style={{ borderLeftColor: roleColors[i] }}>
@@ -648,9 +670,10 @@ const DocumentationCommittee = () => {
 
                       <Box
                         className={`${classes.imageWrapper} ${classes.imageWrapperHover}`}>
-                        <img src={role.img1} className={classes.imageBase} />
+                        <img src={role.img1} alt="Role 1" className={classes.imageBase} />
                         <img
                           src={role.img2}
+                          alt="Role 2"
                           className={`${classes.imageBase} ${classes.imageHover}`}
                         />
                       </Box>

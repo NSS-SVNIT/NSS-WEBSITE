@@ -3,7 +3,7 @@
 import { Box, Divider, Stack, Typography } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import Counter from "../../UI/Counter";
+import Counter from "../../UI/counter"
 
 // Import icons and background image...
 import PeopleIcon from '@mui/icons-material/People';

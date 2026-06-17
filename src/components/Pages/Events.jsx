@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Layout from "../Layout/Layout";
 import BlogCard from "../UI/BlogCard";
 import PageHeader from "../UI/PageHeader";
-import { getDocs, collection } from "firebase/firestore";
+import { getDocs, collection, orderBy, query } from "firebase/firestore";
 import { firestore } from "../../firebase";
 import { Grid, Button, useMediaQuery } from "@mui/material";
 
@@ -14,13 +14,28 @@ export default function Events() {
   const [showAll, setShowAll] = useState(false);
   const isMobile = useMediaQuery("(max-width:900px)");
   const fetchPosts = async () => {
-    await getDocs(collection(firestore, "posts")).then((querySnapshot) => {
+    try {
+      const q = query(
+        collection(firestore, "posts"),
+        orderBy("timestamp", "desc")
+      );
+      const querySnapshot = await getDocs(q);
       const newData = querySnapshot.docs.map((doc) => ({
         ...doc.data(),
         id: doc.id,
       }));
-      setPosts(newData.reverse()); // Reverse the order of the posts
-    });
+      setPosts(newData);
+    } catch (err) {
+      console.error("Error fetching posts (ordered):", err);
+
+      const querySnapshot = await getDocs(collection(firestore, "posts"));
+      const newData = querySnapshot.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      }));
+      newData.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+      setPosts(newData);
+    }
   };
 
   useEffect(() => {
