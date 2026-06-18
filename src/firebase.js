@@ -4,13 +4,18 @@ import { getFirestore } from "firebase/firestore";
 import { getAnalytics } from "firebase/analytics";
 import { getStorage } from "firebase/storage";
 import { getAuth } from "firebase/auth";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseApiKey = import.meta.env.VITE_FIREBASE_API_KEY;
+
+let app = null;
+let firestore = null;
+let storage = null;
+let auth = null;
+let analytics = null;
+let firebaseInitError = null;
+
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  apiKey: firebaseApiKey ?? "",
   authDomain: "nss-svnit.firebaseapp.com",
   projectId: "nss-svnit",
   storageBucket: "nss-svnit.appspot.com",
@@ -19,10 +24,22 @@ const firebaseConfig = {
   measurementId: "G-Z2TRT1KDBZ",
 };
 
+if (!firebaseApiKey) {
+  firebaseInitError = new Error(
+    "Missing VITE_FIREBASE_API_KEY. Create a .env file with VITE_FIREBASE_API_KEY=<your-firebase-api-key>."
+  );
+  console.warn(firebaseInitError.message);
+} else {
+  try {
+    app = initializeApp(firebaseConfig);
+    firestore = getFirestore(app);
+    storage = getStorage(app);
+    auth = getAuth(app);
+    analytics = getAnalytics(app);
+  } catch (err) {
+    firebaseInitError = err instanceof Error ? err : new Error(String(err));
+    console.error("Firebase failed to initialize:", firebaseInitError);
+  }
+}
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-export const firestore = getFirestore(app);
-export const storage = getStorage(app);
-export const auth = getAuth(app);
-export const analytics = getAnalytics(app);
+export { app, firestore, storage, auth, analytics, firebaseInitError };

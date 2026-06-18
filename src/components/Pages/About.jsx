@@ -5,11 +5,9 @@ import DutySection from "./Home/DutySection";
 import { motion } from "framer-motion";
 import { Typography, Box, Grid, Button, useMediaQuery, Container, Paper } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import { useState } from "react";
-import { ref, getDownloadURL } from "firebase/storage";
-import { storage } from "../../firebase";
 import { Link } from "react-router-dom";
 import nssBackground from "../../assets/nss_background.png";
+import nssLogo from "../../assets/nss_logo.jpg";
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 
 const useStyles = makeStyles({
@@ -39,17 +37,6 @@ const About = () => {
 			window.scrollTo(0, 0);
 		};
 	}, []); // The empty dependency array ensures this effect runs only once when the component mounts
-
-	const [url, setUrl] = useState("aaaa");
-	const func = async () => {
-		const reference = ref(storage, "aboutImages/nss_logo.jpg");
-		await getDownloadURL(reference).then((x) => {
-			setUrl(x);
-		});
-	};
-	useEffect(() => {
-		func();
-	}, []);
 
 	return (
 		<Layout>
@@ -247,7 +234,7 @@ const About = () => {
 							}}
 						>
 							<motion.img
-								src={url}
+								src={nssLogo}
 								alt="NSS Logo"
 								style={{
 									width: "80%",
