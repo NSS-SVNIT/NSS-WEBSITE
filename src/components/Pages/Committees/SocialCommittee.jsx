@@ -389,9 +389,9 @@ const SocialCommittee = () => {
   };
 
   const heroImages = [
-    "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b",
-    "https://images.unsplash.com/photo-1509099836639-18ba1795216d",
-    "https://images.unsplash.com/photo-1543269865-cbf427effbad",
+    "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1781852465/oldagehomevisit_fsxxay.jpg",
+    "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1781852470/beachcleaning_ikemly.jpg",
+    "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1781852363/oldagehome_ffdd92.jpg",
   ];
 
   const roleColors = ["#FF8A65", "#9575CD", "#4DB6AC", "#FBC02D"];
@@ -425,14 +425,14 @@ const SocialCommittee = () => {
       desc:
         "Leads initiatives addressing social issues and community welfare through structured programs and meaningful student involvement.",
       img1: heroImages[0],
-      img2: heroImages[1],
+      img2: "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770556700/events_images/Old%20Age%20Home%20Visit/zqadcoovwhcsfsewhpqy.jpg",
     },
     {
       title: "Community Outreach",
       desc:
         "Organizes health drives, education programs, and awareness campaigns that directly impact surrounding communities.",
       img1: heroImages[1],
-      img2: heroImages[2],
+      img2: "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770556126/events_images/Beach%20Cleaning/ahduglpdkmn9mztclacf.jpg",
     },
     {
       title: "NGO Collaboration",
@@ -445,8 +445,8 @@ const SocialCommittee = () => {
       title: "Volunteer Engagement",
       desc:
         "Trains and motivates volunteers for effective community service and leadership development.",
-      img1: heroImages[0],
-      img2: heroImages[2],
+      img1: "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770556758/events_images/Swachata%20Rally/ygzlcyb5goteayjrraad.jpg",
+      img2: "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770556699/events_images/Old%20Age%20Home%20Visit/kbpdmmk2ghajt2xw7tw0.jpg",
     },
   ];
 

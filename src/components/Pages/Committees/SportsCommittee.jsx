@@ -393,9 +393,9 @@ const SportsCommittee = () => {
   };
 
   const heroImages = [
-    "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1000&h=600&fit=crop",
     parade,
-    "https://images.unsplash.com/photo-1588286840104-8957b019727f?w=1000&h=600&fit=crop",
+    "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770556792/events_images/Unity%20Day/p3kwfwyyyc9cbvkofo3l.jpg",
+    "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770481737/WhatsApp_Image_2026-02-07_at_11.25.42_AM_1_jljbbj.jpg",
   ];
 
   const roleCards = [
@@ -424,7 +424,7 @@ const SportsCommittee = () => {
       role: "Unity Games",
       description:
         "Organizes competitive and recreational games events where all NSS volunteers participate together, fostering teamwork, camaraderie, and friendly competition.",
-      image1: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=500&h=400&fit=crop",
+      image1: "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770556792/events_images/Unity%20Day/p3kwfwyyyc9cbvkofo3l.jpg",
       image2: "https://images.unsplash.com/photo-1479623459231-19429f2b4374?w=500&h=400&fit=crop",
       color: "#42A5F5",
       borderColor: "#1976D2",

@@ -394,7 +394,7 @@ const DocumentationCommittee = () => {
   };
 
   const heroImages = [
-    "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40",
+    "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1781887835/documentationcommittee_b8xqlj.jpg",
     "https://images.pexels.com/photos/7567600/pexels-photo-7567600.jpeg",
     "https://images.pexels.com/photos/669619/pexels-photo-669619.jpeg",
   ];
@@ -444,7 +444,7 @@ const DocumentationCommittee = () => {
       desc:
         "Prepares detailed reports on NSS initiatives, analyzing impact and creating comprehensive documentation for stakeholders.",
       img1: heroImages[2],
-      img2: heroImages[0],
+      img2: heroImages[1],
     },
     {
       title: "Permissions",

@@ -11,7 +11,7 @@ function Developers() {
 			id: 1,
 			name: "Aditi Tapariya",
 			github: "https://github.com/adititapariya",
-			mail: "mailto:tapariyaaditi23@gmail.com",
+			mail: "tapariyaaditi23@gmail.com",
 			linkedin: "https://www.linkedin.com/in/aditi-tapariya/",
 			imageLink:
 				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770405361/developer/developers/Aditi_Tapariya.jpg",
@@ -20,7 +20,7 @@ function Developers() {
 			id: 2,
 			name: "Harshit Pathak",
 			github: "https://github.com/Story27",
-			mail: "mailto:pathakharshit281@gmail.com",
+			mail: "pathakharshit281@gmail.com",
 			linkedin: "https://www.linkedin.com/in/harshit-pathak-4ba6aa22a/",
 			imageLink:
 				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770405366/developer/developers/Harshit_Pathak.jpg",
@@ -29,7 +29,7 @@ function Developers() {
 			id: 3,
 			name: "Jinhal Maheshwari",
 			github: "https://github.com/Jinhal01",
-			mail: "mailto:jinhalmaheshwari1256@gmail.com",
+			mail: "jinhalmaheshwari1256@gmail.com",
 			linkedin: "linkedin.com/in/jinhal-maheshwari-71a217212/",
 			imageLink:
 				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770405372/developer/developers/Jinhal_Maheshwari.jpg",
@@ -38,7 +38,7 @@ function Developers() {
 			id: 4,
 			name: "Param Shah",
 			github: "https://github.com/paramshah1903",
-			mail: "mailto:shahparam1903@gmail.com",
+			mail: "shahparam1903@gmail.com",
 			linkedin: "https://www.linkedin.com/in/param-shah-716322227/",
 			imageLink:
 				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770405376/developer/developers/Param_Shah.jpg",
@@ -47,7 +47,7 @@ function Developers() {
 			id: 5,
 			name: "Pragnesh Barik",
 			github: "https://github.com/pragneshbarik",
-			mail: "mailto:barikpragnesh@gmail.com",
+			mail: "barikpragnesh@gmail.com",
 			linkedin: "https://www.linkedin.com/in/pragnesh-barik",
 			imageLink:
 				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770405387/developer/developers/Pragnesh_Barik.jpg",
@@ -56,7 +56,7 @@ function Developers() {
 			id: 6,
 			name: "Shreeya Dave",
 			github: "https://github.com/shreeyadave",
-			mail: "mailto:shreeyadave776@gmail.com",
+			mail: "shreeyadave776@gmail.com",
 			linkedin: "https://www.linkedin.com/in/shreeya-dave-444166232/",
 			imageLink:
 				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770405391/developer/developers/Shreeya_Dave.jpg",
@@ -65,11 +65,75 @@ function Developers() {
 			id: 7,
 			name: "Samarth Chaplot",
 			github: "https://github.com/sam-arth07",
-			mail: "mailto:samarthchaplot7@gmail.com",
+			mail: "samarthchaplot7@gmail.com",
 			linkedin: "https://www.linkedin.com/in/samarth-chaplot-130b88256/",
 			imageLink:
 				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770405395/developer/developers/Samarth_Chaplot.jpg",
 		},
+		{
+			id: 8,
+			name: "Somu Yadav",
+			github: "https://github.com/YADAVSOMURAMYAS/",
+			mail: "somuuuyadav@gmail.com",
+			linkedin: "https://www.linkedin.com/in/somu-yadav-32720a327/",
+			imageLink:
+				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1773885645/team/Team2023/Somu_yadav.jpg",
+		},
+		{
+			id: 9,
+			name: "Kislay Gupta",
+			github: "https://github.com/Kislay-Gupta766/",
+			mail: "kislayg30@gmail.com",
+			linkedin: "https://www.linkedin.com/in/kislay-gupta-608711342/",
+			imageLink:
+				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1781871118/kislay_gupta.jpg",
+		},
+		{
+			id: 10,
+			name: "Bolisetty Samanvitha",
+			github: "https://github.com/samanvitha7/",
+			mail: "bolisettysamanvitha@gmail.com",
+			linkedin: "https://www.linkedin.com/in/samanvitha-bolisetty-465a02326/",
+			imageLink:
+				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1781871628/samanvitha_bolisetty.jpg",
+		},
+		{
+			id: 11,
+			name: "Drashti Singh",
+			github: "https://github.com/Drashti777oo/",
+			mail: "Drashtisingh14@gmail.com",
+			linkedin: "https://www.linkedin.com/in/drashti-singh-441143328/",
+			imageLink:
+				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1781874124/drasthi_singh.jpg",
+		},
+		{
+			id: 12,
+			name: "Mohit Kumar Soni",
+			github: "https://github.com/Mohit102006/",
+			mail: "mohitsoni1234123@gmail.com",
+			linkedin: "https://www.linkedin.com/in/mohit-kumar-soni-8129b6388/",
+			imageLink:
+				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1781870452/mohit_kumar.jpg",
+		},
+		{
+			id: 13,
+			name: "Jignasa Palakala",
+			github: "https://github.com/jignasa-palakala",
+			mail: "jignasapalakala1@gmail.com",
+			linkedin: "https://www.linkedin.com/in/jignasa-palakala-480575329/",
+			imageLink:
+				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1781873823/jignasa_p.jpg",
+		},
+		{
+			id: 14,
+			name: "Vaishali Dak",
+			github: "https://github.com/vaishali09dak/",
+			mail: "vaishalidak91@gmail.com",
+			linkedin: "https://www.linkedin.com/in/vaishali-dak/",
+			imageLink:
+				"https://res.cloudinary.com/dh0zqs0nw/image/upload/v1781871429/vaishali_dak.jpg",
+		},
+
 	];
 
 	const designers = [
@@ -95,10 +159,18 @@ function Developers() {
 
 	const theme = useTheme();
 	const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-
-	const row1 = developers.slice(0, 4);
-	const row2 = developers.slice(4, developers.length);
 	const row1Designers = designers.slice(0, 2);
+
+	// Create rows with 4 cards each
+	const createRows = (data, cardsPerRow = 4) => {
+		const rows = [];
+		for (let i = 0; i < data.length; i += cardsPerRow) {
+			rows.push(data.slice(i, i + cardsPerRow));
+		}
+		return rows;
+	};
+
+	const developerRows = createRows(developers, 4);
 
 	return (
 		<div>
@@ -138,16 +210,20 @@ function Developers() {
 							</div>
 						))
 					) : (
-						// Original layout for larger screens
-						<>
+						// Desktop layout: 4 cards per row, last row centered
+						developerRows.map((row, rowIndex) => (
 							<div
+								key={rowIndex}
 								style={{
 									display: "flex",
 									gap: "20px", 
 									margin: "20px",
 									position: "relative",
+									justifyContent: "center",
+									width: "100%",
+									flexWrap: "wrap",
 								}}>
-								{row1.map((developer) => (
+								{row.map((developer) => (
 									<DeveloperCard
 										key={developer.id}
 										name={developer.name}
@@ -158,25 +234,7 @@ function Developers() {
 									/>
 								))}
 							</div>
-							<div
-								style={{
-									display: "flex",
-									gap: "20px", 
-									margin: "20px",
-									position: "relative",
-								}}>
-								{row2.map((developer) => (
-									<DeveloperCard
-										key={developer.id}
-										name={developer.name}
-										github={developer.github}
-										mail={developer.mail}
-										linkedin={developer.linkedin}
-										imageLink={developer.imageLink}
-									/>
-								))}
-							</div>
-						</>
+						))
 					)}
 				</div>
 

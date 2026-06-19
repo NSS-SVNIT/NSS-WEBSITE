@@ -393,9 +393,9 @@ const TechnicalCommittee = () => {
   };
 
   const heroImages = [
-    "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1000&h=600&fit=crop",
-    "https://contentstatic.techgig.com/thumb/msid-115055298,width-800,resizemode-4/Top-10-Open-source-AI-projects-that-every-developer-should-know-about.jpg?57882",
-    "https://images.pexels.com/photos/2391/dirty-industry-stack-factory.jpg",
+    "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1781850113/technicalcommittee_pn9eyo.jpg",
+    "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1781849120/industrialvisit_w5t4b2.jpg",
+    "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1781854907/hydropowerplant_vescoo.jpg",
   ];
 
   const roleCards = [
@@ -414,7 +414,7 @@ const TechnicalCommittee = () => {
       role: "Industrial Visits",
       description:
         "Coordinates and organizes industrial visits for NSS volunteers. Establishes relationships with industries, manages logistics, and ensures enriching learning experiences.",
-      image1: "https://images.pexels.com/photos/2391/dirty-industry-stack-factory.jpg",
+      image1: "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1781849120/industrialvisit_w5t4b2.jpg",
       image2: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop",
       color: "#5C6BC0",
       borderColor: "#283593",
