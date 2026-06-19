@@ -371,8 +371,8 @@ const SportsCommittee = () => {
 
   const heroImages = [
     "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1000&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1517836357463-d25ddfcbf042?w=1000&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1588286840104-8957b019727f?w=1000&h=600&fit=crop",
+    parade,
+    "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770556792/events_images/Unity%20Day/p3kwfwyyyc9cbvkofo3l.jpg",
   ];
 
   const roleCards = [

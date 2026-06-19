@@ -371,9 +371,9 @@ const SocialCommittee = () => {
   };
 
   const heroImages = [
-    "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b",
-    "https://images.unsplash.com/photo-1509099836639-18ba1795216d",
-    "https://images.unsplash.com/photo-1543269865-cbf427effbad",
+    "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1781852465/oldagehomevisit_fsxxay.jpg",
+    "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1781852470/beachcleaning_ikemly.jpg",
+    "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1781852363/oldagehome_ffdd92.jpg",
   ];
 
   const roleColors = ["#FF8A65", "#9575CD", "#4DB6AC", "#FBC02D"];
