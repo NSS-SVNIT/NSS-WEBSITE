@@ -392,15 +392,9 @@ const CulturalCommittee = () => {
   };
 
   const heroImages = [
-<<<<<<< HEAD
     "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1770558293/WhatsApp_Image_2026-02-07_at_8.28.34_PM_wwg0a8.jpg",
     "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1781851319/culturalcommittee_fkoekh.jpg",
     "https://res.cloudinary.com/dh0zqs0nw/image/upload/v1781850770/independenceskit_bsgq0p.jpg",
-=======
-    "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1000&h=600&fit=crop",
-    "https://images.pexels.com/photos/19915775/pexels-photo-19915775.jpeg",
-    "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1000&h=600&fit=crop",
->>>>>>> master
   ];
 
   const roleCards = [

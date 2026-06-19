@@ -36,7 +36,7 @@ const CommitteeTeamSection = React.memo(({ committeeKey }) => {
         "Abhishek Bhagat",
         "Priyanshi Purohit",
         "Greeshma Kasina",
-        "Vedansh Bhargav",
+        "Vedansh Bhargava",
         "Khushi Sariya",
         "Ayush Jain",
         "Harshitha",
