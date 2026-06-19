@@ -39,8 +39,7 @@ const CommitteeTeamSection = React.memo(({ committeeKey }) => {
         "Vedansh Bhargav",
         "Khushi Sariya",
         "Ayush Jain",
-        "Harshitha",
-        "Kalpit Nagar"
+        "Harshitha"
       ],
     },
 
@@ -95,8 +94,7 @@ const CommitteeTeamSection = React.memo(({ committeeKey }) => {
         "Dipsu Patel",
         "Garima Nilesh Lad",
         "Puppala Venkata Sai",
-        "Mahanish Punj",
-        "Pratik Lalwani",
+        "Mohanish Punj",
         "Kaushik Vaniya",
         "Loka Sai Sriyuth Reddy"
       ],
@@ -199,7 +197,7 @@ const CommitteeTeamSection = React.memo(({ committeeKey }) => {
         "Kislay Gupta",
         "Akash Panjiyar",
         "Jignasa Palakala",
-        "Vasishali Dak",
+        "Vaishali Dak",
         "Bolisetty Samanvitha",
         "Drashti Singh",
         "Rimmalapudi Jaswanth Vinay",
