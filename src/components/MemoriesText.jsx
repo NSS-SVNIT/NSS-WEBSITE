@@ -15,12 +15,12 @@ const textBlockVariants = {
 const Memories = memo(() => {
 	return (
 		<motion.div variants={textBlockVariants}>
-			<Stack sx={{ px: { xs: 3, lg: 10 } }} spacing={4}>
+			<Stack sx={{ px: { xs: 2, sm: 3, lg: 10 } }} spacing={{ xs: 3, md: 4 }}>
 				{/* The Heading */}
 				<Typography
 					component="h2"
 					sx={{
-						fontSize: { xs: "2.5rem", sm: "3.5rem" },
+						fontSize: { xs: "1.8rem", sm: "2.5rem", md: "3.5rem" },
 						fontFamily: "Poppins",
 						fontWeight: 300,
 						lineHeight: 1.2,
@@ -32,7 +32,7 @@ const Memories = memo(() => {
 						sx={{
 							display: 'block', // Puts "Memories" on a new line
 							fontWeight: "400",
-							fontSize: { xs: "3.5rem", sm: "6rem" },
+							fontSize: { xs: "2.5rem", sm: "3.5rem", md: "6rem" },
 							fontFamily: "Nothing You Could Do",
 							color: 'primary.light', // Use a theme color
 							textShadow: '0 0 15px rgba(13, 71, 161, 0.4)'
@@ -44,7 +44,7 @@ const Memories = memo(() => {
 				</Typography>
 
 				{/* The Paragraph */}
-				<Typography variant="body1" sx={{ color: 'grey.400', lineHeight: 1.8, textAlign: 'justify' }}>
+				<Typography variant="body1" sx={{ color: 'grey.400', lineHeight: { xs: 1.6, md: 1.8 }, textAlign: 'justify', fontSize: { xs: '0.95rem', md: '1rem' } }}>
 					NSS SVNIT organises various on-campus and off-campus activities aimed at
 					the integration of the community and generating widespread awareness
 					about prevailing social issues. We live by our motto{' '}
@@ -62,11 +62,11 @@ const Memories = memo(() => {
 						sx={{
 							borderRadius: '50px',
 							textTransform: 'none',
-							fontSize: "1rem",
+							fontSize: { xs: '0.9rem', md: '1rem' },
 							fontFamily: "DM Sans",
 							fontWeight: 'bold',
-							py: 1.5,
-							px: 4,
+							py: { xs: 1.2, md: 1.5 },
+							px: { xs: 3, md: 4 },
 							boxShadow: '0 4px 20px rgba(13, 71, 161, 0.5)',
 							transition: 'transform 0.3s ease',
 							'&:hover': {

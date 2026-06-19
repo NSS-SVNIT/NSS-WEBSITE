@@ -10,7 +10,7 @@ import { getAuth } from "firebase/auth";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyATpTxtw0O4jySPEt03iUrFdIYKwzOtZlM",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: "nss-svnit.firebaseapp.com",
   projectId: "nss-svnit",
   storageBucket: "nss-svnit.appspot.com",
@@ -18,6 +18,7 @@ const firebaseConfig = {
   appId: "1:1087350248008:web:0960756a28d32b01d23e7d",
   measurementId: "G-Z2TRT1KDBZ",
 };
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

@@ -133,7 +133,7 @@ const TeamBatchPage = React.memo(() => {
                   I've added xl={2} to show 6 cards per row on extra-large screens (12 / 2 = 6).
                   I've also adjusted `lg` to 3 for a smoother responsive transition (4 cards per row).
                 */}
-                <Grid item xs={12} sm={6} md={4} lg={3} xl={2} display="flex" justifyContent="center">
+                <Grid item xs={6} md={2.4} lg={2.4} display="flex" justifyContent="center">
                   <TeamCard {...team} />
                 </Grid>
               </Grow>

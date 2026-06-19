@@ -3,6 +3,7 @@ import Layout from "../Layout/Layout";
 import SendRoundedIcon from "@mui/icons-material/SendRounded";
 import MailIcon from "@mui/icons-material/Mail";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import PhoneIcon from "@mui/icons-material/Phone";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 import { MapContainer, TileLayer, Popup, Marker } from "react-leaflet";
@@ -17,6 +18,9 @@ import {
 	Stack,
 	IconButton,
 	Tooltip,
+	Card,
+	CardContent,
+	Divider,
 } from "@mui/material";
 import { Facebook, Instagram, Twitter, YouTube, Mail, SendRounded } from "@mui/icons-material";
 
@@ -102,9 +106,10 @@ const Contact = () => {
 					GET IN TOUCH
 				</Typography>
 
-				{/* Contact Form Section */}
+				{/* Contact Form and Details Section */}
 				<Grid container spacing={4}>
-					<Grid item xs={12} md={12}>
+					{/* Contact Form */}
+					<Grid item xs={12} md={6}>
 						<motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={itemVariants}>
 							<Typography variant="h4" mb={3} fontWeight={600}>
 								<SendRoundedIcon sx={{ verticalAlign: 'middle', mr: 1 }} />
@@ -161,6 +166,108 @@ const Contact = () => {
 							</Box>
 						</motion.div>
 					</Grid>
+
+					{/* Contact Details */}
+					<Grid item xs={12} md={6}>
+						<motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={itemVariants}>
+							<Typography variant="h4" mb={3} fontWeight={600}>
+								CONTACT DETAILS
+							</Typography>
+							
+							<Card 
+								elevation={0} 
+								sx={{ 
+									border: '2px solid #f0f0f0', 
+									borderRadius: 2,
+									height: '100%',
+									'&:hover': {
+										boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+									},
+									transition: 'all 0.3s ease',
+								}}
+							>
+								<CardContent sx={{ p: 3 }}>
+									<Stack spacing={3}>
+										{/* Email */}
+										<Box>
+											<Stack direction="row" alignItems="center" spacing={2}>
+												<MailIcon sx={{ color: 'primary.main', fontSize: 28 }} />
+												<Box>
+													<Typography variant="subtitle2" color="text.secondary" sx={{ mb: 0.5 }}>
+														Email
+													</Typography>
+													<Typography variant="body1" fontWeight={500}>
+														<a 
+															href="mailto:nss@svnit.ac.in" 
+															style={{ 
+																textDecoration: 'none', 
+																color: 'inherit',
+																'&:hover': { color: '#1976d2' }
+															}}
+														>
+															nss@svnit.ac.in
+														</a>
+													</Typography>
+												</Box>
+											</Stack>
+										</Box>
+
+										<Divider />
+
+										{/* Address */}
+										<Box>
+											<Stack direction="row" alignItems="flex-start" spacing={2}>
+												<LocationOnIcon sx={{ color: 'primary.main', fontSize: 28, mt: 0.5 }} />
+												<Box>
+													<Typography variant="subtitle2" color="text.secondary" sx={{ mb: 0.5 }}>
+														Address
+													</Typography>
+													<Typography variant="body1" fontWeight={500}>
+														NSS Unit, SVNIT<br />
+														Ichchhanath, Surat<br />
+														Gujarat - 395007
+													</Typography>
+												</Box>
+											</Stack>
+										</Box>
+
+										<Divider />
+
+										{/* Social Media */}
+										<Box>
+											<Typography variant="subtitle2" color="text.secondary" sx={{ mb: 2 }}>
+												Connect With Us
+											</Typography>
+											<Stack direction="row" spacing={1.5} flexWrap="wrap">
+												{socialLinks.map((link) => (
+													<Tooltip title={link.label} key={link.label} arrow>
+														<IconButton
+															component="a"
+															href={link.href}
+															target="_blank"
+															rel="noopener noreferrer"
+															sx={{ 
+																color: 'text.secondary',
+																border: '1px solid #e0e0e0',
+																'&:hover': { 
+																	color: 'primary.main',
+																	borderColor: 'primary.main',
+																	transform: 'translateY(-2px)',
+																},
+																transition: 'all 0.3s ease',
+															}}
+														>
+															{link.icon}
+														</IconButton>
+													</Tooltip>
+												))}
+											</Stack>
+										</Box>
+									</Stack>
+								</CardContent>
+							</Card>
+						</motion.div>
+					</Grid>
 				</Grid>
 
 				{/* Google Maps Section */}
@@ -213,47 +320,6 @@ const Contact = () => {
 							Open in Google Maps
 						</Button>
 					</Box>
-				</Box>
-
-				{/* Contact Details Section */}
-				<Box sx={{ mt: 8 }}>
-					<motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={itemVariants}>
-						<Stack spacing={4}>
-							<Box>
-								<Typography variant="h5" gutterBottom sx={{ fontWeight: 600 }}>
-									Contact Details
-								</Typography>
-								<Stack direction="row" alignItems="center" spacing={2} sx={{ mb: 1 }}>
-									<MailIcon color="action" />
-									<Typography variant="body1">
-										<a href="mailto:nss@svnit.ac.in" style={{ textDecoration: 'none', color: 'inherit' }}>
-											nss@svnit.ac.in
-										</a>
-									</Typography>
-								</Stack>
-							</Box>
-							<Box>
-								<Typography variant="h5" gutterBottom sx={{ fontWeight: 600 }}>
-									Follow Us
-								</Typography>
-								<Stack direction="row" spacing={1}>
-									{socialLinks.map((link) => (
-										<Tooltip title={link.label} key={link.label} arrow>
-											<IconButton
-												component="a"
-												href={link.href}
-												target="_blank"
-												rel="noopener noreferrer"
-												sx={{ color: 'text.secondary', '&:hover': { color: 'primary.main' } }}
-											>
-												{link.icon}
-											</IconButton>
-										</Tooltip>
-									))}
-								</Stack>
-							</Box>
-						</Stack>
-					</motion.div>
 				</Box>
 			</Box>
 		</Layout>

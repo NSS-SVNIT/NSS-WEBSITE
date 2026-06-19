@@ -53,7 +53,7 @@ const About = () => {
 
 	return (
 		<Layout>
-			<Box sx={{ backgroundColor: "#d3d4d4ff", minHeight: "100vh" }}>
+			<Box sx={{ backgroundColor: "#FDEFFF", minHeight: "100vh" }}>
 			<Container maxWidth="lg" sx={{ py: { xs: 4, md: 6 } }}>
 				<HeroSection
 					sx={{ textAlign: "center", mb: { xs: 4, md: 6 } }}>

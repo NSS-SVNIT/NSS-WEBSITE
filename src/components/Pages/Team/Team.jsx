@@ -1,20 +1,15 @@
-import React, { useEffect, useState, useMemo } from "react";
-import { Box, Typography, Grid, Fade, Skeleton, Button, Container, Card, CardMedia, CardContent, Link, Slide, IconButton, Tooltip, Divider } from "@mui/material";
-import { collection, getDocs, query, where } from "firebase/firestore";
-import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
+import React, { useState, useMemo } from "react";
+import { Box, Typography, Grid, Button, Container, Card, CardMedia, CardContent, Link, Slide, Divider, Fade } from "@mui/material";
 import { LinkedIn, GitHub, Email } from '@mui/icons-material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Link as RouterLink } from 'react-router-dom';
 
-import { firestore as db } from "../../../firebase";
+import * as TeamData from "./TeamData";
 
 // --- FIX: The placeholder Layout has been removed. ---
 // --- We now import your actual Layout component. ---
 // --- IMPORTANT: Make sure this path is correct for your project structure ---
-import Layout from "../../Layout/Layout"; 
-
-// A placeholder for your static data file if needed for fallback
-const StaticData = { Sir: [], Founder: [], CoFounder: [], ProgramCoordinators: [], Team2023: [], Team2022: [] }; 
+import Layout from "../../Layout/Layout";
 
 
 // =====================================================================================
@@ -69,8 +64,8 @@ const HeadingSection = React.memo(() => (
 					<Fade in timeout={1200}><Typography variant="body1" sx={{ textAlign: "justify", fontFamily: "DM Sans, sans-serif", fontSize: { xs: '1rem', md: '1.125rem' }, lineHeight: 1.7, maxWidth: '500px', mx: { xs: 'auto', md: 0 } }}>Embark on a transformative journey with the extraordinary team at NSS SVNIT. Dedicated to making a delta change every day, we combine passion, expertise, and unwavering commitment to create a better tomorrow, one impactful step at a time.</Typography></Fade>
 				</Box>
 			</Grid>
-			<Grid item xs={11} sm={8} md={5} sx={{ order: { xs: 1, md: 2 } }}>
-				<Slide direction="left" in timeout={1000}><div><Box component="img" src="https://res.cloudinary.com/dh0zqs0nw/image/upload/v1769454758/developers/team.jpg" alt="NSS Team" sx={{ width: '100%', height: 'auto', borderRadius: '16px', objectFit: 'cover', maxHeight: { xs: 350, md: 550 }, boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}/></div></Slide>
+			<Grid item xs={20} sm={18} md={5} sx={{ order: { xs: 1, md: 2 } }}>
+				<Slide direction="left" in timeout={1000}><div><Box component="img" src="https://res.cloudinary.com/dh0zqs0nw/image/upload/v1771061624/team_gokc1o.jpg" alt="NSS Team" sx={{ width: '100%', height: 'auto', borderRadius: '16px', objectFit: 'cover', maxHeight: { xs: 350, md: 550 }, boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}/></div></Slide>
 			</Grid>
 		</Grid>
 	</Box>
@@ -83,6 +78,7 @@ const HeadingSection = React.memo(() => (
 // --- Component: LeadershipSection ---
 const LeadershipSection = React.memo(({ title, members = [] }) => {
 	if (!members.length) return null;
+	const isScrollableSection = title === "Founding Team" || title === "Program Coordinators";
 	const FacultyAdvisorLayout = ({ member }) => (
 		<Box sx={{ position: 'relative', py: { xs: 6, md: 10 }, overflow: 'hidden' }}>
 			<Box sx={{ position: 'absolute', top: '50%', left: '10%', width: 500, height: 500, background: 'radial-gradient(circle, rgba(0, 180, 216, 0.08) 0%, rgba(0, 180, 216, 0) 70%)', transform: 'translate(-50%, -50%)', zIndex: -1, filter: 'blur(80px)' }} />
@@ -104,7 +100,34 @@ const LeadershipSection = React.memo(({ title, members = [] }) => {
 			<Grid container spacing={4} justifyContent="center">{members.map((member, index) => (<Fade in key={member.id || member.name} timeout={500 + index * 150}><Grid item xs={12} sm={6} md={4} lg={3} display="flex" justifyContent="center"><TeamCard {...member} /></Grid></Fade>))}</Grid>
 		</Container>
 	);
+	const ScrollableLayout = ({ title, members }) => (
+		<Container maxWidth="lg" sx={{ py: { xs: 5, md: 8 } }}>
+			<Box sx={{ textAlign: 'center', mb: 3 }}><Typography variant="h3" sx={{ fontWeight: 600 }}>{title}</Typography><Divider sx={{ width: '80px', mx: 'auto', mt: 2, height: '2px' }} /></Box>
+			<Box sx={{
+				display: 'flex',
+				justifyContent: members.length <= 4 ? 'center' : 'flex-start',
+				overflowX: 'auto',
+				scrollSnapType: 'x mandatory',
+				gap: { xs: 2, sm: 3 },
+				py: 2,
+				px: 1,
+				'&::-webkit-scrollbar': { height: '8px' },
+				'&::-webkit-scrollbar-track': { backgroundColor: 'transparent' },
+				'&::-webkit-scrollbar-thumb': { backgroundColor: 'rgba(0, 0, 0, 0.2)', borderRadius: '4px' },
+				'&::-webkit-scrollbar-thumb:hover': { backgroundColor: 'rgba(0, 0, 0, 0.4)' },
+			}}>
+				{members.map((member, index) => (
+					<Fade in key={member.id || member.name} timeout={500 + index * 150}>
+						<Box sx={{ scrollSnapAlign: 'start', flex: '0 0 auto', width: { xs: '240px', sm: '220px' } }}>
+							<TeamCard {...member} />
+						</Box>
+					</Fade>
+				))}
+			</Box>
+		</Container>
+	);
 	if (title === "Faculty Advisor") return <FacultyAdvisorLayout member={members[0]} />;
+	if (isScrollableSection) return <ScrollableLayout title={title} members={members} />;
 	return <DefaultLayout title={title} members={members} />;
 });
 
@@ -146,70 +169,23 @@ const TeamBatch = React.memo(({ year, TeamList = [] }) => {
 // =====================================================================================
 
 const Team = React.memo(() => {
-	const [advisor, setAdvisor] = useState(null);
-	const [foundingTeam, setFoundingTeam] = useState([]);
-	const [coordinators, setCoordinators] = useState([]);
-	const [batchData, setBatchData] = useState({});
-	const [loading, setLoading] = useState(true);
-	const [error, setError] = useState(null);
+	const [advisor] = useState(TeamData.Sir || []);
+	const [foundingTeam] = useState([...(TeamData.Founder || []), ...(TeamData.CoFounder || [])]);
+	const [coordinators] = useState(TeamData.ProgramCoordinators || []);
+	const [batchData] = useState({
+		2019: TeamData.Team2019 || [],
+		2020: TeamData.Team2020 || [],
+		2021: TeamData.Team2021 || [],
+		2022: TeamData.Team2022 || [],
+		2023: TeamData.Team2023 || [],
+	});
 
-	const fetchAndProcessData = async () => {
-		try {
-			setLoading(true); setError(null);
-			const volunteersQuery = query(collection(db, "volunteers"), where("approved", "==", true));
-			const querySnapshot = await getDocs(volunteersQuery);
-			const firestoreData = {};
-			querySnapshot.forEach((doc) => {
-				const volunteer = { ...doc.data(), id: doc.id };
-				const key = volunteer.category || `Team${volunteer.batch}`;
-				if (!firestoreData[key]) firestoreData[key] = [];
-				firestoreData[key].push(volunteer);
-			});
-			const finalData = { ...StaticData, ...firestoreData };
-			const combinedFounders = [...(finalData.Founder || []), ...(finalData.CoFounder || [])];
-			setAdvisor(finalData.Sir || []);
-			setFoundingTeam(combinedFounders);
-			setCoordinators(finalData.ProgramCoordinators || []);
-			const finalBatchData = Object.keys(finalData).filter(key => key.startsWith("Team")).reduce((acc, key) => {
-				const year = key.replace("Team", "");
-				acc[year] = finalData[key];
-				return acc;
-			}, {});
-			setBatchData(finalBatchData);
-		} catch (err) {
-			console.error("Error fetching team data:", err);
-			setError("Failed to load team data. Please check your connection and try again.");
-		} finally {
-			setLoading(false);
-		}
-	};
-	useEffect(() => { fetchAndProcessData() }, []);
 	const sortedYears = useMemo(() => Object.keys(batchData).sort((a, b) => b - a), [batchData]);
-
-	if (loading) return (
-		<Layout>
-			<HeadingSection />
-			<Container maxWidth="lg" sx={{ py: 6 }}>
-				<Grid container spacing={4} alignItems="center" sx={{ mb: 6 }}><Grid item xs={12} md={6}><Skeleton variant="text" width="40%" height={40} /><Skeleton variant="text" width="80%" height={80} /><Skeleton variant="text" /><Skeleton variant="text" /></Grid><Grid item xs={12} md={6}><Skeleton variant="rectangular" sx={{ width: '100%', height: 500, borderRadius: '24px' }} /></Grid></Grid>
-				<Grid container spacing={4} justifyContent="center">{[...Array(4)].map((_, i) => (<Grid item key={i} xs={12} sm={6} md={3}><Skeleton variant="rectangular" sx={{ width: '100%', aspectRatio: '4 / 5', borderRadius: '20px' }} /></Grid>))}</Grid>
-			</Container>
-		</Layout>
-	);
-	if (error) return (
-		<Layout>
-			<HeadingSection />
-			<Container maxWidth="sm" sx={{ textAlign: "center", py: 8 }}>
-				<ErrorOutlineIcon color="error" sx={{ fontSize: '4rem', mb: 2 }} /><Typography variant="h5" gutterBottom>Something went wrong</Typography>
-				<Typography color="text.secondary" sx={{ mb: 3 }}>{error}</Typography><Button variant="contained" onClick={fetchAndProcessData}>Retry</Button>
-			</Container>
-		</Layout>
-	);
 
 	return (
 		<Layout>
 			<HeadingSection />
-			<Fade in={!loading} timeout={800}>
-				<Box>
+			<Box>
 					<LeadershipSection title="Faculty Advisor" members={advisor} />
 					<LeadershipSection title="Founding Team" members={foundingTeam} />
 					<LeadershipSection title="Program Coordinators" members={coordinators} />
@@ -230,7 +206,6 @@ const Team = React.memo(() => {
 						</Box>
 					)}
 				</Box>
-			</Fade>
 		</Layout>
 	);
 });

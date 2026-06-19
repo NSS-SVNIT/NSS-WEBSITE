@@ -3,8 +3,9 @@
 import React from 'react';
 import { Box, Typography, Card, CardMedia, CardActionArea } from '@mui/material';
 
-const AlbumCard = React.memo(({ albumName, images = [], onOpen }) => {
-	const coverImage = images.length > 0 ? images[0] : 'https://via.placeholder.com/600x800.png?text=No+Image';
+const AlbumCard = React.memo(({ albumName, images = [], thumbnail, imageCount, onOpen }) => {
+	const coverImage = thumbnail || (images.length > 0 ? images[0] : 'https://via.placeholder.com/600x800.png?text=No+Image');
+	const photoCount = imageCount || images.length;
 
 	return (
 		<Card
@@ -49,7 +50,7 @@ const AlbumCard = React.memo(({ albumName, images = [], onOpen }) => {
 						{albumName}
 					</Typography>
 					<Typography variant="caption" sx={{ opacity: 0.9, fontSize: '0.65rem', lineHeight: 1 }}>
-						{images.length} photos
+						{photoCount} photos
 					</Typography>
 				</Box>
 			</CardActionArea>

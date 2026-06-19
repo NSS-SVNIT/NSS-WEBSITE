@@ -1,0 +1,223 @@
+{
+  "total_posts": 32,
+  "firebase_urls": 32,
+  "cloudinary_urls": 0,
+  "other_urls": 0,
+  "firebase_patterns": {
+    "root": 32
+  },
+  "firebase_url_details": [
+    {
+      "post_id": "03049799-2ba4-4fe1-9060-1749e4640807",
+      "title": "Mock Fire Drill",
+      "url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/eventImages%2Fmock%20fire%20drill.jpg?alt=media&token=04618ba4-2b61-45ac-bb97-e096f92673a8"
+    },
+    {
+      "post_id": "1500aad2-4e85-4036-b15b-4554b9a1b115",
+      "title": "Orphanage Visit '22",
+      "url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/eventImages%2Forphanage%20visit%202.jpg?alt=media&token=bf9dca71-038f-47c0-815a-98912b809ff2"
+    },
+    {
+      "post_id": "1e4c6e69-524f-44e0-be57-a2d051ffc2e5",
+      "title": "National Integration Camp",
+      "url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/eventImages%2Fnational%20integration%20camp%20(1).jpg?alt=media&token=45d8f37b-6125-4ecf-9cad-997e50d68e1c"
+    },
+    {
+      "post_id": "21eec3c2-b372-4025-afbc-55567ceb5198",
+      "title": "Republic Day Skit",
+      "url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/images%2FRepublic%20Day%20Skit%2F1.jpg?alt=media&token=bd90d3f6-e1fd-40ea-8242-5a9d66b810c9"
+    },
+    {
+      "post_id": "3016d211-83a4-4135-9c9f-8bf16a74da42",
+      "title": "Orphanage Visit '23",
+      "url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/eventImages%2Forphanage%20visit%202.jpg?alt=media&token=bf9dca71-038f-47c0-815a-98912b809ff2"
+    },
+    {
+      "post_id": "3b7629aa-e7f2-4e3f-b151-0aecd1087e86",
+      "title": "Ashtanga Yoga",
+      "url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/eventImages%2Fashtanga%20yoga.jpg?alt=media&token=d278e603-df22-4332-a07c-ca60d8a6a4ad"
+    },
+    {
+      "post_id": "3f9c0d02-5e8d-4213-8971-d71d8f54eea0",
+      "title": "Prabhat Pheri & Skit",
+      "url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/eventImages%2FPrabhat%20Pheri.jpg?alt=media&token=47a39d39-77a8-4b5f-944b-c439641624df"
+    },
+    {
+      "post_id": "4bf82017-266f-4588-a731-d0fa5e8ae5ff",
+      "title": "Yoga Week: A Journey Towards Wellness",
+      "url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/eventImages%2Fef36f555-5e4e-4647-bd56-53c9283bf0bb_Screenshot%202025-06-04%20215714.png?alt=media&token=eb198761-27c6-436d-9c6b-38506b86e716"
+    },
+    {
+      "post_id": "534cfa4e-e165-4429-8b06-4c9d376bab5e",
+      "title": "Industrial Visit",
+      "url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/eventImages%2Findustrial%20visit.jpg?alt=media&token=36832dd6-09de-43e1-a32f-fbdd4fdbe5bf"
+    },
+    {
+      "post_id": "588d4a6a-0143-4342-94b2-63dd77c8e153",
+      "title": "Swacchta Pakhwada",
+      "url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/images%2FSwachta%20Pakhwada%2FCopy%20of%2020231001_095612.jpg?alt=media&token=6433f54e-e031-4c28-8042-e50b40d4fdce"
+    }
+  ],
+  "all_image_urls": [
+    {
+      "post_id": "03049799-2ba4-4fe1-9060-1749e4640807",
+      "title": "Mock Fire Drill",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/eventImages%2Fmock%20fire%20drill.jpg?alt=media&token=04618ba4-2b61-45ac-bb97-e096f92673a8"
+    },
+    {
+      "post_id": "1500aad2-4e85-4036-b15b-4554b9a1b115",
+      "title": "Orphanage Visit '22",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/eventImages%2Forphanage%20visit%202.jpg?alt=media&token=bf9dca71-038f-47c0-815a-98912b809ff2"
+    },
+    {
+      "post_id": "1e4c6e69-524f-44e0-be57-a2d051ffc2e5",
+      "title": "National Integration Camp",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/eventImages%2Fnational%20integration%20camp%20(1).jpg?alt=media&token=45d8f37b-6125-4ecf-9cad-997e50d68e1c"
+    },
+    {
+      "post_id": "21eec3c2-b372-4025-afbc-55567ceb5198",
+      "title": "Republic Day Skit",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/images%2FRepublic%20Day%20Skit%2F1.jpg?alt=media&token=bd90d3f6-e1fd-40ea-8242-5a9d66b810c9"
+    },
+    {
+      "post_id": "3016d211-83a4-4135-9c9f-8bf16a74da42",
+      "title": "Orphanage Visit '23",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/eventImages%2Forphanage%20visit%202.jpg?alt=media&token=bf9dca71-038f-47c0-815a-98912b809ff2"
+    },
+    {
+      "post_id": "3b7629aa-e7f2-4e3f-b151-0aecd1087e86",
+      "title": "Ashtanga Yoga",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/eventImages%2Fashtanga%20yoga.jpg?alt=media&token=d278e603-df22-4332-a07c-ca60d8a6a4ad"
+    },
+    {
+      "post_id": "3f9c0d02-5e8d-4213-8971-d71d8f54eea0",
+      "title": "Prabhat Pheri & Skit",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/eventImages%2FPrabhat%20Pheri.jpg?alt=media&token=47a39d39-77a8-4b5f-944b-c439641624df"
+    },
+    {
+      "post_id": "4bf82017-266f-4588-a731-d0fa5e8ae5ff",
+      "title": "Yoga Week: A Journey Towards Wellness",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/eventImages%2Fef36f555-5e4e-4647-bd56-53c9283bf0bb_Screenshot%202025-06-04%20215714.png?alt=media&token=eb198761-27c6-436d-9c6b-38506b86e716"
+    },
+    {
+      "post_id": "534cfa4e-e165-4429-8b06-4c9d376bab5e",
+      "title": "Industrial Visit",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/eventImages%2Findustrial%20visit.jpg?alt=media&token=36832dd6-09de-43e1-a32f-fbdd4fdbe5bf"
+    },
+    {
+      "post_id": "588d4a6a-0143-4342-94b2-63dd77c8e153",
+      "title": "Swacchta Pakhwada",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/images%2FSwachta%20Pakhwada%2FCopy%20of%2020231001_095612.jpg?alt=media&token=6433f54e-e031-4c28-8042-e50b40d4fdce"
+    },
+    {
+      "post_id": "5b6bd2e3-61ec-42de-8436-a41c7c060c6a",
+      "title": " NSS Industrial Visit to NTPC Kawas \u2013 2024",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/eventImages%2F19d4f73e-10bd-4ff2-93b2-2500c8ad6d81_IMG-20241110-WA0025.jpg?alt=media&token=53ec9afc-f108-41ed-8dd0-221f85c26e68"
+    },
+    {
+      "post_id": "67f1434b-595a-4ffc-8d2c-ac6130c00847",
+      "title": " NSS Unity Games",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/eventImages%2Fe65d7ebd-b51f-4ff1-99e3-9a6826ac20d0_Screenshot%202025-06-12%20094247.png?alt=media&token=786b503d-4197-4b9b-9aec-22f8654cd549"
+    },
+    {
+      "post_id": "76f7b6ee-0aa4-42b2-b903-a7106cb102fc",
+      "title": "Survival Of The Fittest",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/images%2FSports%20Day%2FCopy%20of%20PIC_20220828_062958.jpg?alt=media&token=de89f153-74c1-4bc2-a25f-2e6d36a61902"
+    },
+    {
+      "post_id": "78df053d-df85-4f5d-abfc-d3264036c41f",
+      "title": "Pratirodh",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/images%2FPratirodh%2FCopy%20of%20DSC_0504.JPG?alt=media&token=d5e65511-53ec-4d70-8aad-3e668f71f13f"
+    },
+    {
+      "post_id": "79cb5dd2-9705-4e18-a312-8a2a8f3cc282",
+      "title": "Constitution Day",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/images%2FConstitution%20Day%2FDSC_1530.jpg?alt=media&token=78ea805e-30c3-4d85-9505-bacb44b6cfb2"
+    },
+    {
+      "post_id": "7a1e9fbf-e7aa-410a-8f3d-751c62829e75",
+      "title": "Session on Three New Criminal Law Bills",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/eventImages%2Fa08aef53-8518-47ca-9815-621fe1a43ff2_Screenshot%202025-06-12%20095821.png?alt=media&token=322f7b6c-4ca2-426c-9678-6e23cfaa6b91"
+    },
+    {
+      "post_id": "8496b8cb-0446-440c-9d4c-e1278b890a7f",
+      "title": "Vasudha Vandhan",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/images%2FVasudha%20Vandan%2FCopy%20of%20IMG20230815104351.jpg?alt=media&token=29e79938-412a-4899-ab43-c1fa4ca2347a"
+    },
+    {
+      "post_id": "84f0a7c1-6d2c-4339-bbfb-3764abdfeae0",
+      "title": "Panch Pran Pratigya",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/images%2FPanch%20Pran%20Pratigya%2FCopy%20of%2020230813_085458.jpg?alt=media&token=87ca2edc-ccc9-48b2-9913-bf18599525b9"
+    },
+    {
+      "post_id": "96628abf-256c-4268-ac16-d21908ce5d48",
+      "title": "Yuva Samvaad",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/eventImages%2Fyuva%20samvad.jpg?alt=media&token=78f798cd-ecbe-4802-b714-4256e02e061d"
+    },
+    {
+      "post_id": "981b4760-8da0-4de7-873b-0749f16a05d2",
+      "title": "Har Ghar Tiranga",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/eventImages%2Fhar%20ghar%20tiranga.jpg?alt=media&token=d81bdde2-9ebb-48be-b048-929db3d6ea98"
+    },
+    {
+      "post_id": "a1a376e1-4bc4-4aeb-9895-fc5ef7db874d",
+      "title": "Beach Cleaning",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/images%2FBeach%20Cleaning%20Drive%2FCopy%20of%20IMG_3961.jpg?alt=media&token=e1b80039-328a-44ac-98fd-7a961a983107"
+    },
+    {
+      "post_id": "a4cdf71d-a99a-46dc-96fb-219c359df713",
+      "title": "NSS Orientation",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/eventImages%2Fnss%20orientation.jpg?alt=media&token=4ab7e6e0-976e-46e5-91d2-6610a7878cb8"
+    },
+    {
+      "post_id": "a908ba36-000a-45cf-b8e8-d3a4fc342410",
+      "title": "Orphanage Visit",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/eventImages%2F27c69522-c66b-47e7-a6e9-e85934924035_WhatsApp%20Image%202025-05-28%20at%2014.23.29_89774055.jpg?alt=media&token=506d46da-31a0-46c7-a100-342fe8de5cc3"
+    },
+    {
+      "post_id": "b778cd21-80f7-43dd-86c9-fbb7655409c4",
+      "title": "Aikyam Samagam",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/eventImages%2Faikyam%20samagam.jpg?alt=media&token=d5592ad1-1c1c-43da-ae72-7b42f543fb89"
+    },
+    {
+      "post_id": "b7aa541a-928b-47e0-aabe-631cc46c8066",
+      "title": "Swachhta Rally",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/eventImages%2Ff5c432e2-eeca-4571-aa51-d6ad8db34ccd_Screenshot%202025-06-12%20093807.png?alt=media&token=9bfa3e59-eef8-4ac0-a062-ac6f565c9456"
+    },
+    {
+      "post_id": "b9a7131c-ad2f-4cd2-8f1e-0fca8a1a8273",
+      "title": "Dang Village Educational Tour",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/eventImages%2Fcbbe3480-dcaf-4473-a477-6192e534a5a1_IMG_20241019_130658748%20(1).jpg?alt=media&token=6145ba79-8548-4a2c-bccc-7ba0e17a968b"
+    },
+    {
+      "post_id": "bab001ca-9f06-40ea-b877-7b383257814a",
+      "title": "Greening the Globe: Tree Plantation Drive",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/eventImages%2F3136e653-a62d-4456-912b-675d4b3d07b0_InCollage_20240605_163540271%20-%20U22ME178%20KUNAL%20KUMAR%20SVNIT.jpg?alt=media&token=3e0c0636-c331-4beb-a3c0-c86e6df332da"
+    },
+    {
+      "post_id": "c7d36cc7-dfea-4b44-8221-1fe3b0a9ee3c",
+      "title": "NSS Day \u2013 RTI Act Awareness Session",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/eventImages%2F8af51e27-bb60-4f0c-8d8d-8e3ec5cd488b_Screenshot%202025-06-12%20094114.png?alt=media&token=6b0e3d89-57c6-4586-b676-680bb362059b"
+    },
+    {
+      "post_id": "c7f0fb6c-f46f-444c-8ef7-f4d314e4155d",
+      "title": "NSS Exhibition",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/eventImages%2Fnss%20exhibition.jpg?alt=media&token=354ce730-3c0f-4ac1-af8f-913b6c308b75"
+    },
+    {
+      "post_id": "d689934d-c23d-453f-bde6-ae3bb2d49c5d",
+      "title": "Resume Building & Internship Guidance Session",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/eventImages%2F53c2c71f-f90e-4339-9314-eb17b373fc37_resume.jpg?alt=media&token=c37885f9-61dd-4be6-bea6-01b433875ca0"
+    },
+    {
+      "post_id": "e18d0855-a454-4a91-815c-f97efb1d60d4",
+      "title": "Election Awareness Rally",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/eventImages%2Felection%20awareness%20rally.jpg?alt=media&token=3494d494-a9e9-4e50-90d7-bd6b3fa1a16d"
+    },
+    {
+      "post_id": "f52d22b8-36dd-4e21-a0c7-43efb452f715",
+      "title": "Inpendence Day Skit",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/nss-svnit.appspot.com/o/eventImages%2Fcf4fbd42-0fe6-469b-8c90-8ac5bb262ff9_1%20(7).jpg?alt=media&token=ec1033ee-3bc8-4a00-ae2d-dddc07030dc1"
+    }
+  ]
+}
