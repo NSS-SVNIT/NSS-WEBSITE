@@ -21,6 +21,8 @@ import photo2020 from "./2020.jpg";
 import photo2021 from "./2021.jpg";
 import photo2022 from "./2022.jpg";
 import founder from "./founder.jpg";
+import photo2023_conv from "./photo2023_conv.jpeg";
+import photo2023_coc from "./photo2023_coc.jpeg";
 
 // --- Data ---
 const items = [
@@ -33,6 +35,24 @@ const items = [
 		role: "Founder",
 		year: "NSS SVNIT",
 	},
+  {
+    title: "Message From Our Convenor Batch 2023",
+    name: "Koustubh Choudhary",
+    description: "To the readers, no matter how difficult the journey becomes, always choose what is right over what is easy. When your intentions are pure and your actions are guided by honesty, you not only shape your own character but also influence the world around you. True fulfillment lies in serving others selflessly and working for the betterment of society with empathy and compassion. NSS SVNIT has nurtured in us these very values, teaching us to care deeply, act responsibly, and lead with integrity. What began as a role became a responsibility, then a purpose, and now a lifelong promise to stand for service above self.Be the change you wish to see!",
+    imageUrl:photo2023_conv,
+    role: "Convenor",
+    year: "Batch 2023",
+
+  },
+  {
+    title: "Message From Our Co-Convenor Batch 2023",
+    name: "Pradnya Pagare",
+    description: "Being a part of NSS has given us friendships that feel like family, experiences that pushed us out of our comfort zones, and lessons that no classroom could ever teach. Every camp, every activity, and every challenge shaped us in ways we didn’t realise at the time.Take every opportunity to be present, to learn, and to serve with a genuine heart. The bonds you build and the work you do here will stay with you long after your tenure ends. And always remember, when you give your time and effort selflessly, NSS gives back to you in the form of growth, confidence, and values that last a lifetime.",
+    imageUrl: photo2023_coc,
+    role: "Co-Convenor",
+    year: "Batch 2023",
+  },
+
 	{
     title: "Message From Our Convenor Batch 2022",
     name: "Shrishti Arya",
