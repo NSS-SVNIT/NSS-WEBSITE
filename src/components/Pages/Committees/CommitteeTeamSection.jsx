@@ -220,7 +220,7 @@ const CommitteeTeamSection = React.memo(({ committeeKey }) => {
       ],
       batch2024: [
         "Dipendra singh",
-        "Anwesha Chowdhery",
+        "Anwesha Chaudhary",
         "Navneet Yadav",
         "Ajay Kumar Meena",
         "Disha Patil",
