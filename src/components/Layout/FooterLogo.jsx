@@ -2,6 +2,7 @@ import React from "react";
 import { Stack, Divider, Typography } from "@mui/material";
 import { useMediaQuery } from "@mui/material";
 import nsslogo from "../../assets/nss_logo.jpg";
+import svnitLogo from "../../assets/svnit_logo.png";
 
 export default function FooterLogo() {
   const isMobile = useMediaQuery("(max-width:900px)");
@@ -24,8 +25,9 @@ export default function FooterLogo() {
         {!isMobile && <Divider orientation="vertical" flexItem />}
         <img
           style={{ height: `${isMobile ? "55px" : "75px"}` }}
-          src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/NIT_Surat_Logo.svg/300px-NIT_Surat_Logo.svg.png"
-        ></img>
+          src={svnitLogo}
+          alt="SVNIT Logo"
+        />
       </Stack>
 
       <Stack alignItems={"center"} sx={{ mt: isMobile ? 1 : 2 }}>
