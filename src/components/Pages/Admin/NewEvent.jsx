@@ -499,13 +499,14 @@ export default function NewEvent() {
 								value={selectedDate}
 								onChange={handleDateChange}
 								format="dd/MM/yyyy"
-								slotProps={{
-									textField: {
-										variant: "outlined",
-										fullWidth: true,
-										size: "small",
-									},
-								}}
+								renderInput={(params) => (
+									<TextField
+										{...params}
+										variant="outlined"
+										fullWidth
+										size="small"
+									/>
+								)}
 							/>
 						</LocalizationProvider>{" "}
 					</Stack>{" "}
@@ -687,10 +688,10 @@ export default function NewEvent() {
 									? postData.description.length
 									: 0
 							}/250 characters (recommended max)`}
-							error={
+							error={Boolean(
 								postData.description &&
 								postData.description.length > 250
-							}
+							)}
 							FormHelperTextProps={{
 								sx: {
 									display: "flex",

@@ -16,6 +16,7 @@ import PropTypes from "prop-types";
 import * as React from "react";
 // import Profile from "./Profile";
 import Articles from "../Articles/newarticle";
+import EditArticle from "./EditArticle";
 import ImageUpload from "./ImageUpload";
 import NewEvent from "./NewEvent";
 import Updates from "./Updates";
@@ -115,9 +116,10 @@ export default function DashBoard({ handleSignOut }) {
 				<Tab label="EVENTS" {...a11yProps(0)} />
 				<Tab label="IMAGES" {...a11yProps(1)} />
 				<Tab label="UPDATES" {...a11yProps(2)} />
-				<Tab label="ARTICLES" {...a11yProps(3)} />
-				<Tab label="TEAM DATA" {...a11yProps(4)} />
-				<Tab label="APPROVE VOLUNTEERS" {...a11yProps(5)} />
+				<Tab label="NEW ARTICLE" {...a11yProps(3)} />
+				<Tab label="EDIT ARTICLE" {...a11yProps(4)} />
+				<Tab label="TEAM DATA" {...a11yProps(5)} />
+				<Tab label="APPROVE VOLUNTEERS" {...a11yProps(6)} />
 			</Tabs>
 			<Button
 				variant="contained"
@@ -215,9 +217,12 @@ export default function DashBoard({ handleSignOut }) {
 					<Articles />
 				</TabPanel>
 				<TabPanel value={value} index={4}>
-					<UploadTeamData />
+					<EditArticle />
 				</TabPanel>
 				<TabPanel value={value} index={5}>
+					<UploadTeamData />
+				</TabPanel>
+				<TabPanel value={value} index={6}>
 					<VolunteerApprovalPanel />
 				</TabPanel>
 			</Box>

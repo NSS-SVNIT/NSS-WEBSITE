@@ -1,7 +1,7 @@
 // NewArticle.jsx
 
 import React, { useState } from "react";
-import { Button, Grid, MenuItem, Stack, TextField, CircularProgress, Snackbar, Alert, Container, Typography } from "@mui/material";
+import { Button, Grid, MenuItem, Stack, TextField, CircularProgress, Snackbar, Alert, Container, Typography, Box } from "@mui/material";
 // --- MODIFIED: Import serverTimestamp ---
 import { doc, setDoc, serverTimestamp } from "firebase/firestore";
 import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
